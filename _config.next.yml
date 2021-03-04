@@ -160,13 +160,20 @@ social_icons:
 
 # Blog rolls
 links_settings:
-  icon: fa fa-globe
-  title: Links
+  icon: fas fa-link
+  title: 友情链接
   # Available values: block | inline
-  layout: block
+  layout: inline
 
 links:
   #Title: https://example.com
+  LaTeX 工作室: https://www.latexstudio.net
+  sikousjw: https://sikouhjw.gitee.io/
+  muzimuzhi: https://zhuanlan.zhihu.com/typography-and-latex/
+  Liam: https://liam.page/
+  stone-zeng: https://stone-zeng.github.io/
+  兰铃: https://muyuuuu.github.io/
+  yuxtech: http://yuxtech.club/
 
 # Table of Contents in the Sidebar
 # Front-matter variable (unsupport wrap expand_all).

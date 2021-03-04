@@ -67,7 +67,7 @@ INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.
 
 这时在浏览器中输入 `localhost:4000` 即可看到部署在本地的博客
 
-![本地部署](https://pic4.zhimg.com/80/v2-8c21ffd0058d9cba4be5da45c49f1663.png)
+![](https://pic4.zhimg.com/80/v2-8c21ffd0058d9cba4be5da45c49f1663.png)
 
 然后我们命令行输入 `ctrl+C` 来结束本地部署. 
 
@@ -133,7 +133,7 @@ categories:
 
 再使用 `hexo g && hexo s` 进行本地部署, 在 `localhost:4000` 看到刚刚编辑的博文"第一篇博文", 点进去可以看到
 
- ![first-blog](https://pic4.zhimg.com/80/v2-797a1b83cb08f7653adcb43d56838b8c.png)
+ ![](https://pic4.zhimg.com/80/v2-797a1b83cb08f7653adcb43d56838b8c.png)
 
  然后可以再使用 `hexo d` 将其推送到 `<username>.github.io`, 等待一会如果没有更新内容, 那么就执行一下 `hexo clean` 来清空部署缓存. 于是我们将博文推送到远端的命令可以归为
 
@@ -160,7 +160,7 @@ timezone: Asia/Shanghai
 
 进行本地部署可以看到
 
-![Image](https://pic4.zhimg.com/80/v2-8121a42938033c596ae6e0a8022d1bcd.png)
+![](https://pic4.zhimg.com/80/v2-8121a42938033c596ae6e0a8022d1bcd.png)
 
 ### 更换主题
 
@@ -172,7 +172,7 @@ npm install hexo-theme-next
 
 并在 `hexotest/_config.yml` 中找到 `theme` 字段, 修改为 `theme: next`, 保存后本地部署, 可以看到博客的主题已经更换 
 
-![Image](https://pic4.zhimg.com/80/v2-d115746d176f5fb3a6aa6ac7d05e73ba.png)
+![](https://pic4.zhimg.com/80/v2-d115746d176f5fb3a6aa6ac7d05e73ba.png)
 
 然后我们可以把 `node_modules/hexo-theme-next/` 中的 `_config.yml` 改为 `_config.next.yml` 并且复制到根目录 `hexotest/` 下进行修改, 这样当我们升级 `NexT` 主题的时候不需要重新配置. 
 
@@ -184,12 +184,18 @@ npm install hexo-theme-next
 5. **avatar** 配置博客侧边栏的头像, 图片选择同 **favicon**;
 6. **toc** 配置浏览博文时侧边栏的目录;
 7. **font** 配置文章中的字体;
+   在 `_config.next.yml` 中不能配置多种字体, 如果想配置多种字体, 可以修改 
+   ```
+   hexotest\node_modules\hexo-theme-next\source\css\_variables\base.styl
+   ```
+   中的 `\\Font families` 中的值
 8. **codeblock** 配置代码块;
-9. **back2top** 配置返回顶部的按钮;
+9.  **back2top** 配置返回顶部的按钮;
 10. **reading_progress** 配置阅读进度条;
 11. **symbols_count_time** 配置站点字数和阅读时间统计, [使用方法](https://github.com/next-theme/hexo-word-counter);
 12. **creative_commons** 配置文末版权信息, 关于 cc 协议可以参考[知乎专栏](https://zhuanlan.zhihu.com/p/20641764);
 13. **local_search** 配置搜索栏, [使用方法](https://github.com/theme-next/hexo-generator-searchdb);
+14. **links_settings & links** 配置友情链接;
 
 ### 这是一些不知道放到哪里的配置
 1. **markdown-it-plus** 可以提供脚注等功能, 目录, emoji, katex 等功能, [使用方法](https://github.com/CHENXCHEN/hexo-renderer-markdown-it-plus) emoji 功能与 `hexo-renderer-pandoc` 冲突;
