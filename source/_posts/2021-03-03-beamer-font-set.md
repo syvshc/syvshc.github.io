@@ -30,7 +30,7 @@ tags:
 
 会发现字体并没有发生变化
 
-![`\setmainfont`](https://pic4.zhimg.com/80/v2-a79642cc1fef73b11effa52b21dc02ca.png)
+![](https://pic4.zhimg.com/80/v2-a79642cc1fef73b11effa52b21dc02ca.png)
 
 
 
@@ -54,7 +54,7 @@ tags:
 \end{document}
 ```
 
-![Image](https://pic4.zhimg.com/80/v2-2078e554f7891d8ae674b0dd7d87a97b.png)
+![](https://pic4.zhimg.com/80/v2-2078e554f7891d8ae674b0dd7d87a97b.png)
 
 另外, 因为 `beamer` 文档类默认正文使用无衬线体, 于是也可以偷鸡地设置 `\setsansfont{Fira Sans}` 但是这样做会导致数学模式的 `\mathrm` 变成衬线体
 
@@ -74,11 +74,11 @@ tags:
 \end{document}
 ```
 
-![Image](https://pic4.zhimg.com/80/v2-94edf62ee34ec47955526aabbba5a438.png)
+![](https://pic4.zhimg.com/80/v2-94edf62ee34ec47955526aabbba5a438.png)
 
 在 `texdoc fontspec` 中查找原因, 可以在 3.2 节 Maths fonts adjustments 中找到
 
-![Image](https://pic4.zhimg.com/80/v2-6ded00e03780caf7534fb7a3e5f7a9a9.png)
+![](https://pic4.zhimg.com/80/v2-6ded00e03780caf7534fb7a3e5f7a9a9.png)
 
 即在默认设置下, `fontspec` 宏包会将数学字体设置成 `Computer Modern`, 于是我们需要用 `no-math` 选项来阻止它, 同时 `\mathrm{d}` 也会调用 `rmfamily` 的字体, 我们将它改为 `\mathsf{d}`:
 
@@ -115,6 +115,6 @@ tags:
     \end{frame}
 \end{document}
 ```
-![Image](https://pic4.zhimg.com/80/v2-84d784c2f5396f6b2e529e0d7506b38d.png)
+![](https://pic4.zhimg.com/80/v2-84d784c2f5396f6b2e529e0d7506b38d.png)
 
 如果设置中文字体, 使用 `ctexbeamer` 文档类并设置 `\setCJK(main, sans, mono)font`, 类比上文即可. 

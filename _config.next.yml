@@ -169,7 +169,7 @@ links_settings:
 links:
   #Title: https://example.com
   LaTeX 工作室: https://www.latexstudio.net
-  sikousjw: https://sikouhjw.gitee.io/
+  sikouhjw: https://sikouhjw.gitee.io/
   muzimuzhi: https://zhuanlan.zhihu.com/typography-and-latex/
   Liam: https://liam.page/
   stone-zeng: https://stone-zeng.github.io/
@@ -474,8 +474,8 @@ font:
   # Font settings for <code> and code blocks.
   codes:
     external: true
-    family: JetBrains Mono
-
+    # family: JetBrains Mono
+    family: Sarasa Term SC
 
 # ---------------------------------------------------------------
 # SEO Settings
