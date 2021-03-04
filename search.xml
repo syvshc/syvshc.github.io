@@ -653,7 +653,7 @@
 <h3 id="version"><code>version</code></h3>
 <p>给出版本信息, 与 <code>--version</code> 选项相同, 如果也使用了 <code>-v</code> 选项, 那么所使用模块的版本信息也会被打印.</p>
 <h3 id="backup"><code>backup</code></h3>
-<h3 id="backup-option..-pkg-all"><code>backup [option..] &lt;pkg|-all&gt;</code></h3>
+<h4 id="backup-option..-pkg-all"><code>backup [option..] &lt;pkg|-all&gt;</code></h4>
 <p>如果没有指定 <code>--clean</code> 选项, 那么这个操作会创建一个宏包 <code>&lt;pkg&gt;</code> 的备份, 如果使用了 <code>-all</code> 选项, 则创建一个全部宏包的备份.</p>
 <p>备份文件的位置将由 <code>--backupdir &lt;dir&gt;</code> 指定, 前提是 <code>&lt;dir&gt;</code> 存在并且可写. 如果没有指定 <code>--backupdir</code>, 那么就使用 TLPDB 中设置的 <code>backupdir</code>, 如果二者皆空, 那么将不会创建备份.</p>
 <p>安装程序将 <code>backupdir</code> 默认设置在了 TeX Live 根目录下的 <code>./tlpkg/backups</code> 中, 所以如果没有额外的设置, <code>backupdir</code> 总是存在. 查看 <a href="#action-option"><code>option</code></a> 以获得更多信息.</p>
