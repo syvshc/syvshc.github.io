@@ -66,9 +66,9 @@ custom_logo: #/uploads/custom-logo.jpg
 # CC licenses are available in 39 languages, you can find the specific and correct abbreviation you need on https://creativecommons.org
 creative_commons:
   license: by-nc-sa
-  sidebar: false
-  post: false
-  language: 
+  sidebar: true
+  post: true
+  language: deed.zh
 
 
 # ---------------------------------------------------------------
@@ -129,7 +129,7 @@ avatar:
   # If true, the avatar will be dispalyed in circle.
   rounded: true
   # If true, the avatar will be rotated with the cursor.
-  rotated: true
+  rotated: false
 
 # Posts / Categories / Tags in sidebar.
 site_state: true
@@ -254,8 +254,24 @@ post_meta:
 # Post wordcount display settings
 # Dependencies: https://github.com/next-theme/hexo-word-counter
 symbols_count_time:
-  separated_meta: true
-  item_text_total: true
+  separated_meta: true     # 是否另起一行（true的话不和发表时间等同一行）
+  symbols: true
+  time: true
+  total_symbols: true
+  total_time: true
+  exclude_codeblock: true
+  awl: 2
+  wpm: 275
+  suffix: "mins."
+
+# symbols_count_time:
+#   wordcount: true
+#   separated_meta: true     # 是否另起一行（true的话不和发表时间等同一行）
+#   item_text_post: true     # 首页文章统计数量前是否显示文字描述（本文字数、阅读时长）
+#   item_text_total: false   # 页面底部统计数量前是否显示文字描述（站点总字数、站点阅读时长）
+#   awl: 4                   # Average Word Length
+#   wpm: 275                 # Words Per Minute（每分钟阅读词数）
+#   suffix: mins.
 
 # Use icon instead of the symbol # to indicate the tag at the bottom of the post
 tag_icon: false
@@ -264,13 +280,13 @@ tag_icon: false
 # Front-matter variable (unsupport animation).
 reward_settings:
   # If true, a donate button will be displayed in every article by default.
-  enable: false
-  animation: false
-  #comment: Buy me a coffee
+  enable: true
+  animation: true
+  # comment: Buy me a coffee
 
 reward:
-  #wechatpay: /images/wechatpay.png
-  #alipay: /images/alipay.png
+  wechatpay: /img/wechatpay.png
+  alipay: /img/alipay.jpg
   #paypal: /images/paypal.png
   #bitcoin: /images/bitcoin.png
 
@@ -500,11 +516,12 @@ math:
   # That is it only render those page which has `mathjax: true` in front-matter.
   # If you set it to true, it will load mathjax / katex srcipt EVERY PAGE.
   every_page: false
+  # engine: Katex
 
   mathjax:
-    enable: false
+    enable: true
     # Available values: none | ams | all
-    tags: none
+    tags: ams
 
   katex:
     enable: false
@@ -733,12 +750,12 @@ algolia_search:
 # Local Search
 # Dependencies: https://github.com/next-theme/hexo-generator-searchdb
 local_search:
-  enable: false
+  enable: true
   # If auto, trigger search by changing input.
   # If manual, trigger search by pressing enter key or search button.
   trigger: auto
   # Show top n results per article, show all results by setting to -1
-  top_n_per_article: 1
+  top_n_per_article: 5
   # Unescape html strings to the readable one.
   unescape: false
   # Preload the search data when the page loads.

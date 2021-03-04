@@ -1,18 +1,20 @@
 ---
+mathjax: true
 title: '搭建 github.io'
 date: 2021-03-03 23:16:26
 tags:
     - [配置记录]
-catagories:
+categories:
     - [帮助文档, 配置记录]
 ---
 
 **在 NexT 主题更新 8.0 之后又重新配置了一次 `hexo+NexT`, 这次来记录一下, 并且会随时更新新增的配置.**
 
+<!-- more -->
+
 ## 准备工作
 假定用户的电脑上已经安装 `git`, 并且已经与 [github](github.com) 连接, 并熟悉 `git` 的相关操作. 
 
-<!-- more -->
 ### 创建仓库
 在 [github](github.com) 上新建一个仓库, 名称为 `<username>.github.io`, 将 `<username>` 替换为你的 `github` 账户名. 
 ### 安装 `node.js`
@@ -172,9 +174,9 @@ npm install hexo-theme-next
 
 ![Image](https://pic4.zhimg.com/80/v2-d115746d176f5fb3a6aa6ac7d05e73ba.png)
 
-然后我们可以把 `hexotest/node_modules/hexo-theme-next/` 中的 `_config.yml` 改为 `_config.next.yml` 并且复制到根目录 `hexotest/` 下进行修改, 这样当我们升级 `NexT` 主题的时候不需要重新配置. 
+然后我们可以把 `node_modules/hexo-theme-next/` 中的 `_config.yml` 改为 `_config.next.yml` 并且复制到根目录 `hexotest/` 下进行修改, 这样当我们升级 `NexT` 主题的时候不需要重新配置. 
 
-下面配置 `NexT` 主题的一些事项, 这里只介绍一些功能的作用, 并不具体配置. 
+### 下面配置 `NexT` 主题的一些事项, 这里只介绍一些功能的作用, 并不具体配置. 
 1. **scheme** `NexT` 主题内置了 4 种样式, 可以依次启用来选择一个适合自己的, 这里我选择了 `Gemini`;
 2. **favicon** 配置标签页的图标, 可以自行选择图片, 放在 `hexotest/source/img` 文件夹下便于寻找, 设置中的路径也应改为 `/img/***.png(jpg, svg...)`;
 3. **menu** 配置博客页面的链接;
@@ -185,5 +187,25 @@ npm install hexo-theme-next
 8. **codeblock** 配置代码块;
 9. **back2top** 配置返回顶部的按钮;
 10. **reading_progress** 配置阅读进度条;
+11. **symbols_count_time** 配置站点字数和阅读时间统计, [使用方法](https://github.com/next-theme/hexo-word-counter);
+12. **creative_commons** 配置文末版权信息, 关于 cc 协议可以参考[知乎专栏](https://zhuanlan.zhihu.com/p/20641764);
+13. **local_search** 配置搜索栏, [使用方法](https://github.com/theme-next/hexo-generator-searchdb);
+
+### 这是一些不知道放到哪里的配置
+1. **markdown-it-plus** 可以提供脚注等功能, 目录, emoji, katex 等功能, [使用方法](https://github.com/CHENXCHEN/hexo-renderer-markdown-it-plus) emoji 功能与 `hexo-renderer-pandoc` 冲突;
+2. **hexo-renderer-pandoc** 提供 mathjax 渲染, 将 `tags` 设置为 `ams` 还可以使用公式编号[使用方法](https://theme-next.js.org/docs/third-party-services/math-equations);
+
+   示例: 
+   ```latex
+   一元二次方程组 $ax^{2}+bx+c=0\ (a \ne 0)$ 的解为 $\eqref{eq:slo}$
+   % 注意: 行内公式的 $...$ 前后不要有空格
+   \begin{equation}\label{eq:slo}
+        x_{1, 2}=\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}
+   \end{equation}
+    ```
+    一元二次方程组 $ax^{2}+bx+c=0\ (a \ne 0)$ 的解为 $\eqref{eq:slo}$  
+   \begin{equation}\label{eq:slo}
+        x_{1, 2}=\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}
+   \end{equation}
 
 ## 未完待续

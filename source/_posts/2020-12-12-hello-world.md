@@ -1,5 +1,6 @@
 ---
 title: Hello World
+date: 2020-12-12 00:00
 tags: 
     - hexo
 categories: 
@@ -40,3 +41,4 @@ $ hexo deploy
 ```
 
 More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
+
