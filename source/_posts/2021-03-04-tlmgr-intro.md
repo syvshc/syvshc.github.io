@@ -20,12 +20,74 @@ categories:
 1. 文档中被中括号`[]`框起来的为可选参数, 如 `--gui [action]`, 
 2. 被尖括号`<>`框起来的为必要参数, 如 `tlmgr info <what>`, 
 3. 被 `|` 分割开的选项为 n 选 1, 如 `backup [option] <pkg|-all>`, 
+4. 文档中的 "宏包" 有时不仅指被用在 `\usepackage{}` 中的宏包. 
 
 ## 概要
 
 `tlmgr` 管理着 TeX Live 中的宏包以及配置. 最新的文档以及测试版本的信息位于 [https://tug.org/texlive/tlmgr.html](https://tug.org/texlive/tlmgr.html) . 
 
 TeX Live 由一些最高级别的 schemes 组成, 每一种 scheme 都是由不同的 collections 与 packages 组成, 其中 collection 是 packages 的集合, 而 packages 是包含了一些文件的包. Schemes 里一般既有 collections 也有 packages, 但是每一个 package 都属于且只属于一个 collection. 
+
+使用 `tlmgr info collections` 可以列出 collections 的信息. 
+
+```bash
+❯❯ tlmgr info collections
+i collection-basic: Essential programs and files
+i collection-bibtexextra: BibTeX additional styles
+i collection-binextra: TeX auxiliary programs
+i collection-context: ConTeXt and packages
+i collection-fontsextra: Additional fonts
+i collection-fontsrecommended: Recommended fonts
+i collection-fontutils: Graphics and font utilities
+i collection-formatsextra: Additional formats
+i collection-games: Games typesetting
+i collection-humanities: Humanities packages
+i collection-langarabic: Arabic
+i collection-langchinese: Chinese
+i collection-langcjk: Chinese/Japanese/Korean (base)
+i collection-langcyrillic: Cyrillic
+i collection-langczechslovak: Czech/Slovak
+i collection-langenglish: US and UK English
+i collection-langeuropean: Other European languages
+i collection-langfrench: French
+i collection-langgerman: German
+i collection-langgreek: Greek
+i collection-langitalian: Italian
+i collection-langjapanese: Japanese
+i collection-langkorean: Korean
+i collection-langother: Other languages
+i collection-langpolish: Polish
+i collection-langportuguese: Portuguese
+i collection-langspanish: Spanish
+i collection-latex: LaTeX fundamental packages
+i collection-latexextra: LaTeX additional packages
+i collection-latexrecommended: LaTeX recommended packages
+i collection-luatex: LuaTeX packages
+i collection-mathscience: Mathematics, natural sciences, computer science packages
+i collection-metapost: MetaPost and Metafont packages
+i collection-music: Music packages
+i collection-pictures: Graphics, pictures, diagrams
+i collection-plaingeneric: Plain (La)TeX packages
+i collection-pstricks: PSTricks
+i collection-publishers: Publisher styles, theses, etc.
+i collection-texworks: TeXworks editor; TL includes only the Windows binary
+i collection-wintools: Windows-only support programs
+i collection-xetex: XeTeX and packages
+```
+用 `tlmgr info schemes` 可以列出 schemes 的信息
+
+```bash
+❯❯ tlmgr info schemes
+i scheme-basic: basic scheme (plain and latex)
+i scheme-context: ConTeXt scheme
+i scheme-full: full scheme (everything)
+i scheme-gust: GUST TeX Live scheme
+i scheme-infraonly: infrastructure-only scheme (no TeX at all)
+i scheme-medium: medium scheme (small + more packages and languages)
+i scheme-minimal: minimal scheme (plain only)
+i scheme-small: small scheme (basic + xetex, metapost, a few languages)
+i scheme-tetex: teTeX scheme (more than medium, but nowhere near full)
+```
 
 可以在 [TeX Live 文档](https://tug.org/texlive/doc) 查看 TeX Live 的全部可用文档. 
 
@@ -135,6 +197,8 @@ tlmgr [option...] action [option...] [operand...]
 ```bash
 -repository /local/TL/repository
 ```
+
+也可以使用 `--repo` 作为 `--repository` 的简化. 
 
 剩下是一些特定的网络下的设置, 略过. 
 
@@ -256,8 +320,114 @@ would save current status of ctex to d:/texlive/2020/tlpkg/backups/ctex.r56705.t
 no action taken due to --dry-run
 ```
 
+### `candidate <pkg>`
+
+显示宏包 `<pkg>` 的候选仓库 (candidate repository). 见 [MULTIPLE REPOSITORY](#multiple-repository)
+
+### `check [option] <depends|excutes|files|runfiles|texmfdbs|all>
+
+执行安装的一致性 (consistency of installation) 的一个或者全部检查, 如果没发现问题, 那么将不会有输出. (如果想看看 `tlmgr` 做了什么, 可以用 `tlmgr -v check`)
+
+#### `depends`
+
+列出那些没有被安装, 但是作为安装集合的依赖的宏包, 以及哪些没有包含在任何集合中的宏包. 
+
+如果使用 `tlmgr check collections`, 同样会执行 `tlmgr check depends`, 因为旧版本的 `tlmgr` 就是这么做的. 
+
+```bash
+❯❯ tlmgr check collections
+tlmgr.pl: "collections" check has been replaced by "depends".
+```
+
+#### `excutes`
+
+检查 TeX Live 数据库中 `execute`指令引用的文件是否存在.
+Check that the files referred to by execute directives in the TeX Live Database are present.
+
+#### `files`
+
+检查列在 TLPDB (`texlive.tlpdb`) 是否真的存在, 列出不存在的宏包. 
+
+#### `runfiles`
+
+列出在执行文件中出现多次的文件名, 除了已知的重复文件名. 
+
+#### `texmfdbs`
+
+检查与 `ls-R` 相关的文件. 如果你已经定义了新的 `TEXMF` 树, 或者更改了 `TEXMF` 或 `TEXMFDBS` 变量, 那运行它也没什么坏处 (it can't hurt to run this). 它检查了
+
+- all items in `TEXMFDBS` have the `!!` prefix.
+- all items in `TEXMFBDS` have an `ls-R` file (if they exist at all).
+- all items in `TEXMF` with `!!` are listed in `TEXMFDBS`.
+- all items in `TEXMF` with an `ls-R` file are listed in `TEXMFDBS`.
+
+这些没看懂. 
+
+`check` 操作的特定选项:
+
+#### `--use-svn`
+在检查 TL 的发展仓库(? development repository) 时, 用 `svn status` 输出代替文件列表. (This is run nightly). 
+
+### `conf`, `dump-tlpdb`, `generate`, `gui`
+
+略
+
+### `info`
+
+#### `info [option] [pkg...|collections|schemes]`
+
+如果没有参数, 列出仓库中全部的可用宏包, 把哪些已经安装的用 `i` 作为前缀. 
+
+如果用 `collections` 或者 `schemes`, 列出所需的类型, 而不输出宏包名 .
+
+如果用任何其他的参数, 那么就把参数看成宏包名 `<pkg...>`, 并列出它的信息: 名称 (name), 分类 (category), 简短以及详细的介绍 (short and long description), 大小 (size), 安装状态 (installation status), 以及 TeX Live 中它的修订号 (TeX Live revision number). 
+
+如果 `<pkg...>` 在本地与线上都没有找到, 那么将会搜索与它相关的宏包和文件. 
+
+它也会显示从 TeX Catalogue 上获取的信息, 比如宏包版本 (package version), 日期 (date), 和许可证 (license). 考虑这些，特别是宏包版本，获得的信息仅仅是近似的，这是由于不同部分更新的时间偏差造成的. 
+
+旧操作 `show` 与 `list` 已经被合并到这个操作中, 但是为了后续的兼容性这两个操作依然可用. 
+
+`info` 操作的特定选项:
+
+#### `--list`
+
+如果指定了 `--list` 选项, 并且跟了一个宏包 `<pkg...>`, 那么这个宏包的包含文件也会被展示, 比如执行文件, 源文件, 宏包文档等等, 包括平台特定的从属包 (platform-specific dependencies)
+
+如果跟的是 `schemes` 或 `collections`, 那么输出的内容与不加 `--list` 相同. 
+
+#### `--only-installed`
+
+如果指定这个选项, 那么 `tlmgr` 只会从本地安装的宏包, collections, 或者 schemes 中寻找信息, 而不使用安装的源. 
+
+#### `--only-remote`
+
+只列出在远端仓库的宏包. 这个选项比较适合配合 `tlmgr --repo ...` 使用, 来查看某个宏包在某远端仓库是否可用, 用 `tlmgr --repo ... --only-remote info <pkg...>` 即可. **注意** `--only-installed` 和 `--only-remote` 不能同时指定. 
+
+#### `--data <item1, item2,...>`
+
+如果制定了 `--data` 选项, 那它的参数只能从以下内容中选择: `name`, `category`, `localrev`, `remoterev`, `shortdesc`, `longdesc`, `installed`, `size`, `relocatable`, `depends`, `cat-version`, `cat-date`, `cat-license`, 以及字段 `cat-contact-*` (见下), 这些内容中间要用逗号`,`隔开. 
+
+`cat-*` 字段全部从 [TeX Catalogue](https://ctan.org/pkg/catalogue) 中获得. 对于每个字段都有两个变种, 带 `l` 前缀和带 `r` 前缀, 比如: `lcat-version` 与 `rcat-version`, 分别代表了本地和远端的信息. 如果不带 `l` 和 `r` 的选项, 那么就显示最近的一个, 通常来说是远端的信息. 
+
+按照这个写法, 那么 `cat-contact-*` 字段包括了 `home`, `repository`, `support`, `bugs`, `announce`, `development`, 每一个都可能为空, 或者含有一个 url 值, 比如可以用
+```bash
+tlmgr info --data cat-contact-home amsmath
+```
+查看 `amsmath` 宏包的主页, 可以得到
+```bash
+❯❯ tlmgr info --data cat-contact-home amsmath
+http://www.ams.org/tex/amslatex.html
+```
+关于新宏包的简短的介绍可以在 [CTAN upload page](https://ctan.org/upload)  上查看. 
+
+#### `--json`
+
+如果指定 `--json` 选项, 那么将会给出一个 JSON 格式的输出, 可以在 `tlpkg/doc/JSON-formats.txt` 查看格式信息, 格式定义在 `TLPOBJINFO1`. 如果 `--json` 和 `--data` 同时被指定, 那么 `--json` 的优先级会更高.
+
 <span id="action-option"> `option` </span>
 <span id="user-mode"> `USER MODE` </span>
+<span id="multiple-repository"> `MULTIPLE REPOSITORY` </span>
 
 [^update]: mirror.ctan.org resolves to many different hosts, and they are not perfectly synchronized; we recommend updating only daily (at most), and not more often. 
 [^mainland]: 这个表格来自 [install-latex-guide-zh-cn](https://github.com/OsbertWang/install-latex-guide-zh-cn)
