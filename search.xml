@@ -1,31 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2020-12-12-hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>杂项</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Win10+Ubuntu18.04LTS双系统安装记录</title>
     <url>/2020-12-12-Windows-and-Ubuntu/</url>
     <content><![CDATA[<p>本文记录过程的时候会同时记录踩过的坑, 这些坑有一些是由于我自己的操作不当, 还有一些是由于网上的教程版本过旧或书写错误造成的, 我都会记录下来, 但是文中的一些文本的描述会与系统标准输出的文本有一定差异, 只要不影响命令的运行的文字笔者不会过分追求一字不差. 那么我们开始吧<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
@@ -184,6 +159,54 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2020-12-12-hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>欢迎来到我的 GitHub.io</title>
+    <url>/2020-12-12-welcome/</url>
+    <content><![CDATA[<h1 id="这里是无锤乙醇的-github.io">这里是无锤乙醇的 <code>GitHub.io</code></h1>
+<p>花了小一天来折腾 Hexo NexT 主题, 也算是把基本配置弄好了, 咕了好久的博客也是搭好了, 还有一些坑没有填, 比如<a href="https://blog.dlzhang.com/posts/32/">自定义侧边栏图标</a>, 有时间慢慢折腾吧.</p>
+<p>接下来会把简书里的东西搬到这里, <del><a href="https://syvshc.gitee.io">Gitee Pages</a> 是主要更新的地方, 这边会同步更新.</del> 就搁这更新了, Gitee 不折腾了</p>
+<p>并且这篇文章会被用做测试</p>
+<span id="more"></span>
+<h1 id="测试">测试</h1>
+<p>更新了字体, <a href="https://leay.net/2020/02/14/hexo-next-font/">字体配置方法</a></p>
+<p>this is a footnote test <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>this is a equation <span class="math inline">\(ax^{2}+bx+c=0\,(a\ne 0)\)</span>, which solution is <span class="math display">\[x_{1, 2}=\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}\]</span></p>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>footnote<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+  </entry>
+  <entry>
     <title>beamer 的字体设置</title>
     <url>/2021-03-03-beamer-font-set/</url>
     <content><![CDATA[<p>在使用 <code>beamer</code> 文档类的时候, 可能会有需要更换字体.</p>
@@ -308,29 +331,6 @@
       </tags>
   </entry>
   <entry>
-    <title>欢迎来到我的 GitHub.io</title>
-    <url>/2020-12-12-welcome/</url>
-    <content><![CDATA[<h1 id="这里是无锤乙醇的-github.io">这里是无锤乙醇的 <code>GitHub.io</code></h1>
-<p>花了小一天来折腾 Hexo NexT 主题, 也算是把基本配置弄好了, 咕了好久的博客也是搭好了, 还有一些坑没有填, 比如<a href="https://blog.dlzhang.com/posts/32/">自定义侧边栏图标</a>, 有时间慢慢折腾吧.</p>
-<p>接下来会把简书里的东西搬到这里, <del><a href="https://syvshc.gitee.io">Gitee Pages</a> 是主要更新的地方, 这边会同步更新.</del> 就搁这更新了, Gitee 不折腾了</p>
-<p>并且这篇文章会被用做测试</p>
-<span id="more"></span>
-<h1 id="测试">测试</h1>
-<p>更新了字体, <a href="https://leay.net/2020/02/14/hexo-next-font/">字体配置方法</a></p>
-<p>this is a footnote test <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<p>this is a equation <span class="math inline">\(ax^{2}+bx+c=0\,(a\ne 0)\)</span>, which solution is <span class="math display">\[x_{1, 2}=\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}\]</span></p>
-<section class="footnotes" role="doc-endnotes">
-<hr />
-<ol>
-<li id="fn1" role="doc-endnote"><p>footnote<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
-]]></content>
-      <categories>
-        <category>杂项</category>
-      </categories>
-  </entry>
-  <entry>
     <title>latexmk 的学习</title>
     <url>/2021-03-04-learn-latexmk/</url>
     <content><![CDATA[<p>其实是把翻译给咕掉了, 先把实用的东西写了, 方便查阅, 剩下的嘛, 考完研再说吧, 也没准哪天心血来潮就写了</p>
@@ -434,6 +434,32 @@
       </tags>
   </entry>
   <entry>
+    <title>为博客添加 Gitalk 评论区</title>
+    <url>/2021-03-05-enable-gitalk/</url>
+    <content><![CDATA[<p>在 <a href="/2021-03-03-build-github-io/" title="搭建 github.io">搭建 github.io</a> 中我们配置了 <code>hexo+NexT</code> 的博客, 这次来给它添加一个评论区. 使用的是 <a href="https://github.com/gitalk/gitalk">gitalk</a>.</p>
+<span id="more"></span>
+<p><strong>注意</strong> 该方法可能存在隐私问题, 详见 <a href="https://www.v2ex.com/t/535608">V2EX 论坛</a>.</p>
+<p>在 <code>hexotest/</code> 文件夹下使用</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm i --save gitalk</span><br></pre></td></tr></table></figure>
+<p>来安装 <code>gitalk</code>, 而且 <code>NexT8</code> 内置了 <code>gitalk</code> 的接口, 在 <code>_config.next.yml</code> 中搜索 <code>gitalk</code> 即可看到</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Multiple Comment System Support</span></span><br><span class="line"><span class="attr">comments:</span></span><br><span class="line">  <span class="comment"># Available values: tabs | buttons</span></span><br><span class="line">  <span class="attr">style:</span> <span class="string">tabs</span></span><br><span class="line">  <span class="comment"># Choose a comment system to be displayed by default.</span></span><br><span class="line">  <span class="comment"># Available values: disqus | disqusjs | changyan | livere | gitalk | utterances</span></span><br><span class="line">  <span class="attr">active:</span></span><br><span class="line">  <span class="comment"># Setting `true` means remembering the comment system selected by the visitor.</span></span><br><span class="line">  <span class="attr">storage:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Lazyload all comment systems.</span></span><br><span class="line">  <span class="attr">lazyload:</span> <span class="literal">false</span></span><br><span class="line">  <span class="comment"># Modify texts or order for any navs, here are some examples.</span></span><br><span class="line">  <span class="attr">nav:</span></span><br><span class="line">    <span class="comment">#disqus:</span></span><br><span class="line">    <span class="comment">#  text: Load Disqus</span></span><br><span class="line">    <span class="comment">#  order: -1</span></span><br><span class="line">    <span class="comment">#gitalk:</span></span><br><span class="line">    <span class="comment">#  order: -2</span></span><br><span class="line"><span class="comment"># Gitalk</span></span><br><span class="line"><span class="comment"># For more information: https://gitalk.github.io</span></span><br><span class="line"><span class="attr">gitalk:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">github_id:</span> <span class="comment"># GitHub repo owner</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="comment"># Repository name to store issues</span></span><br><span class="line">  <span class="attr">client_id:</span> <span class="comment"># GitHub Application Client ID</span></span><br><span class="line">  <span class="attr">client_secret:</span> <span class="comment"># GitHub Application Client Secret</span></span><br><span class="line">  <span class="attr">admin_user:</span> <span class="comment"># GitHub repo owner and collaborators, only these guys can initialize gitHub issues</span></span><br><span class="line">  <span class="attr">distraction_free_mode:</span> <span class="literal">true</span> <span class="comment"># Facebook-like distraction free mode</span></span><br><span class="line">  <span class="comment"># When the official proxy is not available, you can change it to your own proxy address</span></span><br><span class="line">  <span class="attr">proxy:</span> <span class="string">https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token</span> <span class="comment"># This is official proxy adress</span></span><br><span class="line">  <span class="comment"># Gitalk&#x27;s display language depends on user&#x27;s browser or system environment</span></span><br><span class="line">  <span class="comment"># If you want everyone visiting your site to see a uniform language, you can set a force language value</span></span><br><span class="line">  <span class="comment"># Available values: en | es-ES | fr | ru | zh-CN | zh-TW</span></span><br><span class="line">  <span class="attr">language:</span></span><br></pre></td></tr></table></figure>
+<p>这里做一下简单的说明.</p>
+<p>首先要在 <a href="https://github.com/settings/developers">github devoloper</a> 创建新的 OAuth App <img src="../img/postimg/githubdevelop.png" /> 点击创建好的 OAuth App, 可以看到 <img src="../img/postimg/clientid.png" /> 点击 <code>Generate a new client secret</code> 可以得到一个 <code>client secret</code>. 把 <code>client ID</code> 与 <code>client secret</code> 分别填写在 <code>yml</code> 文件的 <code>client_id</code> 与 <code>client_secret</code> 字段中, 剩下的字段填自己的信息以及用来存放评论的 repo, 这里我填的 <code>&lt;username&gt;.github.io</code>. 配置好以后, 使用 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g -d</span><br></pre></td></tr></table></figure> 进行在线部署, 随便选一篇博文, 在最下方登录一下 <code>github</code> 完成初始化.</p>
+<p>但是遇到了问题. <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Error: Request failed with status code 403</span><br></pre></td></tr></table></figure> 经查询发现这个问题普遍存在, 比如微信文章 <a href="https://mp.weixin.qq.com/s?__biz=Mzg3MjU3NzU1OA==&amp;mid=2247496606&amp;idx=1&amp;sn=8e0b6e2600f939c5401f2344dce2cba6&amp;source=41#wechat_redirect">记录一次 Bug 排查过程并分享一些经验</a>, <a href="https://github.com/gitalk/gitalk/issues/429">gitalk's issue</a>. 作者也给了相应的<a href="https://github.com/gitalk/gitalk/issues/429#issuecomment-789423631">解决方法</a></p>
+<p>我这里将 <code>proxy</code> 替换为了 <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">proxy:</span> <span class="string">https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token</span></span><br></pre></td></tr></table></figure> 再次 <code>hexo clean &amp;&amp; hexo g -d</code>, 即可使用 <code>gitalk</code>, 评论区会作为设置中的 <code>repo</code> 的 <code>issue</code> 存在.</p>
+]]></content>
+      <categories>
+        <category>配置记录</category>
+        <category>帮助文档</category>
+      </categories>
+      <tags>
+        <tag>配置记录</tag>
+        <tag>hexo</tag>
+        <tag>帮助文档</tag>
+        <tag>gitalk</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>tlmgr 的介绍</title>
     <url>/2021-03-04-tlmgr-intro/</url>
     <content><![CDATA[<!-- [点击跳转](#jump) <span id="jump">跳转到的地方</span> -->
@@ -444,10 +470,15 @@
 <li>文档中被中括号<code>[]</code>框起来的为可选参数, 如 <code>--gui [action]</code>,</li>
 <li>被尖括号<code>&lt;&gt;</code>框起来的为必要参数, 如 <code>tlmgr info &lt;what&gt;</code>,</li>
 <li>被 <code>|</code> 分割开的选项为 n 选 1, 如 <code>backup [option] &lt;pkg|-all&gt;</code>,</li>
+<li>文档中的 "宏包" 有时不仅指被用在 <code>\usepackage&#123;&#125;</code> 中的宏包.</li>
 </ol>
 <h2 id="概要">概要</h2>
 <p><code>tlmgr</code> 管理着 TeX Live 中的宏包以及配置. 最新的文档以及测试版本的信息位于 <a href="https://tug.org/texlive/tlmgr.html">https://tug.org/texlive/tlmgr.html</a> .</p>
 <p>TeX Live 由一些最高级别的 schemes 组成, 每一种 scheme 都是由不同的 collections 与 packages 组成, 其中 collection 是 packages 的集合, 而 packages 是包含了一些文件的包. Schemes 里一般既有 collections 也有 packages, 但是每一个 package 都属于且只属于一个 collection.</p>
+<p>使用 <code>tlmgr info collections</code> 可以列出 collections 的信息.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">❯❯ tlmgr info collections</span><br><span class="line">i collection-basic: Essential programs and files</span><br><span class="line">i collection-bibtexextra: BibTeX additional styles</span><br><span class="line">i collection-binextra: TeX auxiliary programs</span><br><span class="line">i collection-context: ConTeXt and packages</span><br><span class="line">i collection-fontsextra: Additional fonts</span><br><span class="line">i collection-fontsrecommended: Recommended fonts</span><br><span class="line">i collection-fontutils: Graphics and font utilities</span><br><span class="line">i collection-formatsextra: Additional formats</span><br><span class="line">i collection-games: Games typesetting</span><br><span class="line">i collection-humanities: Humanities packages</span><br><span class="line">i collection-langarabic: Arabic</span><br><span class="line">i collection-langchinese: Chinese</span><br><span class="line">i collection-langcjk: Chinese/Japanese/Korean (base)</span><br><span class="line">i collection-langcyrillic: Cyrillic</span><br><span class="line">i collection-langczechslovak: Czech/Slovak</span><br><span class="line">i collection-langenglish: US and UK English</span><br><span class="line">i collection-langeuropean: Other European languages</span><br><span class="line">i collection-langfrench: French</span><br><span class="line">i collection-langgerman: German</span><br><span class="line">i collection-langgreek: Greek</span><br><span class="line">i collection-langitalian: Italian</span><br><span class="line">i collection-langjapanese: Japanese</span><br><span class="line">i collection-langkorean: Korean</span><br><span class="line">i collection-langother: Other languages</span><br><span class="line">i collection-langpolish: Polish</span><br><span class="line">i collection-langportuguese: Portuguese</span><br><span class="line">i collection-langspanish: Spanish</span><br><span class="line">i collection-latex: LaTeX fundamental packages</span><br><span class="line">i collection-latexextra: LaTeX additional packages</span><br><span class="line">i collection-latexrecommended: LaTeX recommended packages</span><br><span class="line">i collection-luatex: LuaTeX packages</span><br><span class="line">i collection-mathscience: Mathematics, natural sciences, computer science packages</span><br><span class="line">i collection-metapost: MetaPost and Metafont packages</span><br><span class="line">i collection-music: Music packages</span><br><span class="line">i collection-pictures: Graphics, pictures, diagrams</span><br><span class="line">i collection-plaingeneric: Plain (La)TeX packages</span><br><span class="line">i collection-pstricks: PSTricks</span><br><span class="line">i collection-publishers: Publisher styles, theses, etc.</span><br><span class="line">i collection-texworks: TeXworks editor; TL includes only the Windows binary</span><br><span class="line">i collection-wintools: Windows-only support programs</span><br><span class="line">i collection-xetex: XeTeX and packages</span><br></pre></td></tr></table></figure>
+<p>用 <code>tlmgr info schemes</code> 可以列出 schemes 的信息</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">❯❯ tlmgr info schemes</span><br><span class="line">i scheme-basic: basic scheme (plain and latex)</span><br><span class="line">i scheme-context: ConTeXt scheme</span><br><span class="line">i scheme-full: full scheme (everything)</span><br><span class="line">i scheme-gust: GUST TeX Live scheme</span><br><span class="line">i scheme-infraonly: infrastructure-only scheme (no TeX at all)</span><br><span class="line">i scheme-medium: medium scheme (small + more packages and languages)</span><br><span class="line">i scheme-minimal: minimal scheme (plain only)</span><br><span class="line">i scheme-small: small scheme (basic + xetex, metapost, a few languages)</span><br><span class="line">i scheme-tetex: teTeX scheme (more than medium, but nowhere near full)</span><br></pre></td></tr></table></figure>
 <p>可以在 <a href="https://tug.org/texlive/doc">TeX Live 文档</a> 查看 TeX Live 的全部可用文档.</p>
 <h2 id="基本格式">基本格式</h2>
 <p><code>tlmgr</code> 使用的基本格式为: <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tlmgr [option...] &lt;action&gt; [option...] [operand...]</span><br></pre></td></tr></table></figure></p>
@@ -549,6 +580,7 @@
 <p>当然，我们必须指定一个真正的主机名及其特定的最高级的 CTAN 目录. 全部可用的 CTAN 镜像可以在 <a href="https://ctan.org/mirrors/mirmon">镜像站列表</a> 处查看.</p>
 <p>下面是一个使用本地目录的例子:</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">-repository /<span class="built_in">local</span>/TL/repository</span><br></pre></td></tr></table></figure>
+<p>也可以使用 <code>--repo</code> 作为 <code>--repository</code> 的简化.</p>
 <p>剩下是一些特定的网络下的设置, 略过.</p>
 <h3 id="gui-action"><code>--gui [action]</code></h3>
 <p><code>tlmgr</code> 有两个 GUI 前端, <code>tlshell</code> 和 <code>tlcockpit</code>, 它们是由不同的程序启动的, 详情可以查看它们的文档.</p>
@@ -668,7 +700,57 @@
 <p>删除备份目录 <code>backupdir</code> 中的旧备份, 而不是创建备份. 可选参数整数值 <code>N</code> 会覆盖 TLPDB 中 <code>autobackup</code> 的值. 如果使用这个选项, 那么必须要指定 <code>--all</code> 或者一列宏包.</p>
 <h4 id="dry-run"><code>--dry-run</code></h4>
 <p>备份或删除的操作将被打印在终端而不真正进行备份或者删除, 如 <code>tlmgr --dry-run backup ctex</code> 会打印出 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">❯❯ tlmgr --dry-run backup ctex</span><br><span class="line">would save current status of ctex to d:/texlive/2020/tlpkg/backups/ctex.r56705.tar.lz4</span><br><span class="line">no action taken due to --dry-run</span><br></pre></td></tr></table></figure></p>
-<p><span id="action-option"> <code>option</code> </span> <span id="user-mode"> <code>USER MODE</code> </span></p>
+<h3 id="candidate-pkg"><code>candidate &lt;pkg&gt;</code></h3>
+<p>显示宏包 <code>&lt;pkg&gt;</code> 的候选仓库 (candidate repository). 见 <a href="#multiple-repository">MULTIPLE REPOSITORY</a></p>
+<h3 id="check-option-dependsexcutesfilesrunfilestexmfdbsall">`check [option] &lt;depends|excutes|files|runfiles|texmfdbs|all&gt;</h3>
+<p>执行安装的一致性 (consistency of installation) 的一个或者全部检查, 如果没发现问题, 那么将不会有输出. (如果想看看 <code>tlmgr</code> 做了什么, 可以用 <code>tlmgr -v check</code>)</p>
+<h4 id="depends"><code>depends</code></h4>
+<p>列出那些没有被安装, 但是作为安装集合的依赖的宏包, 以及哪些没有包含在任何集合中的宏包.</p>
+<p>如果使用 <code>tlmgr check collections</code>, 同样会执行 <code>tlmgr check depends</code>, 因为旧版本的 <code>tlmgr</code> 就是这么做的.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">❯❯ tlmgr check collections</span><br><span class="line">tlmgr.pl: <span class="string">&quot;collections&quot;</span> check has been replaced by <span class="string">&quot;depends&quot;</span>.</span><br></pre></td></tr></table></figure>
+<h4 id="excutes"><code>excutes</code></h4>
+<p>检查 TeX Live 数据库中 <code>execute</code>指令引用的文件是否存在. Check that the files referred to by execute directives in the TeX Live Database are present.</p>
+<h4 id="files"><code>files</code></h4>
+<p>检查列在 TLPDB (<code>texlive.tlpdb</code>) 是否真的存在, 列出不存在的宏包.</p>
+<h4 id="runfiles"><code>runfiles</code></h4>
+<p>列出在执行文件中出现多次的文件名, 除了已知的重复文件名.</p>
+<h4 id="texmfdbs"><code>texmfdbs</code></h4>
+<p>检查与 <code>ls-R</code> 相关的文件. 如果你已经定义了新的 <code>TEXMF</code> 树, 或者更改了 <code>TEXMF</code> 或 <code>TEXMFDBS</code> 变量, 那运行它也没什么坏处 (it can't hurt to run this). 它检查了</p>
+<ul>
+<li>all items in <code>TEXMFDBS</code> have the <code>!!</code> prefix.</li>
+<li>all items in <code>TEXMFBDS</code> have an <code>ls-R</code> file (if they exist at all).</li>
+<li>all items in <code>TEXMF</code> with <code>!!</code> are listed in <code>TEXMFDBS</code>.</li>
+<li>all items in <code>TEXMF</code> with an <code>ls-R</code> file are listed in <code>TEXMFDBS</code>.</li>
+</ul>
+<p>这些没看懂.</p>
+<p><code>check</code> 操作的特定选项:</p>
+<h4 id="use-svn"><code>--use-svn</code></h4>
+<p>在检查 TL 的发展仓库(? development repository) 时, 用 <code>svn status</code> 输出代替文件列表. (This is run nightly).</p>
+<h3 id="conf-dump-tlpdb-generate-gui"><code>conf</code>, <code>dump-tlpdb</code>, <code>generate</code>, <code>gui</code></h3>
+<p>略</p>
+<h3 id="info"><code>info</code></h3>
+<h4 id="info-option-pkg...collectionsschemes"><code>info [option] [pkg...|collections|schemes]</code></h4>
+<p>如果没有参数, 列出仓库中全部的可用宏包, 把哪些已经安装的用 <code>i</code> 作为前缀.</p>
+<p>如果用 <code>collections</code> 或者 <code>schemes</code>, 列出所需的类型, 而不输出宏包名 .</p>
+<p>如果用任何其他的参数, 那么就把参数看成宏包名 <code>&lt;pkg...&gt;</code>, 并列出它的信息: 名称 (name), 分类 (category), 简短以及详细的介绍 (short and long description), 大小 (size), 安装状态 (installation status), 以及 TeX Live 中它的修订号 (TeX Live revision number).</p>
+<p>如果 <code>&lt;pkg...&gt;</code> 在本地与线上都没有找到, 那么将会搜索与它相关的宏包和文件.</p>
+<p>它也会显示从 TeX Catalogue 上获取的信息, 比如宏包版本 (package version), 日期 (date), 和许可证 (license). 考虑这些，特别是宏包版本，获得的信息仅仅是近似的，这是由于不同部分更新的时间偏差造成的.</p>
+<p>旧操作 <code>show</code> 与 <code>list</code> 已经被合并到这个操作中, 但是为了后续的兼容性这两个操作依然可用.</p>
+<p><code>info</code> 操作的特定选项:</p>
+<h4 id="list"><code>--list</code></h4>
+<p>如果指定了 <code>--list</code> 选项, 并且跟了一个宏包 <code>&lt;pkg...&gt;</code>, 那么这个宏包的包含文件也会被展示, 比如执行文件, 源文件, 宏包文档等等, 包括平台特定的从属包 (platform-specific dependencies)</p>
+<p>如果跟的是 <code>schemes</code> 或 <code>collections</code>, 那么输出的内容与不加 <code>--list</code> 相同.</p>
+<h4 id="only-installed"><code>--only-installed</code></h4>
+<p>如果指定这个选项, 那么 <code>tlmgr</code> 只会从本地安装的宏包, collections, 或者 schemes 中寻找信息, 而不使用安装的源.</p>
+<h4 id="only-remote"><code>--only-remote</code></h4>
+<p>只列出在远端仓库的宏包. 这个选项比较适合配合 <code>tlmgr --repo ...</code> 使用, 来查看某个宏包在某远端仓库是否可用, 用 <code>tlmgr --repo ... --only-remote info &lt;pkg...&gt;</code> 即可. <strong>注意</strong> <code>--only-installed</code> 和 <code>--only-remote</code> 不能同时指定.</p>
+<h4 id="data-item1-item2..."><code>--data &lt;item1, item2,...&gt;</code></h4>
+<p>如果制定了 <code>--data</code> 选项, 那它的参数只能从以下内容中选择: <code>name</code>, <code>category</code>, <code>localrev</code>, <code>remoterev</code>, <code>shortdesc</code>, <code>longdesc</code>, <code>installed</code>, <code>size</code>, <code>relocatable</code>, <code>depends</code>, <code>cat-version</code>, <code>cat-date</code>, <code>cat-license</code>, 以及字段 <code>cat-contact-*</code> (见下), 这些内容中间要用逗号<code>,</code>隔开.</p>
+<p><code>cat-*</code> 字段全部从 <a href="https://ctan.org/pkg/catalogue">TeX Catalogue</a> 中获得. 对于每个字段都有两个变种, 带 <code>l</code> 前缀和带 <code>r</code> 前缀, 比如: <code>lcat-version</code> 与 <code>rcat-version</code>, 分别代表了本地和远端的信息. 如果不带 <code>l</code> 和 <code>r</code> 的选项, 那么就显示最近的一个, 通常来说是远端的信息.</p>
+<p>按照这个写法, 那么 <code>cat-contact-*</code> 字段包括了 <code>home</code>, <code>repository</code>, <code>support</code>, <code>bugs</code>, <code>announce</code>, <code>development</code>, 每一个都可能为空, 或者含有一个 url 值, 比如可以用 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tlmgr info --data cat-contact-home amsmath</span><br></pre></td></tr></table></figure> 查看 <code>amsmath</code> 宏包的主页, 可以得到 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">❯❯ tlmgr info --data cat-contact-home amsmath</span><br><span class="line">http://www.ams.org/tex/amslatex.html</span><br></pre></td></tr></table></figure> 关于新宏包的简短的介绍可以在 <a href="https://ctan.org/upload">CTAN upload page</a> 上查看.</p>
+<h4 id="json"><code>--json</code></h4>
+<p>如果指定 <code>--json</code> 选项, 那么将会给出一个 JSON 格式的输出, 可以在 <code>tlpkg/doc/JSON-formats.txt</code> 查看格式信息, 格式定义在 <code>TLPOBJINFO1</code>. 如果 <code>--json</code> 和 <code>--data</code> 同时被指定, 那么 <code>--json</code> 的优先级会更高.</p>
+<p><span id="action-option"> <code>option</code> </span> <span id="user-mode"> <code>USER MODE</code> </span> <span id="multiple-repository"> <code>MULTIPLE REPOSITORY</code> </span></p>
 <section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
@@ -685,32 +767,6 @@
         <tag>LaTeX</tag>
         <tag>帮助文档</tag>
         <tag>tlmgr</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>为博客添加 Gitalk 评论区</title>
-    <url>/2021-03-05-enable-gitalk/</url>
-    <content><![CDATA[<p>在 <a href="/2021-03-03-build-github-io/" title="搭建 github.io">搭建 github.io</a> 中我们配置了 <code>hexo+NexT</code> 的博客, 这次来给它添加一个评论区. 使用的是 <a href="https://github.com/gitalk/gitalk">gitalk</a>.</p>
-<span id="more"></span>
-<p><strong>注意</strong> 该方法可能存在隐私问题, 详见 <a href="https://www.v2ex.com/t/535608">V2EX 论坛</a>.</p>
-<p>在 <code>hexotest/</code> 文件夹下使用</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm i --save gitalk</span><br></pre></td></tr></table></figure>
-<p>来安装 <code>gitalk</code>, 而且 <code>NexT8</code> 内置了 <code>gitalk</code> 的接口, 在 <code>_config.next.yml</code> 中搜索 <code>gitalk</code> 即可看到</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Multiple Comment System Support</span></span><br><span class="line"><span class="attr">comments:</span></span><br><span class="line">  <span class="comment"># Available values: tabs | buttons</span></span><br><span class="line">  <span class="attr">style:</span> <span class="string">tabs</span></span><br><span class="line">  <span class="comment"># Choose a comment system to be displayed by default.</span></span><br><span class="line">  <span class="comment"># Available values: disqus | disqusjs | changyan | livere | gitalk | utterances</span></span><br><span class="line">  <span class="attr">active:</span></span><br><span class="line">  <span class="comment"># Setting `true` means remembering the comment system selected by the visitor.</span></span><br><span class="line">  <span class="attr">storage:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Lazyload all comment systems.</span></span><br><span class="line">  <span class="attr">lazyload:</span> <span class="literal">false</span></span><br><span class="line">  <span class="comment"># Modify texts or order for any navs, here are some examples.</span></span><br><span class="line">  <span class="attr">nav:</span></span><br><span class="line">    <span class="comment">#disqus:</span></span><br><span class="line">    <span class="comment">#  text: Load Disqus</span></span><br><span class="line">    <span class="comment">#  order: -1</span></span><br><span class="line">    <span class="comment">#gitalk:</span></span><br><span class="line">    <span class="comment">#  order: -2</span></span><br><span class="line"><span class="comment"># Gitalk</span></span><br><span class="line"><span class="comment"># For more information: https://gitalk.github.io</span></span><br><span class="line"><span class="attr">gitalk:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">github_id:</span> <span class="comment"># GitHub repo owner</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="comment"># Repository name to store issues</span></span><br><span class="line">  <span class="attr">client_id:</span> <span class="comment"># GitHub Application Client ID</span></span><br><span class="line">  <span class="attr">client_secret:</span> <span class="comment"># GitHub Application Client Secret</span></span><br><span class="line">  <span class="attr">admin_user:</span> <span class="comment"># GitHub repo owner and collaborators, only these guys can initialize gitHub issues</span></span><br><span class="line">  <span class="attr">distraction_free_mode:</span> <span class="literal">true</span> <span class="comment"># Facebook-like distraction free mode</span></span><br><span class="line">  <span class="comment"># When the official proxy is not available, you can change it to your own proxy address</span></span><br><span class="line">  <span class="attr">proxy:</span> <span class="string">https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token</span> <span class="comment"># This is official proxy adress</span></span><br><span class="line">  <span class="comment"># Gitalk&#x27;s display language depends on user&#x27;s browser or system environment</span></span><br><span class="line">  <span class="comment"># If you want everyone visiting your site to see a uniform language, you can set a force language value</span></span><br><span class="line">  <span class="comment"># Available values: en | es-ES | fr | ru | zh-CN | zh-TW</span></span><br><span class="line">  <span class="attr">language:</span></span><br></pre></td></tr></table></figure>
-<p>这里做一下简单的说明.</p>
-<p>首先要在 <a href="https://github.com/settings/developers">github devoloper</a> 创建新的 OAuth App <img src="../img/postimg/githubdevelop.png" /> 点击创建好的 OAuth App, 可以看到 <img src="../img/postimg/clientid.png" /> 点击 <code>Generate a new client secret</code> 可以得到一个 <code>client secret</code>. 把 <code>client ID</code> 与 <code>client secret</code> 分别填写在 <code>yml</code> 文件的 <code>client_id</code> 与 <code>client_secret</code> 字段中, 剩下的字段填自己的信息以及用来存放评论的 repo, 这里我填的 <code>&lt;username&gt;.github.io</code>. 配置好以后, 使用 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g -d</span><br></pre></td></tr></table></figure> 进行在线部署, 随便选一篇博文, 在最下方登录一下 <code>github</code> 完成初始化.</p>
-<p>但是遇到了问题. <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Error: Request failed with status code 403</span><br></pre></td></tr></table></figure> 经查询发现这个问题普遍存在, 比如微信文章 <a href="https://mp.weixin.qq.com/s?__biz=Mzg3MjU3NzU1OA==&amp;mid=2247496606&amp;idx=1&amp;sn=8e0b6e2600f939c5401f2344dce2cba6&amp;source=41#wechat_redirect">记录一次 Bug 排查过程并分享一些经验</a>, <a href="https://github.com/gitalk/gitalk/issues/429">gitalk's issue</a>. 作者也给了相应的<a href="https://github.com/gitalk/gitalk/issues/429#issuecomment-789423631">解决方法</a></p>
-<p>我这里将 <code>proxy</code> 替换为了 <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">proxy:</span> <span class="string">https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token</span></span><br></pre></td></tr></table></figure> 再次 <code>hexo clean &amp;&amp; hexo g -d</code>, 即可使用 <code>gitalk</code>, 评论区会作为设置中的 <code>repo</code> 的 <code>issue</code> 存在.</p>
-]]></content>
-      <categories>
-        <category>配置记录</category>
-        <category>帮助文档</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>配置记录</tag>
-        <tag>帮助文档</tag>
-        <tag>gitalk</tag>
       </tags>
   </entry>
 </search>
