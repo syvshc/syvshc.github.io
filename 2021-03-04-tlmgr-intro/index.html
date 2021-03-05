@@ -583,13 +583,13 @@
 </tbody>
 </table>
 <h3 id="command-logfile-file"><code>--command-logfile &lt;file&gt;</code></h3>
-<p>将 <code>tlmgr</code> 调用的所有程序 (<code>mktexlr</code>, <code>mtxrun</code>, <code>fmtutil</code>, <code>updmap</code>) 的输出写入一个文件 <code>&lt;file&gt;</code> 中, 默认位置为 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TEXMFSYSVAR&#x2F;web2c&#x2F;tlmgr-commands.log</span><br></pre></td></tr></table></figure></p>
+<p>将 <code>tlmgr</code> 调用的所有程序 (<code>mktexlr</code>, <code>mtxrun</code>, <code>fmtutil</code>, <code>updmap</code>) 的输出写入一个文件 <code>&lt;file&gt;</code> 中, 默认位置为 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TEXMFSYSVAR<span class="regexp">/web2c/</span>tlmgr-commands.log</span><br></pre></td></tr></table></figure></p>
 <h3 id="debug-translation"><code>--debug-translation</code></h3>
 <p>一个协助翻译的选项, 略过</p>
 <h3 id="machine-readable"><code>--machine-readable</code></h3>
 <p>将标准输出写成一个更适合计算机解析的格式</p>
 <h3 id="package-logfile-file"><code>--package-logfile &lt;file&gt;</code></h3>
-<p><code>tlmgr</code> 将所有宏包操作 (<code>install</code>, <code>remove</code>, <code>update</code>, <code>failed updates</code>, <code>failed restores</code>) 写入一个单独的日志文件, 默认位置为 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TEXMFSYSVAR&#x2F;web2c&#x2F;tlmgr.log</span><br></pre></td></tr></table></figure> 这个选项让你可以为日志文件指定另一个路径.</p>
+<p><code>tlmgr</code> 将所有宏包操作 (<code>install</code>, <code>remove</code>, <code>update</code>, <code>failed updates</code>, <code>failed restores</code>) 写入一个单独的日志文件, 默认位置为 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TEXMFSYSVAR<span class="regexp">/web2c/</span>tlmgr.log</span><br></pre></td></tr></table></figure> 这个选项让你可以为日志文件指定另一个路径.</p>
 <h3 id="pause"><code>--pause</code></h3>
 <p>让 <code>tlmgr</code> 在退出之前等待用户输入, 在 Windows 上可以避免命令行的消失.</p>
 <h3 id="usermode"><code>--usermode</code></h3>
