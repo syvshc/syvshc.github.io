@@ -702,7 +702,7 @@
 <p>备份或删除的操作将被打印在终端而不真正进行备份或者删除, 如 <code>tlmgr --dry-run backup ctex</code> 会打印出 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">❯❯ tlmgr --dry-run backup ctex</span><br><span class="line">would save current status of ctex to d:/texlive/2020/tlpkg/backups/ctex.r56705.tar.lz4</span><br><span class="line">no action taken due to --dry-run</span><br></pre></td></tr></table></figure></p>
 <h3 id="candidate-pkg"><code>candidate &lt;pkg&gt;</code></h3>
 <p>显示宏包 <code>&lt;pkg&gt;</code> 的候选仓库 (candidate repository). 见 <a href="#multiple-repository">MULTIPLE REPOSITORY</a></p>
-<h3 id="check-option-dependsexcutesfilesrunfilestexmfdbsall">`check [option] &lt;depends|excutes|files|runfiles|texmfdbs|all&gt;</h3>
+<h3 id="check-option-dependsexcutesfilesrunfilestexmfdbsall"><code>check [option] &lt;depends|excutes|files|runfiles|texmfdbs|all&gt;</code></h3>
 <p>执行安装的一致性 (consistency of installation) 的一个或者全部检查, 如果没发现问题, 那么将不会有输出. (如果想看看 <code>tlmgr</code> 做了什么, 可以用 <code>tlmgr -v check</code>)</p>
 <h4 id="depends"><code>depends</code></h4>
 <p>列出那些没有被安装, 但是作为安装集合的依赖的宏包, 以及哪些没有包含在任何集合中的宏包.</p>
