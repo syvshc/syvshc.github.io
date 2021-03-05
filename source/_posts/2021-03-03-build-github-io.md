@@ -19,7 +19,7 @@ categories:
 ### 创建仓库
 在 [github](github.com) 上新建一个仓库, 名称为 `<username>.github.io`, 将 `<username>` 替换为你的 `github` 账户名. 
 ### 安装 `node.js`
-在 [node.js的官网](https://nodejs.org/en/) 上下载 `LTS` 版本安装, 安装后在命令行输入 `npm -v`, 如果有版本号输出, 那么说明安装成功, 如果返回
+在 [node.js的官网](https://nodejs.org/en/) 上下载 `LTS` 版本安装, 记得勾选 `ADD TO PATH`. 安装后在命令行输入 `npm -v`, 如果有版本号输出, 那么说明安装成功, 如果返回
 ```bash
 'npm' 不是内部或外部命令，也不是可运行的程序或批处理文件。
 ```
@@ -104,7 +104,7 @@ hexo d
 hexo n "<blog_name>"
 ```
 
-将 `<blog_name>` 替换为博文的名字, 注意不能有空格, 这里我们使用 `hexo n first-blog`, 成功后会在 `source/_posts/` 文件夹下看到 `first-blog.md` 文件
+将 `<blog_name>` 替换为博文的名字, 注意不能有空格, 这里我们使用 `hexo n "first-blog"`, 成功后会在 `source/_posts/` 文件夹下看到 `first-blog.md` 文件
 
 ```tree
 source
@@ -214,5 +214,9 @@ npm install hexo-theme-next
    \begin{equation}\label{eq:slo}
         x_{1, 2}=\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}
    \end{equation}
+
+3. **gitalk** 配置评论区. 配置方法在 {% post_link enable-gitalk "为博客添加 Gitalk 评论区" %}.
+
+
 
 ## 未完待续

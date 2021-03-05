@@ -33,7 +33,7 @@ TeX Live 由一些最高级别的 schemes 组成, 每一种 scheme 都是由不�
 
 `tlmgr` 使用的基本格式为:
 ```bash
-tlmgr [option...] action [option...] [operand...]
+tlmgr [option...] <action> [option...] [operand...]
 ```
 
 ## 例子
@@ -224,7 +224,7 @@ TeX Live 程序的标准选项也可以使用, 比如 `--help/-h/-?`, `--version
 给出版本信息, 与 `--version` 选项相同, 如果也使用了 `-v` 选项, 那么所使用模块的版本信息也会被打印. 
 
 ### `backup`
-### `backup [option..] <pkg|-all>`
+#### `backup [option..] <pkg|-all>`
 
 如果没有指定 `--clean` 选项, 那么这个操作会创建一个宏包 `<pkg>` 的备份, 如果使用了 `-all` 选项, 则创建一个全部宏包的备份.
 

@@ -50,10 +50,10 @@ darkmode: false
 # ---------------------------------------------------------------
 
 favicon:
-  small: /img/pear-16x16.png
-  medium: /img/pear-32x32.png
-  apple_touch_icon: /img/pear.png
-  safari_pinned_tab: /img/pear.svg
+  small: /img/avatar/pear-16x16.png
+  medium: /img/avatar/pear-32x32.png
+  apple_touch_icon: /img/avatar/pear.png
+  safari_pinned_tab: /img/avatar/pear.svg
   #android_manifest: /manifest.json
 
 # Custom Logo (Warning: Do not support scheme Mist)
@@ -125,8 +125,8 @@ sidebar:
 # Sidebar Avatar
 avatar:
   # Replace the default image and set the url here.
-  # url: /img/paw.png
-  url: /img/paw-solid.svg
+  # url: /img/avatar/paw.png
+  url: /img/avatar/paw-solid.svg
   # If true, the avatar will be dispalyed in circle.
   rounded: false
   # If true, the avatar will be rotated with the cursor.
@@ -293,8 +293,8 @@ reward_settings:
   # comment: Buy me a coffee
 
 reward:
-  wechatpay: /img/wechatpay.png
-  alipay: /img/alipay.jpg
+  wechatpay: /img/avatar/wechatpay.png
+  alipay: /img/avatar/alipay.jpg
   #paypal: /images/paypal.png
   #bitcoin: /images/bitcoin.png
 
