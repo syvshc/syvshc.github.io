@@ -1,6 +1,204 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hello World</title>
+    <url>/2020-12-12-hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>beamer 的字体设置</title>
+    <url>/2021-03-03-beamer-font-set/</url>
+    <content><![CDATA[<p>在使用 <code>beamer</code> 文档类的时候, 可能会有需要更换字体.</p>
+<span id="more"></span>
+<p>如果按照 <code>article</code> 的方式设置正文字体:</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;beamer&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;amsmath, fontspec&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Utpurus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">\setmainfont</span>&#123;Fira Sans&#125;</span><br><span class="line">    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Utpurus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<p>会发现字体并没有发生变化</p>
+<p><img src="https://pic4.zhimg.com/80/v2-a79642cc1fef73b11effa52b21dc02ca.png" /></p>
+<p>查阅 <code>texdoc beamer</code> 的 18.1 节会发现如果想使用其他字体, 需要设置 <code>\usefonttheme&#123;professionalfonts&#125;</code>, 但是添加了该命令后修改依旧失败.</p>
+<p>在群里咨询后得知, <code>\setmainfont&#123;Fira Sans&#125;</code> 命令修改的字体为 <code>rmfamily</code>, 默认为衬线体. 所以要先将字体设置为衬线体 <code>\usefonttheme&#123;serif&#125;</code>, 再进行修改:</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;beamer&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;amsmath, fontspec&#125;</span><br><span class="line"><span class="keyword">\usefonttheme</span>&#123;serif&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </span><br><span class="line">    Utpurus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">\setmainfont</span>&#123;Fira Sans&#125;</span><br><span class="line">    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </span><br><span class="line">    Utpurus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://pic4.zhimg.com/80/v2-2078e554f7891d8ae674b0dd7d87a97b.png" /></p>
+<p>另外, 因为 <code>beamer</code> 文档类默认正文使用无衬线体, 于是也可以偷鸡地设置 <code>\setsansfont&#123;Fira Sans&#125;</code> 但是这样做会导致数学模式的 <code>\mathrm</code> 变成衬线体</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;beamer&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;amsmath&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;fontspec&#125;</span><br><span class="line"><span class="keyword">\setsansfont</span>&#123;Fira Sans&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span><br><span class="line">    Utpurus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.</span><br><span class="line">    <span class="keyword">\[</span></span><br><span class="line">        <span class="keyword">\int</span><span class="built_in">_</span>&#123;0&#125;<span class="built_in">^</span>&#123;<span class="keyword">\pi</span>&#125;<span class="keyword">\sin</span> x<span class="keyword">\,</span><span class="keyword">\mathrm</span>&#123;d&#125;x=2 </span><br><span class="line">    <span class="keyword">\]</span></span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://pic4.zhimg.com/80/v2-94edf62ee34ec47955526aabbba5a438.png" /></p>
+<p>在 <code>texdoc fontspec</code> 中查找原因, 可以在 3.2 节 Maths fonts adjustments 中找到</p>
+<p><img src="https://pic4.zhimg.com/80/v2-6ded00e03780caf7534fb7a3e5f7a9a9.png" /></p>
+<p>即在默认设置下, <code>fontspec</code> 宏包会将数学字体设置成 <code>Computer Modern</code>, 于是我们需要用 <code>no-math</code> 选项来阻止它, 同时 <code>\mathrm&#123;d&#125;</code> 也会调用 <code>rmfamily</code> 的字体, 我们将它改为 <code>\mathsf&#123;d&#125;</code>:</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;beamer&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;amsmath&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>[no-math]&#123;fontspec&#125;</span><br><span class="line"><span class="keyword">\setsansfont</span>&#123;Fira Sans&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span><br><span class="line">    Utpurus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.</span><br><span class="line">    <span class="keyword">\[</span></span><br><span class="line">        <span class="keyword">\int</span><span class="built_in">_</span>&#123;0&#125;<span class="built_in">^</span>&#123;<span class="keyword">\pi</span>&#125;<span class="keyword">\sin</span> x<span class="keyword">\,</span><span class="keyword">\mathsf</span>&#123;d&#125;x=2</span><br><span class="line">    <span class="keyword">\]</span></span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<p>这个暂时不知道是什么原因导致的. 如果想正文和数学公式都使用 Fira 系列的字体, 同时保留衬线字体, 可以如下设置: <figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;beamer&#125;</span><br><span class="line"><span class="comment">% \usepackage[no-math]&#123;fontspec&#125;</span></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;unicode-math&#125;</span><br><span class="line"><span class="keyword">\usefonttheme</span>&#123;serif&#125;</span><br><span class="line"><span class="comment">% \setsansfont&#123;Fira Sans&#125;</span></span><br><span class="line"><span class="keyword">\setmainfont</span>&#123;Fira Sans&#125;</span><br><span class="line"><span class="keyword">\setsansfont</span>&#123;CMU Serif&#125;</span><br><span class="line"><span class="keyword">\setmathfont</span>&#123;Fira Math&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">    <span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">        Handgloves, <span class="built_in">$</span><span class="keyword">\sin</span><span class="built_in">$</span>, <span class="built_in">$</span><span class="keyword">\mathrm</span>&#123;Handgloves&#125;<span class="built_in">$</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">\textsf</span>&#123;this is CMU Serif&#125;</span><br><span class="line">    <span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure> <img src="https://pic4.zhimg.com/80/v2-84d784c2f5396f6b2e529e0d7506b38d.png" /></p>
+<p>如果设置中文字体, 使用 <code>ctexbeamer</code> 文档类并设置 <code>\setCJK(main, sans, mono)font</code>, 类比上文即可.</p>
+]]></content>
+      <categories>
+        <category>LaTeX</category>
+        <category>字体</category>
+      </categories>
+      <tags>
+        <tag>字体设置</tag>
+        <tag>LaTeX</tag>
+        <tag>示例</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>搭建 github.io</title>
+    <url>/2021-03-03-build-github-io/</url>
+    <content><![CDATA[<p><strong>在 NexT 主题更新 8.0 之后又重新配置了一次 <code>hexo+NexT</code>, 这次来记录一下, 并且会随时更新新增的配置.</strong></p>
+<span id="more"></span>
+<h2 id="准备工作">准备工作</h2>
+<p>假定用户的电脑上已经安装 <code>git</code>, 并且已经与 <a href="github.com">github</a> 连接, 并熟悉 <code>git</code> 的相关操作.</p>
+<h3 id="创建仓库">创建仓库</h3>
+<p>在 <a href="github.com">github</a> 上新建一个仓库, 名称为 <code>&lt;username&gt;.github.io</code>, 将 <code>&lt;username&gt;</code> 替换为你的 <code>github</code> 账户名. ### 安装 <code>node.js</code> 在 <a href="https://nodejs.org/en/">node.js的官网</a> 上下载 <code>LTS</code> 版本安装, 记得勾选 <code>ADD TO PATH</code>. 安装后在命令行输入 <code>npm -v</code>, 如果有版本号输出, 那么说明安装成功, 如果返回 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;npm&#x27;</span> 不是内部或外部命令，也不是可运行的程序或批处理文件。</span><br></pre></td></tr></table></figure> 那么将 <code>&lt;InstallPath&gt;/nodejs</code> 添加到环境变量. 然后命令行运行 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure> 安装 <code>hexo</code>, 确保安装后可以运行 <code>hexo</code> 命令. ### 初始化博客 用 <code>cmd</code> 进入想存放博客的文件夹, 运行 <code>hexo init &lt;blogname&gt;</code>, 将 <code>&lt;blogname&gt;</code> 替换成博客的项目名, 比如 <code>hexotest</code>. 因为 <code>hexo init</code> 的过程要链接 <code>github</code>, 如果出现卡顿, 可以尝试看这个<a href="https://weilining.github.io/201021.html">博客</a>尝试解决.</p>
+<p>初始化结束后会看到这样的文件树</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexotest</span><br><span class="line"> ├── db.json</span><br><span class="line"> ├── node_modules</span><br><span class="line"> ├── package-lock.json</span><br><span class="line"> ├── package.json</span><br><span class="line"> ├── public</span><br><span class="line"> ├── scaffolds</span><br><span class="line"> ├── source</span><br><span class="line"> ├── themes</span><br><span class="line"> ├── _config.landscape.yml</span><br><span class="line"> └── _config.yml</span><br></pre></td></tr></table></figure>
+<h2 id="部署博客">部署博客</h2>
+<h3 id="本地部署">本地部署</h3>
+<p>我们进入 <code>hexotest</code> 文件夹, 输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>会有如下输出</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">INFO  Validating config</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
+<p>这时在浏览器中输入 <code>localhost:4000</code> 即可看到部署在本地的博客</p>
+<p><img src="https://pic4.zhimg.com/80/v2-8c21ffd0058d9cba4be5da45c49f1663.png" /></p>
+<p>然后我们命令行输入 <code>ctrl+C</code> 来结束本地部署.</p>
+<h3 id="在线部署">在线部署</h3>
+<p>当然我们写博客的目的大多都是要上传到互联网, 于是我们要把博客部署到 <code>&lt;username&gt;.github.io</code>.</p>
+<p>打开 <code>hexotest</code> 下的 <code>_config.yml</code> 配置文件, 找到 <code>deploy</code>, 填入以下信息</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">&lt;git</span> <span class="string">repo</span> <span class="string">ssh</span> <span class="string">address&gt;</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+<p>再运行</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>等待部署成功, 成功后就可以在 <code>&lt;username&gt;.github.io</code> 上看到博客的内容了.</p>
+<h2 id="创建博文">创建博文</h2>
+<h3 id="新建博文">新建博文</h3>
+<p>在 <code>hexotest/</code> 文件夹下, 用 <code>cmd</code> 执行</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo n <span class="string">&quot;&lt;blog_name&gt;&quot;</span></span><br></pre></td></tr></table></figure>
+<p>将 <code>&lt;blog_name&gt;</code> 替换为博文的名字, 注意不能有空格, 这里我们使用 <code>hexo n "first-blog"</code>, 成功后会在 <code>source/_posts/</code> 文件夹下看到 <code>first-blog.md</code> 文件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">source</span><br><span class="line">└── _posts</span><br><span class="line">   ├── first-blog.md</span><br><span class="line">   └── hello-world.md</span><br></pre></td></tr></table></figure>
+<p>同时我们还发现了另一个文件 <code>hello-world.md</code>, 这就是我们在本地部署成功后看到的那一篇博文.</p>
+<p>用熟悉的编辑器打开 <code>first-blog.md</code>, 将其内容修改为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 第一篇博文</span><br><span class="line">date: 2021-03-04 00:32:07</span><br><span class="line">tags:</span><br><span class="line">    - [博文]</span><br><span class="line">    - [测试]</span><br><span class="line">    - [whatever]</span><br><span class="line">categories:</span><br><span class="line">    - [测试, 测试的子分类]</span><br><span class="line">---</span><br><span class="line">这是我的第一篇博文</span><br></pre></td></tr></table></figure>
+<p>其中 <code>tags</code> 与 <code>categories</code> 可以自行设置, 它们的关系可以参考这个<a href="https://www.zhihu.com/question/19561626">问题</a></p>
+<p>再使用 <code>hexo g &amp;&amp; hexo s</code> 进行本地部署, 在 <code>localhost:4000</code> 看到刚刚编辑的博文"第一篇博文", 点进去可以看到</p>
+<p><img src="https://pic4.zhimg.com/80/v2-797a1b83cb08f7653adcb43d56838b8c.png" /></p>
+<p>然后可以再使用 <code>hexo d</code> 将其推送到 <code>&lt;username&gt;.github.io</code>, 等待一会如果没有更新内容, 那么就执行一下 <code>hexo clean</code> 来清空部署缓存. 于是我们将博文推送到远端的命令可以归为</p>
+<p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure></p>
+<h2 id="美化界面">美化界面</h2>
+<h3 id="配置基本信息">配置基本信息</h3>
+<p>配置文件 <code>hexotest/_config.yml</code> 是对应于我们博客的最高级的配置文件, 里面有一些字段可以进行配置, 作为示例修改了下面几项</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: SYVHSC&#39;s BLOG</span><br><span class="line">subtitle: &#39;&#39;</span><br><span class="line">description: &#39;无锤乙醇的博客&#39;</span><br><span class="line">keywords: LaTeX, 数学</span><br><span class="line">author: 无锤乙醇</span><br><span class="line">language: zh-CN</span><br><span class="line">timezone: Asia&#x2F;Shanghai</span><br></pre></td></tr></table></figure>
+<p>进行本地部署可以看到</p>
+<p><img src="https://pic4.zhimg.com/80/v2-8121a42938033c596ae6e0a8022d1bcd.png" /></p>
+<h3 id="更换主题">更换主题</h3>
+<p>这里我们选用 <code>NexT</code> 主题进行配置. 由于 <code>NexT8.0+</code> 已经支持 <code>npm</code> 安装, 于是可以在目录 <code>hexotest/</code> 下用 <code>cmd</code> 执行</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-theme-next</span><br></pre></td></tr></table></figure>
+<p>并在 <code>hexotest/_config.yml</code> 中找到 <code>theme</code> 字段, 修改为 <code>theme: next</code>, 保存后本地部署, 可以看到博客的主题已经更换</p>
+<p><img src="https://pic4.zhimg.com/80/v2-d115746d176f5fb3a6aa6ac7d05e73ba.png" /></p>
+<p>然后我们可以把 <code>node_modules/hexo-theme-next/</code> 中的 <code>_config.yml</code> 改为 <code>_config.next.yml</code> 并且复制到根目录 <code>hexotest/</code> 下进行修改, 这样当我们升级 <code>NexT</code> 主题的时候不需要重新配置.</p>
+<h3 id="下面配置-next-主题的一些事项-这里只介绍一些功能的作用-并不具体配置.">下面配置 <code>NexT</code> 主题的一些事项, 这里只介绍一些功能的作用, 并不具体配置.</h3>
+<ol type="1">
+<li><strong>scheme</strong> <code>NexT</code> 主题内置了 4 种样式, 可以依次启用来选择一个适合自己的, 这里我选择了 <code>Gemini</code>;</li>
+<li><strong>favicon</strong> 配置标签页的图标, 可以自行选择图片, 放在 <code>hexotest/source/img</code> 文件夹下便于寻找, 设置中的路径也应改为 <code>/img/***.png(jpg, svg...)</code>;</li>
+<li><strong>menu</strong> 配置博客页面的链接;</li>
+<li><strong>social</strong> 配置博客页面的外部链接, 图标可以在 <a href="https://fontawesome.com/">fontawsome</a> 进行选择;</li>
+<li><strong>avatar</strong> 配置博客侧边栏的头像, 图片选择同 <strong>favicon</strong>;</li>
+<li><strong>toc</strong> 配置浏览博文时侧边栏的目录;</li>
+<li><strong>font</strong> 配置文章中的字体; 在 <code>_config.next.yml</code> 中不能配置多种字体, 如果想配置多种字体, 可以修改 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexotest\node_modules\hexo-theme-next\source\css\_variables\base.styl</span><br></pre></td></tr></table></figure> 中的 <code>\\Font families</code> 中的值</li>
+<li><strong>codeblock</strong> 配置代码块;</li>
+<li><strong>back2top</strong> 配置返回顶部的按钮;</li>
+<li><strong>reading_progress</strong> 配置阅读进度条;</li>
+<li><strong>symbols_count_time</strong> 配置站点字数和阅读时间统计, <a href="https://github.com/next-theme/hexo-word-counter">使用方法</a>;</li>
+<li><strong>creative_commons</strong> 配置文末版权信息, 关于 cc 协议可以参考<a href="https://zhuanlan.zhihu.com/p/20641764">知乎专栏</a>;</li>
+<li><strong>local_search</strong> 配置搜索栏, <a href="https://github.com/theme-next/hexo-generator-searchdb">使用方法</a>;</li>
+<li><strong>links_settings &amp; links</strong> 配置友情链接;</li>
+</ol>
+<h3 id="这是一些不知道放到哪里的配置">这是一些不知道放到哪里的配置</h3>
+<ol type="1">
+<li><p><strong>markdown-it-plus</strong> 可以提供脚注等功能, 目录, emoji, katex 等功能, <a href="https://github.com/CHENXCHEN/hexo-renderer-markdown-it-plus">使用方法</a> emoji 功能与 <code>hexo-renderer-pandoc</code> 冲突;</p></li>
+<li><p><strong>hexo-renderer-pandoc</strong> 提供 mathjax 渲染, 将 <code>tags</code> 设置为 <code>ams</code> 还可以使用公式编号<a href="https://theme-next.js.org/docs/third-party-services/math-equations">使用方法</a>;</p>
+<p>示例: <figure class="highlight latex"><table><tr><td class="code"><pre><span class="line">一元二次方程组 <span class="built_in">$</span>ax<span class="built_in">^</span>&#123;2&#125;+bx+c=0<span class="keyword">\ </span>(a <span class="keyword">\ne</span> 0)<span class="built_in">$</span> 的解为 <span class="built_in">$</span><span class="keyword">\eqref</span>&#123;eq:slo&#125;<span class="built_in">$</span></span><br><span class="line"><span class="comment">% 注意: 行内公式的 $...$ 前后不要有空格</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;equation&#125;<span class="keyword">\label</span>&#123;eq:slo&#125;</span><br><span class="line">     x<span class="built_in">_</span>&#123;1, 2&#125;=<span class="keyword">\frac</span>&#123;-b<span class="keyword">\pm</span><span class="keyword">\sqrt</span>&#123;b<span class="built_in">^</span>&#123;2&#125;-4ac&#125;&#125;&#123;2a&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;equation&#125;</span><br></pre></td></tr></table></figure> 一元二次方程组 <span class="math inline">\(ax^{2}+bx+c=0\ (a \ne 0)\)</span> 的解为 <span class="math inline">\(\eqref{eq:slo}\)</span><br />
+<span class="math display">\[\begin{equation}\label{eq:slo}
+     x_{1, 2}=\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}
+\end{equation}\]</span></p></li>
+<li><p><strong>gitalk</strong> 配置评论区. 配置方法在 <a href="/2021-03-05-enable-gitalk/" title="为博客添加 Gitalk 评论区">为博客添加 Gitalk 评论区</a>.</p></li>
+</ol>
+<h2 id="未完待续">未完待续</h2>
+]]></content>
+      <categories>
+        <category>配置记录</category>
+        <category>帮助文档</category>
+      </categories>
+      <tags>
+        <tag>配置记录</tag>
+        <tag>帮助文档</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>欢迎来到我的 GitHub.io</title>
+    <url>/2020-12-12-welcome/</url>
+    <content><![CDATA[<h1 id="这里是无锤乙醇的-github.io">这里是无锤乙醇的 <code>GitHub.io</code></h1>
+<p>花了小一天来折腾 Hexo NexT 主题, 也算是把基本配置弄好了, 咕了好久的博客也是搭好了, 还有一些坑没有填, 比如<a href="https://blog.dlzhang.com/posts/32/">自定义侧边栏图标</a>, 有时间慢慢折腾吧.</p>
+<p>接下来会把简书里的东西搬到这里, <del><a href="https://syvshc.gitee.io">Gitee Pages</a> 是主要更新的地方, 这边会同步更新.</del> 就搁这更新了, Gitee 不折腾了</p>
+<p>并且这篇文章会被用做测试</p>
+<span id="more"></span>
+<h1 id="测试">测试</h1>
+<p>更新了字体, <a href="https://leay.net/2020/02/14/hexo-next-font/">字体配置方法</a></p>
+<p>this is a footnote test <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>this is a equation <span class="math inline">\(ax^{2}+bx+c=0\,(a\ne 0)\)</span>, which solution is <span class="math display">\[x_{1, 2}=\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}\]</span></p>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>footnote<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>为博客添加 Gitalk 评论区</title>
+    <url>/2021-03-05-enable-gitalk/</url>
+    <content><![CDATA[<p>在 <a href="/2021-03-03-build-github-io/" title="搭建 github.io">搭建 github.io</a> 中我们配置了 <code>hexo+NexT</code> 的博客, 这次来给它添加一个评论区. 使用的是 <a href="https://github.com/gitalk/gitalk">gitalk</a>.</p>
+<span id="more"></span>
+<p><strong>注意</strong> 该方法可能存在隐私问题, 详见 <a href="https://www.v2ex.com/t/535608">V2EX 论坛</a>.</p>
+<p>在 <code>hexotest/</code> 文件夹下使用</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm i --save gitalk</span><br></pre></td></tr></table></figure>
+<p>来安装 <code>gitalk</code>, 而且 <code>NexT8</code> 内置了 <code>gitalk</code> 的接口, 在 <code>_config.next.yml</code> 中搜索 <code>gitalk</code> 即可看到</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Multiple Comment System Support</span></span><br><span class="line"><span class="attr">comments:</span></span><br><span class="line">  <span class="comment"># Available values: tabs | buttons</span></span><br><span class="line">  <span class="attr">style:</span> <span class="string">tabs</span></span><br><span class="line">  <span class="comment"># Choose a comment system to be displayed by default.</span></span><br><span class="line">  <span class="comment"># Available values: disqus | disqusjs | changyan | livere | gitalk | utterances</span></span><br><span class="line">  <span class="attr">active:</span></span><br><span class="line">  <span class="comment"># Setting `true` means remembering the comment system selected by the visitor.</span></span><br><span class="line">  <span class="attr">storage:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Lazyload all comment systems.</span></span><br><span class="line">  <span class="attr">lazyload:</span> <span class="literal">false</span></span><br><span class="line">  <span class="comment"># Modify texts or order for any navs, here are some examples.</span></span><br><span class="line">  <span class="attr">nav:</span></span><br><span class="line">    <span class="comment">#disqus:</span></span><br><span class="line">    <span class="comment">#  text: Load Disqus</span></span><br><span class="line">    <span class="comment">#  order: -1</span></span><br><span class="line">    <span class="comment">#gitalk:</span></span><br><span class="line">    <span class="comment">#  order: -2</span></span><br><span class="line"><span class="comment"># Gitalk</span></span><br><span class="line"><span class="comment"># For more information: https://gitalk.github.io</span></span><br><span class="line"><span class="attr">gitalk:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">github_id:</span> <span class="comment"># GitHub repo owner</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="comment"># Repository name to store issues</span></span><br><span class="line">  <span class="attr">client_id:</span> <span class="comment"># GitHub Application Client ID</span></span><br><span class="line">  <span class="attr">client_secret:</span> <span class="comment"># GitHub Application Client Secret</span></span><br><span class="line">  <span class="attr">admin_user:</span> <span class="comment"># GitHub repo owner and collaborators, only these guys can initialize gitHub issues</span></span><br><span class="line">  <span class="attr">distraction_free_mode:</span> <span class="literal">true</span> <span class="comment"># Facebook-like distraction free mode</span></span><br><span class="line">  <span class="comment"># When the official proxy is not available, you can change it to your own proxy address</span></span><br><span class="line">  <span class="attr">proxy:</span> <span class="string">https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token</span> <span class="comment"># This is official proxy adress</span></span><br><span class="line">  <span class="comment"># Gitalk&#x27;s display language depends on user&#x27;s browser or system environment</span></span><br><span class="line">  <span class="comment"># If you want everyone visiting your site to see a uniform language, you can set a force language value</span></span><br><span class="line">  <span class="comment"># Available values: en | es-ES | fr | ru | zh-CN | zh-TW</span></span><br><span class="line">  <span class="attr">language:</span></span><br></pre></td></tr></table></figure>
+<p>这里做一下简单的说明.</p>
+<p>首先要在 <a href="https://github.com/settings/developers">github devoloper</a> 创建新的 OAuth App <img src="../img/postimg/githubdevelop.png" /> 点击创建好的 OAuth App, 可以看到 <img src="../img/postimg/clientid.png" /> 点击 <code>Generate a new client secret</code> 可以得到一个 <code>client secret</code>. 把 <code>client ID</code> 与 <code>client secret</code> 分别填写在 <code>yml</code> 文件的 <code>client_id</code> 与 <code>client_secret</code> 字段中, 剩下的字段填自己的信息以及用来存放评论的 repo, 这里我填的 <code>&lt;username&gt;.github.io</code>. 配置好以后, 使用 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g -d</span><br></pre></td></tr></table></figure> 进行在线部署, 随便选一篇博文, 在最下方登录一下 <code>github</code> 完成初始化.</p>
+<p>但是遇到了问题. <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Error: Request failed with status code 403</span><br></pre></td></tr></table></figure> 经查询发现这个问题普遍存在, 比如微信文章 <a href="https://mp.weixin.qq.com/s?__biz=Mzg3MjU3NzU1OA==&amp;mid=2247496606&amp;idx=1&amp;sn=8e0b6e2600f939c5401f2344dce2cba6&amp;source=41#wechat_redirect">记录一次 Bug 排查过程并分享一些经验</a>, <a href="https://github.com/gitalk/gitalk/issues/429">gitalk's issue</a>. 作者也给了相应的<a href="https://github.com/gitalk/gitalk/issues/429#issuecomment-789423631">解决方法</a></p>
+<p>我这里将 <code>proxy</code> 替换为了 <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">proxy:</span> <span class="string">https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token</span></span><br></pre></td></tr></table></figure> 再次 <code>hexo clean &amp;&amp; hexo g -d</code>, 即可使用 <code>gitalk</code>, 评论区会作为设置中的 <code>repo</code> 的 <code>issue</code> 存在.</p>
+]]></content>
+      <categories>
+        <category>配置记录</category>
+        <category>帮助文档</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>配置记录</tag>
+        <tag>帮助文档</tag>
+        <tag>gitalk</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Win10+Ubuntu18.04LTS双系统安装记录</title>
     <url>/2020-12-12-Windows-and-Ubuntu/</url>
     <content><![CDATA[<p>本文记录过程的时候会同时记录踩过的坑, 这些坑有一些是由于我自己的操作不当, 还有一些是由于网上的教程版本过旧或书写错误造成的, 我都会记录下来, 但是文中的一些文本的描述会与系统标准输出的文本有一定差异, 只要不影响命令的运行的文字笔者不会过分追求一字不差. 那么我们开始吧<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
@@ -153,181 +351,9 @@
         <category>帮助文档</category>
       </categories>
       <tags>
+        <tag>配置记录</tag>
         <tag>系统安装</tag>
-        <tag>配置记录</tag>
         <tag>帮助问题</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2020-12-12-hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>杂项</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>欢迎来到我的 GitHub.io</title>
-    <url>/2020-12-12-welcome/</url>
-    <content><![CDATA[<h1 id="这里是无锤乙醇的-github.io">这里是无锤乙醇的 <code>GitHub.io</code></h1>
-<p>花了小一天来折腾 Hexo NexT 主题, 也算是把基本配置弄好了, 咕了好久的博客也是搭好了, 还有一些坑没有填, 比如<a href="https://blog.dlzhang.com/posts/32/">自定义侧边栏图标</a>, 有时间慢慢折腾吧.</p>
-<p>接下来会把简书里的东西搬到这里, <del><a href="https://syvshc.gitee.io">Gitee Pages</a> 是主要更新的地方, 这边会同步更新.</del> 就搁这更新了, Gitee 不折腾了</p>
-<p>并且这篇文章会被用做测试</p>
-<span id="more"></span>
-<h1 id="测试">测试</h1>
-<p>更新了字体, <a href="https://leay.net/2020/02/14/hexo-next-font/">字体配置方法</a></p>
-<p>this is a footnote test <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<p>this is a equation <span class="math inline">\(ax^{2}+bx+c=0\,(a\ne 0)\)</span>, which solution is <span class="math display">\[x_{1, 2}=\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}\]</span></p>
-<section class="footnotes" role="doc-endnotes">
-<hr />
-<ol>
-<li id="fn1" role="doc-endnote"><p>footnote<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
-]]></content>
-      <categories>
-        <category>杂项</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>beamer 的字体设置</title>
-    <url>/2021-03-03-beamer-font-set/</url>
-    <content><![CDATA[<p>在使用 <code>beamer</code> 文档类的时候, 可能会有需要更换字体.</p>
-<span id="more"></span>
-<p>如果按照 <code>article</code> 的方式设置正文字体:</p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;beamer&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;amsmath, fontspec&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Utpurus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">\setmainfont</span>&#123;Fira Sans&#125;</span><br><span class="line">    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Utpurus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
-<p>会发现字体并没有发生变化</p>
-<p><img src="https://pic4.zhimg.com/80/v2-a79642cc1fef73b11effa52b21dc02ca.png" /></p>
-<p>查阅 <code>texdoc beamer</code> 的 18.1 节会发现如果想使用其他字体, 需要设置 <code>\usefonttheme&#123;professionalfonts&#125;</code>, 但是添加了该命令后修改依旧失败.</p>
-<p>在群里咨询后得知, <code>\setmainfont&#123;Fira Sans&#125;</code> 命令修改的字体为 <code>rmfamily</code>, 默认为衬线体. 所以要先将字体设置为衬线体 <code>\usefonttheme&#123;serif&#125;</code>, 再进行修改:</p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;beamer&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;amsmath, fontspec&#125;</span><br><span class="line"><span class="keyword">\usefonttheme</span>&#123;serif&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </span><br><span class="line">    Utpurus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">\setmainfont</span>&#123;Fira Sans&#125;</span><br><span class="line">    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </span><br><span class="line">    Utpurus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://pic4.zhimg.com/80/v2-2078e554f7891d8ae674b0dd7d87a97b.png" /></p>
-<p>另外, 因为 <code>beamer</code> 文档类默认正文使用无衬线体, 于是也可以偷鸡地设置 <code>\setsansfont&#123;Fira Sans&#125;</code> 但是这样做会导致数学模式的 <code>\mathrm</code> 变成衬线体</p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;beamer&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;amsmath&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;fontspec&#125;</span><br><span class="line"><span class="keyword">\setsansfont</span>&#123;Fira Sans&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span><br><span class="line">    Utpurus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.</span><br><span class="line">    <span class="keyword">\[</span></span><br><span class="line">        <span class="keyword">\int</span><span class="built_in">_</span>&#123;0&#125;<span class="built_in">^</span>&#123;<span class="keyword">\pi</span>&#125;<span class="keyword">\sin</span> x<span class="keyword">\,</span><span class="keyword">\mathrm</span>&#123;d&#125;x=2 </span><br><span class="line">    <span class="keyword">\]</span></span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://pic4.zhimg.com/80/v2-94edf62ee34ec47955526aabbba5a438.png" /></p>
-<p>在 <code>texdoc fontspec</code> 中查找原因, 可以在 3.2 节 Maths fonts adjustments 中找到</p>
-<p><img src="https://pic4.zhimg.com/80/v2-6ded00e03780caf7534fb7a3e5f7a9a9.png" /></p>
-<p>即在默认设置下, <code>fontspec</code> 宏包会将数学字体设置成 <code>Computer Modern</code>, 于是我们需要用 <code>no-math</code> 选项来阻止它, 同时 <code>\mathrm&#123;d&#125;</code> 也会调用 <code>rmfamily</code> 的字体, 我们将它改为 <code>\mathsf&#123;d&#125;</code>:</p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;beamer&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;amsmath&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>[no-math]&#123;fontspec&#125;</span><br><span class="line"><span class="keyword">\setsansfont</span>&#123;Fira Sans&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span><br><span class="line">    Utpurus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.</span><br><span class="line">    <span class="keyword">\[</span></span><br><span class="line">        <span class="keyword">\int</span><span class="built_in">_</span>&#123;0&#125;<span class="built_in">^</span>&#123;<span class="keyword">\pi</span>&#125;<span class="keyword">\sin</span> x<span class="keyword">\,</span><span class="keyword">\mathsf</span>&#123;d&#125;x=2</span><br><span class="line">    <span class="keyword">\]</span></span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
-<p>这个暂时不知道是什么原因导致的. 如果想正文和数学公式都使用 Fira 系列的字体, 同时保留衬线字体, 可以如下设置: <figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;beamer&#125;</span><br><span class="line"><span class="comment">% \usepackage[no-math]&#123;fontspec&#125;</span></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;unicode-math&#125;</span><br><span class="line"><span class="keyword">\usefonttheme</span>&#123;serif&#125;</span><br><span class="line"><span class="comment">% \setsansfont&#123;Fira Sans&#125;</span></span><br><span class="line"><span class="keyword">\setmainfont</span>&#123;Fira Sans&#125;</span><br><span class="line"><span class="keyword">\setsansfont</span>&#123;CMU Serif&#125;</span><br><span class="line"><span class="keyword">\setmathfont</span>&#123;Fira Math&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">    <span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">        Handgloves, <span class="built_in">$</span><span class="keyword">\sin</span><span class="built_in">$</span>, <span class="built_in">$</span><span class="keyword">\mathrm</span>&#123;Handgloves&#125;<span class="built_in">$</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">\textsf</span>&#123;this is CMU Serif&#125;</span><br><span class="line">    <span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure> <img src="https://pic4.zhimg.com/80/v2-84d784c2f5396f6b2e529e0d7506b38d.png" /></p>
-<p>如果设置中文字体, 使用 <code>ctexbeamer</code> 文档类并设置 <code>\setCJK(main, sans, mono)font</code>, 类比上文即可.</p>
-]]></content>
-      <categories>
-        <category>LaTeX</category>
-        <category>字体</category>
-      </categories>
-      <tags>
-        <tag>字体设置</tag>
-        <tag>LaTeX</tag>
-        <tag>示例</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>搭建 github.io</title>
-    <url>/2021-03-03-build-github-io/</url>
-    <content><![CDATA[<p><strong>在 NexT 主题更新 8.0 之后又重新配置了一次 <code>hexo+NexT</code>, 这次来记录一下, 并且会随时更新新增的配置.</strong></p>
-<span id="more"></span>
-<h2 id="准备工作">准备工作</h2>
-<p>假定用户的电脑上已经安装 <code>git</code>, 并且已经与 <a href="github.com">github</a> 连接, 并熟悉 <code>git</code> 的相关操作.</p>
-<h3 id="创建仓库">创建仓库</h3>
-<p>在 <a href="github.com">github</a> 上新建一个仓库, 名称为 <code>&lt;username&gt;.github.io</code>, 将 <code>&lt;username&gt;</code> 替换为你的 <code>github</code> 账户名. ### 安装 <code>node.js</code> 在 <a href="https://nodejs.org/en/">node.js的官网</a> 上下载 <code>LTS</code> 版本安装, 记得勾选 <code>ADD TO PATH</code>. 安装后在命令行输入 <code>npm -v</code>, 如果有版本号输出, 那么说明安装成功, 如果返回 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;npm&#x27;</span> 不是内部或外部命令，也不是可运行的程序或批处理文件。</span><br></pre></td></tr></table></figure> 那么将 <code>&lt;InstallPath&gt;/nodejs</code> 添加到环境变量. 然后命令行运行 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure> 安装 <code>hexo</code>, 确保安装后可以运行 <code>hexo</code> 命令. ### 初始化博客 用 <code>cmd</code> 进入想存放博客的文件夹, 运行 <code>hexo init &lt;blogname&gt;</code>, 将 <code>&lt;blogname&gt;</code> 替换成博客的项目名, 比如 <code>hexotest</code>. 因为 <code>hexo init</code> 的过程要链接 <code>github</code>, 如果出现卡顿, 可以尝试看这个<a href="https://weilining.github.io/201021.html">博客</a>尝试解决.</p>
-<p>初始化结束后会看到这样的文件树</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexotest</span><br><span class="line"> ├── db.json</span><br><span class="line"> ├── node_modules</span><br><span class="line"> ├── package-lock.json</span><br><span class="line"> ├── package.json</span><br><span class="line"> ├── public</span><br><span class="line"> ├── scaffolds</span><br><span class="line"> ├── source</span><br><span class="line"> ├── themes</span><br><span class="line"> ├── _config.landscape.yml</span><br><span class="line"> └── _config.yml</span><br></pre></td></tr></table></figure>
-<h2 id="部署博客">部署博客</h2>
-<h3 id="本地部署">本地部署</h3>
-<p>我们进入 <code>hexotest</code> 文件夹, 输入</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<p>会有如下输出</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">INFO  Validating config</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
-<p>这时在浏览器中输入 <code>localhost:4000</code> 即可看到部署在本地的博客</p>
-<p><img src="https://pic4.zhimg.com/80/v2-8c21ffd0058d9cba4be5da45c49f1663.png" /></p>
-<p>然后我们命令行输入 <code>ctrl+C</code> 来结束本地部署.</p>
-<h3 id="在线部署">在线部署</h3>
-<p>当然我们写博客的目的大多都是要上传到互联网, 于是我们要把博客部署到 <code>&lt;username&gt;.github.io</code>.</p>
-<p>打开 <code>hexotest</code> 下的 <code>_config.yml</code> 配置文件, 找到 <code>deploy</code>, 填入以下信息</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">&lt;git</span> <span class="string">repo</span> <span class="string">ssh</span> <span class="string">address&gt;</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-<p>再运行</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<p>等待部署成功, 成功后就可以在 <code>&lt;username&gt;.github.io</code> 上看到博客的内容了.</p>
-<h2 id="创建博文">创建博文</h2>
-<h3 id="新建博文">新建博文</h3>
-<p>在 <code>hexotest/</code> 文件夹下, 用 <code>cmd</code> 执行</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo n <span class="string">&quot;&lt;blog_name&gt;&quot;</span></span><br></pre></td></tr></table></figure>
-<p>将 <code>&lt;blog_name&gt;</code> 替换为博文的名字, 注意不能有空格, 这里我们使用 <code>hexo n "first-blog"</code>, 成功后会在 <code>source/_posts/</code> 文件夹下看到 <code>first-blog.md</code> 文件</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">source</span><br><span class="line">└── _posts</span><br><span class="line">   ├── first-blog.md</span><br><span class="line">   └── hello-world.md</span><br></pre></td></tr></table></figure>
-<p>同时我们还发现了另一个文件 <code>hello-world.md</code>, 这就是我们在本地部署成功后看到的那一篇博文.</p>
-<p>用熟悉的编辑器打开 <code>first-blog.md</code>, 将其内容修改为</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 第一篇博文</span><br><span class="line">date: 2021-03-04 00:32:07</span><br><span class="line">tags:</span><br><span class="line">    - [博文]</span><br><span class="line">    - [测试]</span><br><span class="line">    - [whatever]</span><br><span class="line">categories:</span><br><span class="line">    - [测试, 测试的子分类]</span><br><span class="line">---</span><br><span class="line">这是我的第一篇博文</span><br></pre></td></tr></table></figure>
-<p>其中 <code>tags</code> 与 <code>categories</code> 可以自行设置, 它们的关系可以参考这个<a href="https://www.zhihu.com/question/19561626">问题</a></p>
-<p>再使用 <code>hexo g &amp;&amp; hexo s</code> 进行本地部署, 在 <code>localhost:4000</code> 看到刚刚编辑的博文"第一篇博文", 点进去可以看到</p>
-<p><img src="https://pic4.zhimg.com/80/v2-797a1b83cb08f7653adcb43d56838b8c.png" /></p>
-<p>然后可以再使用 <code>hexo d</code> 将其推送到 <code>&lt;username&gt;.github.io</code>, 等待一会如果没有更新内容, 那么就执行一下 <code>hexo clean</code> 来清空部署缓存. 于是我们将博文推送到远端的命令可以归为</p>
-<p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure></p>
-<h2 id="美化界面">美化界面</h2>
-<h3 id="配置基本信息">配置基本信息</h3>
-<p>配置文件 <code>hexotest/_config.yml</code> 是对应于我们博客的最高级的配置文件, 里面有一些字段可以进行配置, 作为示例修改了下面几项</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: SYVHSC&#39;s BLOG</span><br><span class="line">subtitle: &#39;&#39;</span><br><span class="line">description: &#39;无锤乙醇的博客&#39;</span><br><span class="line">keywords: LaTeX, 数学</span><br><span class="line">author: 无锤乙醇</span><br><span class="line">language: zh-CN</span><br><span class="line">timezone: Asia&#x2F;Shanghai</span><br></pre></td></tr></table></figure>
-<p>进行本地部署可以看到</p>
-<p><img src="https://pic4.zhimg.com/80/v2-8121a42938033c596ae6e0a8022d1bcd.png" /></p>
-<h3 id="更换主题">更换主题</h3>
-<p>这里我们选用 <code>NexT</code> 主题进行配置. 由于 <code>NexT8.0+</code> 已经支持 <code>npm</code> 安装, 于是可以在目录 <code>hexotest/</code> 下用 <code>cmd</code> 执行</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-theme-next</span><br></pre></td></tr></table></figure>
-<p>并在 <code>hexotest/_config.yml</code> 中找到 <code>theme</code> 字段, 修改为 <code>theme: next</code>, 保存后本地部署, 可以看到博客的主题已经更换</p>
-<p><img src="https://pic4.zhimg.com/80/v2-d115746d176f5fb3a6aa6ac7d05e73ba.png" /></p>
-<p>然后我们可以把 <code>node_modules/hexo-theme-next/</code> 中的 <code>_config.yml</code> 改为 <code>_config.next.yml</code> 并且复制到根目录 <code>hexotest/</code> 下进行修改, 这样当我们升级 <code>NexT</code> 主题的时候不需要重新配置.</p>
-<h3 id="下面配置-next-主题的一些事项-这里只介绍一些功能的作用-并不具体配置.">下面配置 <code>NexT</code> 主题的一些事项, 这里只介绍一些功能的作用, 并不具体配置.</h3>
-<ol type="1">
-<li><strong>scheme</strong> <code>NexT</code> 主题内置了 4 种样式, 可以依次启用来选择一个适合自己的, 这里我选择了 <code>Gemini</code>;</li>
-<li><strong>favicon</strong> 配置标签页的图标, 可以自行选择图片, 放在 <code>hexotest/source/img</code> 文件夹下便于寻找, 设置中的路径也应改为 <code>/img/***.png(jpg, svg...)</code>;</li>
-<li><strong>menu</strong> 配置博客页面的链接;</li>
-<li><strong>social</strong> 配置博客页面的外部链接, 图标可以在 <a href="https://fontawesome.com/">fontawsome</a> 进行选择;</li>
-<li><strong>avatar</strong> 配置博客侧边栏的头像, 图片选择同 <strong>favicon</strong>;</li>
-<li><strong>toc</strong> 配置浏览博文时侧边栏的目录;</li>
-<li><strong>font</strong> 配置文章中的字体; 在 <code>_config.next.yml</code> 中不能配置多种字体, 如果想配置多种字体, 可以修改 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexotest\node_modules\hexo-theme-next\source\css\_variables\base.styl</span><br></pre></td></tr></table></figure> 中的 <code>\\Font families</code> 中的值</li>
-<li><strong>codeblock</strong> 配置代码块;</li>
-<li><strong>back2top</strong> 配置返回顶部的按钮;</li>
-<li><strong>reading_progress</strong> 配置阅读进度条;</li>
-<li><strong>symbols_count_time</strong> 配置站点字数和阅读时间统计, <a href="https://github.com/next-theme/hexo-word-counter">使用方法</a>;</li>
-<li><strong>creative_commons</strong> 配置文末版权信息, 关于 cc 协议可以参考<a href="https://zhuanlan.zhihu.com/p/20641764">知乎专栏</a>;</li>
-<li><strong>local_search</strong> 配置搜索栏, <a href="https://github.com/theme-next/hexo-generator-searchdb">使用方法</a>;</li>
-<li><strong>links_settings &amp; links</strong> 配置友情链接;</li>
-</ol>
-<h3 id="这是一些不知道放到哪里的配置">这是一些不知道放到哪里的配置</h3>
-<ol type="1">
-<li><p><strong>markdown-it-plus</strong> 可以提供脚注等功能, 目录, emoji, katex 等功能, <a href="https://github.com/CHENXCHEN/hexo-renderer-markdown-it-plus">使用方法</a> emoji 功能与 <code>hexo-renderer-pandoc</code> 冲突;</p></li>
-<li><p><strong>hexo-renderer-pandoc</strong> 提供 mathjax 渲染, 将 <code>tags</code> 设置为 <code>ams</code> 还可以使用公式编号<a href="https://theme-next.js.org/docs/third-party-services/math-equations">使用方法</a>;</p>
-<p>示例: <figure class="highlight latex"><table><tr><td class="code"><pre><span class="line">一元二次方程组 <span class="built_in">$</span>ax<span class="built_in">^</span>&#123;2&#125;+bx+c=0<span class="keyword">\ </span>(a <span class="keyword">\ne</span> 0)<span class="built_in">$</span> 的解为 <span class="built_in">$</span><span class="keyword">\eqref</span>&#123;eq:slo&#125;<span class="built_in">$</span></span><br><span class="line"><span class="comment">% 注意: 行内公式的 $...$ 前后不要有空格</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;equation&#125;<span class="keyword">\label</span>&#123;eq:slo&#125;</span><br><span class="line">     x<span class="built_in">_</span>&#123;1, 2&#125;=<span class="keyword">\frac</span>&#123;-b<span class="keyword">\pm</span><span class="keyword">\sqrt</span>&#123;b<span class="built_in">^</span>&#123;2&#125;-4ac&#125;&#125;&#123;2a&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;equation&#125;</span><br></pre></td></tr></table></figure> 一元二次方程组 <span class="math inline">\(ax^{2}+bx+c=0\ (a \ne 0)\)</span> 的解为 <span class="math inline">\(\eqref{eq:slo}\)</span><br />
-<span class="math display">\[\begin{equation}\label{eq:slo}
-     x_{1, 2}=\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}
-\end{equation}\]</span></p></li>
-<li><p><strong>gitalk</strong> 配置评论区. 配置方法在 <a href="/2021-03-05-enable-gitalk/" title="为博客添加 Gitalk 评论区">为博客添加 Gitalk 评论区</a>.</p></li>
-</ol>
-<h2 id="未完待续">未完待续</h2>
-]]></content>
-      <categories>
-        <category>配置记录</category>
-        <category>帮助文档</category>
-      </categories>
-      <tags>
-        <tag>配置记录</tag>
-        <tag>帮助文档</tag>
       </tags>
   </entry>
   <entry>
@@ -434,46 +460,21 @@
       </tags>
   </entry>
   <entry>
-    <title>为博客添加 Gitalk 评论区</title>
-    <url>/2021-03-05-enable-gitalk/</url>
-    <content><![CDATA[<p>在 <a href="/2021-03-03-build-github-io/" title="搭建 github.io">搭建 github.io</a> 中我们配置了 <code>hexo+NexT</code> 的博客, 这次来给它添加一个评论区. 使用的是 <a href="https://github.com/gitalk/gitalk">gitalk</a>.</p>
-<span id="more"></span>
-<p><strong>注意</strong> 该方法可能存在隐私问题, 详见 <a href="https://www.v2ex.com/t/535608">V2EX 论坛</a>.</p>
-<p>在 <code>hexotest/</code> 文件夹下使用</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm i --save gitalk</span><br></pre></td></tr></table></figure>
-<p>来安装 <code>gitalk</code>, 而且 <code>NexT8</code> 内置了 <code>gitalk</code> 的接口, 在 <code>_config.next.yml</code> 中搜索 <code>gitalk</code> 即可看到</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Multiple Comment System Support</span></span><br><span class="line"><span class="attr">comments:</span></span><br><span class="line">  <span class="comment"># Available values: tabs | buttons</span></span><br><span class="line">  <span class="attr">style:</span> <span class="string">tabs</span></span><br><span class="line">  <span class="comment"># Choose a comment system to be displayed by default.</span></span><br><span class="line">  <span class="comment"># Available values: disqus | disqusjs | changyan | livere | gitalk | utterances</span></span><br><span class="line">  <span class="attr">active:</span></span><br><span class="line">  <span class="comment"># Setting `true` means remembering the comment system selected by the visitor.</span></span><br><span class="line">  <span class="attr">storage:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Lazyload all comment systems.</span></span><br><span class="line">  <span class="attr">lazyload:</span> <span class="literal">false</span></span><br><span class="line">  <span class="comment"># Modify texts or order for any navs, here are some examples.</span></span><br><span class="line">  <span class="attr">nav:</span></span><br><span class="line">    <span class="comment">#disqus:</span></span><br><span class="line">    <span class="comment">#  text: Load Disqus</span></span><br><span class="line">    <span class="comment">#  order: -1</span></span><br><span class="line">    <span class="comment">#gitalk:</span></span><br><span class="line">    <span class="comment">#  order: -2</span></span><br><span class="line"><span class="comment"># Gitalk</span></span><br><span class="line"><span class="comment"># For more information: https://gitalk.github.io</span></span><br><span class="line"><span class="attr">gitalk:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">github_id:</span> <span class="comment"># GitHub repo owner</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="comment"># Repository name to store issues</span></span><br><span class="line">  <span class="attr">client_id:</span> <span class="comment"># GitHub Application Client ID</span></span><br><span class="line">  <span class="attr">client_secret:</span> <span class="comment"># GitHub Application Client Secret</span></span><br><span class="line">  <span class="attr">admin_user:</span> <span class="comment"># GitHub repo owner and collaborators, only these guys can initialize gitHub issues</span></span><br><span class="line">  <span class="attr">distraction_free_mode:</span> <span class="literal">true</span> <span class="comment"># Facebook-like distraction free mode</span></span><br><span class="line">  <span class="comment"># When the official proxy is not available, you can change it to your own proxy address</span></span><br><span class="line">  <span class="attr">proxy:</span> <span class="string">https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token</span> <span class="comment"># This is official proxy adress</span></span><br><span class="line">  <span class="comment"># Gitalk&#x27;s display language depends on user&#x27;s browser or system environment</span></span><br><span class="line">  <span class="comment"># If you want everyone visiting your site to see a uniform language, you can set a force language value</span></span><br><span class="line">  <span class="comment"># Available values: en | es-ES | fr | ru | zh-CN | zh-TW</span></span><br><span class="line">  <span class="attr">language:</span></span><br></pre></td></tr></table></figure>
-<p>这里做一下简单的说明.</p>
-<p>首先要在 <a href="https://github.com/settings/developers">github devoloper</a> 创建新的 OAuth App <img src="../img/postimg/githubdevelop.png" /> 点击创建好的 OAuth App, 可以看到 <img src="../img/postimg/clientid.png" /> 点击 <code>Generate a new client secret</code> 可以得到一个 <code>client secret</code>. 把 <code>client ID</code> 与 <code>client secret</code> 分别填写在 <code>yml</code> 文件的 <code>client_id</code> 与 <code>client_secret</code> 字段中, 剩下的字段填自己的信息以及用来存放评论的 repo, 这里我填的 <code>&lt;username&gt;.github.io</code>. 配置好以后, 使用 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g -d</span><br></pre></td></tr></table></figure> 进行在线部署, 随便选一篇博文, 在最下方登录一下 <code>github</code> 完成初始化.</p>
-<p>但是遇到了问题. <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Error: Request failed with status code 403</span><br></pre></td></tr></table></figure> 经查询发现这个问题普遍存在, 比如微信文章 <a href="https://mp.weixin.qq.com/s?__biz=Mzg3MjU3NzU1OA==&amp;mid=2247496606&amp;idx=1&amp;sn=8e0b6e2600f939c5401f2344dce2cba6&amp;source=41#wechat_redirect">记录一次 Bug 排查过程并分享一些经验</a>, <a href="https://github.com/gitalk/gitalk/issues/429">gitalk's issue</a>. 作者也给了相应的<a href="https://github.com/gitalk/gitalk/issues/429#issuecomment-789423631">解决方法</a></p>
-<p>我这里将 <code>proxy</code> 替换为了 <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">proxy:</span> <span class="string">https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token</span></span><br></pre></td></tr></table></figure> 再次 <code>hexo clean &amp;&amp; hexo g -d</code>, 即可使用 <code>gitalk</code>, 评论区会作为设置中的 <code>repo</code> 的 <code>issue</code> 存在.</p>
-]]></content>
-      <categories>
-        <category>配置记录</category>
-        <category>帮助文档</category>
-      </categories>
-      <tags>
-        <tag>配置记录</tag>
-        <tag>hexo</tag>
-        <tag>帮助文档</tag>
-        <tag>gitalk</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>tlmgr 的介绍</title>
     <url>/2021-03-04-tlmgr-intro/</url>
     <content><![CDATA[<!-- [点击跳转](#jump) <span id="jump">跳转到的地方</span> -->
-<p>这篇文章是用来熟悉 TeX Live 自带的包管理器 <code>tlmgr(TeX Live Manager)</code> 的使用, 官方文档位于 <a href="http://tug.org/texlive/doc/tlmgr.html">TUG</a>. <del>这可能会变成一个翻译文档</del></p>
+<p>这篇文章是用来熟悉 TeX Live 自带的包管理器 <code>tlmgr(TeX Live Manager)</code> 的使用, 官方文档位于 <a href="http://tug.org/texlive/doc/tlmgr.html">TUG</a>, 这个文档会不定期更新我看的懂的并且觉得有用的部分. <del>这可能会变成一个翻译文档</del></p>
 <span id="more"></span>
 <p><strong>注意</strong>:</p>
 <ol type="1">
 <li>文档中被中括号<code>[]</code>框起来的为可选参数, 如 <code>--gui [action]</code>,</li>
 <li>被尖括号<code>&lt;&gt;</code>框起来的为必要参数, 如 <code>tlmgr info &lt;what&gt;</code>,</li>
 <li>被 <code>|</code> 分割开的选项为 n 选 1, 如 <code>backup [option] &lt;pkg|-all&gt;</code>,</li>
-<li>文档中的 "宏包" 有时不仅指被用在 <code>\usepackage&#123;&#125;</code> 中的宏包.</li>
+<li>文档中的 "软件包" 有时不仅指被用在 <code>\usepackage&#123;&#125;</code> 中的软件包.</li>
+<li>命令中带有 <code>...</code> 的选项或参数意味着它们可以被填入不只一个内容, 如 <code>install [option...] &lt;pkg...&gt;</code> 说明你可以使用 <code>tlmgr install --force --reinstall ctex, amsmath</code>.</li>
 </ol>
 <h2 id="概要">概要</h2>
-<p><code>tlmgr</code> 管理着 TeX Live 中的宏包以及配置. 最新的文档以及测试版本的信息位于 <a href="https://tug.org/texlive/tlmgr.html">https://tug.org/texlive/tlmgr.html</a> .</p>
+<p><code>tlmgr</code> 管理着 TeX Live 中的软件包以及配置. 最新的文档以及测试版本的信息位于 <a href="https://tug.org/texlive/tlmgr.html">https://tug.org/texlive/tlmgr.html</a> .</p>
 <p>TeX Live 由一些最高级别的 schemes 组成, 每一种 scheme 都是由不同的 collections 与 packages 组成, 其中 collection 是 packages 的集合, 而 packages 是包含了一些文件的包. Schemes 里一般既有 collections 也有 packages, 但是每一个 package 都属于且只属于一个 collection.</p>
 <p>使用 <code>tlmgr info collections</code> 可以列出 collections 的信息.</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">❯❯ tlmgr info collections</span><br><span class="line">i collection-basic: Essential programs and files</span><br><span class="line">i collection-bibtexextra: BibTeX additional styles</span><br><span class="line">i collection-binextra: TeX auxiliary programs</span><br><span class="line">i collection-context: ConTeXt and packages</span><br><span class="line">i collection-fontsextra: Additional fonts</span><br><span class="line">i collection-fontsrecommended: Recommended fonts</span><br><span class="line">i collection-fontutils: Graphics and font utilities</span><br><span class="line">i collection-formatsextra: Additional formats</span><br><span class="line">i collection-games: Games typesetting</span><br><span class="line">i collection-humanities: Humanities packages</span><br><span class="line">i collection-langarabic: Arabic</span><br><span class="line">i collection-langchinese: Chinese</span><br><span class="line">i collection-langcjk: Chinese/Japanese/Korean (base)</span><br><span class="line">i collection-langcyrillic: Cyrillic</span><br><span class="line">i collection-langczechslovak: Czech/Slovak</span><br><span class="line">i collection-langenglish: US and UK English</span><br><span class="line">i collection-langeuropean: Other European languages</span><br><span class="line">i collection-langfrench: French</span><br><span class="line">i collection-langgerman: German</span><br><span class="line">i collection-langgreek: Greek</span><br><span class="line">i collection-langitalian: Italian</span><br><span class="line">i collection-langjapanese: Japanese</span><br><span class="line">i collection-langkorean: Korean</span><br><span class="line">i collection-langother: Other languages</span><br><span class="line">i collection-langpolish: Polish</span><br><span class="line">i collection-langportuguese: Portuguese</span><br><span class="line">i collection-langspanish: Spanish</span><br><span class="line">i collection-latex: LaTeX fundamental packages</span><br><span class="line">i collection-latexextra: LaTeX additional packages</span><br><span class="line">i collection-latexrecommended: LaTeX recommended packages</span><br><span class="line">i collection-luatex: LuaTeX packages</span><br><span class="line">i collection-mathscience: Mathematics, natural sciences, computer science packages</span><br><span class="line">i collection-metapost: MetaPost and Metafont packages</span><br><span class="line">i collection-music: Music packages</span><br><span class="line">i collection-pictures: Graphics, pictures, diagrams</span><br><span class="line">i collection-plaingeneric: Plain (La)TeX packages</span><br><span class="line">i collection-pstricks: PSTricks</span><br><span class="line">i collection-publishers: Publisher styles, theses, etc.</span><br><span class="line">i collection-texworks: TeXworks editor; TL includes only the Windows binary</span><br><span class="line">i collection-wintools: Windows-only support programs</span><br><span class="line">i collection-xetex: XeTeX and packages</span><br></pre></td></tr></table></figure>
@@ -573,7 +574,7 @@
 <h2 id="选项-options">选项 (OPTIONS)</h2>
 <p>下列 <code>tlmgr</code> 的选项是<strong>全局</strong>选项, 不是特定于某一个命令的 (action specific). 对于所有的选项, 无论是全局的还是命令特定的, 都可以在 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tlmgr [option...] action [option...] [operand...]</span><br></pre></td></tr></table></figure> 的任意位置, 按任意顺序使用. 命令中第一个不是选项的变量将会成为这个命令的主要操作 (main action). 在所有的情况中 <code>-option</code> 与 <code>--option</code> 是等价的, <code>=</code> 可以放在一个选项名和它的值之间, 按 <code>key=value</code> 的格式使用.</p>
 <h3 id="repository-urlpath"><code>--repository &lt;url|path&gt;</code></h3>
-<p>指定一个宏包的仓库, 可以是本地文件夹 <code>&lt;path&gt;</code> 或者网络位置 <code>&lt;url&gt;</code>. 这个设置会临时覆盖掉 TeX Live Package Database (TLPDB, 由文件 <code>tlpkg/texlive.tlpdb</code> 给出) 中默认的宏包仓库.</p>
+<p>指定一个软件包的仓库, 可以是本地文件夹 <code>&lt;path&gt;</code> 或者网络位置 <code>&lt;url&gt;</code>. 这个设置会临时覆盖掉 TeX Live Package Database (TLPDB, 由文件 <code>tlpkg/texlive.tlpdb</code> 给出) 中默认的软件包仓库.</p>
 <p><strong>注意</strong> <code>--repository &lt;url|path&gt;</code> 命令只会修改当前运行的仓库选择, 如果想长期修改仓库, 可以使用 <code>option repository</code> (见 <a href="#action-option"><code>option</code></a>操作)</p>
 <p>比如, 你可以这样选择一个特定的 CTAN 镜像</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">-repository http://ctan.example.org/its/ctan/dir/systems/texlive/tlnet</span><br></pre></td></tr></table></figure>
@@ -670,7 +671,7 @@
 <h3 id="machine-readable"><code>--machine-readable</code></h3>
 <p>将标准输出写成一个更适合计算机解析的格式</p>
 <h3 id="package-logfile-file"><code>--package-logfile &lt;file&gt;</code></h3>
-<p><code>tlmgr</code> 将所有宏包操作 (<code>install</code>, <code>remove</code>, <code>update</code>, <code>failed updates</code>, <code>failed restores</code>) 写入一个单独的日志文件, 默认位置为 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">TEXMFSYSVAR&#x2F;web2c&#x2F;tlmgr.log</span><br></pre></td></tr></table></figure> 这个选项让你可以为日志文件指定另一个路径.</p>
+<p><code>tlmgr</code> 将所有软件包操作 (<code>install</code>, <code>remove</code>, <code>update</code>, <code>failed updates</code>, <code>failed restores</code>) 写入一个单独的日志文件, 默认位置为 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">TEXMFSYSVAR&#x2F;web2c&#x2F;tlmgr.log</span><br></pre></td></tr></table></figure> 这个选项让你可以为日志文件指定另一个路径.</p>
 <h3 id="pause"><code>--pause</code></h3>
 <p>让 <code>tlmgr</code> 在退出之前等待用户输入, 在 Windows 上可以避免命令行的消失.</p>
 <h3 id="usermode"><code>--usermode</code></h3>
@@ -686,8 +687,8 @@
 <h3 id="version"><code>version</code></h3>
 <p>给出版本信息, 与 <code>--version</code> 选项相同, 如果也使用了 <code>-v</code> 选项, 那么所使用模块的版本信息也会被打印.</p>
 <h3 id="backup"><code>backup</code></h3>
-<h4 id="backup-option..-pkg-all"><code>backup [option..] &lt;pkg|-all&gt;</code></h4>
-<p>如果没有指定 <code>--clean</code> 选项, 那么这个操作会创建一个宏包 <code>&lt;pkg&gt;</code> 的备份, 如果使用了 <code>-all</code> 选项, 则创建一个全部宏包的备份.</p>
+<h4 id="backup-option..-pkg...-all"><code>backup [option..] &lt;pkg...|-all&gt;</code></h4>
+<p>如果没有指定 <code>--clean</code> 选项, 那么这个操作会创建一个软件包 <code>&lt;pkg&gt;</code> 的备份, 如果使用了 <code>-all</code> 选项, 则创建一个全部软件包的备份.</p>
 <p>备份文件的位置将由 <code>--backupdir &lt;dir&gt;</code> 指定, 前提是 <code>&lt;dir&gt;</code> 存在并且可写. 如果没有指定 <code>--backupdir</code>, 那么就使用 TLPDB 中设置的 <code>backupdir</code>, 如果二者皆空, 那么将不会创建备份.</p>
 <p>安装程序将 <code>backupdir</code> 默认设置在了 TeX Live 根目录下的 <code>./tlpkg/backups</code> 中, 所以如果没有额外的设置, <code>backupdir</code> 总是存在. 查看 <a href="#action-option"><code>option</code></a> 以获得更多信息.</p>
 <p>如果指定了 <code>--clean</code> 选项, 那么备份文件将被删除, 而不是被保存. 一个可选的整数值 <code>N</code> 可以指定在清理时保留的备份数. 如果没有指定 <code>N</code>, 那么将使用 <code>autobackup</code> 的值, <code>autobackup</code> 默认在 TLPDB 中为 <code>1</code>. 如果二者皆空, 那么将会报错. 查看 <a href="#action-option"><code>option</code></a> 来获得更多关于删除备份文件的详细信息.</p>
@@ -695,23 +696,23 @@
 <h4 id="backupdir-dir"><code>--backupdir &lt;dir&gt;</code></h4>
 <p>覆盖 TLPDB 中 <code>backupdir</code> 的值. 变量 <code>&lt;dir&gt;</code> 必须要指定, 这是备份文件存放的路径, 它必须要存在且可写</p>
 <h4 id="all"><code>--all</code></h4>
-<p>如果没有指定 <code>--clean</code> 选项, 那么创建一个 TeX Live 安装过的所有宏包的备份, 这会消耗大量的存储空间与时间. 如果指定 <code>--clean</code> 选项, 所有的备份将被删除.</p>
+<p>如果没有指定 <code>--clean</code> 选项, 那么创建一个 TeX Live 安装过的所有软件包的备份, 这会消耗大量的存储空间与时间. 如果指定 <code>--clean</code> 选项, 所有的备份将被删除.</p>
 <h4 id="cleann"><code>--clean[=N]</code></h4>
-<p>删除备份目录 <code>backupdir</code> 中的旧备份, 而不是创建备份. 可选参数整数值 <code>N</code> 会覆盖 TLPDB 中 <code>autobackup</code> 的值. 如果使用这个选项, 那么必须要指定 <code>--all</code> 或者一列宏包.</p>
+<p>删除备份目录 <code>backupdir</code> 中的旧备份, 而不是创建备份. 可选参数整数值 <code>N</code> 会覆盖 TLPDB 中 <code>autobackup</code> 的值. 如果使用这个选项, 那么必须要指定 <code>--all</code> 或者一列软件包.</p>
 <h4 id="dry-run"><code>--dry-run</code></h4>
 <p>备份或删除的操作将被打印在终端而不真正进行备份或者删除, 如 <code>tlmgr --dry-run backup ctex</code> 会打印出 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">❯❯ tlmgr --dry-run backup ctex</span><br><span class="line">would save current status of ctex to d:/texlive/2020/tlpkg/backups/ctex.r56705.tar.lz4</span><br><span class="line">no action taken due to --dry-run</span><br></pre></td></tr></table></figure></p>
 <h3 id="candidate-pkg"><code>candidate &lt;pkg&gt;</code></h3>
-<p>显示宏包 <code>&lt;pkg&gt;</code> 的候选仓库 (candidate repository). 见 <a href="#multiple-repository">MULTIPLE REPOSITORY</a></p>
-<h3 id="check-option-dependsexcutesfilesrunfilestexmfdbsall"><code>check [option] &lt;depends|excutes|files|runfiles|texmfdbs|all&gt;</code></h3>
+<p>显示软件包 <code>&lt;pkg&gt;</code> 的候选仓库 (candidate repository). 见 <a href="#multiple-repository">MULTIPLE REPOSITORY</a></p>
+<h3 id="check-option...-dependsexcutesfilesrunfilestexmfdbsall"><code>check [option...] &lt;depends|excutes|files|runfiles|texmfdbs|all&gt;</code></h3>
 <p>执行安装的一致性 (consistency of installation) 的一个或者全部检查, 如果没发现问题, 那么将不会有输出. (如果想看看 <code>tlmgr</code> 做了什么, 可以用 <code>tlmgr -v check</code>)</p>
 <h4 id="depends"><code>depends</code></h4>
-<p>列出那些没有被安装, 但是作为安装集合的依赖的宏包, 以及哪些没有包含在任何集合中的宏包.</p>
+<p>列出那些没有被安装, 但是作为安装集合的软件包的依赖, 以及哪些没有包含在任何集合中的软件包.</p>
 <p>如果使用 <code>tlmgr check collections</code>, 同样会执行 <code>tlmgr check depends</code>, 因为旧版本的 <code>tlmgr</code> 就是这么做的.</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">❯❯ tlmgr check collections</span><br><span class="line">tlmgr.pl: <span class="string">&quot;collections&quot;</span> check has been replaced by <span class="string">&quot;depends&quot;</span>.</span><br></pre></td></tr></table></figure>
 <h4 id="excutes"><code>excutes</code></h4>
 <p>检查 TeX Live 数据库中 <code>execute</code>指令引用的文件是否存在. Check that the files referred to by execute directives in the TeX Live Database are present.</p>
 <h4 id="files"><code>files</code></h4>
-<p>检查列在 TLPDB (<code>texlive.tlpdb</code>) 是否真的存在, 列出不存在的宏包.</p>
+<p>检查列在 TLPDB (<code>texlive.tlpdb</code>) 是否真的存在, 列出不存在的软件包.</p>
 <h4 id="runfiles"><code>runfiles</code></h4>
 <p>列出在执行文件中出现多次的文件名, 除了已知的重复文件名.</p>
 <h4 id="texmfdbs"><code>texmfdbs</code></h4>
@@ -729,33 +730,56 @@
 <h3 id="conf-dump-tlpdb-generate-gui"><code>conf</code>, <code>dump-tlpdb</code>, <code>generate</code>, <code>gui</code></h3>
 <p>略</p>
 <h3 id="info"><code>info</code></h3>
-<h4 id="info-option-pkg...collectionsschemes"><code>info [option] [pkg...|collections|schemes]</code></h4>
-<p>如果没有参数, 列出仓库中全部的可用宏包, 把哪些已经安装的用 <code>i</code> 作为前缀.</p>
-<p>如果用 <code>collections</code> 或者 <code>schemes</code>, 列出所需的类型, 而不输出宏包名 .</p>
-<p>如果用任何其他的参数, 那么就把参数看成宏包名 <code>&lt;pkg...&gt;</code>, 并列出它的信息: 名称 (name), 分类 (category), 简短以及详细的介绍 (short and long description), 大小 (size), 安装状态 (installation status), 以及 TeX Live 中它的修订号 (TeX Live revision number).</p>
-<p>如果 <code>&lt;pkg...&gt;</code> 在本地与线上都没有找到, 那么将会搜索与它相关的宏包和文件.</p>
-<p>它也会显示从 TeX Catalogue 上获取的信息, 比如宏包版本 (package version), 日期 (date), 和许可证 (license). 考虑这些，特别是宏包版本，获得的信息仅仅是近似的，这是由于不同部分更新的时间偏差造成的.</p>
+<h4 id="info-option...-pkg...collectionsschemes"><code>info [option...] [pkg...|collections|schemes]</code></h4>
+<p>如果没有参数, 列出仓库中全部的可用软件包, 把哪些已经安装的用 <code>i</code> 作为前缀.</p>
+<p>如果用 <code>collections</code> 或者 <code>schemes</code>, 列出所需的类型, 而不输出软件包名 .</p>
+<p>如果用任何其他的参数, 那么就把参数看成软件包名 <code>&lt;pkg...&gt;</code>, 并列出它的信息: 名称 (name), 分类 (category), 简短以及详细的介绍 (short and long description), 大小 (size), 安装状态 (installation status), 以及 TeX Live 中它的修订号 (TeX Live revision number).</p>
+<p>如果 <code>&lt;pkg...&gt;</code> 在本地与线上都没有找到, 那么将会搜索与它相关的软件包和文件.</p>
+<p>它也会显示从 TeX Catalogue 上获取的信息, 比如软件包版本 (package version), 日期 (date), 和许可证 (license). 考虑这些，特别是软件包版本，获得的信息仅仅是近似的，这是由于不同部分更新的时间偏差造成的.</p>
 <p>旧操作 <code>show</code> 与 <code>list</code> 已经被合并到这个操作中, 但是为了后续的兼容性这两个操作依然可用.</p>
 <p><code>info</code> 操作的特定选项:</p>
 <h4 id="list"><code>--list</code></h4>
-<p>如果指定了 <code>--list</code> 选项, 并且跟了一个宏包 <code>&lt;pkg...&gt;</code>, 那么这个宏包的包含文件也会被展示, 比如执行文件, 源文件, 宏包文档等等, 包括平台特定的从属包 (platform-specific dependencies)</p>
+<p>如果指定了 <code>--list</code> 选项, 并且跟了一个软件包 <code>&lt;pkg...&gt;</code>, 那么这个软件包的包含文件也会被展示, 比如执行文件, 源文件, 软件包文档等等, 包括平台特定的依赖包 (platform-specific dependencies)</p>
 <p>如果跟的是 <code>schemes</code> 或 <code>collections</code>, 那么输出的内容与不加 <code>--list</code> 相同.</p>
 <h4 id="only-installed"><code>--only-installed</code></h4>
-<p>如果指定这个选项, 那么 <code>tlmgr</code> 只会从本地安装的宏包, collections, 或者 schemes 中寻找信息, 而不使用安装的源.</p>
+<p>如果指定这个选项, 那么 <code>tlmgr</code> 只会从本地安装的软件包, collections, 或者 schemes 中寻找信息, 而不使用安装的源.</p>
 <h4 id="only-remote"><code>--only-remote</code></h4>
-<p>只列出在远端仓库的宏包. 这个选项比较适合配合 <code>tlmgr --repo ...</code> 使用, 来查看某个宏包在某远端仓库是否可用, 用 <code>tlmgr --repo ... --only-remote info &lt;pkg...&gt;</code> 即可. <strong>注意</strong> <code>--only-installed</code> 和 <code>--only-remote</code> 不能同时指定.</p>
+<p>只列出在远端仓库的软件包. 这个选项比较适合配合 <code>tlmgr --repo ...</code> 使用, 来查看某个软件包在某远端仓库是否可用, 用 <code>tlmgr --repo ... --only-remote info &lt;pkg...&gt;</code> 即可. <strong>注意</strong> <code>--only-installed</code> 和 <code>--only-remote</code> 不能同时指定.</p>
 <h4 id="data-item1-item2..."><code>--data &lt;item1, item2,...&gt;</code></h4>
 <p>如果制定了 <code>--data</code> 选项, 那它的参数只能从以下内容中选择: <code>name</code>, <code>category</code>, <code>localrev</code>, <code>remoterev</code>, <code>shortdesc</code>, <code>longdesc</code>, <code>installed</code>, <code>size</code>, <code>relocatable</code>, <code>depends</code>, <code>cat-version</code>, <code>cat-date</code>, <code>cat-license</code>, 以及字段 <code>cat-contact-*</code> (见下), 这些内容中间要用逗号<code>,</code>隔开.</p>
 <p><code>cat-*</code> 字段全部从 <a href="https://ctan.org/pkg/catalogue">TeX Catalogue</a> 中获得. 对于每个字段都有两个变种, 带 <code>l</code> 前缀和带 <code>r</code> 前缀, 比如: <code>lcat-version</code> 与 <code>rcat-version</code>, 分别代表了本地和远端的信息. 如果不带 <code>l</code> 和 <code>r</code> 的选项, 那么就显示最近的一个, 通常来说是远端的信息.</p>
-<p>按照这个写法, 那么 <code>cat-contact-*</code> 字段包括了 <code>home</code>, <code>repository</code>, <code>support</code>, <code>bugs</code>, <code>announce</code>, <code>development</code>, 每一个都可能为空, 或者含有一个 url 值, 比如可以用 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tlmgr info --data cat-contact-home amsmath</span><br></pre></td></tr></table></figure> 查看 <code>amsmath</code> 宏包的主页, 可以得到 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">❯❯ tlmgr info --data cat-contact-home amsmath</span><br><span class="line">http://www.ams.org/tex/amslatex.html</span><br></pre></td></tr></table></figure> 关于新宏包的简短的介绍可以在 <a href="https://ctan.org/upload">CTAN upload page</a> 上查看.</p>
+<p>按照这个写法, 那么 <code>cat-contact-*</code> 字段包括了 <code>home</code>, <code>repository</code>, <code>support</code>, <code>bugs</code>, <code>announce</code>, <code>development</code>, 每一个都可能为空, 或者含有一个 url 值, 比如可以用 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tlmgr info --data cat-contact-home amsmath</span><br></pre></td></tr></table></figure> 查看 <code>amsmath</code> 软件包的主页, 可以得到 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">❯❯ tlmgr info --data cat-contact-home amsmath</span><br><span class="line">http://www.ams.org/tex/amslatex.html</span><br></pre></td></tr></table></figure> 关于新软件包的简短的介绍可以在 <a href="https://ctan.org/upload">CTAN upload page</a> 上查看.</p>
 <h4 id="json"><code>--json</code></h4>
 <p>如果指定 <code>--json</code> 选项, 那么将会给出一个 JSON 格式的输出, 可以在 <code>tlpkg/doc/JSON-formats.txt</code> 查看格式信息, 格式定义在 <code>TLPOBJINFO1</code>. 如果 <code>--json</code> 和 <code>--data</code> 同时被指定, 那么 <code>--json</code> 的优先级会更高.</p>
-<p><span id="action-option"> <code>option</code> </span> <span id="user-mode"> <code>USER MODE</code> </span> <span id="multiple-repository"> <code>MULTIPLE REPOSITORY</code> </span></p>
+<h3 id="init-usertree"><code>init-usertree</code></h3>
+<p>为所谓的 <code>user mode magagement</code> 建立一个 <code>texmf</code> 树, 无论是在默认的用户树 <code>TEXMFHOME</code> 下, 还是一个被 <code>--usertree</code> 指定的树下. 见 <a href="#user-mode"><code>USER MODE</code></a>.</p>
+<h3 id="install-option...-pkg..."><code>install [option...] &lt;pkg...&gt;</code></h3>
+<p>安装每一个 <code>&lt;pkg...&gt;</code> 中提到的软件包, 如果它们没有被安装的话, 这个操作不会去动失敬存在的软件包, 如果想获得软件包的最新版本, 见 <code>update</code> 操作.</p>
+<p>这个操作默认也会安装给定的 <code>&lt;pkg...&gt;</code> 的依赖文件. By default this also installs all packages on which the given <em>pkgs</em> are dependent.</p>
+<p>下面是 <code>install</code> 操作特有的选项:</p>
+<h4 id="dry-run-1"><code>--dry-run</code></h4>
+<p>安装会发生的事情会被打印出来, 而不真进的行安装</p>
+<h4 id="file"><code>--file</code></h4>
+<p>从给定的软件包文件中安装软件包, 而不从安装仓库进行安装. 这些文件必须是标准的 TeX Live 软件包文件 (含有 <code>tlpobj</code> 文件)<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<h4 id="force"><code>--force</code></h4>
+<p>如果 <code>tlmgr</code> 本身或其他基本的部分正在升级, 那么 <code>tlmgr</code> 将会退出这次安装, 并且不会安装任何软件包. 如果给定了 <code>--force</code> 选项, 那么这次的安装依然会继续进行. <strong>不推荐使用</strong></p>
+<h4 id="no-dependens"><code>--no-dependens</code></h4>
+<p>不安装软件包的依赖. (默认设置下, 安装一个软件包要满足它的所有依赖)</p>
+<h4 id="no-dependens-at-all"><code>--no-dependens-at-all</code></h4>
+<p>略.</p>
+<h4 id="reinstall"><code>--reinstall</code></h4>
+<p>重新安装一个软件包 (包括它的依赖), 尽管它们已经被安装. 如果有一些宏包安装失败导致不完整, 可以使用这个选项来重新安装.</p>
+<p>当重新安装时, only dependencies on normal packages are followed. (i.e., not those of category Scheme or Collection)</p>
+<h4 id="with-doc-与---with-src"><code>--with-doc</code> 与 <code>--with-src</code></h4>
+<p><code>install-tl</code> 给了一个 "不安装文档/源文件" 的选项, 但是我们不推荐使用这个选项. (默认状态下会安装所有的文件). 如果用了这个选项, 那么当你想获得软件包的文档或者源文件的时候, 可以使用这两个选项与 <code>--reinstall</code>, 比如用 <code>fontspec</code> 宏包为例:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tlmgr install --reinstall --with-doc --with-src fontspec</span><br></pre></td></tr></table></figure>
+<p>这个操作不会在系统目录中自动添加新的符号链接, 需要手动运行 <code>tlmgr path add "path"</code> <span id="action-option"> <code>option</code> </span> <span id="user-mode"> <code>USER MODE</code> </span> <span id="multiple-repository"> <code>MULTIPLE REPOSITORY</code> </span></p>
 <section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
 <li id="fn1" role="doc-endnote"><p>mirror.ctan.org resolves to many different hosts, and they are not perfectly synchronized; we recommend updating only daily (at most), and not more often.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p>这个表格来自 <a href="https://github.com/OsbertWang/install-latex-guide-zh-cn">install-latex-guide-zh-cn</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>这个表格来自 <a href="https://github.com/OsbertWang/install-latex-guide-zh-cn">install-latex-guide-zh-cn</a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>这里我没有看懂, 也没找到合适的例子.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 ]]></content>
