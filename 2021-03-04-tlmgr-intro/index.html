@@ -23,15 +23,15 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"syvshc.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"gitalk","storage":true,"lazyload":true,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false}};
   </script>
-<meta name="description" content="这篇文章是用来熟悉 TeX Live 自带的包管理器 tlmgr(TeX Live Manager) 的使用, 官方文档位于 TUG, 这个文档会不定期更新我看的懂的并且觉得有用的部分. 这可能会变成一个翻译文档">
+<meta name="description" content="这篇文章是用来熟悉 TeX Live 自带的包管理器 tlmgr(TeX Live Manager) 的使用, 官方文档位于 TUG, 这个文档会不定期更新我看的懂的并且觉得有用的部分. 这是一个翻译文档, 关于 tlmgr 使用方法的简介 已经完成, 欢迎提 issue 或者 PR 来帮我改进这份文档.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="tlmgr 的介绍">
 <meta property="og:url" content="https://syvshc.github.io/2021-03-04-tlmgr-intro/index.html">
 <meta property="og:site_name" content="无锤乙醇">
-<meta property="og:description" content="这篇文章是用来熟悉 TeX Live 自带的包管理器 tlmgr(TeX Live Manager) 的使用, 官方文档位于 TUG, 这个文档会不定期更新我看的懂的并且觉得有用的部分. 这可能会变成一个翻译文档">
+<meta property="og:description" content="这篇文章是用来熟悉 TeX Live 自带的包管理器 tlmgr(TeX Live Manager) 的使用, 官方文档位于 TUG, 这个文档会不定期更新我看的懂的并且觉得有用的部分. 这是一个翻译文档, 关于 tlmgr 使用方法的简介 已经完成, 欢迎提 issue 或者 PR 来帮我改进这份文档.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-03-04T14:12:21.000Z">
-<meta property="article:modified_time" content="2021-03-06T05:54:57.609Z">
+<meta property="article:modified_time" content="2021-03-07T12:30:45.185Z">
 <meta property="article:author" content="Zhonghao Sun">
 <meta property="article:tag" content="LaTeX">
 <meta property="article:tag" content="帮助文档">
@@ -345,7 +345,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-03-06 13:54:57" itemprop="dateModified" datetime="2021-03-06T13:54:57+08:00">2021-03-06</time>
+        <time title="修改时间：2021-03-07 20:30:45" itemprop="dateModified" datetime="2021-03-07T20:30:45+08:00">2021-03-07</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -388,7 +388,7 @@
     
     <div class="post-body" itemprop="articleBody">
         <!-- [点击跳转](#jump) <span id="jump">跳转到的地方</span> -->
-<p>这篇文章是用来熟悉 TeX Live 自带的包管理器 <code>tlmgr(TeX Live Manager)</code> 的使用, 官方文档位于 <a target="_blank" rel="noopener" href="http://tug.org/texlive/doc/tlmgr.html">TUG</a>, 这个文档会不定期更新我看的懂的并且觉得有用的部分. <del>这可能会变成一个翻译文档</del></p>
+<p>这篇文章是用来熟悉 TeX Live 自带的包管理器 <code>tlmgr(TeX Live Manager)</code> 的使用, 官方文档位于 <a target="_blank" rel="noopener" href="http://tug.org/texlive/doc/tlmgr.html">TUG</a>, 这个文档会不定期更新我看的懂的并且觉得有用的部分. 这是一个翻译文档, <a target="_blank" rel="noopener" href="https://github.com/syvshc/tlmgr-intro-zh-cn">关于 <code>tlmgr</code> 使用方法的简介</a> 已经完成, 欢迎提 <a target="_blank" rel="noopener" href="https://github.com/syvshc/tlmgr-intro-zh-cn/issues">issue</a> 或者 <a target="_blank" rel="noopener" href="https://github.com/syvshc/tlmgr-intro-zh-cn/pulls">PR</a> 来帮我改进这份文档.</p>
 <span id="more"></span>
 <p><strong>注意</strong>:</p>
 <ol type="1">
@@ -619,11 +619,11 @@
 <p>如果指定了 <code>--clean</code> 选项, 那么备份文件将被删除, 而不是被保存. 一个可选的整数值 <code>N</code> 可以指定在清理时保留的备份数. 如果没有指定 <code>N</code>, 那么将使用 <code>autobackup</code> 的值, <code>autobackup</code> 默认在 TLPDB 中为 <code>1</code>. 如果二者皆空, 那么将会报错. 查看 <a href="#action-option"><code>option</code></a> 来获得更多关于删除备份文件的详细信息.</p>
 <p><code>backup</code> 操作的特定选项:</p>
 <h4 id="backupdir-dir"><code>--backupdir &lt;dir&gt;</code></h4>
-<p>覆盖 TLPDB 中 <code>backupdir</code> 的值. 变量 <code>&lt;dir&gt;</code> 必须要指定, 这是备份文件存放的路径, 它必须要存在且可写</p>
+<p>临时覆盖 TLPDB 中 <code>backupdir</code> 的值. 参数 <code>&lt;dir&gt;</code> 必须要指定, 这是备份文件存放的路径, 它必须要存在且可写</p>
 <h4 id="all"><code>--all</code></h4>
 <p>如果没有指定 <code>--clean</code> 选项, 那么创建一个 TeX Live 安装过的所有软件包的备份, 这会消耗大量的存储空间与时间. 如果指定 <code>--clean</code> 选项, 所有的备份将被删除.</p>
 <h4 id="cleann"><code>--clean[=N]</code></h4>
-<p>删除备份目录 <code>backupdir</code> 中的旧备份, 而不是创建备份. 可选参数整数值 <code>N</code> 会覆盖 TLPDB 中 <code>autobackup</code> 的值. 如果使用这个选项, 那么必须要指定 <code>--all</code> 或者一列软件包.</p>
+<p>删除备份目录 <code>backupdir</code> 中的旧备份, 而不是创建备份. 可选参数整数值 <code>N</code> 会临时覆盖 TLPDB 中 <code>autobackup</code> 的值. 如果使用这个选项, 那么必须要指定 <code>--all</code> 或者一列软件包.</p>
 <h4 id="dry-run"><code>--dry-run</code></h4>
 <p>备份或删除的操作将被打印在终端而不真正进行备份或者删除, 如 <code>tlmgr --dry-run backup ctex</code> 会打印出 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">❯❯ tlmgr --dry-run backup ctex</span><br><span class="line">would save current status of ctex to d:/texlive/2020/tlpkg/backups/ctex.r56705.tar.lz4</span><br><span class="line">no action taken due to --dry-run</span><br></pre></td></tr></table></figure></p>
 <h3 id="candidate-pkg"><code>candidate &lt;pkg&gt;</code></h3>
@@ -693,7 +693,7 @@
 <h4 id="no-dependens-at-all"><code>--no-dependens-at-all</code></h4>
 <p>略.</p>
 <h4 id="reinstall"><code>--reinstall</code></h4>
-<p>重新安装一个软件包 (包括它的依赖), 尽管它们已经被安装. 如果有一些宏包安装失败导致不完整, 可以使用这个选项来重新安装.</p>
+<p>重新安装一个软件包 (包括它的依赖), 尽管它们看起来已经被安装了. 这个选项对于恢复在层级中不小心删除的软件包很有用.</p>
 <p>当重新安装时, only dependencies on normal packages are followed. (i.e., not those of category Scheme or Collection)</p>
 <h4 id="with-doc-与---with-src"><code>--with-doc</code> 与 <code>--with-src</code></h4>
 <p><code>install-tl</code> 给了一个 "不安装文档/源文件" 的选项, 但是我们不推荐使用这个选项. (默认状态下会安装所有的文件). 如果用了这个选项, 那么当你想获得软件包的文档或者源文件的时候, 可以使用这两个选项与 <code>--reinstall</code>, 比如用 <code>fontspec</code> 宏包为例:</p>
