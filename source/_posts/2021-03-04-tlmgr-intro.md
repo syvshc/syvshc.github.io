@@ -11,7 +11,7 @@ categories:
 ---
 
 <!-- [点击跳转](#jump) <span id="jump">跳转到的地方</span> -->
-这篇文章是用来熟悉 TeX Live 自带的包管理器 `tlmgr(TeX Live Manager)` 的使用, 官方文档位于 [TUG](http://tug.org/texlive/doc/tlmgr.html).  ~~这可能会变成一个翻译文档~~
+这篇文章是用来熟悉 TeX Live 自带的包管理器 `tlmgr(TeX Live Manager)` 的使用, 官方文档位于 [TUG](http://tug.org/texlive/doc/tlmgr.html), 这个文档会不定期更新我看的懂的并且觉得有用的部分. 这是一个翻译文档, [关于 `tlmgr` 使用方法的简介](https://github.com/syvshc/tlmgr-intro-zh-cn) 已经完成, 欢迎提 [issue](https://github.com/syvshc/tlmgr-intro-zh-cn/issues) 或者 [PR](https://github.com/syvshc/tlmgr-intro-zh-cn/pulls) 来帮我改进这份文档. 
 
 <!-- more -->
 
@@ -20,11 +20,12 @@ categories:
 1. 文档中被中括号`[]`框起来的为可选参数, 如 `--gui [action]`, 
 2. 被尖括号`<>`框起来的为必要参数, 如 `tlmgr info <what>`, 
 3. 被 `|` 分割开的选项为 n 选 1, 如 `backup [option] <pkg|-all>`, 
-4. 文档中的 "宏包" 有时不仅指被用在 `\usepackage{}` 中的宏包. 
+4. 文档中的 "软件包" 有时不仅指被用在 `\usepackage{}` 中的软件包. 
+5. 命令中带有 `...` 的选项或参数意味着它们可以被填入不只一个内容, 如 `install [option...] <pkg...>` 说明你可以使用 `tlmgr install --force --reinstall ctex, amsmath`. 
 
 ## 概要
 
-`tlmgr` 管理着 TeX Live 中的宏包以及配置. 最新的文档以及测试版本的信息位于 [https://tug.org/texlive/tlmgr.html](https://tug.org/texlive/tlmgr.html) . 
+`tlmgr` 管理着 TeX Live 中的软件包以及配置. 最新的文档以及测试版本的信息位于 [https://tug.org/texlive/tlmgr.html](https://tug.org/texlive/tlmgr.html) . 
 
 TeX Live 由一些最高级别的 schemes 组成, 每一种 scheme 都是由不同的 collections 与 packages 组成, 其中 collection 是 packages 的集合, 而 packages 是包含了一些文件的包. Schemes 里一般既有 collections 也有 packages, 但是每一个 package 都属于且只属于一个 collection. 
 
@@ -180,7 +181,7 @@ tlmgr [option...] action [option...] [operand...]
 
 ### `--repository <url|path>`
 
-指定一个宏包的仓库, 可以是本地文件夹 `<path>` 或者网络位置 `<url>`. 这个设置会临时覆盖掉 TeX Live Package Database (TLPDB, 由文件 `tlpkg/texlive.tlpdb` 给出) 中默认的宏包仓库. 
+指定一个软件包的仓库, 可以是本地文件夹 `<path>` 或者网络位置 `<url>`. 这个设置会临时覆盖掉 TeX Live Package Database (TLPDB, 由文件 `tlpkg/texlive.tlpdb` 给出) 中默认的软件包仓库. 
 
 **注意** `--repository <url|path>` 命令只会修改当前运行的仓库选择, 如果想长期修改仓库, 可以使用 `option repository` (见 [`option`](#action-option)操作)
 
@@ -254,7 +255,7 @@ TEXMFSYSVAR/web2c/tlmgr-commands.log
 
 ### `--package-logfile <file>`
 
-`tlmgr` 将所有宏包操作 (`install`, `remove`, `update`, `failed updates`, `failed restores`) 写入一个单独的日志文件, 默认位置为
+`tlmgr` 将所有软件包操作 (`install`, `remove`, `update`, `failed updates`, `failed restores`) 写入一个单独的日志文件, 默认位置为
 ```
 TEXMFSYSVAR/web2c/tlmgr.log
 ```
@@ -288,9 +289,9 @@ TeX Live 程序的标准选项也可以使用, 比如 `--help/-h/-?`, `--version
 给出版本信息, 与 `--version` 选项相同, 如果也使用了 `-v` 选项, 那么所使用模块的版本信息也会被打印. 
 
 ### `backup`
-#### `backup [option..] <pkg|-all>`
+#### `backup [option..] <pkg...|-all>`
 
-如果没有指定 `--clean` 选项, 那么这个操作会创建一个宏包 `<pkg>` 的备份, 如果使用了 `-all` 选项, 则创建一个全部宏包的备份.
+如果没有指定 `--clean` 选项, 那么这个操作会创建一个软件包 `<pkg>` 的备份, 如果使用了 `-all` 选项, 则创建一个全部软件包的备份.
 
 备份文件的位置将由 `--backupdir <dir>` 指定, 前提是 `<dir>` 存在并且可写. 如果没有指定 `--backupdir`, 那么就使用 TLPDB 中设置的 `backupdir`, 如果二者皆空, 那么将不会创建备份. 
 
@@ -302,15 +303,15 @@ TeX Live 程序的标准选项也可以使用, 比如 `--help/-h/-?`, `--version
 
 #### `--backupdir <dir>`
 
-覆盖 TLPDB 中 `backupdir` 的值. 变量 `<dir>` 必须要指定, 这是备份文件存放的路径, 它必须要存在且可写
+临时覆盖 TLPDB 中 `backupdir` 的值. 参数 `<dir>` 必须要指定, 这是备份文件存放的路径, 它必须要存在且可写
 
 #### `--all`
 
-如果没有指定 `--clean` 选项, 那么创建一个 TeX Live 安装过的所有宏包的备份, 这会消耗大量的存储空间与时间. 如果指定 `--clean` 选项, 所有的备份将被删除. 
+如果没有指定 `--clean` 选项, 那么创建一个 TeX Live 安装过的所有软件包的备份, 这会消耗大量的存储空间与时间. 如果指定 `--clean` 选项, 所有的备份将被删除. 
 
 #### `--clean[=N]`
 
-删除备份目录 `backupdir` 中的旧备份, 而不是创建备份. 可选参数整数值 `N` 会覆盖 TLPDB 中 `autobackup` 的值. 如果使用这个选项, 那么必须要指定 `--all` 或者一列宏包. 
+删除备份目录 `backupdir` 中的旧备份, 而不是创建备份. 可选参数整数值 `N` 会临时覆盖 TLPDB 中 `autobackup` 的值. 如果使用这个选项, 那么必须要指定 `--all` 或者一列软件包. 
 
 #### `--dry-run`
 备份或删除的操作将被打印在终端而不真正进行备份或者删除, 如 `tlmgr --dry-run backup ctex` 会打印出
@@ -322,15 +323,15 @@ no action taken due to --dry-run
 
 ### `candidate <pkg>`
 
-显示宏包 `<pkg>` 的候选仓库 (candidate repository). 见 [MULTIPLE REPOSITORY](#multiple-repository)
+显示软件包 `<pkg>` 的候选仓库 (candidate repository). 见 [MULTIPLE REPOSITORY](#multiple-repository)
 
-### `check [option] <depends|excutes|files|runfiles|texmfdbs|all>
+### `check [option...] <depends|excutes|files|runfiles|texmfdbs|all>`
 
 执行安装的一致性 (consistency of installation) 的一个或者全部检查, 如果没发现问题, 那么将不会有输出. (如果想看看 `tlmgr` 做了什么, 可以用 `tlmgr -v check`)
 
 #### `depends`
 
-列出那些没有被安装, 但是作为安装集合的依赖的宏包, 以及哪些没有包含在任何集合中的宏包. 
+列出那些没有被安装, 但是作为安装集合的软件包的依赖, 以及哪些没有包含在任何集合中的软件包. 
 
 如果使用 `tlmgr check collections`, 同样会执行 `tlmgr check depends`, 因为旧版本的 `tlmgr` 就是这么做的. 
 
@@ -346,7 +347,7 @@ Check that the files referred to by execute directives in the TeX Live Database 
 
 #### `files`
 
-检查列在 TLPDB (`texlive.tlpdb`) 是否真的存在, 列出不存在的宏包. 
+检查列在 TLPDB (`texlive.tlpdb`) 是否真的存在, 列出不存在的软件包. 
 
 #### `runfiles`
 
@@ -374,17 +375,17 @@ Check that the files referred to by execute directives in the TeX Live Database 
 
 ### `info`
 
-#### `info [option] [pkg...|collections|schemes]`
+#### `info [option...] [pkg...|collections|schemes]`
 
-如果没有参数, 列出仓库中全部的可用宏包, 把哪些已经安装的用 `i` 作为前缀. 
+如果没有参数, 列出仓库中全部的可用软件包, 把哪些已经安装的用 `i` 作为前缀. 
 
-如果用 `collections` 或者 `schemes`, 列出所需的类型, 而不输出宏包名 .
+如果用 `collections` 或者 `schemes`, 列出所需的类型, 而不输出软件包名 .
 
-如果用任何其他的参数, 那么就把参数看成宏包名 `<pkg...>`, 并列出它的信息: 名称 (name), 分类 (category), 简短以及详细的介绍 (short and long description), 大小 (size), 安装状态 (installation status), 以及 TeX Live 中它的修订号 (TeX Live revision number). 
+如果用任何其他的参数, 那么就把参数看成软件包名 `<pkg...>`, 并列出它的信息: 名称 (name), 分类 (category), 简短以及详细的介绍 (short and long description), 大小 (size), 安装状态 (installation status), 以及 TeX Live 中它的修订号 (TeX Live revision number). 
 
-如果 `<pkg...>` 在本地与线上都没有找到, 那么将会搜索与它相关的宏包和文件. 
+如果 `<pkg...>` 在本地与线上都没有找到, 那么将会搜索与它相关的软件包和文件. 
 
-它也会显示从 TeX Catalogue 上获取的信息, 比如宏包版本 (package version), 日期 (date), 和许可证 (license). 考虑这些，特别是宏包版本，获得的信息仅仅是近似的，这是由于不同部分更新的时间偏差造成的. 
+它也会显示从 TeX Catalogue 上获取的信息, 比如软件包版本 (package version), 日期 (date), 和许可证 (license). 考虑这些，特别是软件包版本，获得的信息仅仅是近似的，这是由于不同部分更新的时间偏差造成的. 
 
 旧操作 `show` 与 `list` 已经被合并到这个操作中, 但是为了后续的兼容性这两个操作依然可用. 
 
@@ -392,17 +393,17 @@ Check that the files referred to by execute directives in the TeX Live Database 
 
 #### `--list`
 
-如果指定了 `--list` 选项, 并且跟了一个宏包 `<pkg...>`, 那么这个宏包的包含文件也会被展示, 比如执行文件, 源文件, 宏包文档等等, 包括平台特定的从属包 (platform-specific dependencies)
+如果指定了 `--list` 选项, 并且跟了一个软件包 `<pkg...>`, 那么这个软件包的包含文件也会被展示, 比如执行文件, 源文件, 软件包文档等等, 包括平台特定的依赖包 (platform-specific dependencies)
 
 如果跟的是 `schemes` 或 `collections`, 那么输出的内容与不加 `--list` 相同. 
 
 #### `--only-installed`
 
-如果指定这个选项, 那么 `tlmgr` 只会从本地安装的宏包, collections, 或者 schemes 中寻找信息, 而不使用安装的源. 
+如果指定这个选项, 那么 `tlmgr` 只会从本地安装的软件包, collections, 或者 schemes 中寻找信息, 而不使用安装的源. 
 
 #### `--only-remote`
 
-只列出在远端仓库的宏包. 这个选项比较适合配合 `tlmgr --repo ...` 使用, 来查看某个宏包在某远端仓库是否可用, 用 `tlmgr --repo ... --only-remote info <pkg...>` 即可. **注意** `--only-installed` 和 `--only-remote` 不能同时指定. 
+只列出在远端仓库的软件包. 这个选项比较适合配合 `tlmgr --repo ...` 使用, 来查看某个软件包在某远端仓库是否可用, 用 `tlmgr --repo ... --only-remote info <pkg...>` 即可. **注意** `--only-installed` 和 `--only-remote` 不能同时指定. 
 
 #### `--data <item1, item2,...>`
 
@@ -414,20 +415,69 @@ Check that the files referred to by execute directives in the TeX Live Database 
 ```bash
 tlmgr info --data cat-contact-home amsmath
 ```
-查看 `amsmath` 宏包的主页, 可以得到
+查看 `amsmath` 软件包的主页, 可以得到
 ```bash
 ❯❯ tlmgr info --data cat-contact-home amsmath
 http://www.ams.org/tex/amslatex.html
 ```
-关于新宏包的简短的介绍可以在 [CTAN upload page](https://ctan.org/upload)  上查看. 
+关于新软件包的简短的介绍可以在 [CTAN upload page](https://ctan.org/upload)  上查看. 
 
 #### `--json`
 
 如果指定 `--json` 选项, 那么将会给出一个 JSON 格式的输出, 可以在 `tlpkg/doc/JSON-formats.txt` 查看格式信息, 格式定义在 `TLPOBJINFO1`. 如果 `--json` 和 `--data` 同时被指定, 那么 `--json` 的优先级会更高.
 
+### `init-usertree` 
+
+为所谓的 `user mode magagement` 建立一个 `texmf` 树, 无论是在默认的用户树 `TEXMFHOME` 下, 还是一个被 `--usertree` 指定的树下. 见 [`USER MODE`](#user-mode). 
+
+### `install [option...] <pkg...>`
+
+安装每一个 `<pkg...>` 中提到的软件包, 如果它们没有被安装的话, 这个操作不会去动失敬存在的软件包, 如果想获得软件包的最新版本, 见 `update` 操作. 
+
+这个操作默认也会安装给定的 `<pkg...>` 的依赖文件. 
+By default this also installs all packages on which the given *pkgs* are dependent. 
+
+下面是 `install` 操作特有的选项:
+
+#### `--dry-run`
+
+安装会发生的事情会被打印出来, 而不真进的行安装
+
+#### `--file`
+
+从给定的软件包文件中安装软件包, 而不从安装仓库进行安装. 这些文件必须是标准的 TeX Live 软件包文件 (含有 `tlpobj` 文件)[^installfile]
+
+#### `--force`
+
+如果 `tlmgr` 本身或其他基本的部分正在升级, 那么 `tlmgr` 将会退出这次安装, 并且不会安装任何软件包. 如果给定了 `--force` 选项, 那么这次的安装依然会继续进行. **不推荐使用**
+
+#### `--no-dependens`
+
+不安装软件包的依赖. (默认设置下, 安装一个软件包要满足它的所有依赖)
+
+#### `--no-dependens-at-all`
+
+略. 
+
+#### `--reinstall`
+
+重新安装一个软件包 (包括它的依赖), 尽管它们看起来已经被安装了. 这个选项对于恢复在层级中不小心删除的软件包很有用. 
+
+当重新安装时, only dependencies on normal packages are followed. (i.e., not those of category Scheme or Collection)
+
+#### `--with-doc` 与 `--with-src`
+
+`install-tl` 给了一个 "不安装文档/源文件" 的选项, 但是我们不推荐使用这个选项. (默认状态下会安装所有的文件). 如果用了这个选项, 那么当你想获得软件包的文档或者源文件的时候, 可以使用这两个选项与 `--reinstall`, 比如用 `fontspec` 宏包为例: 
+
+```bash
+tlmgr install --reinstall --with-doc --with-src fontspec
+```
+
+这个操作不会在系统目录中自动添加新的符号链接, 需要手动运行 `tlmgr path add "path"`
 <span id="action-option"> `option` </span>
 <span id="user-mode"> `USER MODE` </span>
 <span id="multiple-repository"> `MULTIPLE REPOSITORY` </span>
 
 [^update]: mirror.ctan.org resolves to many different hosts, and they are not perfectly synchronized; we recommend updating only daily (at most), and not more often. 
-[^mainland]: 这个表格来自 [install-latex-guide-zh-cn](https://github.com/OsbertWang/install-latex-guide-zh-cn)
+[^mainland]: 这个表格来自 [install-latex-guide-zh-cn](https://github.com/OsbertWang/install-latex-guide-zh-cn). 
+[^installfile]: 这里我没有看懂, 也没找到合适的例子. 

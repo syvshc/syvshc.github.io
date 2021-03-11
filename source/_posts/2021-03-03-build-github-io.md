@@ -18,6 +18,7 @@ categories:
 
 ### 创建仓库
 在 [github](github.com) 上新建一个仓库, 名称为 `<username>.github.io`, 将 `<username>` 替换为你的 `github` 账户名. 
+
 ### 安装 `node.js`
 在 [node.js的官网](https://nodejs.org/en/) 上下载 `LTS` 版本安装, 记得勾选 `ADD TO PATH`. 安装后在命令行输入 `npm -v`, 如果有版本号输出, 那么说明安装成功, 如果返回
 ```bash
@@ -28,6 +29,7 @@ categories:
 npm install -g hexo-cli
 ```
 安装 `hexo`, 确保安装后可以运行 `hexo` 命令. 
+
 ### 初始化博客
 用 `cmd` 进入想存放博客的文件夹, 运行 `hexo init <blogname>`, 将 `<blogname>` 替换成博客的项目名, 比如 `hexotest`. 因为 `hexo init` 的过程要链接 `github`, 如果出现卡顿, 可以尝试看这个[博客](https://weilining.github.io/201021.html)尝试解决. 
 
@@ -216,7 +218,28 @@ npm install hexo-theme-next
    \end{equation}
 
 3. **gitalk** 配置评论区. 配置方法在 {% post_link enable-gitalk "为博客添加 Gitalk 评论区" %}.
-
+4. **busuanzi** 配置阅读访问量. 在 `hexotest/` 文件夹下运行 
+```bash
+npm install busuanzi.pure.js --save
+```
+来安装不蒜子阅读访问量插件, 在 `_config.next.yml` 文件中搜索 `busuanzi` 即可找到
+```yml
+# Show Views / Visitors of the website / page with busuanzi.
+# For more information: http://ibruce.info/2015/04/04/busuanzi/
+busuanzi_count:
+  enable: false
+  total_visitors: true
+  total_visitors_icon: fa fa-user
+  total_views: true
+  total_views_icon: fa fa-eye
+  post_views: true
+  post_views_icon: far fa-eye
+```
+把 `enable` 字段改为 `true` 即可开启. 使用
+```bash
+hexo clean && hexo g -d
+```
+部署到线上, 如果没有刷新, 使用 `ctrl+f5` 进行强制刷新即可. 
 
 
 ## 未完待续
