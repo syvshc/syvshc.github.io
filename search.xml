@@ -1,29 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2020-12-12-hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <title>欢迎来到我的 GitHub.io</title>
+    <url>/2020-12-12-welcome/</url>
+    <content><![CDATA[<h1 id="这里是无锤乙醇的-github.io">这里是无锤乙醇的 <code>GitHub.io</code></h1>
+<p>花了小一天来折腾 Hexo NexT 主题, 也算是把基本配置弄好了, 咕了好久的博客也是搭好了, 还有一些坑没有填, 比如<a href="https://blog.dlzhang.com/posts/32/">自定义侧边栏图标</a>, 有时间慢慢折腾吧.</p>
+<p>接下来会把简书里的东西搬到这里, <del><a href="https://syvshc.gitee.io">Gitee Pages</a> 是主要更新的地方, 这边会同步更新.</del> 就搁这更新了, Gitee 不折腾了</p>
+<p>并且这篇文章会被用做测试</p>
+<span id="more"></span>
+<h1 id="测试">测试</h1>
+<p>更新了字体, <a href="https://leay.net/2020/02/14/hexo-next-font/">字体配置方法</a></p>
+<p>this is a footnote test <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>this is a equation <span class="math inline">\(ax^{2}+bx+c=0\,(a\ne 0)\)</span>, which solution is <span class="math display">\[x_{1, 2}=\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}\]</span></p>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>footnote<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 ]]></content>
       <categories>
         <category>杂项</category>
       </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
   </entry>
   <entry>
     <title>Win10+Ubuntu18.04LTS双系统安装记录</title>
@@ -184,29 +182,6 @@
       </tags>
   </entry>
   <entry>
-    <title>欢迎来到我的 GitHub.io</title>
-    <url>/2020-12-12-welcome/</url>
-    <content><![CDATA[<h1 id="这里是无锤乙醇的-github.io">这里是无锤乙醇的 <code>GitHub.io</code></h1>
-<p>花了小一天来折腾 Hexo NexT 主题, 也算是把基本配置弄好了, 咕了好久的博客也是搭好了, 还有一些坑没有填, 比如<a href="https://blog.dlzhang.com/posts/32/">自定义侧边栏图标</a>, 有时间慢慢折腾吧.</p>
-<p>接下来会把简书里的东西搬到这里, <del><a href="https://syvshc.gitee.io">Gitee Pages</a> 是主要更新的地方, 这边会同步更新.</del> 就搁这更新了, Gitee 不折腾了</p>
-<p>并且这篇文章会被用做测试</p>
-<span id="more"></span>
-<h1 id="测试">测试</h1>
-<p>更新了字体, <a href="https://leay.net/2020/02/14/hexo-next-font/">字体配置方法</a></p>
-<p>this is a footnote test <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<p>this is a equation <span class="math inline">\(ax^{2}+bx+c=0\,(a\ne 0)\)</span>, which solution is <span class="math display">\[x_{1, 2}=\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}\]</span></p>
-<section class="footnotes" role="doc-endnotes">
-<hr />
-<ol>
-<li id="fn1" role="doc-endnote"><p>footnote<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
-]]></content>
-      <categories>
-        <category>杂项</category>
-      </categories>
-  </entry>
-  <entry>
     <title>beamer 的字体设置</title>
     <url>/2021-03-03-beamer-font-set/</url>
     <content><![CDATA[<p>在使用 <code>beamer</code> 文档类的时候, 可能会有需要更换字体.</p>
@@ -237,6 +212,31 @@
         <tag>字体设置</tag>
         <tag>LaTeX</tag>
         <tag>示例</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020-12-12-hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -454,8 +454,8 @@
         <category>帮助文档</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
         <tag>配置记录</tag>
+        <tag>hexo</tag>
         <tag>帮助文档</tag>
         <tag>gitalk</tag>
       </tags>
