@@ -1,29 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>欢迎来到我的 GitHub.io</title>
-    <url>/2020-12-12-welcome/</url>
-    <content><![CDATA[<h1 id="这里是无锤乙醇的-github.io">这里是无锤乙醇的 <code>GitHub.io</code></h1>
-<p>花了小一天来折腾 Hexo NexT 主题, 也算是把基本配置弄好了, 咕了好久的博客也是搭好了, 还有一些坑没有填, 比如<a href="https://blog.dlzhang.com/posts/32/">自定义侧边栏图标</a>, 有时间慢慢折腾吧.</p>
-<p>接下来会把简书里的东西搬到这里, <del><a href="https://syvshc.gitee.io">Gitee Pages</a> 是主要更新的地方, 这边会同步更新.</del> 就搁这更新了, Gitee 不折腾了</p>
-<p>并且这篇文章会被用做测试</p>
-<span id="more"></span>
-<h1 id="测试">测试</h1>
-<p>更新了字体, <a href="https://leay.net/2020/02/14/hexo-next-font/">字体配置方法</a></p>
-<p>this is a footnote test <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<p>this is a equation <span class="math inline">\(ax^{2}+bx+c=0\,(a\ne 0)\)</span>, which solution is <span class="math display">\[x_{1, 2}=\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}\]</span></p>
-<section class="footnotes" role="doc-endnotes">
-<hr />
-<ol>
-<li id="fn1" role="doc-endnote"><p>footnote<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
-]]></content>
-      <categories>
-        <category>杂项</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Win10+Ubuntu18.04LTS双系统安装记录</title>
     <url>/2020-12-12-Windows-and-Ubuntu/</url>
     <content><![CDATA[<p>本文记录过程的时候会同时记录踩过的坑, 这些坑有一些是由于我自己的操作不当, 还有一些是由于网上的教程版本过旧或书写错误造成的, 我都会记录下来, 但是文中的一些文本的描述会与系统标准输出的文本有一定差异, 只要不影响命令的运行的文字笔者不会过分追求一字不差. 那么我们开始吧<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
@@ -182,6 +159,54 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2020-12-12-hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>欢迎来到我的 GitHub.io</title>
+    <url>/2020-12-12-welcome/</url>
+    <content><![CDATA[<h1 id="这里是无锤乙醇的-github.io">这里是无锤乙醇的 <code>GitHub.io</code></h1>
+<p>花了小一天来折腾 Hexo NexT 主题, 也算是把基本配置弄好了, 咕了好久的博客也是搭好了, 还有一些坑没有填, 比如<a href="https://blog.dlzhang.com/posts/32/">自定义侧边栏图标</a>, 有时间慢慢折腾吧.</p>
+<p>接下来会把简书里的东西搬到这里, <del><a href="https://syvshc.gitee.io">Gitee Pages</a> 是主要更新的地方, 这边会同步更新.</del> 就搁这更新了, Gitee 不折腾了</p>
+<p>并且这篇文章会被用做测试</p>
+<span id="more"></span>
+<h1 id="测试">测试</h1>
+<p>更新了字体, <a href="https://leay.net/2020/02/14/hexo-next-font/">字体配置方法</a></p>
+<p>this is a footnote test <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>this is a equation <span class="math inline">\(ax^{2}+bx+c=0\,(a\ne 0)\)</span>, which solution is <span class="math display">\[x_{1, 2}=\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}\]</span></p>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>footnote<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+  </entry>
+  <entry>
     <title>beamer 的字体设置</title>
     <url>/2021-03-03-beamer-font-set/</url>
     <content><![CDATA[<p>在使用 <code>beamer</code> 文档类的时候, 可能会有需要更换字体.</p>
@@ -215,31 +240,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2020-12-12-hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>杂项</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>搭建 github.io</title>
     <url>/2021-03-03-build-github-io/</url>
     <content><![CDATA[<p><strong>在 NexT 主题更新 8.0 之后又重新配置了一次 <code>hexo+NexT</code>, 这次来记录一下, 并且会随时更新新增的配置.</strong></p>
@@ -247,7 +247,11 @@
 <h2 id="准备工作">准备工作</h2>
 <p>假定用户的电脑上已经安装 <code>git</code>, 并且已经与 <a href="github.com">github</a> 连接, 并熟悉 <code>git</code> 的相关操作.</p>
 <h3 id="创建仓库">创建仓库</h3>
-<p>在 <a href="github.com">github</a> 上新建一个仓库, 名称为 <code>&lt;username&gt;.github.io</code>, 将 <code>&lt;username&gt;</code> 替换为你的 <code>github</code> 账户名. ### 安装 <code>node.js</code> 在 <a href="https://nodejs.org/en/">node.js的官网</a> 上下载 <code>LTS</code> 版本安装, 记得勾选 <code>ADD TO PATH</code>. 安装后在命令行输入 <code>npm -v</code>, 如果有版本号输出, 那么说明安装成功, 如果返回 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;npm&#x27;</span> 不是内部或外部命令，也不是可运行的程序或批处理文件。</span><br></pre></td></tr></table></figure> 那么将 <code>&lt;InstallPath&gt;/nodejs</code> 添加到环境变量. 然后命令行运行 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure> 安装 <code>hexo</code>, 确保安装后可以运行 <code>hexo</code> 命令. ### 初始化博客 用 <code>cmd</code> 进入想存放博客的文件夹, 运行 <code>hexo init &lt;blogname&gt;</code>, 将 <code>&lt;blogname&gt;</code> 替换成博客的项目名, 比如 <code>hexotest</code>. 因为 <code>hexo init</code> 的过程要链接 <code>github</code>, 如果出现卡顿, 可以尝试看这个<a href="https://weilining.github.io/201021.html">博客</a>尝试解决.</p>
+<p>在 <a href="github.com">github</a> 上新建一个仓库, 名称为 <code>&lt;username&gt;.github.io</code>, 将 <code>&lt;username&gt;</code> 替换为你的 <code>github</code> 账户名.</p>
+<h3 id="安装-node.js">安装 <code>node.js</code></h3>
+<p>在 <a href="https://nodejs.org/en/">node.js的官网</a> 上下载 <code>LTS</code> 版本安装, 记得勾选 <code>ADD TO PATH</code>. 安装后在命令行输入 <code>npm -v</code>, 如果有版本号输出, 那么说明安装成功, 如果返回 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;npm&#x27;</span> 不是内部或外部命令，也不是可运行的程序或批处理文件。</span><br></pre></td></tr></table></figure> 那么将 <code>&lt;InstallPath&gt;/nodejs</code> 添加到环境变量. 然后命令行运行 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure> 安装 <code>hexo</code>, 确保安装后可以运行 <code>hexo</code> 命令.</p>
+<h3 id="初始化博客">初始化博客</h3>
+<p>用 <code>cmd</code> 进入想存放博客的文件夹, 运行 <code>hexo init &lt;blogname&gt;</code>, 将 <code>&lt;blogname&gt;</code> 替换成博客的项目名, 比如 <code>hexotest</code>. 因为 <code>hexo init</code> 的过程要链接 <code>github</code>, 如果出现卡顿, 可以尝试看这个<a href="https://weilining.github.io/201021.html">博客</a>尝试解决.</p>
 <p>初始化结束后会看到这样的文件树</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexotest</span><br><span class="line"> ├── db.json</span><br><span class="line"> ├── node_modules</span><br><span class="line"> ├── package-lock.json</span><br><span class="line"> ├── package.json</span><br><span class="line"> ├── public</span><br><span class="line"> ├── scaffolds</span><br><span class="line"> ├── source</span><br><span class="line"> ├── themes</span><br><span class="line"> ├── _config.landscape.yml</span><br><span class="line"> └── _config.yml</span><br></pre></td></tr></table></figure>
 <h2 id="部署博客">部署博客</h2>
