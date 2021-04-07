@@ -1,31 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2020-12-12-hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>杂项</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Win10+Ubuntu18.04LTS双系统安装记录</title>
     <url>/2020-12-12-Windows-and-Ubuntu/</url>
     <content><![CDATA[<p>本文记录过程的时候会同时记录踩过的坑, 这些坑有一些是由于我自己的操作不当, 还有一些是由于网上的教程版本过旧或书写错误造成的, 我都会记录下来, 但是文中的一些文本的描述会与系统标准输出的文本有一定差异, 只要不影响命令的运行的文字笔者不会过分追求一字不差. 那么我们开始吧<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
@@ -180,7 +155,32 @@
       <tags>
         <tag>系统安装</tag>
         <tag>配置记录</tag>
-        <tag>帮助问题</tag>
+        <tag>帮助文档</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020-12-12-hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -433,8 +433,8 @@
         <category>帮助文档</category>
       </categories>
       <tags>
-        <tag>LaTeX</tag>
         <tag>帮助文档</tag>
+        <tag>LaTeX</tag>
         <tag>latexmk</tag>
       </tags>
   </entry>
@@ -458,10 +458,36 @@
         <category>帮助文档</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
         <tag>配置记录</tag>
         <tag>帮助文档</tag>
+        <tag>hexo</tag>
         <tag>gitalk</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows 不合法的缓存路径导致 TeX Live 安装失败</title>
+    <url>/2021-04-07-illegal-temp-cause-tlisntall-failure/</url>
+    <content><![CDATA[<p>在 Windows 上安装 TeX Live 时可能遇到由于缓存路径名称不合法，即 <strong>不是纯英文的无空格的路径</strong>，而安装错误的情况。</p>
+<span id="more"></span>
+<h3 id="错误">错误</h3>
+<p>在使用 GUI 界面安装时，出现的错误形如下图</p>
+<p><img src="../img/postimg/failuregui.jpg" /></p>
+<p>命令行安装时错误如下图</p>
+<p><img src="../../img/postimg/failurenogui.jpg" /></p>
+<h3 id="原因">原因</h3>
+<p>这是因为 TeX Live 安装的时候需要使用环境变量 <code>TEMP</code> 与 <code>TMP</code> 来释放临时文件，但是路径名不合法会导致调用失败。</p>
+<h3 id="解决方法">解决方法</h3>
+<p>知道了问题在哪就容易解决了，首先 <code>右键此电脑→属性→高级系统设置→环境变量→用户环境变量</code> 找到 <code>TEMP</code> 与 <code>TMP</code>，如果没有刻意设置的话其值应该都为 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">%USERPROFILE%\AppData\Local\Temp</span><br></pre></td></tr></table></figure> 中文用户名便会导致 <code>%USERPROFILE%</code> 中含有无法识别的中文字符，我们可以修改这个路径改为合法路径，如 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">C:&#x2F;Windows&#x2F;Temp</span><br></pre></td></tr></table></figure> 再启动安装程序即可安装成功。</p>
+<h3 id="后续">后续</h3>
+<p>但是中文用户名带来的问题不仅仅是安装 TeX Live 失败。所以最好可以拥有一个英文无空格的用户名，首先最推荐的就是重装系统，重新设置用户名。如果无法或不愿重装系统，可以尝试修改用户名，但是<strong>直接修改用户名可能会导致严重的后果，操作之前要做好数据备份以及心理准备</strong>，下面放上可供参考的修改方法及知乎上的问题： <a href="http://www.xitongtiandi.net/wenzhang/win10/15351.html">可供参考的方法</a> <a href="https://www.zhihu.com/question/37082172">知乎上的问题</a> <a href="https://answers.microsoft.com/zh-hans/windows/forum/windows_10-other_settings/win10%E5%AE%B6%E5%BA%AD%E7%89%88%E5%A6%82%E4%BD%95/26e8cc30-97e4-434d-9d11-406b3d25e0d1">微软社区的技术支持1</a> <a href="https://answers.microsoft.com/zh-hans/windows/forum/windows_10-security/win10%E5%A6%82%E4%BD%95%E8%83%BD%E5%A4%9F%E5%BD%BB/681b5ea9-7ba6-4860-bc9c-a3f59a2ee269">微软社区的技术支持2</a></p>
+]]></content>
+      <categories>
+        <category>LaTeX</category>
+        <category>帮助文档</category>
+      </categories>
+      <tags>
+        <tag>帮助文档</tag>
+        <tag>LaTeX</tag>
       </tags>
   </entry>
   <entry>
@@ -793,8 +819,8 @@
         <category>帮助文档</category>
       </categories>
       <tags>
-        <tag>LaTeX</tag>
         <tag>帮助文档</tag>
+        <tag>LaTeX</tag>
         <tag>tlmgr</tag>
       </tags>
   </entry>
