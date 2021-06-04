@@ -16,7 +16,7 @@
 </ul>
 <p>在我尝试压缩我的机械硬盘的时候<code>Windows</code>提示我</p>
 <figure>
-<img src="https://pic4.zhimg.com/80/v2-df63444c0adf72d52ae7240ae7bc97f1.png" alt="" /><figcaption>压缩提示</figcaption>
+<img src="https://pic4.zhimg.com/80/v2-df63444c0adf72d52ae7240ae7bc97f1.png" alt="压缩提示" /><figcaption aria-hidden="true">压缩提示</figcaption>
 </figure>
 <p>而我的机械硬盘上还有<code>300G</code>的空余空间, 我没多想, 只是认为是磁盘里碎片太多, 导致无法找出<code>100G</code>连续的空间进行压缩, 于是我运行了磁盘优化, 但是优化完还是报错, 这时我感觉问题不像我想的那样, 问了<a href="google.com.hk"><code>google</code></a>才知道我的磁盘已经在我不知道是什么的时候变成了<strong>动态磁盘</strong>[^3]! [^3]:在<code>Windows</code>自带的磁盘管理中动态磁盘为黄色, 基本磁盘为深蓝色.</p>
 <p>而这块动态磁盘还被分成了4个区, 尽管我的机械硬盘在<code>Win</code>中显示为一块磁盘. 这下知道问题所在就该着手解决了, 查了<a href="google.com.hk">google</a>知道可以用<code>分区助手</code>或<code>DiskGenius</code>来实现动态磁盘逆转回基本磁盘, 在用移动硬盘备份好机械硬盘里所有的文件后开始运行软件, 应该是我的磁盘型号的问题, 这两个软件都<strong>无法处理</strong>, 只能将其格式化, 转换为基本磁盘后再压缩出<code>100G</code>.</p>
@@ -31,14 +31,14 @@
 </ul>
 <p>我取消了勾选, 而由于我的<code>安装Ubuntu时下载更新</code>默认勾选且无法选择就只能勾选</p>
 <figure>
-<img src="https://pic4.zhimg.com/80/v2-bf16d4403832c000d0d7f3dabebb6332.png" alt="" /><figcaption>准备安装</figcaption>
+<img src="https://pic4.zhimg.com/80/v2-bf16d4403832c000d0d7f3dabebb6332.png" alt="准备安装" /><figcaption aria-hidden="true">准备安装</figcaption>
 </figure>
 <p>但是在后续的使用中发现缺少了很多依赖, 并不知道是不是安装时这个选项造成的, 但是还是勾选上吧, 只是安装时间会长一些.</p>
 <ul>
 <li>选择安装类型</li>
 </ul>
 <figure>
-<img src="https://pic4.zhimg.com/80/v2-a98750890a22b38fd625febad744072b.png" alt="" /><figcaption>安装类型</figcaption>
+<img src="https://pic4.zhimg.com/80/v2-a98750890a22b38fd625febad744072b.png" alt="安装类型" /><figcaption aria-hidden="true">安装类型</figcaption>
 </figure>
 <p>我看到的几乎所有的教程中都提到了要选择<code>其他选项</code>, 而正常来说应该在<code>其他选项</code>的下一个界面中出现<code>100G</code>的空闲空间才对, 但是我只有几个<code>1M</code>的空闲空间, 为此我还返回<code>Windows</code>重新格式化了机械硬盘, 重新压缩卷, 但是都没有用. 后来问了我的同学, 他表示直接选择第一个选项<code>安装Ubuntu, 与其他系统共存</code>就可以, 开机时可以自动使用<code>Ubuntu</code>的<code>grub2</code>引导系统, 选完了之后开始安装, 重启电脑.</p>
 <p><strong>又出问题了.</strong> 我的系统重启后可以进入<code>Ubuntu</code>的<code>grub2</code>, 选择进入<code>Ubuntu</code>, 在开机图标界面停留了很长时间, 我就强制关机了, 开机再进入<code>Ubuntu</code>的时候同样是停在了开机图标界面, 当我打算再次强制关机甚至重装系统的时候, 电脑自己关机了, <strong>我不确定这和我第一次的强制关机是否有关系</strong>. 在我查了一些文档后发现可能和我的<code>nvidia</code>显卡有关, 即<code>Ubuntu</code>中没有<code>nvidia</code>显卡的驱动, 而独显又主动启动, 导致了开机时的<code>bug</code>, 这里我尝试了两种方法, 均可以进入系统</p>
@@ -70,7 +70,7 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tlmgr update --self --all</span><br></pre></td></tr></table></figure>
 <p>升级宏包时, 提示我<code>TeXLive</code>的版本不匹配</p>
 <figure>
-<img src="https://pic4.zhimg.com/80/v2-94ddf1ee3e06abb707dfe0e226a44dad.png" alt="" /><figcaption>升级宏包错误</figcaption>
+<img src="https://pic4.zhimg.com/80/v2-94ddf1ee3e06abb707dfe0e226a44dad.png" alt="升级宏包错误" /><figcaption aria-hidden="true">升级宏包错误</figcaption>
 </figure>
 <p>而且当我使用<code>tex -v</code>查看版本的时候, 发现输出的是<code>TeXLive2017</code>, 然后可以按照<code>install-latex</code>中提到的方法卸载, 虽然安装后再卸载也没出什么问题, 但是安装前还是卸一下好一点.</p>
 <ul>
@@ -78,7 +78,7 @@
 </ul>
 <p>在<code>Windows</code>添加这个引擎并不难, 从<a href="https://ctan.org/pkg/zhmakeindex">CTAN</a>上下载, 或从leo-liu的<a href="https://github.com/leo-liu/zhmakeindex">zhmakeindex项目</a><code>clone</code>到本地, 但是后者需要自己用<code>go</code>编译, 具体教程可以参考<a href="https://www.ituring.com.cn/article/207412">图灵社区</a>, 有必要一提, 我在照教程实践的时候, 在<strong>安装zhmakeindex</strong>一步中并没有完成, 报了一个我看不懂的错</p>
 <figure>
-<img src="https://pic4.zhimg.com/80/v2-6241ad17c3d2436d93bb804d7021ed93.png" alt="" /><figcaption>go报错</figcaption>
+<img src="https://pic4.zhimg.com/80/v2-6241ad17c3d2436d93bb804d7021ed93.png" alt="go报错" /><figcaption aria-hidden="true">go报错</figcaption>
 </figure>
 <p>由于我不会<code>GOLANG</code>, 也就没有去查相关原因, 知道的大佬可以在评论区补充.</p>
 <p>在<code>Windows</code>下直接将编译好的<code>zhmakeindex.exe</code>复制到<code>C:\texlive\2019\bin\win32</code>即可, 在命令行中进入写有索引的文件夹中, 执行</p>
@@ -91,7 +91,7 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ls -hal</span><br></pre></td></tr></table></figure>
 <p>会返回下面的结果</p>
 <figure>
-<img src="https://pic4.zhimg.com/80/v2-6241ad17c3d2436d93bb804d7021ed93.png" alt="" /><figcaption>查看 zhmakeindex 权限</figcaption>
+<img src="https://pic4.zhimg.com/80/v2-6241ad17c3d2436d93bb804d7021ed93.png" alt="查看 zhmakeindex 权限" /><figcaption aria-hidden="true">查看 zhmakeindex 权限</figcaption>
 </figure>
 <p>可以发现<code>zhmakeindex</code>没有执行权限<code>x</code>. 于是执行</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">chmod +x zhmakeindex</span><br></pre></td></tr></table></figure>
@@ -99,7 +99,7 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">zhmakeindex</span><br></pre></td></tr></table></figure>
 <p>如果得到以下的输出</p>
 <figure>
-<img src="https://pic4.zhimg.com/80/v2-edd3a958503aff3401e4e42103cc6b4a.png" alt="" /><figcaption>zhmakeindex 输出</figcaption>
+<img src="https://pic4.zhimg.com/80/v2-edd3a958503aff3401e4e42103cc6b4a.png" alt="zhmakeindex 输出" /><figcaption aria-hidden="true">zhmakeindex 输出</figcaption>
 </figure>
 <p>即表示可以执行, 这时可以选择<code>sudo cp ./zhmakeindex /bin/</code>方便调用, 或者在<code>~/.bashrc</code>或<code>~/.zshrc</code>中添加别名后更新</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">alias</span> zhmakeindex=<span class="string">&quot;/usr/local/texlive/2019/bin/x86_64-linux/zhmakeindex&quot;</span></span><br></pre></td></tr></table></figure>
@@ -466,7 +466,7 @@
   </entry>
   <entry>
     <title>Windows 不合法的缓存路径导致 TeX Live 安装失败</title>
-    <url>/2021-04-07-illegal-temp-cause-tlisntall-failure/</url>
+    <url>/2021-04-07-illegal-temp-cause-tlinstall-failure/</url>
     <content><![CDATA[<p>在 Windows 上安装 TeX Live 时可能遇到由于缓存路径名称不合法, 即 <strong>不是纯英文的无空格的路径</strong>, 而安装错误的情况.</p>
 <span id="more"></span>
 <h3 id="错误">错误</h3>
