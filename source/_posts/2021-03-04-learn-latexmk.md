@@ -2,7 +2,7 @@
 title: latexmk 的学习
 date: 2021-03-04 21:54:41
 categories:
-    - [LaTeX, 帮助文档]
+    - [帮助文档, LaTeX]
 tags:
     - [帮助文档]
     - [LaTeX]

@@ -7,7 +7,7 @@ tags:
     - [gitalk]
     - [配置记录]
 categories:
-    - [配置记录, 帮助文档]
+    - [帮助文档, blog]
 ---
 
 在 {% post_link build-github-io "搭建 github.io" %} 中我们配置了 `hexo+NexT` 的博客, 这次来给它添加一个评论区. 使用的是 [gitalk](https://github.com/gitalk/gitalk). 

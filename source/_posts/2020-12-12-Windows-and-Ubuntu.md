@@ -2,7 +2,7 @@
 title: Win10+Ubuntu18.04LTS双系统安装记录
 date: 2020-12-12 18:00
 categories:
-    - [配置记录, 帮助文档]
+    - [配置记录, Linux]
 tags:
     - [系统安装]
     - [配置记录]

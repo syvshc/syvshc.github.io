@@ -5,7 +5,7 @@ tags:
     - [LaTeX]
     - [帮助文档]
 categories:
-    - [LaTeX, 帮助文档]
+    - [帮助文档, LaTeX]
 ---
 
 在 Windows 上安装 TeX Live 时可能遇到由于缓存路径名称不合法, 即 **不是纯英文的无空格的路径**, 而安装错误的情况. 

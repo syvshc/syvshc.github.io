@@ -7,7 +7,7 @@ tags:
     - [LaTeX]
     - [tlmgr]
 categories:
-    - [LaTeX, 帮助文档]
+    - [帮助文档, LaTeX]
 ---
 
 <!-- [点击跳转](#jump) <span id="jump">跳转到的地方</span> -->
