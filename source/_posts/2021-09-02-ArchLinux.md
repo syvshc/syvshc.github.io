@@ -41,13 +41,46 @@ sudo pacman -S yay
 
 用 `sudo pacman -S <软件包>` 安装
 
-1. [firefox](https://archlinux.org/packages/extra/x86_64/firefox/), Mozila 出品的火狐浏览器, 使用体验不错
+1. [firefox](https://archlinux.org/packages/extra/x86_64/firefox/), Mozilla 出品的火狐浏览器, 使用体验不错
 2. [flameshot](https://archlinux.org/packages/community/x86_64/flameshot/), 火焰截图, 一款截图/贴图软件, 使用方便
 3. [fcitx](https://archlinux.org/packages/community/x86_64/fcitx/), 小企鹅输入框架, 这里我选了 v4 版本的, 没有用 fcitx5
 4. [fcitx-rime](https://archlinux.org/packages/community/x86_64/fcitx-rime/), 中州韵输入法, 我常用的小鹤音形可以在该输入法上实现, 具体的其他输入方式可以看 [Fcitx (简体中文)](https://wiki.archlinux.org/title/Fcitx_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))
 5.  [fcitx-qt5](https://archlinux.org/packages/community/x86_64/fcitx-qt5/), [kcm-fcitx](https://archlinux.org/packages/community/x86_64/kcm-fcitx/), [fcitx-configtool](https://archlinux.org/packages/community/x86_64/fcitx-configtool/), 分别为fcitx 提供对 Qt 提供的输入法模块, fcitx 的图形配置界面, fcitx 的配置工具
 6. [zsh](https://archlinux.org/packages/extra/x86_64/zsh/), Z-Shell 终端, 有 `oh-my-zsh` 的配合, 配置起来相对容易
-7. [screenfetch](https://archlinux.org/packages/community/any/screenfetch/), 在终端通过 `screenfetch` 命令来显示发型版的 logo 与信息
+7. [~~screenfetch~~](https://archlinux.org/packages/community/any/screenfetch/), 在终端通过 `screenfetch` 命令来显示发型版的 logo 与信息, 该软件的 3.9.1 版本输出时会报 warning:
+    ```
+    /usr/bin/screenfetch:行1802: 7020826624-：语法错误: 需要操作数 (错误符号是 "-")
+    ```
+8. [neofetch](https://archlinux.org/packages/community/any/neofetch/), 与 screenfetch 相同的功能.
+```
+➜ neofetch
+                   -`                    syvshc@archlinux 
+                  .o+`                   ---------------- 
+                 `ooo/                   OS: Arch Linux x86_64 
+                `+oooo:                  Host: Inspiron 5577 1.1.3 
+               `+oooooo:                 Kernel: 5.13.13-arch1-1 
+               -+oooooo+:                Uptime: 4 hours, 1 min 
+             `/:-:++oooo+:               Packages: 1493 (pacman) 
+            `/++++/+++++++:              Shell: zsh 5.8 
+           `/++++++++++++++:             Resolution: 1920x1080, 1920x1080 
+          `/+++ooooooooooooo/`           DE: Plasma 5.22.5 
+         ./ooosssso++osssssso+`          WM: KWin 
+        .oossssso-````/ossssss+`         Theme: Breeze Light [Plasma], Breeze [GTK2/3] 
+       -osssssso.      :ssssssso.        Icons: Papirus-Nordic [Plasma], Papirus-Nordic [GTK2/3] 
+      :osssssss/        osssso+++.       Terminal: konsole 
+     /ossssssss/        +ssssooo/-       CPU: Intel i5-7300HQ (4) @ 3.500GHz 
+   `/ossssso+/:-        -:/+osssso+-     GPU: Intel HD Graphics 630 
+  `+sso+:-`                 `.-/+oso:    GPU: NVIDIA GeForce GTX 1050 Mobile 
+ `++:.                           `-/+/   Memory: 8548MiB / 15775MiB 
+ .`                                 `/                                   
+```
+9. [steam](https://archlinux.org/packages/?name=steam), 需要在 `/etc/pacman.conf` 中开启 `multilib` 仓库, 并且需要安装一些图形驱动, 详见 [steam 的 Wiki](https://wiki.archlinux.org/title/Steam_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)), 如果开启 steam 后商店等界面均为黑屏幕, 不显示内容, 可以将 steam 的通道改为 `beta channel`, 具体问题见[关于 steam 黑屏的讨论](https://www.gamingonlinux.com/2021/09/steam-not-working-right-on-arch-linux-its-an-issue-with-freetype-and-theres-a-fix)
+
+10. [obs-studio](https://archlinux.org/packages/community/x86_64/obs-studio/), 老牌屏幕录制软件
+
+11. [vim](https://archlinux.org/packages/extra/x86_64/vim/), 文本编辑器, 正在学习
+
+12. [man-pages-zh_cn](https://archlinux.org/packages/community/any/man-pages-zh_cn/), 中文帮助手册, 在终端用 `man <命令>` 来呼出
 
 ##### AUR 仓库
 
