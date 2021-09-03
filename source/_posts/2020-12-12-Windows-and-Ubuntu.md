@@ -12,17 +12,19 @@ tags:
 本文记录过程的时候会同时记录踩过的坑, 这些坑有一些是由于我自己的操作不当, 还有一些是由于网上的教程版本过旧或书写错误造成的, 我都会记录下来, 但是文中的一些文本的描述会与系统标准输出的文本有一定差异, 只要不影响命令的运行的文字笔者不会过分追求一字不差. 那么我们开始吧[^1].
 
 <!--more-->
-
+***本文部分内容过时, 请仔细甄别***
 ## 双系统安装准备
 [^1]: 由于事先没有准备, 导致很多情况下都没有截图, 这里会尽量找图来保证记录的易读性.
 
-* 在[Ubuntu官网](https://cn.ubuntu.com/)下载`Ubuntu18.04LTS`. 虽然`Ubuntu19.10`已经问世, 但是考虑到`LTS`版本的长期支持, 还是选择了这个版本;
+* 在[Ubuntu官网](https://cn.ubuntu.com/)下载`Ubuntu18.04LTS`. 虽然`Ubuntu19.10`已经问世, 但是考虑到`LTS`版本的长期支持, 还是选择了这个版本[^version];
 * 关闭`Windows10`中电源设置中的`快速启动`;
-* 下载`UltraISO`作为启动盘制作工具;
-* `SanDisk USB3.0 32G` U盘一个作为启动盘;
+* 下载~~UltraISO~~ [rufus](https://rufus.ie/zh/) 作为启动盘制作工具;
+* `SanDisk USB3.0 32G` U盘一个作为启动盘[^usb];
 * 在`BIOS`中关闭`Secure Boot`.
 * 在硬盘中[^2]压缩出至少`25G`的空间作为`Ubuntu`的系统盘, 我因为考虑到可能长期使用, 压缩了`100G`, 但是现在已经有不够用的趋势了……
 
+[^usb]: 要注意自己的机器是否支持从 `USB 3.0` 的 U 盘启动, 可以插入 U 盘后, 在启动选项界面查看是否有该 U 盘, 如果没有, 请选用 `USB 2.0` 的 U 盘.
+[^version]: 现在已有更新的长期支持版本 [`Ubuntu 20.04.3LTS`](https://ubuntu.com/download/desktop) 
 [^2]: 尽量不要是`Windows`的系统盘, 并没有试过如果是系统盘会发生什么
 
 在我尝试压缩我的机械硬盘的时候`Windows`提示我
@@ -120,12 +122,13 @@ driver   : xserver-xorg-video-nouveau - distro free builtin
 
 关于安装教程可以在啸行的[install-LaTeX项目](https://github.com/OsbertWang/install-latex)处下载， 有很详细的教程， 这里我就说几个要注意的点.
 
-* **先卸载`Ubuntu`预装的`TeXLive`**，本来我以为`Ubuntu`是不自带`TeXLive`的, 就直接装了`TL2019`, 但是当我想要用
+* **先卸载`Ubuntu`预装的`TeXLive`**，本来我以为`Ubuntu`是不自带`TeXLive`的[^texlive], 就直接装了`TL2019`, 但是当我想要用
 
 ```bash
     tlmgr update --self --all
 ```
 
+[^texlive]: 新版的 `Ubuntu` 可能不自带 TeX Live, 安装之前可以 `tex -v` 检查一下. 
 
 升级宏包时, 提示我`TeXLive`的版本不匹配
 
@@ -209,7 +212,9 @@ driver   : xserver-xorg-video-nouveau - distro free builtin
 
 #### 安装`VSCode`及配置
 
-可以从[官网](https://code.visualstudio.com/)上下载`*.deb`文件安装, 或者从`Ubuntu软件`中安装, 我选择的是后者.
+该部分可以从博客 {% post_link ArchLinux "Arch Linux 与 Windows 10 的双系统安装与折腾" %} 中看到更详细的**插件**的说明
+
+ 可以从[官网](https://code.visualstudio.com/)上下载`*.deb`文件安装, 或者从`Ubuntu软件`中安装, 我选择的是后者.
 
 暂时我对`VSCode`的使用就是作为`LaTeX`的编辑器, 下载的插件有
 
@@ -227,6 +232,8 @@ driver   : xserver-xorg-video-nouveau - distro free builtin
 由于腾讯最近发布的`QQ for Linux2.0`体验极差, 还是只能选择`wine+QQ!`的方式解决, 具体教程可以看[撸Linux](https://www.lulinux.com/archives/1319)上的教程, 在我的电脑上没有问题, 可以完美的使用. 
 
 #### 输入法`fcitx-rime`以小鹤音形配置
+
+该部分可以从博客 {% post_link ArchLinux "Arch Linux 与 Windows 10 的双系统安装与折腾" %} 中看到更简单的配置方法, 以下内容已经弃用. 
 
 这个东西在我用`linux`虚拟机的时候就把我折磨地痛不欲生, 网上现存的教程太少了, 只能参考其他教程顺藤摸瓜. 
 
