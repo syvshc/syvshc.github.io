@@ -168,8 +168,9 @@ driver   : xserver-xorg-video-nouveau - distro free builtin
 
 会返回下面的结果
 
-![查看 zhmakeindex 权限](https://pic4.zhimg.com/80/v2-6241ad17c3d2436d93bb804d7021ed93.png)
+<!-- ![查看 zhmakeindex 权限](https://pic4.zhimg.com/80/v2-6241ad17c3d2436d93bb804d7021ed93.png) -->
 
+> 这里贴错图了, 原图也丢了, 意思就是 `zhmakeindex` 没有执行权限
 
 可以发现`zhmakeindex`没有执行权限`x`. 于是执行
 

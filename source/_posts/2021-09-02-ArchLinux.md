@@ -15,7 +15,7 @@ categories:
 
 从介绍来看 Arch Linux 最吸引我的有两点, 一个是 [AUR 仓库](https://aur.archlinux.org/), 另一个是 [Arch Wiki](https://wiki.archlinux.org/), 前者提供了海量用户打包好的软件, 后者提供了海量的说明文档.
 
-***以下内容如没有特殊说明, 均在普通用户下操作, 即终端起始为 `$` 时***
+***以下内容如没有特殊说明, 均在普通用户下操作, 即终端起始为 `$` 时, 同时也是在 Arch Linux + KDE Plasma 桌面下的配置, 其余发行版或桌面需要自行调整设置***
 
 ### 双系统安装
 双系统安装可以看[这篇知乎](https://zhuanlan.zhihu.com/p/138951848), 我选择的桌面环境是 KDE Plasma, 默认环境下就很好看
@@ -39,10 +39,10 @@ sudo pacman -S yay
 
 ##### 官方仓库
 
-用 `sudo pacman -S <软件包>` 安装
+用 `sudo pacman -S <软件包>` 安装, 这里序号后的名称就是包名, 下同
 
 1. [firefox](https://archlinux.org/packages/extra/x86_64/firefox/), Mozilla 出品的火狐浏览器, 使用体验不错
-2. [flameshot](https://archlinux.org/packages/community/x86_64/flameshot/), 火焰截图, 一款截图/贴图软件, 使用方便
+2. [flameshot](https://archlinux.org/packages/community/x86_64/flameshot/), 火焰截图, 一款截图/贴图软件, 使用方便, 如何设置全局快捷键可以看 [README](https://github.com/flameshot-org/flameshot#keyboard-shortcuts), 英文看不懂的可以看[这个博客](https://www.djc8.cn/archives/manjaro-uses-flashshot-as-a-screenshot-tool.html)
 3. [fcitx](https://archlinux.org/packages/community/x86_64/fcitx/), 小企鹅输入框架, 这里我选了 v4 版本的, 没有用 fcitx5
 4. [fcitx-rime](https://archlinux.org/packages/community/x86_64/fcitx-rime/), 中州韵输入法, 我常用的小鹤音形可以在该输入法上实现, 具体的其他输入方式可以看 [Fcitx (简体中文)](https://wiki.archlinux.org/title/Fcitx_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))
 5.  [fcitx-qt5](https://archlinux.org/packages/community/x86_64/fcitx-qt5/), [kcm-fcitx](https://archlinux.org/packages/community/x86_64/kcm-fcitx/), [fcitx-configtool](https://archlinux.org/packages/community/x86_64/fcitx-configtool/), 分别为fcitx 提供对 Qt 提供的输入法模块, fcitx 的图形配置界面, fcitx 的配置工具
@@ -84,7 +84,7 @@ sudo pacman -S yay
 
 ##### AUR 仓库
 
-用 `yay -S <软件包>` 安装
+用 `yay -S <软件包>` 安装,
 
 1. [microsoft-edge-dev-bin](https://aur.archlinux.org/packages/microsoft-edge-dev-bin), 微软的新 edge, 由于我的插件与书签等都备份在了 Windows 的 edge 上, 这里我首选 edge, 如果没有这些包袱, 新的 FireFox 也是很好的选择
 2. [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin/), 这里我选择了微软官方专用软件版本, 为了设置同步. 安装后可以直接在终端使用 `code <文件夹/文件>` 打开文件夹/文件
@@ -93,6 +93,20 @@ sudo pacman -S yay
 5. [listen1-desktop-appimage](https://aur.archlinux.org/packages/listen1-desktop-appimage/), Listen1, 集成了网易云音乐, QQ 音乐, 咪咕音乐的开源播放器, [QQ 音乐](https://aur.archlinux.org/packages/qqmusic-bin/)也有自己的包 
 6. [deepin-wine-qq](https://aur.archlinux.org/packages/deepin-wine-qq/), 用 deepin-wine 实现的 windows qq, 这里只是列出, 我并没有使用
 7. [deepin-wine-wechat](https://aur.archlinux.org/packages/deepin-wine-wechat/), 用 deepin-wine 实现的 windows wechat, 我同样没有使用
+8. [sunloginclient](https://aur.archlinux.org/packages/sunloginclient/), 向日葵, 远程控制软件, 注意安装后的提示
+    ```
+    *************************************************************************
+    *  sunlogin daemon service must be running for sunloginclient to work   *
+    *  Type: systemctl start runsunloginclient.service                      *
+    *************************************************************************
+    ```
+    需要在终端运行 
+    ```
+    systemctl start runsunloginclient.service  
+    ```
+    开启向日葵的服务才能运行软件.
+9. [7-zip](https://aur.archlinux.org/packages/7-zip/), 老牌解压软件, 好用
+10. [ttf-ms-win10](https://aur.archlinux.org/packages/ttf-ms-win10/), Windows10 的字体, 由于版权问题, 需要额外处理,详见[安装 Windows10 字体](#win10fonts)
 
 ##### 手动安装
 
@@ -148,6 +162,8 @@ sudo pacman -Sy && sudo pacman -S archlinuxcn-keyring
 
 ##### vscode
 
+我主要使用 vscode 写 LaTeX, 这里并没有其他的配置信息.
+
 1. 我使用的插件有
    * C/C++
    * Chinese (Simplified) Language Pack for Visual Studio Code: 中文语言包
@@ -163,7 +179,7 @@ sudo pacman -Sy && sudo pacman -S archlinuxcn-keyring
    * QQ: vscode 中使用 QQ
    * Terminal Here: 直接使 Terminal 定位在所打开的文件夹上
    * Cloudmusic: vscode 中使用网易云音乐
-2. 这里是我的 [settings.json](https://gist.github.com/syvshc/999313a798d87a590b74ada95ec121ff) 的内容, 点击链接即可查看/下载, 其中有针对 Windows 用户以及 KDE/Okular 用户的 LaTeX 正反向搜索的内容[^1]. 
+2. 这里是我的 [settings.json](https://gist.github.com/syvshc/999313a798d87a590b74ada95ec121ff), [latex.json](https://gist.github.com/syvshc/18a4dd84f7b47927ec6ed0ee3dbd474a) 与 [keybindings.json](https://gist.github.com/syvshc/2fd2ed7af40500dafd861a2a1b3890f5) 的内容, 点击链接即可查看/下载, 其中有针对 Windows 用户以及 KDE/Okular 用户的 LaTeX 正反向搜索的内容[^1]. 
 3. 如果登录账户的时候出现**将登陆信息写入钥匙串失败**的错误信息, 在终端运行
     ```bash
     yay -S qtkeychain gnome-keyring
@@ -285,6 +301,16 @@ XMODIFIERS    DEFAULT=\@im=fcitx
     1. [FiraCode](https://github.com/tonsky/FiraCode)
     2. [Source Han Serif SC](https://github.com/adobe-fonts/source-han-serif/tree/release/OTF/SimplifiedChinese) Adobe 打包的思源宋体
     3. [Source Han Sans SC](https://github.com/adobe-fonts/source-han-sans/tree/release/OTF/SimplifiedChinese) Adobe 打包的思源黑体
+
+<span id="win10fonts"> </span>
+
+##### 安装 Windows10 字体
+
+由于版权原因, 不允许直接下载各 Windows 字体, 所以需要自己手动提取字体后, 用 `makepkg` 进行安装. 
+1. 先使用 `git clone` 将该 [repo](https://aur.archlinux.org/ttf-ms-win10.git) 克隆到本地, 
+2. 然后在[微软官网](https://www.microsoft.com/zh-cn/software-download/windows10)下载 Windows10 的镜像, 并且按照 [Wiki](https://wiki.archlinux.org/title/Microsoft_fonts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E4%BB%8E_Windows_ISO_%E4%B8%AD%E6%8F%90%E5%8F%96%E5%AD%97%E4%BD%93) 使用 `7zip` 将 ISO 中的字体与许可证提取出来, 放到刚才克隆到本地的 `ttf-ms-win10` 文件夹中, 如果中途出现需要手动确认的项目, 选 `Y`,
+3. 终端在 `ttf-ms-win10` 中运行 `makepkg -si` 安装字体, 并运行 `fc-cache -fv` 刷新字体缓存, 安装后的字体位于 `/usr/share/fonts/TTF` 中,
+4. 如果想要在 LaTeX 的 ctex 宏集中使用 `fontset=windows` 选项的话, 还需要在 Windows 中复制 "黑体, 楷体, 微软雅黑, 隶书, 幼圆" 到 `/usr/share/fonts/TTF`, 并运行 `fc-cache -fv` 刷新缓存后即可使用.
 
 ### 暂时告一段落, 再有什么东西再往上添吧
 
