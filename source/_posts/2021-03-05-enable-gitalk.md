@@ -62,9 +62,9 @@ gitalk:
 这里做一下简单的说明. 
 
 首先要在 [github devoloper](https://github.com/settings/developers) 创建新的 OAuth App
-![](../img/postimg/githubdevelop.png)
+![](https://raw.githubusercontent.com/syvshc/image/master/postimg/githubdevelop.png)
 点击创建好的 OAuth App, 可以看到
-![](../img/postimg/clientid.png)
+![](https://raw.githubusercontent.com/syvshc/image/master/postimg/clientid.png)
 点击 `Generate a new client secret` 可以得到一个 `client secret`. 把 `client ID` 与 `client secret` 分别填写在 `yml` 文件的 `client_id` 与 `client_secret` 字段中, 剩下的字段填自己的信息以及用来存放评论的 repo, 这里我填的 `<username>.github.io`. 配置好以后, 使用
 ```bash
 hexo clean && hexo g -d

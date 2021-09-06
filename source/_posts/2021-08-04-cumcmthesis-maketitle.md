@@ -25,7 +25,7 @@ l.22  \maketitle
 ### 解决方法
 先说解决方法: 在 [LaTeXStudio 的 Github](https://github.com/latexstudio/CUMCMThesis) 上的 `Code` 处进行模板的下载或者 `clone`. 并搭配 `TeXLive 2020/2021`, 使用 `xelatex` 编译即可. 
 
-![](../img/postimg/cumcmthesis-maketitle/cumcm.jpg)
+![](https://raw.githubusercontent.com/syvshc/image/master/postimg/cumcmthesis-maketitle/cumcm.jpg)
 
 ### 产生问题的原因
 

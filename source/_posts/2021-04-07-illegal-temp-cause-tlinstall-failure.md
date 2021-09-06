@@ -14,11 +14,11 @@ categories:
 ### 错误
 在使用 GUI 界面安装时, 出现的错误形如下图
 
-![](../img/postimg/failuregui.jpg)
+![](https://raw.githubusercontent.com/syvshc/image/master/postimg/failuregui.jpg)
 
 命令行安装时错误如下图
 
-![](../../img/postimg/failurenogui.jpg)
+![](https://raw.githubusercontent.com/syvshc/image/master/postimg/failurenogui.jpg)
 
 ### 原因
 

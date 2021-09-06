@@ -20,7 +20,7 @@ categories:
 ### 双系统安装
 双系统安装可以看[这篇知乎](https://zhuanlan.zhihu.com/p/138951848), 我选择的桌面环境是 KDE Plasma, 默认环境下就很好看
 
-![KDE Plasma](../img/postimg/ArchLinux/screenshot.png)
+![KDE Plasma](https://raw.githubusercontent.com/syvshc/image/master/postimg/ArchLinux/screenshot.png)
 
 安装后在系统设置中将语言与地区改为中文, 在改 Region 的时候注意是 `zh-CN`, 不要改成蒙古语 `mn_CN`.
 
@@ -81,6 +81,10 @@ sudo pacman -S yay
 11. [vim](https://archlinux.org/packages/extra/x86_64/vim/), 文本编辑器, 正在学习
 
 12. [man-pages-zh_cn](https://archlinux.org/packages/community/any/man-pages-zh_cn/), 中文帮助手册, 在终端用 `man <命令>` 来呼出
+13. [peek](https://archlinux.org/packages/community/x86_64/peek/), 好用的 gif 录制软件
+14. [latte-dock](https://archlinux.org/packages/community/x86_64/latte-dock/), KDE 下的 Dock 软件, 挺好看的, 可以按照这个[博客](https://amane-live.fars.ee/2018/12/04/tweak-kde/)来配置一下. 这是我配置好的, 并不完全按照刚才的博客
+
+![my desktop](https://raw.githubusercontent.com/syvshc/image/master/postimg/ArchLinux/2021-09-06_21-28.png)
 
 ##### AUR 仓库
 
@@ -92,7 +96,7 @@ sudo pacman -S yay
 4. [oh-my-zsh](https://aur.archlinux.org/packages/oh-my-zsh-git/), 对于 `zsh` 的美化, 提供了一些易用的接口
 5. [listen1-desktop-appimage](https://aur.archlinux.org/packages/listen1-desktop-appimage/), Listen1, 集成了网易云音乐, QQ 音乐, 咪咕音乐的开源播放器, [QQ 音乐](https://aur.archlinux.org/packages/qqmusic-bin/)也有自己的包 
 6. [deepin-wine-qq](https://aur.archlinux.org/packages/deepin-wine-qq/), 用 deepin-wine 实现的 windows qq, 这里只是列出, 我并没有使用
-7. [deepin-wine-wechat](https://aur.archlinux.org/packages/deepin-wine-wechat/), 用 deepin-wine 实现的 windows wechat, 我同样没有使用
+7. [deepin-wine-wechat](https://aur.archlinux.org/packages/deepin-wine-wechat/), 用 deepin-wine 实现的 windows wechat, ~~我同样没有使用~~ 我还是用了, 这次很流畅……有玄学内味了. 由于源内的 deepin-udis86 没有更新, 所以安装 deepin-wine-wechat 前要注意先自己安装 deepin-udis86, 在 Github 上有打包好的 [repo](https://github.com/JohnMasoner/deepin-udis86). 
 8. [sunloginclient](https://aur.archlinux.org/packages/sunloginclient/), 向日葵, 远程控制软件, 注意安装后的提示
     ```
     *************************************************************************
@@ -107,6 +111,10 @@ sudo pacman -S yay
     开启向日葵的服务才能运行软件.
 9. [7-zip](https://aur.archlinux.org/packages/7-zip/), 老牌解压软件, 好用
 10. [ttf-ms-win10](https://aur.archlinux.org/packages/ttf-ms-win10/), Windows10 的字体, 由于版权问题, 需要额外处理,详见[安装 Windows10 字体](#win10fonts)
+11. [wemeet-bin](https://aur.archlinux.org/packages/wemeet-bin/), 腾讯会议 Linux 版, 新鲜的
+12. [picgo-appimage](https://aur.archlinux.org/packages/picgo-appimage/), 本地图床软件, 配置见其[配置手册](https://picgo.github.io/PicGo-Doc/zh/guide/config.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BF%AB%E6%8D%B7%E9%94%AE)[^githubimg]
+
+[^githubimg]: 配置 Github 图床时要注意仓库设置为 Public
 
 ##### 手动安装
 
@@ -196,7 +204,7 @@ sudo pacman -Sy && sudo pacman -S archlinuxcn-keyring
   ```bash
   code -r -g %f:%l
   ```
-  ![okular](../img/postimg/ArchLinux/okular.png)
+  ![okular](https://raw.githubusercontent.com/syvshc/image/master/postimg/ArchLinux/okular.png)
   应用后, 在默认设置下, 在 vscode 中的 `.tex` 文件中同时按 `Ctrl+Alt+j` 会唤起 okular 到对应的位置, 在 okular 中激活"手型工具"的基础上, 按住 `Shift`, 同时鼠标左键点击 `PDF` 中的内容, 即可唤起 vscode 跳转到对应的源代码位置[^2].
 ##### zsh & oh-my-zsh
 1. 我使用的插件:
@@ -305,6 +313,8 @@ XMODIFIERS    DEFAULT=\@im=fcitx
 <span id="win10fonts"> </span>
 
 ##### 安装 Windows10 字体
+
+***安装 Windows 字体可能导致桌面环境字体混乱, 请自行甄别利弊***
 
 由于版权原因, 不允许直接下载各 Windows 字体, 所以需要自己手动提取字体后, 用 `makepkg` 进行安装. 
 1. 先使用 `git clone` 将该 [repo](https://aur.archlinux.org/ttf-ms-win10.git) 克隆到本地, 

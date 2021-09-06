@@ -21,14 +21,14 @@ sudo rm -rf /*
 感谢 `#archlinux-cn-offtopic` 群的 Xiao Jerry!
 
 1. 准备好一个 Windows 10 的启动 U 盘, 在 BIOS 界面从 U 盘启动
-![BOOT](../img/postimg/RepairEFI/boot.jpg)
+![BOOT](https://raw.githubusercontent.com/syvshc/image/master/postimg/RepairEFI/boot.jpg)
 2. 点击右下角: 修复计算机
 3. 进入命令行, 运行
 ```
 bootrec /rebuildbcd
 ```
 找到后用 `A` 添加
-![扫描 Windows 安装](../img/postimg/RepairEFI/bootrec.jpg)
+![扫描 Windows 安装](https://raw.githubusercontent.com/syvshc/image/master/postimg/RepairEFI/bootrec.jpg)
 4. 添加后退出命令行, 点击启动修复
-![启动修复](../img/postimg/RepairEFI/startup-repair.jpg)
+![启动修复](https://raw.githubusercontent.com/syvshc/image/master/postimg/RepairEFI/startup-repair.jpg)
 5. 完成

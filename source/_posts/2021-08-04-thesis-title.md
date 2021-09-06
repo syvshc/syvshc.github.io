@@ -11,7 +11,7 @@ categories:
 
 这篇文章的需求来源为 [LaTeX 问答站](https://ask.latexstudio.net/ask/question/3650.html) 的一个问题, 经观察也是普遍遇到的模板设计者的问题. 主要需要达到下图的设计效果:
 
-![](../img/postimg/thesis-title/goal.png)
+![](https://raw.githubusercontent.com/syvshc/image/master/postimg/thesis-title/goal.png)
 
 <!-- more -->
 ### 设计难点
@@ -43,7 +43,7 @@ categories:
     \parbox{13\ccwd}{\centering\CJKunderline{这是一个很长的学位论文题目中华人民共和国刑法这是一个很长的学位论文}}
 \end{document}
 ```
-![](../img/postimg/thesis-title/CJKunderline.png)
+![](https://raw.githubusercontent.com/syvshc/image/master/postimg/thesis-title/CJKunderline.png)
 
 问题又出现了, 它无法将最后一行的下划线进行填充. 虽然可以在文本的末尾添加 `\hfill` 来延长下划线, 但是不居中了.
 
@@ -146,7 +146,7 @@ l.5     \fpeval{\StrLen{\abc}/5}
 \end{document}
 ```
 截取部分实现效果为
-![](../img/postimg/thesis-title/adjustbox.jpg)
+![](https://raw.githubusercontent.com/syvshc/image/master/postimg/thesis-title/adjustbox.jpg)
 
 可见, 该方法支持自动换行及手动换行, 满足了需求 1, 2, 3, 但是再进行观察可以发现第 4 行只有一个“题”字, 美观度不足, 但是瑕不掩瑜, 任务完成. 
 
@@ -265,7 +265,7 @@ l.5     \fpeval{\StrLen{\abc}/5}
 \end{document}
 ```
 该代码中含有大量的注释, 使我能在很短的时间内 (指一上午) 读完代码并且了解操作原理, 下面是实现效果
-![](../img/postimg/thesis-title/muzimuzhi.jpg)
+![](https://raw.githubusercontent.com/syvshc/image/master/postimg/thesis-title/muzimuzhi.jpg)
 
 可以看到, 第二个“论文题目”中单行中的文字比多第三个中的多行文字只少了一个“国”字但是它可以自动换行并且制造一个良好的视觉效果, 代码的关键在于
 
