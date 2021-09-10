@@ -86,13 +86,15 @@ sudo pacman -S yay
 
 ![my desktop](https://raw.githubusercontent.com/syvshc/image/master/postimg/ArchLinux/2021-09-06_21-28.png)
 
+15. [telegram-desktop](https://archlinux.org/packages/community/x86_64/telegram-desktop/), 即时通讯软件 Telegram, 可能需要魔法
+
 ##### AUR 仓库
 
 用 `yay -S <软件包>` 安装,
 
 1. [microsoft-edge-dev-bin](https://aur.archlinux.org/packages/microsoft-edge-dev-bin), 微软的新 edge, 由于我的插件与书签等都备份在了 Windows 的 edge 上, 这里我首选 edge, 如果没有这些包袱, 新的 FireFox 也是很好的选择
 2. [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin/), 这里我选择了微软官方专用软件版本, 为了设置同步. 安装后可以直接在终端使用 `code <文件夹/文件>` 打开文件夹/文件
-3. [telegram-desktop-bin](https://aur.archlinux.org/packages/telegram-desktop-bin/) 即时通讯软件 Telegram, 虽然我把它贴在这了, 但是由于无法下载部分组件, 我还是去了 [Telegram 的官网](https://desktop.telegram.org/)下载了 `AppImage`
+3. [~~telegram-desktop-bin~~](https://aur.archlinux.org/packages/telegram-desktop-bin/) **~~该软件已经被官方仓库收编~~, 原来它一直都在官方仓库里**. 即时通讯软件 Telegram, 虽然我把它贴在这了, 但是由于无法下载部分组件, 我还是去了 [Telegram 的官网](https://desktop.telegram.org/)下载了 `AppImage`
 4. [oh-my-zsh](https://aur.archlinux.org/packages/oh-my-zsh-git/), 对于 `zsh` 的美化, 提供了一些易用的接口
 5. [listen1-desktop-appimage](https://aur.archlinux.org/packages/listen1-desktop-appimage/), Listen1, 集成了网易云音乐, QQ 音乐, 咪咕音乐的开源播放器, [QQ 音乐](https://aur.archlinux.org/packages/qqmusic-bin/)也有自己的包 
 6. [deepin-wine-qq](https://aur.archlinux.org/packages/deepin-wine-qq/), 用 deepin-wine 实现的 windows qq, 这里只是列出, 我并没有使用
@@ -113,6 +115,7 @@ sudo pacman -S yay
 10. [ttf-ms-win10](https://aur.archlinux.org/packages/ttf-ms-win10/), Windows10 的字体, 由于版权问题, 需要额外处理,详见[安装 Windows10 字体](#win10fonts)
 11. [wemeet-bin](https://aur.archlinux.org/packages/wemeet-bin/), 腾讯会议 Linux 版, 新鲜的
 12. [picgo-appimage](https://aur.archlinux.org/packages/picgo-appimage/), 本地图床软件, 配置见其[配置手册](https://picgo.github.io/PicGo-Doc/zh/guide/config.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BF%AB%E6%8D%B7%E9%94%AE)[^githubimg]
+13. [wudao-dict-git](https://aur.archlinux.org/packages/wudao-dict-git/), 无道词典, 项目地址在 [Github](https://github.com/ChestnutHeng/Wudao-dict), 可以可以通过终端 `wd <单词>` 来查询单词.
 
 [^githubimg]: 配置 Github 图床时要注意仓库设置为 Public
 
@@ -270,7 +273,7 @@ GTK_IM_MODULE DEFAULT=fcitx
 QT_IM_MODULE  DEFAULT=fcitx
 XMODIFIERS    DEFAULT=\@im=fcitx
 ```
-重新登录 Arch 使环境生效. 更多的配置需要查看 [fcitx 的 Wiki](https://wiki.archlinux.org/title/Fcitx_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))
+重新登录 Arch 使环境生效. 我的皮肤是在[这里](https://github.com/winjeg/fcitx-skins)进行选择以及安装的. 更多的配置需要查看 [fcitx 的 Wiki](https://wiki.archlinux.org/title/Fcitx_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))
 
 #### 安装字体
 ##### 解决系统默认字体显示效果差的问题
