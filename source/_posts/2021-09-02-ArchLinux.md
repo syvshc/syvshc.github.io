@@ -9,7 +9,7 @@ categories:
     - [配置记录, Linux]
 ---
 
-手贱小白还愿意折腾. 自从上次重装系统之后, Ubuntu 总时不时地卡顿, 一气之下试了好几个发型版, 如 [manjaro](https://manjaro.org/), [deepin](https://www.deepin.org/zh/) (我是没想到 deepin 的卡顿竟然是永久性的, 也许是我空间分配不合理吧), [debian](https://www.debian.org/index.zh-cn.html) (这个体验还蛮好的), 最终一狠心, 要折腾不如折腾大的, 直接 [Arch Linux](https://archlinux.org/) 走起.
+手贱小白还愿意折腾. 自从上次重装系统之后, Ubuntu 总时不时地卡顿, 一气之下试了好几个发行版, 如 [manjaro](https://manjaro.org/), [deepin](https://www.deepin.org/zh/) (我是没想到 deepin 的卡顿竟然是永久性的, 也许是我空间分配不合理吧), [debian](https://www.debian.org/index.zh-cn.html) (这个体验还蛮好的), 最终一狠心, 要折腾不如折腾大的, 直接 [Arch Linux](https://archlinux.org/) 走起.
 
 <!-- more -->
 
@@ -47,7 +47,7 @@ sudo pacman -S yay
 4. [fcitx-rime](https://archlinux.org/packages/community/x86_64/fcitx-rime/), 中州韵输入法, 我常用的小鹤音形可以在该输入法上实现, 具体的其他输入方式可以看 [Fcitx (简体中文)](https://wiki.archlinux.org/title/Fcitx_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))
 5.  [fcitx-qt5](https://archlinux.org/packages/community/x86_64/fcitx-qt5/), [kcm-fcitx](https://archlinux.org/packages/community/x86_64/kcm-fcitx/), [fcitx-configtool](https://archlinux.org/packages/community/x86_64/fcitx-configtool/), 分别为fcitx 提供对 Qt 提供的输入法模块, fcitx 的图形配置界面, fcitx 的配置工具
 6. [zsh](https://archlinux.org/packages/extra/x86_64/zsh/), Z-Shell 终端, 有 `oh-my-zsh` 的配合, 配置起来相对容易
-7. [~~screenfetch~~](https://archlinux.org/packages/community/any/screenfetch/), 在终端通过 `screenfetch` 命令来显示发型版的 logo 与信息, 该软件的 3.9.1 版本输出时会报 warning:
+7. [~~screenfetch~~](https://archlinux.org/packages/community/any/screenfetch/), 在终端通过 `screenfetch` 命令来显示发行版的 logo 与信息, 该软件的 3.9.1 版本输出时会报 warning:
     ```
     /usr/bin/screenfetch:行1802: 7020826624-：语法错误: 需要操作数 (错误符号是 "-")
     ```
@@ -115,7 +115,7 @@ sudo pacman -S yay
 10. [ttf-ms-win10](https://aur.archlinux.org/packages/ttf-ms-win10/), Windows10 的字体, 由于版权问题, 需要额外处理,详见[安装 Windows10 字体](#win10fonts)
 11. [wemeet-bin](https://aur.archlinux.org/packages/wemeet-bin/), 腾讯会议 Linux 版, 新鲜的
 12. [picgo-appimage](https://aur.archlinux.org/packages/picgo-appimage/), 本地图床软件, 配置见其[配置手册](https://picgo.github.io/PicGo-Doc/zh/guide/config.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BF%AB%E6%8D%B7%E9%94%AE)[^githubimg]
-13. [wudao-dict-git](https://aur.archlinux.org/packages/wudao-dict-git/), 无道词典, 项目地址在 [Github](https://github.com/ChestnutHeng/Wudao-dict), 可以可以通过终端 `wd <单词>` 来查询单词.
+13. [wudao-dict-git](https://aur.archlinux.org/packages/wudao-dict-git/), 无道词典, 项目地址在 [Github](https://github.com/ChestnutHeng/Wudao-dict), 可以通过终端 `wd <单词>` 来查询单词.
 
 [^githubimg]: 配置 Github 图床时要注意仓库设置为 Public
 
@@ -274,6 +274,38 @@ QT_IM_MODULE  DEFAULT=fcitx
 XMODIFIERS    DEFAULT=\@im=fcitx
 ```
 重新登录 Arch 使环境生效. 我的皮肤是在[这里](https://github.com/winjeg/fcitx-skins)进行选择以及安装的. 更多的配置需要查看 [fcitx 的 Wiki](https://wiki.archlinux.org/title/Fcitx_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))
+
+###### 我又换了 `fcitx5`
+
+需要安装 [fcitx5-im](https://archlinux.org/groups/x86_64/fcitx5-im/), 及 [fcitx5-rime](https://archlinux.org/packages/community/x86_64/fcitx5-rime/)
+
+```zsh
+sudo pacman -S fcitx5-im fcitx5-rime
+```
+
+然后将上文提到的 `rime` 文件夹放入 `~/.local/share/fcitx5/` 中, 覆盖其中的同名文件夹 `rime/`, 重新部署即可. 皮肤我在使用 [fcitx-skin-material](https://aur.archlinux.org/packages/fcitx-skin-material/), 使用 `yay -S fcitx-skin-material` 即可安装, 安装后在 `~/.config/fcitx5/conf/classicui.conf` 中添加 
+
+```
+Theme=fcitx5-skin-material
+```
+
+也可以在其中的 `Font` 选项处修改字体及字号. 如果想修改输入法为单行输入, 可以在 `~/.config/fcitx5/conf` 中新建 `rime.conf`, 并添加
+
+```
+PreeditInApplication=True
+```
+
+配置结束后要重启 `fcitx5` 来更新配置.
+
+##### vim
+
+暂时作为 vim 半吊子的存在. 先装插件 [Vundle](https://github.com/VundleVim/Vundle.vim) 按着 `README.md` 中的操作安装即可. 然后配置一下 vim 与 fcitx5 的配合, 使得按下 `ESC` 返回 normal 模式时可以自动将输入法切换为英文, 再进入输入模式时自动切换为退出前的模式, 见仙子的 [fcitx.vim](https://github.com/lilydjwg/fcitx.vim), 解压到 `~/.vim` 中即可使用, 注意要将 `ttimeoutlen` 设置为较小的值, 如在 vim 中
+
+```vim
+:set ttimeoutlen=100
+```
+
+插件折腾挺热心, 软件倒没学咋样……
 
 #### 安装字体
 ##### 解决系统默认字体显示效果差的问题
