@@ -18,7 +18,7 @@ categories:
 ***以下内容如没有特殊说明, 均在普通用户下操作, 即终端起始为 `$` 时, 同时也是在 Arch Linux + KDE Plasma 桌面下的配置, 其余发行版或桌面需要自行调整设置***
 
 ### 双系统安装
-双系统安装可以看[这篇知乎](https://zhuanlan.zhihu.com/p/138951848), 我选择的桌面环境是 KDE Plasma, 默认环境下就很好看
+双系统安装可以看[这篇知乎](https://zhuanlan.zhihu.com/p/138951848), 动手能力强的建议直接看 [Arch Wiki](https://wiki.archlinux.org/title/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)), 我选择的桌面环境是 KDE Plasma, 默认环境下就很好看
 
 ![KDE Plasma](https://raw.githubusercontent.com/syvshc/image/master/postimg/ArchLinux/screenshot.png)
 
@@ -27,11 +27,38 @@ categories:
 ### 软件的安装与配置
 #### 安装重要组件 `yay`
 
+##### 添加 `archlinuxcn` 源
+
+国内的 Arch 组织也打包了一些软件, 我们将[`archlinuxcn`](https://github.com/archlinuxcn/repo#readme) 的源也添加到 `pacman` 的源列表
+
+```bash
+kate /etc/pacman.conf
+```
+
+在最下方添加 
+
+```
+[archlinuxcn]
+Server = https://repo.archlinuxcn.org/$arch
+```
+
+用管理员权限保存后, 在终端运行
+
+```
+sudo pacman -Sy && sudo pacman -S archlinuxcn-keyring
+```
+
+来刷新仓库以及获取 PGP 钥匙串
+
+##### 安装 yay
+
 ```bash
 sudo pacman -S yay
 ```
 
 简单说一下 `yay`: Arch Linux 除了官方的软件库以外, 还提供了一个允许用户上传软件包的仓库, [AUR 仓库](https://aur.archlinux.org/), 你可以在上面找到几乎任何你想要安装的软件, ~~甚至基于 `deepin-wine` 的 qq 和微信~~(这个在我的计算机上出现了问题, QQ 的问题见[该issue](https://github.com/countstarlight/deepin-wine-qq-arch/issues/58), 微信的问题为严重卡顿), Arch Linux 官方的包管理软件为 `pacman`, AUR 仓库的管理软件则为 `yay`. 
+
+当然, 也可以选择去 [AUR 仓库](https://aur.archlinux.org/packages/yay/) 中将 `yay` 克隆到本地并使用 `makepkg -si` 进行安装.
 
 #### 我的常用软件, 
 
@@ -43,7 +70,7 @@ sudo pacman -S yay
 
 1. [firefox](https://archlinux.org/packages/extra/x86_64/firefox/), Mozilla 出品的火狐浏览器, 使用体验不错
 2. [flameshot](https://archlinux.org/packages/community/x86_64/flameshot/), 火焰截图, 一款截图/贴图软件, 使用方便, 如何设置全局快捷键可以看 [README](https://github.com/flameshot-org/flameshot#keyboard-shortcuts), 英文看不懂的可以看[这个博客](https://www.djc8.cn/archives/manjaro-uses-flashshot-as-a-screenshot-tool.html)
-3. [fcitx](https://archlinux.org/packages/community/x86_64/fcitx/), 小企鹅输入框架, 这里我选了 v4 版本的, 没有用 fcitx5
+3. [fcitx](https://archlinux.org/packages/community/x86_64/fcitx/), 小企鹅输入框架, ~~这里我选了 v4 版本的, 没有用 fcitx5~~, 我换成 [fcitx5-im](https://archlinux.org/groups/x86_64/fcitx5-im/) 了, 同理下面的变成 [fcitx5-rime](https://archlinux.org/packages/community/x86_64/fcitx5-rime/)
 4. [fcitx-rime](https://archlinux.org/packages/community/x86_64/fcitx-rime/), 中州韵输入法, 我常用的小鹤音形可以在该输入法上实现, 具体的其他输入方式可以看 [Fcitx (简体中文)](https://wiki.archlinux.org/title/Fcitx_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))
 5.  [fcitx-qt5](https://archlinux.org/packages/community/x86_64/fcitx-qt5/), [kcm-fcitx](https://archlinux.org/packages/community/x86_64/kcm-fcitx/), [fcitx-configtool](https://archlinux.org/packages/community/x86_64/fcitx-configtool/), 分别为fcitx 提供对 Qt 提供的输入法模块, fcitx 的图形配置界面, fcitx 的配置工具
 6. [zsh](https://archlinux.org/packages/extra/x86_64/zsh/), Z-Shell 终端, 有 `oh-my-zsh` 的配合, 配置起来相对容易
@@ -74,7 +101,12 @@ sudo pacman -S yay
  `++:.                           `-/+/   Memory: 8548MiB / 15775MiB 
  .`                                 `/                                   
 ```
-9. [steam](https://archlinux.org/packages/?name=steam), 需要在 `/etc/pacman.conf` 中开启 `multilib` 仓库, 并且需要安装一些图形驱动, 详见 [steam 的 Wiki](https://wiki.archlinux.org/title/Steam_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)), 如果开启 steam 后商店等界面均为黑屏幕, 不显示内容, 可以将 steam 的通道改为 `beta channel`, 具体问题见[关于 steam 黑屏的讨论](https://www.gamingonlinux.com/2021/09/steam-not-working-right-on-arch-linux-its-an-issue-with-freetype-and-theres-a-fix)
+9. [steam](https://archlinux.org/packages/?name=steam), 需要在 `/etc/pacman.conf` 中开启 `multilib` 仓库, 并且需要安装一些图形驱动, 详见 [steam 的 Wiki](https://wiki.archlinux.org/title/Steam_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)), 如果开启 steam 后商店等界面均为黑屏幕, 不显示内容, 可以将 steam 的通道改为 `beta channel`, 具体问题见[关于 steam 黑屏的讨论](https://www.gamingonlinux.com/2021/09/steam-not-working-right-on-arch-linux-its-an-issue-with-freetype-and-theres-a-fix). 在安装 steam 的过程中发现了一个可选的依赖项
+    ```
+    steam 的可选依赖
+        steam-native-runtime: steam native runtime support
+    ```
+将其 `pacman` 安装后 steam 启动很丝滑, 虽然不知道为什么, 好用就行吧
 
 10. [obs-studio](https://archlinux.org/packages/community/x86_64/obs-studio/), 老牌屏幕录制软件
 
@@ -92,7 +124,7 @@ sudo pacman -S yay
 
 用 `yay -S <软件包>` 安装,
 
-1. [microsoft-edge-dev-bin](https://aur.archlinux.org/packages/microsoft-edge-dev-bin), 微软的新 edge, 由于我的插件与书签等都备份在了 Windows 的 edge 上, 这里我首选 edge, 如果没有这些包袱, 新的 FireFox 也是很好的选择
+1. [microsoft-edge-dev-bin](https://aur.archlinux.org/packages/microsoft-edge-dev-bin), 微软的新 edge, 由于我的插件与书签等都备份在了 Windows 的 edge 上, 这里我首选 edge, 如果没有这些包袱, 新的 FireFox 也是很好的选择. **注意！95.0.0997.1 及以后的版本疑似与更新的 `systemd` 不兼容, 会无法启动, 见 [techcommunity](https://techcommunity.microsoft.com/t5/discussions/edge-dev-95-0-997-1-consistently-fails-to-launch-since-systemd/m-p/2727796), 请在"查看更改"处选择 [94.0.982.2 版本](https://aur.archlinux.org/cgit/aur.git/commit/?h=microsoft-edge-dev-bin&id=b43b6cd9d428ecccf9be1f854c0802b61344c622) 进行下载并本地安装, 且在 `yay -Syu` 时忽略 microsoft-edge-dev-bin 的更新!**
 2. [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin/), 这里我选择了微软官方专用软件版本, 为了设置同步. 安装后可以直接在终端使用 `code <文件夹/文件>` 打开文件夹/文件
 3. [~~telegram-desktop-bin~~](https://aur.archlinux.org/packages/telegram-desktop-bin/) **~~该软件已经被官方仓库收编~~, 原来它一直都在官方仓库里**. 即时通讯软件 Telegram, 虽然我把它贴在这了, 但是由于无法下载部分组件, 我还是去了 [Telegram 的官网](https://desktop.telegram.org/)下载了 `AppImage`
 4. [oh-my-zsh](https://aur.archlinux.org/packages/oh-my-zsh-git/), 对于 `zsh` 的美化, 提供了一些易用的接口
@@ -116,6 +148,7 @@ sudo pacman -S yay
 11. [wemeet-bin](https://aur.archlinux.org/packages/wemeet-bin/), 腾讯会议 Linux 版, 新鲜的
 12. [picgo-appimage](https://aur.archlinux.org/packages/picgo-appimage/), 本地图床软件, 配置见其[配置手册](https://picgo.github.io/PicGo-Doc/zh/guide/config.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BF%AB%E6%8D%B7%E9%94%AE)[^githubimg]
 13. [wudao-dict-git](https://aur.archlinux.org/packages/wudao-dict-git/), 无道词典, 项目地址在 [Github](https://github.com/ChestnutHeng/Wudao-dict), 可以通过终端 `wd <单词>` 来查询单词.
+14. [v2raya](https://aur.archlinux.org/packages/v2raya/), 持续维护的代理软件, 这里是 [Github repo](https://github.com/v2rayA/v2rayA) 与 [Wiki](https://github.com/v2rayA/v2rayA/wiki)
 
 [^githubimg]: 配置 Github 图床时要注意仓库设置为 Public
 
@@ -123,31 +156,8 @@ sudo pacman -S yay
 
  1. [TeX Live 2021](http://tug.org/texlive/), 安装可以参考啸行的 [install-latex-guide-zh-cn](https://ctan.math.illinois.edu/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf) 中的 `Ubuntu 20.04` 部分进行安装. 由于系统不同, 可以不在 `visudo` 中添加可信路径, 直接使用 `sudo tlmgr` 即可, 当然, Arch 官方仓库也打包了 [TeX Live](https://archlinux.org/packages/?sort=&q=texlive&maintainer=&flagged=). 使用文档见 [Arch Wiki](https://wiki.archlinux.org/title/TeX_Live_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)), 但是我没用明白, 又给卸了
 
-
-##### 添加 `archlinuxcn` 源
-
-国内的 Arch 组织也打包了一些软件, 我们将[`archlinuxcn`](https://github.com/archlinuxcn/repo#readme) 的源也添加到 `pacman` 的源
-
-```bash
-kate /etc/pacman.conf
-```
-
-在最下方添加 
-
-```
-[archlinuxcn]
-Server = https://repo.archlinuxcn.org/$arch
-```
-
-用管理员权限保存后, 在终端运行
-
-```
-sudo pacman -Sy && sudo pacman -S archlinuxcn-keyring
-```
-
-来刷新仓库以及获取 PGP 钥匙串
-
-我这里代理使用的是 [qv2ray](https://qv2ray.net/lang/zh/getting-started/step1.html#linux-arch-linux-%E6%88%96%E5%9F%BA%E4%BA%8E-arch-%E7%9A%84%E5%8F%91%E8%A1%8C%E7%89%88)+[v2core](https://github.com/v2fly/v2ray-core/releases), 由于某些原因, 直接看链接吧.
+##### 代理
+我这里代理使用的是 [qv2ray](https://qv2ray.net/lang/zh/getting-started/step1.html#linux-arch-linux-%E6%88%96%E5%9F%BA%E4%BA%8E-arch-%E7%9A%84%E5%8F%91%E8%A1%8C%E7%89%88)(可惜开发者由于矛盾放弃了这个项目, 正在寻找持续维护的替代品) + [v2core](https://github.com/v2fly/v2ray-core/releases), 由于某些原因, 直接看链接吧.
 
 如果连接时出现类似
 ```
@@ -261,6 +271,8 @@ sudo pacman -Sy && sudo pacman -S archlinuxcn-keyring
 
 **需要在安装 fcitx 相关的软件包后进行**
 
+###### fcitx4
+
 我使用的方案是小鹤音形, 从小鹤音形的[官网](https://flypy.com/)提供的[网盘](http://flypy.ys168.com/)中的"____3.小鹤音形挂接第三方平台"中下载"小鹤音形“鼠须管”for macOS.zip", 解压后将 `/rime` 文件夹覆盖到 `~/.config/fcitx/rime` 文件夹, 再在配置中将 Rime 提到第一位, 重新部署即可. 
 
 在某些软件中会出现无法调出 fcitx 输入法的情况, 如 Telegram, 这时需要配置环境
@@ -306,6 +318,10 @@ PreeditInApplication=True
 ```
 
 插件折腾挺热心, 软件倒没学咋样……
+
+##### KRunnner
+
+还可以按照 [Wiki](https://wiki.archlinux.org/title/KRunner_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)) 的指示来配置一下 KRunner 的快捷键, 作为全局搜索来用.
 
 #### 安装字体
 ##### 解决系统默认字体显示效果差的问题
