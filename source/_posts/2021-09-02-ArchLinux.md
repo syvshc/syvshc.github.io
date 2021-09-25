@@ -124,7 +124,7 @@ sudo pacman -S yay
 
 用 `yay -S <软件包>` 安装,
 
-1. [microsoft-edge-dev-bin](https://aur.archlinux.org/packages/microsoft-edge-dev-bin), 微软的新 edge, 由于我的插件与书签等都备份在了 Windows 的 edge 上, 这里我首选 edge, 如果没有这些包袱, 新的 FireFox 也是很好的选择. **注意！95.0.0997.1 及以后的版本疑似与更新的 `systemd` 不兼容, 会无法启动, 见 [techcommunity](https://techcommunity.microsoft.com/t5/discussions/edge-dev-95-0-997-1-consistently-fails-to-launch-since-systemd/m-p/2727796), 请在"查看更改"处选择 [94.0.982.2 版本](https://aur.archlinux.org/cgit/aur.git/commit/?h=microsoft-edge-dev-bin&id=b43b6cd9d428ecccf9be1f854c0802b61344c622) 进行下载并本地安装, 且在 `yay -Syu` 时忽略 microsoft-edge-dev-bin 的更新!**
+1. [microsoft-edge-dev-bin](https://aur.archlinux.org/packages/microsoft-edge-dev-bin), 微软的新 edge, 由于我的插件与书签等都备份在了 Windows 的 edge 上, 这里我首选 edge, 如果没有这些包袱, 新的 FireFox 也是很好的选择. ~~注意！95.0.0997.1 及以后的版本疑似与更新的 `systemd` 不兼容, 会无法启动, 见 [techcommunity](https://techcommunity.microsoft.com/t5/discussions/edge-dev-95-0-997-1-consistently-fails-to-launch-since-systemd/m-p/2727796), 请在"查看更改"处选择 [94.0.982.2 版本](https://aur.archlinux.org/cgit/aur.git/commit/?h=microsoft-edge-dev-bin&id=b43b6cd9d428ecccf9be1f854c0802b61344c622) 进行下载并本地安装, 且在 `yay -Syu` 时忽略 microsoft-edge-dev-bin 的更新!~~ 95.0.1020.0-1 版本已经修复问题, 可以正常使用.
 2. [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin/), 这里我选择了微软官方专用软件版本, 为了设置同步. 安装后可以直接在终端使用 `code <文件夹/文件>` 打开文件夹/文件
 3. [~~telegram-desktop-bin~~](https://aur.archlinux.org/packages/telegram-desktop-bin/) **~~该软件已经被官方仓库收编~~, 原来它一直都在官方仓库里**. 即时通讯软件 Telegram, 虽然我把它贴在这了, 但是由于无法下载部分组件, 我还是去了 [Telegram 的官网](https://desktop.telegram.org/)下载了 `AppImage`
 4. [oh-my-zsh](https://aur.archlinux.org/packages/oh-my-zsh-git/), 对于 `zsh` 的美化, 提供了一些易用的接口
@@ -168,6 +168,12 @@ sudo pacman -S yay
 #### 软件配置
 
 这里会给出一些软件的配置, 使用的插件等等.
+
+##### [baloo](https://wiki.archlinux.org/title/Baloo)
+
+这是 KDE 桌面自带的索引程序, 会检测文件的内容提供更精确的搜索服务, 但是屁用没有, 在建立索引的时候还会占用大量的 CPU 资源, Arch 社区的仙子建议直接把它干掉
+
+![](https://raw.githubusercontent.com/syvshc/image/master/postimg/ArchLinux/20210925105422.png)
 
 ##### microsoft-edge
 

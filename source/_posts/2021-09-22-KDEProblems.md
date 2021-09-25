@@ -18,7 +18,18 @@ categories:
 
 表现与这个[帖子](https://forum.kde.org/viewtopic.php?f=17&t=166079)一致, 解决方法在贴子中也已经提到, 即将 `~/.config/kglobalshortcutsrc` 重命名或删除, 在重新登录 KDE 的时候将会自动重新生成一个 `~/.config/kglobalshortcutsrc`, 并且问题解决.
 
-另外发现这个方法把 [flameshot 延迟启动](https://github.com/flameshot-org/flameshot/issues/1916)的问题解决了, 具体原理并不清楚.
+#### [flameshot 延迟启动](https://github.com/flameshot-org/flameshot/issues/1916)
+
+老实说这个系统问题与 flameshot 没什么大关系, 但是我是通过它发现这个问题的……
+KDE 桌面安装后使用
+```zsh
+balooctl disable
+```
+要关掉 `baloo` 服务, 这个东西没什么用, 建立索引的时候还会占用大量的 CPU. 
+
+![(重复利用图片)](https://raw.githubusercontent.com/syvshc/image/master/postimg/ArchLinux/20210925105422.png)
+
+其他的桌面操作卡顿或延迟, 如终端中对命令的响应, 软件的启动与关闭也可能与其相关.
 
 #### 桌面黑屏
 
