@@ -329,6 +329,24 @@ PreeditInApplication=True
 
 还可以按照 [Wiki](https://wiki.archlinux.org/title/KRunner_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)) 的指示来配置一下 KRunner 的快捷键, 作为全局搜索来用.
 
+##### 向日葵 Sunloginclient
+
+上文提到过安装后需要运行
+
+```
+systemctl start runsunloginclient.service  
+```
+
+开启向日葵服务, 如果需要远程操作 GNOME 的 Ubuntu 系统, 会显示"链接已中断", 这时需要 Ubuntu 用户安装 `x11` 的桌面环境如 `lightdm`:
+```bash
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt install lightdm
+```
+安装后可以任意选择桌面环境, 也可以使用 `sudo dpkg-reconfigure lightdm` 与 `sudo dpkg-reconfigure gdm3` 来进行切换桌面环境, 注意在接受向日葵远程的时候需要保证处于 `lightdm` 环境下.[^sunlogin]
+
+[^sunlogin]: 这里我也不太懂, 意思就是这个意思.
+
 #### 安装字体
 ##### 解决系统默认字体显示效果差的问题
 
