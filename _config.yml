@@ -124,6 +124,13 @@ markdown_it_plus:
     #         name: @iktakahiro/markdown-it-katex
     #         enable: false
 
+# Google Analytics
+google_analytics:
+  tracking_id: UA-127047099-2
+  # By default, NexT will load an external gtag.js script on your site.
+  # If you only need the pageview feature, set the following option to true to get a better performance.
+  # only_pageview: true
+
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
