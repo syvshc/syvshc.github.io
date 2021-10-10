@@ -177,7 +177,7 @@ latex='elatex --shell-escape %O %S';
 
 昨天在使用 `latexmk -xelatex -pvc main` 的时候发现 `SumatraPDF` 不能主动更新 `PDF` 文件, 而使用 `latexmk -pdflatex -pvc main` 就可以更新, 甚至将 `rc` 文件中的 `$pdflatex` 设置为 
 
-```latex
+```tex
 $pdflatex="xelatex -file-line-error -halt-on-error  -interaction=nonstopmode -synctex=1 %O %S";
 ```
 

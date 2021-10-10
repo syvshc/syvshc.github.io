@@ -15,7 +15,7 @@ tags:
 
 如果按照 `article` 的方式设置正文字体:
 
-```latex
+```tex
 \documentclass{beamer}
 \usepackage{amsmath, fontspec}
 \begin{document}
@@ -38,7 +38,7 @@ tags:
 
 在群里咨询后得知, `\setmainfont{Fira Sans}` 命令修改的字体为 `rmfamily`, 默认为衬线体. 所以要先将字体设置为衬线体 `\usefonttheme{serif}`, 再进行修改:
 
-```latex
+```tex
 \documentclass{beamer}
 \usepackage{amsmath, fontspec}
 \usefonttheme{serif}
@@ -58,7 +58,7 @@ tags:
 
 另外, 因为 `beamer` 文档类默认正文使用无衬线体, 于是也可以偷鸡地设置 `\setsansfont{Fira Sans}` 但是这样做会导致数学模式的 `\mathrm` 变成衬线体
 
-```latex
+```tex
 \documentclass{beamer}
 \usepackage{amsmath}
 \usepackage{fontspec}
@@ -82,7 +82,7 @@ tags:
 
 即在默认设置下, `fontspec` 宏包会将数学字体设置成 `Computer Modern`, 于是我们需要用 `no-math` 选项来阻止它, 同时 `\mathrm{d}` 也会调用 `rmfamily` 的字体, 我们将它改为 `\mathsf{d}`:
 
-```latex
+```tex
 \documentclass{beamer}
 \usepackage{amsmath}
 \usepackage[no-math]{fontspec}
@@ -98,7 +98,7 @@ tags:
 \end{document}
 ```
 这个暂时不知道是什么原因导致的. 如果想正文和数学公式都使用 Fira 系列的字体, 同时保留衬线字体, 可以如下设置:
-```latex
+```tex
 \documentclass{beamer}
 % \usepackage[no-math]{fontspec}
 \usepackage{unicode-math}

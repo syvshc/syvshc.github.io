@@ -84,7 +84,7 @@ sudo pacman -S yay
 
 8. [neofetch](https://archlinux.org/packages/community/any/neofetch/), 与 screenfetch 相同的功能.
 
-```zsh
+```bash
 ➜ neofetch
                    -`                    syvshc@archlinux 
                   .o+`                   ---------------- 
@@ -344,7 +344,7 @@ XMODIFIERS    DEFAULT=\@im=fcitx
 
 需要安装 [fcitx5-im](https://archlinux.org/groups/x86_64/fcitx5-im/), 及 [fcitx5-rime](https://archlinux.org/packages/community/x86_64/fcitx5-rime/)
 
-```zsh
+```bash
 sudo pacman -S fcitx5-im fcitx5-rime
 ```
 

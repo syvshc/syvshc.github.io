@@ -205,7 +205,7 @@ npm install hexo-theme-next
 2. **hexo-renderer-pandoc** 提供 mathjax 渲染, 将 `tags` 设置为 `ams` 还可以使用公式编号[使用方法](https://theme-next.js.org/docs/third-party-services/math-equations);
 
    示例: 
-   ```latex
+   ```tex
    一元二次方程组 $ax^{2}+bx+c=0\ (a \ne 0)$ 的解为 $\eqref{eq:slo}$
    % 注意: 行内公式的 $...$ 前后不要有空格
    \begin{equation}\label{eq:slo}

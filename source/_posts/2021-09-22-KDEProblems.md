@@ -22,7 +22,7 @@ categories:
 
 老实说这个系统问题与 flameshot 没什么大关系, 但是我是通过它发现这个问题的……
 KDE 桌面安装后使用
-```zsh
+```bash
 balooctl disable
 ```
 要关掉 `baloo` 服务, 这个东西没什么用, 建立索引的时候还会占用大量的 CPU. 

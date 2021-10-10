@@ -36,7 +36,7 @@ categories:
 #### `\CJKunderline` 自动处理
 否定了这个想法之后继续探究, 我想到了可以使用 `\CJKunderline` 命令[^CJKunderline], 因为该下划线可以自动处理中文的换行, 把它应用在 `\parbox` 中进行一个嵌套应该可以
 
-```latex
+```tex
 \documentclass{ctexart}
 \usepackage{xeCJKfntef}
 \begin{document}
@@ -71,7 +71,7 @@ l.5     \fpeval{\StrLen{\abc}/5}
 
 然后 QQ 群LaTeX技术交流 1 群 (91940767) 中的行者 (qq:957114619) 根据上述问题的 [回答](https://tex.stackexchange.com/a/609433/180617) 进行了整理, 发布到了 [LaTeXStudio](https://latexstudio.net/index/details/index/mid/1799.html). 这里进行一下备份
 
-```latex
+```tex
 % 本文来源:https://tex.stackexchange.com/questions/609378/cut-string-into-pieces,LaTeX技术交流 2 群(qq群号：478023327) 的“乙醇”网友（qq号：914920345）提供来源
 
 
@@ -158,7 +158,7 @@ l.5     \fpeval{\StrLen{\abc}/5}
 
 这个文章也是他写的, 可以完美实现我们的需求, 除了代码有点长（
 
-```latex
+```tex
 \documentclass{ctexart}
 \usepackage{calc}
 \makeatletter
@@ -269,7 +269,7 @@ l.5     \fpeval{\StrLen{\abc}/5}
 
 可以看到, 第二个“论文题目”中单行中的文字比多第三个中的多行文字只少了一个“国”字但是它可以自动换行并且制造一个良好的视觉效果, 代码的关键在于
 
-```latex
+```tex
 % 设定不同的单行与多行的最大行长度
 \newlength\titleSingleLineMaxWd
 \newlength\titleMultiLineMaxWd

@@ -32,7 +32,7 @@ l.22  \maketitle
 产生问题的原因可以看这个 [Pull Request](https://github.com/latexstudio/CUMCMThesis/pull/17), 这里再拿出来说一下
 
 参考 [TeX.SE](https://tex.stackexchange.com/questions/568732/uline-does-not-work-with-hspace) 与 [问答站](https://wenda.latexstudio.net/q-5448.html) 可以知道
-```latex
+```tex
 \documentclass{article}
 \usepackage{ulem}
 \begin{document}
@@ -42,7 +42,7 @@ l.22  \maketitle
 ```
 
 会导致错误
-```latex 
+```tex 
 ! Extra }, or forgotten \endgroup.
 \UL@stop ...alty \ifnum \lastkern =\thr@@ \egroup
                                                   \egroup \ifdim \wd \UL@box...
