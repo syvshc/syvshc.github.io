@@ -179,7 +179,7 @@ sudo pacman -S yay
 
 如果连接时出现类似
 
-```
+```bash
 [Warning] failed to handler mux client connection > v2ray.com/core/proxy/vmess/outbound: connection ends > v2ray.com/core/proxy/vmess/outbound: failed to read header > v2ray.com/core/proxy/vmess/encoding: failed to read response header > websocket: close 1000 (normal)
 ```
 
@@ -198,34 +198,36 @@ sudo pacman -S yay
 ##### microsoft-edge
 
 我使用的插件有
-    *[AD Block](https://microsoftedge.microsoft.com/addons/detail/adblock-%E2%80%94-%E6%9C%80%E4%BD%B3%E5%B9%BF%E5%91%8A%E6%8B%A6%E6%88%AA%E5%B7%A5%E5%85%B7/ndcileolkflehcjpmjnfbnaibdcgglog) 广告拦截插件
-    * [AD Block Plus](https://microsoftedge.microsoft.com/addons/detail/adblock-plus-%E5%85%8D%E8%B4%B9%E7%9A%84%E5%B9%BF%E5%91%8A%E6%8B%A6%E6%88%AA%E5%99%A8/gmgoamodcdcjnbaobigkjelfplakmdhh) 广告拦截插件
-    *[Listen 1](https://microsoftedge.microsoft.com/addons/detail/listen-1/hneiglcmpeedblkmbndhfbeahcpjojjg) 与桌面版的 Listen 1 同样功能, 此为浏览器插件版本
-    * [Office](https://microsoftedge.microsoft.com/addons/detail/office/gggmmkjegpiggikcnhidnjjhmicpibll) 在线的 Office 软件, 对于买了 Microsoft 365 的用户体验会有提升
-    *[smartUp 手势](https://microsoftedge.microsoft.com/addons/detail/smartup%E6%89%8B%E5%8A%BF/elponhbfjjjihgeijofonnflefhcbckp) 鼠标手势插件
-    * [Bilibili 助手](https://microsoftedge.microsoft.com/addons/detail/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E5%8A%A9%E6%89%8B%EF%BC%9Abilibilicom-%E7%BB%BC%E5%90%88%E8%BE%85%E5%8A%A9%E6%89%A9/fcfebhekhbkhjjimonjmbgmkbclheaoh) 提供 B 站的一些支持, 自动签到等
-    *[沙拉查词](https://microsoftedge.microsoft.com/addons/detail/%E6%B2%99%E6%8B%89%E6%9F%A5%E8%AF%8D%E8%81%9A%E5%90%88%E8%AF%8D%E5%85%B8%E5%88%92%E8%AF%8D%E7%BF%BB%E8%AF%91/idghocbbahafpfhjnfhpbfbmpegphmmp) 词典插件, 支持划词查询, 集成了多家词典
-    * [Absolute Enable Right Click & Copy](https://chrome.google.com/webstore/detail/absolute-enable-right-cli/jdocbkpgdakpekjlhemmfcncgdjeiika) 强制启用复制, 右键功能, 此为 Chrome 插件
+
++ [AD Block](https://microsoftedge.microsoft.com/addons/detail/adblock-%E2%80%94-%E6%9C%80%E4%BD%B3%E5%B9%BF%E5%91%8A%E6%8B%A6%E6%88%AA%E5%B7%A5%E5%85%B7/ndcileolkflehcjpmjnfbnaibdcgglog) 广告拦截插件
++ [AD Block Plus](https://microsoftedge.microsoft.com/addons/detail/adblock-plus-%E5%85%8D%E8%B4%B9%E7%9A%84%E5%B9%BF%E5%91%8A%E6%8B%A6%E6%88%AA%E5%99%A8/gmgoamodcdcjnbaobigkjelfplakmdhh) 广告拦截插件
++ [Listen 1](https://microsoftedge.microsoft.com/addons/detail/listen-1/hneiglcmpeedblkmbndhfbeahcpjojjg) 与桌面版的 Listen 1 同样功能, 此为浏览器插件版本
++ [Office](https://microsoftedge.microsoft.com/addons/detail/office/gggmmkjegpiggikcnhidnjjhmicpibll) 在线的 Office 软件, 对于买了 Microsoft 365 的用户体验会有提升
++ [smartUp 手势](https://microsoftedge.microsoft.com/addons/detail/smartup%E6%89%8B%E5%8A%BF/elponhbfjjjihgeijofonnflefhcbckp) 鼠标手势插件
++ [Bilibili 助手](https://microsoftedge.microsoft.com/addons/detail/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E5%8A%A9%E6%89%8B%EF%BC%9Abilibilicom-%E7%BB%BC%E5%90%88%E8%BE%85%E5%8A%A9%E6%89%A9/fcfebhekhbkhjjimonjmbgmkbclheaoh) 提供 B 站的一些支持, 自动签到等
++ [沙拉查词](https://microsoftedge.microsoft.com/addons/detail/%E6%B2%99%E6%8B%89%E6%9F%A5%E8%AF%8D%E8%81%9A%E5%90%88%E8%AF%8D%E5%85%B8%E5%88%92%E8%AF%8D%E7%BF%BB%E8%AF%91/idghocbbahafpfhjnfhpbfbmpegphmmp) 词典插件, 支持划词查询, 集成了多家词典
++ [Absolute Enable Right Click & Copy](https://chrome.google.com/webstore/detail/absolute-enable-right-cli/jdocbkpgdakpekjlhemmfcncgdjeiika) 强制启用复制, 右键功能, 此为 Chrome 插件
 
 ##### vscode
 
 我主要使用 vscode 写 LaTeX, 这里并没有其他的配置信息.
 
 1. 我使用的插件有
-   * C/C++
-   * Chinese (Simplified) Language Pack for Visual Studio Code: 中文语言包
-   * Git History: 查看 git 历史的插件, 现在貌似有 vscode 官方的管理器了
-   * Jupyter: vscode 中使用 jupyter notebook
-   * LaTeX Workshop: LaTeX 用户必备插件
-   * Local History: 本地保存的时候会生成一个副本, 可以回滚版本, 一般用不上, 用上了就救命
-   * Markdown All in One: markdown 高亮等支持
-   * Markdown Preview Enhanced: 更强的 md 渲染器
-   * Material Icon Theme: 好看的图标包
-   * One Dark Pro: 好看的主题
-   * Pylance & Python: Python 用户插件
-   * QQ: vscode 中使用 QQ
-   * Terminal Here: 直接使 Terminal 定位在所打开的文件夹上
-   * Cloudmusic: vscode 中使用网易云音乐
+
+   + C/C++
+   + Chinese (Simplified) Language Pack for Visual Studio Code: 中文语言包
+   + Git History: 查看 git 历史的插件, 现在貌似有 vscode 官方的管理器了
+   + Jupyter: vscode 中使用 jupyter notebook
+   + LaTeX Workshop: LaTeX 用户必备插件
+   + Local History: 本地保存的时候会生成一个副本, 可以回滚版本, 一般用不上, 用上了就救命
+   + Markdown All in One: markdown 高亮等支持
+   + Markdown Preview Enhanced: 更强的 md 渲染器
+   + Material Icon Theme: 好看的图标包
+   + One Dark Pro: 好看的主题
+   + Pylance & Python: Python 用户插件
+   + QQ: vscode 中使用 QQ
+   + Terminal Here: 直接使 Terminal 定位在所打开的文件夹上
+   + Cloudmusic: vscode 中使用网易云音乐
 2. 这里是我的 [settings.json](https://gist.github.com/syvshc/999313a798d87a590b74ada95ec121ff), [latex.json](https://gist.github.com/syvshc/18a4dd84f7b47927ec6ed0ee3dbd474a) 与 [keybindings.json](https://gist.github.com/syvshc/2fd2ed7af40500dafd861a2a1b3890f5) 的内容, 点击链接即可查看/下载, 其中有针对 Windows 用户以及 KDE/Okular 用户的 LaTeX 正反向搜索的内容[^1].
 3. 如果登录账户的时候出现**将登陆信息写入钥匙串失败**的错误信息, 在终端运行
 
@@ -237,14 +239,14 @@ sudo pacman -S yay
 
 ##### Okular
 
-* 如果无法显示中文, 在终端运行
++ 如果无法显示中文, 在终端运行
 
   ```bash
   sudo pacman -S  poppler-data
   ```
 
   并重启 okular 即可.
-* 使用 vscode 与 okular 进行 LaTeX 的正反向搜索, 在上述 `settings.json` 正确写入的基础上, 在 okular->设置->配置 Okular->编辑器 中, 选择自定义文本编辑器, 命令部分填写
++ 使用 vscode 与 okular 进行 LaTeX 的正反向搜索, 在上述 `settings.json` 正确写入的基础上, 在 okular->设置->配置 Okular->编辑器 中, 选择自定义文本编辑器, 命令部分填写
 
   ```bash
   code -r -g %f:%l
@@ -256,8 +258,8 @@ sudo pacman -S yay
 ##### zsh & oh-my-zsh
 
 1. 我使用的插件:
-    * [git](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git#readme): oh-my-zsh 自带插件, 直接填入 plugin 即可使用, 提供了一些 `git` 的 alias
-    * [z](https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/z/README.md): oh-my-zsh 自带插件, 会记录曾经 `cd` 过的路径, 通过 `z <不完整路径>` 即可实现跳转, 如
+    + [git](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git#readme): oh-my-zsh 自带插件, 直接填入 plugin 即可使用, 提供了一些 `git` 的 alias
+    + [z](https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/z/README.md): oh-my-zsh 自带插件, 会记录曾经 `cd` 过的路径, 通过 `z <不完整路径>` 即可实现跳转, 如
 
         ```bash
         cd ~/git/syvshc.github.io
@@ -265,9 +267,9 @@ sudo pacman -S yay
         ```
 
         即可直接进入 `~/git/syvshc.github.io` 文件夹.
-    * [sudo](https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/sudo/README.md): oh-my-zsh 自带插件, 敲两下 `ESC` 键即可为命令添加 `sudo`
-    * [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting), 命令高亮, 默认设置下绿色为正确, 红色为错误
-    * [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions), 会记录用户输入过的命令, 并将其显示为灰色, 按 `->` 即可补全.
+    + [sudo](https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/sudo/README.md): oh-my-zsh 自带插件, 敲两下 `ESC` 键即可为命令添加 `sudo`
+    + [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting), 命令高亮, 默认设置下绿色为正确, 红色为错误
+    + [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions), 会记录用户输入过的命令, 并将其显示为灰色, 按 `->` 即可补全.
 2. 安装插件
     1. 可以通过直接 `git clone` 到用户目录的方式进行安装, 以 `zsh-autosuggestions` 插件为例
 
