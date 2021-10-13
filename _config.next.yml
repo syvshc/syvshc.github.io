@@ -441,10 +441,10 @@ github_banner:
 # ---------------------------------------------------------------
 
 font:
-  enable: false
+  enable: true
 
   # Uri of fonts host, e.g. https://fonts.googleapis.com (Default).
-  host:
+  host: 
 
   # Font options:
   # `external: true` will load this font family from `host` above.
@@ -454,31 +454,31 @@ font:
   # Global font settings used for all elements inside <body>.
   global:
     external: true
-    family: Lato
+    family: 
     size:
 
   # Font settings for site title (.site-title).
   title:
     external: true
-    family:
+    family: FiraGo, Source Han Sans SC
     size:
 
   # Font settings for headlines (<h1> to <h6>).
   headings:
     external: true
-    family:
+    family: FiraGo, Source Han Sans SC
     size:
 
   # Font settings for posts (.post-body).
   posts:
     external: true
-    family:
+    family: FiraGo, Source Han Sans SC
 
   # Font settings for <code> and code blocks.
   codes:
     external: true
     # family: JetBrains Mono
-    family: Sarasa Term SC
+    family: Fira Code
 
 # ---------------------------------------------------------------
 # SEO Settings
@@ -487,7 +487,7 @@ font:
 
 # If true, site-subtitle will be added to index page.
 # Remember to set up your site-subtitle in Hexo `_config.yml` (e.g. subtitle: Subtitle)
-index_with_subtitle: false
+index_with_subtitle: true
 
 # Automatically add external URL with Base64 encrypt & decrypt.
 exturl: false
@@ -496,7 +496,7 @@ exturl_icon: true
 
 # Google Webmaster tools verification.
 # See: https://developers.google.com/search
-google_site_verification:
+google_site_verification: RTd4ecbG2mIKZhXeHNZ1DSOEP_brALHDEdX6JBSAWx4
 
 # Bing Webmaster tools verification.
 # See: https://www.bing.com/webmasters
@@ -969,3 +969,6 @@ vendors:
 css: css
 js: js
 images: images
+
+# canvas_nest
+canvas_nest: true 

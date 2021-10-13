@@ -138,3 +138,6 @@ deploy:
   repo: git@github.com:syvshc/syvshc.github.io.git
   branch: master
 
+# Sitemap
+sitemap:
+  path: sitemap.xml
