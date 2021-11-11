@@ -154,6 +154,7 @@ latex='elatex --shell-escape %O %S';
 ```
 
 那两个前面带 `%` 的就是**占位符**, 在运行命令之前他们会被替换为适当的值. 因此 `%S` 会被替换为 `elatex` 应用的源文件名, `%O` 会被替换为任何 `latexmk` 将作用在这个命令上的选项, 比如如果你在调用 `latexmk` 的时候使用了 `-silent` 选项, `%O` 会被替换为 `-interaction=batchmode`. 下面列出可用的占位符
+
 + `%A`: 主 `.tex` 文件的文件名. 不同于 `%R`, `%A` 不会被设置别名(jobname) 而受影响;
 + `%B`: 最近命令中的基础名 (base name). 比如一个 `document.ps` 文件从一个 `document.dvi` 转化得到, 那么这个文件名就是 `document` 
 + `%D`: 终点 (destination) 文件名. 比如一个 `.ps` 文件由一个 `.dvi` 文件转化得到, 那么终点文件名就是这个 `.ps` 文件名.
