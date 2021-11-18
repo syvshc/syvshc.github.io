@@ -76,7 +76,13 @@ INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.
 
 ### 在线部署
 
-当然我们写博客的目的大多都是要上传到互联网, 于是我们要把博客部署到 `<username>.github.io`. 
+当然我们写博客的目的大多都是要上传到互联网, 于是我们要把博客部署到 `<username>.github.io`.
+
+首先安装部署插件
+
+```bash
+npm install hexo-deployer-git
+```
 
 打开 `hexotest` 下的 `_config.yml` 配置文件, 找到 `deploy`, 填入以下信息
 
