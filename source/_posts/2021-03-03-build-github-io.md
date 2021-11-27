@@ -31,7 +31,7 @@ npm install -g hexo-cli
 安装 `hexo`, 确保安装后可以运行 `hexo` 命令. 
 
 ### 初始化博客
-用 `cmd` 进入想存放博客的文件夹, 运行 `hexo init <blogname>`, 将 `<blogname>` 替换成博客的项目名, 比如 `hexotest`. 因为 `hexo init` 的过程要链接 `github`, 如果出现卡顿, 可以尝试看这个[博客](https://weilining.github.io/201021.html)尝试解决. 
+用 `cmd` 进入想存放博客的文件夹, 运行 `hexo init <blogname>`, 将 `<blogname>` 替换成博客的项目名, 比如 `hexotest`. 因为 `hexo init` 的过程要链接 `github`, 如果出现卡顿, 可以尝试看[Github issue](https://github.com/hexojs/hexo/issues/3693)以及这个[博客](https://yuhaicheng.xyz/5.html)尝试解决. 
 
 初始化结束后会看到这样的文件树
 
@@ -218,10 +218,10 @@ npm install hexo-theme-next
         x_{1, 2}=\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}
    \end{equation}
     ```
-    一元二次方程组 $ax^{2}+bx+c=0\ (a \ne 0)$ 的解为 $\eqref{eq:slo}$  
-   \begin{equation}\label{eq:slo}
-        x_{1, 2}=\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}
-   \end{equation}
+  一元二次方程组 $ax^{2}+bx+c=0\ (a \ne 0)$ 的解为 $\eqref{eq:slo}$  
+  \begin{equation}\label{eq:slo}
+      x_{1, 2}=\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}
+  \end{equation}
 
 3. **gitalk** 配置评论区. 配置方法在 {% post_link enable-gitalk "为博客添加 Gitalk 评论区" %}.
 4. **busuanzi** 配置阅读访问量. 在 `hexotest/` 文件夹下运行 

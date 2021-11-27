@@ -81,7 +81,7 @@ creative_commons:
 # External url should start with http:// or https://
 menu:
   home: / || fa fa-home
-  # about: /about/ || fa fa-user
+  about: /about/ || fa fa-user
   tags: /tags/ || fa fa-tags
   categories: /categories/ || fa fa-th
   archives: /archives/ || fa fa-archive
@@ -178,6 +178,7 @@ links:
   CamuseCao: https://camusecao.top/
   Alan Xiang: https://www.alanshawn.com/
   ssayno: https://ssayno.github.io/
+  marcaas: https://marcaas.github.io/
 
 # Table of Contents in the Sidebar
 # Front-matter variable (unsupport wrap expand_all).
@@ -386,7 +387,7 @@ codeblock:
   # Code Highlight theme
   # All available themes: https://theme-next.js.org/highlight/
   theme:
-    light: xcode
+    light: a11y-light
     dark: tomorrow-night
   prism:
     light: prism
