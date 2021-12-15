@@ -178,7 +178,7 @@ tags:
 
 ## `*`
 
-在默认的长度中 `labelindent` 是 20.00003pt, 非常宽, 通常来说不符合我们的需要, 这时候可以手动指定 `labelwidth`, 或者用将某一个长度设置为 `*`, 来直接按着标签的类型 (`\arabic*`, `\roman*` 等) 来设置宽度[^1], 除次之外 `*` 与 `!` 起相同的作用:
+在默认的长度中 `labelindent` 是 20.00003pt, 非常宽, 通常来说不符合我们的需要, 这时候可以手动指定 `labelwidth`, 或者用将某一个长度设置为 `*`, 来直接按着标签的类型 (`\arabic*`, `\roman*` 等) 来设置标签的宽度[^1], 除次之外 `*` 与 `!` 起相同的作用:
 
 [^1]: 如果设置的是 `label=(\Alph*)`, 那么会将 `(M)` 整体的宽度设置为 `labelwidth`.
 
@@ -266,6 +266,8 @@ left = <labelindent> .. <leftmargin>
 ```
 
 ![widest](https://raw.githubusercontent.com/syvshc/image/master/postimg/length-in-enumitem/widest.png)
+
+**注意**: `widest` 只会用它的值去替换 `label` 内的计数 (`\roman*`, `\arabic*` 等), 比如我们设置了 `[label=(\arabic*)]`, 这时候如果指定 `[widest = (m)]`, 实际得到的 `labelwidth` 是 `((m))` 宽度. 
 
 ### `align`
 

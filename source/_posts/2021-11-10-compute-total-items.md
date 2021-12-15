@@ -23,6 +23,48 @@ tags:
 2. 在一节的末尾使用命令将这一节的 `totalitems` 的值输出到辅助文件 `main.aux`
 3. 第二次编译的时候再在 `section` 中调用该计数器来显示题目的数量
 
+## 更新
+
+我又傻了, 不需要写两个 `enumerate` 的判断, 直接在 `\item` 内部让它判断自己在不在第一层就好了, 修改重定义 `\item` 的部分为
+
+```tex
+  \RenewDocumentCommand{\item}{ s o }{
+        \IfNoValueTF{#2}{\it@m}{\it@m[#2]}
+        \ifnum\enit@depth=\@ne
+            \IfBooleanT{#1}{\addtocounter{totalitems}{-1}}%
+            \stepcounter{totalitems}
+        \fi
+    }
+```
+
+然后注释掉 
+
+```tex
+\newif\ifenum
+...
+\LetLtxMacro{\@numerate}{\enumerate}
+\LetLtxMacro{\end@numerate}{\endenumerate}
+...
+\renewcommand{\enumerate}[1][]{%
+        \@numerate[#1]
+        \ifnum\enit@depth=\@ne
+            \enumtrue
+        \else
+            \enumfalse
+        \fi
+    }
+    \renewcommand{\endenumerate}{
+        \ifnum\enit@depth=\@ne 
+            \enumfalse
+        \else
+            \enumtrue
+        \fi
+        \end@numerate%
+    }
+```
+
+即可
+
 ## 具体实现 (新)
 
 在发现了可以判断层级的命令后, 思路就可以打开了, 这次我们直接修改 `\item` 命令, 让第一层级内的 `\item` 进行记数, 然后再处理嵌套以及 `\item` 的参数问题. 我更喜欢这种方式.
