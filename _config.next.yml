@@ -154,7 +154,6 @@ social:
   WCA: https://www.worldcubeassociation.org/persons/2015SUNZ03/ || fas fa-cubes
   Steam: https://steamcommunity.com/id/syvshc || fab fa-steam
 
-
 social_icons:
   enable: true
   icons_only: false
@@ -180,6 +179,8 @@ links:
   Alan Xiang: https://www.alanshawn.com/
   ssayno: https://ssayno.github.io/
   marcaas: https://marcaas.github.io/
+  ddswhu: https://ddswhu.me/
+  夏大鱼羊: https://xkwxdyy.github.io/
 
 # Table of Contents in the Sidebar
 # Front-matter variable (unsupport wrap expand_all).
@@ -827,9 +828,9 @@ tabs:
 # So, you have to install the dependency of pdf.js if you want to use pdf tag and make it available to all browsers.
 # Dependencies: https://github.com/next-theme/theme-next-pdf
 pdf:
-  enable: false
+  enable: true
   # Default height
-  height: 500px
+  height: 1000px
 
 # Mermaid tag
 mermaid:

@@ -3,4 +3,8 @@ title: 关于
 date: 2021-11-21 15:07:03
 ---
 
-Here is something about me. A student
+**对知识充满敬畏，对计算机以及数值充满兴趣，对生活充满热爱。**
+
+## 个人简历
+
+{% pdf ../pdf/resume-zh.pdf %}
