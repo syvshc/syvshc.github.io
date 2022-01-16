@@ -127,7 +127,7 @@ sidebar:
 avatar:
   # Replace the default image and set the url here.
   # url: /img/avatar/paw.png
-  url: /img/avatar/qqavatar.jpg
+  url: /img/avatar/present-avatar.jpg
   # If true, the avatar will be dispalyed in circle.
   rounded: true
   # If true, the avatar will be rotated with the cursor.
@@ -179,7 +179,7 @@ links:
   Alan Xiang: https://www.alanshawn.com/
   ssayno: https://ssayno.github.io/
   marcaas: https://marcaas.github.io/
-  ddswhu: https://ddswhu.me/
+  ddswhu: https://ds-deng.me/
   夏大鱼羊: https://xkwxdyy.github.io/
 
 # Table of Contents in the Sidebar
