@@ -2,9 +2,9 @@
 title: 统计一节中的列表项数量
 date: 2021-11-10 11:47:24
 categories: 
-    - [LaTeX, 列表相关]
+    - [LaTeX, 列表]
 tags:
-    - [列表相关]
+    - [列表]
     - [LaTeX]
     - [示例]
 ---
