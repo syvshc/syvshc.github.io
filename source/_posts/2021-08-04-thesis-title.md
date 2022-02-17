@@ -288,4 +288,4 @@ l.5     \fpeval{\StrLen{\abc}/5}
 ### 任务完成
 先放松一下, 有更好的方法可以评论, 我会进行补充. 
 
-[^CJKunderline]: 该命令由宏集 [`xeCJK`](https://ctan.org/pkg/xecjk) 中宏包 `xeCJKfnt` 提供 
+[^CJKunderline]: 该命令由宏集 [`xeCJK`](https://ctan.org/pkg/xecjk) 中宏包 `xeCJKfntef` 提供 
