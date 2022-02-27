@@ -7,4 +7,4 @@ date: 2021-11-21 15:07:03
 
 ## 个人简历
 
-{% pdf ../pdf/resume-zh.pdf %}
+{% pdf ../pdf/resume-blog.pdf %}
