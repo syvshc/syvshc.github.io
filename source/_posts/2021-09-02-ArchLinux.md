@@ -127,6 +127,7 @@ sudo pacman -S yay
 ![my desktop](https://raw.githubusercontent.com/syvshc/image/master/postimg/ArchLinux/2021-09-06_21-28.png)
 
 15. [telegram-desktop](https://archlinux.org/packages/community/x86_64/telegram-desktop/), 即时通讯软件 Telegram, 可能需要魔法
+16. [screenkey](https://archlinux.org/packages/community/any/screenkey/), 可以在屏幕上显示按键, 配合录屏软件表现不错
 
 ##### AUR 仓库
 
@@ -350,7 +351,19 @@ XMODIFIERS    DEFAULT=\@im=fcitx
 sudo pacman -S fcitx5-im fcitx5-rime
 ```
 
-然后将上文提到的 `rime` 文件夹放入 `~/.local/share/fcitx5/` 中, 覆盖其中的同名文件夹 `rime/`, 重新部署即可. 皮肤我在使用 [fcitx-skin-material](https://aur.archlinux.org/packages/fcitx-skin-material/), 使用 `yay -S fcitx-skin-material` 即可安装, 安装后在 `~/.config/fcitx5/conf/classicui.conf` 中添加
+然后将上文提到的 `rime` 文件夹放入 `~/.local/share/fcitx5/` 中, 覆盖其中的同名文件夹 `rime/`, 重新部署即可. 
+然后参照 [Wiki](https://wiki.archlinux.org/title/Fcitx5_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F) 中的内容, 在 `~/.pam_envionment` 中写入
+
+```bash
+GTK_IM_MODULE DEFAULT=fcitx
+QT_IM_MODULE  DEFAULT=fcitx
+XMODIFIERS    DEFAULT=\@im=fcitx
+INPUT_METHOD  DEFAULT=fcitx
+SDL_IM_MODULE DEFAULT=fcitx
+GLFW_IM_MODULE DEFAULT=ibus
+```
+
+皮肤我在使用 [fcitx5-skin-material](https://aur.archlinux.org/packages/fcitx5-skin-material/), 使用 `yay -S fcitx5-skin-material` 即可安装, 安装后在 `~/.config/fcitx5/conf/classicui.conf` 中添加
 
 ```
 Theme=fcitx5-skin-material
