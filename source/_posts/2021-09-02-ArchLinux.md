@@ -174,6 +174,20 @@ sudo pacman -S yay
 
  1. [TeX Live 2021](http://tug.org/texlive/), 安装可以参考啸行的 [install-latex-guide-zh-cn](https://ctan.math.illinois.edu/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf) 中的 `Ubuntu 20.04` 部分进行安装. 由于系统不同, 可以不在 `visudo` 中添加可信路径, 直接使用 `sudo tlmgr` 即可, 当然, Arch 官方仓库也打包了 [TeX Live](https://archlinux.org/packages/?sort=&q=texlive&maintainer=&flagged=). 使用文档见 [Arch Wiki](https://wiki.archlinux.org/title/TeX_Live_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)), 但是我没用明白, 又给卸了
 
+**注意**: 安装 TeX Live 后运行 `biber` 可能会出现
+
+```bash
+biber: error while loading shared libraries: libcrypt.so.1: cannot open shared object file: No such file or directory
+```
+
+的错误, 需要
+
+```bash
+yay -S libxcrypt-compat
+```
+
+参见 [stackoverflow](https://stackoverflow.com/questions/71171446/biber-wants-to-load-libcrypt-so-1-but-it-is-missing)
+
 ##### 代理
 
 我这里代理使用的是 [qv2ray](https://qv2ray.net/lang/zh/getting-started/step1.html#linux-arch-linux-%E6%88%96%E5%9F%BA%E4%BA%8E-arch-%E7%9A%84%E5%8F%91%E8%A1%8C%E7%89%88)(可惜开发者由于矛盾放弃了这个项目, 正在寻找持续维护的替代品) + [v2core](https://github.com/v2fly/v2ray-core/releases), 由于某些原因, 直接看链接吧.
@@ -284,13 +298,13 @@ sudo pacman -S yay
         git clone git@github.com:zsh-users/zsh-autosuggestions.git ~/.zsh/zsh-autosuggestions
         ```
 
-        再将它添加到 `~/.zshrc`
+        再将下面一行添加到 `~/.zshrc`
 
         ```bash
         source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
         ```
 
-        重启终端即可
+        重启终端即可, 注意: 如果使用这种方法, 则不需要在 `plugins` 中进行添加, 事实是就算添加了它也提示找不到插件.
     3. 通过 AUR 仓库与符号链接安装
 
         ```bash
