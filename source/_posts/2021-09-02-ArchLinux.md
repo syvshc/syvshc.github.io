@@ -19,6 +19,8 @@ categories:
 
 ### 双系统安装
 
+第二次安装我看了另一个[教程](https://archlinuxstudio.github.io/ArchLinuxTutorial/#/), 它没有让 Arch 和 Windows 共用一个 EFI, 所以也不会干扰到正常的 Windows 启动. 或者说……这就不是一个双系统的安装教程.
+
 双系统安装可以看[这篇知乎](https://zhuanlan.zhihu.com/p/138951848), 动手能力强的建议直接看 [Arch Wiki](https://wiki.archlinux.org/title/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)), 我选择的桌面环境是 KDE Plasma, 默认环境下就很好看
 
 ![KDE Plasma](https://raw.githubusercontent.com/syvshc/image/master/postimg/ArchLinux/screenshot.png)
@@ -209,6 +211,10 @@ yay -S libxcrypt-compat
 这是 KDE 桌面自带的索引程序, 会检测文件的内容提供更精确的搜索服务, 但是屁用没有, 在建立索引的时候还会占用大量的 CPU 资源, Arch 社区的仙子建议直接把它干掉
 
 ![chat](https://raw.githubusercontent.com/syvshc/image/master/postimg/ArchLinux/20210925105422.png)
+
+#### 系统时间
+
+由于 Windows 和 Linux 对于硬件时间的处理不同, 会出现切换到另一个系统时系统时间不对的情况. 可以参考[少数派的文章](https://sspai.com/post/55983), 我修改的是 Linux 的时间.
 
 ##### microsoft-edge
 
