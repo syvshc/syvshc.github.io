@@ -1,12 +1,14 @@
 ---
 title: 在终端中编译 LaTeX
-date: 2022-03-06 10:28:00
-categories:
-    - [帮助文档, LaTeX]
 tags:
-    - [帮助文档]
-    - [LaTeX]
+  - - 帮助文档
+  - - LaTeX
+categories:
+  - - 帮助文档
+    - LaTeX
+date: 2022-03-06 22:28:26
 ---
+
 
 在交流使用 LaTeX 出现的问题的时候, 通常会听到"命令行编译"或"终端编译", 在这里简单的介绍一下. 如果有相应的命令行基础, 可以直接跳转到[使用命令行编译 LaTeX 文件](#compile-latex)
 
@@ -548,8 +550,6 @@ Running 'pdflatex  -recorder  "main.tex"'
 ## 其他的内容
 
 ### <a id="common-error"></a>常见的报错命令
-
-这一部分来自胡伟的《LaTeX2e 完全学习手册（第二版）》409 页 11.4 节: 错误信息与警告信息。
 
 * `Argument of \cs has an extra }.` 通常是某个带参数的命令只带了一个右括号, 如 `\section}`, `\cline 1-2}`. 输入 `H<enter>` 可以得到提示:
 
