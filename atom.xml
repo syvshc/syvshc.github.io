@@ -6,7 +6,7 @@
   <link href="https://syvshc.github.io/atom.xml" rel="self"/>
   
   <link href="https://syvshc.github.io/"/>
-  <updated>2022-02-24T14:46:39.225Z</updated>
+  <updated>2022-03-06T18:20:40.474Z</updated>
   <id>https://syvshc.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在终端中编译 LaTeX</title>
+    <link href="https://syvshc.github.io/2022-03-06-latex-terminal-compiling/"/>
+    <id>https://syvshc.github.io/2022-03-06-latex-terminal-compiling/</id>
+    <published>2022-03-06T14:28:26.000Z</published>
+    <updated>2022-03-06T18:20:40.474Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在交流使用 LaTeX 出现的问题的时候,
+通常会听到&quot;命令行编译&quot;或&quot;终端编译&quot;, 在这里简单的介绍一下.
+如果有相应的命令行基础, 可以直接跳转到&lt;a
+href=&quot;#compile-latex&quot;&gt;使用命令行编译 LaTeX 文件&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="帮助文档" scheme="https://syvshc.github.io/categories/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/"/>
+    
+    <category term="LaTeX" scheme="https://syvshc.github.io/categories/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/LaTeX/"/>
+    
+    
+    <category term="帮助文档" scheme="https://syvshc.github.io/tags/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/"/>
+    
+    <category term="LaTeX" scheme="https://syvshc.github.io/tags/LaTeX/"/>
+    
+  </entry>
   
   <entry>
     <title>用 LaTeX3 实现一些日期相关的功能</title>
@@ -287,7 +313,7 @@ EFI 引导破坏了……&lt;/p&gt;</summary>
     <link href="https://syvshc.github.io/2021-09-02-ArchLinux/"/>
     <id>https://syvshc.github.io/2021-09-02-ArchLinux/</id>
     <published>2021-09-02T03:08:27.000Z</published>
-    <updated>2022-02-24T14:46:39.223Z</updated>
+    <updated>2022-03-06T18:20:40.474Z</updated>
     
     
     <summary type="html">&lt;p&gt;手贱小白还愿意折腾. 自从上次重装系统之后, Ubuntu 总时不时地卡顿,
@@ -373,7 +399,7 @@ src=&quot;https://raw.githubusercontent.com/syvshc/image/master/postimg/thesis-t
     <link href="https://syvshc.github.io/2021-04-07-illegal-temp-cause-tlinstall-failure/"/>
     <id>https://syvshc.github.io/2021-04-07-illegal-temp-cause-tlinstall-failure/</id>
     <published>2021-04-07T11:45:57.000Z</published>
-    <updated>2022-02-24T14:46:39.223Z</updated>
+    <updated>2022-03-22T10:15:35.982Z</updated>
     
     
     <summary type="html">&lt;p&gt;在 Windows 上安装 TeX Live 时可能遇到由于缓存路径名称不合法, 即
