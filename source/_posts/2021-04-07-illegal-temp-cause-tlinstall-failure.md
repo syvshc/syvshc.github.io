@@ -49,6 +49,22 @@ set TMP=C:\temp
 
 即可临时修改这两个环境变量的值, 然后继续在 `cmd` 中执行安装程序即可. 关闭 `cmd` 窗口时这两个环境变量将恢复为原始状态.
 
+### 另一些事情
+
+在使用中发现中文的用户名还会影响到 `biber` 制作参考文献. 报错如下
+
+```
+Process started: biber.exe "main"
+
+Use of uninitialized value in anonymous hash ({}) at C:\Users\凌霄\AppData\Local\Temp\par-c1e8cff6\cache-485d9ee7398586ce889a97f1d7a34ff027ca8881\inc\lib/Win32/Unicode/File.pm line 337. Odd number of elements in anonymous hash at C:\Users\凌霄\AppData\Local\Temp\par-c1e8cff6\cache-485d9ee7398586ce889a97f1d7a34ff027ca8881\inc\lib/Win32/Unicode/File.pm line 337.
+Empty String at C:\Users\凌霄\AppData\Local\Temp\par-c1e8cff6\cache-485d9ee7398586ce889a97f1d7a34ff027ca8881\inc\lib/Biber/LaTeX/Recode.pm line 116.
+INFO - This is Biber 2.16
+INFO - Logfile is 'main.blg'
+Process exited with error(s)  
+```
+
+这个问题同样可以通过修改环境变量 `%USERPROFILE%\AppData\Local\Temp` 来解决
+
 ### 后续
 
 但是中文用户名带来的问题不仅仅是安装 TeX Live 失败. 所以最好可以拥有一个英文无空格的用户名, 首先最推荐的就是重装系统, 重新设置用户名. 如果无法或不愿重装系统, 可以尝试修改用户名, 但是**直接修改用户名可能会导致严重的后果, 操作之前要做好数据备份以及心理准备**, 下面放上可供参考的修改方法及知乎上的问题：
