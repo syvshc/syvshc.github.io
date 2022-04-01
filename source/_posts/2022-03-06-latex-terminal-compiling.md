@@ -28,9 +28,12 @@ Linux 通常可以通过 `ctrl`+`alt`+`T` 的快捷键组合打开终端.
 
 ### Windows
 
-1. Windows10/11 可以点击状态栏中的"搜索"或快捷键`ctrl`+`S`, 并在搜索栏里搜索 "cmd" 或 "powershell", 可以选择直接左键点击打开, 也可以选择右键`以管理员身份运行`, 以管理员身份运行的命令行的权限更高.
+1. Windows10/11 可以点击状态栏中的"搜索"或快捷键`win`+`S`, 并在搜索栏里搜索 "cmd" 或 "powershell", 可以选择直接左键点击打开, 也可以选择右键`以管理员身份运行`, 以管理员身份运行的命令行的权限更高.[^permission]
+  ![win+S](https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-terminal-compiling/cmd-on-win%2Bs.gif)
 2. 可以在"文件资源管理器"的地址栏中直接输入 "cmd" 或 "powershell" 并回车, 就可以在当前文件夹中打开命令行. 
-3. 可以在"文件资源管理器"的空白处按住`shift`再点击右键, 选择选项"在此处打开 PowerShell 窗口", 就可以在当前文件夹中打开 powershell. 
+  ![点击文件资源管理器](https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-terminal-compiling/click.gif)
+3. 可以在"文件资源管理器"的空白处按住`shift`再点击右键, 选择选项"在此处打开 PowerShell 窗口", 就可以在当前文件夹中打开 powershell. 当然 Windows11 用户或者安装了 Windows Terminal 的用户也可以通过右键后选择"在 Windows 终端中打开". 
+  ![shift+右键](https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-terminal-compiling/shift-right-click.gif)
 
 ### mac
 
@@ -94,7 +97,7 @@ D
   D:\folder\subfolder> cd ..
   ```
 
-  按下回车就可以回到 `folder` 文件夹下, 当然这个命令也可以嵌套, 比如在 `subfolder` 文件夹下就可以使用 `cd ../..` 回到 D 盘的根目录; 使用 `cd ../../"Program Files"` 就可以进入 D 盘根目录下的 `Program Files` 文件夹.
+  按下回车就可以回到 `folder` 文件夹下, 只需要将 `..` 视做一个指向上一层目录的路径, 那么如下的内容就容易理解了: 在 `subfolder` 文件夹下就可以使用 `cd ../..` 回到 D 盘的根目录; 使用 `cd ../../"Program Files"` 就可以进入 D 盘根目录下的 `Program Files` 文件夹.
 
 * [`dir`](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/dir) (**dir**ctory): 列出当前文件夹内的文件夹和文件:
   TODO
@@ -598,7 +601,9 @@ Running 'pdflatex  -recorder  "main.tex"'
 * `Undefined control sequence` 所使用的命令没有定义, 需要检查是否没有加载宏包或命令拼写是否正确.
 * `Unknown option opt for pkg` 在 `\usepackage` 中使用了并没有在 `pkg` 宏包中定义的选项 `opt`. 
 * `\verb illegal in command argument` 不能在其他命令的参数中使用 `\verb`. 
+* `! Package fontspec Error: The font "fontname" cannot be found.` 表示没有找到名字为 "fontname" 的字体, 请检查是否安装了该字体, 是否输入了正确的字体文件名/字族名. [^macfont]
 
-
+[^permission]: 如果在更新宏包等时候出现了 `Permission denied` 等字样, 就需要考虑使用管理员权限打开 cmd
 [^undef-cs]: 其中 "控制序列" 可以理解为 LaTeX 中的命令, 即以 `\` 开头的一串字符.
 [^enter]: 这里的 `<enter>` 为按下回车, 而不是依次输入这几个字符. 
+[^macfont]: 注意在 MacOS 系统上不经过特殊操作只能使用字体文件名来调用发行版字体, 如想设置正文为 Fandol 宋体, 在 Windows 与 Linux 下均可以使用: `\setCJKmainfont{FandolSong}` 与 `\setCJKmainfont{FandolSong-Regular.otf}`, 但是 MacOS 下只能使用后者. 如果想折腾或者想获得更多信息, 可以看[慕子的知乎专栏](https://zhuanlan.zhihu.com/p/59774395)
