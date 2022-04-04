@@ -27,15 +27,15 @@ balooctl disable
 ```
 要关掉 `baloo` 服务, 这个东西没什么用, 建立索引的时候还会占用大量的 CPU. 
 
-![(重复利用图片)](https://raw.githubusercontent.com/syvshc/image/master/postimg/ArchLinux/20210925105422.png)
+![(重复利用图片)](https://raw.githubusercontent.com/syvshc/image/master/postimg/ArchLinux/chat.png)
 
 其他的桌面操作卡顿或延迟, 如终端中对命令的响应, 软件的启动与关闭也可能与其相关.
 
 #### 桌面黑屏
 
-![](https://raw.githubusercontent.com/syvshc/image/master/postimg/KDEProblems/2021-09-21_19-09.png)
+![](https://raw.githubusercontent.com/syvshc/image/master/postimg/KDEProblems/black.png)
 
-右键时不出现菜单, 新建文件夹也不显示, 需要重启 KDE, 在终端中运行
+右键时不出现菜单, 新建文件夹也不显示, 需要重启 plasma, 在终端中运行
 
 ```
 plasmashell --replace &
@@ -57,12 +57,20 @@ kwin_x11 --replace &
 
 首先在 `设置->区域设置->语言` 中查看是否添加了 `简体中文` 
 
-![](https://raw.githubusercontent.com/syvshc/image/master/postimg/KDEProblems/20210922152136.png)
+![](https://raw.githubusercontent.com/syvshc/image/master/postimg/KDEProblems/language.png)
 
 再查看 `设置->区域设置->格式` 中是否设置为了 `zh_CN`
 
-![](https://raw.githubusercontent.com/syvshc/image/master/postimg/KDEProblems/20210922152409.png)
+![](https://raw.githubusercontent.com/syvshc/image/master/postimg/KDEProblems/region.png)
 
 如果一致, 在终端中运行 `locale` 与 `locale -a` 查看其中的输出是否含有 `zh_CN.utf8` 及 `zh_CN.UTF-8`, 如否, 请参考 [Wiki](https://wiki.archlinux.org/title/Locale_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E7%B3%BB%E7%BB%9F%E5%8C%BA%E5%9F%9F%E8%AE%BE%E7%BD%AE) 进行设置.
 
-#### 待续
+#### 安装 nvidia 驱动后字体变大
+
+首先发现在设置中“桌面特效”部分的部分特效缺失, 查找后发现这些特效被"排除不支持的特效"隐藏了
+
+![桌面特效](https://raw.githubusercontent.com/syvshc/image/master/postimg/KDEProblems/screeneffect.png)
+
+可以通过安装 [`nvidia`](https://wiki.archlinux.org/title/NVIDIA_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E5%AE%89%E8%A3%85) 驱动来解决, 但是安装后有一个问题, 会发现所有的字体都变大了, 经过查找, 在 reddit 上找到了[答案](https://www.reddit.com/r/kde/comments/8ywniu/kde_plasma_everything_is_larger_after/), 即修改下图中的固定 DPI 为 96, 并重新登录.
+
+![fontsize](https://raw.githubusercontent.com/syvshc/image/master/postimg/KDEProblems/fontsize.png)

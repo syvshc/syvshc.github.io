@@ -210,7 +210,7 @@ yay -S libxcrypt-compat
 
 这是 KDE 桌面自带的索引程序, 会检测文件的内容提供更精确的搜索服务, 但是屁用没有, 在建立索引的时候还会占用大量的 CPU 资源, Arch 社区的仙子建议直接把它干掉
 
-![chat](https://raw.githubusercontent.com/syvshc/image/master/postimg/ArchLinux/20210925105422.png)
+![chat](https://raw.githubusercontent.com/syvshc/image/master/postimg/ArchLinux/chat.png)
 
 #### 系统时间
 

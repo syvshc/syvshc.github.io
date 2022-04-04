@@ -418,7 +418,7 @@ $ pdflatex -<option1> -<option2>=<string> main
 
 这里有一个目录和一个交叉引用, 让我们用 `pdflatex main` 编译一次, 然后来查看 `main.pdf`
 
-![cross-ref](https://raw.githubusercontent.com/syvshc/image/master/latex-terminal-compiling/cross-ref.png)
+![cross-ref](https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-terminal-compiling/cross-ref.png)
 
 我们发现既没有目录, 也没有引用, 只有 `??`, 让我们来看一下 `main.aux` 与 `main.toc
 
@@ -439,7 +439,7 @@ $ pdflatex -<option1> -<option2>=<string> main
 
 那我们再使用 `pdflatex main.tex` 来编译一次, 可以得到正确的输出:
 
-![rigt-cross-ref](https://raw.githubusercontent.com/syvshc/image/master/latex-terminal-compiling/cross-ref-right.png)
+![rigt-cross-ref](https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-terminal-compiling/cross-ref-right.png)
 
 #### 参考文献
 
