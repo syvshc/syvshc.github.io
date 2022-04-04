@@ -6,7 +6,7 @@
   <link href="https://syvshc.github.io/atom.xml" rel="self"/>
   
   <link href="https://syvshc.github.io/"/>
-  <updated>2022-04-04T09:11:15.987Z</updated>
+  <updated>2022-04-04T09:17:21.257Z</updated>
   <id>https://syvshc.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://syvshc.github.io/2022-04-04-texlive-rolling-update/"/>
     <id>https://syvshc.github.io/2022-04-04-texlive-rolling-update/</id>
     <published>2022-04-04T08:38:13.000Z</published>
-    <updated>2022-04-04T09:11:15.987Z</updated>
+    <updated>2022-04-04T09:17:21.257Z</updated>
     
     
     <summary type="html">&lt;p&gt;这里说一下如何滚动升级 TeXLive, 而不卸载安装. 由于我也是第一次这么做,
