@@ -29,7 +29,7 @@
 <meta property="og:description" content="这里说一下如何滚动升级 TeXLive, 而不卸载安装. 由于我也是第一次这么做, 不知道有没有什么可能产生的后果.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-04-04T08:38:13.000Z">
-<meta property="article:modified_time" content="2022-04-04T09:17:21.257Z">
+<meta property="article:modified_time" content="2022-04-04T13:50:01.663Z">
 <meta property="article:author" content="Zhonghao Sun">
 <meta property="article:tag" content="帮助文档">
 <meta property="article:tag" content="LaTeX">
@@ -324,7 +324,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2022-04-04 16:38:13 / 修改时间：17:17:21" itemprop="dateCreated datePublished" datetime="2022-04-04T16:38:13+08:00">2022-04-04</time>
+      <time title="创建时间：2022-04-04 16:38:13 / 修改时间：21:50:01" itemprop="dateCreated datePublished" datetime="2022-04-04T16:38:13+08:00">2022-04-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -354,14 +354,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2.2k</span>
+      <span>5.4k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
+      <span>5 分钟</span>
     </span>
 </div>
 
@@ -378,9 +378,11 @@
 <p>首先, 愿意看官方文档的小伙伴可以直接看<a
 target="_blank" rel="noopener" href="https://www.tug.org/texlive/upgrade.html">官网</a></p>
 <h2 id="windows">Windows</h2>
-<p>我暂时只在 windows 系统下进行了尝试, Linux 在尝试后再更新.</p>
-<p>首先我们如果直接使用 <code>tlmgr update -self -all</code> 会得到</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tlmgr.pl: Local TeX Live (2021) is older than remote repository (2022).</span><br><span class="line">Cross release updates are only supported with</span><br><span class="line">  update-tlmgr-latest(.sh/.exe) --update</span><br><span class="line">See https://tug.org/texlive/upgrade.html <span class="keyword">for</span> details.</span><br></pre></td></tr></table></figure>
+<ol type="1">
+<li>首先我们如果直接使用 <code>tlmgr update -self -all</code>
+会得到</li>
+</ol>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tlmgr.pl: Local TeX Live (2021) is older than remote repository (2022).</span><br><span class="line">Cross release updates are only supported with</span><br><span class="line">  update-tlmgr-latest(.sh/.exe) --update</span><br><span class="line">See https://tug.org/texlive/upgrade.html <span class="keyword">for</span> details.</span><br></pre></td></tr></table></figure></p>
 <p>它说让去 <a
 target="_blank" rel="noopener" href="https://tug.org/texlive/upgrade.html">https://tug.org/texlive/upgrade.html</a>
 查看详细信息, 但是 Windows 只给了一句</p>
@@ -397,26 +399,93 @@ src="https://raw.githubusercontent.com/syvshc/image/master/postimg/texlive-rolli
 alt="tlmgr 官网" />
 <figcaption aria-hidden="true"><code>tlmgr</code> 官网</figcaption>
 </figure>
-<p>先别急, 我们在 TeXLive 的安装目录里复制复制一份 <code>2021</code>
+<ol start="2" type="1">
+<li><p>先别急, 我们在 TeXLive 的安装目录里复制复制一份 <code>2021</code>
 文件夹, 命名为 <code>2022</code>, 当然也可以直接改名, 但是如果这样做,
 一旦 TeXLive 2022 有问题, 那么我们将没有办法回到之前可行的工作环境.
 如果觉得文件夹很大, 可以选择不复制 <code>/tlpkg/backups/</code>
-文件夹.</p>
-<p>并且将环境变量中的 <code>texlive/2021</code> 改为
-<code>texlive/2022</code>.</p>
-<p>然后我们下载 <code>update-tlmgr-latest.exe</code>, 安装, 等到 "Close"
+文件夹.</p></li>
+<li><p>将环境变量中的 <code>texlive/2021</code> 改为
+<code>texlive/2022</code>.</p></li>
+<li><p>然后下载 <code>update-tlmgr-latest.exe</code>, 安装, 等到 "Close"
 亮起, 点击 "Close" 来关闭安装窗口, 重启命令行. 这时我们再使用
-<code>tlmgr update -list</code>, 可以看到</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">tlmgr.pl: package repository https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet (not verified: gpg unavailable)</span><br><span class="line">===============================================================================</span><br><span class="line">tlmgr itself needs to be updated.</span><br><span class="line">Please <span class="keyword">do</span> this via either</span><br><span class="line">  tlmgr update --self</span><br><span class="line">or by getting the latest updater <span class="keyword">for</span> Unix-ish systems:</span><br><span class="line">  https://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.sh</span><br><span class="line">and/or Windows systems:</span><br><span class="line">  https://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.exe</span><br><span class="line">Then <span class="built_in">continue</span> with other updates as usual.</span><br><span class="line">===============================================================================</span><br><span class="line">tlmgr.pl: would save backups to C:/texlive/2021/tlpkg/backups</span><br><span class="line">keep:     academicons              : <span class="built_in">local</span>:    62623, <span class="built_in">source</span>:    62622</span><br><span class="line">keep:     altsubsup                : <span class="built_in">local</span>:    62739, <span class="built_in">source</span>:    62738</span><br><span class="line">keep:     arara                    : <span class="built_in">local</span>:    62339, <span class="built_in">source</span>:    62298</span><br><span class="line">keep:     asmeconf                 : <span class="built_in">local</span>:    62716, <span class="built_in">source</span>:    62713</span><br><span class="line">keep:     babel                    : <span class="built_in">local</span>:    62203, <span class="built_in">source</span>:    62202</span><br><span class="line">keep:     babel-polish             : <span class="built_in">local</span>:    62681, <span class="built_in">source</span>:    62680</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<p>这样的输出, 这时再使用 <code>tlmgr update -self -all</code>
-即可完成升级</p>
+<code>tlmgr update -list</code>, 可以看到</p></li>
+</ol>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">tlmgr.pl: package repository https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet (not verified: gpg unavailable)</span><br><span class="line">===============================================================================</span><br><span class="line">tlmgr itself needs to be updated.</span><br><span class="line">Please <span class="keyword">do</span> this via either</span><br><span class="line">  tlmgr update --self</span><br><span class="line">or by getting the latest updater <span class="keyword">for</span> Unix-ish systems:</span><br><span class="line">  https://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.sh</span><br><span class="line">and/or Windows systems:</span><br><span class="line">  https://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.exe</span><br><span class="line">Then <span class="built_in">continue</span> with other updates as usual.</span><br><span class="line">===============================================================================</span><br><span class="line">tlmgr.pl: would save backups to C:/texlive/2021/tlpkg/backups</span><br><span class="line">keep:     academicons              : <span class="built_in">local</span>:    62623, <span class="built_in">source</span>:    62622</span><br><span class="line">keep:     altsubsup                : <span class="built_in">local</span>:    62739, <span class="built_in">source</span>:    62738</span><br><span class="line">keep:     arara                    : <span class="built_in">local</span>:    62339, <span class="built_in">source</span>:    62298</span><br><span class="line">keep:     asmeconf                 : <span class="built_in">local</span>:    62716, <span class="built_in">source</span>:    62713</span><br><span class="line">keep:     babel                    : <span class="built_in">local</span>:    62203, <span class="built_in">source</span>:    62202</span><br><span class="line">keep:     babel-polish             : <span class="built_in">local</span>:    62681, <span class="built_in">source</span>:    62680</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<p>这样的输出</p>
+<ol start="6" type="1">
+<li>这时再使用 <code>tlmgr update -self -all</code> 即可完成升级</li>
+</ol>
 <p><strong>注意</strong> 由于新版的 <code>newtx</code>
 宏包的问题依然没有修复, 升级的时候可以选择使用
 <code>tlmgr update -self -all -exclude newtx</code> 来忽略它的升级.</p>
+<p>如果出现了问题, 可以读一下 Linux 的部分</p>
 <p>升级后使用 <code>tex -v</code> 来测试版本</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">TeX 3.141592653 (TeX Live 2022)</span><br><span class="line">kpathsea version 6.3.4</span><br><span class="line">Copyright 2022 D.E. Knuth.</span><br><span class="line">There is NO warranty.  Redistribution of this software is</span><br><span class="line">covered by the terms of both the TeX copyright and</span><br><span class="line">the Lesser GNU General Public License.</span><br><span class="line">For more information about these matters, see the file</span><br><span class="line">named COPYING and the TeX source.</span><br><span class="line">Primary author of TeX: D.E. Knuth.</span><br></pre></td></tr></table></figure>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">TeX 3.141592653 (TeX Live 2022)</span><br><span class="line">kpathsea version 6.3.4</span><br><span class="line">Copyright 2022 D.E. Knuth.</span><br><span class="line">There is NO warranty.  Redistribution of this software is</span><br><span class="line">covered by the terms of both the TeX copyright and</span><br><span class="line">the Lesser GNU General Public License.</span><br><span class="line">For more information about these matters, see the file</span><br><span class="line">named COPYING and the TeX source.</span><br><span class="line">Primary author of TeX: D.E. Knuth.</span><br></pre></td></tr></table></figure></p>
+<ol start="7" type="1">
+<li><p>完成宏包更新之后, 终端运行</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">luaotfload-tool -fu</span><br></pre></td></tr></table></figure></p>
+<p>来完成 <code>lualatex</code> 的字体配置 (或者叫刷新? 我几乎没用过
+<code>lualatex</code>, 对它也不了解)</p></li>
+</ol>
 <h2 id="linux">Linux</h2>
-<p>我现在去测试</p>
+<ol type="1">
+<li><p>首先终端进入 <code>/texlive</code> 文件夹, 运行
+<code>cp -a ./2021/ ./2022/</code>, 这里同样可以重新命名, 但是不推荐,
+理由同上.</p></li>
+<li><p>然后在 <code>~/.bashrc</code> 或 <code>~/.zshrc</code> 中将
+TeXLive 相关的环境变量中的 <code>2021</code> 改为
+<code>2022</code>.</p></li>
+<li><p>下载 <code>tlmgr-update-latest.sh</code>, 不是必须放入
+<code>texlive</code> 文件夹. (这里我是将 TeXLive 安装在了 <code>~</code>
+目录下, 我不知道如果安装在 <code>/usr/local/texlive</code> 是不是也可行,
+欢迎反馈.) <strong>注意</strong> <a
+target="_blank" rel="noopener" href="https://www.tug.org/texlive/upgrade.html">https://www.tug.org/texlive/upgrade.html</a>
+提供的 <code>tlmgr-update-latest.sh</code> 是过时的, 需要在 <a
+target="_blank" rel="noopener" href="https://www.tug.org/texlive/tlmgr.html"><code>tlmgr</code>官网</a>
+或者直接去<a
+target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet/">清华的镜像</a>
+进行下载. (话说这个过时的问题在 2019 年就有人提过, 见 <a
+target="_blank" rel="noopener" href="https://latex.org/forum/viewtopic.php?t=32463">latex.org</a>,
+莫非是现在又不更新了?)</p></li>
+<li><p>重启终端, 进入 <code>texlive/2022/</code> 文件夹, 运行</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh update-tlmgr-latest.sh -- --upgrade</span><br></pre></td></tr></table></figure></p>
+<p>如果显示了
+<code>sing --upgrade doesn't make sense; terminating.</code>, 说明下载的
+<code>.sh</code> 文件不是最新的</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">    Verifying archive integrity... All good.</span><br><span class="line">Uncompressing TeX Live Manager Updater  100%  </span><br><span class="line">./runme.sh: updating <span class="keyword">in</span> /home/syvshclily/texlive/2022...</span><br><span class="line">./runme.sh: tlmgr version says this is TeX Live 2022,</span><br><span class="line">./runme.sh: and this updater script created: Tue Mar  1 02:52:57 CET 2022.</span><br><span class="line">./runme.sh: have TL 2021, new version also 2021;</span><br><span class="line">./runme.sh: using --upgrade doesn<span class="string">&#x27;t make sense; terminating.</span></span><br><span class="line"><span class="string">(./runme.sh: makeself creation date = Tue Mar  1 02:52:57 CET 2022.)</span></span><br></pre></td></tr></table></figure></p>
+<p>如果有如下的输出, 则说明运行正常:</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Verifying archive integrity... All good.</span><br><span class="line">Uncompressing TeX Live Manager Updater  100%  </span><br><span class="line">./runme.sh: updating <span class="keyword">in</span> /home/syvshclily/texlive/2022...</span><br><span class="line">./runme.sh: tlmgr version says this is TeX Live 2021,</span><br><span class="line">./runme.sh: and this updater script created: Tue Mar  1 02:52:57 CET 2022.</span><br><span class="line">./runme.sh: ok, doing full release upgrade  from 2021 to 2022.</span><br><span class="line">./runme.sh: updating /home/syvshclily/texlive/2022/bin/x86_64-linux ...</span><br><span class="line">./runme.sh: /home/syvshclily/texlive/2022/bin/x86_64-linux/tlmgr including objects: master/tlpkg/tlpobj/texlive.infra.tlpobj master/tlpkg/tlpobj/texlive.infra.x86_64-linux.tlpobj</span><br><span class="line">D:appending to package <span class="built_in">log</span> file: /home/syvshclily/texlive/2022/texmf-var/web2c/tlmgr.log</span><br><span class="line">D:appending to <span class="built_in">command</span> <span class="built_in">log</span> file: /home/syvshclily/texlive/2022/texmf-var/web2c/tlmgr-commands.log</span><br><span class="line">D:tlmgr:main: ::tldownload_server <span class="built_in">hash</span>:: &#123;enabled:1,errorcount:0,initcount:1,ua:LWP::UserAgent=HASH(0x561de626d708)&#125;</span><br><span class="line">D:setup_programs: preferring system versions</span><br><span class="line">D:program curl found <span class="keyword">in</span> path</span><br><span class="line">D:program wget found <span class="keyword">in</span> path</span><br><span class="line">D:TLUtils::setup_programs: checking <span class="keyword">for</span> ssl enabled wget</span><br><span class="line">D:TLUtils::setup_programs: wget has ssl, final wget args: --no-check-certificate --user-agent=texlive/wget --tries=4 --timeout=30 -q -O</span><br><span class="line">D:program lz4 found <span class="keyword">in</span> path</span><br><span class="line">D:program gzip found <span class="keyword">in</span> path</span><br><span class="line">D:program xz found <span class="keyword">in</span> path</span><br><span class="line">./runme.sh: <span class="keyword">done</span>.</span><br></pre></td></tr></table></figure></p></li>
+<li><p>因为运行完 <code>.sh</code> 程序后, <code>tlmgr</code>
+会自动将源修改为 <code>mirrors.ctan.org</code> 终端运行
+<code>tlmgr update -list</code>, 如果有正确输出 (见 Windows 部分),
+表示可以更新, 可以在终端运行</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tlmgr update -self -all</span><br></pre></td></tr></table></figure></p>
+<p>来更新全部宏包, 同样由于 <code>newtx</code> 宏包的问题, 可以使用</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tlmgr update -self -all -exclude newtx</span><br></pre></td></tr></table></figure></p>
+<p>来忽略该宏包的更新.</p>
+<p>在更新宏包的过程中, 如果网络有波动, 有可能出现</p>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tlmgr: An error has occurred. See above messages. Exiting.</span><br></pre></td></tr></table></figure></p>
+<p>这时候可以向上翻一下命令行输出, 我这里是如下的错误</p>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[187/258, 06:36/08:31] update: texlive-common [599k] (62149 -&gt; 62748) ... TLPDB::_install_data: downloading did not succeed (download_file failed) for https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet/archive/texlive-common.tar.xz</span><br><span class="line">tlmgr: Installation of new version of texlive-common failed, trying to unwind.</span><br><span class="line">tlmgr: Restoring old package state succeeded.</span><br><span class="line">done</span><br></pre></td></tr></table></figure></p>
+<p>即某些宏包下载失败, 可以再运行</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tlmgr update -all -reinstall-forcibly-removed</span><br></pre></td></tr></table></figure></p>
+<p>来完成更新, 同样可以加上 <code>-exclude newtx</code> 参数来忽略
+<code>newtx</code> 的更新.</p></li>
+<li><p>完成宏包更新之后, 终端运行</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">luaotfload-tool -fu</span><br></pre></td></tr></table></figure></p>
+<p>来完成 <code>lualatex</code> 的字体配置 (或者叫刷新? 我几乎没用过
+<code>lualatex</code>, 对它也不了解)</p></li>
+<li><p>然后将安装的时候的字体文件内容进行改动, 如果是在用户文件夹中,
+路径可能为 <code>~/.fonts.conf/09-texlive.conf</code>; 如果在系统文件夹,
+路径可能为 <code>/etc/fonts/conf.d/09-texlive.conf</code>. 将其中的
+<code>texlive/2021/</code> 修改为 <code>texlive/2022</code>. 或者直接将
+<code>texlive/2022/texmf-var/fonts/conf/texlive-fontconfig.conf</code>
+复制到上述文件夹, 命名为 <code>09-texlive.conf</code>, 其操作与安装
+TeXLive 时是相同的. 然后在终端执行</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo fc-cache -fsv</span><br></pre></td></tr></table></figure></p>
+<p>来刷新字体缓存.</p></li>
+</ol>
 
     </div>
 
@@ -507,13 +576,13 @@ alt="tlmgr 官网" />
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">122k</span>
+    <span title="站点总字数">125k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:51</span>
+    <span title="站点阅读时长">1:54</span>
   </span>
 </div>
 <div class="busuanzi-count">
