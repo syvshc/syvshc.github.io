@@ -3410,7 +3410,7 @@ class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 来查看我们编译生成的内容</p>
 <figure>
 <img
-src="https://raw.githubusercontent.com/syvshc/image/master/latex-terminal-compiling/first-compiling.png"
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-terminal-compiling/first-compiling.png"
 alt="main.pdf" />
 <figcaption aria-hidden="true"><code>main.pdf</code></figcaption>
 </figure>
@@ -3505,6 +3505,9 @@ id="fnref7" role="doc-noteref"><sup>7</sup></a></p>
 <li><code>nonstopmode</code> 不在任何时候停下,
 直到最后显示出来错误的位置与内容.</li>
 </ul></li>
+<li><p><code>-synctex=1</code> 在需要正反向搜索的时候,
+需要启用这个选项来生成 <code>&lt;filename&gt;.synctex.gz</code>
+文件.</p></li>
 </ul>
 <ul>
 <li><p><code>jobname=&lt;string&gt;</code> 设置输出文件的文件名,
@@ -3783,6 +3786,61 @@ role="doc-backlink">↩︎</a></p></li>
       <tags>
         <tag>帮助文档</tag>
         <tag>LaTeX</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>滚动升级 TeXLive</title>
+    <url>/2022-04-04-texlive-rolling-update/</url>
+    <content><![CDATA[<p>这里说一下如何滚动升级 TeXLive, 而不卸载安装. 由于我也是第一次这么做,
+不知道有没有什么可能产生的后果.</p>
+<span id="more"></span>
+<p>首先, 愿意看官方文档的小伙伴可以直接看<a
+href="https://www.tug.org/texlive/upgrade.html">官网</a></p>
+<h2 id="windows">Windows</h2>
+<p>我暂时只在 windows 系统下进行了尝试, Linux 在尝试后再更新.</p>
+<p>首先我们如果直接使用 <code>tlmgr update -self -all</code> 会得到</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tlmgr.pl: Local TeX Live (2021) is older than remote repository (2022).</span><br><span class="line">Cross release updates are only supported with</span><br><span class="line">  update-tlmgr-latest(.sh/.exe) --update</span><br><span class="line">See https://tug.org/texlive/upgrade.html <span class="keyword">for</span> details.</span><br></pre></td></tr></table></figure>
+<p>它说让去 <a
+href="https://tug.org/texlive/upgrade.html">https://tug.org/texlive/upgrade.html</a>
+查看详细信息, 但是 Windows 只给了一句</p>
+<blockquote>
+<p>There is no comparable upgrade procedure for Windows. Doing a new
+installation is necessary.</p>
+</blockquote>
+<p>甚至没有给提供 <code>update-tlmgr-latest.exe</code>, 那我们去 <a
+href="https://www.tug.org/texlive/tlmgr.html"><code>tlmgr</code>
+的官网</a> 看一下有没有, 果然发现了</p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/texlive-rolling-update/tlmgr-latest.png"
+alt="tlmgr 官网" />
+<figcaption aria-hidden="true"><code>tlmgr</code> 官网</figcaption>
+</figure>
+<p>先别急, 我们在 TeXLive 的安装目录里复制复制一份 <code>2021</code>
+文件夹, 命名为 <code>2022</code>, 当然也可以直接改名, 但是如果这样做,
+一旦 TeXLive 2022 有问题, 那么我们将没有办法回到之前可行的工作环境.
+如果觉得文件夹很大, 可以选择不复制 <code>/tlpkg/backups/</code>
+文件夹.</p>
+<p>并且将环境变量中的 <code>texlive/2021</code> 改为
+<code>texlive/2022</code>.</p>
+<p>然后我们下载 <code>update-tlmgr-latest.exe</code>, 安装, 等到 "Close"
+亮起, 点击 "Close" 来关闭安装窗口, 重启命令行. 这时我们再使用
+<code>tlmgr update -list</code>, 可以看到</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tlmgr.pl: package repository https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet (not verified: gpg unavailable)</span><br><span class="line">===============================================================================</span><br><span class="line">tlmgr itself needs to be updated.</span><br><span class="line">Please <span class="keyword">do</span> this via either</span><br><span class="line">  tlmgr update --self</span><br><span class="line">or by getting the latest updater <span class="keyword">for</span> Unix-ish systems:</span><br><span class="line">  https://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.sh</span><br><span class="line">and/or Windows systems:</span><br><span class="line">  https://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.exe</span><br><span class="line">Then <span class="built_in">continue</span> with other updates as usual.</span><br><span class="line">===============================================================================</span><br><span class="line">tlmgr.pl: would save backups to C:/texlive/2021/tlpkg/backups</span><br><span class="line">keep:     academicons              : <span class="built_in">local</span>:    62623, <span class="built_in">source</span>:    62622</span><br><span class="line">keep:     altsubsup                : <span class="built_in">local</span>:    62739, <span class="built_in">source</span>:    62738</span><br><span class="line">keep:     arara                    : <span class="built_in">local</span>:    62339, <span class="built_in">source</span>:    62298</span><br><span class="line">keep:     asmeconf                 : <span class="built_in">local</span>:    62716, <span class="built_in">source</span>:    62713</span><br><span class="line">keep:     babel                    : <span class="built_in">local</span>:    62203, <span class="built_in">source</span>:    62202</span><br><span class="line">keep:     babel-polish             : <span class="built_in">local</span>:    62681, <span class="built_in">source</span>:    62680</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>这样的输出, 这时再使用 <code>tlmgr update -self -all</code>
+即可完成升级, 升级后使用 <code>tex -v</code> 来测试版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">TeX 3.141592653 (TeX Live 2022)</span><br><span class="line">kpathsea version 6.3.4</span><br><span class="line">Copyright 2022 D.E. Knuth.</span><br><span class="line">There is NO warranty.  Redistribution of this software is</span><br><span class="line">covered by the terms of both the TeX copyright and</span><br><span class="line">the Lesser GNU General Public License.</span><br><span class="line">For more information about these matters, see the file</span><br><span class="line">named COPYING and the TeX source.</span><br><span class="line">Primary author of TeX: D.E. Knuth.</span><br></pre></td></tr></table></figure>
+<h2 id="linux">Linux</h2>
+<p>我现在去测试</p>
+]]></content>
+      <categories>
+        <category>帮助文档</category>
+        <category>LaTeX</category>
+      </categories>
+      <tags>
+        <tag>帮助文档</tag>
+        <tag>LaTeX</tag>
+        <tag>tlmgr</tag>
       </tags>
   </entry>
 </search>
