@@ -203,7 +203,7 @@ folder
 
 然后我们可以使用 PDF 阅读器打开 `main.pdf` 来查看我们编译生成的内容
 
-![`main.pdf`](https://raw.githubusercontent.com/syvshc/image/master/latex-terminal-compiling/first-compiling.png)
+![`main.pdf`](https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-terminal-compiling/first-compiling.png)
 
 ### 遇到错误
 
@@ -325,6 +325,8 @@ $ pdflatex -<option1> -<option2>=<string> main
   * `scrollmode` 在屏幕上输出编译信息, 会跳过错误, 但是会在找不到文件时停止编译并等待用户输入, 与上文的 `S` 类似. (比如找不到 `\input` 的文件的时候)
   * `batchmode` 不在命令行中输出任何有关编译的内容, 也不在任何时候停下等待用户输入. 
   * `nonstopmode` 不在任何时候停下, 直到最后显示出来错误的位置与内容. 
+
+* `-synctex=1` 在需要正反向搜索的时候, 需要启用这个选项来生成 `<filename>.synctex.gz` 文件. 
 
 [^interaction]: 见 `latex2e.pdf sec 28.1` 或 [latexref](http://latexref.xyz/Command-line-options.html)
 
