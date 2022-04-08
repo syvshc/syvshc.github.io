@@ -41,14 +41,14 @@ kate /etc/pacman.conf
 
 在最下方添加
 
-```
+```conf
 [archlinuxcn]
 Server = https://repo.archlinuxcn.org/$arch
 ```
 
 用管理员权限保存后, 在终端运行
 
-```
+```bash
 sudo pacman -Sy && sudo pacman -S archlinuxcn-keyring
 ```
 
@@ -111,7 +111,7 @@ sudo pacman -S yay
 
 9. [steam](https://archlinux.org/packages/?name=steam), 需要在 `/etc/pacman.conf` 中开启 `multilib` 仓库, 并且需要安装一些图形驱动, 详见 [steam 的 Wiki](https://wiki.archlinux.org/title/Steam_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)), 如果开启 steam 后商店等界面均为黑屏幕, 不显示内容, 可以将 steam 的通道改为 `beta channel`, 具体问题见[关于 steam 黑屏的讨论](https://www.gamingonlinux.com/2021/09/steam-not-working-right-on-arch-linux-its-an-issue-with-freetype-and-theres-a-fix). 在安装 steam 的过程中发现了一个可选的依赖项
 
-    ```
+    ```bash
     steam 的可选依赖
         steam-native-runtime: steam native runtime support
     ```

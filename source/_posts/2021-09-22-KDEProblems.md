@@ -74,3 +74,15 @@ kwin_x11 --replace &
 可以通过安装 [`nvidia`](https://wiki.archlinux.org/title/NVIDIA_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E5%AE%89%E8%A3%85) 驱动来解决, 但是安装后有一个问题, 会发现所有的字体都变大了, 经过查找, 在 reddit 上找到了[答案](https://www.reddit.com/r/kde/comments/8ywniu/kde_plasma_everything_is_larger_after/), 即修改下图中的固定 DPI 为 96, 并重新登录.
 
 ![fontsize](https://raw.githubusercontent.com/syvshc/image/master/postimg/KDEProblems/fontsize.png)
+
+#### 音频处显示没有输入或输出设备
+
+![桌面特效](https://raw.githubusercontent.com/syvshc/image/master/postimg/KDEProblems/no-sound.png)
+
+我的设备是 Dell G15 5511, 属于比较新的设备, 查看了 [Fourm](https://forum.manjaro.org/t/i-have-no-sound/86412) 与 [wiki](https://wiki.archlinux.org/title/Advanced_Linux_Sound_Architecture#ALSA_firmware) 后使用 
+
+```bash
+yay -S sof-firmware
+```
+
+安装框架之后即可使用.
