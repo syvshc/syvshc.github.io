@@ -6,7 +6,7 @@
   <link href="https://syvshc.github.io/atom.xml" rel="self"/>
   
   <link href="https://syvshc.github.io/"/>
-  <updated>2022-04-21T02:39:15.313Z</updated>
+  <updated>2022-04-21T20:48:30.851Z</updated>
   <id>https://syvshc.github.io/</id>
   
   <author>
@@ -21,10 +21,12 @@
     <link href="https://syvshc.github.io/2022-04-20-latex-tutorial/"/>
     <id>https://syvshc.github.io/2022-04-20-latex-tutorial/</id>
     <published>2022-04-20T14:21:00.000Z</published>
-    <updated>2022-04-21T02:39:15.313Z</updated>
+    <updated>2022-04-21T20:48:30.851Z</updated>
     
     
-    <summary type="html">&lt;p&gt;应 ElegantLaTeX 的邀请, 来做一次与 LaTeX 相关的知识分享, 主要内容包括 LaTeX 软件包的安装, 更新和回滚; 如何用命令行编译 LaTeX 文件; 如何使用和配置 VSCode.&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;应 ElegantLaTeX 的邀请, 来做一次与 LaTeX 相关的知识分享, 主要内容包括
+LaTeX 软件包的安装, 更新和回滚; 如何用命令行编译 LaTeX 文件;
+如何使用和配置 VSCode.&lt;/p&gt;</summary>
     
     
     

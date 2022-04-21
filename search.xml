@@ -3955,284 +3955,458 @@ TeXLive 时是相同的. 然后在终端执行</p>
   <entry>
     <title>latex-tutorial</title>
     <url>/2022-04-20-latex-tutorial/</url>
-    <content><![CDATA[<p>应 ElegantLaTeX 的邀请, 来做一次与 LaTeX 相关的知识分享, 主要内容包括 LaTeX 软件包的安装, 更新和回滚; 如何用命令行编译 LaTeX 文件; 如何使用和配置 VSCode.</p>
+    <content><![CDATA[<p>应 ElegantLaTeX 的邀请, 来做一次与 LaTeX 相关的知识分享, 主要内容包括
+LaTeX 软件包的安装, 更新和回滚; 如何用命令行编译 LaTeX 文件;
+如何使用和配置 VSCode.</p>
 <span id="more"></span>
 <p>在其他的环节开始之前</p>
-<h2 id="下载并安装-vscode"><a class="markdownIt-Anchor" href="#下载并安装-vscode"></a> 下载并安装 VSCode.</h2>
-<h3 id="windows-用户"><a class="markdownIt-Anchor" href="#windows-用户"></a> Windows 用户</h3>
-<ol>
-<li>
-<p>在 VSCode 的官网: <a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a> 选择 <code>stable</code> 版本进行下载.</p>
-</li>
-<li>
-<p>安装的时候注意勾选&quot;添加到PATH&quot;</p>
-<p><img src="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-tutorial/install-vs.png" alt="安装选项" /></p>
-</li>
+<h2 id="下载并安装-vscode.">下载并安装 VSCode.</h2>
+<h3 id="windows-用户">Windows 用户</h3>
+<ol type="1">
+<li><p>在 VSCode 的官网: <a
+href="https://code.visualstudio.com/">https://code.visualstudio.com/</a>
+选择 <code>stable</code> 版本进行下载.</p></li>
+<li><p>安装的时候注意勾选"添加到PATH"</p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-tutorial/install-vs.png"
+alt="安装选项" />
+<figcaption aria-hidden="true">安装选项</figcaption>
+</figure></li>
 </ol>
-<h3 id="macos-用户"><a class="markdownIt-Anchor" href="#macos-用户"></a> macOS 用户</h3>
+<h3 id="macos-用户">macOS 用户</h3>
 <p>同 Windows, 只需要下载 macOS 版本的安装文件安装即可.</p>
-<h3 id="linux-用户"><a class="markdownIt-Anchor" href="#linux-用户"></a> Linux 用户</h3>
+<h3 id="linux-用户">Linux 用户</h3>
 <p>在各发行版的软件源中下载即可.</p>
 <hr />
 <p>在等待下载安装的时候, 我们来看一些其他的东西</p>
-<h2 id="打开终端命令行"><a class="markdownIt-Anchor" href="#打开终端命令行"></a> 打开终端/命令行</h2>
-<h3 id="windows"><a class="markdownIt-Anchor" href="#windows"></a> Windows</h3>
-<ol>
-<li>Windows10/11 可以点击状态栏中的&quot;搜索&quot;或快捷键<code>win</code>+<code>S</code>, 并在搜索栏里搜索 “cmd” 或 “powershell”, 可以选择直接左键点击打开, 也可以选择右键<code>以管理员身份运行</code>, 以管理员身份运行的命令行的权限更高.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup><br />
-<img src="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-terminal-compiling/cmd-on-win%2Bs.gif" alt="win+S" /></li>
-<li>可以在&quot;文件资源管理器&quot;的地址栏中直接输入 “cmd” 或 “powershell” 并回车, 就可以在当前文件夹中打开命令行.<br />
-<img src="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-terminal-compiling/click.gif" alt="点击文件资源管理器" /></li>
-<li>可以在&quot;文件资源管理器&quot;的空白处按住<code>shift</code>再点击右键, 选择选项&quot;在此处打开 PowerShell 窗口&quot;, 就可以在当前文件夹中打开 powershell. 当然 Windows11 用户或者安装了 Windows Terminal 的用户也可以通过右键后选择&quot;在 Windows 终端中打开&quot;.<br />
-<img src="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-terminal-compiling/shift-right-click.gif" alt="shift+右键" /></li>
+<h2 id="打开终端命令行">打开终端/命令行</h2>
+<h3 id="windows">Windows</h3>
+<ol type="1">
+<li>Windows10/11
+可以点击状态栏中的"搜索"或快捷键<code>win</code>+<code>S</code>,
+并在搜索栏里搜索 "cmd" 或 "powershell", 可以选择直接左键点击打开,
+也可以选择右键<code>以管理员身份运行</code>,
+以管理员身份运行的命令行的权限更高.<a href="#fn1" class="footnote-ref"
+id="fnref1" role="doc-noteref"><sup>1</sup></a> <img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-terminal-compiling/cmd-on-win%2Bs.gif"
+alt="win+S" /></li>
+<li>可以在"文件资源管理器"的地址栏中直接输入 "cmd" 或 "powershell"
+并回车, 就可以在当前文件夹中打开命令行. <img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-terminal-compiling/click.gif"
+alt="点击文件资源管理器" /></li>
+<li>可以在"文件资源管理器"的空白处按住<code>shift</code>再点击右键,
+选择选项"在此处打开 PowerShell 窗口", 就可以在当前文件夹中打开
+powershell. 当然 Windows11 用户或者安装了 Windows Terminal
+的用户也可以通过右键后选择"在 Windows 终端中打开". <img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-terminal-compiling/shift-right-click.gif"
+alt="shift+右键" /></li>
 </ol>
-<h3 id="macos"><a class="markdownIt-Anchor" href="#macos"></a> macOS</h3>
-<p>同时按下 <code>command</code> 和空格, 在弹出的输入栏里输入 <code>terminal</code> 即可打开, 或见苹果的<a href="https://support.apple.com/zh-cn/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac">官方说明</a></p>
-<h2 id="tlmgr-的使用"><a class="markdownIt-Anchor" href="#tlmgr-的使用"></a> <code>tlmgr</code> 的使用</h2>
-<p>按照啸行编写的 <a href="http://mirrors.ctan.org/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf">install-latex-guide-zh-cn</a> 安装好 TeXLive 2022 后, 可以使用 <code>tlmgr</code> 来对软件包进行版本处理, 其中 <code>tlmgr</code> 是 <strong>T</strong>eX<strong>L</strong>ive <strong>M</strong>ana<strong>g</strong>e<strong>r</strong> 的意思.</p>
-<p><strong>注意</strong>: 这里提到的软件包不只是用在 <code>\usepackage</code> 的宏包, 而是所有 TeXLive 包含的, 可以使用 <code>tlmgr</code> 管理的内容, 比如平常所说的宏包, 如 <code>amsmath.sty</code>, 一些说明文档, 如 <code>lshort-zh-cn</code>, 一些可执行文件, 如 <code>xetex.exe</code> 等等.</p>
-<p>可以在命令行运行 <code>tlmgr version</code> 来查看 <code>tlmgr</code> 的版本, 正常情况下会有类似的输出:</p>
+<h3 id="macos">macOS</h3>
+<p>同时按下 <code>command</code> 和空格, 在弹出的输入栏里输入
+<code>terminal</code> 即可打开, 或见苹果的<a
+href="https://support.apple.com/zh-cn/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac">官方说明</a></p>
+<h2 id="tlmgr-的使用"><code>tlmgr</code> 的使用</h2>
+<p>按照啸行编写的 <a
+href="http://mirrors.ctan.org/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf">install-latex-guide-zh-cn</a>
+安装好 TeXLive 2022 后, 可以使用 <code>tlmgr</code>
+来对软件包进行版本处理, 其中 <code>tlmgr</code> 是
+<strong>T</strong>eX<strong>L</strong>ive
+<strong>M</strong>ana<strong>g</strong>e<strong>r</strong> 的意思.</p>
+<p><strong>注意</strong>: 这里提到的软件包不只是用在
+<code>\usepackage</code> 的宏包, 而是所有 TeXLive 包含的, 可以使用
+<code>tlmgr</code> 管理的内容, 比如平常所说的宏包, 如
+<code>amsmath.sty</code>, 一些说明文档, 如 <code>lshort-zh-cn</code>,
+一些可执行文件, 如 <code>xetex.exe</code> 等等.</p>
+<p>可以在命令行运行 <code>tlmgr version</code> 来查看 <code>tlmgr</code>
+的版本, 正常情况下会有类似的输出:</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tlmgr revision 63033 (2022-04-15 07:19:42 +0200)</span><br><span class="line">tlmgr using installation: C:/texlive/2022</span><br><span class="line">TeX Live (https://tug.org/texlive) version 2022</span><br></pre></td></tr></table></figure>
 <p>首先说明, <code>tlmgr</code> 的命令格式为</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tlmgr [global options] &lt;action&gt; [action-specific options] [operand]</span><br></pre></td></tr></table></figure>
 <p>其中</p>
-<ol>
-<li><strong>选项(option)</strong> 分为 <strong>全局选项(global option)</strong> 和 <strong>操作特有选项(action-specific option)</strong>. 它们以 <code>-</code> 或 <code>--</code> 开头, 但是所有的选项都可以放在 <code>tlmgr</code> 后的任何位置, 按任意顺序调用, 其中第一个不以 <code>-</code> 或 <code>--</code> 开头的参数将被视做<strong>操作(action)</strong>.</li>
-<li>所有的选项中 <code>-option</code> 与 <code>--option</code> 都是相同的.</li>
-<li>几乎所有的操作都有 <code>-dry-run</code> 这个参数, 它用来假装进行操作, 来让用户看一下可能会发生什么.</li>
+<ol type="1">
+<li><strong>选项(option)</strong> 分为 <strong>全局选项(global
+option)</strong> 和 <strong>操作特有选项(action-specific
+option)</strong>. 它们以 <code>-</code> 或 <code>--</code> 开头,
+但是所有的选项都可以放在 <code>tlmgr</code> 后的任何位置,
+按任意顺序调用, 其中第一个不以 <code>-</code> 或 <code>--</code>
+开头的参数将被视做<strong>操作(action)</strong>.</li>
+<li>所有的选项中 <code>-option</code> 与 <code>--option</code>
+都是相同的.</li>
+<li>几乎所有的操作都有 <code>-dry-run</code> 这个参数,
+它用来假装进行操作, 来让用户看一下可能会发生什么.</li>
 </ol>
 <p>那么我们就可以使用 <code>tlmgr</code> 来进行下面的练习了.</p>
-<h3 id="更新软件包"><a class="markdownIt-Anchor" href="#更新软件包"></a> 更新软件包</h3>
+<h3 id="更新软件包">更新软件包</h3>
 <p>操作: <code>update</code></p>
-<h4 id="查看有哪些软件包可以更新"><a class="markdownIt-Anchor" href="#查看有哪些软件包可以更新"></a> 查看有哪些软件包可以更新</h4>
-<p>通常来说 <a href="https://ctan.org">CTAN</a> 上的软件包每天都会有更新, 可以在命令行运行</p>
+<h4 id="查看有哪些软件包可以更新">查看有哪些软件包可以更新</h4>
+<p>通常来说 <a href="https://ctan.org">CTAN</a>
+上的软件包每天都会有更新, 可以在命令行运行</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tlmgr update -list</span><br></pre></td></tr></table></figure>
-<p>来查看是否有可以更新的软件包, 这里的 <code>update</code> 是操作, <code>-list</code> 是这个操作的特有选项. 通常情况下会有类似的输出</p>
+<p>来查看是否有可以更新的软件包, 这里的 <code>update</code> 是操作,
+<code>-list</code> 是这个操作的特有选项. 通常情况下会有类似的输出</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tlmgr.pl: package repository https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet (not verified: gpg unavailable)</span><br><span class="line">tlmgr.pl: would save backups to C:/texlive/2022/tlpkg/backups</span><br><span class="line">tlmgr.pl: skipping forcibly removed package: collection-texworks</span><br><span class="line">update:   adjmulticol        [316k]: <span class="built_in">local</span>:    62935, <span class="built_in">source</span>:    63073</span><br><span class="line">update:   hitex             [2565k]: <span class="built_in">local</span>:    62529, <span class="built_in">source</span>:    63073</span><br><span class="line">update:   texlive-fr        [1394k]: <span class="built_in">local</span>:    62853, <span class="built_in">source</span>:    63071</span><br><span class="line">update:   texlive-msg-translations [144k]: <span class="built_in">local</span>:    63010, <span class="built_in">source</span>:    63072</span><br><span class="line">update:   texlive-scripts.win32 [36k]: <span class="built_in">local</span>:    62199, <span class="built_in">source</span>:    63068</span><br><span class="line">update:   texlive-scripts    [504k]: <span class="built_in">local</span>:    63049, <span class="built_in">source</span>:    63068</span><br><span class="line">update:   utfsym            [4766k]: <span class="built_in">local</span>:    56729, <span class="built_in">source</span>:    63076</span><br><span class="line">update:   xduts              [871k]: <span class="built_in">local</span>:    63013, <span class="built_in">source</span>:    63075</span><br><span class="line">update:   zwpagelayout       [641k]: <span class="built_in">local</span>:    53965, <span class="built_in">source</span>:    63074</span><br></pre></td></tr></table></figure>
-<p><strong>第一行</strong>会提示我们选择的软件包源, 这里我选择的是清华的源;</p>
-<p><strong>第二行</strong>会提示我们备份的地址, 默认情况下会保留在 <code>/texlive/2022/tlpkg/backups</code>, 默认情况下会保留每个被更新的软件包的 local 版本的一个备份, 如果有更旧版本的备份, 则会用较新的 local 版本来替换这个旧的备份;</p>
-<p><strong>第三行</strong>会提示我们将会被跳过的软件包, 包括手动使用 <code>-exclude</code> 选项排除的软件包以及被认为是 <code>forcibly-removed (强制删除)</code> 的软件包. 比如这里我曾经强制删除了 <code>collection-texworks</code> 软件包, 那么它在更新的时候将会跳过这个软件包.<br />
-然后会列出需要更新/安装/移除的软件包, 前缀分别为 <code>update</code>, <code>autoinst</code> 与 <code>auto-remove</code>. 后面跟着的数字为 <strong>revision</strong> 这是一个记录在 TeXLive 中的版本号, 即使软件包的作者可以随意更改他们的 cat-version (见后文), 但是 revision 总是在不断增加, 不可以随意改动. 并且可以利用 revision 来判断一个软件包是否更“新”.</p>
-<h4 id="更新全部软件包"><a class="markdownIt-Anchor" href="#更新全部软件包"></a> 更新全部软件包</h4>
-<p><strong>注意</strong>: 这里所谓的更新, 是包括了自动删除, 自动安装, 更新操作的“更新”, 而非只将旧版本软件包升级.</p>
+<p><strong>第一行</strong>会提示我们选择的软件包源,
+这里我选择的是清华的源;</p>
+<p><strong>第二行</strong>会提示我们备份的地址, 默认情况下会保留在
+<code>/texlive/2022/tlpkg/backups</code>,
+默认情况下会保留每个被更新的软件包的 local 版本的一个备份,
+如果有更旧版本的备份, 则会用较新的 local 版本来替换这个旧的备份;</p>
+<p><strong>第三行</strong>会提示我们将会被跳过的软件包, 包括手动使用
+<code>-exclude</code> 选项排除的软件包以及被认为是
+<code>forcibly-removed (强制删除)</code> 的软件包.
+比如这里我曾经强制删除了 <code>collection-texworks</code> 软件包,
+那么它在更新的时候将会跳过这个软件包.
+然后会列出需要更新/安装/移除的软件包, 前缀分别为 <code>update</code>,
+<code>autoinst</code> 与 <code>auto-remove</code>. 后面跟着的数字为
+<strong>revision</strong> 这是一个记录在 TeXLive 中的版本号,
+即使软件包的作者可以随意更改他们的 cat-version (见后文), 但是 revision
+总是在不断增加, 不可以随意改动. 并且可以利用 revision
+来判断一个软件包是否更“新”.</p>
+<h4 id="更新全部软件包">更新全部软件包</h4>
+<p><strong>注意</strong>: 这里所谓的更新, 是包括了自动删除, 自动安装,
+更新操作的“更新”, 而非只将旧版本软件包升级.</p>
 <p>通常情况下我们会直接选择更新全部软件包, 即运行</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tlmgr update -self -all</span><br></pre></td></tr></table></figure>
-<p>这里 <code>update</code> 是操作, <code>-self</code> 和 <code>-all</code> 均为 <code>update</code> 操作的特有选项, 其中 <code>-self</code> 是更新 <code>tlmgr</code> 本身以及相关软件, <code>-all</code> 是更新全部可更新的软件包.</p>
-<h4 id="更新某些软件包"><a class="markdownIt-Anchor" href="#更新某些软件包"></a> 更新某些软件包</h4>
-<p>在可更新列表里如果发现了某些想更新的软件包, 比如 pkg1, pkg2, 那么就可以运行</p>
+<p>这里 <code>update</code> 是操作, <code>-self</code> 和
+<code>-all</code> 均为 <code>update</code> 操作的特有选项, 其中
+<code>-self</code> 是更新 <code>tlmgr</code> 本身以及相关软件,
+<code>-all</code> 是更新全部可更新的软件包.</p>
+<h4 id="更新某些软件包">更新某些软件包</h4>
+<p>在可更新列表里如果发现了某些想更新的软件包, 比如 pkg1, pkg2,
+那么就可以运行</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tlmgr update pkg1 pkg2</span><br></pre></td></tr></table></figure>
 <p>来更新这两个软件包,</p>
-<h4 id="排除不想更新的软件包"><a class="markdownIt-Anchor" href="#排除不想更新的软件包"></a> 排除不想更新的软件包</h4>
+<h4 id="排除不想更新的软件包">排除不想更新的软件包</h4>
 <p>如果我们在更新全部软件包时不想更新软件包 pkg1, 那么可以运行</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tlmgr update -self -all -exclude pkg1</span><br></pre></td></tr></table></figure>
-<p>如果有多个不想更新的软件包 pkg1, pkg2, 那么可以多次使用 <code>-exclude</code> 命令</p>
+<p>如果有多个不想更新的软件包 pkg1, pkg2, 那么可以多次使用
+<code>-exclude</code> 命令</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tlmgr update -self -all -exclude pkg1 -exclude pkg2</span><br></pre></td></tr></table></figure>
-<h4 id="更新过程被中断"><a class="markdownIt-Anchor" href="#更新过程被中断"></a> 更新过程被中断</h4>
-<p>如果软件包的更新由于网络原因中断, 或者由人为因素中断, 那么正在更新的软件包将会被视为<strong>用户强制删除(forcibly-removed)</strong>. 这时再更新就需要“重新安装”它们, 使用命令</p>
+<h4 id="更新过程被中断">更新过程被中断</h4>
+<p>如果软件包的更新由于网络原因中断, 或者由人为因素中断,
+那么正在更新的软件包将会被视为<strong>用户强制删除(forcibly-removed)</strong>.
+这时再更新就需要“重新安装”它们, 使用命令</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tlmgr update -self -all -reinstall-forcibly-removed</span><br></pre></td></tr></table></figure>
-<p>当然, 更新过程中的 <code>-self</code> 不一定需要, 如果 <code>tlmgr</code> 没有需要更新的内容, 可以不写 <code>-self</code>.</p>
-<h3 id="查看软件包的信息"><a class="markdownIt-Anchor" href="#查看软件包的信息"></a> 查看软件包的信息</h3>
+<p>当然, 更新过程中的 <code>-self</code> 不一定需要, 如果
+<code>tlmgr</code> 没有需要更新的内容, 可以不写 <code>-self</code>.</p>
+<h3 id="查看软件包的信息">查看软件包的信息</h3>
 <p>操作: <code>info</code></p>
-<h4 id="查看某个软件包的基本信息"><a class="markdownIt-Anchor" href="#查看某个软件包的基本信息"></a> 查看某个软件包的基本信息</h4>
-<p>如果我们想查看几个软件包 pkg1, pkg2 在 TeXLive 中的信息, 比如介绍, 版本号等等, 我们可以运行</p>
+<h4 id="查看某个软件包的基本信息">查看某个软件包的基本信息</h4>
+<p>如果我们想查看几个软件包 pkg1, pkg2 在 TeXLive 中的信息, 比如介绍,
+版本号等等, 我们可以运行</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tlmgr info pkg1 pkg2</span><br></pre></td></tr></table></figure>
 <p>来获得信息, 我们用 <code>tlmgr info ctex</code> 来说明一下:</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package:     ctex</span><br><span class="line">category:    Package</span><br><span class="line">shortdesc:   LaTeX classes and packages for Chinese typesetting</span><br><span class="line">longdesc:    ctex is a collection of macro packages and document classes for LaTeX Chinese typesetting.</span><br><span class="line">installed:   Yes</span><br><span class="line">revision:    61285</span><br><span class="line">sizes:       src: 481k, doc: 1137k, run: 1753k</span><br><span class="line">relocatable: No</span><br><span class="line">cat-version: 2.5.8</span><br><span class="line">cat-license: lppl1.3c</span><br><span class="line">cat-topics:  chinese book-pub class</span><br><span class="line">cat-contact-bugs: https://github.com/CTeX-org/ctex-kit/issues</span><br><span class="line">cat-contact-support: https://github.com/CTeX-org/ctex-kit/issues</span><br><span class="line">cat-contact-repository: https://github.com/CTeX-org/ctex-kit</span><br><span class="line">cat-contact-home: http://www.ctex.org/HomePage</span><br><span class="line">collection:  collection-langchinese</span><br></pre></td></tr></table></figure>
-<ol>
+<ol type="1">
 <li><code>package:</code> 这个软件包的名字</li>
-<li><code>category:</code> 这个软件包所属的分类, 有 <code>Package</code>, <code>Collection</code>, <code>Scheme</code>. 注意这里的 <code>Package</code> 和 1. 中的 <code>package</code> 不是一样的.</li>
-<li><code>shortdesc:</code> 这个软件包的短介绍(short description), 是软件包作者在推送到 CTAN 上时需要提交的.</li>
-<li><code>longdesc:</code> 这个软件包的长介绍(long description), 是软件包作者在推送到 CTAN 上时需要提交的.</li>
+<li><code>category:</code> 这个软件包所属的分类, 有
+<code>Package</code>, <code>Collection</code>, <code>Scheme</code>.
+注意这里的 <code>Package</code> 和 1. 中的 <code>package</code>
+不是一样的.</li>
+<li><code>shortdesc:</code> 这个软件包的短介绍(short description),
+是软件包作者在推送到 CTAN 上时需要提交的.</li>
+<li><code>longdesc:</code> 这个软件包的长介绍(long description),
+是软件包作者在推送到 CTAN 上时需要提交的.</li>
 <li><code>installed:</code> 这个软件包是否安装在了本地.</li>
-<li><code>revision:</code> 修订版号(我不知道它应该翻译成什么, 因为我想用“版本号”来翻译<code>cat-version</code>), 随着软件包作者的推送, 它会越来越大, 并且 <code>tlmgr</code> 使用这个数字来判断软件包是否需要更新.</li>
-<li><code>doc</code>, <code>run</code>, <code>src</code> 分别代表了这个软件包在 <code>/texlive/2022/texmf-dist</code> 文件夹下的 <code>doc</code>, <code>tex</code>, <code>source</code> 中的文件大小</li>
-<li><code>relocatable:</code> 这个软件包是否可以重置, 这个内容在 <code>user-mode</code> 中比较重要, 一般用户不用管</li>
-<li><code>cat-*:</code> 这个软件包在 CTAN 上分类 (category) 中的信息, 均是由软件包作者提供:
-<ol>
-<li><code>version:</code> 软件包的版本号, 由软件包的作者给定, 它不需要遵循递增的规律.</li>
+<li><code>revision:</code> 修订版号(我不知道它应该翻译成什么,
+因为我想用“版本号”来翻译<code>cat-version</code>), 随着软件包作者的推送,
+它会越来越大, 并且 <code>tlmgr</code>
+使用这个数字来判断软件包是否需要更新.</li>
+<li><code>doc</code>, <code>run</code>, <code>src</code>
+分别代表了这个软件包在 <code>/texlive/2022/texmf-dist</code> 文件夹下的
+<code>doc</code>, <code>tex</code>, <code>source</code>
+中的文件大小</li>
+<li><code>relocatable:</code> 这个软件包是否可以重置, 这个内容在
+<code>user-mode</code> 中比较重要, 一般用户不用管</li>
+<li><code>cat-*:</code> 这个软件包在 CTAN 上分类 (category) 中的信息,
+均是由软件包作者提供:
+<ol type="1">
+<li><code>version:</code> 软件包的版本号, 由软件包的作者给定,
+它不需要遵循递增的规律.</li>
 <li><code>licence:</code> 软件包使用的开源协议.</li>
 <li><code>topics:</code> 这个软件包在 CTAN 上归属于哪个主题.</li>
-<li><code>contact-bugs/support/repository/home:</code> 分别指这个软件包的上报 bug 的地址, 提供支持的地址, 软件包所在的仓库, 软件包的主页.</li>
+<li><code>contact-bugs/support/repository/home:</code>
+分别指这个软件包的上报 bug 的地址, 提供支持的地址, 软件包所在的仓库,
+软件包的主页.</li>
+</ol></li>
+<li><code>collection:</code> 这个软件包属于哪个集合. TeXLive
+上的软件包都被分为格式 (scheme), 集合 (collection) 和软件包 (package),
+他们是依次包含的关系.</li>
 </ol>
-</li>
-<li><code>collection:</code> 这个软件包属于哪个集合. TeXLive 上的软件包都被分为格式 (scheme), 集合 (collection) 和软件包 (package), 他们是依次包含的关系.</li>
-</ol>
-<h4 id="列出某个软件包的更详细的信息"><a class="markdownIt-Anchor" href="#列出某个软件包的更详细的信息"></a> 列出某个软件包的更详细的信息</h4>
-<p>如果想查看某几个软件包 pkg1 pkg2 中都包含了什么文件, 有哪些平台特定的依赖, 可以使用</p>
+<h4 id="列出某个软件包的更详细的信息">列出某个软件包的更详细的信息</h4>
+<p>如果想查看某几个软件包 pkg1 pkg2 中都包含了什么文件,
+有哪些平台特定的依赖, 可以使用</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tlmgr info -list pkg1 pkg2</span><br></pre></td></tr></table></figure>
-<p>其中 <code>-list</code> 是 <code>info</code> 操作的特有选项, 我们 <code>tlmgr info -list tabularray</code> 为例</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 这些是 tlmgr info tabularray 的内容 #</span><br><span class="line">Included files, by type:</span><br><span class="line">run files:</span><br><span class="line">  texmf-dist/tex/latex/tabularray/tabularray-2021.sty</span><br><span class="line">  texmf-dist/tex/latex/tabularray/tabularray.sty</span><br><span class="line">doc files:</span><br><span class="line">  texmf-dist/doc/latex/tabularray/README.txt details=&quot;Readme&quot;</span><br><span class="line">  texmf-dist/doc/latex/tabularray/tabularray.pdf details=&quot;Package documentation&quot;</span><br><span class="line">  texmf-dist/doc/latex/tabularray/tabularray.tex</span><br></pre></td></tr></table></figure>
-<p>可以看到 <code>run files</code> 和 <code>doc files</code> 分别的位置.</p>
-<h3 id="回滚软件包的版本"><a class="markdownIt-Anchor" href="#回滚软件包的版本"></a> 回滚软件包的版本</h3>
+<p>其中 <code>-list</code> 是 <code>info</code> 操作的特有选项, 我们
+<code>tlmgr info -list tabularray</code> 为例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 省略 tlmgr info tabularray 的内容 #</span><br><span class="line">Included files, by type:</span><br><span class="line">run files:</span><br><span class="line">  texmf-dist/tex/latex/tabularray/tabularray-2021.sty</span><br><span class="line">  texmf-dist/tex/latex/tabularray/tabularray.sty</span><br><span class="line">doc files:</span><br><span class="line">  texmf-dist/doc/latex/tabularray/README.txt details=&quot;Readme&quot;</span><br><span class="line">  texmf-dist/doc/latex/tabularray/tabularray.pdf details=&quot;Package documentation&quot;</span><br><span class="line">  texmf-dist/doc/latex/tabularray/tabularray.tex</span><br></pre></td></tr></table></figure>
+<p>可以看到 <code>run files</code> 和 <code>doc files</code>
+分别的位置.</p>
+<h3 id="回滚软件包的版本">回滚软件包的版本</h3>
 <p>操作: <code>restore</code></p>
-<h4 id="查看某个软件包的备份"><a class="markdownIt-Anchor" href="#查看某个软件包的备份"></a> 查看某个软件包的备份</h4>
+<h4 id="查看某个软件包的备份">查看某个软件包的备份</h4>
 <p>如果想查看某个软件包 pkg 在备份中的 revision, 可以使用</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tlmgr restore pkg</span><br></pre></td></tr></table></figure>
-<p>如果存在备份, 那么就会返回一个 revision 的值, 我们以 <code>tlmgr restore functional</code> 为例, 会得到一个如下的输出</p>
+<p>如果存在备份, 那么就会返回一个 revision 的值, 我们以
+<code>tlmgr restore functional</code> 为例, 会得到一个如下的输出</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Available backups for functional: 62926 (2022-04-17 11:15)</span><br></pre></td></tr></table></figure>
 <p>可以看到存在一个 revision 为 62926 的备份.</p>
-<h4 id="将某个软件包回滚为备份"><a class="markdownIt-Anchor" href="#将某个软件包回滚为备份"></a> 将某个软件包回滚为备份</h4>
+<h4 id="将某个软件包回滚为备份">将某个软件包回滚为备份</h4>
 <p>如果我们获得了某个软件包 pkg 在备份中的 revision, 就可以使用</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tlmgr restore pkg revision</span><br></pre></td></tr></table></figure>
 <p>来将 pkg 回滚. 比如这时候我们可以使用</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tlmgr restore functional 62926</span><br></pre></td></tr></table></figure>
-<p>来将 functional 软件包回滚为 revision 62926.<br />
+<p>来将 functional 软件包回滚为 revision 62926.
 这个方法在某个软件包更新后出现了不兼容的时候很好用.</p>
-<h3 id="修改-tlmgr-的设置"><a class="markdownIt-Anchor" href="#修改-tlmgr-的设置"></a> 修改 <code>tlmgr</code> 的设置</h3>
+<h3 id="修改-tlmgr-的设置">修改 <code>tlmgr</code> 的设置</h3>
 <p>操作: <code>option</code></p>
 <p>这里只列出一个常用的命令</p>
-<h4 id="设置软件包的更新源"><a class="markdownIt-Anchor" href="#设置软件包的更新源"></a> 设置软件包的更新源</h4>
-<p>如果要将软件包的更新源设置为 <code>&lt;mirror&gt;</code>, 那么可以使用</p>
+<h4 id="设置软件包的更新源">设置软件包的更新源</h4>
+<p>如果要将软件包的更新源设置为 <code>&lt;mirror&gt;</code>,
+那么可以使用</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tlmgr option repository &lt;mirror&gt;</span><br></pre></td></tr></table></figure>
-<p>来进行更改, 其中 <code>repository</code> 可以简化为 <code>repo</code>. 默认设置下的源为 <code>ctan</code>, 它告诉 <code>tlmgr</code> 它可以从一个附近的 CTAN 镜像去获取最近的更新, 这条命令还可以写成</p>
+<p>来进行更改, 其中 <code>repository</code> 可以简化为
+<code>repo</code>. 默认设置下的源为 <code>ctan</code>, 它告诉
+<code>tlmgr</code> 它可以从一个附近的 CTAN 镜像去获取最近的更新,
+这条命令还可以写成</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tlmgr option repository http://mirror.ctan.org/systems/texlive/tlnet</span><br></pre></td></tr></table></figure>
-<p>其中 <code>ctan</code> 是 <code>http://mirror.ctan.org/systems/texlive/tlnet</code> 的别名.</p>
-<p><strong>注意</strong> <a href="http://mirror.ctan.org">mirror.ctan.org</a> 会被解析为多个不同的域名, 它们并不是完全同步的, 我们建议 (它们) 最多每天更新一次<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>. 如果出现了问题, 我们建议您选择一个特定的镜像站. 全部的镜像站以及它们的状态会列在 <a href="https://ctan.org/mirrors/mirmon">镜像站列表</a><sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>.</p>
-<h4 id="大陆地区镜像"><a class="markdownIt-Anchor" href="#大陆地区镜像"></a> 大陆地区镜像</h4>
-<p>大陆用户可以将源指定为国内的镜像站, 在 CTAN 上可以找到 <a href="https://ctan.org/mirrors#Asia">亚洲镜像列表</a> . 下面列举出截止至 2022-04-20 可用的镜像站:</p>
+<p>其中 <code>ctan</code> 是
+<code>http://mirror.ctan.org/systems/texlive/tlnet</code> 的别名.</p>
+<p><strong>注意</strong> mirror.ctan.org 会被解析为多个不同的域名,
+它们并不是完全同步的, 我们建议 (它们) 最多每天更新一次<a href="#fn2"
+class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.
+如果出现了问题, 我们建议您选择一个特定的镜像站.
+全部的镜像站以及它们的状态会列在 <a
+href="https://ctan.org/mirrors/mirmon">镜像站列表</a><a href="#fn3"
+class="footnote-ref" id="fnref3"
+role="doc-noteref"><sup>3</sup></a>.</p>
+<h4 id="大陆地区镜像">大陆地区镜像</h4>
+<p>大陆用户可以将源指定为国内的镜像站, 在 CTAN 上可以找到 <a
+href="https://ctan.org/mirrors#Asia">亚洲镜像列表</a> . 下面列举出截止至
+2022-04-20 可用的镜像站:</p>
 <table>
+<colgroup>
+<col style="width: 46%" />
+<col style="width: 53%" />
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>镜像名</th>
 <th>镜像地址</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td><a href="https://developer.aliyun.com/mirror/">阿里云</a></td>
-<td><a href="https://mirrors.aliyun.com/CTAN/systems/texlive/">https://mirrors.aliyun.com/CTAN/systems/texlive/</a></td>
+<td>https://mirrors.aliyun.com/CTAN/systems/texlive/</td>
 </tr>
-<tr>
+<tr class="even">
 <td><a href="https://mirror.bjtu.edu.cn/">北京交通大学</a></td>
-<td><a href="https://mirror.bjtu.edu.cn/ctan/systems/texlive/">https://mirror.bjtu.edu.cn/ctan/systems/texlive/</a></td>
+<td>https://mirror.bjtu.edu.cn/ctan/systems/texlive/</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><a href="https://mirrors.bit.edu.cn/web/">北京理工大学</a></td>
-<td><a href="https://mirrors.bit.edu.cn/CTAN/systems/texlive/">https://mirrors.bit.edu.cn/CTAN/systems/texlive/</a></td>
+<td>https://mirrors.bit.edu.cn/CTAN/systems/texlive/</td>
 </tr>
-<tr>
+<tr class="even">
 <td><a href="https://mirrors.bfsu.edu.cn/">北京外国语大学</a></td>
-<td><a href="https://mirrors.bfsu.edu.cn/CTAN/systems/texlive/">https://mirrors.bfsu.edu.cn/CTAN/systems/texlive/</a></td>
+<td>https://mirrors.bfsu.edu.cn/CTAN/systems/texlive/</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><a href="https://mirrors.cqu.edu.cn/">重庆大学</a></td>
-<td><a href="https://mirrors.cqu.edu.cn/CTAN/systems/texlive/">https://mirrors.cqu.edu.cn/CTAN/systems/texlive/</a></td>
+<td>https://mirrors.cqu.edu.cn/CTAN/systems/texlive/</td>
 </tr>
-<tr>
+<tr class="even">
 <td><a href="https://mirrors.dgut.edu.cn/">东莞理工学院</a></td>
-<td><a href="https://mirrors.dgut.edu.cn/CTAN/systems/texlive/">https://mirrors.dgut.edu.cn/CTAN/systems/texlive/</a></td>
+<td>https://mirrors.dgut.edu.cn/CTAN/systems/texlive/</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><a href="https://mirrors.hit.edu.cn/">哈尔滨工业大学</a></td>
-<td><a href="https://mirrors.hit.edu.cn/CTAN/systems/texlive/">https://mirrors.hit.edu.cn/CTAN/systems/texlive/</a></td>
+<td>https://mirrors.hit.edu.cn/CTAN/systems/texlive/</td>
 </tr>
-<tr>
+<tr class="even">
 <td><a href="https://mirrors.huaweicloud.com/">华为云</a></td>
-<td><a href="https://mirrors.huaweicloud.com/CTAN/systems/texlive/">https://mirrors.huaweicloud.com/CTAN/systems/texlive/</a></td>
+<td>https://mirrors.huaweicloud.com/CTAN/systems/texlive/</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><a href="http://mirrors.hust.edu.cn/">华中科技大学</a></td>
-<td><a href="http://mirrors.hust.edu.cn/CTAN/systems/texlive/">http://mirrors.hust.edu.cn/CTAN/systems/texlive/</a></td>
+<td>http://mirrors.hust.edu.cn/CTAN/systems/texlive/</td>
 </tr>
-<tr>
+<tr class="even">
 <td><a href="https://mirror.lzu.edu.cn/">兰州大学</a></td>
-<td><a href="https://mirror.lzu.edu.cn/CTAN/systems/texlive/">https://mirror.lzu.edu.cn/CTAN/systems/texlive/</a></td>
+<td>https://mirror.lzu.edu.cn/CTAN/systems/texlive/</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><a href="https://mirrors.nju.edu.cn/">南京大学</a></td>
-<td><a href="https://mirrors.nju.edu.cn/CTAN/systems/texlive/">https://mirrors.nju.edu.cn/CTAN/systems/texlive/</a></td>
+<td>https://mirrors.nju.edu.cn/CTAN/systems/texlive/</td>
 </tr>
-<tr>
+<tr class="even">
 <td><a href="https://mirrors.tuna.tsinghua.edu.cn/">清华大学</a></td>
-<td><a href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/">https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/</a></td>
+<td>https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><a href="https://mirrors.sjtug.sjtu.edu.cn/">上海交通大学</a></td>
-<td><a href="https://mirrors.sjtug.sjtu.edu.cn/ctan/systems/texlive/">https://mirrors.sjtug.sjtu.edu.cn/ctan/systems/texlive/</a></td>
+<td>https://mirrors.sjtug.sjtu.edu.cn/ctan/systems/texlive/</td>
 </tr>
-<tr>
+<tr class="even">
 <td><a href="https://mirrors.geekpie.club/">上海科技大学</a></td>
-<td><a href="https://mirrors.geekpie.club/CTAN/systems/texlive/">https://mirrors.geekpie.club/CTAN/systems/texlive/</a></td>
+<td>https://mirrors.geekpie.club/CTAN/systems/texlive/</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><a href="https://mirrors.cloud.tencent.com/">腾讯云</a></td>
-<td><a href="https://mirrors.cloud.tencent.com/CTAN/systems/texlive/">https://mirrors.cloud.tencent.com/CTAN/systems/texlive/</a></td>
+<td>https://mirrors.cloud.tencent.com/CTAN/systems/texlive/</td>
 </tr>
-<tr>
+<tr class="even">
 <td><a href="https://mirrors.ustc.edu.cn/">中国科学技术大学</a></td>
-<td><a href="https://mirrors.ustc.edu.cn/CTAN/systems/texlive/">https://mirrors.ustc.edu.cn/CTAN/systems/texlive/</a></td>
+<td>https://mirrors.ustc.edu.cn/CTAN/systems/texlive/</td>
 </tr>
 </tbody>
 </table>
-<p>并用 <code>tlmgr option repository &lt;site&gt;/tlnet</code> 的方式进行设置.</p>
-<h3 id="更多内容"><a class="markdownIt-Anchor" href="#更多内容"></a> 更多内容</h3>
-<p>如果想了解更多关于 <code>tlmgr</code> 的信息, 欢迎阅读我翻译的 <a href="http://mirrors.ctan.org/info/tlmgr-intro-zh-cn/tlmgr-intro-zh-cn.pdf">tlmgr-intro-zh-cn</a> 以及 <a href="https://www.tug.org/texlive/doc/tlmgr.html"><code>tlmgr</code> 的官方文档</a></p>
-<h2 id="我们的-vscode-安装好了"><a class="markdownIt-Anchor" href="#我们的-vscode-安装好了"></a> 我们的 VSCode 安装好了</h2>
+<p>并用 <code>tlmgr option repository &lt;site&gt;/tlnet</code>
+的方式进行设置.</p>
+<h3 id="更多内容">更多内容</h3>
+<p>如果想了解更多关于 <code>tlmgr</code> 的信息, 欢迎阅读我翻译的 <a
+href="http://mirrors.ctan.org/info/tlmgr-intro-zh-cn/tlmgr-intro-zh-cn.pdf">tlmgr-intro-zh-cn</a>
+以及 <a
+href="https://www.tug.org/texlive/doc/tlmgr.html"><code>tlmgr</code>
+的官方文档</a></p>
+<h2 id="我们的-vscode-安装好了">我们的 VSCode 安装好了</h2>
 <p>我们来简单的配置一下 VSCode</p>
-<ol>
+<ol type="1">
 <li>刚打开的 VSCode 会提示我们切换界面语言:</li>
 </ol>
-<p><img src="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-tutorial/change-lang.png" alt="更改语言" /></p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-tutorial/change-lang.png"
+alt="更改语言" />
+<figcaption aria-hidden="true">更改语言</figcaption>
+</figure>
 <p>如果没来得及点，发现提示消失了，点击右下角的铃铛即可出现</p>
-<p><img src="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-tutorial/bell.png" alt="铃铛" /></p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-tutorial/bell.png"
+alt="铃铛" />
+<figcaption aria-hidden="true">铃铛</figcaption>
+</figure>
 <p>点击之后<strong>什么也不用做</strong>，即使它页面有变化，等待它自己安装完成重启即可，出现下图的效果说明语言设置成功：</p>
-<p><img src="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-tutorial/chinese.png" alt="更改语言成功" /></p>
-<ol start="2">
-<li>然后我们安装一下 LaTeX 相关的插件 <code>LaTeX-workshop</code>. 点击左侧工具栏的最下方的“扩展”</li>
+<figure>
+<img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-tutorial/chinese.png"
+alt="更改语言成功" />
+<figcaption aria-hidden="true">更改语言成功</figcaption>
+</figure>
+<ol start="2" type="1">
+<li>然后我们安装一下 LaTeX 相关的插件 <code>LaTeX-workshop</code>.
+点击左侧工具栏的最下方的“扩展”</li>
 </ol>
-<p><img src="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-tutorial/extension.png" alt="扩展" /></p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-tutorial/extension.png"
+alt="扩展" />
+<figcaption aria-hidden="true">扩展</figcaption>
+</figure>
 <p>输入<code>latex</code></p>
-<p><img src="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-tutorial/input-latex.png" alt="输入 " /></p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-tutorial/input-latex.png"
+alt="输入 latex" />
+<figcaption aria-hidden="true">输入 <code>latex</code></figcaption>
+</figure>
 <p>出来的第一个<code>LaTeX-Workshop</code>就是我们要的，点击安装</p>
-<p><img src="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-tutorial/lw.png" alt="latex-workshop" /></p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-tutorial/lw.png"
+alt="latex-workshop" />
+<figcaption aria-hidden="true">latex-workshop</figcaption>
+</figure>
 <p>等待一会，当左侧的“安装”消失了或者右侧的“安装”变成了“禁用”“卸载”就说明安装成功了</p>
-<p><img src="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-tutorial/inst-success.png" alt="成功安装" /></p>
-<ol start="3">
+<figure>
+<img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-tutorial/inst-success.png"
+alt="成功安装" />
+<figcaption aria-hidden="true">成功安装</figcaption>
+</figure>
+<ol start="3" type="1">
 <li>我们的 VSCode 暂时就配置好了, 至于那些 recipes, 后面再说.</li>
 </ol>
-<h2 id="命令行编译"><a class="markdownIt-Anchor" href="#命令行编译"></a> 命令行编译</h2>
+<h2 id="命令行编译">命令行编译</h2>
 <p>这里我直接放一个之前写过的 <a href="/2022-03-06-latex-terminal-compiling/" title="在终端中编译 LaTeX">在终端中编译 LaTeX</a>.</p>
-<h2 id="如何安装外部宏包"><a class="markdownIt-Anchor" href="#如何安装外部宏包"></a> 如何安装外部宏包</h2>
-<p>通常情况下我们需要的宏包都被 TeXLive 收录, 并且随 TeXLive 安装在了我们的电脑中, 如果我们想确认一个宏包 pkg 是否被安装了, 可以使用</p>
+<h2 id="如何安装外部宏包">如何安装外部宏包</h2>
+<p>通常情况下我们需要的宏包都被 TeXLive 收录, 并且随 TeXLive
+安装在了我们的电脑中, 如果我们想确认一个宏包 pkg 是否被安装了,
+可以使用</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tlmgr info pkg</span><br></pre></td></tr></table></figure>
 <p>或</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">kpsewhich pkg.sty</span><br></pre></td></tr></table></figure>
-<p>如果宏包已经被安装了, 那么前者会有输出 <code>Installed: Yes</code>, 后者会输出 <code>pkg.sty</code> 的路径.</p>
-<p>如果我们需要安装一个没有被 TeXLive 收录的宏包, 如 <code>mcode.sty</code>, 那么需要怎么做呢？这里我们用一个简单的文件来做示范.</p>
+<p>如果宏包已经被安装了, 那么前者会有输出 <code>Installed: Yes</code>,
+后者会输出 <code>pkg.sty</code> 的路径.</p>
+<p>如果我们需要安装一个没有被 TeXLive 收录的宏包, 如
+<code>mcode.sty</code>,
+那么需要怎么做呢？这里我们用一个简单的文件来做示范.</p>
 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="comment">% mypackage.sty</span></span><br><span class="line"><span class="keyword">\NeedsTeXFormat</span>&#123;LaTeX2e&#125;[2017/04/15]</span><br><span class="line"><span class="keyword">\ProvidesPackage</span>&#123;mypackage&#125;[2022/4/20 v1.0 test]</span><br><span class="line"><span class="keyword">\newcommand</span>&#123;<span class="keyword">\mycmd</span>&#125;&#123;Hello <span class="keyword">\LaTeX</span>&#125;</span><br></pre></td></tr></table></figure>
-<p>将上述代码保存为 <code>mypackage.sty</code>, 这个宏包的内容非常简单, 它定义了一个命令 <code>\mycmd</code> 来输出 <code>Hello \LaTeX</code>. 现在我们把它安装到我们的电脑中, 让每一个 TeX 文档都可以通过 <code>\usepackage&#123;mypackage&#125;</code> 来使用这个宏包.</p>
-<ol>
-<li>在 <code>/texlive/texmf-local/tex/latex</code> 文件夹下, 新建一个文件夹, 名为 <code>mypackage</code>, 然后我们把 <code>mypackage.sty</code> 放进去.</li>
+<p>将上述代码保存为 <code>mypackage.sty</code>, 这个宏包的内容非常简单,
+它定义了一个命令 <code>\mycmd</code> 来输出 <code>Hello \LaTeX</code>.
+现在我们把它安装到我们的电脑中, 让每一个 TeX 文档都可以通过
+<code>\usepackage&#123;mypackage&#125;</code> 来使用这个宏包.</p>
+<ol type="1">
+<li>在 <code>/texlive/texmf-local/tex/latex</code> 文件夹下,
+新建一个文件夹, 名为 <code>mypackage</code>, 然后我们把
+<code>mypackage.sty</code> 放进去.</li>
 <li>在命令行运行 <code>texhash</code> 来刷新数据库, 如果得到</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">texhash: Updating C:/texlive/texmf-local/ls-R...</span><br><span class="line">texhash: Updated C:/texlive/texmf-local/ls-R.</span><br><span class="line">texhash: Updating C:/texlive/2022/texmf-config/ls-R...</span><br><span class="line">texhash: Updated C:/texlive/2022/texmf-config/ls-R.</span><br><span class="line">texhash: Updating C:/texlive/2022/texmf-var/ls-R...</span><br><span class="line">texhash: Updated C:/texlive/2022/texmf-var/ls-R.</span><br><span class="line">texhash: Updating C:/texlive/2022/texmf-dist/ls-R...</span><br><span class="line">texhash: Updated C:/texlive/2022/texmf-dist/ls-R.</span><br><span class="line">texhash: Done.</span><br></pre></td></tr></table></figure>
-<p>如果得到一些 Permission denied, 那就需要用管理员权限打开命令行, 再运行 <code>texhash</code>.</p>
-<ol start="3">
-<li>然后可以用 <code>kpsewhich mypackage.sty</code> 来测试一下能不能找到这个宏包, 如果有输出</li>
+<p>如果得到一些 Permission denied, 那就需要用管理员权限打开命令行,
+再运行 <code>texhash</code>.</p>
+<ol start="3" type="1">
+<li>然后可以用 <code>kpsewhich mypackage.sty</code>
+来测试一下能不能找到这个宏包, 如果有输出</li>
 </ol>
-  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">c:/texlive/texmf-local/tex/latex/mypackage/mypackage.sty</span><br></pre></td></tr></table></figure>
+<p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">c:/texlive/texmf-local/tex/latex/mypackage/mypackage.sty</span><br></pre></td></tr></table></figure></p>
 <p>那么说明安装成功. 我们新建一个 <code>main.tex</code> 文件, 写入</p>
 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;mypackage&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">  <span class="keyword">\mycmd</span></span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
 <p>使用 <code>pdflatex</code> 编译, 即可得到输出.</p>
-<h2 id="配置-vscode-的编译链"><a class="markdownIt-Anchor" href="#配置-vscode-的编译链"></a> 配置 VSCode 的编译链</h2>
-<p>在网上形形色色的 VSCode + TeXLive 教程中, 总会看到它们提供一个 <code>settings.json</code> 文件, 说把它粘贴到你的电脑里, 配置就完成了, 然而我们在做这个事情的时候, 通常都不知道自己在做什么.</p>
-<p>现在我们已经了解了什么是编译命令, 什么是编译选项, 那么我们就可以写一个属于自己的配置单, 就算我们不会自己写, 也可以看懂别人在写什么了.</p>
-<p>这里我贴一个 <a href="https://gitee.com/xkwxdyy/CCNUthesis/wikis/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98FAQ/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E3%80%81%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8VScode">CCNUthesis.wiki 的链接</a></p>
-<h2 id="后记"><a class="markdownIt-Anchor" href="#后记"></a> 后记</h2>
-<p>这就是这次分享会我要讲的东西, 我也只是一个普通的用户, 使用的时候也需要常翻手册去找命令叫什么, 命令的参数是什么. 有能力学底层的用户可以读一下 the texbook, <code>texdoc source2e</code>, <code>texdoc texbytopic</code>, <code>texdoc classes</code>, <code>texdoc interface3</code> 等等, 有些内容了解了底层之后会更加的明了, 当然, 做一个关注于用户层的使用者也不是什么丢人的事. 希望大家可以多读手册, 多学习, 有不懂的东西可以积极向社区提问, 包括但不限于</p>
+<h2 id="配置-vscode-的编译链">配置 VSCode 的编译链</h2>
+<p>在网上形形色色的 VSCode + TeXLive 教程中, 总会看到它们提供一个
+<code>settings.json</code> 文件, 说把它粘贴到你的电脑里, 配置就完成了,
+然而我们在做这个事情的时候, 通常都不知道自己在做什么.</p>
+<p>现在我们已经了解了什么是编译命令, 什么是编译选项,
+那么我们就可以写一个属于自己的配置单, 就算我们不会自己写,
+也可以看懂别人在写什么了.</p>
+<p>这里我贴一个 <a
+href="https://gitee.com/xkwxdyy/CCNUthesis/wikis/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98FAQ/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E3%80%81%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8VScode">CCNUthesis.wiki
+的链接</a></p>
+<h2 id="后记">后记</h2>
+<p>这就是这次分享会我要讲的东西, 我也只是一个普通的用户,
+使用的时候也需要常翻手册去找命令叫什么, 命令的参数是什么.
+有能力学底层的用户可以读一下 the texbook, <code>texdoc source2e</code>,
+<code>texdoc texbytopic</code>, <code>texdoc classes</code>,
+<code>texdoc interface3</code> 等等, 有些内容了解了底层之后会更加的明了,
+当然, 做一个关注于用户层的使用者也不是什么丢人的事.
+希望大家可以多读手册, 多学习, 有不懂的东西可以积极向社区提问,
+包括但不限于</p>
 <ul>
-<li><a href="https://tex.stackexchange.com/">tex.stackexchange.com</a></li>
-<li><a href="https://github.com/CTeX-org/forum/issues">CTeX-org/forum</a></li>
+<li><a
+href="https://tex.stackexchange.com/">tex.stackexchange.com</a></li>
+<li><a
+href="https://github.com/CTeX-org/forum/issues">CTeX-org/forum</a></li>
 <li><a href="https://ask.latexstudio.net/">LaTeX 工作室</a></li>
 </ul>
-<hr class="footnotes-sep" />
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>如果在更新宏包等时候出现了 <code>Permission denied</code> 等字样, 就需要考虑使用管理员权限打开 cmd <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p><a href="http://mirror.ctan.org">mirror.ctan.org</a> resolves to many different hosts, and they are not perfectly synchronized; we recommend updating only daily (at most), and not more often. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn3" class="footnote-item"><p>这个表格来自 <a href="https://github.com/OsbertWang/install-latex-guide-zh-cn">install-latex-guide-zh-cn</a>. <a href="#fnref3" class="footnote-backref">↩︎</a></p>
-</li>
+<section class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>如果在更新宏包等时候出现了
+<code>Permission denied</code> 等字样, 就需要考虑使用管理员权限打开
+cmd<a href="#fnref1" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>mirror.ctan.org resolves to many
+different hosts, and they are not perfectly synchronized; we recommend
+updating only daily (at most), and not more often.<a href="#fnref2"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>这个表格来自 <a
+href="https://github.com/OsbertWang/install-latex-guide-zh-cn">install-latex-guide-zh-cn</a>.<a
+href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 ]]></content>
