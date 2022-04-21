@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://syvshc.github.io/2021-09-22-KDEProblems/</loc>
+    
+    <lastmod>2022-04-21</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://syvshc.github.io/2022-04-20-latex-tutorial/</loc>
     
     <lastmod>2022-04-21</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://syvshc.github.io/2022-03-06-latex-terminal-compiling/</loc>
     
     <lastmod>2022-04-19</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://syvshc.github.io/2021-09-22-KDEProblems/</loc>
-    
-    <lastmod>2022-04-08</lastmod>
     
   </url>
   
