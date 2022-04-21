@@ -77,7 +77,7 @@ kwin_x11 --replace &
 
 #### 音频处显示没有输入或输出设备
 
-![桌面特效](https://raw.githubusercontent.com/syvshc/image/master/postimg/KDEProblems/no-sound.png)
+![没有输入或输出设备](https://raw.githubusercontent.com/syvshc/image/master/postimg/KDEProblems/no-sound.png)
 
 我的设备是 Dell G15 5511, 属于比较新的设备, 查看了 [Fourm](https://forum.manjaro.org/t/i-have-no-sound/86412) 与 [wiki](https://wiki.archlinux.org/title/Advanced_Linux_Sound_Architecture#ALSA_firmware) 后使用 
 
@@ -86,3 +86,9 @@ yay -S sof-firmware
 ```
 
 安装框架之后即可使用.
+
+#### 能连接上网络但是显示“受限的连接”
+
+![受限的连接](https://raw.githubusercontent.com/syvshc/image/master/postimg/KDEProblems/limit-connect.png)
+
+解决方法见 [Wiki](https://wiki.archlinux.org/title/NetworkManager#Checking_connectivity)
