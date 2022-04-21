@@ -1,11 +1,10 @@
 ---
 title: 在终端中编译 LaTeX
 tags:
-  - - 帮助文档
-  - - LaTeX
+  - [帮助文档]
+  - [LaTeX]
 categories:
-  - - 帮助文档
-    - LaTeX
+  - [帮助文档, LaTeX]
 date: 2022-03-06 22:28:26
 ---
 
@@ -37,7 +36,7 @@ Linux 通常可以通过 `ctrl`+`alt`+`T` 的快捷键组合打开终端.
 
 ### mac
 
-我没用过
+同时按下 `command` 和空格, 在弹出的输入栏里输入 `terminal` 即可打开, 或见苹果的[官方说明](https://support.apple.com/zh-cn/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac)
 
 ## 使用命令行/终端
 
