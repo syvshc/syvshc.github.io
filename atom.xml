@@ -6,7 +6,7 @@
   <link href="https://syvshc.github.io/atom.xml" rel="self"/>
   
   <link href="https://syvshc.github.io/"/>
-  <updated>2022-04-04T13:50:01.663Z</updated>
+  <updated>2022-04-21T02:15:27.331Z</updated>
   <id>https://syvshc.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>latex-tutorial</title>
+    <link href="https://syvshc.github.io/2022-04-20-latex-tutorial/"/>
+    <id>https://syvshc.github.io/2022-04-20-latex-tutorial/</id>
+    <published>2022-04-20T14:21:00.000Z</published>
+    <updated>2022-04-21T02:15:27.331Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;应 ElegantLaTeX 的邀请, 来做一次与 LaTeX 相关的知识分享, 主要内容包括
+LaTeX 软件包的安装, 更新和回滚; 如何用命令行编译 LaTeX 文件;
+如何使用和配置 VSCode.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="帮助文档" scheme="https://syvshc.github.io/categories/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/"/>
+    
+    <category term="LaTeX" scheme="https://syvshc.github.io/categories/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/LaTeX/"/>
+    
+    
+    <category term="帮助文档" scheme="https://syvshc.github.io/tags/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/"/>
+    
+    <category term="LaTeX" scheme="https://syvshc.github.io/tags/LaTeX/"/>
+    
+  </entry>
   
   <entry>
     <title>滚动升级 TeXLive</title>
@@ -47,7 +72,7 @@
     <link href="https://syvshc.github.io/2022-03-06-latex-terminal-compiling/"/>
     <id>https://syvshc.github.io/2022-03-06-latex-terminal-compiling/</id>
     <published>2022-03-06T14:28:26.000Z</published>
-    <updated>2022-04-04T13:45:26.055Z</updated>
+    <updated>2022-04-19T13:15:01.337Z</updated>
     
     
     <summary type="html">&lt;p&gt;在交流使用 LaTeX 出现的问题的时候,
@@ -286,7 +311,7 @@ src=&quot;https://raw.githubusercontent.com/syvshc/image/master/postimg/extcite/
     <link href="https://syvshc.github.io/2021-09-22-KDEProblems/"/>
     <id>https://syvshc.github.io/2021-09-22-KDEProblems/</id>
     <published>2021-09-22T06:29:40.000Z</published>
-    <updated>2022-04-04T13:45:26.054Z</updated>
+    <updated>2022-04-08T05:11:45.212Z</updated>
     
     
     <summary type="html">&lt;p&gt;这里记录一些使用 ArchLinux + KDE 时遇到的问题&lt;/p&gt;</summary>
@@ -339,7 +364,7 @@ EFI 引导破坏了……&lt;/p&gt;</summary>
     <link href="https://syvshc.github.io/2021-09-02-ArchLinux/"/>
     <id>https://syvshc.github.io/2021-09-02-ArchLinux/</id>
     <published>2021-09-02T03:08:27.000Z</published>
-    <updated>2022-04-04T13:45:26.054Z</updated>
+    <updated>2022-04-08T05:11:45.211Z</updated>
     
     
     <summary type="html">&lt;p&gt;手贱小白还愿意折腾. 自从上次重装系统之后, Ubuntu 总时不时地卡顿,
