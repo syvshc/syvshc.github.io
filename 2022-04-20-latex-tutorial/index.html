@@ -29,7 +29,7 @@
 <meta property="og:description" content="应 ElegantLaTeX 的邀请, 来做一次与 LaTeX 相关的知识分享, 主要内容包括 LaTeX 软件包的安装, 更新和回滚; 如何用命令行编译 LaTeX 文件; 如何使用和配置 VSCode.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-04-20T14:21:00.000Z">
-<meta property="article:modified_time" content="2022-04-21T20:48:30.851Z">
+<meta property="article:modified_time" content="2022-04-22T09:57:35.717Z">
 <meta property="article:author" content="Zhonghao Sun">
 <meta property="article:tag" content="帮助文档">
 <meta property="article:tag" content="LaTeX">
@@ -329,7 +329,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-22 04:48:30" itemprop="dateModified" datetime="2022-04-22T04:48:30+08:00">2022-04-22</time>
+      <time title="修改时间：2022-04-22 17:57:35" itemprop="dateModified" datetime="2022-04-22T17:57:35+08:00">2022-04-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -359,7 +359,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>9.5k</span>
+      <span>9.6k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -786,7 +786,7 @@ alt="成功安装" />
 </ol>
 <p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c:/texlive/texmf-local/tex/latex/mypackage/mypackage.sty</span><br></pre></td></tr></table></figure></p>
 <p>那么说明安装成功. 我们新建一个 <code>main.tex</code> 文件, 写入</p>
-<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;mypackage&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">  <span class="keyword">\mycmd</span></span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% main.tex</span></span><br><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;mypackage&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">  <span class="keyword">\mycmd</span></span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
 <p>使用 <code>pdflatex</code> 编译, 即可得到输出.</p>
 <h2 id="配置-vscode-的编译链">配置 VSCode 的编译链</h2>
 <p>在网上形形色色的 VSCode + TeXLive 教程中, 总会看到它们提供一个

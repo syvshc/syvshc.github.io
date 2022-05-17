@@ -3515,7 +3515,8 @@ class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
 <code>.log</code> 文件并将已经编译的页面输出, 然后退出编译,
 断点后的文件内容不再处理.</li>
 <li><code>E&lt;enter&gt;</code> 类似 <code>X</code>,
-它会在默认编辑器中高亮显示错误出现的位置.</li>
+它会在默认编辑器(从输出来看, 这个默认编辑器应该是
+emacs)中高亮显示错误出现的位置.</li>
 <li><code>1-9&lt;enter&gt;</code> 可以输入一个小于 100 的正整数,
 系统将在断点之后删除相同数量的半角字符, 然后等待下一步回应,
 其中一个汉字等于两个半角字符, 一个 LaTeX
@@ -3610,13 +3611,22 @@ alt="cross-ref" />
 <figure>
 <img
 src="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-terminal-compiling/cross-ref-right.png"
-alt="rigt-cross-ref" />
-<figcaption aria-hidden="true">rigt-cross-ref</figcaption>
+alt="right-cross-ref" />
+<figcaption aria-hidden="true">right-cross-ref</figcaption>
 </figure>
 <h4 id="参考文献">参考文献</h4>
+<p>我们使用以下的 <code>main.tex</code>:</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="comment">% main.tex</span></span><br><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">  text<span class="keyword">\cite</span>&#123;article-full&#125;</span><br><span class="line">  <span class="keyword">\bibliographystyle</span>&#123;plain&#125;</span><br><span class="line">  <span class="keyword">\bibliography</span>&#123;xampl.bib&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
 <p>当遇到参考文献的时候我们需要编译 4 次, 以常用的 <code>bibtex</code>
 为例, 需要使用</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pdflatex main.tex</span><br><span class="line">bibtex main.aux</span><br><span class="line">pdflatex main.tex</span><br><span class="line">pdflatex main.tex</span><br></pre></td></tr></table></figure>
+<p>编译结果如下</p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-terminal-compiling/bib-ref.png"
+alt="参考文献" />
+<figcaption aria-hidden="true">参考文献</figcaption>
+</figure>
 <p>有了上面的铺垫, 来说一下每一次编译都做了什么</p>
 <ol type="1">
 <li>第一次 <code>pdflatex</code> 将 <code>\cite</code> 的的参数
@@ -4374,7 +4384,7 @@ alt="成功安装" />
 </ol>
 <p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">c:/texlive/texmf-local/tex/latex/mypackage/mypackage.sty</span><br></pre></td></tr></table></figure></p>
 <p>那么说明安装成功. 我们新建一个 <code>main.tex</code> 文件, 写入</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;mypackage&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">  <span class="keyword">\mycmd</span></span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="comment">% main.tex</span></span><br><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;mypackage&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">  <span class="keyword">\mycmd</span></span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
 <p>使用 <code>pdflatex</code> 编译, 即可得到输出.</p>
 <h2 id="配置-vscode-的编译链">配置 VSCode 的编译链</h2>
 <p>在网上形形色色的 VSCode + TeXLive 教程中, 总会看到它们提供一个
