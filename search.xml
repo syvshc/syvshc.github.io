@@ -3429,7 +3429,7 @@ href="https://docs.microsoft.com/en-us/windows-server/administration/windows-com
 <code>xelatex</code>, <code>lualatex</code>, <code>latexmk</code> 等等,
 下面我们以 <code>pdflatex</code> 为例来介绍一些编译的参数.</p>
 <h3 id="第一次编译">第一次编译</h3>
-<p>这是一个 LaTeX 文件, 位于 <code>\home</code> 目录下的
+<p>这是一个 LaTeX 文件, 位于 <code>/home</code> 目录下的
 <code>folder</code> 文件夹, 名为 <code>main.tex</code> <a href="#fn3"
 class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="comment">% main.tex</span></span><br><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">  Hello <span class="keyword">\LaTeX</span>!</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
