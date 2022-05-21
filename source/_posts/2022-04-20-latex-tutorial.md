@@ -419,6 +419,7 @@ texhash: Done.
 那么说明安装成功. 我们新建一个 `main.tex` 文件, 写入
 
 ```tex
+% main.tex
 \documentclass{article}
 \usepackage{mypackage}
 \begin{document}

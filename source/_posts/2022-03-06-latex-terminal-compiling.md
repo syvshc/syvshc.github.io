@@ -146,7 +146,7 @@ LaTeX 在命令行下的程序有 `latex`, `pdflatex`, `xelatex`, `lualatex`, `l
 
 ### 第一次编译
 
-这是一个 LaTeX 文件, 位于 `\home` 目录下的 `folder` 文件夹, 名为 `main.tex` [^linux]
+这是一个 LaTeX 文件, 位于 `/home` 目录下的 `folder` 文件夹, 名为 `main.tex` [^linux]
 
 [^linux]: 由于写这部分的时候我在 ArchLinux 下, 就以 Linux 的文件目录为例了, 原理几乎相同. 
 
@@ -291,7 +291,7 @@ and I'll forget about whatever was undefined.
 * `Q<enter>` 比 `R` 更强, 它不会再显示后续的编译信息, 只是将这些内容写入 `.log` 文件, 这是一种不计后果的错误处理方式.
 * `I<cs><enter>` 其中 `<cs>` 为要在断点后插入的控制序列 (control sequence), 按下回车后编译器将读入 `<cs>` 来替换出错的命令, 再读入断点后的内容继续编译. 如果输入 `I\stop<enter>`, 则停止编译, 仅显示断点之前的排版结果.
 * `X<enter>` 退出, 系统将断点前的编译过程写入 `.log` 文件并将已经编译的页面输出, 然后退出编译, 断点后的文件内容不再处理. 
-* `E<enter>` 类似 `X`, 它会在默认编辑器中高亮显示错误出现的位置. 
+* `E<enter>` 类似 `X`, 它会在默认编辑器(从输出来看, 这个默认编辑器应该是 emacs)中高亮显示错误出现的位置. 
 * `1-9<enter>` 可以输入一个小于 100 的正整数, 系统将在断点之后删除相同数量的半角字符, 然后等待下一步回应, 其中一个汉字等于两个半角字符, 一个 LaTeX 命令无论长短都算一个半角字符. 
 * `H<enter>` 寻求帮助, 系统将给出更详细的错误说明, 并提出改正建议, 一些包的作者会额外书写输入 `H<enter>` 后的错误输出, 此时 `H` 就有了一些用处. 
 
@@ -438,9 +438,21 @@ $ pdflatex -<option1> -<option2>=<string> main
 
 那我们再使用 `pdflatex main.tex` 来编译一次, 可以得到正确的输出:
 
-![rigt-cross-ref](https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-terminal-compiling/cross-ref-right.png)
+![right-cross-ref](https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-terminal-compiling/cross-ref-right.png)
 
 #### 参考文献
+
+我们使用以下的 `main.tex`:
+
+```tex
+% main.tex
+\documentclass{article}
+\begin{document}
+  text\cite{article-full}
+  \bibliographystyle{plain}
+  \bibliography{xampl.bib}
+\end{document}
+```
 
 当遇到参考文献的时候我们需要编译 4 次, 以常用的 `bibtex` 为例, 需要使用
 
@@ -450,6 +462,10 @@ bibtex main.aux
 pdflatex main.tex
 pdflatex main.tex
 ```
+
+编译结果如下
+
+![参考文献](https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-terminal-compiling/bib-ref.png)
 
 有了上面的铺垫, 来说一下每一次编译都做了什么
 
