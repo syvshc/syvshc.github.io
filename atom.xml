@@ -72,13 +72,10 @@ LaTeX 软件包的安装, 更新和回滚; 如何用命令行编译 LaTeX 文件
     <link href="https://syvshc.github.io/2022-03-06-latex-terminal-compiling/"/>
     <id>https://syvshc.github.io/2022-03-06-latex-terminal-compiling/</id>
     <published>2022-03-06T14:28:26.000Z</published>
-    <updated>2022-05-21T01:20:00.037Z</updated>
+    <updated>2022-05-22T15:46:01.910Z</updated>
     
     
-    <summary type="html">&lt;p&gt;在交流使用 LaTeX 出现的问题的时候,
-通常会听到&quot;命令行编译&quot;或&quot;终端编译&quot;, 在这里简单的介绍一下.
-如果有相应的命令行基础, 可以直接跳转到&lt;a
-href=&quot;#compile-latex&quot;&gt;使用命令行编译 LaTeX 文件&lt;/a&gt;&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;在交流使用 LaTeX 出现的问题的时候, 通常会听到&amp;quot;命令行编译&amp;quot;或&amp;quot;终端编译&amp;quot;, 在这里简单的介绍一下. 如果有相应的命令行基础, 可以直接跳转到&lt;a href=&quot;#compile-latex&quot;&gt;使用命令行编译 LaTeX 文件&lt;/a&gt;&lt;/p&gt;</summary>
     
     
     
