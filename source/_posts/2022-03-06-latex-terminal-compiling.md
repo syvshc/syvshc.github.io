@@ -28,10 +28,15 @@ Linux 通常可以通过 `ctrl`+`alt`+`T` 的快捷键组合打开终端.
 ### Windows
 
 1. Windows10/11 可以点击状态栏中的"搜索"或快捷键`win`+`S`, 并在搜索栏里搜索 "cmd" 或 "powershell", 可以选择直接左键点击打开, 也可以选择右键`以管理员身份运行`, 以管理员身份运行的命令行的权限更高.[^permission]
+
   ![win+S](https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-terminal-compiling/cmd-on-win%2Bs.gif)
+
 2. 可以在"文件资源管理器"的地址栏中直接输入 "cmd" 或 "powershell" 并回车, 就可以在当前文件夹中打开命令行. 
+   
   ![点击文件资源管理器](https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-terminal-compiling/click.gif)
+
 3. 可以在"文件资源管理器"的空白处按住`shift`再点击右键, 选择选项"在此处打开 PowerShell 窗口", 就可以在当前文件夹中打开 powershell. 当然 Windows11 用户或者安装了 Windows Terminal 的用户也可以通过右键后选择"在 Windows 终端中打开". 
+
   ![shift+右键](https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-terminal-compiling/shift-right-click.gif)
 
 ### mac
@@ -305,7 +310,7 @@ and I'll forget about whatever was undefined.
 $ pdflatex -<option1> -<option2>=<string> main
 ```
 
-其中 `<option1>, <option2>` 为选项的名字, `<string>` 对应了一些需要参数的选项, 下面介绍一些选项, 更详细的可用选项可以在命令行运行 `pdflatex --help`
+其中 `<option1>, <option2>` 为选项的名字, `<string>` 对应了一些需要参数的选项, 下面介绍一些选项, 注意要在下面的每个选项之前加上 `-`. 更详细的可用选项可以在命令行运行 `pdflatex --help`
 
 * `halt-on-error` 会在第一个错误停下, 不使用 `?` 等待用户输入, 输出内容如:
 
@@ -325,7 +330,7 @@ $ pdflatex -<option1> -<option2>=<string> main
   * `batchmode` 不在命令行中输出任何有关编译的内容, 也不在任何时候停下等待用户输入. 
   * `nonstopmode` 不在任何时候停下, 直到最后显示出来错误的位置与内容. 
 
-* `-synctex=1` 在需要正反向搜索的时候, 需要启用这个选项来生成 `<filename>.synctex.gz` 文件. 
+* `synctex=1` 在需要正反向搜索的时候, 需要启用这个选项来生成 `<filename>.synctex.gz` 文件. 
 
 [^interaction]: 见 `latex2e.pdf sec 28.1` 或 [latexref](http://latexref.xyz/Command-line-options.html)
 
@@ -363,7 +368,7 @@ $ pdflatex -<option1> -<option2>=<string> main
   ```
   并且二次编译的时候会检测到输出文件夹, 并且使用输出文件夹中的辅助文件进行二次编译. 
 
-* `-shell-escape` `-enable-write18` 让编译器可以调用外部程序进行编译, 如使用 `minted`, `tkz-fct` 等需要调用外部程序的宏包时, 需要启用, 其中 `-shell-escape` 是 TeX Live 的命令, `-enable-write18` 是 MikTeX 的命令. 事实上, 如果我们使用 `pdflatex main.tex` 来编译以下文件:
+* `shell-escape` `enable-write18` 让编译器可以调用外部程序进行编译, 如使用 `minted`, `tkz-fct` 等需要调用外部程序的宏包时, 需要启用, 其中 `-shell-escape` 是 TeX Live 的命令, `-enable-write18` 是 MikTeX 的命令. 事实上, 如果我们使用 `pdflatex main.tex` 来编译以下文件:
 
   ```tex
   % main.tex
@@ -397,7 +402,7 @@ $ pdflatex -<option1> -<option2>=<string> main
   ```
 
   来进行编译
-* `-no-shell-escape` `-disable-write18` 与上面的选项相反, 强制不能使用外部程序. 
+* `no-shell-escape` `disable-write18` 与上面的选项相反, 强制不能使用外部程序. 
 
 ### 多次编译
 
