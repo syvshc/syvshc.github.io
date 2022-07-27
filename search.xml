@@ -3545,7 +3545,7 @@ alt="cross-ref" />
 <figcaption aria-hidden="true">cross-ref</figcaption>
 </figure>
 <p>我们发现既没有目录, 也没有引用, 只有 <code>??</code>, 让我们来看一下
-<code>main.aux</code> 与 `main.toc</p>
+<code>main.aux</code> 与 <code>main.toc</code></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% main.aux</span><br><span class="line">\relax </span><br><span class="line">\@writefile&#123;toc&#125;&#123;\contentsline &#123;section&#125;&#123;\numberline &#123;1&#125;One&#125;&#123;1&#125;&#123;&#125;\protected@file@percent &#125;</span><br><span class="line">\newlabel&#123;sec:one&#125;&#123;&#123;1&#125;&#123;1&#125;&#125;</span><br><span class="line">\gdef \@abspage@last&#123;1&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% main.toc</span><br><span class="line">\contentsline &#123;section&#125;&#123;\numberline &#123;1&#125;One&#125;&#123;1&#125;&#123;&#125;%</span><br></pre></td></tr></table></figure>
 <p>这两个文件中的内容将会为下一次的编译提供更多的命令, 比如
