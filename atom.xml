@@ -6,7 +6,7 @@
   <link href="https://syvshc.github.io/atom.xml" rel="self"/>
   
   <link href="https://syvshc.github.io/"/>
-  <updated>2022-04-22T09:57:35.717Z</updated>
+  <updated>2022-09-09T03:57:41.070Z</updated>
   <id>https://syvshc.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://syvshc.github.io/2022-04-20-latex-tutorial/"/>
     <id>https://syvshc.github.io/2022-04-20-latex-tutorial/</id>
     <published>2022-04-20T14:21:00.000Z</published>
-    <updated>2022-04-22T09:57:35.717Z</updated>
+    <updated>2022-09-09T03:57:41.070Z</updated>
     
     
     <summary type="html">&lt;p&gt;应 ElegantLaTeX 的邀请, 来做一次与 LaTeX 相关的知识分享, 主要内容包括
@@ -300,9 +300,9 @@ src=&quot;https://raw.githubusercontent.com/syvshc/image/master/postimg/extcite/
     
     <category term="LaTeX" scheme="https://syvshc.github.io/tags/LaTeX/"/>
     
-    <category term="示例" scheme="https://syvshc.github.io/tags/%E7%A4%BA%E4%BE%8B/"/>
-    
     <category term="参考文献" scheme="https://syvshc.github.io/tags/%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE/"/>
+    
+    <category term="示例" scheme="https://syvshc.github.io/tags/%E7%A4%BA%E4%BE%8B/"/>
     
   </entry>
   
@@ -602,11 +602,11 @@ href=&quot;https://github.com/syvshc/tlmgr-intro-zh-cn/issues&quot;&gt;issue&lt;
     <category term="字体" scheme="https://syvshc.github.io/categories/LaTeX/%E5%AD%97%E4%BD%93/"/>
     
     
-    <category term="字体设置" scheme="https://syvshc.github.io/tags/%E5%AD%97%E4%BD%93%E8%AE%BE%E7%BD%AE/"/>
-    
     <category term="LaTeX" scheme="https://syvshc.github.io/tags/LaTeX/"/>
     
     <category term="示例" scheme="https://syvshc.github.io/tags/%E7%A4%BA%E4%BE%8B/"/>
+    
+    <category term="字体设置" scheme="https://syvshc.github.io/tags/%E5%AD%97%E4%BD%93%E8%AE%BE%E7%BD%AE/"/>
     
   </entry>
   
