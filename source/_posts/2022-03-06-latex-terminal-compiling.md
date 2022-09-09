@@ -424,7 +424,7 @@ $ pdflatex -<option1> -<option2>=<string> main
 
 ![cross-ref](https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-terminal-compiling/cross-ref.png)
 
-我们发现既没有目录, 也没有引用, 只有 `??`, 让我们来看一下 `main.aux` 与 `main.toc
+我们发现既没有目录, 也没有引用, 只有 `??`, 让我们来看一下 `main.aux` 与 `main.toc`
 
 ```aux
 % main.aux
