@@ -163,3 +163,9 @@ simple_icons:
   type: "cdn"
   # The zoom size of your icon, in default, the value is 1.2. The icon will has a seem height of line, you can modify this value to resize the icon.
   size: 2.0
+
+# MathJax
+math:
+  engine: 'mathjax'
+  mathjax:
+    src: https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML   
