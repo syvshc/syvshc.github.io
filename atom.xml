@@ -6,7 +6,7 @@
   <link href="https://syvshc.github.io/atom.xml" rel="self"/>
   
   <link href="https://syvshc.github.io/"/>
-  <updated>2022-09-09T03:57:41.070Z</updated>
+  <updated>2022-09-09T05:50:16.325Z</updated>
   <id>https://syvshc.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>$p$ 群的正规子群</title>
+    <link href="https://syvshc.github.io/2022-09-09-p-group-normal-subgroup-of-p-m/"/>
+    <id>https://syvshc.github.io/2022-09-09-p-group-normal-subgroup-of-p-m/</id>
+    <published>2022-09-09T05:50:16.000Z</published>
+    <updated>2022-09-09T05:50:16.325Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在 &lt;a href=&quot;https://en.wikipedia.org/wiki/P-group&quot;&gt;Wiki&lt;/a&gt; 上看到了这样一个命题:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If $p$ is prime and $G$ is a group of order $p^k$, then $G$ has a normal subgroup of order $p^m$ for every $1\leqslant m \leqslant k$.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;下面来证明这个看起来很强的结论. &lt;/p&gt;</summary>
+    
+    
+    
+    <category term="数学" scheme="https://syvshc.github.io/categories/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="代数" scheme="https://syvshc.github.io/categories/%E6%95%B0%E5%AD%A6/%E4%BB%A3%E6%95%B0/"/>
+    
+    
+    <category term="数学" scheme="https://syvshc.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="抽象代数" scheme="https://syvshc.github.io/tags/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0/"/>
+    
+    <category term="群论" scheme="https://syvshc.github.io/tags/%E7%BE%A4%E8%AE%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>latex-tutorial</title>

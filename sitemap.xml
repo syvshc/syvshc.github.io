@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://syvshc.github.io/2022-09-09-p-group-normal-subgroup-of-p-m/</loc>
+    
+    <lastmod>2022-09-09</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://syvshc.github.io/2022-04-20-latex-tutorial/</loc>
     
     <lastmod>2022-09-09</lastmod>
@@ -200,6 +207,27 @@
 
   
   <url>
+    <loc>https://syvshc.github.io/tags/%E6%95%B0%E5%AD%A6/</loc>
+    <lastmod>2022-09-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://syvshc.github.io/tags/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0/</loc>
+    <lastmod>2022-09-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://syvshc.github.io/tags/%E7%BE%A4%E8%AE%BA/</loc>
+    <lastmod>2022-09-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://syvshc.github.io/tags/%E6%97%A5%E5%B8%B8/</loc>
     <lastmod>2022-09-09</lastmod>
     <changefreq>daily</changefreq>
@@ -356,6 +384,13 @@
 
   
   <url>
+    <loc>https://syvshc.github.io/categories/%E6%95%B0%E5%AD%A6/</loc>
+    <lastmod>2022-09-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://syvshc.github.io/categories/%E6%97%A5%E5%B8%B8/</loc>
     <lastmod>2022-09-09</lastmod>
     <changefreq>daily</changefreq>
@@ -371,6 +406,13 @@
   
   <url>
     <loc>https://syvshc.github.io/categories/%E6%9D%82%E9%A1%B9/</loc>
+    <lastmod>2022-09-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://syvshc.github.io/categories/%E6%95%B0%E5%AD%A6/%E4%BB%A3%E6%95%B0/</loc>
     <lastmod>2022-09-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
