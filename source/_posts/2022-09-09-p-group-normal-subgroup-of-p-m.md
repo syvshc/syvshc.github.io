@@ -42,23 +42,25 @@ $$|G| = |C| + \sum[G:C(y_i)]$$
 
 **证明** 用数学归纳法, 对 $|G|$ 的阶数 $p^k$ 中的 $k$ 进行归纳. 当 $k = 2$ 时, 这时 $|G|=p^2$, 由 Cauchy 定理知 $G$ 存在一个 $p$ 阶子群 $H$, 又因为 $G$ 是 Abel 群, 那么就有 $H \triangleleft G$, 这是因为对任意的 $h \in H,\ g \in G$, 都有 $hg=gh$, 那自然就有
 $$Hg=gH.$$
+
 假设 $|G|=p^k$ 时, 对于任意的 $1\leqslant m\leqslant k$, $G$ 都存在一个阶为 $p^m$ 的正规子群. 
 
 下面考虑 $|G|=p^{k+1}$ 时. 由于 $G$ 的中心 $C$ 是一个 Abel 群, 且 $C$ 中元素不止一个, 那就有 $p\mid |C|$, 由 Cauchy 定理知 $C$ 存在一个周期为 $p$ 的元素 $a$, 也就是说循环群 $H = \langle a\rangle$ 是 $C$ 的子群, 从而是 $C$ 的正规子群. 而任意的 $a^\ell$ 与 $g \in G$ 乘法都可交换, 所以 $H \triangleleft G$, 这时我们找到了一个阶为 $p$ 的正规子群. 下面找阶数更高的. 做商群 $G/H$, 于是有
 $$|G/H| = [G:H] = |G|/|H| = p^k,$$
+
 那么由归纳假设可知对于任意的 $1\leqslant m \leqslant k$, $G/H$ 都含有一个阶为 $p^m$ 的正规子群, 设为 $N/H$, 于是
 $$|N|=|N/H|\cdot|H|=p^{m+1},$$
+
 那么只要说明 $N\triangleleft G$ 即可. 做自然同态
-$$
-\begin{aligned}
+$$\begin{aligned}
   f : G & \to G/H \\
   g & \mapsto gH
 \end{aligned},
 $$
+
 显然这是一个满同态, 并且
-$$
-\ker f = \{g \in G: f(g)=eH\} = \{g \in G: gH=eH\} = H,
-$$
+$$\ker f = \{g \in G: f(g)=eH\} = \{g \in G: gH=eH\} = H,$$
+
 所以有 $H \subset N$, 于是由对应定理可知当 $f(N) = N/H$ 是 $G/H$ 的正规子群时, $N$ 是 $G$ 的正规子群. 
 
-归纳结束, 命题得证.
+归纳结束, 命题得证. 
