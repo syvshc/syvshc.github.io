@@ -4575,4 +4575,95 @@ class="math inline">\(G\)</span> 的正规子群.</p>
         <tag>群论</tag>
       </tags>
   </entry>
+  <entry>
+    <title>PETSc 的安装与配置</title>
+    <url>/2022-12-14-petsc-install/</url>
+    <content><![CDATA[<p><strong>P</strong>ortable, <strong>E</strong>xtensible
+<strong>T</strong>oolkit <strong>S</strong>cientific
+<strong>C</strong>omputations.</p>
+<span id="more"></span>
+<h2 id="petsc-的安装">PETSc 的安装</h2>
+<p>首先跟着<a
+href="https://petsc.org/release/install/download/">官网的下载教程</a>走,
+如果有连接 <a href="gitlab.com">GitLab</a> 的能力, 可以直接
+<code>clone</code> 最新的版本, 即</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b release https://gitlab.com/petsc/petsc.git petsc</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
+<p>如果没有条件, 可以直接下载压缩包并解压<a href="#fn1"
+class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<h2 id="ptesc-的配置">PTESc 的配置</h2>
+<h3 id="配置">配置</h3>
+<p>首先安装好 "C Compiler (gcc)", "Fortran", "make", "Python3",
+然后进行阅读, 其他配置可以参考<a
+href="https://petsc.org/release/install/install/">官网</a>
+以及命令行帮助 <code>./configure --help</code>.</p>
+<p>通常我们需要两个版本 <code>debug</code> (输出更多的报错信息) 与
+<code>opt</code> (不带 <code>debug</code> 的版本的, 性能更好)</p>
+<p>首先编辑 <code>~/.bashrc</code> 或 <code>~/.zshrc</code>:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim ~/.zshrc</span><br><span class="line"><span class="comment"># 编辑 ~/.zshrc</span></span><br><span class="line"><span class="built_in">export</span> <span class="variable">$PETSC_DIR</span>=<span class="built_in">where</span>/you/downloaded/or/cloned/petsc</span><br><span class="line"><span class="built_in">export</span> <span class="variable">$PETSC_ARCH</span>=arch-linux-c-debug</span><br><span class="line"><span class="comment"># export $PETSC_ARCH=arch-linux-c-opt</span></span><br><span class="line"><span class="comment"># 退出 vim</span></span><br><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
+<p>之后只需要更改 <code>$PETSC_ARCH</code> 的值即可切换不同的版本<a
+href="#fn2" class="footnote-ref" id="fnref2"
+role="doc-noteref"><sup>2</sup></a>.</p>
+<ul>
+<li>如果本地已经有了 MPI 相关的程序, 如 <a
+href="https://www.open-mpi.org/"><code>OpenMPI</code></a> 或 <a
+href="https://www.mpich.org/"><code>MPICH</code></a>, 以及有 <a
+href="https://www.netlib.org/lapack/lug/node11.html">BLAS/LAPACK</a>
+程序, 那么直接在 <code>$PETSC_DIR</code> 目录下运行</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./configure</span><br></pre></td></tr></table></figure>
+<p>即可. 运行后可以发现在 <code>$PETSC_DIR</code> 的目录下多了一个名为
+<code>$PETSC_ARCH</code> 的文件夹, 这就是以默认配置生成库的文件夹.
+然后跟随终端提示</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">make PETSC_DIR=/some/dir PETSC_ARCH=arch-linux-c-debug all</span><br><span class="line">make PETSC_DIR=/some/dir PETSC_ARCH=arch-linux-c-debug check</span><br></pre></td></tr></table></figure>
+<ul>
+<li>如果本地没有 MPI 可以选择添加选项 <code>--download-mpich</code>
+(官网推荐) 或 <code>--download-openmpi</code>; 如果没有 BLAS/LAPACK,
+则添加选项 <code>--download-fblaslapack</code>, 即</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 啥都没有</span></span><br><span class="line">./configure --with-cc=gcc --with-cxx=g++ --with-fc=gfortran --download-mpich --download-fblaslapack</span><br></pre></td></tr></table></figure>
+<p>然后跟着命令提示完整接下来的 check.</p>
+<p><strong>注意</strong>: 如果本地有 MPI, 并且没有使用
+<code>--with-mpi=0</code>, 则不需要添加 <code>--with-cc/cxx/fc</code>
+这三个选项, MPI 会自动使用 <code>mpicc</code>, <code>mpicxx</code>,
+<code>mpif90</code>.</p>
+<p>然后将 <code>~/.zshrc</code> 或 <code>~/.bashrc</code> 中的
+<code>$PETSC_ARCH</code> 中的值修改为 <code>opt</code> 的版本, 并
+<code>source</code>, 随后进行配置, 其余的配置与上文完全一致, 只需要在
+<code>./configure</code> 的选项中添加 <code>--with-debugging=0</code>
+即可, 随后依然按照命令行提示完成接下来的配置.</p>
+<p>最后, 可以在 <code>~/.zshrc</code> 或 <code>~/.bashrc</code>
+文件中添加</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> C_INCLUDE_PATH=<span class="variable">$PETSC_DIR</span>/include:<span class="variable">$PETSC_DIR</span>/<span class="variable">$PETSC_ARCH</span>/include:<span class="variable">$C_INCLUDE_PATH</span></span><br></pre></td></tr></table></figure>
+<p>来将 PETSc 中的头文件路径添加到 include path 中.</p>
+<h3 id="更新">更新</h3>
+<p>按照<a
+href="https://petsc.org/release/install/multibuild/#updating-or-reinstalling-petsc">官网的说明</a>,
+更新了源码之后需要使用</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">make lib</span><br></pre></td></tr></table></figure>
+<p>来更新库文件.</p>
+<section class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>旧的版本只推荐用来运行旧程序,
+建议永远使用最新的版本.<a href="#fnref1" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p><code>$PETSC_ARCH</code>
+可以自行定义名称, 但是不要含空格.<a href="#fnref2" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+]]></content>
+      <categories>
+        <category>配置记录</category>
+        <category>PETSc</category>
+      </categories>
+      <tags>
+        <tag>配置记录</tag>
+        <tag>帮助文档</tag>
+        <tag>Linux</tag>
+        <tag>PETSc</tag>
+        <tag>HPC</tag>
+      </tags>
+  </entry>
 </search>

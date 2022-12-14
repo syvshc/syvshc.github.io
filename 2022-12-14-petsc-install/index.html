@@ -23,30 +23,32 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"syvshc.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"gitalk","storage":true,"lazyload":true,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="这里记录一些使用 ArchLinux + KDE 时遇到的问题">
+    <meta name="description" content="Portable, Extensible Toolkit Scientific Computations.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用 KDE 桌面时遇到的一些问题">
-<meta property="og:url" content="https://syvshc.github.io/2021-09-22-KDEProblems/index.html">
+<meta property="og:title" content="PETSc 的安装与配置">
+<meta property="og:url" content="https://syvshc.github.io/2022-12-14-petsc-install/index.html">
 <meta property="og:site_name" content="无锤乙醇">
-<meta property="og:description" content="这里记录一些使用 ArchLinux + KDE 时遇到的问题">
+<meta property="og:description" content="Portable, Extensible Toolkit Scientific Computations.">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-09-22T06:29:40.000Z">
-<meta property="article:modified_time" content="2022-04-21T20:59:28.822Z">
+<meta property="article:published_time" content="2022-12-14T09:18:25.000Z">
+<meta property="article:modified_time" content="2022-12-14T11:19:26.976Z">
 <meta property="article:author" content="Zhonghao Sun">
+<meta property="article:tag" content="配置记录">
 <meta property="article:tag" content="帮助文档">
 <meta property="article:tag" content="Linux">
-<meta property="article:tag" content="KDE">
+<meta property="article:tag" content="PETSc">
+<meta property="article:tag" content="HPC">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://syvshc.github.io/2021-09-22-KDEProblems/">
+<link rel="canonical" href="https://syvshc.github.io/2022-12-14-petsc-install/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://syvshc.github.io/2021-09-22-KDEProblems/","path":"2021-09-22-KDEProblems/","title":"使用 KDE 桌面时遇到的一些问题"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://syvshc.github.io/2022-12-14-petsc-install/","path":"2022-12-14-petsc-install/","title":"PETSc 的安装与配置"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>使用 KDE 桌面时遇到的一些问题 | 无锤乙醇</title>
+<title>PETSc 的安装与配置 | 无锤乙醇</title>
   
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-127047099-2","only_pageview":true}</script>
   <script src="/js/third-party/analytics/google-analytics.js"></script>
@@ -154,10 +156,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%90%E4%BA%9B%E6%83%85%E5%86%B5%E4%B8%8B%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%B1%E7%81%B5"><span class="nav-number">1.</span> <span class="nav-text">某些情况下快捷键失灵</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#flameshot-%E5%BB%B6%E8%BF%9F%E5%90%AF%E5%8A%A8"><span class="nav-number">2.</span> <span class="nav-text">flameshot
-延迟启动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A1%8C%E9%9D%A2%E9%BB%91%E5%B1%8F"><span class="nav-number">3.</span> <span class="nav-text">桌面黑屏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A1%8C%E9%9D%A2%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C%E6%B6%88%E5%A4%B1"><span class="nav-number">4.</span> <span class="nav-text">桌面动画效果消失</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%BB%98%E8%AE%A4%E7%8A%B6%E6%80%81%E4%B8%8B%E6%8C%89-ctrlaltf2-%E5%8F%AF%E4%BB%A5%E9%80%80%E5%87%BA%E6%A1%8C%E9%9D%A2%E8%BF%9B%E5%85%A5%E7%BB%88%E7%AB%AF-%E5%9C%A8%E7%BB%88%E7%AB%AF%E4%B8%AD%E6%8C%89-ctrlaltf1-%E5%8F%AF%E4%BB%A5%E8%BF%94%E5%9B%9E%E6%A1%8C%E9%9D%A2"><span class="nav-number">5.</span> <span class="nav-text">默认状态下按
-Ctrl+Alt+F2 可以退出桌面进入终端, 在终端中按
-Ctrl+Alt+F1 可以返回桌面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A1%8C%E9%9D%A2%E8%AF%AD%E8%A8%80%E4%B8%AD%E8%8B%B1%E6%B7%B7%E5%90%88"><span class="nav-number">6.</span> <span class="nav-text">桌面语言中英混合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-nvidia-%E9%A9%B1%E5%8A%A8%E5%90%8E%E5%AD%97%E4%BD%93%E5%8F%98%E5%A4%A7"><span class="nav-number">7.</span> <span class="nav-text">安装 nvidia 驱动后字体变大</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9F%B3%E9%A2%91%E5%A4%84%E6%98%BE%E7%A4%BA%E6%B2%A1%E6%9C%89%E8%BE%93%E5%85%A5%E6%88%96%E8%BE%93%E5%87%BA%E8%AE%BE%E5%A4%87"><span class="nav-number">8.</span> <span class="nav-text">音频处显示没有输入或输出设备</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%83%BD%E8%BF%9E%E6%8E%A5%E4%B8%8A%E7%BD%91%E7%BB%9C%E4%BD%86%E6%98%AF%E6%98%BE%E7%A4%BA%E5%8F%97%E9%99%90%E7%9A%84%E8%BF%9E%E6%8E%A5"><span class="nav-number">9.</span> <span class="nav-text">能连接上网络但是显示“受限的连接”</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#petsc-%E7%9A%84%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">PETSc 的安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ptesc-%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">PTESc 的配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="nav-number">2.1.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0"><span class="nav-number">2.2.</span> <span class="nav-text">更新</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -303,7 +302,7 @@ Ctrl+Alt+F1 可以返回桌面</span></a></li><li class="nav-item nav-level-4"><
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://syvshc.github.io/2021-09-22-KDEProblems/">
+    <link itemprop="mainEntityOfPage" href="https://syvshc.github.io/2022-12-14-petsc-install/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/img/avatar/present-avatar.jpg">
@@ -316,12 +315,12 @@ Ctrl+Alt+F1 可以返回桌面</span></a></li><li class="nav-item nav-level-4"><
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="使用 KDE 桌面时遇到的一些问题 | 无锤乙醇">
+      <meta itemprop="name" content="PETSc 的安装与配置 | 无锤乙醇">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          使用 KDE 桌面时遇到的一些问题
+          PETSc 的安装与配置
         </h1>
 
         <div class="post-meta-container">
@@ -331,15 +330,9 @@ Ctrl+Alt+F1 可以返回桌面</span></a></li><li class="nav-item nav-level-4"><
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2021-09-22 14:29:40" itemprop="dateCreated datePublished" datetime="2021-09-22T14:29:40+08:00">2021-09-22</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-22 04:59:28" itemprop="dateModified" datetime="2022-04-22T04:59:28+08:00">2022-04-22</time>
+      <time title="创建时间：2022-12-14 17:18:25 / 修改时间：19:19:26" itemprop="dateCreated datePublished" datetime="2022-12-14T17:18:25+08:00">2022-12-14</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -351,7 +344,7 @@ Ctrl+Alt+F1 可以返回桌面</span></a></li><li class="nav-item nav-level-4"><
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+          <a href="/categories/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/PETSc/" itemprop="url" rel="index"><span itemprop="name">PETSc</span></a>
         </span>
     </span>
 
@@ -369,7 +362,7 @@ Ctrl+Alt+F1 可以返回桌面</span></a></li><li class="nav-item nav-level-4"><
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>966</span>
+      <span>1.5k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -387,103 +380,81 @@ Ctrl+Alt+F1 可以返回桌面</span></a></li><li class="nav-item nav-level-4"><
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>这里记录一些使用 ArchLinux + KDE 时遇到的问题</p>
+        <p><strong>P</strong>ortable, <strong>E</strong>xtensible
+<strong>T</strong>oolkit <strong>S</strong>cientific
+<strong>C</strong>omputations.</p>
 <span id="more"></span>
-<h4 id="某些情况下快捷键失灵">某些情况下快捷键失灵</h4>
-<p>表现与这个<a
-target="_blank" rel="noopener" href="https://forum.kde.org/viewtopic.php?f=17&amp;t=166079">帖子</a>一致,
-解决方法在贴子中也已经提到, 即将
-<code>~/.config/kglobalshortcutsrc</code> 重命名或删除, 在重新登录 KDE
-的时候将会自动重新生成一个 <code>~/.config/kglobalshortcutsrc</code>,
-并且问题解决.</p>
-<h4 id="flameshot-延迟启动"><a
-target="_blank" rel="noopener" href="https://github.com/flameshot-org/flameshot/issues/1916">flameshot
-延迟启动</a></h4>
-<p>老实说这个系统问题与 flameshot 没什么大关系,
-但是我是通过它发现这个问题的…… KDE 桌面安装后使用 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">balooctl <span class="built_in">disable</span></span><br></pre></td></tr></table></figure> 要关掉
-<code>baloo</code> 服务, 这个东西没什么用, 建立索引的时候还会占用大量的
-CPU.</p>
-<figure>
-<img
-src="https://raw.githubusercontent.com/syvshc/image/master/postimg/ArchLinux/chat.png"
-alt="(重复利用图片)" />
-<figcaption aria-hidden="true">(重复利用图片)</figcaption>
-</figure>
-<p>其他的桌面操作卡顿或延迟, 如终端中对命令的响应,
-软件的启动与关闭也可能与其相关.</p>
-<h4 id="桌面黑屏">桌面黑屏</h4>
-<p><img
-src="https://raw.githubusercontent.com/syvshc/image/master/postimg/KDEProblems/black.png" /></p>
-<p>右键时不出现菜单, 新建文件夹也不显示, 需要重启 plasma,
-在终端中运行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plasmashell --replace &amp;</span><br></pre></td></tr></table></figure>
-<p>其他桌面环境的问题可以类似处理.</p>
-<h4 id="桌面动画效果消失">桌面动画效果消失</h4>
-<p>首先尝试 <code>Alt+Shift+F12</code> 来打开"显示特效混合器", 如果无效,
-需要重启 kwin, 在终端中运行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kwin_x11 --replace &amp;</span><br></pre></td></tr></table></figure>
-<h4
-id="默认状态下按-ctrlaltf2-可以退出桌面进入终端-在终端中按-ctrlaltf1-可以返回桌面">默认状态下按
-<code>Ctrl+Alt+F2</code> 可以退出桌面进入终端, 在终端中按
-<code>Ctrl+Alt+F1</code> 可以返回桌面</h4>
-<h4 id="桌面语言中英混合">桌面语言中英混合</h4>
-<p>首先在 <code>设置-&gt;区域设置-&gt;语言</code> 中查看是否添加了
-<code>简体中文</code></p>
-<p><img
-src="https://raw.githubusercontent.com/syvshc/image/master/postimg/KDEProblems/language.png" /></p>
-<p>再查看 <code>设置-&gt;区域设置-&gt;格式</code> 中是否设置为了
-<code>zh_CN</code></p>
-<p><img
-src="https://raw.githubusercontent.com/syvshc/image/master/postimg/KDEProblems/region.png" /></p>
-<p>如果一致, 在终端中运行 <code>locale</code> 与 <code>locale -a</code>
-查看其中的输出是否含有 <code>zh_CN.utf8</code> 及
-<code>zh_CN.UTF-8</code>, 如否, 请参考 <a
-target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Locale_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E7%B3%BB%E7%BB%9F%E5%8C%BA%E5%9F%9F%E8%AE%BE%E7%BD%AE">Wiki</a>
-进行设置.</p>
-<h4 id="安装-nvidia-驱动后字体变大">安装 nvidia 驱动后字体变大</h4>
-<p>首先发现在设置中“桌面特效”部分的部分特效缺失,
-查找后发现这些特效被"排除不支持的特效"隐藏了</p>
-<figure>
-<img
-src="https://raw.githubusercontent.com/syvshc/image/master/postimg/KDEProblems/screeneffect.png"
-alt="桌面特效" />
-<figcaption aria-hidden="true">桌面特效</figcaption>
-</figure>
-<p>可以通过安装 <a
-target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/NVIDIA_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E5%AE%89%E8%A3%85"><code>nvidia</code></a>
-驱动来解决, 但是安装后有一个问题, 会发现所有的字体都变大了, 经过查找, 在
-reddit 上找到了<a
-target="_blank" rel="noopener" href="https://www.reddit.com/r/kde/comments/8ywniu/kde_plasma_everything_is_larger_after/">答案</a>,
-即修改下图中的固定 DPI 为 96, 并重新登录.</p>
-<figure>
-<img
-src="https://raw.githubusercontent.com/syvshc/image/master/postimg/KDEProblems/fontsize.png"
-alt="fontsize" />
-<figcaption aria-hidden="true">fontsize</figcaption>
-</figure>
-<h4 id="音频处显示没有输入或输出设备">音频处显示没有输入或输出设备</h4>
-<figure>
-<img
-src="https://raw.githubusercontent.com/syvshc/image/master/postimg/KDEProblems/no-sound.png"
-alt="没有输入或输出设备" />
-<figcaption aria-hidden="true">没有输入或输出设备</figcaption>
-</figure>
-<p>我的设备是 Dell G15 5511, 属于比较新的设备, 查看了 <a
-target="_blank" rel="noopener" href="https://forum.manjaro.org/t/i-have-no-sound/86412">Fourm</a> 与 <a
-target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Advanced_Linux_Sound_Architecture#ALSA_firmware">wiki</a>
-后使用</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay -S sof-firmware</span><br></pre></td></tr></table></figure>
-<p>安装框架之后即可使用.</p>
-<h4
-id="能连接上网络但是显示受限的连接">能连接上网络但是显示“受限的连接”</h4>
-<figure>
-<img
-src="https://raw.githubusercontent.com/syvshc/image/master/postimg/KDEProblems/limit-connect.png"
-alt="受限的连接" />
-<figcaption aria-hidden="true">受限的连接</figcaption>
-</figure>
-<p>解决方法见 <a
-target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/NetworkManager#Checking_connectivity">Wiki</a></p>
+<h2 id="petsc-的安装">PETSc 的安装</h2>
+<p>首先跟着<a
+target="_blank" rel="noopener" href="https://petsc.org/release/install/download/">官网的下载教程</a>走,
+如果有连接 <a href="gitlab.com">GitLab</a> 的能力, 可以直接
+<code>clone</code> 最新的版本, 即</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b release https://gitlab.com/petsc/petsc.git petsc</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
+<p>如果没有条件, 可以直接下载压缩包并解压<a href="#fn1"
+class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<h2 id="ptesc-的配置">PTESc 的配置</h2>
+<h3 id="配置">配置</h3>
+<p>首先安装好 "C Compiler (gcc)", "Fortran", "make", "Python3",
+然后进行阅读, 其他配置可以参考<a
+target="_blank" rel="noopener" href="https://petsc.org/release/install/install/">官网</a>
+以及命令行帮助 <code>./configure --help</code>.</p>
+<p>通常我们需要两个版本 <code>debug</code> (输出更多的报错信息) 与
+<code>opt</code> (不带 <code>debug</code> 的版本的, 性能更好)</p>
+<p>首先编辑 <code>~/.bashrc</code> 或 <code>~/.zshrc</code>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.zshrc</span><br><span class="line"><span class="comment"># 编辑 ~/.zshrc</span></span><br><span class="line"><span class="built_in">export</span> <span class="variable">$PETSC_DIR</span>=<span class="built_in">where</span>/you/downloaded/or/cloned/petsc</span><br><span class="line"><span class="built_in">export</span> <span class="variable">$PETSC_ARCH</span>=arch-linux-c-debug</span><br><span class="line"><span class="comment"># export $PETSC_ARCH=arch-linux-c-opt</span></span><br><span class="line"><span class="comment"># 退出 vim</span></span><br><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
+<p>之后只需要更改 <code>$PETSC_ARCH</code> 的值即可切换不同的版本<a
+href="#fn2" class="footnote-ref" id="fnref2"
+role="doc-noteref"><sup>2</sup></a>.</p>
+<ul>
+<li>如果本地已经有了 MPI 相关的程序, 如 <a
+target="_blank" rel="noopener" href="https://www.open-mpi.org/"><code>OpenMPI</code></a> 或 <a
+target="_blank" rel="noopener" href="https://www.mpich.org/"><code>MPICH</code></a>, 以及有 <a
+target="_blank" rel="noopener" href="https://www.netlib.org/lapack/lug/node11.html">BLAS/LAPACK</a>
+程序, 那么直接在 <code>$PETSC_DIR</code> 目录下运行</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./configure</span><br></pre></td></tr></table></figure>
+<p>即可. 运行后可以发现在 <code>$PETSC_DIR</code> 的目录下多了一个名为
+<code>$PETSC_ARCH</code> 的文件夹, 这就是以默认配置生成库的文件夹.
+然后跟随终端提示</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make PETSC_DIR=/some/dir PETSC_ARCH=arch-linux-c-debug all</span><br><span class="line">make PETSC_DIR=/some/dir PETSC_ARCH=arch-linux-c-debug check</span><br></pre></td></tr></table></figure>
+<ul>
+<li>如果本地没有 MPI 可以选择添加选项 <code>--download-mpich</code>
+(官网推荐) 或 <code>--download-openmpi</code>; 如果没有 BLAS/LAPACK,
+则添加选项 <code>--download-fblaslapack</code>, 即</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 啥都没有</span></span><br><span class="line">./configure --with-cc=gcc --with-cxx=g++ --with-fc=gfortran --download-mpich --download-fblaslapack</span><br></pre></td></tr></table></figure>
+<p>然后跟着命令提示完整接下来的 check.</p>
+<p><strong>注意</strong>: 如果本地有 MPI, 并且没有使用
+<code>--with-mpi=0</code>, 则不需要添加 <code>--with-cc/cxx/fc</code>
+这三个选项, MPI 会自动使用 <code>mpicc</code>, <code>mpicxx</code>,
+<code>mpif90</code>.</p>
+<p>然后将 <code>~/.zshrc</code> 或 <code>~/.bashrc</code> 中的
+<code>$PETSC_ARCH</code> 中的值修改为 <code>opt</code> 的版本, 并
+<code>source</code>, 随后进行配置, 其余的配置与上文完全一致, 只需要在
+<code>./configure</code> 的选项中添加 <code>--with-debugging=0</code>
+即可, 随后依然按照命令行提示完成接下来的配置.</p>
+<p>最后, 可以在 <code>~/.zshrc</code> 或 <code>~/.bashrc</code>
+文件中添加</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> C_INCLUDE_PATH=<span class="variable">$PETSC_DIR</span>/include:<span class="variable">$PETSC_DIR</span>/<span class="variable">$PETSC_ARCH</span>/include:<span class="variable">$C_INCLUDE_PATH</span></span><br></pre></td></tr></table></figure>
+<p>来将 PETSc 中的头文件路径添加到 include path 中.</p>
+<h3 id="更新">更新</h3>
+<p>按照<a
+target="_blank" rel="noopener" href="https://petsc.org/release/install/multibuild/#updating-or-reinstalling-petsc">官网的说明</a>,
+更新了源码之后需要使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make lib</span><br></pre></td></tr></table></figure>
+<p>来更新库文件.</p>
+<section class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>旧的版本只推荐用来运行旧程序,
+建议永远使用最新的版本.<a href="#fnref1" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p><code>$PETSC_ARCH</code>
+可以自行定义名称, 但是不要含空格.<a href="#fnref2" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
     </div>
 
@@ -519,7 +490,7 @@ target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/NetworkMan
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://syvshc.github.io/2021-09-22-KDEProblems/" title="使用 KDE 桌面时遇到的一些问题">https://syvshc.github.io/2021-09-22-KDEProblems/</a>
+      <a href="https://syvshc.github.io/2022-12-14-petsc-install/" title="PETSc 的安装与配置">https://syvshc.github.io/2022-12-14-petsc-install/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -528,23 +499,22 @@ target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/NetworkMan
 </div>
 
           <div class="post-tags">
+              <a href="/tags/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/" rel="tag"># 配置记录</a>
               <a href="/tags/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/" rel="tag"># 帮助文档</a>
               <a href="/tags/Linux/" rel="tag"># Linux</a>
-              <a href="/tags/KDE/" rel="tag"># KDE</a>
+              <a href="/tags/PETSc/" rel="tag"># PETSc</a>
+              <a href="/tags/HPC/" rel="tag"># HPC</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021-09-02-RepairEFI/" rel="prev" title="修复 Windows 坏掉的 EFI 引导">
-                  <i class="fa fa-chevron-left"></i> 修复 Windows 坏掉的 EFI 引导
+                <a href="/2022-09-09-p-group-normal-subgroup-of-p-m/" rel="prev" title="$p$ 群的正规子群">
+                  <i class="fa fa-chevron-left"></i> $p$ 群的正规子群
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021-10-02-extcite/" rel="next" title="一种特殊的参考文献引用样式的设置">
-                  一种特殊的参考文献引用样式的设置 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -639,7 +609,7 @@ target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/NetworkMan
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"syvshc","repo":"syvshc.github.io","client_id":"da0debc4d456cb5f3371","client_secret":"14ec65d19a969abe01994143eff233a4180484aa","admin_user":"syvshc","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"8147c97410b2b1222f7e67a314dfd0d4"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"syvshc","repo":"syvshc.github.io","client_id":"da0debc4d456cb5f3371","client_secret":"14ec65d19a969abe01994143eff233a4180484aa","admin_user":"syvshc","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"9046368dd2b0b74e806149b0d6bb3d11"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>

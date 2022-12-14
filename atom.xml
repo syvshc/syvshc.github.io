@@ -6,7 +6,7 @@
   <link href="https://syvshc.github.io/atom.xml" rel="self"/>
   
   <link href="https://syvshc.github.io/"/>
-  <updated>2022-09-21T13:31:30.608Z</updated>
+  <updated>2022-12-14T11:19:26.976Z</updated>
   <id>https://syvshc.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PETSc 的安装与配置</title>
+    <link href="https://syvshc.github.io/2022-12-14-petsc-install/"/>
+    <id>https://syvshc.github.io/2022-12-14-petsc-install/</id>
+    <published>2022-12-14T09:18:25.000Z</published>
+    <updated>2022-12-14T11:19:26.976Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;P&lt;/strong&gt;ortable, &lt;strong&gt;E&lt;/strong&gt;xtensible
+&lt;strong&gt;T&lt;/strong&gt;oolkit &lt;strong&gt;S&lt;/strong&gt;cientific
+&lt;strong&gt;C&lt;/strong&gt;omputations.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="配置记录" scheme="https://syvshc.github.io/categories/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/"/>
+    
+    <category term="PETSc" scheme="https://syvshc.github.io/categories/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/PETSc/"/>
+    
+    
+    <category term="配置记录" scheme="https://syvshc.github.io/tags/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/"/>
+    
+    <category term="帮助文档" scheme="https://syvshc.github.io/tags/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/"/>
+    
+    <category term="Linux" scheme="https://syvshc.github.io/tags/Linux/"/>
+    
+    <category term="PETSc" scheme="https://syvshc.github.io/tags/PETSc/"/>
+    
+    <category term="HPC" scheme="https://syvshc.github.io/tags/HPC/"/>
+    
+  </entry>
   
   <entry>
     <title>$p$ 群的正规子群</title>
