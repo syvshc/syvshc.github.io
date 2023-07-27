@@ -31,7 +31,7 @@
 <meta property="og:description" content="这篇文章的需求来源为 LaTeX 问答站 的一个问题, 经观察也是普遍遇到的模板设计者的问题. 主要需要达到下图的设计效果:">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-08-04T05:11:50.000Z">
-<meta property="article:modified_time" content="2022-02-24T14:46:39.223Z">
+<meta property="article:modified_time" content="2022-02-24T14:46:39.000Z">
 <meta property="article:author" content="Zhonghao Sun">
 <meta property="article:tag" content="LaTeX">
 <meta property="article:tag" content="排版设计">
@@ -168,7 +168,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -179,7 +179,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-count">29</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -475,16 +475,16 @@ src="https://raw.githubusercontent.com/syvshc/image/master/postimg/thesis-title/
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 设定不同的单行与多行的最大行长度</span></span><br><span class="line"><span class="keyword">\newlength</span><span class="keyword">\titleSingleLineMaxWd</span></span><br><span class="line"><span class="keyword">\newlength</span><span class="keyword">\titleMultiLineMaxWd</span></span><br><span class="line">...</span><br><span class="line"><span class="keyword">\setlength</span><span class="keyword">\titleSingleLineMaxWd</span>&#123;0.6<span class="keyword">\textwidth</span>&#125;</span><br><span class="line"><span class="keyword">\setlength</span><span class="keyword">\titleMultiLineMaxWd</span>&#123;0.5<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">...</span><br><span class="line"><span class="comment">% 将文本内容放入单行长度相当的 \parbox 中, </span></span><br><span class="line"><span class="comment">% 判断其能否用单行进行排版, </span></span><br><span class="line"><span class="comment">% 如果不能, 将使用多行的最大行长相当的 \parbox 进行排版, </span></span><br><span class="line"><span class="comment">% 这样就不会出现第二行之后 1 个或 2 个字的情况</span></span><br><span class="line"><span class="keyword">\newcommand</span>&#123;<span class="keyword">\@titleBox</span>&#125;[1]&#123;<span class="comment">%</span></span><br><span class="line">  <span class="keyword">\parbox</span>[t]&#123;<span class="keyword">\@tempTitleMaxWd</span>&#125;&#123;<span class="params">#1</span>&#125;&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="任务完成">任务完成</h3>
 <p>先放松一下, 有更好的方法可以评论, 我会进行补充.</p>
-<section class="footnotes footnotes-end-of-document"
+<aside id="footnotes" class="footnotes footnotes-end-of-document"
 role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>该命令由宏集 <a
+<li id="fn1"><p>该命令由宏集 <a
 target="_blank" rel="noopener" href="https://ctan.org/pkg/xecjk"><code>xeCJK</code></a> 中宏包
 <code>xeCJKfntef</code> 提供<a href="#fnref1" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section>
+</aside>
 
     </div>
 

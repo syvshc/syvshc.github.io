@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hello World</title>
+    <url>/2020-12-12-hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
+first post. Check <a href="https://hexo.io/docs/">documentation</a> for
+more info. If you get any problems when using Hexo, you can find the
+answer in <a
+href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
+you can ask me on <a
+href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Win10+Ubuntu18.04LTS双系统安装记录</title>
     <url>/2020-12-12-Windows-and-Ubuntu/</url>
     <content><![CDATA[<p>本文记录过程的时候会同时记录踩过的坑,
@@ -298,30 +332,28 @@ href="https://segmentfault.com/a/1190000015283092">这里</a>.</p>
 看起来还是不太够用,
 不过对于不在<code>Linux</code>下玩游戏来说使用也够了, 就这样吧.
 如果有表述错误还请评论区指正</p>
-<section class="footnotes footnotes-end-of-document"
+<aside id="footnotes" class="footnotes footnotes-end-of-document"
 role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>由于事先没有准备,
-导致很多情况下都没有截图, 这里会尽量找图来保证记录的易读性.<a
-href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p>现在已有更新的长期支持版本 <a
+<li id="fn1"><p>由于事先没有准备, 导致很多情况下都没有截图,
+这里会尽量找图来保证记录的易读性.<a href="#fnref1" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>现在已有更新的长期支持版本 <a
 href="https://ubuntu.com/download/desktop"><code>Ubuntu 20.04.3LTS</code></a><a
 href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3" role="doc-endnote"><p>要注意自己的机器是否支持从
-<code>USB 3.0</code> 的 U 盘启动, 可以插入 U 盘后,
-在启动选项界面查看是否有该 U 盘, 如果没有, 请选用 <code>USB 2.0</code>
-的 U 盘.<a href="#fnref3" class="footnote-back"
-role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"
-role="doc-endnote"><p>尽量不要是<code>Windows</code>的系统盘,
+<li id="fn3"><p>要注意自己的机器是否支持从 <code>USB 3.0</code> 的 U
+盘启动, 可以插入 U 盘后, 在启动选项界面查看是否有该 U 盘, 如果没有,
+请选用 <code>USB 2.0</code> 的 U 盘.<a href="#fnref3"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>尽量不要是<code>Windows</code>的系统盘,
 并没有试过如果是系统盘会发生什么<a href="#fnref4" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
-<li id="fn5" role="doc-endnote"><p>新版的 <code>Ubuntu</code> 可能不自带
-TeX Live, 安装之前可以 <code>tex -v</code> 检查一下.<a href="#fnref5"
+<li id="fn5"><p>新版的 <code>Ubuntu</code> 可能不自带 TeX Live,
+安装之前可以 <code>tex -v</code> 检查一下.<a href="#fnref5"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section>
+</aside>
 ]]></content>
       <categories>
         <category>配置记录</category>
@@ -334,38 +366,50 @@ class="footnote-back" role="doc-backlink">↩︎</a></p></li>
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2020-12-12-hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
-first post. Check <a href="https://hexo.io/docs/">documentation</a> for
-more info. If you get any problems when using Hexo, you can find the
-answer in <a
-href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
-you can ask me on <a
-href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a
-href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a
-href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a
-href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <title>欢迎来到我的 GitHub.io</title>
+    <url>/2020-12-12-welcome/</url>
+    <content><![CDATA[<h1 id="这里是无锤乙醇的-github.io">这里是无锤乙醇的
+<code>GitHub.io</code></h1>
+<p>花了小一天来折腾 Hexo NexT 主题, 也算是把基本配置弄好了,
+咕了好久的博客也是搭好了, 还有一些坑没有填, 比如<a
+href="https://blog.dlzhang.com/posts/32/">自定义侧边栏图标</a>,
+有时间慢慢折腾吧.</p>
+<p>接下来会把简书里的东西搬到这里, <del><a
+href="https://syvshc.gitee.io">Gitee Pages</a> 是主要更新的地方,
+这边会同步更新.</del> 就搁这更新了, Gitee 不折腾了</p>
+<p>并且这篇文章会被用做测试</p>
+<span id="more"></span>
+<h1 id="测试">测试</h1>
+<p>更新了字体, <a
+href="https://leay.net/2020/02/14/hexo-next-font/">字体配置方法</a></p>
+<p>this is a footnote test <a href="#fn1" class="footnote-ref"
+id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>this is a equation <span class="math inline">\(ax^{2}+bx+c=0\,(a\ne
+0)\)</span>, which solution is <span class="math display">\[x_{1,
+2}=\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}\]</span></p>
+<p>一元二次方程组 <span class="math inline">\(ax^{2}+bx+c=0\ (a \ne
+0)\)</span> 的解为 <span
+class="math inline">\(\eqref{eq:slo}\)</span><br />
+<span class="math display">\[\begin{equation}\label{eq:slo}
+    x_{1, 2}=\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}
+\end{equation}\]</span></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">    Hello <span class="keyword">\LaTeX</span></span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">    Hello <span class="keyword">\LaTeX</span></span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">    Hello <span class="keyword">\LaTeX</span></span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<p>这里是对 simple-icons 的一些测试: <span id="simple-icons-archlinux" class="simple-icon"><img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/4.25.0/archlinux.svg" /></span></p>
+<aside id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>footnote<a href="#fnref1" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+</ol>
+</aside>
 ]]></content>
       <categories>
         <category>杂项</category>
       </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
   </entry>
   <entry>
     <title>latexmk 的学习</title>
@@ -619,50 +663,255 @@ yourself.</p>
       </tags>
   </entry>
   <entry>
-    <title>欢迎来到我的 GitHub.io</title>
-    <url>/2020-12-12-welcome/</url>
-    <content><![CDATA[<h1 id="这里是无锤乙醇的-github.io">这里是无锤乙醇的
-<code>GitHub.io</code></h1>
-<p>花了小一天来折腾 Hexo NexT 主题, 也算是把基本配置弄好了,
-咕了好久的博客也是搭好了, 还有一些坑没有填, 比如<a
-href="https://blog.dlzhang.com/posts/32/">自定义侧边栏图标</a>,
-有时间慢慢折腾吧.</p>
-<p>接下来会把简书里的东西搬到这里, <del><a
-href="https://syvshc.gitee.io">Gitee Pages</a> 是主要更新的地方,
-这边会同步更新.</del> 就搁这更新了, Gitee 不折腾了</p>
-<p>并且这篇文章会被用做测试</p>
+    <title>搭建 github.io</title>
+    <url>/2021-03-03-build-github-io/</url>
+    <content><![CDATA[<p><strong>在 NexT 主题更新 8.0 之后又重新配置了一次
+<code>hexo+NexT</code>, 这次来记录一下,
+并且会随时更新新增的配置.</strong></p>
 <span id="more"></span>
-<h1 id="测试">测试</h1>
-<p>更新了字体, <a
-href="https://leay.net/2020/02/14/hexo-next-font/">字体配置方法</a></p>
-<p>this is a footnote test <a href="#fn1" class="footnote-ref"
-id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<p>this is a equation <span class="math inline">\(ax^{2}+bx+c=0\,(a\ne
-0)\)</span>, which solution is <span class="math display">\[x_{1,
-2}=\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}\]</span></p>
+<h2 id="准备工作">准备工作</h2>
+<p>假定用户的电脑上已经安装 <code>git</code>, 并且已经与 <a
+href="https://github.com">github</a> 连接, 如何使用 SSH 与 github
+连接可以查看<a
+href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh">官方文档</a>,
+并熟悉 <code>git</code> 的相关操作.</p>
+<h3 id="创建仓库">创建仓库</h3>
+<p>在 <a href="https://github.com">github</a> 上新建一个仓库, 名称为
+<code>&lt;username&gt;.github.io</code>, 将
+<code>&lt;username&gt;</code> 替换为你的 <code>github</code> 账户名.</p>
+<h3 id="安装-node.js">安装 <code>node.js</code></h3>
+<p>在 <a href="https://nodejs.org/en/">node.js的官网</a> 上下载
+<code>LTS</code> 版本安装, 记得勾选 <code>ADD TO PATH</code>.
+安装后在命令行输入 <code>npm -v</code>, 如果有版本号输出,
+那么说明安装成功, 如果返回</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;npm&#x27;</span> 不是内部或外部命令，也不是可运行的程序或批处理文件。</span><br></pre></td></tr></table></figure>
+<p>那么将 <code>&lt;InstallPath&gt;/nodejs</code> 添加到环境变量.
+然后命令行运行</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>安装 <code>hexo</code>, 确保安装后可以运行 <code>hexo</code>
+命令.</p>
+<h3 id="初始化博客">初始化博客</h3>
+<p>用 <code>cmd</code> 进入想存放博客的文件夹
+<code>&lt;folder&gt;</code>, 运行
+<code>hexo init &lt;blogname&gt;</code>, 将
+<code>&lt;blogname&gt;</code> 替换成博客的项目名, 比如
+<code>hexotest</code>. 因为 <code>hexo init</code> 的过程要链接
+<code>github</code>, 如果出现卡顿, 可以尝试看<a
+href="https://github.com/hexojs/hexo/issues/3693">Github
+issue</a>以及这个<a
+href="https://yuhaicheng.xyz/5.html">博客</a>尝试解决.</p>
+<p>初始化结束后会看到这样的文件树</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">folder</span><br><span class="line">  └── hexotest</span><br><span class="line">        ├── db.json</span><br><span class="line">        ├── node_modules</span><br><span class="line">        ├── package-lock.json</span><br><span class="line">        ├── package.json</span><br><span class="line">        ├── public</span><br><span class="line">        ├── scaffolds</span><br><span class="line">        ├── source</span><br><span class="line">        ├── themes</span><br><span class="line">        ├── _config.landscape.yml</span><br><span class="line">        └── _config.yml</span><br></pre></td></tr></table></figure>
+<h2 id="部署博客">部署博客</h2>
+<h3 id="本地部署">本地部署</h3>
+<p>我们进入 <code>hexotest</code> 文件夹, 输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>会有如下输出</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">INFO  Validating config</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
+<p>这时在浏览器中输入 <code>localhost:4000</code>
+即可看到部署在本地的博客</p>
+<p><img
+src="https://pic4.zhimg.com/80/v2-8c21ffd0058d9cba4be5da45c49f1663.png" /></p>
+<p>然后我们命令行输入 <code>ctrl+C</code> 来结束本地部署.</p>
+<h3 id="在线部署">在线部署</h3>
+<p>当然我们写博客的目的大多都是要上传到互联网, 于是我们要把博客部署到
+<code>&lt;username&gt;.github.io</code>.</p>
+<p>首先安装部署插件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git</span><br></pre></td></tr></table></figure>
+<p>打开 <code>hexotest</code> 下的 <code>_config.yml</code> 配置文件,
+找到 <code>deploy</code>, 填入以下信息</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">&lt;git</span> <span class="string">repo</span> <span class="string">ssh</span> <span class="string">address&gt;</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+<p>注意这里的 <code>&lt;git repo ssh address&gt;</code> 是形如
+<code>git@github.com:username/username.github.io.git</code> 的地址.
+再注意 <code>branch</code> 字段中的 <code>master</code> 可能为
+<code>main</code>. 再运行</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>等待部署成功, 成功后就可以在 <code>&lt;username&gt;.github.io</code>
+上看到博客的内容了.</p>
+<h2 id="创建博文">创建博文</h2>
+<h3 id="新建博文">新建博文</h3>
+<p>在 <code>hexotest/</code> 文件夹下, 用 <code>cmd</code> 执行</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo n <span class="string">&quot;&lt;blog_name&gt;&quot;</span></span><br></pre></td></tr></table></figure>
+<p>将 <code>&lt;blog_name&gt;</code> 替换为博文的名字, 注意不能有空格,
+这里我们使用 <code>hexo n "first-blog"</code>, 成功后会在
+<code>source/_posts/</code> 文件夹下看到 <code>first-blog.md</code>
+文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">source</span><br><span class="line">└── _posts</span><br><span class="line">   ├── first-blog.md</span><br><span class="line">   └── hello-world.md</span><br></pre></td></tr></table></figure>
+<p>同时我们还发现了另一个文件 <code>hello-world.md</code>,
+这就是我们在本地部署成功后看到的那一篇博文.</p>
+<p>用熟悉的编辑器打开 <code>first-blog.md</code>, 将其内容修改为</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 第一篇博文</span><br><span class="line">date: 2021-03-04 00:32:07</span><br><span class="line">tags:</span><br><span class="line">    - [博文]</span><br><span class="line">    - [测试]</span><br><span class="line">    - [whatever]</span><br><span class="line">categories:</span><br><span class="line">    - [测试, 测试的子分类]</span><br><span class="line">---</span><br><span class="line">这是我的第一篇博文</span><br></pre></td></tr></table></figure>
+<p>其中 <code>tags</code> 与 <code>categories</code> 可以自行设置,
+它们的关系可以参考这个<a
+href="https://www.zhihu.com/question/19561626">问题</a></p>
+<p>再使用 <code>hexo g &amp;&amp; hexo s</code> 进行本地部署, 在
+<code>localhost:4000</code> 看到刚刚编辑的博文"第一篇博文",
+点进去可以看到</p>
+<p><img
+src="https://pic4.zhimg.com/80/v2-797a1b83cb08f7653adcb43d56838b8c.png" /></p>
+<p>然后可以再使用 <code>hexo d</code> 将其推送到
+<code>&lt;username&gt;.github.io</code>, 等待一会如果没有更新内容,
+那么就执行一下 <code>hexo clean</code> 来清空部署缓存.
+于是我们将博文推送到远端的命令可以归为</p>
+<p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure></p>
+<h2 id="美化界面">美化界面</h2>
+<h3 id="配置基本信息">配置基本信息</h3>
+<p>配置文件 <code>hexotest/_config.yml</code>
+是对应于我们博客的最高级的配置文件, 里面有一些字段可以进行配置,
+作为示例修改了下面几项</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: SYVHSC&#x27;s BLOG</span><br><span class="line">subtitle: &#x27;&#x27;</span><br><span class="line">description: &#x27;无锤乙醇的博客&#x27;</span><br><span class="line">keywords: LaTeX, 数学</span><br><span class="line">author: 无锤乙醇</span><br><span class="line">language: zh-CN</span><br><span class="line">timezone: Asia/Shanghai</span><br></pre></td></tr></table></figure>
+<p>进行本地部署可以看到</p>
+<p><img
+src="https://pic4.zhimg.com/80/v2-8121a42938033c596ae6e0a8022d1bcd.png" /></p>
+<h3 id="更换主题">更换主题</h3>
+<p>这里我们选用 <code>NexT</code> 主题进行配置. 由于
+<code>NexT8.0+</code> 已经支持 <code>npm</code> 安装, 于是可以在目录
+<code>hexotest/</code> 下用 <code>cmd</code> 执行</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-theme-next</span><br></pre></td></tr></table></figure>
+<p>并在 <code>hexotest/_config.yml</code> 中找到 <code>theme</code>
+字段, 修改为 <code>theme: next</code>, 保存后本地部署,
+可以看到博客的主题已经更换</p>
+<p><img
+src="https://pic4.zhimg.com/80/v2-d115746d176f5fb3a6aa6ac7d05e73ba.png" /></p>
+<p>然后我们可以把 <code>node_modules/hexo-theme-next/</code> 中的
+<code>_config.yml</code> 改为 <code>_config.next.yml</code>
+并且复制到根目录 <code>hexotest/</code> 下进行修改, 这样当我们升级
+<code>NexT</code> 主题的时候不需要重新配置.</p>
+<h3
+id="下面配置-next-主题的一些事项-这里只介绍一些功能的作用-并不具体配置">下面配置
+<code>NexT</code> 主题的一些事项, 这里只介绍一些功能的作用,
+并不具体配置</h3>
+<ol type="1">
+<li><p><strong>scheme</strong> <code>NexT</code> 主题内置了 4 种样式,
+可以依次启用来选择一个适合自己的, 这里我选择了
+<code>Gemini</code>;</p></li>
+<li><p><strong>favicon</strong> 配置标签页的图标, 可以自行选择图片, 放在
+<code>hexotest/source/img</code> 文件夹下便于寻找, 设置中的路径也应改为
+<code>/img/***.png(jpg, svg...)</code>;</p></li>
+<li><p><strong>menu</strong> 配置博客页面的链接;</p></li>
+<li><p><strong>social</strong> 配置博客页面的外部链接, 图标可以在 <a
+href="https://fontawesome.com/">fontawsome</a> 进行选择;</p></li>
+<li><p><strong>avatar</strong> 配置博客侧边栏的头像, 图片选择同
+<strong>favicon</strong>;</p></li>
+<li><p><strong>toc</strong> 配置浏览博文时侧边栏的目录;</p></li>
+<li><p><strong>font</strong> 配置文章中的字体; 在
+<code>_config.next.yml</code> 中不能配置多种字体, 如果想配置多种字体,
+可以修改</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexotest\node_modules\hexo-theme-next\source\css\_variables\base.styl</span><br></pre></td></tr></table></figure>
+<p>中的 <code>\\Font families</code> 中的值</p></li>
+<li><p><strong>codeblock</strong> 配置代码块;</p></li>
+<li><p><strong>back2top</strong> 配置返回顶部的按钮;</p></li>
+<li><p><strong>reading_progress</strong> 配置阅读进度条;</p></li>
+<li><p><strong>symbols_count_time</strong> 配置站点字数和阅读时间统计,
+<a
+href="https://github.com/next-theme/hexo-word-counter">使用方法</a>;</p></li>
+<li><p><strong>creative_commons</strong> 配置文末版权信息, 关于 cc
+协议可以参考<a
+href="https://zhuanlan.zhihu.com/p/20641764">知乎专栏</a>;</p></li>
+<li><p><strong>local_search</strong> 配置搜索栏, <a
+href="https://github.com/theme-next/hexo-generator-searchdb">使用方法</a>;</p></li>
+<li><p><strong>links_settings &amp; links</strong>
+配置友情链接;</p></li>
+</ol>
+<h3 id="这是一些不知道放到哪里的配置">这是一些不知道放到哪里的配置</h3>
+<ol type="1">
+<li><p><strong>markdown-it-plus</strong> 可以提供脚注等功能, 目录,
+emoji, katex 等功能, <a
+href="https://github.com/CHENXCHEN/hexo-renderer-markdown-it-plus">使用方法</a>
+emoji 功能与 <code>hexo-renderer-pandoc</code> 冲突;</p></li>
+<li><p><strong>hexo-renderer-pandoc</strong> 提供 mathjax 渲染, 将
+<code>tags</code> 设置为 <code>ams</code> 还可以使用公式编号<a
+href="https://theme-next.js.org/docs/third-party-services/math-equations">使用方法</a>;</p>
+<p>示例:</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">一元二次方程组 <span class="built_in">$</span>ax<span class="built_in">^</span>&#123;2&#125;+bx+c=0<span class="keyword">\ </span>(a <span class="keyword">\ne</span> 0)<span class="built_in">$</span> 的解为 <span class="built_in">$</span><span class="keyword">\eqref</span>&#123;eq:slo&#125;<span class="built_in">$</span></span><br><span class="line"><span class="comment">% 注意: 行内公式的 $...$ 前后不要有空格</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;equation&#125;<span class="keyword">\label</span>&#123;eq:slo&#125;</span><br><span class="line">     x<span class="built_in">_</span>&#123;1, 2&#125;=<span class="keyword">\frac</span>&#123;-b<span class="keyword">\pm</span><span class="keyword">\sqrt</span>&#123;b<span class="built_in">^</span>&#123;2&#125;-4ac&#125;&#125;&#123;2a&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;equation&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
 <p>一元二次方程组 <span class="math inline">\(ax^{2}+bx+c=0\ (a \ne
 0)\)</span> 的解为 <span
 class="math inline">\(\eqref{eq:slo}\)</span><br />
 <span class="math display">\[\begin{equation}\label{eq:slo}
-    x_{1, 2}=\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}
-\end{equation}\]</span></p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">    Hello <span class="keyword">\LaTeX</span></span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">    Hello <span class="keyword">\LaTeX</span></span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">    Hello <span class="keyword">\LaTeX</span></span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
-<p>这里是对 simple-icons 的一些测试: <span id="simple-icons-archlinux" class="simple-icon"><img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/4.25.0/archlinux.svg" /></span></p>
-<section class="footnotes footnotes-end-of-document"
-role="doc-endnotes">
-<hr />
-<ol>
-<li id="fn1" role="doc-endnote"><p>footnote<a href="#fnref1"
-class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+      x_{1, 2}=\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}
+  \end{equation}\]</span></p>
+<ol start="3" type="1">
+<li><strong>gitalk</strong> 配置评论区. 配置方法在 <a href="/2021-03-05-enable-gitalk/" title="为博客添加 Gitalk 评论区">为博客添加 Gitalk 评论区</a>.</li>
+<li><strong>busuanzi</strong> 配置阅读访问量. 在 <code>hexotest/</code>
+文件夹下运行</li>
 </ol>
-</section>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install busuanzi.pure.js --save</span><br></pre></td></tr></table></figure>
+<p>来安装不蒜子阅读访问量插件, 在 <code>_config.next.yml</code>
+文件中搜索 <code>busuanzi</code> 即可找到</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Show Views / Visitors of the website / page with busuanzi.</span></span><br><span class="line"><span class="comment"># For more information: http://ibruce.info/2015/04/04/busuanzi/</span></span><br><span class="line"><span class="attr">busuanzi_count:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">total_visitors:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">total_visitors_icon:</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line">  <span class="attr">total_views:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">total_views_icon:</span> <span class="string">fa</span> <span class="string">fa-eye</span></span><br><span class="line">  <span class="attr">post_views:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">post_views_icon:</span> <span class="string">far</span> <span class="string">fa-eye</span></span><br></pre></td></tr></table></figure>
+<p>把 <code>enable</code> 字段改为 <code>true</code> 即可开启. 使用</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g -d</span><br></pre></td></tr></table></figure>
+<p>部署到线上, 如果没有刷新, 使用 <code>ctrl+f5</code>
+进行强制刷新即可.</p>
+<ol start="5" type="1">
+<li><strong>hexo-pdf</strong> 可以在博客中插入 PDF 文件, 需要将
+<code>_config.next.yml</code> 中的 <code>pdf</code> 中的
+<code>enable</code> 字段改为 <code>true</code>, 感谢 <a
+href="https://shukangzhang.com/hexo-tian-jia-pdf/">shukangzhang
+的博客</a>.</li>
+</ol>
+<h2 id="未完待续">未完待续</h2>
 ]]></content>
       <categories>
-        <category>杂项</category>
+        <category>帮助文档</category>
+        <category>blog</category>
       </categories>
+      <tags>
+        <tag>配置记录</tag>
+        <tag>帮助文档</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>beamer 的字体设置</title>
+    <url>/2021-03-03-beamer-font-set/</url>
+    <content><![CDATA[<p>在使用 <code>beamer</code> 文档类的时候, 可能会有需要更换字体.</p>
+<span id="more"></span>
+<p>如果按照 <code>article</code> 的方式设置正文字体:</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;beamer&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;amsmath, fontspec&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Utpurus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">\setmainfont</span>&#123;Fira Sans&#125;</span><br><span class="line">    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Utpurus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<p>会发现字体并没有发生变化</p>
+<p><img
+src="https://pic4.zhimg.com/80/v2-a79642cc1fef73b11effa52b21dc02ca.png" /></p>
+<p>查阅 <code>texdoc beamer</code> 的 18.1 节会发现如果想使用其他字体,
+需要设置 <code>\usefonttheme&#123;professionalfonts&#125;</code>,
+但是添加了该命令后修改依旧失败.</p>
+<p>在群里咨询后得知, <code>\setmainfont&#123;Fira Sans&#125;</code>
+命令修改的字体为 <code>rmfamily</code>, 默认为衬线体.
+所以要先将字体设置为衬线体 <code>\usefonttheme&#123;serif&#125;</code>,
+再进行修改:</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;beamer&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;amsmath, fontspec&#125;</span><br><span class="line"><span class="keyword">\usefonttheme</span>&#123;serif&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </span><br><span class="line">    Utpurus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">\setmainfont</span>&#123;Fira Sans&#125;</span><br><span class="line">    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </span><br><span class="line">    Utpurus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<p><img
+src="https://pic4.zhimg.com/80/v2-2078e554f7891d8ae674b0dd7d87a97b.png" /></p>
+<p>另外, 因为 <code>beamer</code> 文档类默认正文使用无衬线体,
+于是也可以偷鸡地设置 <code>\setsansfont&#123;Fira Sans&#125;</code>
+但是这样做会导致数学模式的 <code>\mathrm</code> 变成衬线体</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;beamer&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;amsmath&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;fontspec&#125;</span><br><span class="line"><span class="keyword">\setsansfont</span>&#123;Fira Sans&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span><br><span class="line">    Utpurus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.</span><br><span class="line">    <span class="keyword">\[</span></span><br><span class="line">        <span class="keyword">\int</span><span class="built_in">_</span>&#123;0&#125;<span class="built_in">^</span>&#123;<span class="keyword">\pi</span>&#125;<span class="keyword">\sin</span> x<span class="keyword">\,</span><span class="keyword">\mathrm</span>&#123;d&#125;x=2 </span><br><span class="line">    <span class="keyword">\]</span></span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<p><img
+src="https://pic4.zhimg.com/80/v2-94edf62ee34ec47955526aabbba5a438.png" /></p>
+<p>在 <code>texdoc fontspec</code> 中查找原因, 可以在 3.2 节 Maths fonts
+adjustments 中找到</p>
+<p><img
+src="https://pic4.zhimg.com/80/v2-6ded00e03780caf7534fb7a3e5f7a9a9.png" /></p>
+<p>即在默认设置下, <code>fontspec</code> 宏包会将数学字体设置成
+<code>Computer Modern</code>, 于是我们需要用 <code>no-math</code>
+选项来阻止它, 同时 <code>\mathrm&#123;d&#125;</code> 也会调用
+<code>rmfamily</code> 的字体, 我们将它改为 <code>\mathsf&#123;d&#125;</code>:</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;beamer&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;amsmath&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>[no-math]&#123;fontspec&#125;</span><br><span class="line"><span class="keyword">\setsansfont</span>&#123;Fira Sans&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span><br><span class="line">    Utpurus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.</span><br><span class="line">    <span class="keyword">\[</span></span><br><span class="line">        <span class="keyword">\int</span><span class="built_in">_</span>&#123;0&#125;<span class="built_in">^</span>&#123;<span class="keyword">\pi</span>&#125;<span class="keyword">\sin</span> x<span class="keyword">\,</span><span class="keyword">\mathsf</span>&#123;d&#125;x=2</span><br><span class="line">    <span class="keyword">\]</span></span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<p>这个暂时不知道是什么原因导致的. 如果想正文和数学公式都使用 Fira
+系列的字体, 同时保留衬线字体, 可以如下设置: <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;beamer&#125;</span><br><span class="line"><span class="comment">% \usepackage[no-math]&#123;fontspec&#125;</span></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;unicode-math&#125;</span><br><span class="line"><span class="keyword">\usefonttheme</span>&#123;serif&#125;</span><br><span class="line"><span class="comment">% \setsansfont&#123;Fira Sans&#125;</span></span><br><span class="line"><span class="keyword">\setmainfont</span>&#123;Fira Sans&#125;</span><br><span class="line"><span class="keyword">\setsansfont</span>&#123;CMU Serif&#125;</span><br><span class="line"><span class="keyword">\setmathfont</span>&#123;Fira Math&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">    <span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">        Handgloves, <span class="built_in">$</span><span class="keyword">\sin</span><span class="built_in">$</span>, <span class="built_in">$</span><span class="keyword">\mathrm</span>&#123;Handgloves&#125;<span class="built_in">$</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">\textsf</span>&#123;this is CMU Serif&#125;</span><br><span class="line">    <span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure> <img
+src="https://pic4.zhimg.com/80/v2-84d784c2f5396f6b2e529e0d7506b38d.png" /></p>
+<p>如果设置中文字体, 使用 <code>ctexbeamer</code> 文档类并设置
+<code>\setCJK(main, sans, mono)font</code>, 类比上文即可.</p>
+]]></content>
+      <categories>
+        <category>LaTeX</category>
+        <category>字体</category>
+      </categories>
+      <tags>
+        <tag>LaTeX</tag>
+        <tag>字体设置</tag>
+        <tag>示例</tag>
+      </tags>
   </entry>
   <entry>
     <title>tlmgr 的介绍</title>
@@ -1177,21 +1426,21 @@ role="doc-noteref"><sup>3</sup></a></p>
 <code>option</code> </span> <span id="user-mode"> <code>USER MODE</code>
 </span> <span id="multiple-repository"> <code>MULTIPLE REPOSITORY</code>
 </span></p>
-<section class="footnotes footnotes-end-of-document"
+<aside id="footnotes" class="footnotes footnotes-end-of-document"
 role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>mirror.ctan.org resolves to many
-different hosts, and they are not perfectly synchronized; we recommend
-updating only daily (at most), and not more often.<a href="#fnref1"
-class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p>这个表格来自 <a
+<li id="fn1"><p>mirror.ctan.org resolves to many different hosts, and
+they are not perfectly synchronized; we recommend updating only daily
+(at most), and not more often.<a href="#fnref1" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>这个表格来自 <a
 href="https://github.com/OsbertWang/install-latex-guide-zh-cn">install-latex-guide-zh-cn</a>.<a
 href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3" role="doc-endnote"><p>这里我没有看懂, 也没找到合适的例子.<a
-href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>这里我没有看懂, 也没找到合适的例子.<a href="#fnref3"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section>
+</aside>
 ]]></content>
       <categories>
         <category>帮助文档</category>
@@ -1249,48 +1498,10 @@ href="https://github.com/gitalk/gitalk/issues/429#issuecomment-789423631">解决
         <category>blog</category>
       </categories>
       <tags>
+        <tag>hexo</tag>
         <tag>配置记录</tag>
         <tag>帮助文档</tag>
-        <tag>hexo</tag>
         <tag>gitalk</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>全国大学生数学建模竞赛模板的 `\maketitle` 处报错</title>
-    <url>/2021-08-04-cumcmthesis-maketitle/</url>
-    <content><![CDATA[<p>在各种地方获取的全国大学生数学建模竞赛的模板 CUMCMThesis, 使用
-<code>xelatex</code> 编译后会有如下的报错</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">! Extra &#125;, or forgotten \endgroup.</span><br><span class="line">\UL@stop ...alty \ifnum \lastkern =\thr@@ \egroup </span><br><span class="line">                                                  \egroup \ifdim \wd \UL@box...</span><br><span class="line">l.22  \maketitle</span><br><span class="line">                </span><br><span class="line">?</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-<h3 id="解决方法">解决方法</h3>
-<p>先说解决方法: 在 <a
-href="https://github.com/latexstudio/CUMCMThesis">LaTeXStudio 的
-Github</a> 上的 <code>Code</code> 处进行模板的下载或者
-<code>clone</code>. 并搭配 <code>TeXLive 2020/2021</code>, 使用
-<code>xelatex</code> 编译即可.</p>
-<p><img
-src="https://raw.githubusercontent.com/syvshc/image/master/postimg/cumcmthesis-maketitle/cumcm.jpg" /></p>
-<h3 id="产生问题的原因">产生问题的原因</h3>
-<p>产生问题的原因可以看这个 <a
-href="https://github.com/latexstudio/CUMCMThesis/pull/17">Pull
-Request</a>, 这里再拿出来说一下</p>
-<p>参考 <a
-href="https://tex.stackexchange.com/questions/568732/uline-does-not-work-with-hspace">TeX.SE</a>
-与 <a href="https://wenda.latexstudio.net/q-5448.html">问答站</a>
-可以知道 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;ulem&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">    <span class="keyword">\uline</span>&#123;<span class="keyword">\hspace</span>&#123;2em&#125;&#125;</span><br><span class="line">    <span class="comment">% \uline&#123;\mbox&#123;\hspace&#123;2em&#125;&#125;&#125; % 为正确写法</span></span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure></p>
-<p>会导致错误 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">! Extra &#125;, or forgotten <span class="keyword">\endgroup</span>.</span><br><span class="line"><span class="keyword">\UL@stop</span> ...alty <span class="keyword">\ifnum</span> <span class="keyword">\lastkern</span> =<span class="keyword">\thr@@</span> <span class="keyword">\egroup</span></span><br><span class="line">                                                  <span class="keyword">\egroup</span> <span class="keyword">\ifdim</span> <span class="keyword">\wd</span> <span class="keyword">\UL@box</span>...</span><br><span class="line">l.4     <span class="keyword">\uline</span>&#123;<span class="keyword">\hspace</span>&#123;2em&#125;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>于是将 <code>cumcmthesis.cls</code> 中 346--384 行 (行数可能不对,
-需要自行确认) 中的 <code>\hspace&#123;1em&#125;</code> 改为
-<code>\mbox&#123;\hspace&#123;1em&#125;&#125;</code> 即可.</p>
-]]></content>
-      <categories>
-        <category>LaTeX</category>
-        <category>模板</category>
-      </categories>
-      <tags>
-        <tag>LaTeX</tag>
-        <tag>日经问题</tag>
-        <tag>模板</tag>
       </tags>
   </entry>
   <entry>
@@ -1358,6 +1569,44 @@ href="https://answers.microsoft.com/zh-hans/windows/forum/windows_10-security/wi
       <tags>
         <tag>帮助文档</tag>
         <tag>LaTeX</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>全国大学生数学建模竞赛模板的 `\maketitle` 处报错</title>
+    <url>/2021-08-04-cumcmthesis-maketitle/</url>
+    <content><![CDATA[<p>在各种地方获取的全国大学生数学建模竞赛的模板 CUMCMThesis, 使用
+<code>xelatex</code> 编译后会有如下的报错</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">! Extra &#125;, or forgotten \endgroup.</span><br><span class="line">\UL@stop ...alty \ifnum \lastkern =\thr@@ \egroup </span><br><span class="line">                                                  \egroup \ifdim \wd \UL@box...</span><br><span class="line">l.22  \maketitle</span><br><span class="line">                </span><br><span class="line">?</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<h3 id="解决方法">解决方法</h3>
+<p>先说解决方法: 在 <a
+href="https://github.com/latexstudio/CUMCMThesis">LaTeXStudio 的
+Github</a> 上的 <code>Code</code> 处进行模板的下载或者
+<code>clone</code>. 并搭配 <code>TeXLive 2020/2021</code>, 使用
+<code>xelatex</code> 编译即可.</p>
+<p><img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/cumcmthesis-maketitle/cumcm.jpg" /></p>
+<h3 id="产生问题的原因">产生问题的原因</h3>
+<p>产生问题的原因可以看这个 <a
+href="https://github.com/latexstudio/CUMCMThesis/pull/17">Pull
+Request</a>, 这里再拿出来说一下</p>
+<p>参考 <a
+href="https://tex.stackexchange.com/questions/568732/uline-does-not-work-with-hspace">TeX.SE</a>
+与 <a href="https://wenda.latexstudio.net/q-5448.html">问答站</a>
+可以知道 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;ulem&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">    <span class="keyword">\uline</span>&#123;<span class="keyword">\hspace</span>&#123;2em&#125;&#125;</span><br><span class="line">    <span class="comment">% \uline&#123;\mbox&#123;\hspace&#123;2em&#125;&#125;&#125; % 为正确写法</span></span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure></p>
+<p>会导致错误 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">! Extra &#125;, or forgotten <span class="keyword">\endgroup</span>.</span><br><span class="line"><span class="keyword">\UL@stop</span> ...alty <span class="keyword">\ifnum</span> <span class="keyword">\lastkern</span> =<span class="keyword">\thr@@</span> <span class="keyword">\egroup</span></span><br><span class="line">                                                  <span class="keyword">\egroup</span> <span class="keyword">\ifdim</span> <span class="keyword">\wd</span> <span class="keyword">\UL@box</span>...</span><br><span class="line">l.4     <span class="keyword">\uline</span>&#123;<span class="keyword">\hspace</span>&#123;2em&#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>于是将 <code>cumcmthesis.cls</code> 中 346--384 行 (行数可能不对,
+需要自行确认) 中的 <code>\hspace&#123;1em&#125;</code> 改为
+<code>\mbox&#123;\hspace&#123;1em&#125;&#125;</code> 即可.</p>
+]]></content>
+      <categories>
+        <category>LaTeX</category>
+        <category>模板</category>
+      </categories>
+      <tags>
+        <tag>LaTeX</tag>
+        <tag>日经问题</tag>
+        <tag>模板</tag>
       </tags>
   </entry>
   <entry>
@@ -1455,16 +1704,16 @@ src="https://raw.githubusercontent.com/syvshc/image/master/postimg/thesis-title/
 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="comment">% 设定不同的单行与多行的最大行长度</span></span><br><span class="line"><span class="keyword">\newlength</span><span class="keyword">\titleSingleLineMaxWd</span></span><br><span class="line"><span class="keyword">\newlength</span><span class="keyword">\titleMultiLineMaxWd</span></span><br><span class="line">...</span><br><span class="line"><span class="keyword">\setlength</span><span class="keyword">\titleSingleLineMaxWd</span>&#123;0.6<span class="keyword">\textwidth</span>&#125;</span><br><span class="line"><span class="keyword">\setlength</span><span class="keyword">\titleMultiLineMaxWd</span>&#123;0.5<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">...</span><br><span class="line"><span class="comment">% 将文本内容放入单行长度相当的 \parbox 中, </span></span><br><span class="line"><span class="comment">% 判断其能否用单行进行排版, </span></span><br><span class="line"><span class="comment">% 如果不能, 将使用多行的最大行长相当的 \parbox 进行排版, </span></span><br><span class="line"><span class="comment">% 这样就不会出现第二行之后 1 个或 2 个字的情况</span></span><br><span class="line"><span class="keyword">\newcommand</span>&#123;<span class="keyword">\@titleBox</span>&#125;[1]&#123;<span class="comment">%</span></span><br><span class="line">  <span class="keyword">\parbox</span>[t]&#123;<span class="keyword">\@tempTitleMaxWd</span>&#125;&#123;<span class="params">#1</span>&#125;&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="任务完成">任务完成</h3>
 <p>先放松一下, 有更好的方法可以评论, 我会进行补充.</p>
-<section class="footnotes footnotes-end-of-document"
+<aside id="footnotes" class="footnotes footnotes-end-of-document"
 role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>该命令由宏集 <a
+<li id="fn1"><p>该命令由宏集 <a
 href="https://ctan.org/pkg/xecjk"><code>xeCJK</code></a> 中宏包
 <code>xeCJKfntef</code> 提供<a href="#fnref1" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section>
+</aside>
 ]]></content>
       <categories>
         <category>LaTeX</category>
@@ -1473,351 +1722,6 @@ role="doc-backlink">↩︎</a></p></li>
       <tags>
         <tag>LaTeX</tag>
         <tag>排版设计</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>搭建 github.io</title>
-    <url>/2021-03-03-build-github-io/</url>
-    <content><![CDATA[<p><strong>在 NexT 主题更新 8.0 之后又重新配置了一次
-<code>hexo+NexT</code>, 这次来记录一下,
-并且会随时更新新增的配置.</strong></p>
-<span id="more"></span>
-<h2 id="准备工作">准备工作</h2>
-<p>假定用户的电脑上已经安装 <code>git</code>, 并且已经与 <a
-href="https://github.com">github</a> 连接, 如何使用 SSH 与 github
-连接可以查看<a
-href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh">官方文档</a>,
-并熟悉 <code>git</code> 的相关操作.</p>
-<h3 id="创建仓库">创建仓库</h3>
-<p>在 <a href="https://github.com">github</a> 上新建一个仓库, 名称为
-<code>&lt;username&gt;.github.io</code>, 将
-<code>&lt;username&gt;</code> 替换为你的 <code>github</code> 账户名.</p>
-<h3 id="安装-node.js">安装 <code>node.js</code></h3>
-<p>在 <a href="https://nodejs.org/en/">node.js的官网</a> 上下载
-<code>LTS</code> 版本安装, 记得勾选 <code>ADD TO PATH</code>.
-安装后在命令行输入 <code>npm -v</code>, 如果有版本号输出,
-那么说明安装成功, 如果返回</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;npm&#x27;</span> 不是内部或外部命令，也不是可运行的程序或批处理文件。</span><br></pre></td></tr></table></figure>
-<p>那么将 <code>&lt;InstallPath&gt;/nodejs</code> 添加到环境变量.
-然后命令行运行</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<p>安装 <code>hexo</code>, 确保安装后可以运行 <code>hexo</code>
-命令.</p>
-<h3 id="初始化博客">初始化博客</h3>
-<p>用 <code>cmd</code> 进入想存放博客的文件夹
-<code>&lt;folder&gt;</code>, 运行
-<code>hexo init &lt;blogname&gt;</code>, 将
-<code>&lt;blogname&gt;</code> 替换成博客的项目名, 比如
-<code>hexotest</code>. 因为 <code>hexo init</code> 的过程要链接
-<code>github</code>, 如果出现卡顿, 可以尝试看<a
-href="https://github.com/hexojs/hexo/issues/3693">Github
-issue</a>以及这个<a
-href="https://yuhaicheng.xyz/5.html">博客</a>尝试解决.</p>
-<p>初始化结束后会看到这样的文件树</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">folder</span><br><span class="line">  └── hexotest</span><br><span class="line">        ├── db.json</span><br><span class="line">        ├── node_modules</span><br><span class="line">        ├── package-lock.json</span><br><span class="line">        ├── package.json</span><br><span class="line">        ├── public</span><br><span class="line">        ├── scaffolds</span><br><span class="line">        ├── source</span><br><span class="line">        ├── themes</span><br><span class="line">        ├── _config.landscape.yml</span><br><span class="line">        └── _config.yml</span><br></pre></td></tr></table></figure>
-<h2 id="部署博客">部署博客</h2>
-<h3 id="本地部署">本地部署</h3>
-<p>我们进入 <code>hexotest</code> 文件夹, 输入</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<p>会有如下输出</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">INFO  Validating config</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
-<p>这时在浏览器中输入 <code>localhost:4000</code>
-即可看到部署在本地的博客</p>
-<p><img
-src="https://pic4.zhimg.com/80/v2-8c21ffd0058d9cba4be5da45c49f1663.png" /></p>
-<p>然后我们命令行输入 <code>ctrl+C</code> 来结束本地部署.</p>
-<h3 id="在线部署">在线部署</h3>
-<p>当然我们写博客的目的大多都是要上传到互联网, 于是我们要把博客部署到
-<code>&lt;username&gt;.github.io</code>.</p>
-<p>首先安装部署插件</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git</span><br></pre></td></tr></table></figure>
-<p>打开 <code>hexotest</code> 下的 <code>_config.yml</code> 配置文件,
-找到 <code>deploy</code>, 填入以下信息</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">&lt;git</span> <span class="string">repo</span> <span class="string">ssh</span> <span class="string">address&gt;</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-<p>注意这里的 <code>&lt;git repo ssh address&gt;</code> 是形如
-<code>git@github.com:username/username.github.io.git</code> 的地址.
-再注意 <code>branch</code> 字段中的 <code>master</code> 可能为
-<code>main</code>. 再运行</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<p>等待部署成功, 成功后就可以在 <code>&lt;username&gt;.github.io</code>
-上看到博客的内容了.</p>
-<h2 id="创建博文">创建博文</h2>
-<h3 id="新建博文">新建博文</h3>
-<p>在 <code>hexotest/</code> 文件夹下, 用 <code>cmd</code> 执行</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo n <span class="string">&quot;&lt;blog_name&gt;&quot;</span></span><br></pre></td></tr></table></figure>
-<p>将 <code>&lt;blog_name&gt;</code> 替换为博文的名字, 注意不能有空格,
-这里我们使用 <code>hexo n "first-blog"</code>, 成功后会在
-<code>source/_posts/</code> 文件夹下看到 <code>first-blog.md</code>
-文件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">source</span><br><span class="line">└── _posts</span><br><span class="line">   ├── first-blog.md</span><br><span class="line">   └── hello-world.md</span><br></pre></td></tr></table></figure>
-<p>同时我们还发现了另一个文件 <code>hello-world.md</code>,
-这就是我们在本地部署成功后看到的那一篇博文.</p>
-<p>用熟悉的编辑器打开 <code>first-blog.md</code>, 将其内容修改为</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 第一篇博文</span><br><span class="line">date: 2021-03-04 00:32:07</span><br><span class="line">tags:</span><br><span class="line">    - [博文]</span><br><span class="line">    - [测试]</span><br><span class="line">    - [whatever]</span><br><span class="line">categories:</span><br><span class="line">    - [测试, 测试的子分类]</span><br><span class="line">---</span><br><span class="line">这是我的第一篇博文</span><br></pre></td></tr></table></figure>
-<p>其中 <code>tags</code> 与 <code>categories</code> 可以自行设置,
-它们的关系可以参考这个<a
-href="https://www.zhihu.com/question/19561626">问题</a></p>
-<p>再使用 <code>hexo g &amp;&amp; hexo s</code> 进行本地部署, 在
-<code>localhost:4000</code> 看到刚刚编辑的博文"第一篇博文",
-点进去可以看到</p>
-<p><img
-src="https://pic4.zhimg.com/80/v2-797a1b83cb08f7653adcb43d56838b8c.png" /></p>
-<p>然后可以再使用 <code>hexo d</code> 将其推送到
-<code>&lt;username&gt;.github.io</code>, 等待一会如果没有更新内容,
-那么就执行一下 <code>hexo clean</code> 来清空部署缓存.
-于是我们将博文推送到远端的命令可以归为</p>
-<p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure></p>
-<h2 id="美化界面">美化界面</h2>
-<h3 id="配置基本信息">配置基本信息</h3>
-<p>配置文件 <code>hexotest/_config.yml</code>
-是对应于我们博客的最高级的配置文件, 里面有一些字段可以进行配置,
-作为示例修改了下面几项</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: SYVHSC&#x27;s BLOG</span><br><span class="line">subtitle: &#x27;&#x27;</span><br><span class="line">description: &#x27;无锤乙醇的博客&#x27;</span><br><span class="line">keywords: LaTeX, 数学</span><br><span class="line">author: 无锤乙醇</span><br><span class="line">language: zh-CN</span><br><span class="line">timezone: Asia/Shanghai</span><br></pre></td></tr></table></figure>
-<p>进行本地部署可以看到</p>
-<p><img
-src="https://pic4.zhimg.com/80/v2-8121a42938033c596ae6e0a8022d1bcd.png" /></p>
-<h3 id="更换主题">更换主题</h3>
-<p>这里我们选用 <code>NexT</code> 主题进行配置. 由于
-<code>NexT8.0+</code> 已经支持 <code>npm</code> 安装, 于是可以在目录
-<code>hexotest/</code> 下用 <code>cmd</code> 执行</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-theme-next</span><br></pre></td></tr></table></figure>
-<p>并在 <code>hexotest/_config.yml</code> 中找到 <code>theme</code>
-字段, 修改为 <code>theme: next</code>, 保存后本地部署,
-可以看到博客的主题已经更换</p>
-<p><img
-src="https://pic4.zhimg.com/80/v2-d115746d176f5fb3a6aa6ac7d05e73ba.png" /></p>
-<p>然后我们可以把 <code>node_modules/hexo-theme-next/</code> 中的
-<code>_config.yml</code> 改为 <code>_config.next.yml</code>
-并且复制到根目录 <code>hexotest/</code> 下进行修改, 这样当我们升级
-<code>NexT</code> 主题的时候不需要重新配置.</p>
-<h3
-id="下面配置-next-主题的一些事项-这里只介绍一些功能的作用-并不具体配置">下面配置
-<code>NexT</code> 主题的一些事项, 这里只介绍一些功能的作用,
-并不具体配置</h3>
-<ol type="1">
-<li><p><strong>scheme</strong> <code>NexT</code> 主题内置了 4 种样式,
-可以依次启用来选择一个适合自己的, 这里我选择了
-<code>Gemini</code>;</p></li>
-<li><p><strong>favicon</strong> 配置标签页的图标, 可以自行选择图片, 放在
-<code>hexotest/source/img</code> 文件夹下便于寻找, 设置中的路径也应改为
-<code>/img/***.png(jpg, svg...)</code>;</p></li>
-<li><p><strong>menu</strong> 配置博客页面的链接;</p></li>
-<li><p><strong>social</strong> 配置博客页面的外部链接, 图标可以在 <a
-href="https://fontawesome.com/">fontawsome</a> 进行选择;</p></li>
-<li><p><strong>avatar</strong> 配置博客侧边栏的头像, 图片选择同
-<strong>favicon</strong>;</p></li>
-<li><p><strong>toc</strong> 配置浏览博文时侧边栏的目录;</p></li>
-<li><p><strong>font</strong> 配置文章中的字体; 在
-<code>_config.next.yml</code> 中不能配置多种字体, 如果想配置多种字体,
-可以修改</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexotest\node_modules\hexo-theme-next\source\css\_variables\base.styl</span><br></pre></td></tr></table></figure>
-<p>中的 <code>\\Font families</code> 中的值</p></li>
-<li><p><strong>codeblock</strong> 配置代码块;</p></li>
-<li><p><strong>back2top</strong> 配置返回顶部的按钮;</p></li>
-<li><p><strong>reading_progress</strong> 配置阅读进度条;</p></li>
-<li><p><strong>symbols_count_time</strong> 配置站点字数和阅读时间统计,
-<a
-href="https://github.com/next-theme/hexo-word-counter">使用方法</a>;</p></li>
-<li><p><strong>creative_commons</strong> 配置文末版权信息, 关于 cc
-协议可以参考<a
-href="https://zhuanlan.zhihu.com/p/20641764">知乎专栏</a>;</p></li>
-<li><p><strong>local_search</strong> 配置搜索栏, <a
-href="https://github.com/theme-next/hexo-generator-searchdb">使用方法</a>;</p></li>
-<li><p><strong>links_settings &amp; links</strong>
-配置友情链接;</p></li>
-</ol>
-<h3 id="这是一些不知道放到哪里的配置">这是一些不知道放到哪里的配置</h3>
-<ol type="1">
-<li><p><strong>markdown-it-plus</strong> 可以提供脚注等功能, 目录,
-emoji, katex 等功能, <a
-href="https://github.com/CHENXCHEN/hexo-renderer-markdown-it-plus">使用方法</a>
-emoji 功能与 <code>hexo-renderer-pandoc</code> 冲突;</p></li>
-<li><p><strong>hexo-renderer-pandoc</strong> 提供 mathjax 渲染, 将
-<code>tags</code> 设置为 <code>ams</code> 还可以使用公式编号<a
-href="https://theme-next.js.org/docs/third-party-services/math-equations">使用方法</a>;</p>
-<p>示例:</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">一元二次方程组 <span class="built_in">$</span>ax<span class="built_in">^</span>&#123;2&#125;+bx+c=0<span class="keyword">\ </span>(a <span class="keyword">\ne</span> 0)<span class="built_in">$</span> 的解为 <span class="built_in">$</span><span class="keyword">\eqref</span>&#123;eq:slo&#125;<span class="built_in">$</span></span><br><span class="line"><span class="comment">% 注意: 行内公式的 $...$ 前后不要有空格</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;equation&#125;<span class="keyword">\label</span>&#123;eq:slo&#125;</span><br><span class="line">     x<span class="built_in">_</span>&#123;1, 2&#125;=<span class="keyword">\frac</span>&#123;-b<span class="keyword">\pm</span><span class="keyword">\sqrt</span>&#123;b<span class="built_in">^</span>&#123;2&#125;-4ac&#125;&#125;&#123;2a&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;equation&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>一元二次方程组 <span class="math inline">\(ax^{2}+bx+c=0\ (a \ne
-0)\)</span> 的解为 <span
-class="math inline">\(\eqref{eq:slo}\)</span><br />
-<span class="math display">\[\begin{equation}\label{eq:slo}
-      x_{1, 2}=\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}
-  \end{equation}\]</span></p>
-<ol start="3" type="1">
-<li><strong>gitalk</strong> 配置评论区. 配置方法在 <a href="/2021-03-05-enable-gitalk/" title="为博客添加 Gitalk 评论区">为博客添加 Gitalk 评论区</a>.</li>
-<li><strong>busuanzi</strong> 配置阅读访问量. 在 <code>hexotest/</code>
-文件夹下运行</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install busuanzi.pure.js --save</span><br></pre></td></tr></table></figure>
-<p>来安装不蒜子阅读访问量插件, 在 <code>_config.next.yml</code>
-文件中搜索 <code>busuanzi</code> 即可找到</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Show Views / Visitors of the website / page with busuanzi.</span></span><br><span class="line"><span class="comment"># For more information: http://ibruce.info/2015/04/04/busuanzi/</span></span><br><span class="line"><span class="attr">busuanzi_count:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">total_visitors:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">total_visitors_icon:</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line">  <span class="attr">total_views:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">total_views_icon:</span> <span class="string">fa</span> <span class="string">fa-eye</span></span><br><span class="line">  <span class="attr">post_views:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">post_views_icon:</span> <span class="string">far</span> <span class="string">fa-eye</span></span><br></pre></td></tr></table></figure>
-<p>把 <code>enable</code> 字段改为 <code>true</code> 即可开启. 使用</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g -d</span><br></pre></td></tr></table></figure>
-<p>部署到线上, 如果没有刷新, 使用 <code>ctrl+f5</code>
-进行强制刷新即可.</p>
-<ol start="5" type="1">
-<li><strong>hexo-pdf</strong> 可以在博客中插入 PDF 文件, 需要将
-<code>_config.next.yml</code> 中的 <code>pdf</code> 中的
-<code>enable</code> 字段改为 <code>true</code>, 感谢 <a
-href="https://shukangzhang.com/hexo-tian-jia-pdf/">shukangzhang
-的博客</a>.</li>
-</ol>
-<h2 id="未完待续">未完待续</h2>
-]]></content>
-      <categories>
-        <category>帮助文档</category>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>配置记录</tag>
-        <tag>帮助文档</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>修复 Windows 坏掉的 EFI 引导</title>
-    <url>/2021-09-02-RepairEFI/</url>
-    <content><![CDATA[<p><strong><em>下次使用 <code>sudo</code>
-之前一定确认好命令再执行</em></strong></p>
-<p>因为半夜迷糊, 运行了 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo rm -rf /*</span><br></pre></td></tr></table></figure> 来删除我某文件夹下的全部文件.
-删到一半才反应过来我干了些什么, 看着崩坏的图形界面, 我只想回到 Windows,
-把 Arch Linux 的分区格式化, 再重新安装, 但是我发现, 我已经把 Windows 的
-EFI 引导破坏了……</p>
-<span id="more"></span>
-<p>感谢 <code>#archlinux-cn-offtopic</code> 群的 Xiao Jerry!</p>
-<ol type="1">
-<li>准备好一个 Windows 10 的启动 U 盘, 在 BIOS 界面从 U 盘启动 <img
-src="https://raw.githubusercontent.com/syvshc/image/master/postimg/RepairEFI/boot.jpg"
-alt="BOOT" /></li>
-<li>点击右下角: 修复计算机</li>
-<li>进入命令行, 运行 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bootrec /rebuildbcd</span><br></pre></td></tr></table></figure> 找到后用 <code>A</code> 添加 <img
-src="https://raw.githubusercontent.com/syvshc/image/master/postimg/RepairEFI/bootrec.jpg"
-alt="扫描 Windows 安装" /></li>
-<li>添加后退出命令行, 点击启动修复 <img
-src="https://raw.githubusercontent.com/syvshc/image/master/postimg/RepairEFI/startup-repair.jpg"
-alt="启动修复" /></li>
-<li>完成</li>
-</ol>
-]]></content>
-      <categories>
-        <category>帮助文档</category>
-        <category>Windows</category>
-      </categories>
-      <tags>
-        <tag>帮助文档</tag>
-        <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用 KDE 桌面时遇到的一些问题</title>
-    <url>/2021-09-22-KDEProblems/</url>
-    <content><![CDATA[<p>这里记录一些使用 ArchLinux + KDE 时遇到的问题</p>
-<span id="more"></span>
-<h4 id="某些情况下快捷键失灵">某些情况下快捷键失灵</h4>
-<p>表现与这个<a
-href="https://forum.kde.org/viewtopic.php?f=17&amp;t=166079">帖子</a>一致,
-解决方法在贴子中也已经提到, 即将
-<code>~/.config/kglobalshortcutsrc</code> 重命名或删除, 在重新登录 KDE
-的时候将会自动重新生成一个 <code>~/.config/kglobalshortcutsrc</code>,
-并且问题解决.</p>
-<h4 id="flameshot-延迟启动"><a
-href="https://github.com/flameshot-org/flameshot/issues/1916">flameshot
-延迟启动</a></h4>
-<p>老实说这个系统问题与 flameshot 没什么大关系,
-但是我是通过它发现这个问题的…… KDE 桌面安装后使用 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">balooctl <span class="built_in">disable</span></span><br></pre></td></tr></table></figure> 要关掉
-<code>baloo</code> 服务, 这个东西没什么用, 建立索引的时候还会占用大量的
-CPU.</p>
-<figure>
-<img
-src="https://raw.githubusercontent.com/syvshc/image/master/postimg/ArchLinux/chat.png"
-alt="(重复利用图片)" />
-<figcaption aria-hidden="true">(重复利用图片)</figcaption>
-</figure>
-<p>其他的桌面操作卡顿或延迟, 如终端中对命令的响应,
-软件的启动与关闭也可能与其相关.</p>
-<h4 id="桌面黑屏">桌面黑屏</h4>
-<p><img
-src="https://raw.githubusercontent.com/syvshc/image/master/postimg/KDEProblems/black.png" /></p>
-<p>右键时不出现菜单, 新建文件夹也不显示, 需要重启 plasma,
-在终端中运行</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">plasmashell --replace &amp;</span><br></pre></td></tr></table></figure>
-<p>其他桌面环境的问题可以类似处理.</p>
-<h4 id="桌面动画效果消失">桌面动画效果消失</h4>
-<p>首先尝试 <code>Alt+Shift+F12</code> 来打开"显示特效混合器", 如果无效,
-需要重启 kwin, 在终端中运行</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">kwin_x11 --replace &amp;</span><br></pre></td></tr></table></figure>
-<h4
-id="默认状态下按-ctrlaltf2-可以退出桌面进入终端-在终端中按-ctrlaltf1-可以返回桌面">默认状态下按
-<code>Ctrl+Alt+F2</code> 可以退出桌面进入终端, 在终端中按
-<code>Ctrl+Alt+F1</code> 可以返回桌面</h4>
-<h4 id="桌面语言中英混合">桌面语言中英混合</h4>
-<p>首先在 <code>设置-&gt;区域设置-&gt;语言</code> 中查看是否添加了
-<code>简体中文</code></p>
-<p><img
-src="https://raw.githubusercontent.com/syvshc/image/master/postimg/KDEProblems/language.png" /></p>
-<p>再查看 <code>设置-&gt;区域设置-&gt;格式</code> 中是否设置为了
-<code>zh_CN</code></p>
-<p><img
-src="https://raw.githubusercontent.com/syvshc/image/master/postimg/KDEProblems/region.png" /></p>
-<p>如果一致, 在终端中运行 <code>locale</code> 与 <code>locale -a</code>
-查看其中的输出是否含有 <code>zh_CN.utf8</code> 及
-<code>zh_CN.UTF-8</code>, 如否, 请参考 <a
-href="https://wiki.archlinux.org/title/Locale_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E7%B3%BB%E7%BB%9F%E5%8C%BA%E5%9F%9F%E8%AE%BE%E7%BD%AE">Wiki</a>
-进行设置.</p>
-<h4 id="安装-nvidia-驱动后字体变大">安装 nvidia 驱动后字体变大</h4>
-<p>首先发现在设置中“桌面特效”部分的部分特效缺失,
-查找后发现这些特效被"排除不支持的特效"隐藏了</p>
-<figure>
-<img
-src="https://raw.githubusercontent.com/syvshc/image/master/postimg/KDEProblems/screeneffect.png"
-alt="桌面特效" />
-<figcaption aria-hidden="true">桌面特效</figcaption>
-</figure>
-<p>可以通过安装 <a
-href="https://wiki.archlinux.org/title/NVIDIA_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E5%AE%89%E8%A3%85"><code>nvidia</code></a>
-驱动来解决, 但是安装后有一个问题, 会发现所有的字体都变大了, 经过查找, 在
-reddit 上找到了<a
-href="https://www.reddit.com/r/kde/comments/8ywniu/kde_plasma_everything_is_larger_after/">答案</a>,
-即修改下图中的固定 DPI 为 96, 并重新登录.</p>
-<figure>
-<img
-src="https://raw.githubusercontent.com/syvshc/image/master/postimg/KDEProblems/fontsize.png"
-alt="fontsize" />
-<figcaption aria-hidden="true">fontsize</figcaption>
-</figure>
-<h4 id="音频处显示没有输入或输出设备">音频处显示没有输入或输出设备</h4>
-<figure>
-<img
-src="https://raw.githubusercontent.com/syvshc/image/master/postimg/KDEProblems/no-sound.png"
-alt="没有输入或输出设备" />
-<figcaption aria-hidden="true">没有输入或输出设备</figcaption>
-</figure>
-<p>我的设备是 Dell G15 5511, 属于比较新的设备, 查看了 <a
-href="https://forum.manjaro.org/t/i-have-no-sound/86412">Fourm</a> 与 <a
-href="https://wiki.archlinux.org/title/Advanced_Linux_Sound_Architecture#ALSA_firmware">wiki</a>
-后使用</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yay -S sof-firmware</span><br></pre></td></tr></table></figure>
-<p>安装框架之后即可使用.</p>
-<h4
-id="能连接上网络但是显示受限的连接">能连接上网络但是显示“受限的连接”</h4>
-<figure>
-<img
-src="https://raw.githubusercontent.com/syvshc/image/master/postimg/KDEProblems/limit-connect.png"
-alt="受限的连接" />
-<figcaption aria-hidden="true">受限的连接</figcaption>
-</figure>
-<p>解决方法见 <a
-href="https://wiki.archlinux.org/title/NetworkManager#Checking_connectivity">Wiki</a></p>
-]]></content>
-      <categories>
-        <category>配置记录</category>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>帮助文档</tag>
-        <tag>Linux</tag>
-        <tag>KDE</tag>
       </tags>
   </entry>
   <entry>
@@ -2429,33 +2333,29 @@ href="https://wiki.archlinux.org/title/Microsoft_fonts_(%E7%AE%80%E4%BD%93%E4%B8
 </ol>
 <h3 id="暂时告一段落-再有什么东西再往上添吧">暂时告一段落,
 再有什么东西再往上添吧</h3>
-<section class="footnotes footnotes-end-of-document"
+<aside id="footnotes" class="footnotes footnotes-end-of-document"
 role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>配置 Github 图床时要注意仓库设置为
-Public<a href="#fnref1" class="footnote-back"
-role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p>如果使用了不同版本的 vscode,
-命令行唤起 vscode 的方式可能不同, 这时需要修改配置文件中的
-<code>code</code> 为其他内容, 同时也要修改 okular 配置中命令中的
-<code>code</code>. 如安装了 <code>vscodium-bin</code> 用户需要改为
-<code>codium</code>, 具体可看 <a
+<li id="fn1"><p>配置 Github 图床时要注意仓库设置为 Public<a
+href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>如果使用了不同版本的 vscode, 命令行唤起 vscode
+的方式可能不同, 这时需要修改配置文件中的 <code>code</code> 为其他内容,
+同时也要修改 okular 配置中命令中的 <code>code</code>. 如安装了
+<code>vscodium-bin</code> 用户需要改为 <code>codium</code>, 具体可看 <a
 href="https://wiki.archlinux.org/title/Visual_Studio_Code_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">Wiki</a><a
 href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3" role="doc-endnote"><p>在使用正反向搜索功能时需要保证
-<code>.synctex.gz</code> 文件的存在, 其生成的方式为: 编译时添加
-<code>-synctex=1</code> 选项, 如使用
-<code>pdflatex -synctex=1 main.tex</code> 编译<a href="#fnref3"
+<li id="fn3"><p>在使用正反向搜索功能时需要保证 <code>.synctex.gz</code>
+文件的存在, 其生成的方式为: 编译时添加 <code>-synctex=1</code> 选项,
+如使用 <code>pdflatex -synctex=1 main.tex</code> 编译<a href="#fnref3"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4" role="doc-endnote"><p>这里我也不太懂, 意思就是这个意思.<a
-href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5"
-role="doc-endnote"><p>不必完全按照示例中的文件夹进行命名与放置, 只有
+<li id="fn4"><p>这里我也不太懂, 意思就是这个意思.<a href="#fnref4"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>不必完全按照示例中的文件夹进行命名与放置, 只有
 <code>/usr/share/fonts</code> 这个路径是必需的<a href="#fnref5"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section>
+</aside>
 ]]></content>
       <categories>
         <category>配置记录</category>
@@ -2517,196 +2417,169 @@ class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push --set-upstream origin main</span><br></pre></td></tr></table></figure>
 <p>即可在 <code>post</code> 的主分支 <code>main</code>
 中查看到博客原文.</p>
-<section class="footnotes footnotes-end-of-document"
+<aside id="footnotes" class="footnotes footnotes-end-of-document"
 role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>如果未经设置, 默认分支名为
-<code>main</code>. 请自行查看新建仓库的默认分支名称<a href="#fnref1"
-class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>如果未经设置, 默认分支名为 <code>main</code>.
+请自行查看新建仓库的默认分支名称<a href="#fnref1" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section>
+</aside>
 ]]></content>
       <categories>
         <category>帮助文档</category>
         <category>blog</category>
       </categories>
       <tags>
+        <tag>hexo</tag>
         <tag>配置记录</tag>
         <tag>帮助文档</tag>
-        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
-    <title>一种特殊的参考文献引用样式的设置</title>
-    <url>/2021-10-02-extcite/</url>
-    <content><![CDATA[<p>今天在群里得到了这样的一种引用格式的需求:</p>
-<p><img
-src="https://raw.githubusercontent.com/syvshc/image/master/postimg/extcite/20211002163210.png" /></p>
-<p>下面使用两种方法来进行实现</p>
+    <title>修复 Windows 坏掉的 EFI 引导</title>
+    <url>/2021-09-02-RepairEFI/</url>
+    <content><![CDATA[<p><strong><em>下次使用 <code>sudo</code>
+之前一定确认好命令再执行</em></strong></p>
+<p>因为半夜迷糊, 运行了 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo rm -rf /*</span><br></pre></td></tr></table></figure> 来删除我某文件夹下的全部文件.
+删到一半才反应过来我干了些什么, 看着崩坏的图形界面, 我只想回到 Windows,
+把 Arch Linux 的分区格式化, 再重新安装, 但是我发现, 我已经把 Windows 的
+EFI 引导破坏了……</p>
 <span id="more"></span>
-<p>以下是我用来测试的 <code>ref.bib</code> 文件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@INPROCEEDINGS&#123;cnproceed,</span><br><span class="line">	author    = &#123;王重阳 and 黄药师 and 欧阳峰 and 洪七公 and 段皇帝&#125;,</span><br><span class="line">	title     = &#123;武林高手从入门到精通&#125;,</span><br><span class="line">	booktitle = &#123;第~$N$~次华山论剑&#125;,</span><br><span class="line">	year      = 2006,</span><br><span class="line">	address   = &#123;西安, 中国&#125;,</span><br><span class="line">	month     = sep,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@ARTICLE&#123;cnarticle,</span><br><span class="line">	AUTHOR  = &quot;贾宝玉 and 林黛玉 and 薛宝钗 and 贾探春&quot;,</span><br><span class="line">	TITLE   = &quot;论刘姥姥食量大如牛之现实意义&quot;,</span><br><span class="line">	JOURNAL = &quot;红楼梦杂谈&quot;,</span><br><span class="line">	PAGES   = &quot;260--266&quot;,</span><br><span class="line">	VOLUME  = &quot;224&quot;,</span><br><span class="line">	YEAR    = &quot;1800&quot;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@inbook&#123;Lin1992,</span><br><span class="line">	AUTHOR     = &quot;林来兴&quot;,</span><br><span class="line">	TITLE      = &quot;空间控制技术&quot;,</span><br><span class="line">	PUBLISHER  = &quot;宇航出版社&quot;,</span><br><span class="line">	YEAR       = &quot;1992&quot;,</span><br><span class="line">	Pages      = &quot;25-42&quot;,</span><br><span class="line">	ADDRESS    = &quot;北京&quot;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@book&#123;xin1994,</span><br><span class="line">	title=&#123;信息技术与信息服务国际研讨会论文集&#125;,</span><br><span class="line">	author=&#123;辛希孟 and 中国科学院文献信息中心 and 孟广均 and 信息学&#125;,</span><br><span class="line">	year=&#123;1994&#125;,</span><br><span class="line">	publisher=&#123;中国社会科学出版社&#125;,</span><br><span class="line">	pages=&#123;45-49&#125;,</span><br><span class="line">	address=&#123;北京&#125;,</span><br><span class="line">	typeoflit=&#123;C&#125;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@book&#123;zhao1998,</span><br><span class="line">	title=&#123;新时代的工业工程师&#125;,</span><br><span class="line">	author=&#123;赵耀东&#125;,</span><br><span class="line">	year=&#123;1998&#125;,</span><br><span class="line">	citedate =     &#123;1998-09-26&#125;,</span><br><span class="line">	address=&#123;台北&#125;,</span><br><span class="line">	publisher=&#123;天下文化出版社&#125;,</span><br><span class="line">	url=&#123;http://www.ie.nthu.edu.tw/info/ie.newie.htm(Big5)&#125;,</span><br><span class="line">	typeoflit=&#123;M/OL&#125;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@phdthesis&#123;Chen1992,</span><br><span class="line">	Author = &#123;谌颖&#125;,</span><br><span class="line">	Title = &#123;空间最优交会控制理论与方法研究&#125;,</span><br><span class="line">	ADDRESS    = &quot;哈尔滨&quot;,</span><br><span class="line">	School = &#123;哈尔滨工业大学&#125;,</span><br><span class="line">	Year = &#123;1992&#125;,</span><br><span class="line">	pages= &#123;8-13&#125;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@article&#123;hithesis2017,</span><br><span class="line">	title=&#123;Hi!Thesis!,Harbin Institue of Technology&#125;,</span><br><span class="line">	author=&#123;Yanshuo Chu&#125;,</span><br><span class="line">	journal=&#123;Github&#125;,</span><br><span class="line">	volume=&#123;001&#125;,</span><br><span class="line">	number=&#123;0001&#125;,</span><br><span class="line">	pages=&#123;000-999&#125;,</span><br><span class="line">	year=&#123;2017&#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="使用-cite-宏包">使用 <code>cite</code> 宏包</h4>
-<p>这种方法适合裸用各种 <code>\bibliographystyle</code> 的同学,
-直接看代码</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;ctexart&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>[noadjust,super]&#123;cite&#125;</span><br><span class="line"><span class="comment">% texdoc cite : More Customization</span></span><br><span class="line"><span class="keyword">\renewcommand</span><span class="keyword">\citeform</span>[1]&#123;[<span class="params">#1</span>]&#125;</span><br><span class="line"><span class="keyword">\renewcommand</span>&#123;<span class="keyword">\citeleft</span>&#125;&#123;&#125;</span><br><span class="line"><span class="keyword">\renewcommand</span>&#123;<span class="keyword">\citeright</span>&#125;&#123;&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">    text<span class="keyword">\cite</span>&#123;cnproceed,Chen1992,hithesis2017,zhao1998,xin1994,cnarticle&#125;</span><br><span class="line"></span><br><span class="line">    text<span class="keyword">\cite</span>&#123;Lin1992,xin1994&#125;</span><br><span class="line">    <span class="keyword">\bibliographystyle</span>&#123;plain&#125;</span><br><span class="line">    <span class="keyword">\bibliography</span>&#123;ref.bib&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
-<p><img
-src="https://raw.githubusercontent.com/syvshc/image/master/postimg/extcite/20211002165243.png" /></p>
-<h4 id="使用-natbib-宏包或-gbt7714-宏包">使用 <code>natbib</code> 宏包或
-<code>gbt7714</code> 宏包</h4>
-<p>直接上代码</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;ctexart&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>[sort<span class="built_in">&amp;</span>compress,numbers,super]&#123;natbib&#125;</span><br><span class="line"><span class="keyword">\setcitestyle</span>&#123;open=&#123;&#125;,close=&#123;&#125;&#125;</span><br><span class="line"><span class="comment">% texdoc natbib : sec 2.12</span></span><br><span class="line"><span class="keyword">\renewcommand</span>&#123;<span class="keyword">\citenumfont</span>&#125;[1]&#123;[<span class="params">#1</span>]&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">    text<span class="keyword">\cite</span>&#123;cnproceed,Chen1992,hithesis2017,zhao1998,xin1994,cnarticle&#125;</span><br><span class="line"></span><br><span class="line">    text<span class="keyword">\cite</span>&#123;Lin1992,xin1994&#125;</span><br><span class="line">    <span class="keyword">\bibliographystyle</span>&#123;plain&#125;</span><br><span class="line">    <span class="keyword">\bibliography</span>&#123;ref.bib&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
-<p><img
-src="https://raw.githubusercontent.com/syvshc/image/master/postimg/extcite/20211002165718.png" /></p>
-<p>当使用 <code>gbt7714</code> 宏包的时候, 需要把参数拆开,
-实现效果如下</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;ctexart&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>[sort<span class="built_in">&amp;</span>compress]&#123;gbt7714&#125;</span><br><span class="line"><span class="keyword">\citestyle</span>&#123;super&#125;</span><br><span class="line"><span class="keyword">\setcitestyle</span>&#123;open=&#123;&#125;,close=&#123;&#125;&#125;</span><br><span class="line"><span class="comment">% texdoc natbib : sec 2.12</span></span><br><span class="line"><span class="keyword">\renewcommand</span>&#123;<span class="keyword">\citenumfont</span>&#125;[1]&#123;[<span class="params">#1</span>]&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">    text<span class="keyword">\cite</span>&#123;cnproceed,Chen1992,hithesis2017,zhao1998,xin1994,cnarticle&#125;</span><br><span class="line"></span><br><span class="line">    text<span class="keyword">\cite</span>&#123;Lin1992,xin1994&#125;</span><br><span class="line">    <span class="keyword">\bibliographystyle</span>&#123;gbt7714-numerical&#125;</span><br><span class="line">    <span class="keyword">\bibliography</span>&#123;ref.bib&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
-<p><img
-src="https://raw.githubusercontent.com/syvshc/image/master/postimg/extcite/20211002165924.png" /></p>
-]]></content>
-      <categories>
-        <category>LaTeX</category>
-        <category>参考文献</category>
-      </categories>
-      <tags>
-        <tag>LaTeX</tag>
-        <tag>参考文献</tag>
-        <tag>示例</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>beamer 的字体设置</title>
-    <url>/2021-03-03-beamer-font-set/</url>
-    <content><![CDATA[<p>在使用 <code>beamer</code> 文档类的时候, 可能会有需要更换字体.</p>
-<span id="more"></span>
-<p>如果按照 <code>article</code> 的方式设置正文字体:</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;beamer&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;amsmath, fontspec&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Utpurus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">\setmainfont</span>&#123;Fira Sans&#125;</span><br><span class="line">    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Utpurus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
-<p>会发现字体并没有发生变化</p>
-<p><img
-src="https://pic4.zhimg.com/80/v2-a79642cc1fef73b11effa52b21dc02ca.png" /></p>
-<p>查阅 <code>texdoc beamer</code> 的 18.1 节会发现如果想使用其他字体,
-需要设置 <code>\usefonttheme&#123;professionalfonts&#125;</code>,
-但是添加了该命令后修改依旧失败.</p>
-<p>在群里咨询后得知, <code>\setmainfont&#123;Fira Sans&#125;</code>
-命令修改的字体为 <code>rmfamily</code>, 默认为衬线体.
-所以要先将字体设置为衬线体 <code>\usefonttheme&#123;serif&#125;</code>,
-再进行修改:</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;beamer&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;amsmath, fontspec&#125;</span><br><span class="line"><span class="keyword">\usefonttheme</span>&#123;serif&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </span><br><span class="line">    Utpurus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">\setmainfont</span>&#123;Fira Sans&#125;</span><br><span class="line">    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </span><br><span class="line">    Utpurus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
-<p><img
-src="https://pic4.zhimg.com/80/v2-2078e554f7891d8ae674b0dd7d87a97b.png" /></p>
-<p>另外, 因为 <code>beamer</code> 文档类默认正文使用无衬线体,
-于是也可以偷鸡地设置 <code>\setsansfont&#123;Fira Sans&#125;</code>
-但是这样做会导致数学模式的 <code>\mathrm</code> 变成衬线体</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;beamer&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;amsmath&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;fontspec&#125;</span><br><span class="line"><span class="keyword">\setsansfont</span>&#123;Fira Sans&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span><br><span class="line">    Utpurus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.</span><br><span class="line">    <span class="keyword">\[</span></span><br><span class="line">        <span class="keyword">\int</span><span class="built_in">_</span>&#123;0&#125;<span class="built_in">^</span>&#123;<span class="keyword">\pi</span>&#125;<span class="keyword">\sin</span> x<span class="keyword">\,</span><span class="keyword">\mathrm</span>&#123;d&#125;x=2 </span><br><span class="line">    <span class="keyword">\]</span></span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
-<p><img
-src="https://pic4.zhimg.com/80/v2-94edf62ee34ec47955526aabbba5a438.png" /></p>
-<p>在 <code>texdoc fontspec</code> 中查找原因, 可以在 3.2 节 Maths fonts
-adjustments 中找到</p>
-<p><img
-src="https://pic4.zhimg.com/80/v2-6ded00e03780caf7534fb7a3e5f7a9a9.png" /></p>
-<p>即在默认设置下, <code>fontspec</code> 宏包会将数学字体设置成
-<code>Computer Modern</code>, 于是我们需要用 <code>no-math</code>
-选项来阻止它, 同时 <code>\mathrm&#123;d&#125;</code> 也会调用
-<code>rmfamily</code> 的字体, 我们将它改为 <code>\mathsf&#123;d&#125;</code>:</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;beamer&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;amsmath&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>[no-math]&#123;fontspec&#125;</span><br><span class="line"><span class="keyword">\setsansfont</span>&#123;Fira Sans&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span><br><span class="line">    Utpurus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.</span><br><span class="line">    <span class="keyword">\[</span></span><br><span class="line">        <span class="keyword">\int</span><span class="built_in">_</span>&#123;0&#125;<span class="built_in">^</span>&#123;<span class="keyword">\pi</span>&#125;<span class="keyword">\sin</span> x<span class="keyword">\,</span><span class="keyword">\mathsf</span>&#123;d&#125;x=2</span><br><span class="line">    <span class="keyword">\]</span></span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
-<p>这个暂时不知道是什么原因导致的. 如果想正文和数学公式都使用 Fira
-系列的字体, 同时保留衬线字体, 可以如下设置: <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;beamer&#125;</span><br><span class="line"><span class="comment">% \usepackage[no-math]&#123;fontspec&#125;</span></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;unicode-math&#125;</span><br><span class="line"><span class="keyword">\usefonttheme</span>&#123;serif&#125;</span><br><span class="line"><span class="comment">% \setsansfont&#123;Fira Sans&#125;</span></span><br><span class="line"><span class="keyword">\setmainfont</span>&#123;Fira Sans&#125;</span><br><span class="line"><span class="keyword">\setsansfont</span>&#123;CMU Serif&#125;</span><br><span class="line"><span class="keyword">\setmathfont</span>&#123;Fira Math&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">    <span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">        Handgloves, <span class="built_in">$</span><span class="keyword">\sin</span><span class="built_in">$</span>, <span class="built_in">$</span><span class="keyword">\mathrm</span>&#123;Handgloves&#125;<span class="built_in">$</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">\textsf</span>&#123;this is CMU Serif&#125;</span><br><span class="line">    <span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure> <img
-src="https://pic4.zhimg.com/80/v2-84d784c2f5396f6b2e529e0d7506b38d.png" /></p>
-<p>如果设置中文字体, 使用 <code>ctexbeamer</code> 文档类并设置
-<code>\setCJK(main, sans, mono)font</code>, 类比上文即可.</p>
-]]></content>
-      <categories>
-        <category>LaTeX</category>
-        <category>字体</category>
-      </categories>
-      <tags>
-        <tag>LaTeX</tag>
-        <tag>示例</tag>
-        <tag>字体设置</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>libertinus 字体与 extarrows 不兼容的处理</title>
-    <url>/2021-11-27-extarrows-and-libertinus/</url>
-    <content><![CDATA[<p>与群友交流的过程中发现如果将数学字体设置为
-<code>Libertinus Math</code> 的时候, 使用 <code>extarrow</code> 宏包的
-<code>\xLongrightarrow</code> 会有奇怪的现象:</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;amsmath&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;extarrows&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;unicode-math&#125;</span><br><span class="line"><span class="keyword">\setmathfont</span>&#123;Libertinus Math&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">    <span class="keyword">\begin</span>&#123;align*&#125;</span><br><span class="line">        <span class="keyword">\xLongrightarrow</span>&#123;a<span class="built_in">^</span>2+b<span class="built_in">^</span>2=c<span class="built_in">^</span>2&#125; </span><br><span class="line">    <span class="keyword">\end</span>&#123;align*&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/syvshc/image/master/postimg/extarrows-and-libertinus/wrongoutput.png"
-alt="错误输出" />
-<figcaption aria-hidden="true">错误输出</figcaption>
-</figure>
-<span id="more"></span>
-<p>开始我以为是 <code>unicode-math</code> 与 <code>extarrows</code>
-不兼容, 但是当我将字体设置成 <code>STIX Two Math</code> 或者默认的
-<code>Latin Modern Math</code> 的时候发现并不是
-<code>unicode-math</code> 的问题:</p>
-<figure>
-<img
-src="https://raw.githubusercontent.com/syvshc/image/master/postimg/extarrows-and-libertinus/compare.png"
-alt="对比" />
-<figcaption aria-hidden="true">对比</figcaption>
-</figure>
-<p>那就需要看看源码, 找一下有没有能改的地方.</p>
-<p>首先找了一下 <code>extarrow.sty</code> 的源码, 看不太懂</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\RequirePackage</span>&#123;amsmath&#125;</span><br><span class="line">...</span><br><span class="line"><span class="keyword">\def</span><span class="keyword">\xLongrightarrowfill@</span>&#123;<span class="keyword">\arrowfill@</span><span class="keyword">\Relbar</span><span class="keyword">\Relbar</span><span class="keyword">\Longrightarrow</span>&#125;</span><br><span class="line"><span class="keyword">\providecommand</span>&#123;<span class="keyword">\xLongrightarrow</span>&#125;[2][]&#123;<span class="comment">%</span></span><br><span class="line">	<span class="keyword">\ext@arrow</span> 0099<span class="keyword">\xLongrightarrowfill@</span>&#123;<span class="params">#1</span>&#125;&#123;<span class="params">#2</span>&#125;&#125;</span><br></pre></td></tr></table></figure>
-<p>但是发现了两个没有定义就直接使用的命令: <code>\arrowfill@</code> 与
-<code>\Relbar</code>, 那就应该是 <code>amsmath</code> 定义的命令,
-顺藤摸瓜再去找一下.</p>
-<p>在 <code>amsmath.sty</code> 中发现了</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\ams@def</span><span class="keyword">\relbar</span>&#123;<span class="keyword">\mathrel</span>&#123;<span class="keyword">\mathpalette</span><span class="keyword">\mathsm@sh</span><span class="keyword">\std@minus</span>&#125;&#125;</span><br><span class="line"><span class="keyword">\ams@def</span><span class="keyword">\Relbar</span>&#123;<span class="keyword">\mathrel</span><span class="keyword">\std@equal</span>&#125;</span><br><span class="line"><span class="keyword">\def</span><span class="keyword">\arrowfill@</span><span class="params">#1</span><span class="params">#2</span><span class="params">#3</span><span class="params">#4</span>&#123;<span class="comment">%</span></span><br><span class="line">  <span class="built_in">$</span><span class="keyword">\m@th</span><span class="keyword">\thickmuskip</span>0mu<span class="keyword">\medmuskip</span><span class="keyword">\thickmuskip</span><span class="keyword">\thinmuskip</span><span class="keyword">\thickmuskip</span></span><br><span class="line">   <span class="keyword">\relax</span><span class="params">#4</span><span class="params">#1</span><span class="keyword">\mkern</span>-7mu<span class="comment">%</span></span><br><span class="line">   <span class="keyword">\cleaders</span><span class="keyword">\hbox</span>&#123;<span class="built_in">$</span><span class="params">#4</span><span class="keyword">\mkern</span>-2mu<span class="params">#2</span><span class="keyword">\mkern</span>-2mu<span class="built_in">$</span>&#125;<span class="keyword">\hfill</span></span><br><span class="line">   <span class="keyword">\mkern</span>-7mu<span class="params">#3</span><span class="built_in">$</span><span class="comment">%</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>依然看不懂, 再顺着 <code>\Relbar</code> 定义中的
-<code>\std@equal</code> 寻找, 找到了这两行</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\@ifundefined</span>&#123;Umathcode&#125;</span><br><span class="line">  &#123;<span class="comment">%</span></span><br><span class="line">    <span class="keyword">\mathchardef</span><span class="keyword">\std@minus</span><span class="keyword">\mathcode</span>`<span class="keyword">\-</span><span class="keyword">\relax</span></span><br><span class="line">    <span class="keyword">\mathchardef</span><span class="keyword">\std@equal</span><span class="keyword">\mathcode</span>`<span class="keyword">\=</span><span class="keyword">\relax</span></span><br><span class="line">  &#125;</span><br><span class="line">  &#123;<span class="comment">%</span></span><br><span class="line">   <span class="keyword">\Umathcharnumdef</span><span class="keyword">\std@minus</span><span class="keyword">\Umathcodenum</span>`<span class="keyword">\-</span><span class="keyword">\relax</span></span><br><span class="line">   <span class="keyword">\Umathcharnumdef</span><span class="keyword">\std@equal</span><span class="keyword">\Umathcodenum</span>`<span class="keyword">\=</span><span class="keyword">\relax</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>那就可以知道 <code>extarrows</code> 与 <code>\overline</code>
-等命令的实现方法了: 用 <code>\longright/leftarrow</code> 与
-<code>\Longright/leftarrow</code> 与减号 <code>-</code> 或者等号
-<code>=</code> 进行拼接.</p>
-<p>猜出了原理, 用 <code>Libertinus Math</code> 进行一下验证:</p>
-<figure>
-<img
-src="https://raw.githubusercontent.com/syvshc/image/master/postimg/extarrows-and-libertinus/equalandarrow.png"
-alt="= 与 \Longrightarrow" />
-<figcaption aria-hidden="true">= 与
-<code>\Longrightarrow</code></figcaption>
-</figure>
-<p>确实等号与 <code>\Longrightarrow</code> 两横之间的间距不同,
-也就导致了奇怪的效果.</p>
-<p>知道了问题的话就容易解决了,
-直接用其他的字体来替换箭头与等号就可以了<a href="#fn1"
-class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>
-.</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;amsmath&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;extarrows&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;unicode-math&#125;</span><br><span class="line"><span class="keyword">\setmathfont</span>&#123;Libertinus Math&#125;</span><br><span class="line"><span class="keyword">\setmathfont</span>&#123;STIX Two Math&#125;[range = &#123;<span class="keyword">\Longleftarrow</span>, <span class="keyword">\Longrightarrow</span>, <span class="keyword">\equal</span>&#125;]</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;align*&#125;</span><br><span class="line">    <span class="keyword">\xLongleftrightarrow</span>&#123;a<span class="built_in">^</span>2-b<span class="built_in">^</span>2=c<span class="built_in">^</span>2&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;align*&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
-<p><img
-src="https://raw.githubusercontent.com/syvshc/image/master/postimg/extarrows-and-libertinus/right.png" /></p>
-<p><code>\Longrightarrow</code> 的问题解决了, 但是出现了新的问题, 在
-<code>Latin Modern Math</code> 与 <code>STIX Two Math</code> 中的减号
-<code>-</code> 与箭头 <code>\longrightarrow</code>
-的粗细或者垂直位置不一致, 这会导致 <code>\xlong</code>
-系列的箭头变得奇怪, 所以只是这么处理的话会导致箭头风格不统一. 如果不重制
-<code>\Relbar</code> 与 <code>\relbar</code> 的话,
-那就祈祷文章种不要同时出现两种箭头吧……</p>
-<section class="footnotes footnotes-end-of-document"
-role="doc-endnotes">
-<hr />
-<ol>
-<li id="fn1"
-role="doc-endnote"><p>不知道直接画一个与箭头的间距相等的等号可不可行.<a
-href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<p>感谢 <code>#archlinux-cn-offtopic</code> 群的 Xiao Jerry!</p>
+<ol type="1">
+<li>准备好一个 Windows 10 的启动 U 盘, 在 BIOS 界面从 U 盘启动 <img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/RepairEFI/boot.jpg"
+alt="BOOT" /></li>
+<li>点击右下角: 修复计算机</li>
+<li>进入命令行, 运行 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bootrec /rebuildbcd</span><br></pre></td></tr></table></figure> 找到后用 <code>A</code> 添加 <img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/RepairEFI/bootrec.jpg"
+alt="扫描 Windows 安装" /></li>
+<li>添加后退出命令行, 点击启动修复 <img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/RepairEFI/startup-repair.jpg"
+alt="启动修复" /></li>
+<li>完成</li>
 </ol>
-</section>
 ]]></content>
       <categories>
-        <category>LaTeX</category>
-        <category>unicode-math</category>
+        <category>帮助文档</category>
+        <category>Windows</category>
       </categories>
       <tags>
-        <tag>LaTeX</tag>
-        <tag>示例</tag>
-        <tag>unicode-math</tag>
+        <tag>帮助文档</tag>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用 KDE 桌面时遇到的一些问题</title>
+    <url>/2021-09-22-KDEProblems/</url>
+    <content><![CDATA[<p>这里记录一些使用 ArchLinux + KDE 时遇到的问题</p>
+<span id="more"></span>
+<h4 id="某些情况下快捷键失灵">某些情况下快捷键失灵</h4>
+<p>表现与这个<a
+href="https://forum.kde.org/viewtopic.php?f=17&amp;t=166079">帖子</a>一致,
+解决方法在贴子中也已经提到, 即将
+<code>~/.config/kglobalshortcutsrc</code> 重命名或删除, 在重新登录 KDE
+的时候将会自动重新生成一个 <code>~/.config/kglobalshortcutsrc</code>,
+并且问题解决.</p>
+<h4 id="flameshot-延迟启动"><a
+href="https://github.com/flameshot-org/flameshot/issues/1916">flameshot
+延迟启动</a></h4>
+<p>老实说这个系统问题与 flameshot 没什么大关系,
+但是我是通过它发现这个问题的…… KDE 桌面安装后使用 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">balooctl <span class="built_in">disable</span></span><br></pre></td></tr></table></figure> 要关掉
+<code>baloo</code> 服务, 这个东西没什么用, 建立索引的时候还会占用大量的
+CPU.</p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/ArchLinux/chat.png"
+alt="(重复利用图片)" />
+<figcaption aria-hidden="true">(重复利用图片)</figcaption>
+</figure>
+<p>其他的桌面操作卡顿或延迟, 如终端中对命令的响应,
+软件的启动与关闭也可能与其相关.</p>
+<h4 id="桌面黑屏">桌面黑屏</h4>
+<p><img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/KDEProblems/black.png" /></p>
+<p>右键时不出现菜单, 新建文件夹也不显示, 需要重启 plasma,
+在终端中运行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">plasmashell --replace &amp;</span><br></pre></td></tr></table></figure>
+<p>其他桌面环境的问题可以类似处理.</p>
+<h4 id="桌面动画效果消失">桌面动画效果消失</h4>
+<p>首先尝试 <code>Alt+Shift+F12</code> 来打开"显示特效混合器", 如果无效,
+需要重启 kwin, 在终端中运行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">kwin_x11 --replace &amp;</span><br></pre></td></tr></table></figure>
+<h4
+id="默认状态下按-ctrlaltf2-可以退出桌面进入终端-在终端中按-ctrlaltf1-可以返回桌面">默认状态下按
+<code>Ctrl+Alt+F2</code> 可以退出桌面进入终端, 在终端中按
+<code>Ctrl+Alt+F1</code> 可以返回桌面</h4>
+<h4 id="桌面语言中英混合">桌面语言中英混合</h4>
+<p>首先在 <code>设置-&gt;区域设置-&gt;语言</code> 中查看是否添加了
+<code>简体中文</code></p>
+<p><img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/KDEProblems/language.png" /></p>
+<p>再查看 <code>设置-&gt;区域设置-&gt;格式</code> 中是否设置为了
+<code>zh_CN</code></p>
+<p><img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/KDEProblems/region.png" /></p>
+<p>如果一致, 在终端中运行 <code>locale</code> 与 <code>locale -a</code>
+查看其中的输出是否含有 <code>zh_CN.utf8</code> 及
+<code>zh_CN.UTF-8</code>, 如否, 请参考 <a
+href="https://wiki.archlinux.org/title/Locale_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E7%B3%BB%E7%BB%9F%E5%8C%BA%E5%9F%9F%E8%AE%BE%E7%BD%AE">Wiki</a>
+进行设置.</p>
+<h4 id="安装-nvidia-驱动后字体变大">安装 nvidia 驱动后字体变大</h4>
+<p>首先发现在设置中“桌面特效”部分的部分特效缺失,
+查找后发现这些特效被"排除不支持的特效"隐藏了</p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/KDEProblems/screeneffect.png"
+alt="桌面特效" />
+<figcaption aria-hidden="true">桌面特效</figcaption>
+</figure>
+<p>可以通过安装 <a
+href="https://wiki.archlinux.org/title/NVIDIA_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E5%AE%89%E8%A3%85"><code>nvidia</code></a>
+驱动来解决, 但是安装后有一个问题, 会发现所有的字体都变大了, 经过查找, 在
+reddit 上找到了<a
+href="https://www.reddit.com/r/kde/comments/8ywniu/kde_plasma_everything_is_larger_after/">答案</a>,
+即修改下图中的固定 DPI 为 96, 并重新登录.</p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/KDEProblems/fontsize.png"
+alt="fontsize" />
+<figcaption aria-hidden="true">fontsize</figcaption>
+</figure>
+<h4 id="音频处显示没有输入或输出设备">音频处显示没有输入或输出设备</h4>
+<figure>
+<img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/KDEProblems/no-sound.png"
+alt="没有输入或输出设备" />
+<figcaption aria-hidden="true">没有输入或输出设备</figcaption>
+</figure>
+<p>我的设备是 Dell G15 5511, 属于比较新的设备, 查看了 <a
+href="https://forum.manjaro.org/t/i-have-no-sound/86412">Fourm</a> 与 <a
+href="https://wiki.archlinux.org/title/Advanced_Linux_Sound_Architecture#ALSA_firmware">wiki</a>
+后使用</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yay -S sof-firmware</span><br></pre></td></tr></table></figure>
+<p>安装框架之后即可使用.</p>
+<h4
+id="能连接上网络但是显示受限的连接">能连接上网络但是显示“受限的连接”</h4>
+<figure>
+<img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/KDEProblems/limit-connect.png"
+alt="受限的连接" />
+<figcaption aria-hidden="true">受限的连接</figcaption>
+</figure>
+<p>解决方法见 <a
+href="https://wiki.archlinux.org/title/NetworkManager#Checking_connectivity">Wiki</a></p>
+]]></content>
+      <categories>
+        <category>配置记录</category>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>帮助文档</tag>
+        <tag>Linux</tag>
+        <tag>KDE</tag>
       </tags>
   </entry>
   <entry>
@@ -2845,59 +2718,123 @@ href="https://tex.stackexchange.com/a/74617/180617">地址</a>,
       </tags>
   </entry>
   <entry>
-    <title>第一次被骗</title>
-    <url>/2022-01-11-a-stupid-fraud/</url>
-    <content><![CDATA[<p>以为不会轻易被骗的我就轻易被骗了……</p>
+    <title>一种特殊的参考文献引用样式的设置</title>
+    <url>/2021-10-02-extcite/</url>
+    <content><![CDATA[<p>今天在群里得到了这样的一种引用格式的需求:</p>
+<p><img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/extcite/20211002163210.png" /></p>
+<p>下面使用两种方法来进行实现</p>
 <span id="more"></span>
-<p>前几天我打算接个家教赚点零花钱,
-在一个正规家教群里加了一个发布家教信息的（不是群主管理,
-这个群没有禁言）, 要信息费 400, 是一节半课的钱, 也算合理,
-当场支付宝转了.</p>
-<p>然后今天在这个群里一个女生说这个人是骗子, 她转了钱,
-过了几天骗子把他删了, 我一看确实, 我也被删了. 我,
-她和我对象一起合计了一下, 发现这个人提供的信息就不一样,
-是骗子无疑了.</p>
-<p>给 110 打了个电话, 110 说 400 块钱肯定不够立案,
-而且只有一个支付宝付款码, 没有手机号长个记性吧. 又咽不下这口气,
-自己找吧. 没被删之前我看过他的空间, 里面有一些日常照片, QQ 等级一个皇冠,
-应该是个大号, 然后用了一些不可描述的手段用 QQ 号获取了手机号,
-再支付宝验证了一下这个手机号确实是我给转钱的账户, 这时候再给 110
-打了回去, 说知道了手机号, 110 说可以帮联系一下,
-这里着重感谢一下哈尔滨市松北区的某警察, 至少可以帮打这个电话,
-然后我们这边也又搜了一些他的信息, 并且用支付宝转账试出了他的全名,
-发现还是个<a
-href="https://www.cedf.org.cn/2019Ryjhxs/donate.do?method=listByPage&amp;method=listByPage&amp;year=2019&amp;cid=2731307749&amp;start=5000">中国教育发展基金会</a>的资助学生.</p>
-<figure>
-<img
-src="https://raw.githubusercontent.com/syvshc/image/master/postimg/a-stupid-fraud/foundation.png"
-alt="foundation" />
-<figcaption aria-hidden="true">foundation</figcaption>
-</figure>
-<p>手握这些信息我对象给骗子发了个邮件:</p>
-<figure>
-<img
-src="https://raw.githubusercontent.com/syvshc/image/master/postimg/a-stupid-fraud/mail.png"
-alt="mail" />
-<figcaption aria-hidden="true">mail</figcaption>
-</figure>
-<p>骗子当场顺着邮箱加了我对象的 QQ:</p>
-<figure>
-<img
-src="https://raw.githubusercontent.com/syvshc/image/master/postimg/a-stupid-fraud/chat.png"
-alt="chat" />
-<figcaption aria-hidden="true">chat</figcaption>
-</figure>
-<p>一顿连骂带吓唬, 把钱要回来了, 简单一问说警察也给他打了个电话,
-估计给这小子吓得不轻. 至此, 打了个漂亮仗.</p>
-<p>第一次被骗就遇上了这么蠢的骗子, 用大号诈骗真的……愚蠢.
-(这好像是我写的最轻松的一个博客)</p>
+<p>以下是我用来测试的 <code>ref.bib</code> 文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@INPROCEEDINGS&#123;cnproceed,</span><br><span class="line">	author    = &#123;王重阳 and 黄药师 and 欧阳峰 and 洪七公 and 段皇帝&#125;,</span><br><span class="line">	title     = &#123;武林高手从入门到精通&#125;,</span><br><span class="line">	booktitle = &#123;第~$N$~次华山论剑&#125;,</span><br><span class="line">	year      = 2006,</span><br><span class="line">	address   = &#123;西安, 中国&#125;,</span><br><span class="line">	month     = sep,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@ARTICLE&#123;cnarticle,</span><br><span class="line">	AUTHOR  = &quot;贾宝玉 and 林黛玉 and 薛宝钗 and 贾探春&quot;,</span><br><span class="line">	TITLE   = &quot;论刘姥姥食量大如牛之现实意义&quot;,</span><br><span class="line">	JOURNAL = &quot;红楼梦杂谈&quot;,</span><br><span class="line">	PAGES   = &quot;260--266&quot;,</span><br><span class="line">	VOLUME  = &quot;224&quot;,</span><br><span class="line">	YEAR    = &quot;1800&quot;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@inbook&#123;Lin1992,</span><br><span class="line">	AUTHOR     = &quot;林来兴&quot;,</span><br><span class="line">	TITLE      = &quot;空间控制技术&quot;,</span><br><span class="line">	PUBLISHER  = &quot;宇航出版社&quot;,</span><br><span class="line">	YEAR       = &quot;1992&quot;,</span><br><span class="line">	Pages      = &quot;25-42&quot;,</span><br><span class="line">	ADDRESS    = &quot;北京&quot;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@book&#123;xin1994,</span><br><span class="line">	title=&#123;信息技术与信息服务国际研讨会论文集&#125;,</span><br><span class="line">	author=&#123;辛希孟 and 中国科学院文献信息中心 and 孟广均 and 信息学&#125;,</span><br><span class="line">	year=&#123;1994&#125;,</span><br><span class="line">	publisher=&#123;中国社会科学出版社&#125;,</span><br><span class="line">	pages=&#123;45-49&#125;,</span><br><span class="line">	address=&#123;北京&#125;,</span><br><span class="line">	typeoflit=&#123;C&#125;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@book&#123;zhao1998,</span><br><span class="line">	title=&#123;新时代的工业工程师&#125;,</span><br><span class="line">	author=&#123;赵耀东&#125;,</span><br><span class="line">	year=&#123;1998&#125;,</span><br><span class="line">	citedate =     &#123;1998-09-26&#125;,</span><br><span class="line">	address=&#123;台北&#125;,</span><br><span class="line">	publisher=&#123;天下文化出版社&#125;,</span><br><span class="line">	url=&#123;http://www.ie.nthu.edu.tw/info/ie.newie.htm(Big5)&#125;,</span><br><span class="line">	typeoflit=&#123;M/OL&#125;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@phdthesis&#123;Chen1992,</span><br><span class="line">	Author = &#123;谌颖&#125;,</span><br><span class="line">	Title = &#123;空间最优交会控制理论与方法研究&#125;,</span><br><span class="line">	ADDRESS    = &quot;哈尔滨&quot;,</span><br><span class="line">	School = &#123;哈尔滨工业大学&#125;,</span><br><span class="line">	Year = &#123;1992&#125;,</span><br><span class="line">	pages= &#123;8-13&#125;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@article&#123;hithesis2017,</span><br><span class="line">	title=&#123;Hi!Thesis!,Harbin Institue of Technology&#125;,</span><br><span class="line">	author=&#123;Yanshuo Chu&#125;,</span><br><span class="line">	journal=&#123;Github&#125;,</span><br><span class="line">	volume=&#123;001&#125;,</span><br><span class="line">	number=&#123;0001&#125;,</span><br><span class="line">	pages=&#123;000-999&#125;,</span><br><span class="line">	year=&#123;2017&#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="使用-cite-宏包">使用 <code>cite</code> 宏包</h4>
+<p>这种方法适合裸用各种 <code>\bibliographystyle</code> 的同学,
+直接看代码</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;ctexart&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>[noadjust,super]&#123;cite&#125;</span><br><span class="line"><span class="comment">% texdoc cite : More Customization</span></span><br><span class="line"><span class="keyword">\renewcommand</span><span class="keyword">\citeform</span>[1]&#123;[<span class="params">#1</span>]&#125;</span><br><span class="line"><span class="keyword">\renewcommand</span>&#123;<span class="keyword">\citeleft</span>&#125;&#123;&#125;</span><br><span class="line"><span class="keyword">\renewcommand</span>&#123;<span class="keyword">\citeright</span>&#125;&#123;&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">    text<span class="keyword">\cite</span>&#123;cnproceed,Chen1992,hithesis2017,zhao1998,xin1994,cnarticle&#125;</span><br><span class="line"></span><br><span class="line">    text<span class="keyword">\cite</span>&#123;Lin1992,xin1994&#125;</span><br><span class="line">    <span class="keyword">\bibliographystyle</span>&#123;plain&#125;</span><br><span class="line">    <span class="keyword">\bibliography</span>&#123;ref.bib&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<p><img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/extcite/20211002165243.png" /></p>
+<h4 id="使用-natbib-宏包或-gbt7714-宏包">使用 <code>natbib</code> 宏包或
+<code>gbt7714</code> 宏包</h4>
+<p>直接上代码</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;ctexart&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>[sort<span class="built_in">&amp;</span>compress,numbers,super]&#123;natbib&#125;</span><br><span class="line"><span class="keyword">\setcitestyle</span>&#123;open=&#123;&#125;,close=&#123;&#125;&#125;</span><br><span class="line"><span class="comment">% texdoc natbib : sec 2.12</span></span><br><span class="line"><span class="keyword">\renewcommand</span>&#123;<span class="keyword">\citenumfont</span>&#125;[1]&#123;[<span class="params">#1</span>]&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">    text<span class="keyword">\cite</span>&#123;cnproceed,Chen1992,hithesis2017,zhao1998,xin1994,cnarticle&#125;</span><br><span class="line"></span><br><span class="line">    text<span class="keyword">\cite</span>&#123;Lin1992,xin1994&#125;</span><br><span class="line">    <span class="keyword">\bibliographystyle</span>&#123;plain&#125;</span><br><span class="line">    <span class="keyword">\bibliography</span>&#123;ref.bib&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<p><img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/extcite/20211002165718.png" /></p>
+<p>当使用 <code>gbt7714</code> 宏包的时候, 需要把参数拆开,
+实现效果如下</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;ctexart&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>[sort<span class="built_in">&amp;</span>compress]&#123;gbt7714&#125;</span><br><span class="line"><span class="keyword">\citestyle</span>&#123;super&#125;</span><br><span class="line"><span class="keyword">\setcitestyle</span>&#123;open=&#123;&#125;,close=&#123;&#125;&#125;</span><br><span class="line"><span class="comment">% texdoc natbib : sec 2.12</span></span><br><span class="line"><span class="keyword">\renewcommand</span>&#123;<span class="keyword">\citenumfont</span>&#125;[1]&#123;[<span class="params">#1</span>]&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">    text<span class="keyword">\cite</span>&#123;cnproceed,Chen1992,hithesis2017,zhao1998,xin1994,cnarticle&#125;</span><br><span class="line"></span><br><span class="line">    text<span class="keyword">\cite</span>&#123;Lin1992,xin1994&#125;</span><br><span class="line">    <span class="keyword">\bibliographystyle</span>&#123;gbt7714-numerical&#125;</span><br><span class="line">    <span class="keyword">\bibliography</span>&#123;ref.bib&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<p><img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/extcite/20211002165924.png" /></p>
 ]]></content>
       <categories>
-        <category>日常</category>
+        <category>LaTeX</category>
+        <category>参考文献</category>
       </categories>
       <tags>
-        <tag>日常</tag>
-        <tag>诈骗</tag>
+        <tag>LaTeX</tag>
+        <tag>示例</tag>
+        <tag>参考文献</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>libertinus 字体与 extarrows 不兼容的处理</title>
+    <url>/2021-11-27-extarrows-and-libertinus/</url>
+    <content><![CDATA[<p>与群友交流的过程中发现如果将数学字体设置为
+<code>Libertinus Math</code> 的时候, 使用 <code>extarrow</code> 宏包的
+<code>\xLongrightarrow</code> 会有奇怪的现象:</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;amsmath&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;extarrows&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;unicode-math&#125;</span><br><span class="line"><span class="keyword">\setmathfont</span>&#123;Libertinus Math&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">    <span class="keyword">\begin</span>&#123;align*&#125;</span><br><span class="line">        <span class="keyword">\xLongrightarrow</span>&#123;a<span class="built_in">^</span>2+b<span class="built_in">^</span>2=c<span class="built_in">^</span>2&#125; </span><br><span class="line">    <span class="keyword">\end</span>&#123;align*&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<figure>
+<img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/extarrows-and-libertinus/wrongoutput.png"
+alt="错误输出" />
+<figcaption aria-hidden="true">错误输出</figcaption>
+</figure>
+<span id="more"></span>
+<p>开始我以为是 <code>unicode-math</code> 与 <code>extarrows</code>
+不兼容, 但是当我将字体设置成 <code>STIX Two Math</code> 或者默认的
+<code>Latin Modern Math</code> 的时候发现并不是
+<code>unicode-math</code> 的问题:</p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/extarrows-and-libertinus/compare.png"
+alt="对比" />
+<figcaption aria-hidden="true">对比</figcaption>
+</figure>
+<p>那就需要看看源码, 找一下有没有能改的地方.</p>
+<p>首先找了一下 <code>extarrow.sty</code> 的源码, 看不太懂</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\RequirePackage</span>&#123;amsmath&#125;</span><br><span class="line">...</span><br><span class="line"><span class="keyword">\def</span><span class="keyword">\xLongrightarrowfill@</span>&#123;<span class="keyword">\arrowfill@</span><span class="keyword">\Relbar</span><span class="keyword">\Relbar</span><span class="keyword">\Longrightarrow</span>&#125;</span><br><span class="line"><span class="keyword">\providecommand</span>&#123;<span class="keyword">\xLongrightarrow</span>&#125;[2][]&#123;<span class="comment">%</span></span><br><span class="line">	<span class="keyword">\ext@arrow</span> 0099<span class="keyword">\xLongrightarrowfill@</span>&#123;<span class="params">#1</span>&#125;&#123;<span class="params">#2</span>&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>但是发现了两个没有定义就直接使用的命令: <code>\arrowfill@</code> 与
+<code>\Relbar</code>, 那就应该是 <code>amsmath</code> 定义的命令,
+顺藤摸瓜再去找一下.</p>
+<p>在 <code>amsmath.sty</code> 中发现了</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\ams@def</span><span class="keyword">\relbar</span>&#123;<span class="keyword">\mathrel</span>&#123;<span class="keyword">\mathpalette</span><span class="keyword">\mathsm@sh</span><span class="keyword">\std@minus</span>&#125;&#125;</span><br><span class="line"><span class="keyword">\ams@def</span><span class="keyword">\Relbar</span>&#123;<span class="keyword">\mathrel</span><span class="keyword">\std@equal</span>&#125;</span><br><span class="line"><span class="keyword">\def</span><span class="keyword">\arrowfill@</span><span class="params">#1</span><span class="params">#2</span><span class="params">#3</span><span class="params">#4</span>&#123;<span class="comment">%</span></span><br><span class="line">  <span class="built_in">$</span><span class="keyword">\m@th</span><span class="keyword">\thickmuskip</span>0mu<span class="keyword">\medmuskip</span><span class="keyword">\thickmuskip</span><span class="keyword">\thinmuskip</span><span class="keyword">\thickmuskip</span></span><br><span class="line">   <span class="keyword">\relax</span><span class="params">#4</span><span class="params">#1</span><span class="keyword">\mkern</span>-7mu<span class="comment">%</span></span><br><span class="line">   <span class="keyword">\cleaders</span><span class="keyword">\hbox</span>&#123;<span class="built_in">$</span><span class="params">#4</span><span class="keyword">\mkern</span>-2mu<span class="params">#2</span><span class="keyword">\mkern</span>-2mu<span class="built_in">$</span>&#125;<span class="keyword">\hfill</span></span><br><span class="line">   <span class="keyword">\mkern</span>-7mu<span class="params">#3</span><span class="built_in">$</span><span class="comment">%</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>依然看不懂, 再顺着 <code>\Relbar</code> 定义中的
+<code>\std@equal</code> 寻找, 找到了这两行</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\@ifundefined</span>&#123;Umathcode&#125;</span><br><span class="line">  &#123;<span class="comment">%</span></span><br><span class="line">    <span class="keyword">\mathchardef</span><span class="keyword">\std@minus</span><span class="keyword">\mathcode</span>`<span class="keyword">\-</span><span class="keyword">\relax</span></span><br><span class="line">    <span class="keyword">\mathchardef</span><span class="keyword">\std@equal</span><span class="keyword">\mathcode</span>`<span class="keyword">\=</span><span class="keyword">\relax</span></span><br><span class="line">  &#125;</span><br><span class="line">  &#123;<span class="comment">%</span></span><br><span class="line">   <span class="keyword">\Umathcharnumdef</span><span class="keyword">\std@minus</span><span class="keyword">\Umathcodenum</span>`<span class="keyword">\-</span><span class="keyword">\relax</span></span><br><span class="line">   <span class="keyword">\Umathcharnumdef</span><span class="keyword">\std@equal</span><span class="keyword">\Umathcodenum</span>`<span class="keyword">\=</span><span class="keyword">\relax</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>那就可以知道 <code>extarrows</code> 与 <code>\overline</code>
+等命令的实现方法了: 用 <code>\longright/leftarrow</code> 与
+<code>\Longright/leftarrow</code> 与减号 <code>-</code> 或者等号
+<code>=</code> 进行拼接.</p>
+<p>猜出了原理, 用 <code>Libertinus Math</code> 进行一下验证:</p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/extarrows-and-libertinus/equalandarrow.png"
+alt="= 与 \Longrightarrow" />
+<figcaption aria-hidden="true">= 与
+<code>\Longrightarrow</code></figcaption>
+</figure>
+<p>确实等号与 <code>\Longrightarrow</code> 两横之间的间距不同,
+也就导致了奇怪的效果.</p>
+<p>知道了问题的话就容易解决了,
+直接用其他的字体来替换箭头与等号就可以了<a href="#fn1"
+class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>
+.</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;amsmath&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;extarrows&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;unicode-math&#125;</span><br><span class="line"><span class="keyword">\setmathfont</span>&#123;Libertinus Math&#125;</span><br><span class="line"><span class="keyword">\setmathfont</span>&#123;STIX Two Math&#125;[range = &#123;<span class="keyword">\Longleftarrow</span>, <span class="keyword">\Longrightarrow</span>, <span class="keyword">\equal</span>&#125;]</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;align*&#125;</span><br><span class="line">    <span class="keyword">\xLongleftrightarrow</span>&#123;a<span class="built_in">^</span>2-b<span class="built_in">^</span>2=c<span class="built_in">^</span>2&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;align*&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<p><img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/extarrows-and-libertinus/right.png" /></p>
+<p><code>\Longrightarrow</code> 的问题解决了, 但是出现了新的问题, 在
+<code>Latin Modern Math</code> 与 <code>STIX Two Math</code> 中的减号
+<code>-</code> 与箭头 <code>\longrightarrow</code>
+的粗细或者垂直位置不一致, 这会导致 <code>\xlong</code>
+系列的箭头变得奇怪, 所以只是这么处理的话会导致箭头风格不统一. 如果不重制
+<code>\Relbar</code> 与 <code>\relbar</code> 的话,
+那就祈祷文章种不要同时出现两种箭头吧……</p>
+<aside id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>不知道直接画一个与箭头的间距相等的等号可不可行.<a
+href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</aside>
+]]></content>
+      <categories>
+        <category>LaTeX</category>
+        <category>unicode-math</category>
+      </categories>
+      <tags>
+        <tag>LaTeX</tag>
+        <tag>示例</tag>
+        <tag>unicode-math</tag>
       </tags>
   </entry>
   <entry>
@@ -3210,16 +3147,15 @@ src="https://raw.githubusercontent.com/syvshc/image/master/postimg/length-in-enu
 alt="Sample 7" />
 <figcaption aria-hidden="true">Sample 7</figcaption>
 </figure>
-<section class="footnotes footnotes-end-of-document"
+<aside id="footnotes" class="footnotes footnotes-end-of-document"
 role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>如果设置的是
-<code>label=(\Alph*)</code>, 那么会将 <code>(M)</code> 整体的宽度设置为
-<code>labelwidth</code>.<a href="#fnref1" class="footnote-back"
-role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>如果设置的是 <code>label=(\Alph*)</code>, 那么会将
+<code>(M)</code> 整体的宽度设置为 <code>labelwidth</code>.<a
+href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section>
+</aside>
 ]]></content>
       <categories>
         <category>LaTeX</category>
@@ -3229,6 +3165,62 @@ role="doc-backlink">↩︎</a></p></li>
         <tag>LaTeX</tag>
         <tag>示例</tag>
         <tag>列表</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>第一次被骗</title>
+    <url>/2022-01-11-a-stupid-fraud/</url>
+    <content><![CDATA[<p>以为不会轻易被骗的我就轻易被骗了……</p>
+<span id="more"></span>
+<p>前几天我打算接个家教赚点零花钱,
+在一个正规家教群里加了一个发布家教信息的（不是群主管理,
+这个群没有禁言）, 要信息费 400, 是一节半课的钱, 也算合理,
+当场支付宝转了.</p>
+<p>然后今天在这个群里一个女生说这个人是骗子, 她转了钱,
+过了几天骗子把他删了, 我一看确实, 我也被删了. 我,
+她和我对象一起合计了一下, 发现这个人提供的信息就不一样,
+是骗子无疑了.</p>
+<p>给 110 打了个电话, 110 说 400 块钱肯定不够立案,
+而且只有一个支付宝付款码, 没有手机号长个记性吧. 又咽不下这口气,
+自己找吧. 没被删之前我看过他的空间, 里面有一些日常照片, QQ 等级一个皇冠,
+应该是个大号, 然后用了一些不可描述的手段用 QQ 号获取了手机号,
+再支付宝验证了一下这个手机号确实是我给转钱的账户, 这时候再给 110
+打了回去, 说知道了手机号, 110 说可以帮联系一下,
+这里着重感谢一下哈尔滨市松北区的某警察, 至少可以帮打这个电话,
+然后我们这边也又搜了一些他的信息, 并且用支付宝转账试出了他的全名,
+发现还是个<a
+href="https://www.cedf.org.cn/2019Ryjhxs/donate.do?method=listByPage&amp;method=listByPage&amp;year=2019&amp;cid=2731307749&amp;start=5000">中国教育发展基金会</a>的资助学生.</p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/a-stupid-fraud/foundation.png"
+alt="foundation" />
+<figcaption aria-hidden="true">foundation</figcaption>
+</figure>
+<p>手握这些信息我对象给骗子发了个邮件:</p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/a-stupid-fraud/mail.png"
+alt="mail" />
+<figcaption aria-hidden="true">mail</figcaption>
+</figure>
+<p>骗子当场顺着邮箱加了我对象的 QQ:</p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/a-stupid-fraud/chat.png"
+alt="chat" />
+<figcaption aria-hidden="true">chat</figcaption>
+</figure>
+<p>一顿连骂带吓唬, 把钱要回来了, 简单一问说警察也给他打了个电话,
+估计给这小子吓得不轻. 至此, 打了个漂亮仗.</p>
+<p>第一次被骗就遇上了这么蠢的骗子, 用大号诈骗真的……愚蠢.
+(这好像是我写的最轻松的一个博客)</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>日常</tag>
+        <tag>诈骗</tag>
       </tags>
   </entry>
   <entry>
@@ -3301,6 +3293,134 @@ href="https://xkwxdyy.github.io/">夏大鱼羊</a> 在我学习 LaTeX3
         <tag>LaTeX</tag>
         <tag>示例</tag>
         <tag>LaTeX3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>滚动升级 TeXLive</title>
+    <url>/2022-04-04-texlive-rolling-update/</url>
+    <content><![CDATA[<p>这里说一下如何滚动升级 TeXLive, 而不卸载安装. 由于我也是第一次这么做,
+不知道有没有什么可能产生的后果.</p>
+<span id="more"></span>
+<p>首先, 愿意看官方文档的小伙伴可以直接看<a
+href="https://www.tug.org/texlive/upgrade.html">官网</a></p>
+<h2 id="windows">Windows</h2>
+<ol type="1">
+<li>首先我们如果直接使用 <code>tlmgr update -self -all</code>
+会得到</li>
+</ol>
+<p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tlmgr.pl: Local TeX Live (2021) is older than remote repository (2022).</span><br><span class="line">Cross release updates are only supported with</span><br><span class="line">  update-tlmgr-latest(.sh/.exe) --update</span><br><span class="line">See https://tug.org/texlive/upgrade.html <span class="keyword">for</span> details.</span><br></pre></td></tr></table></figure></p>
+<p>它说让去 <a
+href="https://tug.org/texlive/upgrade.html">https://tug.org/texlive/upgrade.html</a>
+查看详细信息, 但是 Windows 只给了一句</p>
+<blockquote>
+<p>There is no comparable upgrade procedure for Windows. Doing a new
+installation is necessary.</p>
+</blockquote>
+<p>甚至没有给提供 <code>update-tlmgr-latest.exe</code>, 那我们去 <a
+href="https://www.tug.org/texlive/tlmgr.html"><code>tlmgr</code>
+的官网</a> 看一下有没有, 果然发现了</p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/texlive-rolling-update/tlmgr-latest.png"
+alt="tlmgr 官网" />
+<figcaption aria-hidden="true"><code>tlmgr</code> 官网</figcaption>
+</figure>
+<ol start="2" type="1">
+<li><p>先别急, 我们在 TeXLive 的安装目录里复制复制一份 <code>2021</code>
+文件夹, 命名为 <code>2022</code>, 当然也可以直接改名, 但是如果这样做,
+一旦 TeXLive 2022 有问题, 那么我们将没有办法回到之前可行的工作环境.
+如果觉得文件夹很大, 可以选择不复制 <code>/tlpkg/backups/</code>
+文件夹.</p></li>
+<li><p>将环境变量中的 <code>texlive/2021</code> 改为
+<code>texlive/2022</code>.</p></li>
+<li><p>然后下载 <code>update-tlmgr-latest.exe</code>, 安装, 等到 "Close"
+亮起, 点击 "Close" 来关闭安装窗口, 重启命令行. 这时我们再使用
+<code>tlmgr update -list</code>, 可以看到</p></li>
+</ol>
+<p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tlmgr.pl: package repository https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet (not verified: gpg unavailable)</span><br><span class="line">===============================================================================</span><br><span class="line">tlmgr itself needs to be updated.</span><br><span class="line">Please <span class="keyword">do</span> this via either</span><br><span class="line">  tlmgr update --self</span><br><span class="line">or by getting the latest updater <span class="keyword">for</span> Unix-ish systems:</span><br><span class="line">  https://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.sh</span><br><span class="line">and/or Windows systems:</span><br><span class="line">  https://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.exe</span><br><span class="line">Then <span class="built_in">continue</span> with other updates as usual.</span><br><span class="line">===============================================================================</span><br><span class="line">tlmgr.pl: would save backups to C:/texlive/2021/tlpkg/backups</span><br><span class="line">keep:     academicons              : <span class="built_in">local</span>:    62623, <span class="built_in">source</span>:    62622</span><br><span class="line">keep:     altsubsup                : <span class="built_in">local</span>:    62739, <span class="built_in">source</span>:    62738</span><br><span class="line">keep:     arara                    : <span class="built_in">local</span>:    62339, <span class="built_in">source</span>:    62298</span><br><span class="line">keep:     asmeconf                 : <span class="built_in">local</span>:    62716, <span class="built_in">source</span>:    62713</span><br><span class="line">keep:     babel                    : <span class="built_in">local</span>:    62203, <span class="built_in">source</span>:    62202</span><br><span class="line">keep:     babel-polish             : <span class="built_in">local</span>:    62681, <span class="built_in">source</span>:    62680</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<p>这样的输出</p>
+<ol start="6" type="1">
+<li>这时再使用 <code>tlmgr update -self -all</code> 即可完成升级</li>
+</ol>
+<p><strong>注意</strong> 由于新版的 <code>newtx</code>
+宏包的问题依然没有修复, 升级的时候可以选择使用
+<code>tlmgr update -self -all -exclude newtx</code> 来忽略它的升级.</p>
+<p>如果出现了问题, 可以读一下 Linux 的部分</p>
+<p>升级后使用 <code>tex -v</code> 来测试版本</p>
+<p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">TeX 3.141592653 (TeX Live 2022)</span><br><span class="line">kpathsea version 6.3.4</span><br><span class="line">Copyright 2022 D.E. Knuth.</span><br><span class="line">There is NO warranty.  Redistribution of this software is</span><br><span class="line">covered by the terms of both the TeX copyright and</span><br><span class="line">the Lesser GNU General Public License.</span><br><span class="line">For more information about these matters, see the file</span><br><span class="line">named COPYING and the TeX source.</span><br><span class="line">Primary author of TeX: D.E. Knuth.</span><br></pre></td></tr></table></figure></p>
+<ol start="7" type="1">
+<li><p>完成宏包更新之后, 终端运行</p>
+<p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">luaotfload-tool -fu</span><br></pre></td></tr></table></figure></p>
+<p>来完成 <code>lualatex</code> 的字体配置 (或者叫刷新? 我几乎没用过
+<code>lualatex</code>, 对它也不了解)</p></li>
+</ol>
+<h2 id="linux">Linux</h2>
+<ol type="1">
+<li><p>首先终端进入 <code>/texlive</code> 文件夹, 运行
+<code>cp -a ./2021/ ./2022/</code>, 这里同样可以重新命名, 但是不推荐,
+理由同上.</p></li>
+<li><p>然后在 <code>~/.bashrc</code> 或 <code>~/.zshrc</code> 中将
+TeXLive 相关的环境变量中的 <code>2021</code> 改为
+<code>2022</code>.</p></li>
+<li><p>下载 <code>tlmgr-update-latest.sh</code>, 不是必须放入
+<code>texlive</code> 文件夹. (这里我是将 TeXLive 安装在了 <code>~</code>
+目录下, 我不知道如果安装在 <code>/usr/local/texlive</code> 是不是也可行,
+欢迎反馈.) <strong>注意</strong> <a
+href="https://www.tug.org/texlive/upgrade.html">https://www.tug.org/texlive/upgrade.html</a>
+提供的 <code>tlmgr-update-latest.sh</code> 是过时的, 需要在 <a
+href="https://www.tug.org/texlive/tlmgr.html"><code>tlmgr</code>官网</a>
+或者直接去<a
+href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet/">清华的镜像</a>
+进行下载. (话说这个过时的问题在 2019 年就有人提过, 见 <a
+href="https://latex.org/forum/viewtopic.php?t=32463">latex.org</a>,
+莫非是现在又不更新了?)</p></li>
+<li><p>重启终端, 进入 <code>texlive/2022/</code> 文件夹, 运行</p>
+<p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh update-tlmgr-latest.sh -- --upgrade</span><br></pre></td></tr></table></figure></p>
+<p>如果显示了
+<code>sing --upgrade doesn't make sense; terminating.</code>, 说明下载的
+<code>.sh</code> 文件不是最新的</p>
+<p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">    Verifying archive integrity... All good.</span><br><span class="line">Uncompressing TeX Live Manager Updater  100%  </span><br><span class="line">./runme.sh: updating <span class="keyword">in</span> /home/syvshclily/texlive/2022...</span><br><span class="line">./runme.sh: tlmgr version says this is TeX Live 2022,</span><br><span class="line">./runme.sh: and this updater script created: Tue Mar  1 02:52:57 CET 2022.</span><br><span class="line">./runme.sh: have TL 2021, new version also 2021;</span><br><span class="line">./runme.sh: using --upgrade doesn<span class="string">&#x27;t make sense; terminating.</span></span><br><span class="line"><span class="string">(./runme.sh: makeself creation date = Tue Mar  1 02:52:57 CET 2022.)</span></span><br></pre></td></tr></table></figure></p>
+<p>如果有如下的输出, 则说明运行正常:</p>
+<p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Verifying archive integrity... All good.</span><br><span class="line">Uncompressing TeX Live Manager Updater  100%  </span><br><span class="line">./runme.sh: updating <span class="keyword">in</span> /home/syvshclily/texlive/2022...</span><br><span class="line">./runme.sh: tlmgr version says this is TeX Live 2021,</span><br><span class="line">./runme.sh: and this updater script created: Tue Mar  1 02:52:57 CET 2022.</span><br><span class="line">./runme.sh: ok, doing full release upgrade  from 2021 to 2022.</span><br><span class="line">./runme.sh: updating /home/syvshclily/texlive/2022/bin/x86_64-linux ...</span><br><span class="line">./runme.sh: /home/syvshclily/texlive/2022/bin/x86_64-linux/tlmgr including objects: master/tlpkg/tlpobj/texlive.infra.tlpobj master/tlpkg/tlpobj/texlive.infra.x86_64-linux.tlpobj</span><br><span class="line">D:appending to package <span class="built_in">log</span> file: /home/syvshclily/texlive/2022/texmf-var/web2c/tlmgr.log</span><br><span class="line">D:appending to <span class="built_in">command</span> <span class="built_in">log</span> file: /home/syvshclily/texlive/2022/texmf-var/web2c/tlmgr-commands.log</span><br><span class="line">D:tlmgr:main: ::tldownload_server <span class="built_in">hash</span>:: &#123;enabled:1,errorcount:0,initcount:1,ua:LWP::UserAgent=HASH(0x561de626d708)&#125;</span><br><span class="line">D:setup_programs: preferring system versions</span><br><span class="line">D:program curl found <span class="keyword">in</span> path</span><br><span class="line">D:program wget found <span class="keyword">in</span> path</span><br><span class="line">D:TLUtils::setup_programs: checking <span class="keyword">for</span> ssl enabled wget</span><br><span class="line">D:TLUtils::setup_programs: wget has ssl, final wget args: --no-check-certificate --user-agent=texlive/wget --tries=4 --timeout=30 -q -O</span><br><span class="line">D:program lz4 found <span class="keyword">in</span> path</span><br><span class="line">D:program gzip found <span class="keyword">in</span> path</span><br><span class="line">D:program xz found <span class="keyword">in</span> path</span><br><span class="line">./runme.sh: <span class="keyword">done</span>.</span><br></pre></td></tr></table></figure></p></li>
+<li><p>因为运行完 <code>.sh</code> 程序后, <code>tlmgr</code>
+会自动将源修改为 <code>mirrors.ctan.org</code> 终端运行
+<code>tlmgr update -list</code>, 如果有正确输出 (见 Windows 部分),
+表示可以更新, 可以在终端运行</p>
+<p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tlmgr update -self -all</span><br></pre></td></tr></table></figure></p>
+<p>来更新全部宏包, 同样由于 <code>newtx</code> 宏包的问题, 可以使用</p>
+<p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tlmgr update -self -all -exclude newtx</span><br></pre></td></tr></table></figure></p>
+<p>来忽略该宏包的更新.</p>
+<p>在更新宏包的过程中, 如果网络有波动, 有可能出现</p>
+<p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tlmgr: An error has occurred. See above messages. Exiting.</span><br></pre></td></tr></table></figure></p>
+<p>这时候可以向上翻一下命令行输出, 我这里是如下的错误</p>
+<p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[187/258, 06:36/08:31] update: texlive-common [599k] (62149 -&gt; 62748) ... TLPDB::_install_data: downloading did not succeed (download_file failed) for https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet/archive/texlive-common.tar.xz</span><br><span class="line">tlmgr: Installation of new version of texlive-common failed, trying to unwind.</span><br><span class="line">tlmgr: Restoring old package state succeeded.</span><br><span class="line">done</span><br></pre></td></tr></table></figure></p>
+<p>即某些宏包下载失败, 可以再运行</p>
+<p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tlmgr update -all -reinstall-forcibly-removed</span><br></pre></td></tr></table></figure></p>
+<p>来完成更新, 同样可以加上 <code>-exclude newtx</code> 参数来忽略
+<code>newtx</code> 的更新.</p></li>
+<li><p>完成宏包更新之后, 终端运行</p>
+<p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">luaotfload-tool -fu</span><br></pre></td></tr></table></figure></p>
+<p>来完成 <code>lualatex</code> 的字体配置 (或者叫刷新? 我几乎没用过
+<code>lualatex</code>, 对它也不了解)</p></li>
+<li><p>然后将安装的时候的字体文件内容进行改动, 如果是在用户文件夹中,
+路径可能为 <code>~/.fonts.conf/09-texlive.conf</code>; 如果在系统文件夹,
+路径可能为 <code>/etc/fonts/conf.d/09-texlive.conf</code>. 将其中的
+<code>texlive/2021/</code> 修改为 <code>texlive/2022</code>. 或者直接将
+<code>texlive/2022/texmf-var/fonts/conf/texlive-fontconfig.conf</code>
+复制到上述文件夹, 命名为 <code>09-texlive.conf</code>, 其操作与安装
+TeXLive 时是相同的. 然后在终端执行</p>
+<p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo fc-cache -fsv</span><br></pre></td></tr></table></figure></p>
+<p>来刷新字体缓存.</p></li>
+</ol>
+]]></content>
+      <categories>
+        <category>帮助文档</category>
+        <category>LaTeX</category>
+      </categories>
+      <tags>
+        <tag>帮助文档</tag>
+        <tag>LaTeX</tag>
+        <tag>tlmgr</tag>
       </tags>
   </entry>
   <entry>
@@ -3806,52 +3926,49 @@ href="https://github.com/latex3/latex2e/issues/185">Github</a></li>
 是否输入了正确的字体文件名/字族名. <a href="#fn10" class="footnote-ref"
 id="fnref10" role="doc-noteref"><sup>10</sup></a></li>
 </ul>
-<section class="footnotes footnotes-end-of-document"
+<aside id="footnotes" class="footnotes footnotes-end-of-document"
 role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p><a
+<li id="fn1"><p><a
 href="https://www.zhihu.com/question/26860370">Windows 的 PowerShell 和
 Linux 的 terminal 有啥区别？ - 知乎</a><a href="#fnref1"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p>如果在更新宏包等时候出现了
+<li id="fn2"><p>如果在更新宏包等时候出现了
 <code>Permission denied</code> 等字样, 就需要考虑使用管理员权限打开
 cmd<a href="#fnref2" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
-<li id="fn3" role="doc-endnote"><p>由于写这部分的时候我在 ArchLinux 下,
-就以 Linux 的文件目录为例了, 原理几乎相同.<a href="#fnref3"
+<li id="fn3"><p>由于写这部分的时候我在 ArchLinux 下, 就以 Linux
+的文件目录为例了, 原理几乎相同.<a href="#fnref3" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>其中 "控制序列" 可以理解为 LaTeX 中的命令, 即以
+<code>\</code> 开头的一串字符.<a href="#fnref4" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>这里的 <code>&lt;enter&gt;</code> 为按下回车,
+而不是依次输入这几个字符.<a href="#fnref5" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>这些输入不区分大小写.<a href="#fnref6"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4" role="doc-endnote"><p>其中 "控制序列" 可以理解为 LaTeX
-中的命令, 即以 <code>\</code> 开头的一串字符.<a href="#fnref4"
-class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5" role="doc-endnote"><p>这里的 <code>&lt;enter&gt;</code>
-为按下回车, 而不是依次输入这几个字符.<a href="#fnref5"
-class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6" role="doc-endnote"><p>这些输入不区分大小写.<a
-href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn7" role="doc-endnote"><p>见 <code>latex2e.pdf sec 28.1</code>
-或 <a
+<li id="fn7"><p>见 <code>latex2e.pdf sec 28.1</code> 或 <a
 href="http://latexref.xyz/Command-line-options.html">latexref</a><a
 href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn8" role="doc-endnote"><p>其中 <code>xampl.bib</code> 是
-<code>mwe</code> 宏包自带的一个示例的 <code>.bib</code> 文件,
-可以在命令行运行 <code>texdoc mwe</code> 来查找可用的键值.<a
-href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn9" role="doc-endnote"><p>如果在数学模式输入了额外的
-<code>$</code>, 那么报错会是 <code>! You can't use in math
-mode.</code><a href="#fnref9" class="footnote-back"
-role="doc-backlink">↩︎</a></p></li>
-<li id="fn10" role="doc-endnote"><p>注意在 MacOS
+<li id="fn8"><p>其中 <code>xampl.bib</code> 是 <code>mwe</code>
+宏包自带的一个示例的 <code>.bib</code> 文件, 可以在命令行运行
+<code>texdoc mwe</code> 来查找可用的键值.<a href="#fnref8"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>如果在数学模式输入了额外的 <code>$</code>, 那么报错会是
+<code>! You can't use in math mode.</code><a href="#fnref9"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p>注意在 MacOS
 系统上不经过特殊操作只能使用字体文件名来调用发行版字体, 如想设置正文为
 Fandol 宋体, 在 Windows 与 Linux 下均可以使用:
 <code>\setCJKmainfont&#123;FandolSong&#125;</code> 与
 <code>\setCJKmainfont&#123;FandolSong-Regular.otf&#125;</code>, 但是 MacOS
 下只能使用后者. 如果想折腾或者想获得更多信息, 可以看<a
 href="https://zhuanlan.zhihu.com/p/59774395">慕子的知乎专栏</a><a
-href="#fnref10" class="footnote-back"
-role="doc-backlink">↩︎</a></p></li>
+href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section>
+</aside>
 ]]></content>
       <categories>
         <category>帮助文档</category>
@@ -3863,131 +3980,121 @@ role="doc-backlink">↩︎</a></p></li>
       </tags>
   </entry>
   <entry>
-    <title>滚动升级 TeXLive</title>
-    <url>/2022-04-04-texlive-rolling-update/</url>
-    <content><![CDATA[<p>这里说一下如何滚动升级 TeXLive, 而不卸载安装. 由于我也是第一次这么做,
-不知道有没有什么可能产生的后果.</p>
-<span id="more"></span>
-<p>首先, 愿意看官方文档的小伙伴可以直接看<a
-href="https://www.tug.org/texlive/upgrade.html">官网</a></p>
-<h2 id="windows">Windows</h2>
-<ol type="1">
-<li>首先我们如果直接使用 <code>tlmgr update -self -all</code>
-会得到</li>
-</ol>
-<p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tlmgr.pl: Local TeX Live (2021) is older than remote repository (2022).</span><br><span class="line">Cross release updates are only supported with</span><br><span class="line">  update-tlmgr-latest(.sh/.exe) --update</span><br><span class="line">See https://tug.org/texlive/upgrade.html <span class="keyword">for</span> details.</span><br></pre></td></tr></table></figure></p>
-<p>它说让去 <a
-href="https://tug.org/texlive/upgrade.html">https://tug.org/texlive/upgrade.html</a>
-查看详细信息, 但是 Windows 只给了一句</p>
+    <title>$p$ 群的正规子群</title>
+    <url>/2022-09-09-p-group-normal-subgroup-of-p-m/</url>
+    <content><![CDATA[<p>在 <a href="https://en.wikipedia.org/wiki/P-group">Wiki</a>
+上看到了这样一个命题:</p>
 <blockquote>
-<p>There is no comparable upgrade procedure for Windows. Doing a new
-installation is necessary.</p>
+<p>If <span class="math inline">\(p\)</span> is prime and <span
+class="math inline">\(G\)</span> is a group of order <span
+class="math inline">\(p^k\)</span>, then <span
+class="math inline">\(G\)</span> has a normal subgroup of order <span
+class="math inline">\(p^m\)</span> for every <span
+class="math inline">\(1\leqslant m \leqslant k\)</span>.</p>
 </blockquote>
-<p>甚至没有给提供 <code>update-tlmgr-latest.exe</code>, 那我们去 <a
-href="https://www.tug.org/texlive/tlmgr.html"><code>tlmgr</code>
-的官网</a> 看一下有没有, 果然发现了</p>
-<figure>
-<img
-src="https://raw.githubusercontent.com/syvshc/image/master/postimg/texlive-rolling-update/tlmgr-latest.png"
-alt="tlmgr 官网" />
-<figcaption aria-hidden="true"><code>tlmgr</code> 官网</figcaption>
-</figure>
-<ol start="2" type="1">
-<li><p>先别急, 我们在 TeXLive 的安装目录里复制复制一份 <code>2021</code>
-文件夹, 命名为 <code>2022</code>, 当然也可以直接改名, 但是如果这样做,
-一旦 TeXLive 2022 有问题, 那么我们将没有办法回到之前可行的工作环境.
-如果觉得文件夹很大, 可以选择不复制 <code>/tlpkg/backups/</code>
-文件夹.</p></li>
-<li><p>将环境变量中的 <code>texlive/2021</code> 改为
-<code>texlive/2022</code>.</p></li>
-<li><p>然后下载 <code>update-tlmgr-latest.exe</code>, 安装, 等到 "Close"
-亮起, 点击 "Close" 来关闭安装窗口, 重启命令行. 这时我们再使用
-<code>tlmgr update -list</code>, 可以看到</p></li>
-</ol>
-<p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tlmgr.pl: package repository https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet (not verified: gpg unavailable)</span><br><span class="line">===============================================================================</span><br><span class="line">tlmgr itself needs to be updated.</span><br><span class="line">Please <span class="keyword">do</span> this via either</span><br><span class="line">  tlmgr update --self</span><br><span class="line">or by getting the latest updater <span class="keyword">for</span> Unix-ish systems:</span><br><span class="line">  https://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.sh</span><br><span class="line">and/or Windows systems:</span><br><span class="line">  https://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.exe</span><br><span class="line">Then <span class="built_in">continue</span> with other updates as usual.</span><br><span class="line">===============================================================================</span><br><span class="line">tlmgr.pl: would save backups to C:/texlive/2021/tlpkg/backups</span><br><span class="line">keep:     academicons              : <span class="built_in">local</span>:    62623, <span class="built_in">source</span>:    62622</span><br><span class="line">keep:     altsubsup                : <span class="built_in">local</span>:    62739, <span class="built_in">source</span>:    62738</span><br><span class="line">keep:     arara                    : <span class="built_in">local</span>:    62339, <span class="built_in">source</span>:    62298</span><br><span class="line">keep:     asmeconf                 : <span class="built_in">local</span>:    62716, <span class="built_in">source</span>:    62713</span><br><span class="line">keep:     babel                    : <span class="built_in">local</span>:    62203, <span class="built_in">source</span>:    62202</span><br><span class="line">keep:     babel-polish             : <span class="built_in">local</span>:    62681, <span class="built_in">source</span>:    62680</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
-<p>这样的输出</p>
-<ol start="6" type="1">
-<li>这时再使用 <code>tlmgr update -self -all</code> 即可完成升级</li>
-</ol>
-<p><strong>注意</strong> 由于新版的 <code>newtx</code>
-宏包的问题依然没有修复, 升级的时候可以选择使用
-<code>tlmgr update -self -all -exclude newtx</code> 来忽略它的升级.</p>
-<p>如果出现了问题, 可以读一下 Linux 的部分</p>
-<p>升级后使用 <code>tex -v</code> 来测试版本</p>
-<p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">TeX 3.141592653 (TeX Live 2022)</span><br><span class="line">kpathsea version 6.3.4</span><br><span class="line">Copyright 2022 D.E. Knuth.</span><br><span class="line">There is NO warranty.  Redistribution of this software is</span><br><span class="line">covered by the terms of both the TeX copyright and</span><br><span class="line">the Lesser GNU General Public License.</span><br><span class="line">For more information about these matters, see the file</span><br><span class="line">named COPYING and the TeX source.</span><br><span class="line">Primary author of TeX: D.E. Knuth.</span><br></pre></td></tr></table></figure></p>
-<ol start="7" type="1">
-<li><p>完成宏包更新之后, 终端运行</p>
-<p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">luaotfload-tool -fu</span><br></pre></td></tr></table></figure></p>
-<p>来完成 <code>lualatex</code> 的字体配置 (或者叫刷新? 我几乎没用过
-<code>lualatex</code>, 对它也不了解)</p></li>
-</ol>
-<h2 id="linux">Linux</h2>
-<ol type="1">
-<li><p>首先终端进入 <code>/texlive</code> 文件夹, 运行
-<code>cp -a ./2021/ ./2022/</code>, 这里同样可以重新命名, 但是不推荐,
-理由同上.</p></li>
-<li><p>然后在 <code>~/.bashrc</code> 或 <code>~/.zshrc</code> 中将
-TeXLive 相关的环境变量中的 <code>2021</code> 改为
-<code>2022</code>.</p></li>
-<li><p>下载 <code>tlmgr-update-latest.sh</code>, 不是必须放入
-<code>texlive</code> 文件夹. (这里我是将 TeXLive 安装在了 <code>~</code>
-目录下, 我不知道如果安装在 <code>/usr/local/texlive</code> 是不是也可行,
-欢迎反馈.) <strong>注意</strong> <a
-href="https://www.tug.org/texlive/upgrade.html">https://www.tug.org/texlive/upgrade.html</a>
-提供的 <code>tlmgr-update-latest.sh</code> 是过时的, 需要在 <a
-href="https://www.tug.org/texlive/tlmgr.html"><code>tlmgr</code>官网</a>
-或者直接去<a
-href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet/">清华的镜像</a>
-进行下载. (话说这个过时的问题在 2019 年就有人提过, 见 <a
-href="https://latex.org/forum/viewtopic.php?t=32463">latex.org</a>,
-莫非是现在又不更新了?)</p></li>
-<li><p>重启终端, 进入 <code>texlive/2022/</code> 文件夹, 运行</p>
-<p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh update-tlmgr-latest.sh -- --upgrade</span><br></pre></td></tr></table></figure></p>
-<p>如果显示了
-<code>sing --upgrade doesn't make sense; terminating.</code>, 说明下载的
-<code>.sh</code> 文件不是最新的</p>
-<p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">    Verifying archive integrity... All good.</span><br><span class="line">Uncompressing TeX Live Manager Updater  100%  </span><br><span class="line">./runme.sh: updating <span class="keyword">in</span> /home/syvshclily/texlive/2022...</span><br><span class="line">./runme.sh: tlmgr version says this is TeX Live 2022,</span><br><span class="line">./runme.sh: and this updater script created: Tue Mar  1 02:52:57 CET 2022.</span><br><span class="line">./runme.sh: have TL 2021, new version also 2021;</span><br><span class="line">./runme.sh: using --upgrade doesn<span class="string">&#x27;t make sense; terminating.</span></span><br><span class="line"><span class="string">(./runme.sh: makeself creation date = Tue Mar  1 02:52:57 CET 2022.)</span></span><br></pre></td></tr></table></figure></p>
-<p>如果有如下的输出, 则说明运行正常:</p>
-<p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Verifying archive integrity... All good.</span><br><span class="line">Uncompressing TeX Live Manager Updater  100%  </span><br><span class="line">./runme.sh: updating <span class="keyword">in</span> /home/syvshclily/texlive/2022...</span><br><span class="line">./runme.sh: tlmgr version says this is TeX Live 2021,</span><br><span class="line">./runme.sh: and this updater script created: Tue Mar  1 02:52:57 CET 2022.</span><br><span class="line">./runme.sh: ok, doing full release upgrade  from 2021 to 2022.</span><br><span class="line">./runme.sh: updating /home/syvshclily/texlive/2022/bin/x86_64-linux ...</span><br><span class="line">./runme.sh: /home/syvshclily/texlive/2022/bin/x86_64-linux/tlmgr including objects: master/tlpkg/tlpobj/texlive.infra.tlpobj master/tlpkg/tlpobj/texlive.infra.x86_64-linux.tlpobj</span><br><span class="line">D:appending to package <span class="built_in">log</span> file: /home/syvshclily/texlive/2022/texmf-var/web2c/tlmgr.log</span><br><span class="line">D:appending to <span class="built_in">command</span> <span class="built_in">log</span> file: /home/syvshclily/texlive/2022/texmf-var/web2c/tlmgr-commands.log</span><br><span class="line">D:tlmgr:main: ::tldownload_server <span class="built_in">hash</span>:: &#123;enabled:1,errorcount:0,initcount:1,ua:LWP::UserAgent=HASH(0x561de626d708)&#125;</span><br><span class="line">D:setup_programs: preferring system versions</span><br><span class="line">D:program curl found <span class="keyword">in</span> path</span><br><span class="line">D:program wget found <span class="keyword">in</span> path</span><br><span class="line">D:TLUtils::setup_programs: checking <span class="keyword">for</span> ssl enabled wget</span><br><span class="line">D:TLUtils::setup_programs: wget has ssl, final wget args: --no-check-certificate --user-agent=texlive/wget --tries=4 --timeout=30 -q -O</span><br><span class="line">D:program lz4 found <span class="keyword">in</span> path</span><br><span class="line">D:program gzip found <span class="keyword">in</span> path</span><br><span class="line">D:program xz found <span class="keyword">in</span> path</span><br><span class="line">./runme.sh: <span class="keyword">done</span>.</span><br></pre></td></tr></table></figure></p></li>
-<li><p>因为运行完 <code>.sh</code> 程序后, <code>tlmgr</code>
-会自动将源修改为 <code>mirrors.ctan.org</code> 终端运行
-<code>tlmgr update -list</code>, 如果有正确输出 (见 Windows 部分),
-表示可以更新, 可以在终端运行</p>
-<p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tlmgr update -self -all</span><br></pre></td></tr></table></figure></p>
-<p>来更新全部宏包, 同样由于 <code>newtx</code> 宏包的问题, 可以使用</p>
-<p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tlmgr update -self -all -exclude newtx</span><br></pre></td></tr></table></figure></p>
-<p>来忽略该宏包的更新.</p>
-<p>在更新宏包的过程中, 如果网络有波动, 有可能出现</p>
-<p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tlmgr: An error has occurred. See above messages. Exiting.</span><br></pre></td></tr></table></figure></p>
-<p>这时候可以向上翻一下命令行输出, 我这里是如下的错误</p>
-<p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[187/258, 06:36/08:31] update: texlive-common [599k] (62149 -&gt; 62748) ... TLPDB::_install_data: downloading did not succeed (download_file failed) for https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet/archive/texlive-common.tar.xz</span><br><span class="line">tlmgr: Installation of new version of texlive-common failed, trying to unwind.</span><br><span class="line">tlmgr: Restoring old package state succeeded.</span><br><span class="line">done</span><br></pre></td></tr></table></figure></p>
-<p>即某些宏包下载失败, 可以再运行</p>
-<p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tlmgr update -all -reinstall-forcibly-removed</span><br></pre></td></tr></table></figure></p>
-<p>来完成更新, 同样可以加上 <code>-exclude newtx</code> 参数来忽略
-<code>newtx</code> 的更新.</p></li>
-<li><p>完成宏包更新之后, 终端运行</p>
-<p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">luaotfload-tool -fu</span><br></pre></td></tr></table></figure></p>
-<p>来完成 <code>lualatex</code> 的字体配置 (或者叫刷新? 我几乎没用过
-<code>lualatex</code>, 对它也不了解)</p></li>
-<li><p>然后将安装的时候的字体文件内容进行改动, 如果是在用户文件夹中,
-路径可能为 <code>~/.fonts.conf/09-texlive.conf</code>; 如果在系统文件夹,
-路径可能为 <code>/etc/fonts/conf.d/09-texlive.conf</code>. 将其中的
-<code>texlive/2021/</code> 修改为 <code>texlive/2022</code>. 或者直接将
-<code>texlive/2022/texmf-var/fonts/conf/texlive-fontconfig.conf</code>
-复制到上述文件夹, 命名为 <code>09-texlive.conf</code>, 其操作与安装
-TeXLive 时是相同的. 然后在终端执行</p>
-<p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo fc-cache -fsv</span><br></pre></td></tr></table></figure></p>
-<p>来刷新字体缓存.</p></li>
-</ol>
+<p>下面来证明这个看起来很强的结论.</p>
+<span id="more"></span>
+<p>首先先给一些会用到的知识:</p>
+<p><strong>定义</strong> 若有限群 <span class="math inline">\(G\)</span>
+的阶等于 <span class="math inline">\(p^m\)</span>, 其中 <span
+class="math inline">\(p\)</span> 为素数, 则称 <span
+class="math inline">\(G\)</span> 是一个 <span
+class="math inline">\(p\)</span> 群.</p>
+<p><strong>定理</strong> 任意 <span class="math inline">\(p\)</span>
+群的中心 <span class="math inline">\(C\)</span> 含有不止一个元素.</p>
+<p>这个定理可以由有限群的类方程 (class equation): <span
+class="math display">\[|G| = |C| + \sum[G:C(y_i)]\]</span> 来说明, 这里
+<span class="math inline">\(C(y_i)\)</span> 表示 <span
+class="math inline">\(y_i\)</span> 在 <span
+class="math inline">\(G\)</span> 中的中心化子, <span
+class="math inline">\(y_i\)</span> 是 <span
+class="math inline">\(G\)</span>
+中每个含不止一个元素的共轭类的代表元.</p>
+<p><strong>命题</strong> <span class="math inline">\(p^2\)</span> 阶群是
+Abel 群, 其中 <span class="math inline">\(p\)</span> 是素数.</p>
+<p><strong>定理</strong>(Cauchy) 设 <span
+class="math inline">\(G\)</span> 是一个有限 Abel 群, <span
+class="math inline">\(p\)</span> 是素数, 若 <span
+class="math inline">\(p\mid |G|\)</span>, 则 <span
+class="math inline">\(G\)</span> 有一个周期为 <span
+class="math inline">\(p\)</span> 的元素, 从而 <span
+class="math inline">\(G\)</span> 有一个 <span
+class="math inline">\(p\)</span> 阶的子群, 这个群是循环群.</p>
+<p><strong>定理</strong>(对应定理) 设 <span class="math inline">\(f: G_1
+\to G_2\)</span> 是满同态, 则映射 <span class="math inline">\(H \to
+f(H)\)</span> 定义了 <span class="math inline">\(G_1\)</span> 包含 $ f$
+的子群集与 <span class="math inline">\(G_2\)</span>
+的子群集之间的一一对应, 在这个对应下, <span
+class="math inline">\(H\triangleleft G_1\)</span> 当且仅当 <span
+class="math inline">\(f(H)\triangleleft G_2\)</span>.</p>
+<p><strong>注意: 这里只有当 <span class="math inline">\(\ker f \subset
+H\)</span>, 且 <span class="math inline">\(f\)</span> 是满同态的时候有
+<span class="math inline">\(H\triangleleft G_1 \Longleftrightarrow
+f(H)\triangleleft G_2\)</span> 的结论.</strong></p>
+<p>下面来证明这个命题.</p>
+<p><strong>证明</strong> 用数学归纳法, 对 <span
+class="math inline">\(|G|\)</span> 的阶数 <span
+class="math inline">\(p^k\)</span> 中的 <span
+class="math inline">\(k\)</span> 进行归纳. 当 <span
+class="math inline">\(k = 2\)</span> 时, 这时 <span
+class="math inline">\(|G|=p^2\)</span>, 由 Cauchy 定理知 <span
+class="math inline">\(G\)</span> 存在一个 <span
+class="math inline">\(p\)</span> 阶子群 <span
+class="math inline">\(H\)</span>, 又因为 <span
+class="math inline">\(G\)</span> 是 Abel 群, 那么就有 <span
+class="math inline">\(H \triangleleft G\)</span>, 这是因为对任意的 <span
+class="math inline">\(h \in H,\ g \in G\)</span>, 都有 <span
+class="math inline">\(hg=gh\)</span>, 那自然就有 <span
+class="math display">\[Hg=gH.\]</span></p>
+<p>假设 <span class="math inline">\(|G|=p^k\)</span> 时, 对于任意的
+<span class="math inline">\(1\leqslant m\leqslant k\)</span>, <span
+class="math inline">\(G\)</span> 都存在一个阶为 <span
+class="math inline">\(p^m\)</span> 的正规子群.</p>
+<p>下面考虑 <span class="math inline">\(|G|=p^{k+1}\)</span> 时. 由于
+<span class="math inline">\(G\)</span> 的中心 <span
+class="math inline">\(C\)</span> 是一个 Abel 群, 且 <span
+class="math inline">\(C\)</span> 中元素不止一个, 那就有 <span
+class="math inline">\(p\mid |C|\)</span>, 由 Cauchy 定理知 <span
+class="math inline">\(C\)</span> 存在一个周期为 <span
+class="math inline">\(p\)</span> 的元素 <span
+class="math inline">\(a\)</span>, 也就是说循环群 <span
+class="math inline">\(H = \langle a\rangle\)</span> 是 <span
+class="math inline">\(C\)</span> 的子群, 从而是 <span
+class="math inline">\(C\)</span> 的正规子群. 而任意的 <span
+class="math inline">\(a^\ell\)</span> 与 <span class="math inline">\(g
+\in G\)</span> 乘法都可交换, 所以 <span class="math inline">\(H
+\triangleleft G\)</span>, 这时我们找到了一个阶为 <span
+class="math inline">\(p\)</span> 的正规子群. 下面找阶数更高的. 做商群
+<span class="math inline">\(G/H\)</span>, 于是有 <span
+class="math display">\[|G/H| = [G:H] = |G|/|H| = p^k,\]</span></p>
+<p>那么由归纳假设可知对于任意的 <span class="math inline">\(1\leqslant m
+\leqslant k\)</span>, <span class="math inline">\(G/H\)</span>
+都含有一个阶为 <span class="math inline">\(p^m\)</span> 的正规子群, 设为
+<span class="math inline">\(N/H\)</span>, 于是 <span
+class="math display">\[|N|=|N/H|\cdot|H|=p^{m+1},\]</span></p>
+<p>那么只要说明 <span class="math inline">\(N\triangleleft G\)</span>
+即可. 做自然同态 <span class="math display">\[\begin{aligned}
+  f : G &amp; \to G/H \\
+  g &amp; \mapsto gH
+\end{aligned},
+\]</span></p>
+<p>显然这是一个满同态, 并且 <span class="math display">\[\ker f = \{g
+\in G: f(g)=eH\} = \{g \in G: gH=eH\} = H,\]</span></p>
+<p>所以有 <span class="math inline">\(H \subset N\)</span>,
+于是由对应定理可知当 <span class="math inline">\(f(N) = N/H\)</span> 是
+<span class="math inline">\(G/H\)</span> 的正规子群时, <span
+class="math inline">\(N\)</span> 是 <span
+class="math inline">\(G\)</span> 的正规子群.</p>
+<p>归纳结束, 命题得证.</p>
 ]]></content>
       <categories>
-        <category>帮助文档</category>
-        <category>LaTeX</category>
+        <category>数学</category>
+        <category>代数</category>
       </categories>
       <tags>
-        <tag>帮助文档</tag>
-        <tag>LaTeX</tag>
-        <tag>tlmgr</tag>
+        <tag>数学</tag>
+        <tag>抽象代数</tag>
+        <tag>群论</tag>
       </tags>
   </entry>
   <entry>
@@ -4430,23 +4537,23 @@ href="https://tex.stackexchange.com/">tex.stackexchange.com</a></li>
 href="https://github.com/CTeX-org/forum/issues">CTeX-org/forum</a></li>
 <li><a href="https://ask.latexstudio.net/">LaTeX 工作室</a></li>
 </ul>
-<section class="footnotes footnotes-end-of-document"
+<aside id="footnotes" class="footnotes footnotes-end-of-document"
 role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>如果在更新宏包等时候出现了
+<li id="fn1"><p>如果在更新宏包等时候出现了
 <code>Permission denied</code> 等字样, 就需要考虑使用管理员权限打开
 cmd<a href="#fnref1" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p>mirror.ctan.org resolves to many
-different hosts, and they are not perfectly synchronized; we recommend
-updating only daily (at most), and not more often.<a href="#fnref2"
-class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3" role="doc-endnote"><p>这个表格来自 <a
+<li id="fn2"><p>mirror.ctan.org resolves to many different hosts, and
+they are not perfectly synchronized; we recommend updating only daily
+(at most), and not more often.<a href="#fnref2" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>这个表格来自 <a
 href="https://github.com/OsbertWang/install-latex-guide-zh-cn">install-latex-guide-zh-cn</a>.<a
 href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section>
+</aside>
 ]]></content>
       <categories>
         <category>帮助文档</category>
@@ -4458,121 +4565,36 @@ href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
       </tags>
   </entry>
   <entry>
-    <title>$p$ 群的正规子群</title>
-    <url>/2022-09-09-p-group-normal-subgroup-of-p-m/</url>
-    <content><![CDATA[<p>在 <a href="https://en.wikipedia.org/wiki/P-group">Wiki</a>
-上看到了这样一个命题:</p>
-<blockquote>
-<p>If <span class="math inline">\(p\)</span> is prime and <span
-class="math inline">\(G\)</span> is a group of order <span
-class="math inline">\(p^k\)</span>, then <span
-class="math inline">\(G\)</span> has a normal subgroup of order <span
-class="math inline">\(p^m\)</span> for every <span
-class="math inline">\(1\leqslant m \leqslant k\)</span>.</p>
-</blockquote>
-<p>下面来证明这个看起来很强的结论.</p>
+    <title>南京小记</title>
+    <url>/2023-02-22-tour-in-nanjing/</url>
+    <content><![CDATA[<p>2023 春季学期开学的前一周和小璃去南京玩了三天， 体验很好。</p>
 <span id="more"></span>
-<p>首先先给一些会用到的知识:</p>
-<p><strong>定义</strong> 若有限群 <span class="math inline">\(G\)</span>
-的阶等于 <span class="math inline">\(p^m\)</span>, 其中 <span
-class="math inline">\(p\)</span> 为素数, 则称 <span
-class="math inline">\(G\)</span> 是一个 <span
-class="math inline">\(p\)</span> 群.</p>
-<p><strong>定理</strong> 任意 <span class="math inline">\(p\)</span>
-群的中心 <span class="math inline">\(C\)</span> 含有不止一个元素.</p>
-<p>这个定理可以由有限群的类方程 (class equation): <span
-class="math display">\[|G| = |C| + \sum[G:C(y_i)]\]</span> 来说明, 这里
-<span class="math inline">\(C(y_i)\)</span> 表示 <span
-class="math inline">\(y_i\)</span> 在 <span
-class="math inline">\(G\)</span> 中的中心化子, <span
-class="math inline">\(y_i\)</span> 是 <span
-class="math inline">\(G\)</span>
-中每个含不止一个元素的共轭类的代表元.</p>
-<p><strong>命题</strong> <span class="math inline">\(p^2\)</span> 阶群是
-Abel 群, 其中 <span class="math inline">\(p\)</span> 是素数.</p>
-<p><strong>定理</strong>(Cauchy) 设 <span
-class="math inline">\(G\)</span> 是一个有限 Abel 群, <span
-class="math inline">\(p\)</span> 是素数, 若 <span
-class="math inline">\(p\mid |G|\)</span>, 则 <span
-class="math inline">\(G\)</span> 有一个周期为 <span
-class="math inline">\(p\)</span> 的元素, 从而 <span
-class="math inline">\(G\)</span> 有一个 <span
-class="math inline">\(p\)</span> 阶的子群, 这个群是循环群.</p>
-<p><strong>定理</strong>(对应定理) 设 <span class="math inline">\(f: G_1
-\to G_2\)</span> 是满同态, 则映射 <span class="math inline">\(H \to
-f(H)\)</span> 定义了 <span class="math inline">\(G_1\)</span> 包含 $ f$
-的子群集与 <span class="math inline">\(G_2\)</span>
-的子群集之间的一一对应, 在这个对应下, <span
-class="math inline">\(H\triangleleft G_1\)</span> 当且仅当 <span
-class="math inline">\(f(H)\triangleleft G_2\)</span>.</p>
-<p><strong>注意: 这里只有当 <span class="math inline">\(\ker f \subset
-H\)</span>, 且 <span class="math inline">\(f\)</span> 是满同态的时候有
-<span class="math inline">\(H\triangleleft G_1 \Longleftrightarrow
-f(H)\triangleleft G_2\)</span> 的结论.</strong></p>
-<p>下面来证明这个命题.</p>
-<p><strong>证明</strong> 用数学归纳法, 对 <span
-class="math inline">\(|G|\)</span> 的阶数 <span
-class="math inline">\(p^k\)</span> 中的 <span
-class="math inline">\(k\)</span> 进行归纳. 当 <span
-class="math inline">\(k = 2\)</span> 时, 这时 <span
-class="math inline">\(|G|=p^2\)</span>, 由 Cauchy 定理知 <span
-class="math inline">\(G\)</span> 存在一个 <span
-class="math inline">\(p\)</span> 阶子群 <span
-class="math inline">\(H\)</span>, 又因为 <span
-class="math inline">\(G\)</span> 是 Abel 群, 那么就有 <span
-class="math inline">\(H \triangleleft G\)</span>, 这是因为对任意的 <span
-class="math inline">\(h \in H,\ g \in G\)</span>, 都有 <span
-class="math inline">\(hg=gh\)</span>, 那自然就有 <span
-class="math display">\[Hg=gH.\]</span></p>
-<p>假设 <span class="math inline">\(|G|=p^k\)</span> 时, 对于任意的
-<span class="math inline">\(1\leqslant m\leqslant k\)</span>, <span
-class="math inline">\(G\)</span> 都存在一个阶为 <span
-class="math inline">\(p^m\)</span> 的正规子群.</p>
-<p>下面考虑 <span class="math inline">\(|G|=p^{k+1}\)</span> 时. 由于
-<span class="math inline">\(G\)</span> 的中心 <span
-class="math inline">\(C\)</span> 是一个 Abel 群, 且 <span
-class="math inline">\(C\)</span> 中元素不止一个, 那就有 <span
-class="math inline">\(p\mid |C|\)</span>, 由 Cauchy 定理知 <span
-class="math inline">\(C\)</span> 存在一个周期为 <span
-class="math inline">\(p\)</span> 的元素 <span
-class="math inline">\(a\)</span>, 也就是说循环群 <span
-class="math inline">\(H = \langle a\rangle\)</span> 是 <span
-class="math inline">\(C\)</span> 的子群, 从而是 <span
-class="math inline">\(C\)</span> 的正规子群. 而任意的 <span
-class="math inline">\(a^\ell\)</span> 与 <span class="math inline">\(g
-\in G\)</span> 乘法都可交换, 所以 <span class="math inline">\(H
-\triangleleft G\)</span>, 这时我们找到了一个阶为 <span
-class="math inline">\(p\)</span> 的正规子群. 下面找阶数更高的. 做商群
-<span class="math inline">\(G/H\)</span>, 于是有 <span
-class="math display">\[|G/H| = [G:H] = |G|/|H| = p^k,\]</span></p>
-<p>那么由归纳假设可知对于任意的 <span class="math inline">\(1\leqslant m
-\leqslant k\)</span>, <span class="math inline">\(G/H\)</span>
-都含有一个阶为 <span class="math inline">\(p^m\)</span> 的正规子群, 设为
-<span class="math inline">\(N/H\)</span>, 于是 <span
-class="math display">\[|N|=|N/H|\cdot|H|=p^{m+1},\]</span></p>
-<p>那么只要说明 <span class="math inline">\(N\triangleleft G\)</span>
-即可. 做自然同态 <span class="math display">\[\begin{aligned}
-  f : G &amp; \to G/H \\
-  g &amp; \mapsto gH
-\end{aligned},
-\]</span></p>
-<p>显然这是一个满同态, 并且 <span class="math display">\[\ker f = \{g
-\in G: f(g)=eH\} = \{g \in G: gH=eH\} = H,\]</span></p>
-<p>所以有 <span class="math inline">\(H \subset N\)</span>,
-于是由对应定理可知当 <span class="math inline">\(f(N) = N/H\)</span> 是
-<span class="math inline">\(G/H\)</span> 的正规子群时, <span
-class="math inline">\(N\)</span> 是 <span
-class="math inline">\(G\)</span> 的正规子群.</p>
-<p>归纳结束, 命题得证.</p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/syvshc/image/master/postimg/tor-in-nanjing/clubs.jpg"
+alt="梅花山" />
+<figcaption aria-hidden="true">梅花山</figcaption>
+</figure>
+<p>听司机师傅说，我们来南京之前南京一直在下雨，和小璃玩的这三天一滴雨都没有。</p>
+<p>开学前一周的和小璃的第二次短途旅游也落下了帷幕，三天时间浅浅逛了南京，想去的地方都去了一趟，想吃的东西都吃了一遍，甘蔗汁和现煎的锅贴真的很妙。</p>
+<p>鸡鸣寺人很多，拜财神的也很多，老门东的小店很多，画手掌画的大爷手艺很好。夫子庙确实没什么好逛的，除了游船和灯会。路边的酥烧饼，臭豆腐和糖芋苗都很好吃。晚上约饭怕迟到选择了打车，但是3。3公里40分钟的车程让我们接下来的行程中完全放弃了打车。</p>
+<p>南京博物院是第一次租讲解器的景点，了解了一些文物的来历，看到了一些奇怪的物件，工艺细腻的清代钟表很吸引我们。李记清真馆的牛肉锅贴和酱牛肉非常好吃，推荐的牛肉馄饨却平平无奇。</p>
+<p>在科巷里吃了唯一一次鸭血粉丝汤，有本地人去的店味道确实不错。买了一些在付款之后才知道是什么的炸藕饼，
+看评论才知道这个东西是用来炒菜的，还买了许阿姨的青团和马蹄糕。加了柠檬片的甘蔗汁非常好喝，
+真是想见一个摊喝一杯。赶在人少的时间去了红山动物园，票价很值，看到了黑熊打闹以及各种聪明的灵长类动物。上上下下的坡走得很疲惫，到了明孝陵后发现已经关门，临时起义绕着玄武湖走了大半圈，吹着风，如果没有穿着大棉裤就更惬意了。排了一个茶颜悦色，感觉挺好喝，但是没有那么好喝。本来想去南京大排档但是要排
+200
+多桌，临时换了一家杭州菜馆，也非常好吃，晚上去的推拿馆的师傅手法很好，出来等车的时候看到一家锅贴馆，看到老板正在下一锅新的锅贴，还是没忍住进去吃了一顿夜宵。</p>
+<p>没排上叶新小吃而随便找的一家三鲜面馆很不错，它甚至在高德上都没有名字，路边随便买的烤鸭也很好吃，师傅的菜板被切得已经凹了下去。南京大屠杀纪念馆很压抑，最后没看完就出来了。明孝陵属实没有什么意思，但是上城楼之前给免费照相挺不错的。梅花山很好看，也是生平第一次看到梅花，下了山临时起意去吃了一顿南京大排档，王府泡椒鸡很好吃，剩下的出品和在上海体验极差的那次没什么区别。去德基的高档厕所打了个卡，在新街口地铁站迷了路。两杯新地作为这次南京之行的收尾。</p>
+<p>路边摊有时不比网红店差，有烟火气的小店值得一去，感受一下当地人平时下的馆子也是一种不一样的体验。</p>
+<p>行程突出一个随性，除了南京博物院提前预约了以外，剩下的都是想到哪去哪，包括取消了扬州的行程，本来打算回苏州去一趟同里/甪直，但是因为太过疲倦取消了，并且推迟了回苏州的火车。到了苏州吃了一顿线下的棒约翰，又临时起意逛了一圈金鸡湖。</p>
+<p>接下来要好好学习了，这也可能是我最后一个有时间且可以潇洒（也许不应该潇洒）的假期，珍惜接下来的每一次旅游以及和小璃的团聚吧。</p>
 ]]></content>
       <categories>
-        <category>数学</category>
-        <category>代数</category>
+        <category>日常</category>
       </categories>
       <tags>
-        <tag>数学</tag>
-        <tag>抽象代数</tag>
-        <tag>群论</tag>
+        <tag>日常</tag>
+        <tag>游记</tag>
       </tags>
   </entry>
   <entry>
@@ -4641,18 +4663,17 @@ href="https://petsc.org/release/install/multibuild/#updating-or-reinstalling-pet
 更新了源码之后需要使用</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">make lib</span><br></pre></td></tr></table></figure>
 <p>来更新库文件.</p>
-<section class="footnotes footnotes-end-of-document"
+<aside id="footnotes" class="footnotes footnotes-end-of-document"
 role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>旧的版本只推荐用来运行旧程序,
-建议永远使用最新的版本.<a href="#fnref1" class="footnote-back"
-role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p><code>$PETSC_ARCH</code>
-可以自行定义名称, 但是不要含空格.<a href="#fnref2" class="footnote-back"
+<li id="fn1"><p>旧的版本只推荐用来运行旧程序, 建议永远使用最新的版本.<a
+href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p><code>$PETSC_ARCH</code> 可以自行定义名称,
+但是不要含空格.<a href="#fnref2" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section>
+</aside>
 ]]></content>
       <categories>
         <category>配置记录</category>
@@ -4664,39 +4685,6 @@ role="doc-backlink">↩︎</a></p></li>
         <tag>Linux</tag>
         <tag>PETSc</tag>
         <tag>HPC</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>南京小记</title>
-    <url>/2023-02-22-tour-in-nanjing/</url>
-    <content><![CDATA[<p>2023 春季学期开学的前一周和小璃去南京玩了三天， 体验很好。</p>
-<span id="more"></span>
-<figure>
-<img
-src="https://raw.githubusercontent.com/syvshc/image/master/postimg/tor-in-nanjing/clubs.jpg"
-alt="梅花山" />
-<figcaption aria-hidden="true">梅花山</figcaption>
-</figure>
-<p>听司机师傅说，我们来南京之前南京一直在下雨，和小璃玩的这三天一滴雨都没有。</p>
-<p>开学前一周的和小璃的第二次短途旅游也落下了帷幕，三天时间浅浅逛了南京，想去的地方都去了一趟，想吃的东西都吃了一遍，甘蔗汁和现煎的锅贴真的很妙。</p>
-<p>鸡鸣寺人很多，拜财神的也很多，老门东的小店很多，画手掌画的大爷手艺很好。夫子庙确实没什么好逛的，除了游船和灯会。路边的酥烧饼，臭豆腐和糖芋苗都很好吃。晚上约饭怕迟到选择了打车，但是3。3公里40分钟的车程让我们接下来的行程中完全放弃了打车。</p>
-<p>南京博物院是第一次租讲解器的景点，了解了一些文物的来历，看到了一些奇怪的物件，工艺细腻的清代钟表很吸引我们。李记清真馆的牛肉锅贴和酱牛肉非常好吃，推荐的牛肉馄饨却平平无奇。</p>
-<p>在科巷里吃了唯一一次鸭血粉丝汤，有本地人去的店味道确实不错。买了一些在付款之后才知道是什么的炸藕饼，
-看评论才知道这个东西是用来炒菜的，还买了许阿姨的青团和马蹄糕。加了柠檬片的甘蔗汁非常好喝，
-真是想见一个摊喝一杯。赶在人少的时间去了红山动物园，票价很值，看到了黑熊打闹以及各种聪明的灵长类动物。上上下下的坡走得很疲惫，到了明孝陵后发现已经关门，临时起义绕着玄武湖走了大半圈，吹着风，如果没有穿着大棉裤就更惬意了。排了一个茶颜悦色，感觉挺好喝，但是没有那么好喝。本来想去南京大排档但是要排
-200
-多桌，临时换了一家杭州菜馆，也非常好吃，晚上去的推拿馆的师傅手法很好，出来等车的时候看到一家锅贴馆，看到老板正在下一锅新的锅贴，还是没忍住进去吃了一顿夜宵。</p>
-<p>没排上叶新小吃而随便找的一家三鲜面馆很不错，它甚至在高德上都没有名字，路边随便买的烤鸭也很好吃，师傅的菜板被切得已经凹了下去。南京大屠杀纪念馆很压抑，最后没看完就出来了。明孝陵属实没有什么意思，但是上城楼之前给免费照相挺不错的。梅花山很好看，也是生平第一次看到梅花，下了山临时起意去吃了一顿南京大排档，王府泡椒鸡很好吃，剩下的出品和在上海体验极差的那次没什么区别。去德基的高档厕所打了个卡，在新街口地铁站迷了路。两杯新地作为这次南京之行的收尾。</p>
-<p>路边摊有时不比网红店差，有烟火气的小店值得一去，感受一下当地人平时下的馆子也是一种不一样的体验。</p>
-<p>行程突出一个随性，除了南京博物院提前预约了以外，剩下的都是想到哪去哪，包括取消了扬州的行程，本来打算回苏州去一趟同里/甪直，但是因为太过疲倦取消了，并且推迟了回苏州的火车。到了苏州吃了一顿线下的棒约翰，又临时起意逛了一圈金鸡湖。</p>
-<p>接下来要好好学习了，这也可能是我最后一个有时间且可以潇洒（也许不应该潇洒）的假期，珍惜接下来的每一次旅游以及和小璃的团聚吧。</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>日常</tag>
-        <tag>游记</tag>
       </tags>
   </entry>
   <entry>
@@ -4728,6 +4716,37 @@ alt="梅花山" />
       <tags>
         <tag>日常</tag>
         <tag>游记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>和小璃三年啦</title>
+    <url>/2023-07-25-3rd-anniversary/</url>
+    <content><![CDATA[<p style="color:#E74C3C;text-align:center;font-size:40px">
+2020.7.27 -- 2023.7.27
+</p>
+<span id="more"></span>
+<p>初中相识, 大学相恋, 我们的故事好长, 每一段经历都值得一讲.</p>
+<p>这三年是我们人生经历中波折一段, 我们相互扶持, 相互搀扶到了如今.</p>
+<p>想想上一个周年纪念日, 我们还在打着视频对着吃跷脚牛肉, 也挺有感觉的,
+想半天没想起来一周年纪念日干啥了, 翻了翻微博发现可能是疫情封住了.</p>
+<p>这一年看开启了我们的旅游生涯: 上海, 苏州, 南京, 北京, 扬州, 三亚,
+海口, 以及即将来的长沙. 旅游的风格也逐渐变化, 从哪火奔哪变成了钻小巷子,
+受本地人欢迎的餐馆丝毫不逊色于知名饭店; 开始喜欢逛博物馆,
+带讲解器的那种, 看看这片地区的历史还是很有意思的.</p>
+<p>想想在上海封控, 我们一起做饭, 一起生活, . 在苏州见证解封并且感染,
+但是最终挺过来, 并且突发奇想去了一次体验非常完美的迪士尼,
+和小璃在一起的日子就算艰难也充满着热情.</p>
+<p>海南之行非常美好, 几乎每一天都有着难忘的回忆. 南海观音,
+蜈支洲岛的玻璃海和潜水, 再一次临时起意的琼海之旅,
+以及海口大大小小的夜市, 与海平面相接的天空, 总感觉能再吃一碗的清补凉,
+每家味道都不太一样的炸炸</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>日常</tag>
+        <tag>纪念</tag>
       </tags>
   </entry>
 </search>

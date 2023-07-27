@@ -6,7 +6,7 @@
   <link href="https://syvshc.github.io/atom.xml" rel="self"/>
   
   <link href="https://syvshc.github.io/"/>
-  <updated>2023-04-22T15:50:34.822Z</updated>
+  <updated>2023-07-27T01:26:15.397Z</updated>
   <id>https://syvshc.github.io/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>和小璃三年啦</title>
+    <link href="https://syvshc.github.io/2023-07-25-3rd-anniversary/"/>
+    <id>https://syvshc.github.io/2023-07-25-3rd-anniversary/</id>
+    <published>2023-07-25T13:13:17.000Z</published>
+    <updated>2023-07-27T01:26:15.397Z</updated>
+    
+    
+    <summary type="html">&lt;p style=&quot;color:#E74C3C;text-align:center;font-size:40px&quot;&gt;
+2020.7.27 -- 2023.7.27
+&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="日常" scheme="https://syvshc.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+    <category term="日常" scheme="https://syvshc.github.io/tags/%E6%97%A5%E5%B8%B8/"/>
+    
+    <category term="纪念" scheme="https://syvshc.github.io/tags/%E7%BA%AA%E5%BF%B5/"/>
+    
+  </entry>
+  
+  <entry>
     <title>小璃闪击北京</title>
     <link href="https://syvshc.github.io/2023-04-09-tour-in-beijing-in-one-day/"/>
     <id>https://syvshc.github.io/2023-04-09-tour-in-beijing-in-one-day/</id>
     <published>2023-04-09T13:35:42.000Z</published>
-    <updated>2023-04-22T15:50:34.822Z</updated>
+    <updated>2023-04-22T15:51:53.432Z</updated>
     
     
     <summary type="html">&lt;p&gt;一念之间的想法，让我在这天见到了小璃，开心呢。&lt;/p&gt;</summary>
@@ -63,7 +86,7 @@
     <link href="https://syvshc.github.io/2022-12-14-petsc-install/"/>
     <id>https://syvshc.github.io/2022-12-14-petsc-install/</id>
     <published>2022-12-14T09:18:25.000Z</published>
-    <updated>2022-12-14T11:19:26.976Z</updated>
+    <updated>2022-12-14T11:19:26.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;strong&gt;P&lt;/strong&gt;ortable, &lt;strong&gt;E&lt;/strong&gt;xtensible
@@ -94,7 +117,7 @@
     <link href="https://syvshc.github.io/2022-09-09-p-group-normal-subgroup-of-p-m/"/>
     <id>https://syvshc.github.io/2022-09-09-p-group-normal-subgroup-of-p-m/</id>
     <published>2022-09-09T05:50:16.000Z</published>
-    <updated>2022-09-21T13:31:30.608Z</updated>
+    <updated>2022-09-21T14:01:32.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;在 &lt;a href=&quot;https://en.wikipedia.org/wiki/P-group&quot;&gt;Wiki&lt;/a&gt;
@@ -129,7 +152,7 @@ class=&quot;math inline&quot;&gt;\(1\leqslant m \leqslant k\)&lt;/span&gt;.&lt;/
     <link href="https://syvshc.github.io/2022-04-20-latex-tutorial/"/>
     <id>https://syvshc.github.io/2022-04-20-latex-tutorial/</id>
     <published>2022-04-20T14:21:00.000Z</published>
-    <updated>2022-09-09T03:57:41.070Z</updated>
+    <updated>2022-09-09T03:57:41.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;应 ElegantLaTeX 的邀请, 来做一次与 LaTeX 相关的知识分享, 主要内容包括
@@ -154,7 +177,7 @@ LaTeX 软件包的安装, 更新和回滚; 如何用命令行编译 LaTeX 文件
     <link href="https://syvshc.github.io/2022-04-04-texlive-rolling-update/"/>
     <id>https://syvshc.github.io/2022-04-04-texlive-rolling-update/</id>
     <published>2022-04-04T08:38:13.000Z</published>
-    <updated>2022-04-04T13:50:01.663Z</updated>
+    <updated>2022-04-04T13:50:01.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;这里说一下如何滚动升级 TeXLive, 而不卸载安装. 由于我也是第一次这么做,
@@ -180,7 +203,7 @@ LaTeX 软件包的安装, 更新和回滚; 如何用命令行编译 LaTeX 文件
     <link href="https://syvshc.github.io/2022-03-06-latex-terminal-compiling/"/>
     <id>https://syvshc.github.io/2022-03-06-latex-terminal-compiling/</id>
     <published>2022-03-06T14:28:26.000Z</published>
-    <updated>2022-07-27T03:19:56.512Z</updated>
+    <updated>2022-07-27T03:19:56.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;在交流使用 LaTeX 出现的问题的时候,
@@ -206,7 +229,7 @@ href=&quot;#compile-latex&quot;&gt;使用命令行编译 LaTeX 文件&lt;/a&gt;&
     <link href="https://syvshc.github.io/2022-02-16-date-function-with-l3/"/>
     <id>https://syvshc.github.io/2022-02-16-date-function-with-l3/</id>
     <published>2022-02-16T14:31:45.000Z</published>
-    <updated>2022-02-24T14:46:39.225Z</updated>
+    <updated>2022-02-24T14:46:39.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;在给家教学生出题的过程中想实现节标题的自动化, 由于题目是每天都有,
@@ -240,7 +263,7 @@ alt=&quot;目标效果&quot; /&gt;
     <link href="https://syvshc.github.io/2022-01-11-a-stupid-fraud/"/>
     <id>https://syvshc.github.io/2022-01-11-a-stupid-fraud/</id>
     <published>2022-01-11T11:59:42.000Z</published>
-    <updated>2022-02-24T14:46:39.224Z</updated>
+    <updated>2022-02-24T14:46:39.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;以为不会轻易被骗的我就轻易被骗了……&lt;/p&gt;</summary>
@@ -261,7 +284,7 @@ alt=&quot;目标效果&quot; /&gt;
     <link href="https://syvshc.github.io/2021-12-05-length-in-enumitem/"/>
     <id>https://syvshc.github.io/2021-12-05-length-in-enumitem/</id>
     <published>2021-12-05T02:42:12.000Z</published>
-    <updated>2022-02-24T14:46:39.224Z</updated>
+    <updated>2022-02-24T14:46:39.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;在 &lt;a
@@ -302,7 +325,7 @@ rules.&lt;/p&gt;
     <link href="https://syvshc.github.io/2021-11-27-extarrows-and-libertinus/"/>
     <id>https://syvshc.github.io/2021-11-27-extarrows-and-libertinus/</id>
     <published>2021-11-27T05:33:25.000Z</published>
-    <updated>2022-02-24T14:46:39.224Z</updated>
+    <updated>2022-02-24T14:46:39.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;与群友交流的过程中发现如果将数学字体设置为
@@ -336,7 +359,7 @@ alt=&quot;错误输出&quot; /&gt;
     <link href="https://syvshc.github.io/2021-11-18-backup-blogs/"/>
     <id>https://syvshc.github.io/2021-11-18-backup-blogs/</id>
     <published>2021-11-18T13:57:15.000Z</published>
-    <updated>2022-02-24T14:46:39.224Z</updated>
+    <updated>2022-02-24T14:46:39.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;在 &lt;a href=&quot;https://ssayno.github.io&quot;&gt;ssayno 的博客&lt;/a&gt;
@@ -349,11 +372,11 @@ alt=&quot;错误输出&quot; /&gt;
     <category term="blog" scheme="https://syvshc.github.io/categories/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/blog/"/>
     
     
+    <category term="hexo" scheme="https://syvshc.github.io/tags/hexo/"/>
+    
     <category term="配置记录" scheme="https://syvshc.github.io/tags/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/"/>
     
     <category term="帮助文档" scheme="https://syvshc.github.io/tags/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/"/>
-    
-    <category term="hexo" scheme="https://syvshc.github.io/tags/hexo/"/>
     
   </entry>
   
@@ -362,7 +385,7 @@ alt=&quot;错误输出&quot; /&gt;
     <link href="https://syvshc.github.io/2021-11-10-compute-total-items/"/>
     <id>https://syvshc.github.io/2021-11-10-compute-total-items/</id>
     <published>2021-11-10T03:47:24.000Z</published>
-    <updated>2022-02-24T14:46:39.224Z</updated>
+    <updated>2022-02-24T14:46:39.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;在群里遇到一个需求: 使用 &lt;code&gt;ctexart&lt;/code&gt; 文档类排版试卷, 使用
@@ -391,7 +414,7 @@ alt=&quot;错误输出&quot; /&gt;
     <link href="https://syvshc.github.io/2021-10-02-extcite/"/>
     <id>https://syvshc.github.io/2021-10-02-extcite/</id>
     <published>2021-10-02T08:19:05.000Z</published>
-    <updated>2022-02-24T14:46:39.224Z</updated>
+    <updated>2022-02-24T14:46:39.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;今天在群里得到了这样的一种引用格式的需求:&lt;/p&gt;
@@ -408,9 +431,9 @@ src=&quot;https://raw.githubusercontent.com/syvshc/image/master/postimg/extcite/
     
     <category term="LaTeX" scheme="https://syvshc.github.io/tags/LaTeX/"/>
     
-    <category term="参考文献" scheme="https://syvshc.github.io/tags/%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE/"/>
-    
     <category term="示例" scheme="https://syvshc.github.io/tags/%E7%A4%BA%E4%BE%8B/"/>
+    
+    <category term="参考文献" scheme="https://syvshc.github.io/tags/%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE/"/>
     
   </entry>
   
@@ -419,7 +442,7 @@ src=&quot;https://raw.githubusercontent.com/syvshc/image/master/postimg/extcite/
     <link href="https://syvshc.github.io/2021-09-22-KDEProblems/"/>
     <id>https://syvshc.github.io/2021-09-22-KDEProblems/</id>
     <published>2021-09-22T06:29:40.000Z</published>
-    <updated>2022-04-21T20:59:28.822Z</updated>
+    <updated>2022-04-21T20:59:28.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;这里记录一些使用 ArchLinux + KDE 时遇到的问题&lt;/p&gt;</summary>
@@ -444,7 +467,7 @@ src=&quot;https://raw.githubusercontent.com/syvshc/image/master/postimg/extcite/
     <link href="https://syvshc.github.io/2021-09-02-RepairEFI/"/>
     <id>https://syvshc.github.io/2021-09-02-RepairEFI/</id>
     <published>2021-09-02T09:32:31.000Z</published>
-    <updated>2022-02-24T14:46:39.223Z</updated>
+    <updated>2022-02-24T14:46:39.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;strong&gt;&lt;em&gt;下次使用 &lt;code&gt;sudo&lt;/code&gt;
@@ -472,7 +495,7 @@ EFI 引导破坏了……&lt;/p&gt;</summary>
     <link href="https://syvshc.github.io/2021-09-02-ArchLinux/"/>
     <id>https://syvshc.github.io/2021-09-02-ArchLinux/</id>
     <published>2021-09-02T03:08:27.000Z</published>
-    <updated>2022-04-08T05:11:45.211Z</updated>
+    <updated>2022-04-08T05:11:45.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;手贱小白还愿意折腾. 自从上次重装系统之后, Ubuntu 总时不时地卡顿,
@@ -503,7 +526,7 @@ href=&quot;https://archlinux.org/&quot;&gt;Arch Linux&lt;/a&gt; 走起.&lt;/p&gt
     <link href="https://syvshc.github.io/2021-08-04-cumcmthesis-maketitle/"/>
     <id>https://syvshc.github.io/2021-08-04-cumcmthesis-maketitle/</id>
     <published>2021-08-04T07:51:49.000Z</published>
-    <updated>2022-02-24T14:46:39.223Z</updated>
+    <updated>2022-02-24T14:46:39.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;在各种地方获取的全国大学生数学建模竞赛的模板 CUMCMThesis, 使用
@@ -530,7 +553,7 @@ href=&quot;https://archlinux.org/&quot;&gt;Arch Linux&lt;/a&gt; 走起.&lt;/p&gt
     <link href="https://syvshc.github.io/2021-08-04-thesis-title/"/>
     <id>https://syvshc.github.io/2021-08-04-thesis-title/</id>
     <published>2021-08-04T05:11:50.000Z</published>
-    <updated>2022-02-24T14:46:39.223Z</updated>
+    <updated>2022-02-24T14:46:39.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;这篇文章的需求来源为 &lt;a
@@ -558,7 +581,7 @@ src=&quot;https://raw.githubusercontent.com/syvshc/image/master/postimg/thesis-t
     <link href="https://syvshc.github.io/2021-04-07-illegal-temp-cause-tlinstall-failure/"/>
     <id>https://syvshc.github.io/2021-04-07-illegal-temp-cause-tlinstall-failure/</id>
     <published>2021-04-07T11:45:57.000Z</published>
-    <updated>2022-03-22T10:15:35.982Z</updated>
+    <updated>2022-03-22T10:15:35.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;在 Windows 上安装 TeX Live 时可能遇到由于缓存路径名称不合法, 即
@@ -582,7 +605,7 @@ src=&quot;https://raw.githubusercontent.com/syvshc/image/master/postimg/thesis-t
     <link href="https://syvshc.github.io/2021-03-05-enable-gitalk/"/>
     <id>https://syvshc.github.io/2021-03-05-enable-gitalk/</id>
     <published>2021-03-05T02:21:31.000Z</published>
-    <updated>2022-02-24T14:46:39.222Z</updated>
+    <updated>2022-02-24T14:46:39.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;在 &lt;a href=&quot;/2021-03-03-build-github-io/&quot; title=&quot;搭建 github.io&quot;&gt;搭建 github.io&lt;/a&gt; 中我们配置了 &lt;code&gt;hexo+NexT&lt;/code&gt; 的博客,
@@ -596,11 +619,11 @@ href=&quot;https://github.com/gitalk/gitalk&quot;&gt;gitalk&lt;/a&gt;.&lt;/p&gt;
     <category term="blog" scheme="https://syvshc.github.io/categories/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/blog/"/>
     
     
+    <category term="hexo" scheme="https://syvshc.github.io/tags/hexo/"/>
+    
     <category term="配置记录" scheme="https://syvshc.github.io/tags/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/"/>
     
     <category term="帮助文档" scheme="https://syvshc.github.io/tags/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/"/>
-    
-    <category term="hexo" scheme="https://syvshc.github.io/tags/hexo/"/>
     
     <category term="gitalk" scheme="https://syvshc.github.io/tags/gitalk/"/>
     
@@ -611,7 +634,7 @@ href=&quot;https://github.com/gitalk/gitalk&quot;&gt;gitalk&lt;/a&gt;.&lt;/p&gt;
     <link href="https://syvshc.github.io/2021-03-04-tlmgr-intro/"/>
     <id>https://syvshc.github.io/2021-03-04-tlmgr-intro/</id>
     <published>2021-03-04T14:12:21.000Z</published>
-    <updated>2022-02-24T14:46:39.222Z</updated>
+    <updated>2022-02-24T14:46:39.000Z</updated>
     
     
     <summary type="html">&lt;!-- [点击跳转](#jump) &lt;span id=&quot;jump&quot;&gt;跳转到的地方&lt;/span&gt; --&gt;
@@ -645,7 +668,7 @@ href=&quot;https://github.com/syvshc/tlmgr-intro-zh-cn/issues&quot;&gt;issue&lt;
     <link href="https://syvshc.github.io/2021-03-04-learn-latexmk/"/>
     <id>https://syvshc.github.io/2021-03-04-learn-latexmk/</id>
     <published>2021-03-04T13:54:41.000Z</published>
-    <updated>2022-02-24T14:46:39.222Z</updated>
+    <updated>2022-02-24T14:46:39.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;其实是把翻译给咕掉了, 先把实用的东西写了, 方便查阅, 剩下的嘛,
@@ -673,7 +696,7 @@ href=&quot;https://github.com/syvshc/tlmgr-intro-zh-cn/issues&quot;&gt;issue&lt;
     <link href="https://syvshc.github.io/2021-03-03-build-github-io/"/>
     <id>https://syvshc.github.io/2021-03-03-build-github-io/</id>
     <published>2021-03-03T15:16:26.000Z</published>
-    <updated>2022-02-24T14:46:39.222Z</updated>
+    <updated>2022-02-24T14:46:39.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;strong&gt;在 NexT 主题更新 8.0 之后又重新配置了一次
@@ -698,7 +721,7 @@ href=&quot;https://github.com/syvshc/tlmgr-intro-zh-cn/issues&quot;&gt;issue&lt;
     <link href="https://syvshc.github.io/2021-03-03-beamer-font-set/"/>
     <id>https://syvshc.github.io/2021-03-03-beamer-font-set/</id>
     <published>2021-03-03T11:37:00.000Z</published>
-    <updated>2022-02-24T14:46:39.211Z</updated>
+    <updated>2022-02-24T14:46:39.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;在使用 &lt;code&gt;beamer&lt;/code&gt; 文档类的时候, 可能会有需要更换字体.&lt;/p&gt;</summary>
@@ -712,9 +735,9 @@ href=&quot;https://github.com/syvshc/tlmgr-intro-zh-cn/issues&quot;&gt;issue&lt;
     
     <category term="LaTeX" scheme="https://syvshc.github.io/tags/LaTeX/"/>
     
-    <category term="示例" scheme="https://syvshc.github.io/tags/%E7%A4%BA%E4%BE%8B/"/>
-    
     <category term="字体设置" scheme="https://syvshc.github.io/tags/%E5%AD%97%E4%BD%93%E8%AE%BE%E7%BD%AE/"/>
+    
+    <category term="示例" scheme="https://syvshc.github.io/tags/%E7%A4%BA%E4%BE%8B/"/>
     
   </entry>
   
@@ -723,7 +746,7 @@ href=&quot;https://github.com/syvshc/tlmgr-intro-zh-cn/issues&quot;&gt;issue&lt;
     <link href="https://syvshc.github.io/2020-12-12-Windows-and-Ubuntu/"/>
     <id>https://syvshc.github.io/2020-12-12-Windows-and-Ubuntu/</id>
     <published>2020-12-12T10:00:00.000Z</published>
-    <updated>2022-02-24T14:46:39.210Z</updated>
+    <updated>2022-02-24T14:46:39.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文记录过程的时候会同时记录踩过的坑,
@@ -754,7 +777,7 @@ role=&quot;doc-noteref&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;.&lt;/p&gt;</s
     <link href="https://syvshc.github.io/2020-12-12-welcome/"/>
     <id>https://syvshc.github.io/2020-12-12-welcome/</id>
     <published>2020-12-11T16:14:16.000Z</published>
-    <updated>2022-05-22T15:41:08.837Z</updated>
+    <updated>2022-05-22T15:41:08.000Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;这里是无锤乙醇的-github.io&quot;&gt;这里是无锤乙醇的
@@ -780,7 +803,7 @@ href=&quot;https://syvshc.gitee.io&quot;&gt;Gitee Pages&lt;/a&gt; 是主要更�
     <link href="https://syvshc.github.io/2020-12-12-hello-world/"/>
     <id>https://syvshc.github.io/2020-12-12-hello-world/</id>
     <published>2020-12-11T16:00:00.000Z</published>
-    <updated>2022-02-24T14:46:39.210Z</updated>
+    <updated>2022-02-24T14:46:39.000Z</updated>
     
     
       
