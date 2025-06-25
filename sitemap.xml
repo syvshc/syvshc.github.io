@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://syvshc.github.io/2025-06-25-multi-vlookup/</loc>
+    
+    <lastmod>2025-06-25</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://syvshc.github.io/2023-07-25-3rd-universary/</loc>
     
     <lastmod>2025-06-25</lastmod>
@@ -437,6 +444,13 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://syvshc.github.io/tags/Excel/</loc>
+    <lastmod>2025-06-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
@@ -560,6 +574,13 @@
   
   <url>
     <loc>https://syvshc.github.io/categories/%E6%95%B0%E5%AD%A6/%E4%BB%A3%E6%95%B0/</loc>
+    <lastmod>2025-06-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://syvshc.github.io/categories/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/Excel/</loc>
     <lastmod>2025-06-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

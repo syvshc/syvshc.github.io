@@ -6,7 +6,7 @@
   <link href="https://syvshc.github.io/atom.xml" rel="self"/>
   
   <link href="https://syvshc.github.io/"/>
-  <updated>2025-06-25T11:36:07.810Z</updated>
+  <updated>2025-06-25T11:59:59.418Z</updated>
   <id>https://syvshc.github.io/</id>
   
   <author>
@@ -17,28 +17,43 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>vlookup 查询中出现重复值怎么办</title>
+    <link href="https://syvshc.github.io/2025-06-25-multi-vlookup/"/>
+    <id>https://syvshc.github.io/2025-06-25-multi-vlookup/</id>
+    <published>2025-06-25T11:44:50.000Z</published>
+    <updated>2025-06-25T11:59:59.418Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在 Excel 中使用 VLOOKUP
+函数时，如果查询的值在数据表中出现了多次，VLOOKUP
+只会返回第一个匹配的值。我在实际使用中, 会出现如下的情况 &lt;img
+src=&quot;https://raw.githubusercontent.com/syvshc/image/master/postimg/multi-vlookup/problem.png&quot;
+alt=&quot;我想根据左侧依次填写右侧&quot; /&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="帮助文档" scheme="https://syvshc.github.io/categories/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/"/>
+    
+    <category term="Excel" scheme="https://syvshc.github.io/categories/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/Excel/"/>
+    
+    
+    <category term="帮助文档" scheme="https://syvshc.github.io/tags/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/"/>
+    
+    <category term="Excel" scheme="https://syvshc.github.io/tags/Excel/"/>
+    
+  </entry>
+  
+  <entry>
     <title>和小璃三年啦</title>
     <link href="https://syvshc.github.io/2023-07-25-3rd-universary/"/>
     <id>https://syvshc.github.io/2023-07-25-3rd-universary/</id>
     <published>2023-07-24T16:00:00.000Z</published>
-    <updated>2025-06-25T11:36:07.810Z</updated>
+    <updated>2025-06-25T11:42:49.840Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
-&lt;p&gt;
-初中相识, 大学相恋, 我们的故事好长, 每一段经历都值得一讲.
-&lt;/p&gt;
-&lt;p&gt;
-这三年是我们人生经历中波折一段, 我们相互扶持, 相互搀扶到了如今.
-&lt;/p&gt;
-&lt;p&gt;
-想想上一个周年纪念日,</summary>
-        
-      
+    <summary type="html">&lt;p style=&quot;color:rgb(247, 58, 58); font-size: 40px; text-align: center&quot;&gt;
+2020.7.27 -- 2023.7.27
+&lt;/p&gt;</summary>
     
     
     
