@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>无锤乙醇</title>
+  <icon>https://syvshc.github.io/icon.png</icon>
+  <subtitle>学而未精</subtitle>
+  <link href="https://syvshc.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://syvshc.github.io/"/>
+  <updated>2025-06-25T11:36:07.810Z</updated>
+  <id>https://syvshc.github.io/</id>
+  
+  <author>
+    <name>Zhonghao Sun</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>和小璃三年啦</title>
+    <link href="https://syvshc.github.io/2023-07-25-3rd-universary/"/>
+    <id>https://syvshc.github.io/2023-07-25-3rd-universary/</id>
+    <published>2023-07-24T16:00:00.000Z</published>
+    <updated>2025-06-25T11:36:07.810Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
+&lt;p&gt;
+初中相识, 大学相恋, 我们的故事好长, 每一段经历都值得一讲.
+&lt;/p&gt;
+&lt;p&gt;
+这三年是我们人生经历中波折一段, 我们相互扶持, 相互搀扶到了如今.
+&lt;/p&gt;
+&lt;p&gt;
+想想上一个周年纪念日,</summary>
+        
+      
+    
+    
+    
+    <category term="日常" scheme="https://syvshc.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+    <category term="日常" scheme="https://syvshc.github.io/tags/%E6%97%A5%E5%B8%B8/"/>
+    
+    <category term="纪念" scheme="https://syvshc.github.io/tags/%E7%BA%AA%E5%BF%B5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>小璃闪击北京</title>
+    <link href="https://syvshc.github.io/2023-04-09-tour-in-beijing-in-one-day/"/>
+    <id>https://syvshc.github.io/2023-04-09-tour-in-beijing-in-one-day/</id>
+    <published>2023-04-09T13:35:42.000Z</published>
+    <updated>2025-06-25T11:15:56.697Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;一念之间的想法，让我在这天见到了小璃，开心呢。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="日常" scheme="https://syvshc.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+    <category term="日常" scheme="https://syvshc.github.io/tags/%E6%97%A5%E5%B8%B8/"/>
+    
+    <category term="游记" scheme="https://syvshc.github.io/tags/%E6%B8%B8%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>南京小记</title>
+    <link href="https://syvshc.github.io/2023-02-22-tour-in-nanjing/"/>
+    <id>https://syvshc.github.io/2023-02-22-tour-in-nanjing/</id>
+    <published>2023-02-22T13:35:42.000Z</published>
+    <updated>2025-06-25T11:15:56.696Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;2023 春季学期开学的前一周和小璃去南京玩了三天， 体验很好。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="日常" scheme="https://syvshc.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+    <category term="日常" scheme="https://syvshc.github.io/tags/%E6%97%A5%E5%B8%B8/"/>
+    
+    <category term="游记" scheme="https://syvshc.github.io/tags/%E6%B8%B8%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PETSc 的安装与配置</title>
+    <link href="https://syvshc.github.io/2022-12-14-petsc-install/"/>
+    <id>https://syvshc.github.io/2022-12-14-petsc-install/</id>
+    <published>2022-12-14T09:18:25.000Z</published>
+    <updated>2025-06-25T11:15:56.696Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;P&lt;/strong&gt;ortable, &lt;strong&gt;E&lt;/strong&gt;xtensible &lt;strong&gt;T&lt;/strong&gt;oolkit &lt;strong&gt;S&lt;/strong&gt;cientific &lt;strong&gt;C&lt;/strong&gt;omputations.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="配置记录" scheme="https://syvshc.github.io/categories/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/"/>
+    
+    <category term="PETSc" scheme="https://syvshc.github.io/categories/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/PETSc/"/>
+    
+    
+    <category term="配置记录" scheme="https://syvshc.github.io/tags/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/"/>
+    
+    <category term="帮助文档" scheme="https://syvshc.github.io/tags/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/"/>
+    
+    <category term="Linux" scheme="https://syvshc.github.io/tags/Linux/"/>
+    
+    <category term="PETSc" scheme="https://syvshc.github.io/tags/PETSc/"/>
+    
+    <category term="HPC" scheme="https://syvshc.github.io/tags/HPC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>$p$ 群的正规子群</title>
+    <link href="https://syvshc.github.io/2022-09-09-p-group-normal-subgroup-of-p-m/"/>
+    <id>https://syvshc.github.io/2022-09-09-p-group-normal-subgroup-of-p-m/</id>
+    <published>2022-09-09T05:50:16.000Z</published>
+    <updated>2025-06-25T11:15:56.696Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在 &lt;a href=&quot;https://en.wikipedia.org/wiki/P-group&quot;&gt;Wiki&lt;/a&gt; 上看到了这样一个命题:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If $p$ is prime and $G$ is a group of order $p^k$, then $G$ has a normal subgroup of order $p^m$ for every $1\leqslant m \leqslant k$.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;下面来证明这个看起来很强的结论. &lt;/p&gt;</summary>
+    
+    
+    
+    <category term="数学" scheme="https://syvshc.github.io/categories/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="代数" scheme="https://syvshc.github.io/categories/%E6%95%B0%E5%AD%A6/%E4%BB%A3%E6%95%B0/"/>
+    
+    
+    <category term="数学" scheme="https://syvshc.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="抽象代数" scheme="https://syvshc.github.io/tags/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0/"/>
+    
+    <category term="群论" scheme="https://syvshc.github.io/tags/%E7%BE%A4%E8%AE%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>latex-tutorial</title>
+    <link href="https://syvshc.github.io/2022-04-20-latex-tutorial/"/>
+    <id>https://syvshc.github.io/2022-04-20-latex-tutorial/</id>
+    <published>2022-04-20T14:21:00.000Z</published>
+    <updated>2025-06-25T11:15:56.696Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;应 ElegantLaTeX 的邀请, 来做一次与 LaTeX 相关的知识分享, 主要内容包括 LaTeX 软件包的安装, 更新和回滚; 如何用命令行编译 LaTeX 文件; 如何使用和配置 VSCode. &lt;/p&gt;</summary>
+    
+    
+    
+    <category term="帮助文档" scheme="https://syvshc.github.io/categories/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/"/>
+    
+    <category term="LaTeX" scheme="https://syvshc.github.io/categories/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/LaTeX/"/>
+    
+    
+    <category term="帮助文档" scheme="https://syvshc.github.io/tags/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/"/>
+    
+    <category term="LaTeX" scheme="https://syvshc.github.io/tags/LaTeX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>滚动升级 TeXLive</title>
+    <link href="https://syvshc.github.io/2022-04-04-texlive-rolling-update/"/>
+    <id>https://syvshc.github.io/2022-04-04-texlive-rolling-update/</id>
+    <published>2022-04-04T08:38:13.000Z</published>
+    <updated>2025-06-25T11:15:56.696Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;这里说一下如何滚动升级 TeXLive, 而不卸载安装. 由于我也是第一次这么做, 不知道有没有什么可能产生的后果. &lt;/p&gt;</summary>
+    
+    
+    
+    <category term="帮助文档" scheme="https://syvshc.github.io/categories/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/"/>
+    
+    <category term="LaTeX" scheme="https://syvshc.github.io/categories/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/LaTeX/"/>
+    
+    
+    <category term="帮助文档" scheme="https://syvshc.github.io/tags/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/"/>
+    
+    <category term="LaTeX" scheme="https://syvshc.github.io/tags/LaTeX/"/>
+    
+    <category term="tlmgr" scheme="https://syvshc.github.io/tags/tlmgr/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在终端中编译 LaTeX</title>
+    <link href="https://syvshc.github.io/2022-03-06-latex-terminal-compiling/"/>
+    <id>https://syvshc.github.io/2022-03-06-latex-terminal-compiling/</id>
+    <published>2022-03-06T14:28:26.000Z</published>
+    <updated>2025-06-25T11:15:56.696Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在交流使用 LaTeX 出现的问题的时候, 通常会听到”命令行编译”或”终端编译”, 在这里简单的介绍一下. 如果有相应的命令行基础, 可以直接跳转到&lt;a href=&quot;#compile-latex&quot;&gt;使用命令行编译 LaTeX 文件&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="帮助文档" scheme="https://syvshc.github.io/categories/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/"/>
+    
+    <category term="LaTeX" scheme="https://syvshc.github.io/categories/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/LaTeX/"/>
+    
+    
+    <category term="帮助文档" scheme="https://syvshc.github.io/tags/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/"/>
+    
+    <category term="LaTeX" scheme="https://syvshc.github.io/tags/LaTeX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用 LaTeX3 实现一些日期相关的功能</title>
+    <link href="https://syvshc.github.io/2022-02-16-date-function-with-l3/"/>
+    <id>https://syvshc.github.io/2022-02-16-date-function-with-l3/</id>
+    <published>2022-02-16T14:31:45.000Z</published>
+    <updated>2025-06-25T11:15:56.695Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在给家教学生出题的过程中想实现节标题的自动化, 由于题目是每天都有, 所以我想交替用 &lt;code&gt;\examsection&lt;/code&gt; 和 &lt;code&gt;\answersection&lt;/code&gt; 来输出节标题, 并且设置页眉和目录, 目标效果如下:&lt;/p&gt;
+&lt;figure class=&quot;highlight tex&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;\begin&lt;/span&gt;&amp;#123;document&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;\setdate&lt;/span&gt;[2022, 2, 14]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;\examsection&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;\answersection&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;\examsection&lt;/span&gt;*&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;\answersection&lt;/span&gt;*&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;\end&lt;/span&gt;&amp;#123;document&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/syvshc/image/master/postimg/date-function-with-l3/goal.png&quot; alt=&quot;目标效果&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="LaTeX" scheme="https://syvshc.github.io/categories/LaTeX/"/>
+    
+    <category term="LaTeX3" scheme="https://syvshc.github.io/categories/LaTeX/LaTeX3/"/>
+    
+    
+    <category term="LaTeX" scheme="https://syvshc.github.io/tags/LaTeX/"/>
+    
+    <category term="示例" scheme="https://syvshc.github.io/tags/%E7%A4%BA%E4%BE%8B/"/>
+    
+    <category term="LaTeX3" scheme="https://syvshc.github.io/tags/LaTeX3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第一次被骗</title>
+    <link href="https://syvshc.github.io/2022-01-11-a-stupid-fraud/"/>
+    <id>https://syvshc.github.io/2022-01-11-a-stupid-fraud/</id>
+    <published>2022-01-11T11:59:42.000Z</published>
+    <updated>2025-06-25T11:15:56.695Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;以为不会轻易被骗的我就轻易被骗了……&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="日常" scheme="https://syvshc.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+    <category term="日常" scheme="https://syvshc.github.io/tags/%E6%97%A5%E5%B8%B8/"/>
+    
+    <category term="诈骗" scheme="https://syvshc.github.io/tags/%E8%AF%88%E9%AA%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>enumitem 宏包中的长度设置</title>
+    <link href="https://syvshc.github.io/2021-12-05-length-in-enumitem/"/>
+    <id>https://syvshc.github.io/2021-12-05-length-in-enumitem/</id>
+    <published>2021-12-05T02:42:12.000Z</published>
+    <updated>2025-06-25T11:15:56.695Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在 &lt;a href=&quot;http://mirrors.ctan.org/macros/latex/contrib/enumitem/enumitem.pdf&quot;&gt;&lt;code&gt;enumitem&lt;/code&gt; 的宏包手册&lt;/a&gt; 中有 5 个长度命令 &lt;code&gt;\leftmargin&lt;/code&gt;, &lt;code&gt;\itemindent&lt;/code&gt;, &lt;code&gt;\labelindent&lt;/code&gt;, &lt;code&gt;\labelwidth&lt;/code&gt; 和 &lt;code&gt;\labelsep&lt;/code&gt;. 这些长度关系以及互相的制约让人头疼, 而 &lt;code&gt;enumitem&lt;/code&gt; 的作者也晓得这一点:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;New 3.6 If you find these parameters baffling, you are not alone. You can visualize them&lt;br&gt;by writing &lt;code&gt;\DrawEnumitemLabel&lt;/code&gt; just before the first item (or in first), which draws 4 rules&lt;br&gt;from top to bottom, &lt;code&gt;labelindent&lt;/code&gt;, &lt;code&gt;labelwidth&lt;/code&gt;, &lt;code&gt;labelsep&lt;/code&gt;, &lt;code&gt;itemindent&lt;/code&gt; (thin if positive, thick&lt;br&gt;if negative); the &lt;code&gt;leftmargin&lt;/code&gt; is marked with two vertical rules.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;下面来探究一下这些关系应该如何设置.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="LaTeX" scheme="https://syvshc.github.io/categories/LaTeX/"/>
+    
+    <category term="列表" scheme="https://syvshc.github.io/categories/LaTeX/%E5%88%97%E8%A1%A8/"/>
+    
+    
+    <category term="LaTeX" scheme="https://syvshc.github.io/tags/LaTeX/"/>
+    
+    <category term="示例" scheme="https://syvshc.github.io/tags/%E7%A4%BA%E4%BE%8B/"/>
+    
+    <category term="列表" scheme="https://syvshc.github.io/tags/%E5%88%97%E8%A1%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>libertinus 字体与 extarrows 不兼容的处理</title>
+    <link href="https://syvshc.github.io/2021-11-27-extarrows-and-libertinus/"/>
+    <id>https://syvshc.github.io/2021-11-27-extarrows-and-libertinus/</id>
+    <published>2021-11-27T05:33:25.000Z</published>
+    <updated>2025-06-25T11:15:56.694Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;与群友交流的过程中发现如果将数学字体设置为 &lt;code&gt;Libertinus Math&lt;/code&gt; 的时候, 使用 &lt;code&gt;extarrow&lt;/code&gt; 宏包的 &lt;code&gt;\xLongrightarrow&lt;/code&gt; 会有奇怪的现象:&lt;/p&gt;
+&lt;figure class=&quot;highlight tex&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;\documentclass&lt;/span&gt;&amp;#123;article&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;\usepackage&lt;/span&gt;&amp;#123;amsmath&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;\usepackage&lt;/span&gt;&amp;#123;extarrows&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;\usepackage&lt;/span&gt;&amp;#123;unicode-math&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;\setmathfont&lt;/span&gt;&amp;#123;Libertinus Math&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;\begin&lt;/span&gt;&amp;#123;document&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;\begin&lt;/span&gt;&amp;#123;align*&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;\xLongrightarrow&lt;/span&gt;&amp;#123;a&lt;span class=&quot;built_in&quot;&gt;^&lt;/span&gt;2+b&lt;span class=&quot;built_in&quot;&gt;^&lt;/span&gt;2=c&lt;span class=&quot;built_in&quot;&gt;^&lt;/span&gt;2&amp;#125; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;\end&lt;/span&gt;&amp;#123;align*&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;\end&lt;/span&gt;&amp;#123;document&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/syvshc/image/master/postimg/extarrows-and-libertinus/wrongoutput.png&quot; alt=&quot;错误输出&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="LaTeX" scheme="https://syvshc.github.io/categories/LaTeX/"/>
+    
+    <category term="unicode-math" scheme="https://syvshc.github.io/categories/LaTeX/unicode-math/"/>
+    
+    
+    <category term="LaTeX" scheme="https://syvshc.github.io/tags/LaTeX/"/>
+    
+    <category term="示例" scheme="https://syvshc.github.io/tags/%E7%A4%BA%E4%BE%8B/"/>
+    
+    <category term="unicode-math" scheme="https://syvshc.github.io/tags/unicode-math/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>备份博客内容</title>
+    <link href="https://syvshc.github.io/2021-11-18-backup-blogs/"/>
+    <id>https://syvshc.github.io/2021-11-18-backup-blogs/</id>
+    <published>2021-11-18T13:57:15.000Z</published>
+    <updated>2025-06-25T11:15:56.694Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在 &lt;a href=&quot;https://ssayno.github.io&quot;&gt;ssayno 的博客&lt;/a&gt; 没备份挂了之后, 来写一个我备份博客的方法.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="帮助文档" scheme="https://syvshc.github.io/categories/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/"/>
+    
+    <category term="blog" scheme="https://syvshc.github.io/categories/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/blog/"/>
+    
+    
+    <category term="配置记录" scheme="https://syvshc.github.io/tags/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/"/>
+    
+    <category term="帮助文档" scheme="https://syvshc.github.io/tags/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/"/>
+    
+    <category term="hexo" scheme="https://syvshc.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>统计一节中的列表项数量</title>
+    <link href="https://syvshc.github.io/2021-11-10-compute-total-items/"/>
+    <id>https://syvshc.github.io/2021-11-10-compute-total-items/</id>
+    <published>2021-11-10T03:47:24.000Z</published>
+    <updated>2025-06-25T11:15:56.694Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在群里遇到一个需求: 使用 &lt;code&gt;ctexart&lt;/code&gt; 文档类排版试卷, 使用 &lt;code&gt;enumerate&lt;/code&gt; 环境生成题目并对题目计数, 希望在每个 &lt;code&gt;\section&lt;/code&gt; 中显示”本节共xx题”, 并在目录中显示, 其中 xx 为该节中的一级列表环境中的 item 数量.&lt;/p&gt;
+&lt;p&gt;下面来进行实现.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="LaTeX" scheme="https://syvshc.github.io/categories/LaTeX/"/>
+    
+    <category term="列表" scheme="https://syvshc.github.io/categories/LaTeX/%E5%88%97%E8%A1%A8/"/>
+    
+    
+    <category term="LaTeX" scheme="https://syvshc.github.io/tags/LaTeX/"/>
+    
+    <category term="示例" scheme="https://syvshc.github.io/tags/%E7%A4%BA%E4%BE%8B/"/>
+    
+    <category term="列表" scheme="https://syvshc.github.io/tags/%E5%88%97%E8%A1%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一种特殊的参考文献引用样式的设置</title>
+    <link href="https://syvshc.github.io/2021-10-02-extcite/"/>
+    <id>https://syvshc.github.io/2021-10-02-extcite/</id>
+    <published>2021-10-02T08:19:05.000Z</published>
+    <updated>2025-06-25T11:15:56.694Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;今天在群里得到了这样的一种引用格式的需求:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/syvshc/image/master/postimg/extcite/20211002163210.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;下面使用两种方法来进行实现&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="LaTeX" scheme="https://syvshc.github.io/categories/LaTeX/"/>
+    
+    <category term="参考文献" scheme="https://syvshc.github.io/categories/LaTeX/%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE/"/>
+    
+    
+    <category term="LaTeX" scheme="https://syvshc.github.io/tags/LaTeX/"/>
+    
+    <category term="示例" scheme="https://syvshc.github.io/tags/%E7%A4%BA%E4%BE%8B/"/>
+    
+    <category term="参考文献" scheme="https://syvshc.github.io/tags/%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用 KDE 桌面时遇到的一些问题</title>
+    <link href="https://syvshc.github.io/2021-09-22-KDEProblems/"/>
+    <id>https://syvshc.github.io/2021-09-22-KDEProblems/</id>
+    <published>2021-09-22T06:29:40.000Z</published>
+    <updated>2025-06-25T11:15:56.694Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;这里记录一些使用 ArchLinux + KDE 时遇到的问题&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="配置记录" scheme="https://syvshc.github.io/categories/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/"/>
+    
+    <category term="Linux" scheme="https://syvshc.github.io/categories/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/Linux/"/>
+    
+    
+    <category term="帮助文档" scheme="https://syvshc.github.io/tags/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/"/>
+    
+    <category term="Linux" scheme="https://syvshc.github.io/tags/Linux/"/>
+    
+    <category term="KDE" scheme="https://syvshc.github.io/tags/KDE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>修复 Windows 坏掉的 EFI 引导</title>
+    <link href="https://syvshc.github.io/2021-09-02-RepairEFI/"/>
+    <id>https://syvshc.github.io/2021-09-02-RepairEFI/</id>
+    <published>2021-09-02T09:32:31.000Z</published>
+    <updated>2025-06-25T11:15:56.693Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;&lt;em&gt;下次使用 &lt;code&gt;sudo&lt;/code&gt; 之前一定确认好命令再执行&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;因为半夜迷糊, 运行了&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo rm -rf /*&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;来删除我某文件夹下的全部文件. 删到一半才反应过来我干了些什么, 看着崩坏的图形界面, 我只想回到 Windows, 把 Arch Linux 的分区格式化, 再重新安装, 但是我发现, 我已经把 Windows 的 EFI 引导破坏了……&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="帮助文档" scheme="https://syvshc.github.io/categories/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/"/>
+    
+    <category term="Windows" scheme="https://syvshc.github.io/categories/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/Windows/"/>
+    
+    
+    <category term="帮助文档" scheme="https://syvshc.github.io/tags/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/"/>
+    
+    <category term="Windows" scheme="https://syvshc.github.io/tags/Windows/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Arch Linux 与 Windows 10 的双系统安装与折腾</title>
+    <link href="https://syvshc.github.io/2021-09-02-ArchLinux/"/>
+    <id>https://syvshc.github.io/2021-09-02-ArchLinux/</id>
+    <published>2021-09-02T03:08:27.000Z</published>
+    <updated>2025-06-25T11:15:56.693Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;手贱小白还愿意折腾. 自从上次重装系统之后, Ubuntu 总时不时地卡顿, 一气之下试了好几个发行版, 如 &lt;a href=&quot;https://manjaro.org/&quot;&gt;manjaro&lt;/a&gt;, &lt;a href=&quot;https://www.deepin.org/zh/&quot;&gt;deepin&lt;/a&gt; (我是没想到 deepin 的卡顿竟然是永久性的, 也许是我空间分配不合理吧), &lt;a href=&quot;https://www.debian.org/index.zh-cn.html&quot;&gt;debian&lt;/a&gt; (这个体验还蛮好的), 最终一狠心, 要折腾不如折腾大的, 直接 &lt;a href=&quot;https://archlinux.org/&quot;&gt;Arch Linux&lt;/a&gt; 走起.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="配置记录" scheme="https://syvshc.github.io/categories/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/"/>
+    
+    <category term="Linux" scheme="https://syvshc.github.io/categories/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/Linux/"/>
+    
+    
+    <category term="配置记录" scheme="https://syvshc.github.io/tags/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/"/>
+    
+    <category term="帮助文档" scheme="https://syvshc.github.io/tags/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/"/>
+    
+    <category term="Linux" scheme="https://syvshc.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>全国大学生数学建模竞赛模板的 `\maketitle` 处报错</title>
+    <link href="https://syvshc.github.io/2021-08-04-cumcmthesis-maketitle/"/>
+    <id>https://syvshc.github.io/2021-08-04-cumcmthesis-maketitle/</id>
+    <published>2021-08-04T07:51:49.000Z</published>
+    <updated>2025-06-25T11:15:56.693Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在各种地方获取的全国大学生数学建模竞赛的模板 CUMCMThesis, 使用 &lt;code&gt;xelatex&lt;/code&gt; 编译后会有如下的报错&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;! Extra &amp;#125;, or forgotten \endgroup.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;\UL@stop ...alty \ifnum \lastkern =\thr@@ \egroup &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                                                  \egroup \ifdim \wd \UL@box...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;l.22  \maketitle&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;?&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="LaTeX" scheme="https://syvshc.github.io/categories/LaTeX/"/>
+    
+    <category term="模板" scheme="https://syvshc.github.io/categories/LaTeX/%E6%A8%A1%E6%9D%BF/"/>
+    
+    
+    <category term="LaTeX" scheme="https://syvshc.github.io/tags/LaTeX/"/>
+    
+    <category term="日经问题" scheme="https://syvshc.github.io/tags/%E6%97%A5%E7%BB%8F%E9%97%AE%E9%A2%98/"/>
+    
+    <category term="模板" scheme="https://syvshc.github.io/tags/%E6%A8%A1%E6%9D%BF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>不定长, 自动换行且有定长下划线的“论文标题”</title>
+    <link href="https://syvshc.github.io/2021-08-04-thesis-title/"/>
+    <id>https://syvshc.github.io/2021-08-04-thesis-title/</id>
+    <published>2021-08-04T05:11:50.000Z</published>
+    <updated>2025-06-25T11:15:56.693Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;这篇文章的需求来源为 &lt;a href=&quot;https://ask.latexstudio.net/ask/question/3650.html&quot;&gt;LaTeX 问答站&lt;/a&gt; 的一个问题, 经观察也是普遍遇到的模板设计者的问题. 主要需要达到下图的设计效果:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/syvshc/image/master/postimg/thesis-title/goal.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="LaTeX" scheme="https://syvshc.github.io/categories/LaTeX/"/>
+    
+    <category term="模板" scheme="https://syvshc.github.io/categories/LaTeX/%E6%A8%A1%E6%9D%BF/"/>
+    
+    
+    <category term="LaTeX" scheme="https://syvshc.github.io/tags/LaTeX/"/>
+    
+    <category term="排版设计" scheme="https://syvshc.github.io/tags/%E6%8E%92%E7%89%88%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows 不合法的缓存路径导致 TeX Live 安装失败</title>
+    <link href="https://syvshc.github.io/2021-04-07-illegal-temp-cause-tlinstall-failure/"/>
+    <id>https://syvshc.github.io/2021-04-07-illegal-temp-cause-tlinstall-failure/</id>
+    <published>2021-04-07T11:45:57.000Z</published>
+    <updated>2025-06-25T11:15:56.693Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在 Windows 上安装 TeX Live 时可能遇到由于缓存路径名称不合法, 即 &lt;strong&gt;不是纯英文的无空格的路径&lt;/strong&gt;, 而安装错误的情况.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="帮助文档" scheme="https://syvshc.github.io/categories/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/"/>
+    
+    <category term="LaTeX" scheme="https://syvshc.github.io/categories/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/LaTeX/"/>
+    
+    
+    <category term="帮助文档" scheme="https://syvshc.github.io/tags/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/"/>
+    
+    <category term="LaTeX" scheme="https://syvshc.github.io/tags/LaTeX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>为博客添加 Gitalk 评论区</title>
+    <link href="https://syvshc.github.io/2021-03-05-enable-gitalk/"/>
+    <id>https://syvshc.github.io/2021-03-05-enable-gitalk/</id>
+    <published>2021-03-05T02:21:31.000Z</published>
+    <updated>2025-06-25T11:15:56.693Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在 &lt;a href=&quot;/2021-03-03-build-github-io/&quot; title=&quot;搭建 github.io&quot;&gt;搭建 github.io&lt;/a&gt; 中我们配置了 &lt;code&gt;hexo+NexT&lt;/code&gt; 的博客, 这次来给它添加一个评论区. 使用的是 &lt;a href=&quot;https://github.com/gitalk/gitalk&quot;&gt;gitalk&lt;/a&gt;. &lt;/p&gt;</summary>
+    
+    
+    
+    <category term="帮助文档" scheme="https://syvshc.github.io/categories/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/"/>
+    
+    <category term="blog" scheme="https://syvshc.github.io/categories/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/blog/"/>
+    
+    
+    <category term="配置记录" scheme="https://syvshc.github.io/tags/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/"/>
+    
+    <category term="帮助文档" scheme="https://syvshc.github.io/tags/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/"/>
+    
+    <category term="hexo" scheme="https://syvshc.github.io/tags/hexo/"/>
+    
+    <category term="gitalk" scheme="https://syvshc.github.io/tags/gitalk/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>tlmgr 的介绍</title>
+    <link href="https://syvshc.github.io/2021-03-04-tlmgr-intro/"/>
+    <id>https://syvshc.github.io/2021-03-04-tlmgr-intro/</id>
+    <published>2021-03-04T14:12:21.000Z</published>
+    <updated>2025-06-25T11:15:56.692Z</updated>
+    
+    
+    <summary type="html">&lt;!-- [点击跳转](#jump) &lt;span id=&quot;jump&quot;&gt;跳转到的地方&lt;/span&gt; --&gt;
+&lt;p&gt;这篇文章是用来熟悉 TeX Live 自带的包管理器 &lt;code&gt;tlmgr(TeX Live Manager)&lt;/code&gt; 的使用, 官方文档位于 &lt;a href=&quot;http://tug.org/texlive/doc/tlmgr.html&quot;&gt;TUG&lt;/a&gt;, 这个文档会不定期更新我看的懂的并且觉得有用的部分. 这是一个翻译文档, &lt;a href=&quot;https://github.com/syvshc/tlmgr-intro-zh-cn&quot;&gt;关于 &lt;code&gt;tlmgr&lt;/code&gt; 使用方法的简介&lt;/a&gt; 已经完成, 欢迎提 &lt;a href=&quot;https://github.com/syvshc/tlmgr-intro-zh-cn/issues&quot;&gt;issue&lt;/a&gt; 或者 &lt;a href=&quot;https://github.com/syvshc/tlmgr-intro-zh-cn/pulls&quot;&gt;PR&lt;/a&gt; 来帮我改进这份文档. &lt;/p&gt;</summary>
+    
+    
+    
+    <category term="帮助文档" scheme="https://syvshc.github.io/categories/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/"/>
+    
+    <category term="LaTeX" scheme="https://syvshc.github.io/categories/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/LaTeX/"/>
+    
+    
+    <category term="帮助文档" scheme="https://syvshc.github.io/tags/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/"/>
+    
+    <category term="LaTeX" scheme="https://syvshc.github.io/tags/LaTeX/"/>
+    
+    <category term="tlmgr" scheme="https://syvshc.github.io/tags/tlmgr/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>latexmk 的学习</title>
+    <link href="https://syvshc.github.io/2021-03-04-learn-latexmk/"/>
+    <id>https://syvshc.github.io/2021-03-04-learn-latexmk/</id>
+    <published>2021-03-04T13:54:41.000Z</published>
+    <updated>2025-06-25T11:15:56.692Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;其实是把翻译给咕掉了, 先把实用的东西写了, 方便查阅, 剩下的嘛, 考完研再说吧, 也没准哪天心血来潮就写了&lt;/p&gt;
+&lt;p&gt;先把这个东西写了, 随用随查, 然后也说一下遇到的坑什么的(如果有的话)&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="帮助文档" scheme="https://syvshc.github.io/categories/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/"/>
+    
+    <category term="LaTeX" scheme="https://syvshc.github.io/categories/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/LaTeX/"/>
+    
+    
+    <category term="帮助文档" scheme="https://syvshc.github.io/tags/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/"/>
+    
+    <category term="LaTeX" scheme="https://syvshc.github.io/tags/LaTeX/"/>
+    
+    <category term="latexmk" scheme="https://syvshc.github.io/tags/latexmk/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>搭建 github.io</title>
+    <link href="https://syvshc.github.io/2021-03-03-build-github-io/"/>
+    <id>https://syvshc.github.io/2021-03-03-build-github-io/</id>
+    <published>2021-03-03T15:16:26.000Z</published>
+    <updated>2025-06-25T11:15:56.692Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;在 NexT 主题更新 8.0 之后又重新配置了一次 &lt;code&gt;hexo+NexT&lt;/code&gt;, 这次来记录一下, 并且会随时更新新增的配置.&lt;/strong&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="帮助文档" scheme="https://syvshc.github.io/categories/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/"/>
+    
+    <category term="blog" scheme="https://syvshc.github.io/categories/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/blog/"/>
+    
+    
+    <category term="配置记录" scheme="https://syvshc.github.io/tags/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/"/>
+    
+    <category term="帮助文档" scheme="https://syvshc.github.io/tags/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>beamer 的字体设置</title>
+    <link href="https://syvshc.github.io/2021-03-03-beamer-font-set/"/>
+    <id>https://syvshc.github.io/2021-03-03-beamer-font-set/</id>
+    <published>2021-03-03T11:37:00.000Z</published>
+    <updated>2025-06-25T11:15:56.691Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在使用 &lt;code&gt;beamer&lt;/code&gt; 文档类的时候, 可能会有需要更换字体. &lt;/p&gt;</summary>
+    
+    
+    
+    <category term="LaTeX" scheme="https://syvshc.github.io/categories/LaTeX/"/>
+    
+    <category term="字体" scheme="https://syvshc.github.io/categories/LaTeX/%E5%AD%97%E4%BD%93/"/>
+    
+    
+    <category term="LaTeX" scheme="https://syvshc.github.io/tags/LaTeX/"/>
+    
+    <category term="字体设置" scheme="https://syvshc.github.io/tags/%E5%AD%97%E4%BD%93%E8%AE%BE%E7%BD%AE/"/>
+    
+    <category term="示例" scheme="https://syvshc.github.io/tags/%E7%A4%BA%E4%BE%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Win10+Ubuntu18.04LTS双系统安装记录</title>
+    <link href="https://syvshc.github.io/2020-12-12-Windows-and-Ubuntu/"/>
+    <id>https://syvshc.github.io/2020-12-12-Windows-and-Ubuntu/</id>
+    <published>2020-12-12T10:00:00.000Z</published>
+    <updated>2025-06-25T11:15:56.691Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录过程的时候会同时记录踩过的坑, 这些坑有一些是由于我自己的操作不当, 还有一些是由于网上的教程版本过旧或书写错误造成的, 我都会记录下来, 但是文中的一些文本的描述会与系统标准输出的文本有一定差异, 只要不影响命令的运行的文字笔者不会过分追求一字不差. 那么我们开始吧&lt;sup&gt;&lt;a href=&quot;#fn_1&quot; id=&quot;reffn_1&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;blockquote id=&quot;fn_1&quot;&gt;
+&lt;sup&gt;1&lt;/sup&gt;. 由于事先没有准备, 导致很多情况下都没有截图, 这里会尽量找图来保证记录的易读性.&lt;a href=&quot;#reffn_1&quot; title=&quot;Jump back to footnote [1] in the text.&quot;&gt; &amp;#8617;&lt;/a&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="配置记录" scheme="https://syvshc.github.io/categories/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/"/>
+    
+    <category term="Linux" scheme="https://syvshc.github.io/categories/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/Linux/"/>
+    
+    
+    <category term="系统安装" scheme="https://syvshc.github.io/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/"/>
+    
+    <category term="配置记录" scheme="https://syvshc.github.io/tags/%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/"/>
+    
+    <category term="帮助文档" scheme="https://syvshc.github.io/tags/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>欢迎来到我的 GitHub.io</title>
+    <link href="https://syvshc.github.io/2020-12-12-welcome/"/>
+    <id>https://syvshc.github.io/2020-12-12-welcome/</id>
+    <published>2020-12-11T16:14:16.000Z</published>
+    <updated>2025-06-25T11:15:56.691Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;这里是无锤乙醇的-GitHub-io&quot;&gt;&lt;a href=&quot;#这里是无锤乙醇的-GitHub-io&quot; class=&quot;headerlink&quot; title=&quot;这里是无锤乙醇的 GitHub.io&quot;&gt;&lt;/a&gt;这里是无锤乙醇的 &lt;code&gt;GitHub.io&lt;/code&gt;&lt;/h1&gt;&lt;p&gt;花了小一天来折腾 Hexo NexT 主题, 也算是把基本配置弄好了, 咕了好久的博客也是搭好了, 还有一些坑没有填, 比如&lt;a href=&quot;https://blog.dlzhang.com/posts/32/&quot;&gt;自定义侧边栏图标&lt;/a&gt;, 有时间慢慢折腾吧. &lt;/p&gt;
+&lt;p&gt;接下来会把简书里的东西搬到这里, &lt;del&gt;&lt;a href=&quot;https://syvshc.gitee.io&quot;&gt;Gitee Pages&lt;/a&gt; 是主要更新的地方, 这边会同步更新.&lt;/del&gt;&lt;br&gt;就搁这更新了, Gitee 不折腾了&lt;/p&gt;
+&lt;p&gt;并且这篇文章会被用做测试&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="杂项" scheme="https://syvshc.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://syvshc.github.io/2020-12-12-hello-world/"/>
+    <id>https://syvshc.github.io/2020-12-12-hello-world/</id>
+    <published>2020-12-11T16:00:00.000Z</published>
+    <updated>2025-06-25T11:15:56.691Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="杂项" scheme="https://syvshc.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
+    <category term="hexo" scheme="https://syvshc.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+</feed>

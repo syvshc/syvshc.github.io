@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/avatar/pear.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/avatar/pear-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/avatar/pear-16x16.png">
+  <link rel="mask-icon" href="/img/avatar/pear.svg" color="#222">
+  <meta name="google-site-verification" content="RTd4ecbG2mIKZhXeHNZ1DSOEP_brALHDEdX6JBSAWx4">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=FiraGO:300,300italic,400,400italic,700,700italic%7CSource+Han+Sans+SC:300,300italic,400,400italic,700,700italic%7CFira+Code:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"syvshc.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"gitalk","storage":true,"lazyload":true,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="在 Wiki 上看到了这样一个命题:  If $p$ is prime and $G$ is a group of order $p^k$, then $G$ has a normal subgroup of order $p^m$ for every $1\leqslant m \leqslant k$.  下面来证明这个看起来很强的结论.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="$p$ 群的正规子群">
+<meta property="og:url" content="https://syvshc.github.io/2022-09-09-p-group-normal-subgroup-of-p-m/index.html">
+<meta property="og:site_name" content="无锤乙醇">
+<meta property="og:description" content="在 Wiki 上看到了这样一个命题:  If $p$ is prime and $G$ is a group of order $p^k$, then $G$ has a normal subgroup of order $p^m$ for every $1\leqslant m \leqslant k$.  下面来证明这个看起来很强的结论.">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-09-09T05:50:16.000Z">
+<meta property="article:modified_time" content="2025-06-25T11:15:56.696Z">
+<meta property="article:author" content="Zhonghao Sun">
+<meta property="article:tag" content="数学">
+<meta property="article:tag" content="抽象代数">
+<meta property="article:tag" content="群论">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://syvshc.github.io/2022-09-09-p-group-normal-subgroup-of-p-m/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://syvshc.github.io/2022-09-09-p-group-normal-subgroup-of-p-m/","path":"2022-09-09-p-group-normal-subgroup-of-p-m/","title":"$p$ 群的正规子群"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>$p$ 群的正规子群 | 无锤乙醇</title>
+  
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-127047099-2","only_pageview":true}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<style type="text/css">span[class="simple-icon"]{width:2rem;height:2rem;display:inline-block}span[class="simple-icon"] svg,img{display:inline-block;vertical-align:middle;height:inherit;width:inherit}</style><!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="无锤乙醇" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">无锤乙醇</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">学而未精</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-rss"><a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Zhonghao Sun"
+      src="/img/avatar/present-avatar.jpg">
+  <p class="site-author-name" itemprop="name">Zhonghao Sun</p>
+  <div class="site-description" itemprop="description">从未想过背叛, 也不必说忠贞</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/syvshc" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;syvshc" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:syvshc@foxmail.com" title="E-Mail → mailto:syvshc@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://tex.stackexchange.com/users/180617/syvshc" title="TeX.SE → https:&#x2F;&#x2F;tex.stackexchange.com&#x2F;users&#x2F;180617&#x2F;syvshc" rel="noopener" target="_blank"><i class="fab fa-stack-exchange fa-fw"></i>TeX.SE</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://studio.youtube.com/channel/UCqvoLd2tlB_xuRkZ7_GYOVw/editing/details" title="YouTube → https:&#x2F;&#x2F;studio.youtube.com&#x2F;channel&#x2F;UCqvoLd2tlB_xuRkZ7_GYOVw&#x2F;editing&#x2F;details" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.worldcubeassociation.org/persons/2015SUNZ03/" title="WCA → https:&#x2F;&#x2F;www.worldcubeassociation.org&#x2F;persons&#x2F;2015SUNZ03&#x2F;" rel="noopener" target="_blank"><i class="fas fa-cubes fa-fw"></i>WCA</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://steamcommunity.com/id/syvshc" title="Steam → https:&#x2F;&#x2F;steamcommunity.com&#x2F;id&#x2F;syvshc" rel="noopener" target="_blank"><i class="fab fa-steam fa-fw"></i>Steam</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fas fa-link fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.latexstudio.net/" title="https:&#x2F;&#x2F;www.latexstudio.net" rel="noopener" target="_blank">LaTeX 工作室</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://sikouhjw.github.io/" title="https:&#x2F;&#x2F;sikouhjw.github.io&#x2F;" rel="noopener" target="_blank">sikouhjw</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://zhuanlan.zhihu.com/typography-and-latex/" title="https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;typography-and-latex&#x2F;" rel="noopener" target="_blank">muzimuzhi</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://liam.page/" title="https:&#x2F;&#x2F;liam.page&#x2F;" rel="noopener" target="_blank">Liam</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://stone-zeng.github.io/" title="https:&#x2F;&#x2F;stone-zeng.github.io&#x2F;" rel="noopener" target="_blank">stone-zeng</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://muyuuuu.github.io/" title="https:&#x2F;&#x2F;muyuuuu.github.io&#x2F;" rel="noopener" target="_blank">兰铃</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://yuxtech.club/" title="http:&#x2F;&#x2F;yuxtech.club&#x2F;" rel="noopener" target="_blank">yuxtech</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://camusecao.top/" title="https:&#x2F;&#x2F;camusecao.top&#x2F;" rel="noopener" target="_blank">CamuseCao</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.alanshawn.com/" title="https:&#x2F;&#x2F;www.alanshawn.com&#x2F;" rel="noopener" target="_blank">Alan Xiang</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://ssayno.github.io/" title="https:&#x2F;&#x2F;ssayno.github.io&#x2F;" rel="noopener" target="_blank">ssayno</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://marcaas.github.io/" title="https:&#x2F;&#x2F;marcaas.github.io&#x2F;" rel="noopener" target="_blank">marcaas</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://ds-deng.me/" title="https:&#x2F;&#x2F;ds-deng.me&#x2F;" rel="noopener" target="_blank">ddswhu</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://xkwxdyy.github.io/" title="https:&#x2F;&#x2F;xkwxdyy.github.io&#x2F;" rel="noopener" target="_blank">夏大鱼羊</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://buddyellena.github.io/" title="https:&#x2F;&#x2F;buddyellena.github.io&#x2F;" rel="noopener" target="_blank">BUDDY & ELLENA</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://ljguo1020.github.io/" title="https:&#x2F;&#x2F;ljguo1020.github.io&#x2F;" rel="noopener" target="_blank">芒果不盲</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.gislxz.top/" title="http:&#x2F;&#x2F;www.gislxz.top&#x2F;" rel="noopener" target="_blank">giser吱吱</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/syvshc" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://syvshc.github.io/2022-09-09-p-group-normal-subgroup-of-p-m/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/img/avatar/present-avatar.jpg">
+      <meta itemprop="name" content="Zhonghao Sun">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="无锤乙醇">
+      <meta itemprop="description" content="从未想过背叛, 也不必说忠贞">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="$p$ 群的正规子群 | 无锤乙醇">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          $p$ 群的正规子群
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-09-09 13:50:16" itemprop="dateCreated datePublished" datetime="2022-09-09T13:50:16+08:00">2022-09-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-06-25 19:15:56" itemprop="dateModified" datetime="2025-06-25T19:15:56+08:00">2025-06-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%95%B0%E5%AD%A6/%E4%BB%A3%E6%95%B0/" itemprop="url" rel="index"><span itemprop="name">代数</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.5k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>在 <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/P-group">Wiki</a> 上看到了这样一个命题:</p>
+<blockquote>
+<p>If $p$ is prime and $G$ is a group of order $p^k$, then $G$ has a normal subgroup of order $p^m$ for every $1\leqslant m \leqslant k$.</p>
+</blockquote>
+<p>下面来证明这个看起来很强的结论. </p>
+<span id="more"></span>
+<p>首先先给一些会用到的知识:</p>
+<p><strong>定义</strong> 若有限群 $G$ 的阶等于 $p^m$, 其中 $p$ 为素数, 则称 $G$ 是一个 $p$ 群.</p>
+<p><strong>定理</strong> 任意 $p$ 群的中心 $C$ 含有不止一个元素. </p>
+<p>这个定理可以由有限群的类方程 (class equation):</p>
+<script type="math/tex; mode=display">|G| = |C| + \sum[G:C(y_i)]</script><p>来说明, 这里 $C(y_i)$ 表示 $y_i$ 在 $G$ 中的中心化子, $y_i$ 是 $G$ 中每个含不止一个元素的共轭类的代表元.</p>
+<p><strong>命题</strong> $p^2$ 阶群是 Abel 群, 其中 $p$ 是素数.</p>
+<p><strong>定理</strong>(Cauchy) 设  $G$ 是一个有限 Abel 群, $p$ 是素数, 若 $p\mid |G|$, 则 $G$ 有一个周期为 $p$ 的元素, 从而 $G$ 有一个 $p$ 阶的子群, 这个群是循环群. </p>
+<p><strong>定理</strong>(对应定理) 设 $f: G_1 \to G_2$ 是满同态, 则映射 $H \to f(H)$ 定义了 $G_1$ 包含 $ \ker f$ 的子群集与 $G_2$ 的子群集之间的一一对应, 在这个对应下, $H\triangleleft G_1$ 当且仅当 $f(H)\triangleleft G_2$. </p>
+<p><strong>注意: 这里只有当 $\ker f \subset H$, 且 $f$ 是满同态的时候有 $H\triangleleft G_1 \Longleftrightarrow f(H)\triangleleft G_2$ 的结论.</strong></p>
+<p>下面来证明这个命题. </p>
+<p><strong>证明</strong> 用数学归纳法, 对 $|G|$ 的阶数 $p^k$ 中的 $k$ 进行归纳. 当 $k = 2$ 时, 这时 $|G|=p^2$, 由 Cauchy 定理知 $G$ 存在一个 $p$ 阶子群 $H$, 又因为 $G$ 是 Abel 群, 那么就有 $H \triangleleft G$, 这是因为对任意的 $h \in H,\ g \in G$, 都有 $hg=gh$, 那自然就有</p>
+<script type="math/tex; mode=display">Hg=gH.</script><p>假设 $|G|=p^k$ 时, 对于任意的 $1\leqslant m\leqslant k$, $G$ 都存在一个阶为 $p^m$ 的正规子群. </p>
+<p>下面考虑 $|G|=p^{k+1}$ 时. 由于 $G$ 的中心 $C$ 是一个 Abel 群, 且 $C$ 中元素不止一个, 那就有 $p\mid |C|$, 由 Cauchy 定理知 $C$ 存在一个周期为 $p$ 的元素 $a$, 也就是说循环群 $H = \langle a\rangle$ 是 $C$ 的子群, 从而是 $C$ 的正规子群. 而任意的 $a^\ell$ 与 $g \in G$ 乘法都可交换, 所以 $H \triangleleft G$, 这时我们找到了一个阶为 $p$ 的正规子群. 下面找阶数更高的. 做商群 $G/H$, 于是有</p>
+<script type="math/tex; mode=display">|G/H| = [G:H] = |G|/|H| = p^k,</script><p>那么由归纳假设可知对于任意的 $1\leqslant m \leqslant k$, $G/H$ 都含有一个阶为 $p^m$ 的正规子群, 设为 $N/H$, 于是</p>
+<script type="math/tex; mode=display">|N|=|N/H|\cdot|H|=p^{m+1},</script><p>那么只要说明 $N\triangleleft G$ 即可. 做自然同态</p>
+<script type="math/tex; mode=display">\begin{aligned}
+  f : G & \to G/H \\
+  g & \mapsto gH
+\end{aligned},</script><p>显然这是一个满同态, 并且</p>
+<script type="math/tex; mode=display">\ker f = \{g \in G: f(g)=eH\} = \{g \in G: gH=eH\} = H,</script><p>所以有 $H \subset N$, 于是由对应定理可知当 $f(N) = N/H$ 是 $G/H$ 的正规子群时, $N$ 是 $G$ 的正规子群. </p>
+<p>归纳结束, 命题得证. </p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/img/avatar/wechatpay.png" alt="Zhonghao Sun 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/img/avatar/alipay.jpg" alt="Zhonghao Sun 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Zhonghao Sun
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://syvshc.github.io/2022-09-09-p-group-normal-subgroup-of-p-m/" title="$p$ 群的正规子群">https://syvshc.github.io/2022-09-09-p-group-normal-subgroup-of-p-m/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag"># 数学</a>
+              <a href="/tags/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0/" rel="tag"># 抽象代数</a>
+              <a href="/tags/%E7%BE%A4%E8%AE%BA/" rel="tag"># 群论</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022-04-20-latex-tutorial/" rel="prev" title="latex-tutorial">
+                  <i class="fa fa-chevron-left"></i> latex-tutorial
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022-12-14-petsc-install/" rel="next" title="PETSc 的安装与配置">
+                  PETSc 的安装与配置 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Syvshc</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">142k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:09</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.7/pdfobject.min.js","integrity":"sha256-ph3Dk89VmuTVXG6x/RDzk53SU9LPdAh1tpv0UvnDZ2I="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"syvshc","repo":"syvshc.github.io","client_id":"da0debc4d456cb5f3371","client_secret":"14ec65d19a969abe01994143eff233a4180484aa","admin_user":"syvshc","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"08dc908eb4bd6e24ae2a534ca91db1f6"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

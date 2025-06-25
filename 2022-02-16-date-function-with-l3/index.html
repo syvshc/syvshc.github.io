@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/avatar/pear.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/avatar/pear-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/avatar/pear-16x16.png">
+  <link rel="mask-icon" href="/img/avatar/pear.svg" color="#222">
+  <meta name="google-site-verification" content="RTd4ecbG2mIKZhXeHNZ1DSOEP_brALHDEdX6JBSAWx4">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=FiraGO:300,300italic,400,400italic,700,700italic%7CSource+Han+Sans+SC:300,300italic,400,400italic,700,700italic%7CFira+Code:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"syvshc.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"gitalk","storage":true,"lazyload":true,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="在给家教学生出题的过程中想实现节标题的自动化, 由于题目是每天都有, 所以我想交替用 \examsection 和 \answersection 来输出节标题, 并且设置页眉和目录, 目标效果如下: 1234567\begin&amp;#123;document&amp;#125;\setdate[2022, 2, 14]\examsection\answersection\examsection*\answer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用 LaTeX3 实现一些日期相关的功能">
+<meta property="og:url" content="https://syvshc.github.io/2022-02-16-date-function-with-l3/index.html">
+<meta property="og:site_name" content="无锤乙醇">
+<meta property="og:description" content="在给家教学生出题的过程中想实现节标题的自动化, 由于题目是每天都有, 所以我想交替用 \examsection 和 \answersection 来输出节标题, 并且设置页眉和目录, 目标效果如下: 1234567\begin&amp;#123;document&amp;#125;\setdate[2022, 2, 14]\examsection\answersection\examsection*\answer">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/syvshc/image/master/postimg/date-function-with-l3/goal.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/syvshc/image/master/postimg/date-function-with-l3/finish.png">
+<meta property="article:published_time" content="2022-02-16T14:31:45.000Z">
+<meta property="article:modified_time" content="2025-06-25T11:15:56.695Z">
+<meta property="article:author" content="Zhonghao Sun">
+<meta property="article:tag" content="LaTeX">
+<meta property="article:tag" content="示例">
+<meta property="article:tag" content="LaTeX3">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/syvshc/image/master/postimg/date-function-with-l3/goal.png">
+
+
+<link rel="canonical" href="https://syvshc.github.io/2022-02-16-date-function-with-l3/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://syvshc.github.io/2022-02-16-date-function-with-l3/","path":"2022-02-16-date-function-with-l3/","title":"用 LaTeX3 实现一些日期相关的功能"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>用 LaTeX3 实现一些日期相关的功能 | 无锤乙醇</title>
+  
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-127047099-2","only_pageview":true}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<style type="text/css">span[class="simple-icon"]{width:2rem;height:2rem;display:inline-block}span[class="simple-icon"] svg,img{display:inline-block;vertical-align:middle;height:inherit;width:inherit}</style><!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="无锤乙醇" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">无锤乙醇</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">学而未精</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-rss"><a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF"><span class="nav-number">1.</span> <span class="nav-text">实现思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E6%95%B4%E4%BB%A3%E7%A0%81"><span class="nav-number">2.</span> <span class="nav-text">完整代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text">小结</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Zhonghao Sun"
+      src="/img/avatar/present-avatar.jpg">
+  <p class="site-author-name" itemprop="name">Zhonghao Sun</p>
+  <div class="site-description" itemprop="description">从未想过背叛, 也不必说忠贞</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/syvshc" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;syvshc" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:syvshc@foxmail.com" title="E-Mail → mailto:syvshc@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://tex.stackexchange.com/users/180617/syvshc" title="TeX.SE → https:&#x2F;&#x2F;tex.stackexchange.com&#x2F;users&#x2F;180617&#x2F;syvshc" rel="noopener" target="_blank"><i class="fab fa-stack-exchange fa-fw"></i>TeX.SE</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://studio.youtube.com/channel/UCqvoLd2tlB_xuRkZ7_GYOVw/editing/details" title="YouTube → https:&#x2F;&#x2F;studio.youtube.com&#x2F;channel&#x2F;UCqvoLd2tlB_xuRkZ7_GYOVw&#x2F;editing&#x2F;details" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.worldcubeassociation.org/persons/2015SUNZ03/" title="WCA → https:&#x2F;&#x2F;www.worldcubeassociation.org&#x2F;persons&#x2F;2015SUNZ03&#x2F;" rel="noopener" target="_blank"><i class="fas fa-cubes fa-fw"></i>WCA</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://steamcommunity.com/id/syvshc" title="Steam → https:&#x2F;&#x2F;steamcommunity.com&#x2F;id&#x2F;syvshc" rel="noopener" target="_blank"><i class="fab fa-steam fa-fw"></i>Steam</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fas fa-link fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.latexstudio.net/" title="https:&#x2F;&#x2F;www.latexstudio.net" rel="noopener" target="_blank">LaTeX 工作室</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://sikouhjw.github.io/" title="https:&#x2F;&#x2F;sikouhjw.github.io&#x2F;" rel="noopener" target="_blank">sikouhjw</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://zhuanlan.zhihu.com/typography-and-latex/" title="https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;typography-and-latex&#x2F;" rel="noopener" target="_blank">muzimuzhi</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://liam.page/" title="https:&#x2F;&#x2F;liam.page&#x2F;" rel="noopener" target="_blank">Liam</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://stone-zeng.github.io/" title="https:&#x2F;&#x2F;stone-zeng.github.io&#x2F;" rel="noopener" target="_blank">stone-zeng</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://muyuuuu.github.io/" title="https:&#x2F;&#x2F;muyuuuu.github.io&#x2F;" rel="noopener" target="_blank">兰铃</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://yuxtech.club/" title="http:&#x2F;&#x2F;yuxtech.club&#x2F;" rel="noopener" target="_blank">yuxtech</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://camusecao.top/" title="https:&#x2F;&#x2F;camusecao.top&#x2F;" rel="noopener" target="_blank">CamuseCao</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.alanshawn.com/" title="https:&#x2F;&#x2F;www.alanshawn.com&#x2F;" rel="noopener" target="_blank">Alan Xiang</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://ssayno.github.io/" title="https:&#x2F;&#x2F;ssayno.github.io&#x2F;" rel="noopener" target="_blank">ssayno</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://marcaas.github.io/" title="https:&#x2F;&#x2F;marcaas.github.io&#x2F;" rel="noopener" target="_blank">marcaas</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://ds-deng.me/" title="https:&#x2F;&#x2F;ds-deng.me&#x2F;" rel="noopener" target="_blank">ddswhu</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://xkwxdyy.github.io/" title="https:&#x2F;&#x2F;xkwxdyy.github.io&#x2F;" rel="noopener" target="_blank">夏大鱼羊</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://buddyellena.github.io/" title="https:&#x2F;&#x2F;buddyellena.github.io&#x2F;" rel="noopener" target="_blank">BUDDY & ELLENA</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://ljguo1020.github.io/" title="https:&#x2F;&#x2F;ljguo1020.github.io&#x2F;" rel="noopener" target="_blank">芒果不盲</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.gislxz.top/" title="http:&#x2F;&#x2F;www.gislxz.top&#x2F;" rel="noopener" target="_blank">giser吱吱</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/syvshc" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://syvshc.github.io/2022-02-16-date-function-with-l3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/img/avatar/present-avatar.jpg">
+      <meta itemprop="name" content="Zhonghao Sun">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="无锤乙醇">
+      <meta itemprop="description" content="从未想过背叛, 也不必说忠贞">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="用 LaTeX3 实现一些日期相关的功能 | 无锤乙醇">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          用 LaTeX3 实现一些日期相关的功能
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-02-16 22:31:45" itemprop="dateCreated datePublished" datetime="2022-02-16T22:31:45+08:00">2022-02-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-06-25 19:15:56" itemprop="dateModified" datetime="2025-06-25T19:15:56+08:00">2025-06-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/LaTeX/" itemprop="url" rel="index"><span itemprop="name">LaTeX</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/LaTeX/LaTeX3/" itemprop="url" rel="index"><span itemprop="name">LaTeX3</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>18k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>17 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>在给家教学生出题的过程中想实现节标题的自动化, 由于题目是每天都有, 所以我想交替用 <code>\examsection</code> 和 <code>\answersection</code> 来输出节标题, 并且设置页眉和目录, 目标效果如下:</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"><span class="keyword">\setdate</span>[2022, 2, 14]</span><br><span class="line"><span class="keyword">\examsection</span></span><br><span class="line"><span class="keyword">\answersection</span></span><br><span class="line"><span class="keyword">\examsection</span>*</span><br><span class="line"><span class="keyword">\answersection</span>*</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/syvshc/image/master/postimg/date-function-with-l3/goal.png" alt="目标效果"></p>
+<span id="more"></span>
+<p><strong>我刚刚开始学习 LaTeX3, 对一些函数的使用可能不太得当, 欢迎指出.</strong></p>
+<h2 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h2><p>首先我们定义一些变量:</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 定义年, 月, 日, 后文注释中用 year, month, day 来指代</span></span><br><span class="line"><span class="keyword">\int_new:N</span> <span class="keyword">\g__dailyexam_year_int</span></span><br><span class="line"><span class="keyword">\int_new:N</span> <span class="keyword">\g__dailyexam_month_int</span></span><br><span class="line"><span class="keyword">\int_new:N</span> <span class="keyword">\g__dailyexam_day_int</span></span><br><span class="line"><span class="comment">% 定义最大的月数, 每月的最大天数, 以及特殊的二月的天数</span></span><br><span class="line"><span class="keyword">\int_new:N</span> <span class="keyword">\c__dailyexam_month_max_int</span></span><br><span class="line"><span class="keyword">\int_set:Nn</span> <span class="keyword">\c__dailyexam_month_max_int</span> &#123; 12 &#125;</span><br><span class="line"><span class="keyword">\int_new:N</span> <span class="keyword">\l__dailyexam_day_max_int</span></span><br><span class="line"><span class="keyword">\int_new:N</span> <span class="keyword">\l__dailyexam_day_feb_max_int</span></span><br><span class="line"><span class="comment">% 定义用来接受 \setdate 的参数的 clist</span></span><br><span class="line"><span class="keyword">\clist_new:N</span> <span class="keyword">\l__dailyexam_date_clist</span></span><br></pre></td></tr></table></figure>
+<p>然后定义一个 <code>prop</code>, 来存储每个月的名称, 在这里用来输出报错信息: </p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\prop_const_from_keyval:Nn</span> <span class="keyword">\c__dailyexam_month_prop</span></span><br><span class="line">  &#123;</span><br><span class="line">    &#123; 1 &#125; = &#123; January &#125;,</span><br><span class="line">    &#123; 2 &#125; = &#123; February &#125;,</span><br><span class="line">    &#123; 3 &#125; = &#123; March &#125;, </span><br><span class="line">    &#123; 4 &#125; = &#123; April &#125;, </span><br><span class="line">    &#123; 5 &#125; = &#123; May &#125;, </span><br><span class="line">    &#123; 6 &#125; = &#123; June &#125;, </span><br><span class="line">    &#123; 7 &#125; = &#123; July &#125;,</span><br><span class="line">    &#123; 8 &#125; = &#123; August &#125;,</span><br><span class="line">    &#123; 9 &#125; = &#123; September &#125;,</span><br><span class="line">    &#123; 10 &#125; = &#123; October &#125;, </span><br><span class="line">    &#123; 11 &#125; = &#123; November &#125;, </span><br><span class="line">    &#123; 12 &#125; = &#123; December&#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>再定义一些信息, 分别为不合法的年, 月, 日, 因为闰年是从 1582 年的格里高利历开始的记法, 所以这里年要大于 1582 年. </p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\msg_new:nnn</span> &#123; dailyexam &#125; &#123; year~is~illegal &#125; &#123; &quot;year&quot;~must~later~than~1582 &#125;</span><br><span class="line"><span class="keyword">\msg_new:nnn</span> &#123; dailyexam &#125; &#123; month~is~illegal &#125; &#123; &quot;month&quot;~must~be~an~integer~among~1,~2,~3,...,~12 &#125;</span><br><span class="line"><span class="keyword">\msg_new:nnn</span> &#123; dailyexam &#125; &#123; day~is~illegal &#125; &#123; <span class="params">#1</span>~of~<span class="params">#2</span>~has~only~<span class="params">#3</span>~days, <span class="keyword">\\</span></span><br><span class="line">                                                &quot;day&quot;~must~be~an~integer~among~1,~2,~3,...,~<span class="params">#3</span> &#125;</span><br><span class="line"><span class="comment">% 示例输出为</span></span><br><span class="line"><span class="comment">% ! Package dailyexam Error: February of 2022 has only 28 days,</span></span><br><span class="line"><span class="comment">% (dailyexam)                &quot;day&quot; must be an integer among 1, 2, 3,..., 28</span></span><br></pre></td></tr></table></figure>
+<p>然后我们来根据月份来设置最大天数 <code>\l_dailyexam_day_max_int</code> :</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 设置 month 月份下最大的天数,</span></span><br><span class="line"><span class="keyword">\cs_new:Nn</span> <span class="keyword">\__dailyexam_set_max_day:</span> </span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">% 首先根据大小月规则来设置除二月外的最大天数</span></span><br><span class="line">    <span class="keyword">\int_case:nnT</span> &#123; <span class="keyword">\g__dailyexam_month_int</span> &#125;</span><br><span class="line">      &#123;</span><br><span class="line">        &#123; 1 &#125; &#123; &#125;</span><br><span class="line">        &#123; 3 &#125; &#123; &#125;</span><br><span class="line">        &#123; 5 &#125; &#123; &#125;</span><br><span class="line">        &#123; 7 &#125; &#123; &#125;</span><br><span class="line">        &#123; 8 &#125; &#123; &#125;</span><br><span class="line">        &#123; 10 &#125; &#123; &#125;</span><br><span class="line">        &#123; 12 &#125; &#123; &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="keyword">\int_set:Nn</span> <span class="keyword">\l__dailyexam_day_max_int</span> &#123; 31 &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">\int_case:nnT</span> &#123; <span class="keyword">\g__dailyexam_month_int</span> &#125;</span><br><span class="line">      &#123;</span><br><span class="line">        &#123; 4 &#125; &#123; &#125;</span><br><span class="line">        &#123; 6 &#125; &#123; &#125;</span><br><span class="line">        &#123; 9 &#125; &#123; &#125;</span><br><span class="line">        &#123; 11 &#125; &#123; &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="keyword">\int_set:Nn</span> <span class="keyword">\l__dailyexam_day_max_int</span> &#123; 30 &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">\int_compare:nNnTF</span> &#123; <span class="keyword">\g__dailyexam_year_int</span> &#125; &lt; &#123; 1582 &#125;</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="comment">% 如果被判断的年在 1582 年之前, 则输出报错信息</span></span><br><span class="line">        <span class="keyword">\msg_error:nn</span> &#123; dailyexam &#125; &#123; year~is~illegal &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="comment">% 如果被判断的年在 1582 年之后, 则需要判断该年是否是闰年</span></span><br><span class="line">        <span class="comment">% 规则为: 如果年份能被 100 整除, 则它需要整除 400;</span></span><br><span class="line">        <span class="comment">%         如果年份不能被 100 整除, 则它需要整除 4;</span></span><br><span class="line">        <span class="comment">%         以上两种情况为闰年, 二月有 29 天</span></span><br><span class="line">        <span class="comment">%         否则该年为平年, 二月有 28 天</span></span><br><span class="line">        <span class="keyword">\bool_if:nTF</span> </span><br><span class="line">          &#123;</span><br><span class="line">            (</span><br><span class="line">              <span class="keyword">\int_compare_p:nNn</span> &#123; <span class="keyword">\int_mod:nn</span> &#123; <span class="keyword">\g__dailyexam_year_int</span> &#125; &#123; 100 &#125; &#125; = &#123; 0 &#125; <span class="built_in">&amp;</span><span class="built_in">&amp;</span> </span><br><span class="line">              <span class="keyword">\int_compare_p:nNn</span> &#123; <span class="keyword">\int_mod:nn</span> &#123; <span class="keyword">\g__dailyexam_year_int</span> &#125; &#123; 400 &#125; &#125; = &#123; 0 &#125;</span><br><span class="line">            ) </span><br><span class="line">            ||</span><br><span class="line">            (</span><br><span class="line">              ! <span class="keyword">\int_compare_p:nNn</span> &#123; <span class="keyword">\int_mod:nn</span> &#123; <span class="keyword">\g__dailyexam_year_int</span> &#125; &#123; 100 &#125; &#125; = &#123; 0 &#125; <span class="built_in">&amp;</span><span class="built_in">&amp;</span></span><br><span class="line">              <span class="keyword">\int_compare_p:nNn</span> &#123; <span class="keyword">\int_mod:nn</span> &#123; <span class="keyword">\g__dailyexam_year_int</span> &#125; &#123; 4 &#125; &#125; = &#123; 0 &#125;</span><br><span class="line">            )</span><br><span class="line">          &#125;</span><br><span class="line">          &#123;</span><br><span class="line">            <span class="keyword">\int_set:Nn</span> <span class="keyword">\l__dailyexam_day_feb_max_int</span> &#123; 29 &#125;</span><br><span class="line">          &#125;</span><br><span class="line">          &#123;</span><br><span class="line">            <span class="keyword">\int_set:Nn</span> <span class="keyword">\l__dailyexam_day_feb_max_int</span> &#123; 28 &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    <span class="comment">% 判断该月是否为二月, 如果是, 就把最大天数设置为二月最大天数</span></span><br><span class="line">    <span class="keyword">\int_compare:nNnT</span> &#123; <span class="keyword">\g__dailyexam_month_int</span> &#125; = &#123; 2 &#125;</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="keyword">\int_set_eq:NN</span> <span class="keyword">\l__dailyexam_day_max_int</span> <span class="keyword">\l__dailyexam_day_feb_max_int</span></span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>下面是关键的一个函数, 将给定的一个日期向后移动一天:</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 将日期改为下一天, 注意这里的日期更改都需要是全局的, 否则在 \section 的参数中表现为局部变化 </span></span><br><span class="line"><span class="keyword">\cs_new:Nn</span> <span class="keyword">\__dailyexam_next_day:</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">% 判断 day 是否等于当月的 day_max</span></span><br><span class="line">    <span class="keyword">\int_compare:nNnTF</span> &#123; <span class="keyword">\g__dailyexam_day_int</span> &#125; = &#123; <span class="keyword">\l__dailyexam_day_max_int</span> &#125;</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="comment">% 如果日期等于 day_max, 那么进入了新的一个月, 将 day 重设为 1</span></span><br><span class="line">        <span class="keyword">\int_gset:Nn</span> <span class="keyword">\g__dailyexam_day_int</span> &#123; 1 &#125;</span><br><span class="line">        <span class="keyword">\int_compare:nNnTF</span> &#123; <span class="keyword">\g__dailyexam_month_int</span> &#125; = &#123; <span class="keyword">\c__dailyexam_month_max_int</span> &#125;</span><br><span class="line">          &#123;</span><br><span class="line">            <span class="comment">% 如果这时是十二月, 即该天为 12.31, </span></span><br><span class="line">            <span class="comment">% 那么进入了新的一年, 将 month 重设为 1, 并将 year 加 1 </span></span><br><span class="line">            <span class="keyword">\int_gset:Nn</span> <span class="keyword">\g__dailyexam_month_int</span> &#123; 1 &#125;</span><br><span class="line">            <span class="keyword">\int_gincr:N</span> <span class="keyword">\g__dailyexam_year_int</span></span><br><span class="line">          &#125;</span><br><span class="line">          &#123;</span><br><span class="line">            <span class="comment">% 如果不是十二月, 那么只需要将 month 加 1</span></span><br><span class="line">            <span class="keyword">\int_gincr:N</span> <span class="keyword">\g__dailyexam_month_int</span></span><br><span class="line">          &#125;</span><br><span class="line">        <span class="comment">% 只要进入了新的一个月, 就需要重新设置 day_max</span></span><br><span class="line">        <span class="keyword">\__dailyexam_set_max_day:</span> </span><br><span class="line">      &#125;</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="comment">% 如果 day 不等于 day_max, 那么只需要将 day 加 1</span></span><br><span class="line">        <span class="keyword">\int_gincr:N</span> <span class="keyword">\g__dailyexam_day_int</span></span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>由于我们要使用 <code>\setdate</code> 来设置起始日期, 那么就需要防止用户输入不合法的日期, 如 13 月 32 日:</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 判断 \setdate 所接受的日期是否合法</span></span><br><span class="line"><span class="keyword">\cs_new:Nn</span> <span class="keyword">\__dailyexam_if_legal:</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">% 首先是对 year 的判断, 同上</span></span><br><span class="line">    <span class="keyword">\int_compare:nNnT</span> &#123; <span class="keyword">\g__dailyexam_year_int</span> &#125; &lt; &#123; 1582 &#125;</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="keyword">\msg_error:nn</span> &#123; dailyexam &#125; &#123; year~is~illegal &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    <span class="comment">% 判断 month 是否是在 1 -- 12 之间</span></span><br><span class="line">    <span class="keyword">\int_compare:nTF</span></span><br><span class="line">      &#123;</span><br><span class="line">        0 &lt; <span class="keyword">\g__dailyexam_month_int</span> &lt;= <span class="keyword">\c__dailyexam_month_max_int</span></span><br><span class="line">      &#125;</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="comment">% 如果 month 合法, 那么就可以设置当月的 day_max, 用来对 day 进行判断</span></span><br><span class="line">        <span class="keyword">\__dailyexam_set_max_day:</span></span><br><span class="line">      &#125;</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="comment">% 如果 month 不合法, 输出报错信息</span></span><br><span class="line">        <span class="keyword">\msg_error:nn</span> &#123; dailyexam &#125; &#123; month~is~illegal &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    <span class="comment">% 判断 day 是否在 1 -- day_max 之间</span></span><br><span class="line">    <span class="keyword">\int_compare:nF</span></span><br><span class="line">      &#123;</span><br><span class="line">        0 &lt; <span class="keyword">\g__dailyexam_day_int</span> &lt;= <span class="keyword">\l__dailyexam_day_max_int</span></span><br><span class="line">      &#125;</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="comment">% 如果 day 不合法, 输出报错信息, 报错信息的示例在 \mas_new 部分</span></span><br><span class="line">        <span class="keyword">\exp_args:NNx</span> <span class="keyword">\prop_get:NnN</span> <span class="keyword">\c__dailyexam_month_prop</span> </span><br><span class="line">          &#123; <span class="keyword">\int_use:N</span> <span class="keyword">\g__dailyexam_month_int</span> &#125; </span><br><span class="line">          <span class="keyword">\l_tmpb_tl</span></span><br><span class="line">        <span class="keyword">\msg_error:nnxxx</span> &#123; dailyexam &#125; &#123; day~is~illegal &#125; </span><br><span class="line">          &#123; <span class="keyword">\tl_use:N</span> <span class="keyword">\l_tmpb_tl</span> &#125; </span><br><span class="line">          &#123; <span class="keyword">\int_use:N</span> <span class="keyword">\g__dailyexam_year_int</span> &#125; </span><br><span class="line">          &#123; <span class="keyword">\int_use:N</span> <span class="keyword">\l__dailyexam_day_max_int</span> &#125;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>下面来进行 <code>\setdate</code> 的内部函数的编写:</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 这里设置另一个重要的函数, 设置起始日期</span></span><br><span class="line"><span class="comment">% 我们规定输入的参数为一个逗号分隔列表 clist</span></span><br><span class="line"><span class="keyword">\cs_new:Npn</span> <span class="keyword">\__dailyexam_setdate:n</span> <span class="params">#1</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">% 将参数传入 clist, 参数是否合法在赋值后判断</span></span><br><span class="line">    <span class="keyword">\clist_set:Nn</span> <span class="keyword">\l__dailyexam_date_clist</span> &#123; <span class="params">#1</span> &#125;</span><br><span class="line">    <span class="keyword">\int_case:nnTF</span> &#123; <span class="keyword">\clist_count:N</span> <span class="keyword">\l__dailyexam_date_clist</span> &#125;</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="comment">% 如果参数列表里有三项, 也就是对应着 year, month, day,</span></span><br><span class="line">        <span class="comment">% 那么将第一项设置为 year, 再将第一项 pop 到一个不再使用的临时变量中,</span></span><br><span class="line">        <span class="comment">% 来保证现在的 clist 中剩余 month 和 day</span></span><br><span class="line">        <span class="comment">% 注意, 这里我们不能直接用 \l_tmpa_tl 来对 year 赋值, 因为数据类型不同</span></span><br><span class="line">        &#123; 3 &#125; </span><br><span class="line">        &#123; </span><br><span class="line">          <span class="keyword">\exp_args:NNx</span> <span class="keyword">\int_gset:Nn</span> <span class="keyword">\g__dailyexam_year_int</span> </span><br><span class="line">            &#123; <span class="keyword">\clist_item:Nn</span> <span class="keyword">\l__dailyexam_date_clist</span> &#123; 1 &#125; &#125;</span><br><span class="line">          <span class="keyword">\clist_pop:NN</span> <span class="keyword">\l__dailyexam_date_clist</span> <span class="keyword">\l_tmpa_tl</span> </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">% 如果参数列表中有两项, 对应着 month, day,</span></span><br><span class="line">        <span class="comment">% 这时候将 year 设置为编译时的系统年份</span></span><br><span class="line">        &#123; 2 &#125; &#123; <span class="keyword">\int_gset_eq:NN</span> <span class="keyword">\g__dailyexam_year_int</span> <span class="keyword">\c_sys_year_int</span> &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="comment">% 经过上两步的筛选, 可以保证此时 clist 中只有两项: month 和 day</span></span><br><span class="line">        <span class="comment">% 再将它们赋值到 month 和 day</span></span><br><span class="line">        <span class="keyword">\exp_args:NNx</span> <span class="keyword">\int_gset:Nn</span> <span class="keyword">\g__dailyexam_month_int</span> </span><br><span class="line">          &#123; <span class="keyword">\clist_item:Nn</span> <span class="keyword">\l__dailyexam_date_clist</span> &#123; 1 &#125; &#125;</span><br><span class="line">        <span class="keyword">\exp_args:NNx</span> <span class="keyword">\int_gset:Nn</span> <span class="keyword">\g__dailyexam_day_int</span> </span><br><span class="line">          &#123; <span class="keyword">\clist_item:Nn</span> <span class="keyword">\l__dailyexam_date_clist</span> &#123; 2 &#125; &#125;</span><br><span class="line">        <span class="comment">% 至此 year, month 和 day 都已经赋值完毕, 进行合法性检验</span></span><br><span class="line">        <span class="keyword">\__dailyexam_if_legal:</span></span><br><span class="line">      &#125;</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="comment">% 如果参数数量不是 2 或 3 个, 那么视为输入格式错误</span></span><br><span class="line">        <span class="keyword">\msg_new:nnn</span> &#123; dailyexam &#125; &#123; date~type~error &#125; </span><br><span class="line">          &#123; You~must~input~&quot;year,month,day&quot;~or~&quot;month,day&quot;~type~argument. &#125;</span><br><span class="line">        <span class="keyword">\msg_error:nn</span> &#123; dailyexam &#125; &#123; date~type~error &#125;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>下面是输出当前日期的函数:</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 用来显示当前的日期, 并用 year 参数来决定是否输出 year, 格式为 year.month.day</span></span><br><span class="line"><span class="keyword">\cs_set:Npn</span> <span class="keyword">\__dailyexam_current_date:n</span> <span class="params">#1</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">\str_if_eq:nnT</span> &#123; <span class="params">#1</span> &#125; &#123; year &#125;</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="keyword">\int_use:N</span> <span class="keyword">\g__dailyexam_year_int</span> .</span><br><span class="line">      &#125;</span><br><span class="line">    <span class="keyword">\int_use:N</span> <span class="keyword">\g__dailyexam_month_int</span> .</span><br><span class="line">    <span class="keyword">\int_use:N</span> <span class="keyword">\g__dailyexam_day_int</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>接下来是用户层的命令:</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 输出当前日期的函数 \currentdate</span></span><br><span class="line"><span class="keyword">\NewDocumentCommand</span> &#123; <span class="keyword">\currentdate</span> &#125; &#123; o &#125; &#123; <span class="keyword">\__dailyexam_current_date:n</span> &#123; <span class="params">#1</span> &#125; &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% 设置起始日期的函数 \setdate, 以编译时的系统年月日作为默认值</span></span><br><span class="line"><span class="keyword">\NewDocumentCommand</span> &#123; <span class="keyword">\setdate</span> &#125; &#123; O&#123; <span class="keyword">\int_use:N</span> <span class="keyword">\c_sys_year_int</span>, <span class="keyword">\int_use:N</span> <span class="keyword">\c_sys_month_int</span>, <span class="keyword">\int_use:N</span> <span class="keyword">\c_sys_day_int</span> &#125; &#125;</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">\__dailyexam_setdate:n</span> &#123; <span class="params">#1</span> &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% 日期加 1 的函数 \nextdate</span></span><br><span class="line"><span class="keyword">\NewDocumentCommand</span> &#123; <span class="keyword">\nextdate</span> &#125; &#123; &#125;</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">\__dailyexam_next_day:</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>由于我们还有页眉的要求, 并需要控制展开的顺序, 所以先将 <code>\fancyhead</code> 与 <code>\section*</code> 设置为 LaTeX3 格式的函数, 同时给 <code>\section*</code> 加入了目录</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 将 \fancyhead, \section* 设置为 l3 格式的函数</span></span><br><span class="line"><span class="keyword">\cs_new:Npn</span> <span class="keyword">\fancyhdr_fancyhead:nn</span> <span class="params">#1</span><span class="params">#2</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">\fancyhead</span>[<span class="params">#1</span>]&#123;<span class="params">#2</span>&#125;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="keyword">\cs_new:Npn</span> <span class="keyword">\section_star:n</span> <span class="params">#1</span> </span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">\section</span>*&#123; <span class="params">#1</span> &#125;</span><br><span class="line">    <span class="keyword">\addcontentsline</span>&#123;toc&#125;&#123;section&#125;&#123;<span class="params">#1</span>&#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>最后是目标中的两个函数 <code>\examsection</code> 和 <code>\answersection</code>:</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 用来输出题目的节标题, 不带节序号, 带星号的版本会输出 year</span></span><br><span class="line"><span class="comment">% \answersection 同理</span></span><br><span class="line"><span class="keyword">\NewDocumentCommand</span> &#123; <span class="keyword">\examsection</span> &#125; &#123; s &#125; </span><br><span class="line">  &#123; </span><br><span class="line">    <span class="keyword">\clearpage</span> </span><br><span class="line">    <span class="comment">% 将由星号控制的日期格式存入临时 tl 变量</span></span><br><span class="line">    <span class="keyword">\tl_set:Nn</span> <span class="keyword">\l_tmpa_tl</span> </span><br><span class="line">      &#123; </span><br><span class="line">        <span class="keyword">\IfBooleanTF</span> &#123; <span class="params">#1</span> &#125; </span><br><span class="line">          &#123; <span class="keyword">\__dailyexam_current_date:n</span> &#123; year &#125; &#125; </span><br><span class="line">          &#123; <span class="keyword">\__dailyexam_current_date:n</span> &#123; &#125; &#125; </span><br><span class="line">      &#125;</span><br><span class="line">    <span class="comment">% 控制宏展开来输出节标题与设置页眉</span></span><br><span class="line">    <span class="keyword">\exp_args:Nx</span> <span class="keyword">\section_star:n</span> &#123; Exercise~of~<span class="keyword">\tl_use:N</span> <span class="keyword">\l_tmpa_tl</span> &#125; </span><br><span class="line">    <span class="keyword">\exp_args:Nnx</span> <span class="keyword">\fancyhdr_fancyhead:nn</span> &#123; L &#125; &#123; Exercise~of~<span class="keyword">\tl_use:N</span> <span class="keyword">\l_tmpa_tl</span> &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\NewDocumentCommand</span> &#123; <span class="keyword">\answersection</span> &#125; &#123; s &#125; </span><br><span class="line">  &#123; </span><br><span class="line">    <span class="keyword">\clearpage</span> </span><br><span class="line">    <span class="keyword">\tl_set:Nn</span> <span class="keyword">\l_tmpa_tl</span> </span><br><span class="line">    &#123; <span class="keyword">\IfBooleanTF</span> &#123; <span class="params">#1</span> &#125; </span><br><span class="line">        &#123; <span class="keyword">\__dailyexam_current_date:n</span> &#123; year &#125; &#125; </span><br><span class="line">        &#123; <span class="keyword">\__dailyexam_current_date:n</span> &#123; &#125; &#125; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">\exp_args:Nx</span> <span class="keyword">\section_star:n</span> &#123; Answer~of~<span class="keyword">\tl_use:N</span> <span class="keyword">\l_tmpa_tl</span> &#125; </span><br><span class="line">    <span class="comment">% 这里是要控制宏展开的关键, 页眉会在函数结束后再输出, </span></span><br><span class="line">    <span class="comment">% 由于 \__dailyexam_next_date: 的作用, 在输出页眉的时候日期已经到达下一天</span></span><br><span class="line">    <span class="comment">% 所以要提前展开 \l_tmpa_tl</span></span><br><span class="line">    <span class="keyword">\exp_args:Nnx</span> <span class="keyword">\fancyhdr_fancyhead:nn</span> &#123; L &#125; &#123; Answer~of~<span class="keyword">\tl_use:N</span> <span class="keyword">\l_tmpa_tl</span> &#125;</span><br><span class="line">    <span class="comment">% 一天的答案写完后将日期推进一天, 来为下一次的 \examsection 做准备</span></span><br><span class="line">    <span class="keyword">\__dailyexam_next_date:</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><p>读者可自行更改 <code>\setdate</code> 的参数来查看 <code>\msg_error</code> 的效果. 为了节约空间, 输出省略了大片的空白</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;fancyhdr&#125;</span><br><span class="line"><span class="keyword">\pagestyle</span>&#123;fancy&#125;</span><br><span class="line"><span class="keyword">\fancyhf</span>&#123;&#125;</span><br><span class="line"><span class="keyword">\fancyhead</span>[R]&#123;<span class="keyword">\thepage</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\ExplSyntaxOn</span></span><br><span class="line"><span class="comment">% 将 \fancyhead, \section* 设置为 l3 格式的函数</span></span><br><span class="line"><span class="keyword">\cs_new:Npn</span> <span class="keyword">\fancyhdr_fancyhead:nn</span> <span class="params">#1</span><span class="params">#2</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">\fancyhead</span>[<span class="params">#1</span>]&#123;<span class="params">#2</span>&#125;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="keyword">\cs_new:Npn</span> <span class="keyword">\section_star:n</span> <span class="params">#1</span> </span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">\section</span>*&#123; <span class="params">#1</span> &#125;</span><br><span class="line">    <span class="keyword">\addcontentsline</span>&#123;toc&#125;&#123;section&#125;&#123;<span class="params">#1</span>&#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% 定义年, 月, 日, 后文注释中用 year, month, day 来指代</span></span><br><span class="line"><span class="keyword">\int_new:N</span> <span class="keyword">\g__dailyexam_year_int</span></span><br><span class="line"><span class="keyword">\int_new:N</span> <span class="keyword">\g__dailyexam_month_int</span></span><br><span class="line"><span class="keyword">\int_new:N</span> <span class="keyword">\g__dailyexam_day_int</span></span><br><span class="line"><span class="comment">% 定义最大的月数, 每月的最大天数, 以及特殊的二月的天数</span></span><br><span class="line"><span class="keyword">\int_new:N</span> <span class="keyword">\c__dailyexam_month_max_int</span></span><br><span class="line"><span class="keyword">\int_set:Nn</span> <span class="keyword">\c__dailyexam_month_max_int</span> &#123; 12 &#125;</span><br><span class="line"><span class="keyword">\int_new:N</span> <span class="keyword">\l__dailyexam_day_max_int</span></span><br><span class="line"><span class="keyword">\int_new:N</span> <span class="keyword">\l__dailyexam_day_feb_max_int</span></span><br><span class="line"><span class="comment">% 定义用来接受 \setdate 的参数的 clist</span></span><br><span class="line"><span class="keyword">\clist_new:N</span> <span class="keyword">\l__dailyexam_date_clist</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\prop_const_from_keyval:Nn</span> <span class="keyword">\c__dailyexam_month_prop</span></span><br><span class="line">  &#123;</span><br><span class="line">    &#123; 1 &#125; = &#123; January &#125;,</span><br><span class="line">    &#123; 2 &#125; = &#123; February &#125;,</span><br><span class="line">    &#123; 3 &#125; = &#123; March &#125;, </span><br><span class="line">    &#123; 4 &#125; = &#123; April &#125;, </span><br><span class="line">    &#123; 5 &#125; = &#123; May &#125;, </span><br><span class="line">    &#123; 6 &#125; = &#123; June &#125;, </span><br><span class="line">    &#123; 7 &#125; = &#123; July &#125;,</span><br><span class="line">    &#123; 8 &#125; = &#123; August &#125;,</span><br><span class="line">    &#123; 9 &#125; = &#123; September &#125;,</span><br><span class="line">    &#123; 10 &#125; = &#123; October &#125;, </span><br><span class="line">    &#123; 11 &#125; = &#123; November &#125;, </span><br><span class="line">    &#123; 12 &#125; = &#123; December&#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\msg_new:nnn</span> &#123; dailyexam &#125; &#123; year~is~illegal &#125; &#123; &quot;year&quot;~must~later~than~1582 &#125;</span><br><span class="line"><span class="keyword">\msg_new:nnn</span> &#123; dailyexam &#125; &#123; month~is~illegal &#125; &#123; &quot;month&quot;~must~be~integer~among~1,~2,~3,...,~12 &#125;</span><br><span class="line"><span class="keyword">\msg_new:nnn</span> &#123; dailyexam &#125; &#123; day~is~illegal &#125; &#123; <span class="params">#1</span>~of~<span class="params">#2</span>~has~only~<span class="params">#3</span>~days, <span class="keyword">\\</span></span><br><span class="line">                                                &quot;day&quot;~must~be~integer~among~1,~2,~3,...,~<span class="params">#3</span> &#125;</span><br><span class="line"><span class="comment">% 示例输出为</span></span><br><span class="line"><span class="comment">% ! Package dailyexam Error: February of 2022 has only 28 days,</span></span><br><span class="line"><span class="comment">% (dailyexam)                &quot;day&quot; must be integer among 1, 2, 3,..., 28</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% 设置 month 月份下最大的天数 day_max,</span></span><br><span class="line"><span class="keyword">\cs_new:Nn</span> <span class="keyword">\__dailyexam_set_max_day:</span> </span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">% 首先根据大小月规则来设置除二月外的 day_max</span></span><br><span class="line">    <span class="keyword">\int_case:nnT</span> &#123; <span class="keyword">\g__dailyexam_month_int</span> &#125;</span><br><span class="line">      &#123;</span><br><span class="line">        &#123; 1 &#125; &#123; &#125;</span><br><span class="line">        &#123; 3 &#125; &#123; &#125;</span><br><span class="line">        &#123; 5 &#125; &#123; &#125;</span><br><span class="line">        &#123; 7 &#125; &#123; &#125;</span><br><span class="line">        &#123; 8 &#125; &#123; &#125;</span><br><span class="line">        &#123; 10 &#125; &#123; &#125;</span><br><span class="line">        &#123; 12 &#125; &#123; &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="keyword">\int_set:Nn</span> <span class="keyword">\l__dailyexam_day_max_int</span> &#123; 31 &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">\int_case:nnT</span> &#123; <span class="keyword">\g__dailyexam_month_int</span> &#125;</span><br><span class="line">      &#123;</span><br><span class="line">        &#123; 4 &#125; &#123; &#125;</span><br><span class="line">        &#123; 6 &#125; &#123; &#125;</span><br><span class="line">        &#123; 9 &#125; &#123; &#125;</span><br><span class="line">        &#123; 11 &#125; &#123; &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="keyword">\int_set:Nn</span> <span class="keyword">\l__dailyexam_day_max_int</span> &#123; 30 &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">\int_compare:nNnTF</span> &#123; <span class="keyword">\g__dailyexam_year_int</span> &#125; &lt; &#123; 1582 &#125;</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="comment">% 如果被判断的年在 1582 年之前, 则输出报错信息</span></span><br><span class="line">        <span class="keyword">\msg_error:nn</span> &#123; dailyexam &#125; &#123; year~is~illegal &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="comment">% 如果被判断的年在 1582 年之后, 则需要判断该年是否是闰年</span></span><br><span class="line">        <span class="comment">% 规则为: 如果年份能被 100 整除, 则它需要整除 400;</span></span><br><span class="line">        <span class="comment">%         如果年份不能被 100 整除, 则它需要整除 4;</span></span><br><span class="line">        <span class="comment">%         以上两种情况为闰年, 二月有 29 天</span></span><br><span class="line">        <span class="comment">%         否则该年为平年, 二月有 28 天</span></span><br><span class="line">        <span class="keyword">\bool_if:nTF</span> </span><br><span class="line">          &#123;</span><br><span class="line">            (</span><br><span class="line">              <span class="keyword">\int_compare_p:nNn</span> &#123; <span class="keyword">\int_mod:nn</span> &#123; <span class="keyword">\g__dailyexam_year_int</span> &#125; &#123; 100 &#125; &#125; = &#123; 0 &#125; <span class="built_in">&amp;</span><span class="built_in">&amp;</span> </span><br><span class="line">              <span class="keyword">\int_compare_p:nNn</span> &#123; <span class="keyword">\int_mod:nn</span> &#123; <span class="keyword">\g__dailyexam_year_int</span> &#125; &#123; 400 &#125; &#125; = &#123; 0 &#125;</span><br><span class="line">            ) </span><br><span class="line">            ||</span><br><span class="line">            (</span><br><span class="line">              ! <span class="keyword">\int_compare_p:nNn</span> &#123; <span class="keyword">\int_mod:nn</span> &#123; <span class="keyword">\g__dailyexam_year_int</span> &#125; &#123; 100 &#125; &#125; = &#123; 0 &#125; <span class="built_in">&amp;</span><span class="built_in">&amp;</span></span><br><span class="line">              <span class="keyword">\int_compare_p:nNn</span> &#123; <span class="keyword">\int_mod:nn</span> &#123; <span class="keyword">\g__dailyexam_year_int</span> &#125; &#123; 4 &#125; &#125; = &#123; 0 &#125;</span><br><span class="line">            )</span><br><span class="line">          &#125;</span><br><span class="line">          &#123;</span><br><span class="line">            <span class="keyword">\int_set:Nn</span> <span class="keyword">\l__dailyexam_day_feb_max_int</span> &#123; 29 &#125;</span><br><span class="line">          &#125;</span><br><span class="line">          &#123;</span><br><span class="line">            <span class="keyword">\int_set:Nn</span> <span class="keyword">\l__dailyexam_day_feb_max_int</span> &#123; 28 &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    <span class="comment">% 判断该月是否为二月, 如果是, 就把 day_max设置为二月 day_max</span></span><br><span class="line">    <span class="keyword">\int_compare:nNnT</span> &#123; <span class="keyword">\g__dailyexam_month_int</span> &#125; = &#123; 2 &#125;</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="keyword">\int_set_eq:NN</span> <span class="keyword">\l__dailyexam_day_max_int</span> <span class="keyword">\l__dailyexam_day_feb_max_int</span></span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% 将日期改为下一天, 注意这里的日期更改都需要是全局的, 否则在 \section 的参数中表现为局部变化 </span></span><br><span class="line"><span class="keyword">\cs_new:Nn</span> <span class="keyword">\__dailyexam_next_date:</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">% 判断 day 是否等于当月的 day_max</span></span><br><span class="line">    <span class="keyword">\int_compare:nNnTF</span> &#123; <span class="keyword">\g__dailyexam_day_int</span> &#125; = &#123; <span class="keyword">\l__dailyexam_day_max_int</span> &#125;</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="comment">% 如果日期等于 day_max, 那么进入了新的一个月, 将 day 重设为 1</span></span><br><span class="line">        <span class="keyword">\int_gset:Nn</span> <span class="keyword">\g__dailyexam_day_int</span> &#123; 1 &#125;</span><br><span class="line">        <span class="keyword">\int_compare:nNnTF</span> &#123; <span class="keyword">\g__dailyexam_month_int</span> &#125; = &#123; <span class="keyword">\c__dailyexam_month_max_int</span> &#125;</span><br><span class="line">          &#123;</span><br><span class="line">            <span class="comment">% 如果这时是十二月, 即该天为 12.31, </span></span><br><span class="line">            <span class="comment">% 那么进入了新的一年, 将 month 重设为 1, 并将 year 加 1 </span></span><br><span class="line">            <span class="keyword">\int_gset:Nn</span> <span class="keyword">\g__dailyexam_month_int</span> &#123; 1 &#125;</span><br><span class="line">            <span class="keyword">\int_gincr:N</span> <span class="keyword">\g__dailyexam_year_int</span></span><br><span class="line">          &#125;</span><br><span class="line">          &#123;</span><br><span class="line">            <span class="comment">% 如果不是十二月, 那么只需要将 month 加 1</span></span><br><span class="line">            <span class="keyword">\int_gincr:N</span> <span class="keyword">\g__dailyexam_month_int</span></span><br><span class="line">          &#125;</span><br><span class="line">        <span class="comment">% 只要进入了新的一个月, 就需要重新设置 day_max</span></span><br><span class="line">        <span class="keyword">\__dailyexam_set_max_day:</span> </span><br><span class="line">      &#125;</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="comment">% 如果 day 不等于 day_max, 那么只需要将 day 加 1</span></span><br><span class="line">        <span class="keyword">\int_gincr:N</span> <span class="keyword">\g__dailyexam_day_int</span></span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% 判断 \setdate 所接受的日期是否合法</span></span><br><span class="line"><span class="keyword">\cs_new:Nn</span> <span class="keyword">\__dailyexam_if_legal:</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">% 首先是对 year 的判断, 同上</span></span><br><span class="line">    <span class="keyword">\int_compare:nNnT</span> &#123; <span class="keyword">\g__dailyexam_year_int</span> &#125; &lt; &#123; 1582 &#125;</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="keyword">\msg_error:nn</span> &#123; dailyexam &#125; &#123; year~is~illegal &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    <span class="comment">% 判断 month 是否是在 1 -- 12 之间</span></span><br><span class="line">    <span class="keyword">\int_compare:nTF</span></span><br><span class="line">      &#123;</span><br><span class="line">        0 &lt; <span class="keyword">\g__dailyexam_month_int</span> &lt;= <span class="keyword">\c__dailyexam_month_max_int</span></span><br><span class="line">      &#125;</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="comment">% 如果 month 合法, 那么就可以设置当月的 day_max, 用来对 day 进行判断</span></span><br><span class="line">        <span class="keyword">\__dailyexam_set_max_day:</span></span><br><span class="line">      &#125;</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="comment">% 如果 month 不合法, 输出报错信息</span></span><br><span class="line">        <span class="keyword">\msg_error:nn</span> &#123; dailyexam &#125; &#123; month~is~illegal &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    <span class="comment">% 判断 day 是否在 1 -- day_max 之间</span></span><br><span class="line">    <span class="keyword">\int_compare:nF</span></span><br><span class="line">      &#123;</span><br><span class="line">        0 &lt; <span class="keyword">\g__dailyexam_day_int</span> &lt;= <span class="keyword">\l__dailyexam_day_max_int</span></span><br><span class="line">      &#125;</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="comment">% 如果 day 不合法, 输出报错信息, 报错信息的示例在 \mas_new 部分</span></span><br><span class="line">        <span class="keyword">\exp_args:NNx</span> <span class="keyword">\prop_get:NnN</span> <span class="keyword">\c__dailyexam_month_prop</span> </span><br><span class="line">          &#123; <span class="keyword">\int_use:N</span> <span class="keyword">\g__dailyexam_month_int</span> &#125; </span><br><span class="line">          <span class="keyword">\l_tmpb_tl</span></span><br><span class="line">        <span class="keyword">\msg_error:nnxxx</span> &#123; dailyexam &#125; &#123; day~is~illegal &#125; </span><br><span class="line">          &#123; <span class="keyword">\tl_use:N</span> <span class="keyword">\l_tmpb_tl</span> &#125; </span><br><span class="line">          &#123; <span class="keyword">\int_use:N</span> <span class="keyword">\g__dailyexam_year_int</span> &#125; </span><br><span class="line">          &#123; <span class="keyword">\int_use:N</span> <span class="keyword">\l__dailyexam_day_max_int</span> &#125;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% 这里设置另一个重要的函数, 设置起始日期</span></span><br><span class="line"><span class="comment">% 我们规定输入的参数为一个逗号分隔列表 clist</span></span><br><span class="line"><span class="keyword">\cs_new:Npn</span> <span class="keyword">\__dailyexam_setdate:n</span> <span class="params">#1</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">% 将参数传入 clist, 参数是否合法在赋值后判断</span></span><br><span class="line">    <span class="keyword">\clist_set:Nn</span> <span class="keyword">\l__dailyexam_date_clist</span> &#123; <span class="params">#1</span> &#125;</span><br><span class="line">    <span class="keyword">\int_case:nnTF</span> &#123; <span class="keyword">\clist_count:N</span> <span class="keyword">\l__dailyexam_date_clist</span> &#125;</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="comment">% 如果参数列表里有三项, 也就是对应着 year, month, day,</span></span><br><span class="line">        <span class="comment">% 那么将第一项设置为 year, 再将第一项 pop 到一个不再使用的临时变量中,</span></span><br><span class="line">        <span class="comment">% 来保证现在的 clist 中剩余 month 和 day</span></span><br><span class="line">        <span class="comment">% 注意, 这里我们不能直接用 \l_tmpa_tl 来对 year 赋值, 因为数据类型不同</span></span><br><span class="line">        &#123; 3 &#125; </span><br><span class="line">        &#123; </span><br><span class="line">          <span class="keyword">\exp_args:NNx</span> <span class="keyword">\int_gset:Nn</span> <span class="keyword">\g__dailyexam_year_int</span> </span><br><span class="line">            &#123; <span class="keyword">\clist_item:Nn</span> <span class="keyword">\l__dailyexam_date_clist</span> &#123; 1 &#125; &#125;</span><br><span class="line">          <span class="keyword">\clist_pop:NN</span> <span class="keyword">\l__dailyexam_date_clist</span> <span class="keyword">\l_tmpa_tl</span> </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">% 如果参数列表中有两项, 对应着 month, day,</span></span><br><span class="line">        <span class="comment">% 这时候将 year 设置为编译时的系统年份</span></span><br><span class="line">        &#123; 2 &#125; &#123; <span class="keyword">\int_gset_eq:NN</span> <span class="keyword">\g__dailyexam_year_int</span> <span class="keyword">\c_sys_year_int</span> &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="comment">% 经过上两步的筛选, 可以保证此时 clist 中只有两项: month 和 day</span></span><br><span class="line">        <span class="comment">% 再将它们赋值到 month 和 day</span></span><br><span class="line">        <span class="keyword">\exp_args:NNx</span> <span class="keyword">\int_gset:Nn</span> <span class="keyword">\g__dailyexam_month_int</span> </span><br><span class="line">          &#123; <span class="keyword">\clist_item:Nn</span> <span class="keyword">\l__dailyexam_date_clist</span> &#123; 1 &#125; &#125;</span><br><span class="line">        <span class="keyword">\exp_args:NNx</span> <span class="keyword">\int_gset:Nn</span> <span class="keyword">\g__dailyexam_day_int</span> </span><br><span class="line">          &#123; <span class="keyword">\clist_item:Nn</span> <span class="keyword">\l__dailyexam_date_clist</span> &#123; 2 &#125; &#125;</span><br><span class="line">        <span class="comment">% 至此 year, month 和 day 都已经赋值完毕, 进行合法性检验</span></span><br><span class="line">        <span class="keyword">\__dailyexam_if_legal:</span></span><br><span class="line">      &#125;</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="comment">% 如果参数数量不是 2 或 3 个, 那么视为输入格式错误</span></span><br><span class="line">        <span class="keyword">\msg_new:nnn</span> &#123; dailyexam &#125; &#123; date~type~error &#125; </span><br><span class="line">          &#123; You~must~input~&quot;year,month,day&quot;~or~&quot;month,day&quot;~type~argument. &#125;</span><br><span class="line">        <span class="keyword">\msg_error:nn</span> &#123; dailyexam &#125; &#123; date~type~error &#125;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% 用来显示当前的日期, 并用 year 参数来决定是否输出 year, 格式为 year.month.day</span></span><br><span class="line"><span class="keyword">\cs_set:Npn</span> <span class="keyword">\__dailyexam_current_date:n</span> <span class="params">#1</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">\str_if_eq:nnT</span> &#123; <span class="params">#1</span> &#125; &#123; year &#125;</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="keyword">\int_use:N</span> <span class="keyword">\g__dailyexam_year_int</span> .</span><br><span class="line">      &#125;</span><br><span class="line">    <span class="keyword">\int_use:N</span> <span class="keyword">\g__dailyexam_month_int</span> .</span><br><span class="line">    <span class="keyword">\int_use:N</span> <span class="keyword">\g__dailyexam_day_int</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">%%% 以下是用户层命令</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% 输出当前日期的函数 \currentdate</span></span><br><span class="line"><span class="keyword">\NewDocumentCommand</span> &#123; <span class="keyword">\currentdate</span> &#125; &#123; o &#125; &#123; <span class="keyword">\__dailyexam_current_date:n</span> &#123; <span class="params">#1</span> &#125; &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% 设置起始日期的函数 \setdate, 以编译时的系统年月日作为默认值</span></span><br><span class="line"><span class="keyword">\NewDocumentCommand</span> &#123; <span class="keyword">\setdate</span> &#125; &#123; O&#123; <span class="keyword">\int_use:N</span> <span class="keyword">\c_sys_year_int</span>, <span class="keyword">\int_use:N</span> <span class="keyword">\c_sys_month_int</span>, <span class="keyword">\int_use:N</span> <span class="keyword">\c_sys_day_int</span> &#125; &#125;</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">\__dailyexam_setdate:n</span> &#123; <span class="params">#1</span> &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% 日期加 1 的函数 \nextdate</span></span><br><span class="line"><span class="keyword">\NewDocumentCommand</span> &#123; <span class="keyword">\nextdate</span> &#125; &#123; &#125;</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">\__dailyexam_next_date:</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% 用来输出题目的节标题, 不带节序号, 带星号的版本会输出 year</span></span><br><span class="line"><span class="comment">% \answersection 同理</span></span><br><span class="line"><span class="keyword">\NewDocumentCommand</span> &#123; <span class="keyword">\examsection</span> &#125; &#123; s &#125; </span><br><span class="line">  &#123; </span><br><span class="line">    <span class="keyword">\clearpage</span> </span><br><span class="line">    <span class="comment">% 将由星号控制的日期格式存入临时 tl 变量</span></span><br><span class="line">    <span class="keyword">\tl_set:Nn</span> <span class="keyword">\l_tmpa_tl</span> </span><br><span class="line">      &#123; </span><br><span class="line">        <span class="keyword">\IfBooleanTF</span> &#123; <span class="params">#1</span> &#125; </span><br><span class="line">          &#123; <span class="keyword">\__dailyexam_current_date:n</span> &#123; year &#125; &#125; </span><br><span class="line">          &#123; <span class="keyword">\__dailyexam_current_date:n</span> &#123; &#125; &#125; </span><br><span class="line">      &#125;</span><br><span class="line">    <span class="comment">% 控制宏展开来输出节标题与设置页眉</span></span><br><span class="line">    <span class="keyword">\exp_args:Nx</span> <span class="keyword">\section_star:n</span> &#123; Exercise~of~<span class="keyword">\tl_use:N</span> <span class="keyword">\l_tmpa_tl</span> &#125; </span><br><span class="line">    <span class="keyword">\exp_args:Nnx</span> <span class="keyword">\fancyhdr_fancyhead:nn</span> &#123; L &#125; &#123; Exercise~of~<span class="keyword">\tl_use:N</span> <span class="keyword">\l_tmpa_tl</span> &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\NewDocumentCommand</span> &#123; <span class="keyword">\answersection</span> &#125; &#123; s &#125; </span><br><span class="line">  &#123; </span><br><span class="line">    <span class="keyword">\clearpage</span> </span><br><span class="line">    <span class="keyword">\tl_set:Nn</span> <span class="keyword">\l_tmpa_tl</span> </span><br><span class="line">    &#123; <span class="keyword">\IfBooleanTF</span> &#123; <span class="params">#1</span> &#125; </span><br><span class="line">        &#123; <span class="keyword">\__dailyexam_current_date:n</span> &#123; year &#125; &#125; </span><br><span class="line">        &#123; <span class="keyword">\__dailyexam_current_date:n</span> &#123; &#125; &#125; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">\exp_args:Nx</span> <span class="keyword">\section_star:n</span> &#123; Answer~of~<span class="keyword">\tl_use:N</span> <span class="keyword">\l_tmpa_tl</span> &#125; </span><br><span class="line">    <span class="comment">% 这里是要控制宏展开的关键, 页眉会在函数结束后再输出, </span></span><br><span class="line">    <span class="comment">% 由于 \__dailyexam_next_date: 的作用, 在输出页眉的时候日期已经到达下一天</span></span><br><span class="line">    <span class="comment">% 所以要提前展开 \l_tmpa_tl</span></span><br><span class="line">    <span class="keyword">\exp_args:Nnx</span> <span class="keyword">\fancyhdr_fancyhead:nn</span> &#123; L &#125; &#123; Answer~of~<span class="keyword">\tl_use:N</span> <span class="keyword">\l_tmpa_tl</span> &#125;</span><br><span class="line">    <span class="comment">% 一天的答案写完后将日期推进一天, 来为下一次的 \examsection 做准备</span></span><br><span class="line">    <span class="keyword">\__dailyexam_next_date:</span></span><br><span class="line">  &#125;</span><br><span class="line"><span class="keyword">\ExplSyntaxOff</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"><span class="keyword">\tableofcontents</span></span><br><span class="line"><span class="keyword">\setdate</span>[2022, 2, 28]</span><br><span class="line"><span class="keyword">\examsection</span></span><br><span class="line"><span class="keyword">\answersection</span></span><br><span class="line"><span class="keyword">\examsection</span>*</span><br><span class="line"><span class="keyword">\answersection</span>*</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/syvshc/image/master/postimg/date-function-with-l3/finish.png" alt="成品"></p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>这是我第一次使用 LaTeX3 做一个稍微像样的东西, 感觉到了比 LaTeX2e 更方便的宏展开, 以及各种规范定义带来的时间上的便利, 最后非常感谢 <a target="_blank" rel="noopener" href="https://xkwxdyy.github.io/">夏大鱼羊</a> 在我学习 LaTeX3 的过程中给我提供的帮助.</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/img/avatar/wechatpay.png" alt="Zhonghao Sun 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/img/avatar/alipay.jpg" alt="Zhonghao Sun 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Zhonghao Sun
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://syvshc.github.io/2022-02-16-date-function-with-l3/" title="用 LaTeX3 实现一些日期相关的功能">https://syvshc.github.io/2022-02-16-date-function-with-l3/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/LaTeX/" rel="tag"># LaTeX</a>
+              <a href="/tags/%E7%A4%BA%E4%BE%8B/" rel="tag"># 示例</a>
+              <a href="/tags/LaTeX3/" rel="tag"># LaTeX3</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022-01-11-a-stupid-fraud/" rel="prev" title="第一次被骗">
+                  <i class="fa fa-chevron-left"></i> 第一次被骗
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022-03-06-latex-terminal-compiling/" rel="next" title="在终端中编译 LaTeX">
+                  在终端中编译 LaTeX <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Syvshc</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">142k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:09</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.7/pdfobject.min.js","integrity":"sha256-ph3Dk89VmuTVXG6x/RDzk53SU9LPdAh1tpv0UvnDZ2I="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"syvshc","repo":"syvshc.github.io","client_id":"da0debc4d456cb5f3371","client_secret":"14ec65d19a969abe01994143eff233a4180484aa","admin_user":"syvshc","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"9d9ba74be3e2a7966f060d394da3fe4b"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

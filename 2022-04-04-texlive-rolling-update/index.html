@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/avatar/pear.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/avatar/pear-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/avatar/pear-16x16.png">
+  <link rel="mask-icon" href="/img/avatar/pear.svg" color="#222">
+  <meta name="google-site-verification" content="RTd4ecbG2mIKZhXeHNZ1DSOEP_brALHDEdX6JBSAWx4">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=FiraGO:300,300italic,400,400italic,700,700italic%7CSource+Han+Sans+SC:300,300italic,400,400italic,700,700italic%7CFira+Code:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"syvshc.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"gitalk","storage":true,"lazyload":true,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="这里说一下如何滚动升级 TeXLive, 而不卸载安装. 由于我也是第一次这么做, 不知道有没有什么可能产生的后果.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="滚动升级 TeXLive">
+<meta property="og:url" content="https://syvshc.github.io/2022-04-04-texlive-rolling-update/index.html">
+<meta property="og:site_name" content="无锤乙醇">
+<meta property="og:description" content="这里说一下如何滚动升级 TeXLive, 而不卸载安装. 由于我也是第一次这么做, 不知道有没有什么可能产生的后果.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/syvshc/image/master/postimg/texlive-rolling-update/tlmgr-latest.png">
+<meta property="article:published_time" content="2022-04-04T08:38:13.000Z">
+<meta property="article:modified_time" content="2025-06-25T11:15:56.696Z">
+<meta property="article:author" content="Zhonghao Sun">
+<meta property="article:tag" content="帮助文档">
+<meta property="article:tag" content="LaTeX">
+<meta property="article:tag" content="tlmgr">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/syvshc/image/master/postimg/texlive-rolling-update/tlmgr-latest.png">
+
+
+<link rel="canonical" href="https://syvshc.github.io/2022-04-04-texlive-rolling-update/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://syvshc.github.io/2022-04-04-texlive-rolling-update/","path":"2022-04-04-texlive-rolling-update/","title":"滚动升级 TeXLive"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>滚动升级 TeXLive | 无锤乙醇</title>
+  
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-127047099-2","only_pageview":true}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<style type="text/css">span[class="simple-icon"]{width:2rem;height:2rem;display:inline-block}span[class="simple-icon"] svg,img{display:inline-block;vertical-align:middle;height:inherit;width:inherit}</style><!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="无锤乙醇" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">无锤乙醇</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">学而未精</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-rss"><a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows"><span class="nav-number">1.</span> <span class="nav-text">Windows</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux"><span class="nav-number">2.</span> <span class="nav-text">Linux</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Zhonghao Sun"
+      src="/img/avatar/present-avatar.jpg">
+  <p class="site-author-name" itemprop="name">Zhonghao Sun</p>
+  <div class="site-description" itemprop="description">从未想过背叛, 也不必说忠贞</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/syvshc" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;syvshc" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:syvshc@foxmail.com" title="E-Mail → mailto:syvshc@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://tex.stackexchange.com/users/180617/syvshc" title="TeX.SE → https:&#x2F;&#x2F;tex.stackexchange.com&#x2F;users&#x2F;180617&#x2F;syvshc" rel="noopener" target="_blank"><i class="fab fa-stack-exchange fa-fw"></i>TeX.SE</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://studio.youtube.com/channel/UCqvoLd2tlB_xuRkZ7_GYOVw/editing/details" title="YouTube → https:&#x2F;&#x2F;studio.youtube.com&#x2F;channel&#x2F;UCqvoLd2tlB_xuRkZ7_GYOVw&#x2F;editing&#x2F;details" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.worldcubeassociation.org/persons/2015SUNZ03/" title="WCA → https:&#x2F;&#x2F;www.worldcubeassociation.org&#x2F;persons&#x2F;2015SUNZ03&#x2F;" rel="noopener" target="_blank"><i class="fas fa-cubes fa-fw"></i>WCA</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://steamcommunity.com/id/syvshc" title="Steam → https:&#x2F;&#x2F;steamcommunity.com&#x2F;id&#x2F;syvshc" rel="noopener" target="_blank"><i class="fab fa-steam fa-fw"></i>Steam</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fas fa-link fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.latexstudio.net/" title="https:&#x2F;&#x2F;www.latexstudio.net" rel="noopener" target="_blank">LaTeX 工作室</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://sikouhjw.github.io/" title="https:&#x2F;&#x2F;sikouhjw.github.io&#x2F;" rel="noopener" target="_blank">sikouhjw</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://zhuanlan.zhihu.com/typography-and-latex/" title="https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;typography-and-latex&#x2F;" rel="noopener" target="_blank">muzimuzhi</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://liam.page/" title="https:&#x2F;&#x2F;liam.page&#x2F;" rel="noopener" target="_blank">Liam</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://stone-zeng.github.io/" title="https:&#x2F;&#x2F;stone-zeng.github.io&#x2F;" rel="noopener" target="_blank">stone-zeng</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://muyuuuu.github.io/" title="https:&#x2F;&#x2F;muyuuuu.github.io&#x2F;" rel="noopener" target="_blank">兰铃</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://yuxtech.club/" title="http:&#x2F;&#x2F;yuxtech.club&#x2F;" rel="noopener" target="_blank">yuxtech</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://camusecao.top/" title="https:&#x2F;&#x2F;camusecao.top&#x2F;" rel="noopener" target="_blank">CamuseCao</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.alanshawn.com/" title="https:&#x2F;&#x2F;www.alanshawn.com&#x2F;" rel="noopener" target="_blank">Alan Xiang</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://ssayno.github.io/" title="https:&#x2F;&#x2F;ssayno.github.io&#x2F;" rel="noopener" target="_blank">ssayno</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://marcaas.github.io/" title="https:&#x2F;&#x2F;marcaas.github.io&#x2F;" rel="noopener" target="_blank">marcaas</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://ds-deng.me/" title="https:&#x2F;&#x2F;ds-deng.me&#x2F;" rel="noopener" target="_blank">ddswhu</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://xkwxdyy.github.io/" title="https:&#x2F;&#x2F;xkwxdyy.github.io&#x2F;" rel="noopener" target="_blank">夏大鱼羊</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://buddyellena.github.io/" title="https:&#x2F;&#x2F;buddyellena.github.io&#x2F;" rel="noopener" target="_blank">BUDDY & ELLENA</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://ljguo1020.github.io/" title="https:&#x2F;&#x2F;ljguo1020.github.io&#x2F;" rel="noopener" target="_blank">芒果不盲</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.gislxz.top/" title="http:&#x2F;&#x2F;www.gislxz.top&#x2F;" rel="noopener" target="_blank">giser吱吱</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/syvshc" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://syvshc.github.io/2022-04-04-texlive-rolling-update/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/img/avatar/present-avatar.jpg">
+      <meta itemprop="name" content="Zhonghao Sun">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="无锤乙醇">
+      <meta itemprop="description" content="从未想过背叛, 也不必说忠贞">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="滚动升级 TeXLive | 无锤乙醇">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          滚动升级 TeXLive
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-04-04 16:38:13" itemprop="dateCreated datePublished" datetime="2022-04-04T16:38:13+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-06-25 19:15:56" itemprop="dateModified" datetime="2025-06-25T19:15:56+08:00">2025-06-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/" itemprop="url" rel="index"><span itemprop="name">帮助文档</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/LaTeX/" itemprop="url" rel="index"><span itemprop="name">LaTeX</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>5.4k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>这里说一下如何滚动升级 TeXLive, 而不卸载安装. 由于我也是第一次这么做, 不知道有没有什么可能产生的后果. </p>
+<span id="more"></span>
+<p>首先, 愿意看官方文档的小伙伴可以直接看<a target="_blank" rel="noopener" href="https://www.tug.org/texlive/upgrade.html">官网</a></p>
+<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><ol>
+<li><p>首先我们如果直接使用 <code>tlmgr update -self -all</code> 会得到</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tlmgr.pl: Local TeX Live (2021) is older than remote repository (2022).</span><br><span class="line">Cross release updates are only supported with</span><br><span class="line">  update-tlmgr-latest(.sh/.exe) --update</span><br><span class="line">See https://tug.org/texlive/upgrade.html <span class="keyword">for</span> details.</span><br></pre></td></tr></table></figure>
+<p>它说让去 <a target="_blank" rel="noopener" href="https://tug.org/texlive/upgrade.html">https://tug.org/texlive/upgrade.html</a> 查看详细信息, 但是 Windows 只给了一句</p>
+<blockquote>
+<p>There is no comparable upgrade procedure for Windows. Doing a new installation is necessary.</p>
+</blockquote>
+<p>甚至没有给提供 <code>update-tlmgr-latest.exe</code>, 那我们去 <a target="_blank" rel="noopener" href="https://www.tug.org/texlive/tlmgr.html"><code>tlmgr</code> 的官网</a> 看一下有没有, 果然发现了 </p>
+<p><img src="https://raw.githubusercontent.com/syvshc/image/master/postimg/texlive-rolling-update/tlmgr-latest.png" alt="`tlmgr` 官网"></p>
+</li>
+<li><p>先别急, 我们在 TeXLive 的安装目录里复制复制一份 <code>2021</code> 文件夹, 命名为 <code>2022</code>, 当然也可以直接改名, 但是如果这样做, 一旦 TeXLive 2022 有问题, 那么我们将没有办法回到之前可行的工作环境. 如果觉得文件夹很大, 可以选择不复制 <code>/tlpkg/backups/</code> 文件夹. </p>
+</li>
+<li><p>将环境变量中的 <code>texlive/2021</code> 改为 <code>texlive/2022</code>.</p>
+</li>
+<li><p>然后下载 <code>update-tlmgr-latest.exe</code>, 安装, 等到 “Close” 亮起, 点击 “Close” 来关闭安装窗口, 重启命令行. 这时我们再使用 <code>tlmgr update -list</code>, 可以看到</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">tlmgr.pl: package repository https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet (not verified: gpg unavailable)</span><br><span class="line">===============================================================================</span><br><span class="line">tlmgr itself needs to be updated.</span><br><span class="line">Please <span class="keyword">do</span> this via either</span><br><span class="line">  tlmgr update --self</span><br><span class="line">or by getting the latest updater <span class="keyword">for</span> Unix-ish systems:</span><br><span class="line">  https://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.sh</span><br><span class="line">and/or Windows systems:</span><br><span class="line">  https://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.exe</span><br><span class="line">Then <span class="built_in">continue</span> with other updates as usual.</span><br><span class="line">===============================================================================</span><br><span class="line">tlmgr.pl: would save backups to C:/texlive/2021/tlpkg/backups</span><br><span class="line">keep:     academicons              : <span class="built_in">local</span>:    62623, <span class="built_in">source</span>:    62622</span><br><span class="line">keep:     altsubsup                : <span class="built_in">local</span>:    62739, <span class="built_in">source</span>:    62738</span><br><span class="line">keep:     arara                    : <span class="built_in">local</span>:    62339, <span class="built_in">source</span>:    62298</span><br><span class="line">keep:     asmeconf                 : <span class="built_in">local</span>:    62716, <span class="built_in">source</span>:    62713</span><br><span class="line">keep:     babel                    : <span class="built_in">local</span>:    62203, <span class="built_in">source</span>:    62202</span><br><span class="line">keep:     babel-polish             : <span class="built_in">local</span>:    62681, <span class="built_in">source</span>:    62680</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>这样的输出</p>
+<ol>
+<li>这时再使用 <code>tlmgr update -self -all</code> 即可完成升级</li>
+</ol>
+<p><strong>注意</strong> 由于新版的 <code>newtx</code> 宏包的问题依然没有修复, 升级的时候可以选择使用 <code>tlmgr update -self -all -exclude newtx</code> 来忽略它的升级. </p>
+<p>  如果出现了问题, 可以读一下 Linux 的部分</p>
+<p>  升级后使用 <code>tex -v</code> 来测试版本</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">TeX 3.141592653 (TeX Live 2022)</span><br><span class="line">kpathsea version 6.3.4</span><br><span class="line">Copyright 2022 D.E. Knuth.</span><br><span class="line">There is NO warranty.  Redistribution of this software is</span><br><span class="line">covered by the terms of both the TeX copyright and</span><br><span class="line">the Lesser GNU General Public License.</span><br><span class="line">For more information about these matters, see the file</span><br><span class="line">named COPYING and the TeX source.</span><br><span class="line">Primary author of TeX: D.E. Knuth.</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>完成宏包更新之后, 终端运行 </p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">luaotfload-tool -fu</span><br></pre></td></tr></table></figure>
+<p> 来完成 <code>lualatex</code> 的字体配置 (或者叫刷新? 我几乎没用过 <code>lualatex</code>, 对它也不了解)</p>
+</li>
+</ol>
+<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><ol>
+<li><p>首先终端进入 <code>/texlive</code> 文件夹, 运行 <code>cp -a ./2021/ ./2022/</code>, 这里同样可以重新命名, 但是不推荐, 理由同上.</p>
+</li>
+<li><p>然后在 <code>~/.bashrc</code> 或 <code>~/.zshrc</code> 中将 TeXLive 相关的环境变量中的 <code>2021</code> 改为 <code>2022</code>. </p>
+</li>
+<li>下载 <code>tlmgr-update-latest.sh</code>, 不是必须放入 <code>texlive</code> 文件夹. (这里我是将 TeXLive 安装在了 <code>~</code> 目录下, 我不知道如果安装在 <code>/usr/local/texlive</code> 是不是也可行, 欢迎反馈.)<br><strong>注意</strong> <a target="_blank" rel="noopener" href="https://www.tug.org/texlive/upgrade.html">https://www.tug.org/texlive/upgrade.html</a> 提供的 <code>tlmgr-update-latest.sh</code> 是过时的, 需要在 <a target="_blank" rel="noopener" href="https://www.tug.org/texlive/tlmgr.html"><code>tlmgr</code>官网</a> 或者直接去<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet/">清华的镜像</a> 进行下载. (话说这个过时的问题在 2019 年就有人提过, 见 <a target="_blank" rel="noopener" href="https://latex.org/forum/viewtopic.php?t=32463">latex.org</a>, 莫非是现在又不更新了?)</li>
+<li><p>重启终端, 进入 <code>texlive/2022/</code> 文件夹, 运行</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh update-tlmgr-latest.sh -- --upgrade</span><br></pre></td></tr></table></figure>
+<p> 如果显示了 <code>sing --upgrade doesn&#39;t make sense; terminating.</code>, 说明下载的 <code>.sh</code> 文件不是最新的</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">    Verifying archive integrity... All good.</span><br><span class="line">Uncompressing TeX Live Manager Updater  100%  </span><br><span class="line">./runme.sh: updating <span class="keyword">in</span> /home/syvshclily/texlive/2022...</span><br><span class="line">./runme.sh: tlmgr version says this is TeX Live 2022,</span><br><span class="line">./runme.sh: and this updater script created: Tue Mar  1 02:52:57 CET 2022.</span><br><span class="line">./runme.sh: have TL 2021, new version also 2021;</span><br><span class="line">./runme.sh: using --upgrade doesn<span class="string">&#x27;t make sense; terminating.</span></span><br><span class="line"><span class="string">(./runme.sh: makeself creation date = Tue Mar  1 02:52:57 CET 2022.)</span></span><br></pre></td></tr></table></figure>
+<p> 如果有如下的输出, 则说明运行正常:</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Verifying archive integrity... All good.</span><br><span class="line">Uncompressing TeX Live Manager Updater  100%  </span><br><span class="line">./runme.sh: updating <span class="keyword">in</span> /home/syvshclily/texlive/2022...</span><br><span class="line">./runme.sh: tlmgr version says this is TeX Live 2021,</span><br><span class="line">./runme.sh: and this updater script created: Tue Mar  1 02:52:57 CET 2022.</span><br><span class="line">./runme.sh: ok, doing full release upgrade  from 2021 to 2022.</span><br><span class="line">./runme.sh: updating /home/syvshclily/texlive/2022/bin/x86_64-linux ...</span><br><span class="line">./runme.sh: /home/syvshclily/texlive/2022/bin/x86_64-linux/tlmgr including objects: master/tlpkg/tlpobj/texlive.infra.tlpobj master/tlpkg/tlpobj/texlive.infra.x86_64-linux.tlpobj</span><br><span class="line">D:appending to package <span class="built_in">log</span> file: /home/syvshclily/texlive/2022/texmf-var/web2c/tlmgr.log</span><br><span class="line">D:appending to <span class="built_in">command</span> <span class="built_in">log</span> file: /home/syvshclily/texlive/2022/texmf-var/web2c/tlmgr-commands.log</span><br><span class="line">D:tlmgr:main: ::tldownload_server <span class="built_in">hash</span>:: &#123;enabled:1,errorcount:0,initcount:1,ua:LWP::UserAgent=HASH(0x561de626d708)&#125;</span><br><span class="line">D:setup_programs: preferring system versions</span><br><span class="line">D:program curl found <span class="keyword">in</span> path</span><br><span class="line">D:program wget found <span class="keyword">in</span> path</span><br><span class="line">D:TLUtils::setup_programs: checking <span class="keyword">for</span> ssl enabled wget</span><br><span class="line">D:TLUtils::setup_programs: wget has ssl, final wget args: --no-check-certificate --user-agent=texlive/wget --tries=4 --timeout=30 -q -O</span><br><span class="line">D:program lz4 found <span class="keyword">in</span> path</span><br><span class="line">D:program gzip found <span class="keyword">in</span> path</span><br><span class="line">D:program xz found <span class="keyword">in</span> path</span><br><span class="line">./runme.sh: <span class="keyword">done</span>.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>因为运行完 <code>.sh</code> 程序后, <code>tlmgr</code> 会自动将源修改为 <code>mirrors.ctan.org</code> 终端运行 <code>tlmgr update -list</code>, 如果有正确输出 (见 Windows 部分), 表示可以更新, 可以在终端运行</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tlmgr update -self -all</span><br></pre></td></tr></table></figure>
+<p> 来更新全部宏包, 同样由于 <code>newtx</code> 宏包的问题, 可以使用</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tlmgr update -self -all -exclude newtx</span><br></pre></td></tr></table></figure>
+<p> 来忽略该宏包的更新.</p>
+<p> 在更新宏包的过程中, 如果网络有波动, 有可能出现 </p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tlmgr: An error has occurred. See above messages. Exiting.</span><br></pre></td></tr></table></figure>
+<p> 这时候可以向上翻一下命令行输出, 我这里是如下的错误</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[187/258, 06:36/08:31] update: texlive-common [599k] (62149 -&gt; 62748) ... TLPDB::_install_data: downloading did not succeed (download_file failed) for https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet/archive/texlive-common.tar.xz</span><br><span class="line">tlmgr: Installation of new version of texlive-common failed, trying to unwind.</span><br><span class="line">tlmgr: Restoring old package state succeeded.</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<p> 即某些宏包下载失败, 可以再运行</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tlmgr update -all -reinstall-forcibly-removed</span><br></pre></td></tr></table></figure>
+<p> 来完成更新, 同样可以加上 <code>-exclude newtx</code> 参数来忽略 <code>newtx</code> 的更新.</p>
+</li>
+<li><p>完成宏包更新之后, 终端运行 </p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">luaotfload-tool -fu</span><br></pre></td></tr></table></figure>
+<p> 来完成 <code>lualatex</code> 的字体配置 (或者叫刷新? 我几乎没用过 <code>lualatex</code>, 对它也不了解)</p>
+</li>
+<li><p>然后将安装的时候的字体文件内容进行改动, 如果是在用户文件夹中, 路径可能为 <code>~/.fonts.conf/09-texlive.conf</code>; 如果在系统文件夹, 路径可能为 <code>/etc/fonts/conf.d/09-texlive.conf</code>. 将其中的 <code>texlive/2021/</code> 修改为 <code>texlive/2022</code>. 或者直接将 <code>texlive/2022/texmf-var/fonts/conf/texlive-fontconfig.conf</code> 复制到上述文件夹, 命名为 <code>09-texlive.conf</code>, 其操作与安装 TeXLive 时是相同的. 然后在终端执行</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo fc-cache -fsv</span><br></pre></td></tr></table></figure>
+<p> 来刷新字体缓存. </p>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/img/avatar/wechatpay.png" alt="Zhonghao Sun 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/img/avatar/alipay.jpg" alt="Zhonghao Sun 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Zhonghao Sun
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://syvshc.github.io/2022-04-04-texlive-rolling-update/" title="滚动升级 TeXLive">https://syvshc.github.io/2022-04-04-texlive-rolling-update/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/" rel="tag"># 帮助文档</a>
+              <a href="/tags/LaTeX/" rel="tag"># LaTeX</a>
+              <a href="/tags/tlmgr/" rel="tag"># tlmgr</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022-03-06-latex-terminal-compiling/" rel="prev" title="在终端中编译 LaTeX">
+                  <i class="fa fa-chevron-left"></i> 在终端中编译 LaTeX
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022-04-20-latex-tutorial/" rel="next" title="latex-tutorial">
+                  latex-tutorial <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Syvshc</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">142k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:09</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.7/pdfobject.min.js","integrity":"sha256-ph3Dk89VmuTVXG6x/RDzk53SU9LPdAh1tpv0UvnDZ2I="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"syvshc","repo":"syvshc.github.io","client_id":"da0debc4d456cb5f3371","client_secret":"14ec65d19a969abe01994143eff233a4180484aa","admin_user":"syvshc","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"e316e9a02d5f29e45989818fe9b29900"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

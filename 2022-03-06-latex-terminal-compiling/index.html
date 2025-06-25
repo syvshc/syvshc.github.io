@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/avatar/pear.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/avatar/pear-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/avatar/pear-16x16.png">
+  <link rel="mask-icon" href="/img/avatar/pear.svg" color="#222">
+  <meta name="google-site-verification" content="RTd4ecbG2mIKZhXeHNZ1DSOEP_brALHDEdX6JBSAWx4">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=FiraGO:300,300italic,400,400italic,700,700italic%7CSource+Han+Sans+SC:300,300italic,400,400italic,700,700italic%7CFira+Code:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"syvshc.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"gitalk","storage":true,"lazyload":true,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="在交流使用 LaTeX 出现的问题的时候, 通常会听到”命令行编译”或”终端编译”, 在这里简单的介绍一下. 如果有相应的命令行基础, 可以直接跳转到使用命令行编译 LaTeX 文件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在终端中编译 LaTeX">
+<meta property="og:url" content="https://syvshc.github.io/2022-03-06-latex-terminal-compiling/index.html">
+<meta property="og:site_name" content="无锤乙醇">
+<meta property="og:description" content="在交流使用 LaTeX 出现的问题的时候, 通常会听到”命令行编译”或”终端编译”, 在这里简单的介绍一下. 如果有相应的命令行基础, 可以直接跳转到使用命令行编译 LaTeX 文件">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-terminal-compiling/cmd-on-win%2Bs.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-terminal-compiling/click.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-terminal-compiling/shift-right-click.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-terminal-compiling/first-compiling.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-terminal-compiling/cross-ref.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-terminal-compiling/cross-ref-right.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-terminal-compiling/bib-ref.png">
+<meta property="article:published_time" content="2022-03-06T14:28:26.000Z">
+<meta property="article:modified_time" content="2025-06-25T11:15:56.696Z">
+<meta property="article:author" content="Zhonghao Sun">
+<meta property="article:tag" content="帮助文档">
+<meta property="article:tag" content="LaTeX">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-terminal-compiling/cmd-on-win%2Bs.gif">
+
+
+<link rel="canonical" href="https://syvshc.github.io/2022-03-06-latex-terminal-compiling/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://syvshc.github.io/2022-03-06-latex-terminal-compiling/","path":"2022-03-06-latex-terminal-compiling/","title":"在终端中编译 LaTeX"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>在终端中编译 LaTeX | 无锤乙醇</title>
+  
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-127047099-2","only_pageview":true}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<style type="text/css">span[class="simple-icon"]{width:2rem;height:2rem;display:inline-block}span[class="simple-icon"] svg,img{display:inline-block;vertical-align:middle;height:inherit;width:inherit}</style><!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="无锤乙醇" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">无锤乙醇</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">学而未精</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-rss"><a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%91%BD%E4%BB%A4%E8%A1%8C-%E7%BB%88%E7%AB%AF"><span class="nav-number">1.</span> <span class="nav-text">什么是命令行&#x2F;终端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E6%89%93%E5%BC%80%E5%91%BD%E4%BB%A4%E8%A1%8C-%E7%BB%88%E7%AB%AF"><span class="nav-number">2.</span> <span class="nav-text">如何打开命令行&#x2F;终端</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux"><span class="nav-number">2.1.</span> <span class="nav-text">Linux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows"><span class="nav-number">2.2.</span> <span class="nav-text">Windows</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mac"><span class="nav-number">2.3.</span> <span class="nav-text">mac</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C-%E7%BB%88%E7%AB%AF"><span class="nav-number">3.</span> <span class="nav-text">使用命令行&#x2F;终端</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Linux-1"><span class="nav-number">3.0.1.</span> <span class="nav-text">Linux</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows-1"><span class="nav-number">3.1.</span> <span class="nav-text">Windows</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mac-1"><span class="nav-number">3.2.</span> <span class="nav-text">mac</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compile-latex"><span class="nav-number">4.</span> <span class="nav-text">使用命令行编译 LaTeX 文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%BC%96%E8%AF%91"><span class="nav-number">4.1.</span> <span class="nav-text">第一次编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%81%87%E5%88%B0%E9%94%99%E8%AF%AF"><span class="nav-number">4.2.</span> <span class="nav-text">遇到错误</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E9%94%99%E8%AF%AF%E7%9A%84%E9%80%89%E9%A1%B9"><span class="nav-number">4.2.1.</span> <span class="nav-text">处理错误的选项</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E9%80%89%E9%A1%B9"><span class="nav-number">4.3.</span> <span class="nav-text">编译选项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E6%AC%A1%E7%BC%96%E8%AF%91"><span class="nav-number">4.4.</span> <span class="nav-text">多次编译</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95%E4%B8%8E%E4%BA%A4%E5%8F%89%E5%BC%95%E7%94%A8"><span class="nav-number">4.4.1.</span> <span class="nav-text">目录与交叉引用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="nav-number">4.4.2.</span> <span class="nav-text">参考文献</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E5%BC%BA%E5%A4%A7%E7%9A%84%E5%B7%A5%E5%85%B7-latexmk"><span class="nav-number">4.5.</span> <span class="nav-text">更强大的工具 latexmk</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E7%9A%84%E5%86%85%E5%AE%B9"><span class="nav-number">5.</span> <span class="nav-text">其他的内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E6%8A%A5%E9%94%99%E5%91%BD%E4%BB%A4"><span class="nav-number">5.1.</span> <span class="nav-text">常见的报错命令</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Zhonghao Sun"
+      src="/img/avatar/present-avatar.jpg">
+  <p class="site-author-name" itemprop="name">Zhonghao Sun</p>
+  <div class="site-description" itemprop="description">从未想过背叛, 也不必说忠贞</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/syvshc" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;syvshc" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:syvshc@foxmail.com" title="E-Mail → mailto:syvshc@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://tex.stackexchange.com/users/180617/syvshc" title="TeX.SE → https:&#x2F;&#x2F;tex.stackexchange.com&#x2F;users&#x2F;180617&#x2F;syvshc" rel="noopener" target="_blank"><i class="fab fa-stack-exchange fa-fw"></i>TeX.SE</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://studio.youtube.com/channel/UCqvoLd2tlB_xuRkZ7_GYOVw/editing/details" title="YouTube → https:&#x2F;&#x2F;studio.youtube.com&#x2F;channel&#x2F;UCqvoLd2tlB_xuRkZ7_GYOVw&#x2F;editing&#x2F;details" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.worldcubeassociation.org/persons/2015SUNZ03/" title="WCA → https:&#x2F;&#x2F;www.worldcubeassociation.org&#x2F;persons&#x2F;2015SUNZ03&#x2F;" rel="noopener" target="_blank"><i class="fas fa-cubes fa-fw"></i>WCA</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://steamcommunity.com/id/syvshc" title="Steam → https:&#x2F;&#x2F;steamcommunity.com&#x2F;id&#x2F;syvshc" rel="noopener" target="_blank"><i class="fab fa-steam fa-fw"></i>Steam</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fas fa-link fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.latexstudio.net/" title="https:&#x2F;&#x2F;www.latexstudio.net" rel="noopener" target="_blank">LaTeX 工作室</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://sikouhjw.github.io/" title="https:&#x2F;&#x2F;sikouhjw.github.io&#x2F;" rel="noopener" target="_blank">sikouhjw</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://zhuanlan.zhihu.com/typography-and-latex/" title="https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;typography-and-latex&#x2F;" rel="noopener" target="_blank">muzimuzhi</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://liam.page/" title="https:&#x2F;&#x2F;liam.page&#x2F;" rel="noopener" target="_blank">Liam</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://stone-zeng.github.io/" title="https:&#x2F;&#x2F;stone-zeng.github.io&#x2F;" rel="noopener" target="_blank">stone-zeng</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://muyuuuu.github.io/" title="https:&#x2F;&#x2F;muyuuuu.github.io&#x2F;" rel="noopener" target="_blank">兰铃</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://yuxtech.club/" title="http:&#x2F;&#x2F;yuxtech.club&#x2F;" rel="noopener" target="_blank">yuxtech</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://camusecao.top/" title="https:&#x2F;&#x2F;camusecao.top&#x2F;" rel="noopener" target="_blank">CamuseCao</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.alanshawn.com/" title="https:&#x2F;&#x2F;www.alanshawn.com&#x2F;" rel="noopener" target="_blank">Alan Xiang</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://ssayno.github.io/" title="https:&#x2F;&#x2F;ssayno.github.io&#x2F;" rel="noopener" target="_blank">ssayno</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://marcaas.github.io/" title="https:&#x2F;&#x2F;marcaas.github.io&#x2F;" rel="noopener" target="_blank">marcaas</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://ds-deng.me/" title="https:&#x2F;&#x2F;ds-deng.me&#x2F;" rel="noopener" target="_blank">ddswhu</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://xkwxdyy.github.io/" title="https:&#x2F;&#x2F;xkwxdyy.github.io&#x2F;" rel="noopener" target="_blank">夏大鱼羊</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://buddyellena.github.io/" title="https:&#x2F;&#x2F;buddyellena.github.io&#x2F;" rel="noopener" target="_blank">BUDDY & ELLENA</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://ljguo1020.github.io/" title="https:&#x2F;&#x2F;ljguo1020.github.io&#x2F;" rel="noopener" target="_blank">芒果不盲</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.gislxz.top/" title="http:&#x2F;&#x2F;www.gislxz.top&#x2F;" rel="noopener" target="_blank">giser吱吱</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/syvshc" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://syvshc.github.io/2022-03-06-latex-terminal-compiling/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/img/avatar/present-avatar.jpg">
+      <meta itemprop="name" content="Zhonghao Sun">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="无锤乙醇">
+      <meta itemprop="description" content="从未想过背叛, 也不必说忠贞">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="在终端中编译 LaTeX | 无锤乙醇">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          在终端中编译 LaTeX
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-03-06 22:28:26" itemprop="dateCreated datePublished" datetime="2022-03-06T22:28:26+08:00">2022-03-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-06-25 19:15:56" itemprop="dateModified" datetime="2025-06-25T19:15:56+08:00">2025-06-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/" itemprop="url" rel="index"><span itemprop="name">帮助文档</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/LaTeX/" itemprop="url" rel="index"><span itemprop="name">LaTeX</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>16k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>15 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>在交流使用 LaTeX 出现的问题的时候, 通常会听到”命令行编译”或”终端编译”, 在这里简单的介绍一下. 如果有相应的命令行基础, 可以直接跳转到<a href="#compile-latex">使用命令行编译 LaTeX 文件</a></p>
+<span id="more"></span>
+<h2 id="什么是命令行-终端"><a href="#什么是命令行-终端" class="headerlink" title="什么是命令行/终端"></a>什么是命令行/终端</h2><p>这里直接引用<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%B5%82%E7%AB%AF">Wiki</a>, 这里不详细区分”终端”, “Shell” 与”命令行界面” <sup><a href="#fn_shell-and-terminal" id="reffn_shell-and-terminal">shell-and-terminal</a></sup>. Windows 下有”命令提示符”, “powershell” (这两个严格来说不算是终端, Windows Terminal 才是); Linux 下有 “GNOME-terminal”, “Konsole”, macOS有……终端. </p>
+<blockquote id="fn_shell-and-terminal">
+<sup>shell-and-terminal</sup>. <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/26860370">Windows 的 PowerShell 和 Linux 的 terminal 有啥区别？ - 知乎</a><a href="#reffn_shell-and-terminal" title="Jump back to footnote [shell-and-terminal] in the text."> &#8617;</a>
+</blockquote>
+<h2 id="如何打开命令行-终端"><a href="#如何打开命令行-终端" class="headerlink" title="如何打开命令行/终端"></a>如何打开命令行/终端</h2><h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><p>Linux 通常可以通过 <code>ctrl</code>+<code>alt</code>+<code>T</code> 的快捷键组合打开终端.</p>
+<h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><ol>
+<li><p>Windows10/11 可以点击状态栏中的”搜索”或快捷键<code>win</code>+<code>S</code>, 并在搜索栏里搜索 “cmd” 或 “powershell”, 可以选择直接左键点击打开, 也可以选择右键<code>以管理员身份运行</code>, 以管理员身份运行的命令行的权限更高.<sup><a href="#fn_permission" id="reffn_permission">permission</a></sup></p>
+<p><img src="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-terminal-compiling/cmd-on-win%2Bs.gif" alt="win+S"></p>
+</li>
+<li><p>可以在”文件资源管理器”的地址栏中直接输入 “cmd” 或 “powershell” 并回车, 就可以在当前文件夹中打开命令行. </p>
+<p><img src="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-terminal-compiling/click.gif" alt="点击文件资源管理器"></p>
+</li>
+<li><p>可以在”文件资源管理器”的空白处按住<code>shift</code>再点击右键, 选择选项”在此处打开 PowerShell 窗口”, 就可以在当前文件夹中打开 powershell. 当然 Windows11 用户或者安装了 Windows Terminal 的用户也可以通过右键后选择”在 Windows 终端中打开”. </p>
+<p><img src="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-terminal-compiling/shift-right-click.gif" alt="shift+右键"></p>
+</li>
+</ol>
+<h3 id="mac"><a href="#mac" class="headerlink" title="mac"></a>mac</h3><p>同时按下 <code>command</code> 和空格, 在弹出的输入栏里输入 <code>terminal</code> 即可打开, 或见苹果的<a target="_blank" rel="noopener" href="https://support.apple.com/zh-cn/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac">官方说明</a></p>
+<h2 id="使用命令行-终端"><a href="#使用命令行-终端" class="headerlink" title="使用命令行/终端"></a>使用命令行/终端</h2><h4 id="Linux-1"><a href="#Linux-1" class="headerlink" title="Linux"></a>Linux</h4><p>(我认为 Linux 用户不熟悉基础的终端操作是不合格的, 这里还是贴一个 <a target="_blank" rel="noopener" href="https://archlinuxstudio.github.io/ArchLinuxTutorial/#/advanced/beAdmin?id=%e5%bf%85%e9%a1%bb%e6%8e%8c%e6%8f%a1%e7%9a%84-linux-%e7%9f%a5%e8%af%86">archlinuxstudio 的链接</a>)</p>
+<h3 id="Windows-1"><a href="#Windows-1" class="headerlink" title="Windows"></a>Windows</h3><p>打开命令控制符 (powershell 类似), 可以看到一些文字, 如:</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\<span class="title">Users</span>\<span class="title">Admin</span>&gt; </span></span><br></pre></td></tr></table></figure>
+<p>我们需要在 <code>&gt;</code> 后面输入命令, 并按回车 <code>&lt;enter&gt;</code> 来执行命令. </p>
+<p>设我们所在的文件夹的结构如下 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">D</span><br><span class="line">└──folder</span><br><span class="line">    ├── file.txt</span><br><span class="line">    └── subfolder</span><br><span class="line">        └── subfile.txt</span><br></pre></td></tr></table></figure>
+<p>我们在 D 盘的 <code>folder</code> 文件夹下,这个文件夹下有一个文件 <code>file.txt</code>, 一个文件夹 <code>subfolder</code>, <code>subfolder</code> 文件夹下还有一个文件为 <code>subfile.txt</code>, 下面的命令都可以点击跳转到微软的官方文档, 那里有更详细的解释和参数列表. </p>
+<ul>
+<li><p><span id="cd"> <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cd"><code>cd</code></a> </span> (<strong>c</strong>hange <strong>d</strong>irctory): 我们可以在命令行中运行 </p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">D:\<span class="title">folder</span>&gt; <span class="title">cd</span> <span class="title">subfolder</span></span></span><br></pre></td></tr></table></figure>
+<p>注意我们输入的是 <code>cd subfolder</code>, 而不是前面的一串, 那些是在提示我们当前所处的文件夹, 按下回车后, 提示符变成了</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">D:\<span class="title">folder</span>\<span class="title">subfolder</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>由于 Windows 有不同的盘符, 如 C 盘, D 盘, 当我们要切换到另一个盘的时候, 可以输入</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">D:\<span class="title">folder</span>\<span class="title">subfolder</span>&gt; <span class="title">C</span>:</span></span><br></pre></td></tr></table></figure>
+<p>按下回车就可以切换到 C 盘的根目录. 如果要输入有空格的路径, 需要用引号包裹, 如</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\&gt; <span class="title">cd</span> &quot;<span class="title">Program</span> <span class="title">Files</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<p>如果要返回上一级目录, 可以用 <code>..</code> 来代替, 比如我们处在 D 盘的 <code>subfile</code> 文件夹内, 运行</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">D:\<span class="title">folder</span>\<span class="title">subfolder</span>&gt; <span class="title">cd</span> ..</span></span><br></pre></td></tr></table></figure>
+<p>按下回车就可以回到 <code>folder</code> 文件夹下, 只需要将 <code>..</code> 视做一个指向上一层目录的路径, 那么如下的内容就容易理解了: 在 <code>subfolder</code> 文件夹下就可以使用 <code>cd ../..</code> 回到 D 盘的根目录; 使用 <code>cd ../../&quot;Program Files&quot;</code> 就可以进入 D 盘根目录下的 <code>Program Files</code> 文件夹.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/dir"><code>dir</code></a> (<strong>dir</strong>ctory): 列出当前文件夹内的文件夹和文件:<br>TODO</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/mkdir"><code>mkdir</code></a> (<strong>m</strong>a<strong>k</strong>e <strong>dir</strong>ctory): 建立新文件夹. 在 <code>folder</code> 文件夹下运行 </p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">D:\<span class="title">folder</span>&gt; <span class="title">mkdir</span> <span class="title">anothersubfolder</span></span></span><br></pre></td></tr></table></figure>
+<p>就可以建立一个名为 <code>anothersubfolder</code> 的文件夹</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/del"><code>del</code></a> (<strong>del</strong>ete): 删除文件. 比如我们可以在 <code>folder</code> 文件夹下运行 </p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">D:\<span class="title">folder</span>&gt; <span class="title">del</span> <span class="title">file.txt</span></span></span><br></pre></td></tr></table></figure>
+<p>就可以删除 <code>file.txt</code> 文件, 如果想删除 <code>anothersubfolder</code> 文件夹及里面的所有文件, 可以运行</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">D:\<span class="title">folder</span>&gt; <span class="title">del</span> ./<span class="title">anothersubfolder</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/del"><code>copy</code></a> 复制文件. 我们可以在 <code>subfolder</code> 文件夹下使用</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">D:\<span class="title">folder</span>\<span class="title">subfolder</span>&gt; <span class="title">copy</span> <span class="title">subfile.txt</span> ../<span class="title">file.txt</span></span></span><br></pre></td></tr></table></figure>
+<p>将 <code>subfile.txt</code> 文件复制到上一层目录 <code>..</code>, 也就是 <code>folder</code> 文件夹, 命名为 <code>file.txt</code></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/move"><code>move</code></a> 移动文件. 我们可以在 <code>folder</code> 文件夹下使用</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">D:\<span class="title">folder</span>&gt; <span class="title">mv</span> <span class="title">file.txt</span> ./<span class="title">subfolder</span>/<span class="title">anothersubfile.txt</span></span></span><br></pre></td></tr></table></figure>
+<p>将 <code>file.txt</code> 移动到 <code>subfolder</code> 文件夹, 名为 <code>anothersubfile.txt</code>, 其中 <code>.</code> 的意思是当前文件夹, 也就是 <code>folder</code> 文件夹. </p>
+</li>
+</ul>
+<h3 id="mac-1"><a href="#mac-1" class="headerlink" title="mac"></a>mac</h3><p>我没用过.</p>
+<h2 id="compile-latex">使用命令行编译 LaTeX 文件</h2>
+
+<p>LaTeX 在命令行下的程序有 <code>latex</code>, <code>pdflatex</code>, <code>xelatex</code>, <code>lualatex</code>, <code>latexmk</code> 等等, 下面我们以 <code>pdflatex</code> 为例来介绍一些编译的参数. </p>
+<h3 id="第一次编译"><a href="#第一次编译" class="headerlink" title="第一次编译"></a>第一次编译</h3><p>这是一个 LaTeX 文件, 位于 <code>/home</code> 目录下的 <code>folder</code> 文件夹, 名为 <code>main.tex</code> <sup><a href="#fn_linux" id="reffn_linux">linux</a></sup></p>
+<blockquote id="fn_linux">
+<sup>linux</sup>. 由于写这部分的时候我在 ArchLinux 下, 就以 Linux 的文件目录为例了, 原理几乎相同. <a href="#reffn_linux" title="Jump back to footnote [linux] in the text."> &#8617;</a>
+</blockquote>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% main.tex</span></span><br><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">  Hello <span class="keyword">\LaTeX</span>!</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<p>我们使用命令行的 <a href="#cd"><code>cd</code></a> 命令来进入 <code>folder</code> 文件夹, 运行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pdflatex main.tex</span><br></pre></td></tr></table></figure>
+<p>其中 <code>$</code> 为 bash 的命令引导符, 不需要手动输入. 不出意外, 可以看到类似如下的输出</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex)</span><br><span class="line"> restricted \write18 enabled.</span><br><span class="line">entering extended mode</span><br><span class="line">(./main.tex</span><br><span class="line">LaTeX2e &lt;2021-11-15&gt; patch level 1</span><br><span class="line">L3 programming layer &lt;2022-02-24&gt;</span><br><span class="line">(/home/syvshclily/texlive/2022/texmf-dist/tex/latex/base/article.cls</span><br><span class="line">Document Class: article 2021/10/04 v1.4n Standard LaTeX document class</span><br><span class="line">(/home/syvshclily/texlive/2022/texmf-dist/tex/latex/base/size10.clo))</span><br><span class="line">(/home/syvshclily/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.</span><br><span class="line">def) (./main.aux) [1&#123;/home/syvshclily/texlive/2022/texmf-var/fonts/map/pdftex/u</span><br><span class="line">pdmap/pdftex.map&#125;] (./main.aux) )&lt;/home/syvshclily/texlive/2022/texmf-dist/font</span><br><span class="line">s/type1/public/amsfonts/cm/cmr10.pfb&gt;</span><br><span class="line">Output written on main.pdf (1 page, 12962 bytes).</span><br><span class="line">Transcript written on main.log.</span><br></pre></td></tr></table></figure>
+<p>同时查看 <code>folder</code> 文件夹, 可以发现多了几个文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">folder</span><br><span class="line">  ├── main.aux</span><br><span class="line">  ├── main.log</span><br><span class="line">  ├── main.pdf</span><br><span class="line">  └── main.tex</span><br></pre></td></tr></table></figure>
+<p>其中 </p>
+<ul>
+<li><code>main.aux</code> 为辅助文件, 其中会存一些与交叉引用相关的内容, 以及在多次编译中需要用到的变量. </li>
+<li><code>main.log</code> 为日志文件, 其中存储这次编译用到的引擎, 宏包, 字体信息, 也包含了各种宏包输出的 message, 以及编译过程中的警告 (warning) 与错误 (error). </li>
+<li><code>main.pdf</code> 为本次编译输出的 PDF 文件, 如果没有使用 <code>-jobname</code> 等参数, 它的文件名默认与我们编译的文件 (<code>main.tex</code>) 同名. </li>
+</ul>
+<p>然后我们可以使用 PDF 阅读器打开 <code>main.pdf</code> 来查看我们编译生成的内容</p>
+<p><img src="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-terminal-compiling/first-compiling.png" alt="`main.pdf`"></p>
+<h3 id="遇到错误"><a href="#遇到错误" class="headerlink" title="遇到错误"></a>遇到错误</h3><p>我们将上面的 <code>main.tex</code> 文件改一下:</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% main.tex</span></span><br><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">  Hello <span class="keyword">\Latex</span>!</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<p>再使用命令行执行 <code>pdflatex main</code>, 可以发现并没有出现 <code>Output written...</code> 之类的语句, 而是停了下来, 显示</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex)</span><br><span class="line"> restricted \write18 enabled.</span><br><span class="line">entering extended mode</span><br><span class="line">(./main.tex</span><br><span class="line">LaTeX2e &lt;2021-11-15&gt; patch level 1</span><br><span class="line">L3 programming layer &lt;2022-02-24&gt;</span><br><span class="line">(/home/syvshclily/texlive/2022/texmf-dist/tex/latex/base/article.cls</span><br><span class="line">Document Class: article 2021/10/04 v1.4n Standard LaTeX document class</span><br><span class="line">(/home/syvshclily/texlive/2022/texmf-dist/tex/latex/base/size10.clo))</span><br><span class="line">(/home/syvshclily/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.</span><br><span class="line">def) (./main.aux)</span><br><span class="line">! Undefined control sequence.</span><br><span class="line">l.3   Hello \Latex</span><br><span class="line">                  !</span><br><span class="line">? </span><br></pre></td></tr></table></figure>
+<p>出现了一个问号, 这时候我们可以按回车来让 <code>pdflatex</code> 跳过这个问题, 但是这显然是一个不好的做法, 因为我们并没有解决问题. 来仔细读一下后面一部分:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">! Undefined control sequence.</span><br><span class="line">l.3   Hello \Latex</span><br><span class="line">                  !</span><br><span class="line">? </span><br></pre></td></tr></table></figure>
+<p>提示说 “未定义的控制序列”<sup><a href="#fn_undef-cs" id="reffn_undef-cs">undef-cs</a></sup>. 如果下面显示的是我们 <code>.tex</code> 文件中的内容, 那说明我们拼写错误, 或者没有引用宏包就使用了命令等等, 总之是我们使用了一个没有定义的命令. 检查一下可以发现我们将 <code>\LaTeX</code> 错误地写成了 <code>\Latex</code>, 导致了错误. 这时我们可以输入 <code>X&lt;enter&gt;</code><sup><a href="#fn_enter" id="reffn_enter">enter</a></sup>, 结束这次编译, 修改源文件为 <code>\LaTeX</code>, 再进行编译, 便可以编译通过. </p>
+<p>当然在 <code>?</code> 出现的时候, 我们还可以输入 <code>H&lt;enter&gt;</code> 获得一些所谓的”帮助”, 这些帮助……我感觉没有产生过太大的作用, 比如刚才如果我们输入 <code>H&lt;enter&gt;</code>, 可以获得</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex)</span><br><span class="line"> restricted \write18 enabled.</span><br><span class="line">entering extended mode</span><br><span class="line">(./main.tex</span><br><span class="line">LaTeX2e &lt;2021-11-15&gt; patch level 1</span><br><span class="line">L3 programming layer &lt;2022-02-24&gt;</span><br><span class="line">(/home/syvshclily/texlive/2022/texmf-dist/tex/latex/base/article.cls</span><br><span class="line">Document Class: article 2021/10/04 v1.4n Standard LaTeX document class</span><br><span class="line">(/home/syvshclily/texlive/2022/texmf-dist/tex/latex/base/size10.clo))</span><br><span class="line">(/home/syvshclily/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.</span><br><span class="line">def) (./main.aux)</span><br><span class="line">! Undefined control sequence.</span><br><span class="line">l.3   Hello \Latex</span><br><span class="line">                  !</span><br><span class="line">? H</span><br><span class="line">The control sequence at the end of the top line</span><br><span class="line">of your error message was never \def&#x27;ed. If you have</span><br><span class="line">misspelled it (e.g., `\hobx&#x27;), type `I&#x27; and the correct</span><br><span class="line">spelling (e.g., `I\hbox&#x27;). Otherwise just continue,</span><br><span class="line">and I&#x27;ll forget about whatever was undefined.</span><br><span class="line"></span><br><span class="line">? </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>这时候我们也可以输入 <code>I\LaTeX&lt;enter&gt;</code> 来输入正确的命令, 让程序继续编译, 注意, 我们输入 <code>I</code> 来更改的命令不会在源文件中也被改掉, 我们依然需要手动改掉 <code>main.tex</code> 中的错误. </p>
+<p>在遇到错误, 并使用 <code>X&lt;enter&gt;</code> 退出的时候, 遇到的错误会被写到 <code>main.log</code> 中, 在其中搜索 <code>error</code> 一般就可以看到错误. </p>
+<h4 id="处理错误的选项"><a href="#处理错误的选项" class="headerlink" title="处理错误的选项"></a>处理错误的选项</h4><p>当出现 <code>?</code> 时, 我们可以输入的内容有<sup><a href="#fn_error-input" id="reffn_error-input">error-input</a></sup></p>
+<blockquote id="fn_error-input">
+<sup>error-input</sup>. 这些输入不区分大小写. <a href="#reffn_error-input" title="Jump back to footnote [error-input] in the text."> &#8617;</a>
+</blockquote>
+<ul>
+<li><code>&lt;enter&gt;</code> 对于轻微错误, 系统将尽可能修复或跳过错误, 继续编译 (不建议使用).</li>
+<li><code>S&lt;enter&gt;</code> 除非有找不到的文件, 否则在本次编译将不再停顿, 所有的错误都按输入了 <code>&lt;enter&gt;</code> 处理, 所有的错误信息都将在命令行中显示并记录到 <code>.log</code> 文件.</li>
+<li><code>R&lt;enter&gt;</code> 比 <code>S</code> 更强, 即使找不到文件也不停顿.</li>
+<li><code>Q&lt;enter&gt;</code> 比 <code>R</code> 更强, 它不会再显示后续的编译信息, 只是将这些内容写入 <code>.log</code> 文件, 这是一种不计后果的错误处理方式.</li>
+<li><code>I&lt;cs&gt;&lt;enter&gt;</code> 其中 <code>&lt;cs&gt;</code> 为要在断点后插入的控制序列 (control sequence), 按下回车后编译器将读入 <code>&lt;cs&gt;</code> 来替换出错的命令, 再读入断点后的内容继续编译. 如果输入 <code>I\stop&lt;enter&gt;</code>, 则停止编译, 仅显示断点之前的排版结果.</li>
+<li><code>X&lt;enter&gt;</code> 退出, 系统将断点前的编译过程写入 <code>.log</code> 文件并将已经编译的页面输出, 然后退出编译, 断点后的文件内容不再处理. </li>
+<li><code>E&lt;enter&gt;</code> 类似 <code>X</code>, 它会在默认编辑器(从输出来看, 这个默认编辑器应该是 emacs)中高亮显示错误出现的位置. </li>
+<li><code>1-9&lt;enter&gt;</code> 可以输入一个小于 100 的正整数, 系统将在断点之后删除相同数量的半角字符, 然后等待下一步回应, 其中一个汉字等于两个半角字符, 一个 LaTeX 命令无论长短都算一个半角字符. </li>
+<li><code>H&lt;enter&gt;</code> 寻求帮助, 系统将给出更详细的错误说明, 并提出改正建议, 一些包的作者会额外书写输入 <code>H&lt;enter&gt;</code> 后的错误输出, 此时 <code>H</code> 就有了一些用处. </li>
+</ul>
+<p>在 <a href="#common-error">常见的报错命令</a> 处列出了一些可能见到的错误, 如果有需要可以查阅.</p>
+<h3 id="编译选项"><a href="#编译选项" class="headerlink" title="编译选项"></a>编译选项</h3><p>我们不只可以使用 <code>pdflatex main</code> 来编译, 也可以添加一些选项, 来达到额外的编译效果, 使用方法为</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pdflatex -&lt;option1&gt; -&lt;option2&gt;=&lt;string&gt; main</span><br></pre></td></tr></table></figure>
+<p>其中 <code>&lt;option1&gt;, &lt;option2&gt;</code> 为选项的名字, <code>&lt;string&gt;</code> 对应了一些需要参数的选项, 下面介绍一些选项, 注意要在下面的每个选项之前加上 <code>-</code>. 更详细的可用选项可以在命令行运行 <code>pdflatex --help</code></p>
+<ul>
+<li><p><code>halt-on-error</code> 会在第一个错误停下, 不使用 <code>?</code> 等待用户输入, 输出内容如:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ pdflatex -halt-on-error main          </span><br><span class="line">...not important output...</span><br><span class="line">! Undefined control sequence.</span><br><span class="line">l.3   Hello \Latex</span><br><span class="line">                  !</span><br><span class="line">!  ==&gt; Fatal error occurred, no output PDF file produced!</span><br><span class="line">Transcript written on main.log.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>interaction=&lt;string&gt;</code> 其中 <code>&lt;string&gt;</code> 的值为<sup><a href="#fn_interaction" id="reffn_interaction">interaction</a></sup></p>
+<ul>
+<li><code>errorstopmode</code> 这是默认值, 在遇到错误的时候停止编译并等待用户输入. </li>
+<li><code>scrollmode</code> 在屏幕上输出编译信息, 会跳过错误, 但是会在找不到文件时停止编译并等待用户输入, 与上文的 <code>S</code> 类似. (比如找不到 <code>\input</code> 的文件的时候)</li>
+<li><code>batchmode</code> 不在命令行中输出任何有关编译的内容, 也不在任何时候停下等待用户输入. </li>
+<li><code>nonstopmode</code> 不在任何时候停下, 直到最后显示出来错误的位置与内容. </li>
+</ul>
+</li>
+<li><p><code>synctex=1</code> 在需要正反向搜索的时候, 需要启用这个选项来生成 <code>&lt;filename&gt;.synctex.gz</code> 文件. </p>
+</li>
+</ul>
+<blockquote id="fn_interaction">
+<sup>interaction</sup>. 见 <code>latex2e.pdf sec 28.1</code> 或 <a target="_blank" rel="noopener" href="http://latexref.xyz/Command-line-options.html">latexref</a><a href="#reffn_interaction" title="Jump back to footnote [interaction] in the text."> &#8617;</a>
+</blockquote>
+<ul>
+<li><p><code>jobname=&lt;string&gt;</code> 设置输出文件的文件名, 如果使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pdflatex -jobname=<span class="built_in">test</span> main.tex</span><br></pre></td></tr></table></figure>
+<p>那么输出的文件将为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">folder</span><br><span class="line">  ├── main.tex</span><br><span class="line">  ├── test.aux</span><br><span class="line">  ├── test.log</span><br><span class="line">  └── test.pdf</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>output-directory=&lt;string&gt;</code> 将所有输出文件都输出到 <code>&lt;string&gt;</code> 文件夹内, 注意输出文件夹必须已经存在. 如果使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pdflatex -output-directory=subfolder main.tex</span><br></pre></td></tr></table></figure>
+<p>那么输出文件将为</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">folder</span><br><span class="line">  ├── main.tex</span><br><span class="line">  └── subfolder</span><br><span class="line">      ├── main.aux</span><br><span class="line">      ├── main.log</span><br><span class="line">      └── main.pdf</span><br></pre></td></tr></table></figure>
+<p>并且二次编译的时候会检测到输出文件夹, 并且使用输出文件夹中的辅助文件进行二次编译. </p>
+</li>
+<li><p><code>shell-escape</code> <code>enable-write18</code> 让编译器可以调用外部程序进行编译, 如使用 <code>minted</code>, <code>tkz-fct</code> 等需要调用外部程序的宏包时, 需要启用, 其中 <code>-shell-escape</code> 是 TeX Live 的命令, <code>-enable-write18</code> 是 MikTeX 的命令. 事实上, 如果我们使用 <code>pdflatex main.tex</code> 来编译以下文件:</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% main.tex</span></span><br><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;minted&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">  Hello <span class="keyword">\LaTeX</span>!</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<p>可以得到错误:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">! Package minted Error: You must invoke LaTeX with the -shell-escape flag.</span><br><span class="line"></span><br><span class="line">See the minted package documentation for explanation.</span><br><span class="line">Type  H &lt;return&gt;  for immediate help.</span><br><span class="line">...                                              </span><br><span class="line">                                                  </span><br><span class="line">l.3 \begin</span><br><span class="line">          &#123;document&#125;</span><br><span class="line">? H   </span><br><span class="line">Pass the -shell-escape flag to LaTeX. Refer to the minted.sty documentation for</span><br><span class="line">more information.</span><br></pre></td></tr></table></figure>
+<p>根据提示我们应该使用 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pdflatex -shell-escape main.tex</span><br></pre></td></tr></table></figure>
+<p>来进行编译</p>
+</li>
+<li><code>no-shell-escape</code> <code>disable-write18</code> 与上面的选项相反, 强制不能使用外部程序. </li>
+</ul>
+<h3 id="多次编译"><a href="#多次编译" class="headerlink" title="多次编译"></a>多次编译</h3><h4 id="目录与交叉引用"><a href="#目录与交叉引用" class="headerlink" title="目录与交叉引用"></a>目录与交叉引用</h4><p>通常含有交叉引用或者目录的文件需要编译两次, 我们使用以下的 <code>main.tex</code>:</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% main.tex</span></span><br><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"><span class="keyword">\tableofcontents</span></span><br><span class="line"><span class="keyword">\section</span>&#123;One&#125;<span class="keyword">\label</span>&#123;sec:one&#125;</span><br><span class="line">  We are in section <span class="keyword">\ref</span>&#123;sec:one&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<p>这里有一个目录和一个交叉引用, 让我们用 <code>pdflatex main</code> 编译一次, 然后来查看 <code>main.pdf</code></p>
+<p><img src="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-terminal-compiling/cross-ref.png" alt="cross-ref"></p>
+<p>我们发现既没有目录, 也没有引用, 只有 <code>??</code>, 让我们来看一下 <code>main.aux</code> 与 <code>main.toc</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">% main.aux</span><br><span class="line">\relax </span><br><span class="line">\@writefile&#123;toc&#125;&#123;\contentsline &#123;section&#125;&#123;\numberline &#123;1&#125;One&#125;&#123;1&#125;&#123;&#125;\protected@file@percent &#125;</span><br><span class="line">\newlabel&#123;sec:one&#125;&#123;&#123;1&#125;&#123;1&#125;&#125;</span><br><span class="line">\gdef \@abspage@last&#123;1&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">% main.toc</span><br><span class="line">\contentsline &#123;section&#125;&#123;\numberline &#123;1&#125;One&#125;&#123;1&#125;&#123;&#125;%</span><br></pre></td></tr></table></figure>
+<p>这两个文件中的内容将会为下一次的编译提供更多的命令, 比如 <code>\contentsline</code> 以及一个定义好的 <code>\newlabel</code>, 第二次编译中 <code>\tableofcontents</code> 会用到前者来输出目录, <code>\ref</code> 会用后者来输出引用的值. </p>
+<p>那我们再使用 <code>pdflatex main.tex</code> 来编译一次, 可以得到正确的输出:</p>
+<p><img src="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-terminal-compiling/cross-ref-right.png" alt="right-cross-ref"></p>
+<h4 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h4><p>我们使用以下的 <code>main.tex</code>:</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% main.tex</span></span><br><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">  text<span class="keyword">\cite</span>&#123;article-full&#125;</span><br><span class="line">  <span class="keyword">\bibliographystyle</span>&#123;plain&#125;</span><br><span class="line">  <span class="keyword">\bibliography</span>&#123;xampl.bib&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<p>当遇到参考文献的时候我们需要编译 4 次, 以常用的 <code>bibtex</code> 为例, 需要使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pdflatex main.tex</span><br><span class="line">bibtex main.aux</span><br><span class="line">pdflatex main.tex</span><br><span class="line">pdflatex main.tex</span><br></pre></td></tr></table></figure>
+<p>编译结果如下</p>
+<p><img src="https://raw.githubusercontent.com/syvshc/image/master/postimg/latex-terminal-compiling/bib-ref.png" alt="参考文献"></p>
+<p>有了上面的铺垫, 来说一下每一次编译都做了什么</p>
+<ol>
+<li>第一次 <code>pdflatex</code> 将 <code>\cite</code> 的的参数 (也就是用到的 <code>.bib</code> 文件中的 <code>key</code>) 信息写入了 <code>main.aux</code> 文件.</li>
+<li><code>bibtex</code> 程序读取哪些 <code>key</code> 被用到了, 然后根据这些 <code>key</code> 生成 <code>main.bbl</code> 文件.</li>
+<li>第二次 <code>pdflatex</code> 读取 <code>main.bbl</code> 文件, 将 <code>\cite</code> 引用的正确的序号写进 <code>main.aux</code>.</li>
+<li>第三次 <code>pdflatex</code> 读取 <code>main.aux</code> 文件, 输出正确的 <code>\cite</code> 编号. </li>
+</ol>
+<p>注意: 如果使用了 <code>backend=biber</code> 参数的 <code>biblatex</code> 宏包 (这个参数是默认选项), 那么就需要在第二步使用 <code>biber main.bcf</code>. </p>
+<p>当然我们也可以都不写扩展名, 直接使用 <code>bibtex main</code> 或 <code>biber main</code>, 程序会自动识别出它们应该带的扩展名.</p>
+<p>如果在没有 <code>\cite</code> 的情况下强行使用 <code>bibtex main</code>, 会得到报错:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">This is BibTeX, Version 0.99d (TeX Live 2022)</span><br><span class="line">The top-level auxiliary file: main.aux</span><br><span class="line">I found no \citation commands---while reading file main.aux</span><br><span class="line">I found no \bibdata command---while reading file main.aux</span><br><span class="line">I found no \bibstyle command---while reading file main.aux</span><br><span class="line">(There were 3 error messages)</span><br></pre></td></tr></table></figure>
+<p>如果强行使用 <code>biber main</code> 会得到:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">INFO - This is Biber 2.17</span><br><span class="line">INFO - Logfile is <span class="string">&#x27;main.blg&#x27;</span></span><br><span class="line">ERROR - Cannot find <span class="string">&#x27;main.bcf&#x27;</span>!</span><br><span class="line">INFO - ERRORS: 1</span><br></pre></td></tr></table></figure>
+<p>这也是一些有自动编译功能的软件会直接甩出来的错误 (说的就是你 TeXstudio)</p>
+<h3 id="更强大的工具-latexmk"><a href="#更强大的工具-latexmk" class="headerlink" title="更强大的工具 latexmk"></a>更强大的工具 <code>latexmk</code></h3><p><code>latexmk</code> 是一个自动化的编译程序, 通常情况下它可以识别出编译后有哪些文件进行了更改, 并自动运行下一步, 比如我们使用如下的 <code>main.tex</code>, 注意清空除了 <code>main.tex</code> 以外的文件来查看更好的效果.<sup><a href="#fn_xampl" id="reffn_xampl">xampl</a></sup></p>
+<blockquote id="fn_xampl">
+<sup>xampl</sup>. 其中 <code>xampl.bib</code> 是 <code>mwe</code> 宏包自带的一个示例的 <code>.bib</code> 文件, 可以在命令行运行 <code>texdoc mwe</code> 来查找可用的键值. <a href="#reffn_xampl" title="Jump back to footnote [xampl] in the text."> &#8617;</a>
+</blockquote>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% main.tex</span></span><br><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"><span class="keyword">\tableofcontents</span></span><br><span class="line"><span class="keyword">\section</span>&#123;One&#125;<span class="keyword">\label</span>&#123;sec:one&#125;</span><br><span class="line">  We are in section <span class="keyword">\ref</span>&#123;sec:one&#125;, </span><br><span class="line">  and we have a cite <span class="keyword">\cite</span>&#123;article-full&#125;</span><br><span class="line">  <span class="keyword">\bibliographystyle</span>&#123;plain&#125;</span><br><span class="line">  <span class="keyword">\bibliography</span>&#123;xampl.bib&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<p>我们在命令行运行 (这里也可以省略扩展名 <code>.tex</code>)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ latexmk -pdf main.tex</span><br></pre></td></tr></table></figure>
+<p>稍微注意一下可以看到编译的过程出现了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">Latexmk: applying rule <span class="string">&#x27;pdflatex&#x27;</span>...</span><br><span class="line">Rule <span class="string">&#x27;pdflatex&#x27;</span>: File changes, etc:</span><br><span class="line">   Changed files, or newly <span class="keyword">in</span> use since previous run(s):</span><br><span class="line">      <span class="string">&#x27;main.tex&#x27;</span></span><br><span class="line">------------</span><br><span class="line">Run number 1 of rule <span class="string">&#x27;pdflatex&#x27;</span></span><br><span class="line">------------</span><br><span class="line">------------</span><br><span class="line">Running <span class="string">&#x27;pdflatex  -recorder  &quot;main.tex&quot;&#x27;</span></span><br><span class="line">------------</span><br><span class="line">...</span><br><span class="line">Latexmk: applying rule <span class="string">&#x27;bibtex main&#x27;</span>...</span><br><span class="line">Rule <span class="string">&#x27;bibtex main&#x27;</span>: File changes, etc:</span><br><span class="line">   Changed files, or newly <span class="keyword">in</span> use since previous run(s):</span><br><span class="line">      <span class="string">&#x27;main.aux&#x27;</span></span><br><span class="line">------------</span><br><span class="line">Run number 1 of rule <span class="string">&#x27;bibtex main&#x27;</span></span><br><span class="line">------------</span><br><span class="line">------------</span><br><span class="line">Running <span class="string">&#x27;bibtex  &quot;main.aux&quot;&#x27;</span></span><br><span class="line">------------</span><br><span class="line">...</span><br><span class="line">Latexmk: applying rule <span class="string">&#x27;pdflatex&#x27;</span>...</span><br><span class="line">Rule <span class="string">&#x27;pdflatex&#x27;</span>: File changes, etc:</span><br><span class="line">   Changed files, or newly <span class="keyword">in</span> use since previous run(s):</span><br><span class="line">      <span class="string">&#x27;main.aux&#x27;</span></span><br><span class="line">      <span class="string">&#x27;main.bbl&#x27;</span></span><br><span class="line">      <span class="string">&#x27;main.toc&#x27;</span></span><br><span class="line">------------</span><br><span class="line">Run number 2 of rule <span class="string">&#x27;pdflatex&#x27;</span></span><br><span class="line">------------</span><br><span class="line">------------</span><br><span class="line">Running <span class="string">&#x27;pdflatex  -recorder  &quot;main.tex&quot;&#x27;</span></span><br><span class="line">------------</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>整个过程不需要我们动手, 同时 <code>latexmk</code> 也可以使用类似 <code>Makefile</code> 的 <code>latexmkrc</code> 文件来进行提前配置, 也可以像 <code>pdflatex</code> 一样为 <code>latexmk</code> 添加编译选项来增加功能. 详细的信息可以命令行运行 <code>texdoc latexmk</code> 来查看它的文档. 我也翻译了一部分文档, 但是后面鸽了, 见 <a href="/2021-03-04-learn-latexmk/" title="latexmk 的学习">latexmk 的学习</a>.</p>
+<h2 id="其他的内容"><a href="#其他的内容" class="headerlink" title="其他的内容"></a>其他的内容</h2><h3 id="常见的报错命令"><a href="#常见的报错命令" class="headerlink" title="常见的报错命令"></a><a id="common-error"></a>常见的报错命令</h3><ul>
+<li><p><code>Argument of \cs has an extra &#125;.</code> 通常是某个带参数的命令只带了一个右括号, 如 <code>\section&#125;</code>, <code>\cline 1-2&#125;</code>. 输入 <code>H&lt;enter&gt;</code> 可以得到提示:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">I&#x27;ve run across a `&#125;&#x27; that doesn&#x27;t seem to match anything.</span><br><span class="line">For example, `\def\a#1&#123;...&#125;&#x27; and `\a&#125;&#x27; would produce</span><br><span class="line">this error. If you simply proceed now, the `\par&#x27; that</span><br><span class="line">I&#x27;ve just inserted will cause me to report a runaway</span><br><span class="line">argument that might be the root of the problem. But if</span><br><span class="line">your `&#125;&#x27; was spurious, just type `2&#x27; and it will go away.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>Bad math environment delimiter.</code> 通常是在数学模式中使用了 <code>\[</code> 或 <code>\(</code> 或在文本模式中时候了 <code>\]</code> 或 <code>\)</code>. 这都属于错误的数学定界符.<sup><a href="#fn_wrong-dollar" id="reffn_wrong-dollar">wrong-dollar</a></sup></p>
+</li>
+</ul>
+<blockquote id="fn_wrong-dollar">
+<sup>wrong-dollar</sup>. 如果在数学模式输入了额外的 <code>$</code>, 那么报错会是 <code>! You can’t use \spacefactor in math mode.</code><a href="#reffn_wrong-dollar" title="Jump back to footnote [wrong-dollar] in the text."> &#8617;</a>
+</blockquote>
+<ul>
+<li><code>\begin&#123;env1&#125; on input line .. ended by \end&#123;env2&#125;</code> 通常是环境 <code>env1</code> 没有写 <code>\end&#123;env1&#125;</code>, 或者 <code>\end&#123;env1&#125;</code> 写错了. 不过现在编辑器的配对功能很成熟, 一般不会见到了. </li>
+<li><code>Can be used only in preamble</code> 在源文件中的正文部分使用了只能在导言区 (preamble) 才能使用的命令, 如 <code>\usepackage&#123;&#125;</code>.</li>
+<li><code>\caption outside float</code> 在浮动体环境外使用了 <code>\caption</code> 命令, 如果不想使用浮动体环境还想加标题, 可以使用 <code>caption</code> 宏包的 <code>\captionof&#123;&#125;&#123;&#125;</code> 命令, 具体的可以查看文档. </li>
+<li><code>Command \cs is alredy defined</code> 通常是用 <code>\newcommand</code> 等新建命令的命令定义了一个已经存在的命令. </li>
+<li><code>Command \cs invalid in math mode</code> 表示命令 <code>\cs</code> 不能在数学模式中使用. </li>
+<li><code>Double subscript</code> <code>Double superscipt</code> 在数学模式中不能连用两个下标或者上标, 需要用大括号来定界, 如 <script type="math/tex">a_b_c</script> 会报 <code>Double subscript</code> 的错误, 需要使用 <script type="math/tex">a_{b_c}</script> 或 <script type="math/tex">{a_b}_c</script>. </li>
+<li><code>Environment env undefined</code> 环境 <code>env</code> 没有定义就使用了.</li>
+<li><code>Extra alignment tab has been changed to \cr</code> 通常是在 <code>array</code> 或 <code>tabular</code> 一类需要分列的环境中, <code>&amp;</code> 的数量比预设的列数 - 1 要多, 通常是忘了用 <code>\\</code> 换行 .</li>
+<li><code>Extra &#125;, or forgotten \right.</code> 在一个数学式中只有 <code>\left</code> 没有对应的 <code>\right</code>, 这一对命令必须成对使用, 且不能被 <code>&amp;</code> 或 <code>\\</code> 分隔或者处于不同的组合. </li>
+<li><code>File `file’ not found</code> 没找到需要的文件, 需要检查路径或文件名是否正确.</li>
+<li><code>Runaway argument ... File ended while scanning use of \cs</code> 参数溢出, 通常情况下是忘了右侧的 <code>&#125;</code>, 如 <code>\section&#123;text</code>.</li>
+<li><code>I can’t write on file file.</code> 无法写入 <code>file</code> 文件, 如果无法写入 PDF 文件, 检查一下该 PDF 是否被一些阅读器锁定, 比如 PDF 文件在 Acrobat Reader 中打开了.</li>
+<li><code>Illegal parameter number in definition of \cs</code> 在定义命令 <code>\cs</code> 的时候, 使用的参数数量超过了设定的参数数量.</li>
+<li><code>Illegal unit of measure (pt inserted)</code> 设置了错误的长度单位, 可能是写错或忘写了单位, 注意, 设置长度为 0 的时候也需要写单位, 如 <code>0pt</code>. </li>
+<li><code>\include cannot be nested</code> <code>\include</code> 命令不能嵌套, 即不能在 <code>\include</code> 的文件中再使用 <code>\include</code>.</li>
+<li><code>Misplaced alignment tab character &amp;</code> 在表格或者 <code>array</code> 环境外使用了 <code>&amp;</code>, 如果正文中没有使用, 可以检查参考文件中有没有出现单独的 <code>&amp;</code>, 需要改为 <code>\&amp;</code>.</li>
+<li><code>Misplaced \noalign</code> 通常出现在 <code>\hline</code> 没有跟在 <code>\\</code> 后面, 也可能是在表格外用了 <code>\hline</code> 之类的命令.</li>
+<li><code>Missing \begin&#123;document&#125;</code> 这是报错的重灾区, 因为通常不会有人真的不写 <code>\begin&#123;document&#125;</code>, 这条错误通常来自于在导言区输入了排版语言, 如一个文字, 或者一个有输出的命令, 关于这个错误的讨论详见 <a target="_blank" rel="noopener" href="https://github.com/latex3/latex2e/issues/185">Github</a></li>
+<li><code>Missing \endcsname inserted</code> 通常是错误地将命令名作为了环境名或计数器名, 如 <code>\setcounter&#123;\section&#125;&#123;2&#125;</code>, 或 <code>\begin&#123;\equation&#125;</code> </li>
+<li><code>Missing $ inserted</code> 可能是数学命令没有用在数学模式中, 或者是没有使用 <code>\$</code> 来输出 <code>$</code>. </li>
+<li><code>Missing number, treated as zero</code> 没有给出或者给出了错误的参数, 比如 <code>\parbox</code> 命令的宽度被置空或者遗漏. 再比如如果要输出当前页码, 应该用 <code>\thepage</code> 而不是 <code>\value&#123;page&#125;</code>, 后者只能作为其他命令的参数. </li>
+<li><code>No \title given</code> 没有写 <code>\title</code> 但是写了 <code>\maketitle</code>. </li>
+<li><code>Option Clash for package ...</code> 通常发生在一个宏包被调用了多次, 而这几次调用中使用了冲突的参数. 并且有一些宏包 <code>pkg</code> 会自动调用带参数的其他宏包 <code>subpkg</code>, 要向这些 <code>subpkg</code> 宏包传递参数的时候, 可以使用 <code>\PassOptionsToPackage&#123;option&#125;&#123;subpkg&#125;</code>.</li>
+<li><code>Someing&#39;s wrong--perhaps a missing \item</code> 列表环境或者参考文件都必须以 <code>\item</code> 或者 <code>\bibitem</code> 作为前导, 否则将会产生该错误.</li>
+<li><code>There&#39;s no line here to end</code> 在两个段落之间无意义地时候换行命令, 比如连用两个 <code>\\</code>, 如果要在段落中产生空白, 应该使用 <code>\vspace</code> 命令, 更进一步, 如果要添加的空白属于通常的”段落间隔”, 那么应该在导言区进行格式设置, 如设置 <code>\parskip</code> 的值等等.</li>
+<li><code>This file needs format version1 but this is version2</code> 所用的文档类或宏包与档版本的 LaTeX 系统不兼容, 通常所需的版本 <code>version1</code> 要高于当前版本 <code>version2</code>. </li>
+<li><code>Too deeply nested</code> 列表环境嵌套太多, 通常不应超过 4 层, 否则可以使用 <code>enumitem</code> 宏包来进一步设置. </li>
+<li><code>Too many &#125;&#39;s</code> 正文里有过多的 <code>&#125;</code>, 如 <code>\section&#123;text&#125;&#125;</code>.</li>
+<li><code>\cs undefined</code> 使用 <code>\renewcommand</code> 定义的命令并没有定义过. </li>
+<li><code>Undefined control sequence</code> 所使用的命令没有定义, 需要检查是否没有加载宏包或命令拼写是否正确.</li>
+<li><code>Unknown option opt for pkg</code> 在 <code>\usepackage</code> 中使用了并没有在 <code>pkg</code> 宏包中定义的选项 <code>opt</code>. </li>
+<li><code>\verb illegal in command argument</code> 不能在其他命令的参数中使用 <code>\verb</code>. </li>
+<li><code>! Package fontspec Error: The font &quot;fontname&quot; cannot be found.</code> 表示没有找到名字为 “fontname” 的字体, 请检查是否安装了该字体, 是否输入了正确的字体文件名/字族名. <sup><a href="#fn_macfont" id="reffn_macfont">macfont</a></sup></li>
+</ul>
+<blockquote id="fn_permission">
+<sup>permission</sup>. 如果在更新宏包等时候出现了 <code>Permission denied</code> 等字样, 就需要考虑使用管理员权限打开 cmd<a href="#reffn_permission" title="Jump back to footnote [permission] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_undef-cs">
+<sup>undef-cs</sup>. 其中 “控制序列” 可以理解为 LaTeX 中的命令, 即以 <code>\</code> 开头的一串字符.<a href="#reffn_undef-cs" title="Jump back to footnote [undef-cs] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_enter">
+<sup>enter</sup>. 这里的 <code>&lt;enter&gt;</code> 为按下回车, 而不是依次输入这几个字符. <a href="#reffn_enter" title="Jump back to footnote [enter] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_macfont">
+<sup>macfont</sup>. 注意在 MacOS 系统上不经过特殊操作只能使用字体文件名来调用发行版字体, 如想设置正文为 Fandol 宋体, 在 Windows 与 Linux 下均可以使用: <code>\setCJKmainfont&#123;FandolSong&#125;</code> 与 <code>\setCJKmainfont&#123;FandolSong-Regular.otf&#125;</code>, 但是 MacOS 下只能使用后者. 如果想折腾或者想获得更多信息, 可以看<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/59774395">慕子的知乎专栏</a><a href="#reffn_macfont" title="Jump back to footnote [macfont] in the text."> &#8617;</a>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/img/avatar/wechatpay.png" alt="Zhonghao Sun 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/img/avatar/alipay.jpg" alt="Zhonghao Sun 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Zhonghao Sun
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://syvshc.github.io/2022-03-06-latex-terminal-compiling/" title="在终端中编译 LaTeX">https://syvshc.github.io/2022-03-06-latex-terminal-compiling/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/" rel="tag"># 帮助文档</a>
+              <a href="/tags/LaTeX/" rel="tag"># LaTeX</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022-02-16-date-function-with-l3/" rel="prev" title="用 LaTeX3 实现一些日期相关的功能">
+                  <i class="fa fa-chevron-left"></i> 用 LaTeX3 实现一些日期相关的功能
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022-04-04-texlive-rolling-update/" rel="next" title="滚动升级 TeXLive">
+                  滚动升级 TeXLive <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Syvshc</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">142k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:09</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.7/pdfobject.min.js","integrity":"sha256-ph3Dk89VmuTVXG6x/RDzk53SU9LPdAh1tpv0UvnDZ2I="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"syvshc","repo":"syvshc.github.io","client_id":"da0debc4d456cb5f3371","client_secret":"14ec65d19a969abe01994143eff233a4180484aa","admin_user":"syvshc","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"077717855cc3801cbee48a262eb9d965"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

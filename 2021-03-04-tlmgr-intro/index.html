@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/avatar/pear.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/avatar/pear-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/avatar/pear-16x16.png">
+  <link rel="mask-icon" href="/img/avatar/pear.svg" color="#222">
+  <meta name="google-site-verification" content="RTd4ecbG2mIKZhXeHNZ1DSOEP_brALHDEdX6JBSAWx4">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=FiraGO:300,300italic,400,400italic,700,700italic%7CSource+Han+Sans+SC:300,300italic,400,400italic,700,700italic%7CFira+Code:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"syvshc.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"gitalk","storage":true,"lazyload":true,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="这篇文章是用来熟悉 TeX Live 自带的包管理器 tlmgr(TeX Live Manager) 的使用, 官方文档位于 TUG, 这个文档会不定期更新我看的懂的并且觉得有用的部分. 这是一个翻译文档, 关于 tlmgr 使用方法的简介 已经完成, 欢迎提 issue 或者 PR 来帮我改进这份文档.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="tlmgr 的介绍">
+<meta property="og:url" content="https://syvshc.github.io/2021-03-04-tlmgr-intro/index.html">
+<meta property="og:site_name" content="无锤乙醇">
+<meta property="og:description" content="这篇文章是用来熟悉 TeX Live 自带的包管理器 tlmgr(TeX Live Manager) 的使用, 官方文档位于 TUG, 这个文档会不定期更新我看的懂的并且觉得有用的部分. 这是一个翻译文档, 关于 tlmgr 使用方法的简介 已经完成, 欢迎提 issue 或者 PR 来帮我改进这份文档.">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-03-04T14:12:21.000Z">
+<meta property="article:modified_time" content="2025-06-25T11:15:56.692Z">
+<meta property="article:author" content="Zhonghao Sun">
+<meta property="article:tag" content="帮助文档">
+<meta property="article:tag" content="LaTeX">
+<meta property="article:tag" content="tlmgr">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://syvshc.github.io/2021-03-04-tlmgr-intro/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://syvshc.github.io/2021-03-04-tlmgr-intro/","path":"2021-03-04-tlmgr-intro/","title":"tlmgr 的介绍"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>tlmgr 的介绍 | 无锤乙醇</title>
+  
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-127047099-2","only_pageview":true}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<style type="text/css">span[class="simple-icon"]{width:2rem;height:2rem;display:inline-block}span[class="simple-icon"] svg,img{display:inline-block;vertical-align:middle;height:inherit;width:inherit}</style><!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="无锤乙醇" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">无锤乙醇</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">学而未精</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-rss"><a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">概要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A0%BC%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">基本格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90"><span class="nav-number">3.</span> <span class="nav-text">例子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#tlmgr-option-repository-ctan"><span class="nav-number">3.1.</span> <span class="nav-text">tlmgr option repository ctan</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%A7%E9%99%86%E5%9C%B0%E5%8C%BA%E9%95%9C%E5%83%8F"><span class="nav-number">3.1.1.</span> <span class="nav-text">大陆地区镜像</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tlmgr-update-list"><span class="nav-number">3.2.</span> <span class="nav-text">tlmgr update --list</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tlmgr-update-all"><span class="nav-number">3.3.</span> <span class="nav-text">tlmgr update --all</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tlmgr-info-lt-what-gt"><span class="nav-number">3.4.</span> <span class="nav-text">tlmgr info &lt;what&gt;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E9%A1%B9-OPTIONS"><span class="nav-number">4.</span> <span class="nav-text">选项 (OPTIONS)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#repository-lt-url-path-gt"><span class="nav-number">4.1.</span> <span class="nav-text">--repository &lt;url|path&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gui-action"><span class="nav-number">4.2.</span> <span class="nav-text">--gui [action]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gui-lang-lt-llcode-gt"><span class="nav-number">4.3.</span> <span class="nav-text">--gui-lang &lt;llcode&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#command-logfile-lt-file-gt"><span class="nav-number">4.4.</span> <span class="nav-text">--command-logfile &lt;file&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#debug-translation"><span class="nav-number">4.5.</span> <span class="nav-text">--debug-translation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#machine-readable"><span class="nav-number">4.6.</span> <span class="nav-text">--machine-readable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#package-logfile-lt-file-gt"><span class="nav-number">4.7.</span> <span class="nav-text">--package-logfile &lt;file&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pause"><span class="nav-number">4.8.</span> <span class="nav-text">--pause</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#usermode"><span class="nav-number">4.9.</span> <span class="nav-text">--usermode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#usertree-lt-dir-gt"><span class="nav-number">4.10.</span> <span class="nav-text">--usertree &lt;dir&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#verify-repo-lt-none-main-all-gt"><span class="nav-number">4.11.</span> <span class="nav-text">--verify-repo&#x3D;&lt;none|main|all&gt;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C-ACTIONS"><span class="nav-number">5.</span> <span class="nav-text">操作 (ACTIONS)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#help"><span class="nav-number">5.1.</span> <span class="nav-text">help</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#version"><span class="nav-number">5.2.</span> <span class="nav-text">version</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#backup"><span class="nav-number">5.3.</span> <span class="nav-text">backup</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#backup-option-lt-pkg-all-gt"><span class="nav-number">5.3.1.</span> <span class="nav-text">backup [option..] &lt;pkg...|-all&gt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#backupdir-lt-dir-gt"><span class="nav-number">5.3.2.</span> <span class="nav-text">--backupdir &lt;dir&gt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#all"><span class="nav-number">5.3.3.</span> <span class="nav-text">--all</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#clean-N"><span class="nav-number">5.3.4.</span> <span class="nav-text">--clean[&#x3D;N]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dry-run"><span class="nav-number">5.3.5.</span> <span class="nav-text">--dry-run</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#candidate-lt-pkg-gt"><span class="nav-number">5.4.</span> <span class="nav-text">candidate &lt;pkg&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#check-option-lt-depends-excutes-files-runfiles-texmfdbs-all-gt"><span class="nav-number">5.5.</span> <span class="nav-text">check [option...] &lt;depends|excutes|files|runfiles|texmfdbs|all&gt;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#depends"><span class="nav-number">5.5.1.</span> <span class="nav-text">depends</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#excutes"><span class="nav-number">5.5.2.</span> <span class="nav-text">excutes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#files"><span class="nav-number">5.5.3.</span> <span class="nav-text">files</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#runfiles"><span class="nav-number">5.5.4.</span> <span class="nav-text">runfiles</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#texmfdbs"><span class="nav-number">5.5.5.</span> <span class="nav-text">texmfdbs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#use-svn"><span class="nav-number">5.5.6.</span> <span class="nav-text">--use-svn</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#conf-dump-tlpdb-generate-gui"><span class="nav-number">5.6.</span> <span class="nav-text">conf, dump-tlpdb, generate, gui</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#info"><span class="nav-number">5.7.</span> <span class="nav-text">info</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#info-option-pkg-collections-schemes"><span class="nav-number">5.7.1.</span> <span class="nav-text">info [option...] [pkg...|collections|schemes]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#list"><span class="nav-number">5.7.2.</span> <span class="nav-text">--list</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#only-installed"><span class="nav-number">5.7.3.</span> <span class="nav-text">--only-installed</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#only-remote"><span class="nav-number">5.7.4.</span> <span class="nav-text">--only-remote</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#data-lt-item1-item2-gt"><span class="nav-number">5.7.5.</span> <span class="nav-text">--data &lt;item1, item2,...&gt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#json"><span class="nav-number">5.7.6.</span> <span class="nav-text">--json</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#init-usertree"><span class="nav-number">5.8.</span> <span class="nav-text">init-usertree</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#install-option-lt-pkg-gt"><span class="nav-number">5.9.</span> <span class="nav-text">install [option...] &lt;pkg...&gt;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#dry-run-1"><span class="nav-number">5.9.1.</span> <span class="nav-text">--dry-run</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#file"><span class="nav-number">5.9.2.</span> <span class="nav-text">--file</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#force"><span class="nav-number">5.9.3.</span> <span class="nav-text">--force</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#no-dependens"><span class="nav-number">5.9.4.</span> <span class="nav-text">--no-dependens</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#no-dependens-at-all"><span class="nav-number">5.9.5.</span> <span class="nav-text">--no-dependens-at-all</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#reinstall"><span class="nav-number">5.9.6.</span> <span class="nav-text">--reinstall</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#with-doc-%E4%B8%8E-with-src"><span class="nav-number">5.9.7.</span> <span class="nav-text">--with-doc 与 --with-src</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Zhonghao Sun"
+      src="/img/avatar/present-avatar.jpg">
+  <p class="site-author-name" itemprop="name">Zhonghao Sun</p>
+  <div class="site-description" itemprop="description">从未想过背叛, 也不必说忠贞</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/syvshc" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;syvshc" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:syvshc@foxmail.com" title="E-Mail → mailto:syvshc@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://tex.stackexchange.com/users/180617/syvshc" title="TeX.SE → https:&#x2F;&#x2F;tex.stackexchange.com&#x2F;users&#x2F;180617&#x2F;syvshc" rel="noopener" target="_blank"><i class="fab fa-stack-exchange fa-fw"></i>TeX.SE</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://studio.youtube.com/channel/UCqvoLd2tlB_xuRkZ7_GYOVw/editing/details" title="YouTube → https:&#x2F;&#x2F;studio.youtube.com&#x2F;channel&#x2F;UCqvoLd2tlB_xuRkZ7_GYOVw&#x2F;editing&#x2F;details" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.worldcubeassociation.org/persons/2015SUNZ03/" title="WCA → https:&#x2F;&#x2F;www.worldcubeassociation.org&#x2F;persons&#x2F;2015SUNZ03&#x2F;" rel="noopener" target="_blank"><i class="fas fa-cubes fa-fw"></i>WCA</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://steamcommunity.com/id/syvshc" title="Steam → https:&#x2F;&#x2F;steamcommunity.com&#x2F;id&#x2F;syvshc" rel="noopener" target="_blank"><i class="fab fa-steam fa-fw"></i>Steam</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fas fa-link fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.latexstudio.net/" title="https:&#x2F;&#x2F;www.latexstudio.net" rel="noopener" target="_blank">LaTeX 工作室</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://sikouhjw.github.io/" title="https:&#x2F;&#x2F;sikouhjw.github.io&#x2F;" rel="noopener" target="_blank">sikouhjw</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://zhuanlan.zhihu.com/typography-and-latex/" title="https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;typography-and-latex&#x2F;" rel="noopener" target="_blank">muzimuzhi</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://liam.page/" title="https:&#x2F;&#x2F;liam.page&#x2F;" rel="noopener" target="_blank">Liam</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://stone-zeng.github.io/" title="https:&#x2F;&#x2F;stone-zeng.github.io&#x2F;" rel="noopener" target="_blank">stone-zeng</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://muyuuuu.github.io/" title="https:&#x2F;&#x2F;muyuuuu.github.io&#x2F;" rel="noopener" target="_blank">兰铃</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://yuxtech.club/" title="http:&#x2F;&#x2F;yuxtech.club&#x2F;" rel="noopener" target="_blank">yuxtech</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://camusecao.top/" title="https:&#x2F;&#x2F;camusecao.top&#x2F;" rel="noopener" target="_blank">CamuseCao</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.alanshawn.com/" title="https:&#x2F;&#x2F;www.alanshawn.com&#x2F;" rel="noopener" target="_blank">Alan Xiang</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://ssayno.github.io/" title="https:&#x2F;&#x2F;ssayno.github.io&#x2F;" rel="noopener" target="_blank">ssayno</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://marcaas.github.io/" title="https:&#x2F;&#x2F;marcaas.github.io&#x2F;" rel="noopener" target="_blank">marcaas</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://ds-deng.me/" title="https:&#x2F;&#x2F;ds-deng.me&#x2F;" rel="noopener" target="_blank">ddswhu</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://xkwxdyy.github.io/" title="https:&#x2F;&#x2F;xkwxdyy.github.io&#x2F;" rel="noopener" target="_blank">夏大鱼羊</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://buddyellena.github.io/" title="https:&#x2F;&#x2F;buddyellena.github.io&#x2F;" rel="noopener" target="_blank">BUDDY & ELLENA</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://ljguo1020.github.io/" title="https:&#x2F;&#x2F;ljguo1020.github.io&#x2F;" rel="noopener" target="_blank">芒果不盲</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.gislxz.top/" title="http:&#x2F;&#x2F;www.gislxz.top&#x2F;" rel="noopener" target="_blank">giser吱吱</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/syvshc" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://syvshc.github.io/2021-03-04-tlmgr-intro/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/img/avatar/present-avatar.jpg">
+      <meta itemprop="name" content="Zhonghao Sun">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="无锤乙醇">
+      <meta itemprop="description" content="从未想过背叛, 也不必说忠贞">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="tlmgr 的介绍 | 无锤乙醇">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          tlmgr 的介绍
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-03-04 22:12:21" itemprop="dateCreated datePublished" datetime="2021-03-04T22:12:21+08:00">2021-03-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-06-25 19:15:56" itemprop="dateModified" datetime="2025-06-25T19:15:56+08:00">2025-06-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/" itemprop="url" rel="index"><span itemprop="name">帮助文档</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/LaTeX/" itemprop="url" rel="index"><span itemprop="name">LaTeX</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>12k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>11 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <!-- [点击跳转](#jump) <span id="jump">跳转到的地方</span> -->
+<p>这篇文章是用来熟悉 TeX Live 自带的包管理器 <code>tlmgr(TeX Live Manager)</code> 的使用, 官方文档位于 <a target="_blank" rel="noopener" href="http://tug.org/texlive/doc/tlmgr.html">TUG</a>, 这个文档会不定期更新我看的懂的并且觉得有用的部分. 这是一个翻译文档, <a target="_blank" rel="noopener" href="https://github.com/syvshc/tlmgr-intro-zh-cn">关于 <code>tlmgr</code> 使用方法的简介</a> 已经完成, 欢迎提 <a target="_blank" rel="noopener" href="https://github.com/syvshc/tlmgr-intro-zh-cn/issues">issue</a> 或者 <a target="_blank" rel="noopener" href="https://github.com/syvshc/tlmgr-intro-zh-cn/pulls">PR</a> 来帮我改进这份文档. </p>
+<span id="more"></span>
+<p><strong>注意</strong>:</p>
+<ol>
+<li>文档中被中括号<code>[]</code>框起来的为可选参数, 如 <code>--gui [action]</code>, </li>
+<li>被尖括号<code>&lt;&gt;</code>框起来的为必要参数, 如 <code>tlmgr info &lt;what&gt;</code>, </li>
+<li>被 <code>|</code> 分割开的选项为 n 选 1, 如 <code>backup [option] &lt;pkg|-all&gt;</code>, </li>
+<li>文档中的 “软件包” 有时不仅指被用在 <code>\usepackage&#123;&#125;</code> 中的软件包. </li>
+<li>命令中带有 <code>...</code> 的选项或参数意味着它们可以被填入不只一个内容, 如 <code>install [option...] &lt;pkg...&gt;</code> 说明你可以使用 <code>tlmgr install --force --reinstall ctex, amsmath</code>. </li>
+</ol>
+<h2 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h2><p><code>tlmgr</code> 管理着 TeX Live 中的软件包以及配置. 最新的文档以及测试版本的信息位于 <a target="_blank" rel="noopener" href="https://tug.org/texlive/tlmgr.html">https://tug.org/texlive/tlmgr.html</a> . </p>
+<p>TeX Live 由一些最高级别的 schemes 组成, 每一种 scheme 都是由不同的 collections 与 packages 组成, 其中 collection 是 packages 的集合, 而 packages 是包含了一些文件的包. Schemes 里一般既有 collections 也有 packages, 但是每一个 package 都属于且只属于一个 collection. </p>
+<p>使用 <code>tlmgr info collections</code> 可以列出 collections 的信息. </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">❯❯ tlmgr info collections</span><br><span class="line">i collection-basic: Essential programs and files</span><br><span class="line">i collection-bibtexextra: BibTeX additional styles</span><br><span class="line">i collection-binextra: TeX auxiliary programs</span><br><span class="line">i collection-context: ConTeXt and packages</span><br><span class="line">i collection-fontsextra: Additional fonts</span><br><span class="line">i collection-fontsrecommended: Recommended fonts</span><br><span class="line">i collection-fontutils: Graphics and font utilities</span><br><span class="line">i collection-formatsextra: Additional formats</span><br><span class="line">i collection-games: Games typesetting</span><br><span class="line">i collection-humanities: Humanities packages</span><br><span class="line">i collection-langarabic: Arabic</span><br><span class="line">i collection-langchinese: Chinese</span><br><span class="line">i collection-langcjk: Chinese/Japanese/Korean (base)</span><br><span class="line">i collection-langcyrillic: Cyrillic</span><br><span class="line">i collection-langczechslovak: Czech/Slovak</span><br><span class="line">i collection-langenglish: US and UK English</span><br><span class="line">i collection-langeuropean: Other European languages</span><br><span class="line">i collection-langfrench: French</span><br><span class="line">i collection-langgerman: German</span><br><span class="line">i collection-langgreek: Greek</span><br><span class="line">i collection-langitalian: Italian</span><br><span class="line">i collection-langjapanese: Japanese</span><br><span class="line">i collection-langkorean: Korean</span><br><span class="line">i collection-langother: Other languages</span><br><span class="line">i collection-langpolish: Polish</span><br><span class="line">i collection-langportuguese: Portuguese</span><br><span class="line">i collection-langspanish: Spanish</span><br><span class="line">i collection-latex: LaTeX fundamental packages</span><br><span class="line">i collection-latexextra: LaTeX additional packages</span><br><span class="line">i collection-latexrecommended: LaTeX recommended packages</span><br><span class="line">i collection-luatex: LuaTeX packages</span><br><span class="line">i collection-mathscience: Mathematics, natural sciences, computer science packages</span><br><span class="line">i collection-metapost: MetaPost and Metafont packages</span><br><span class="line">i collection-music: Music packages</span><br><span class="line">i collection-pictures: Graphics, pictures, diagrams</span><br><span class="line">i collection-plaingeneric: Plain (La)TeX packages</span><br><span class="line">i collection-pstricks: PSTricks</span><br><span class="line">i collection-publishers: Publisher styles, theses, etc.</span><br><span class="line">i collection-texworks: TeXworks editor; TL includes only the Windows binary</span><br><span class="line">i collection-wintools: Windows-only support programs</span><br><span class="line">i collection-xetex: XeTeX and packages</span><br></pre></td></tr></table></figure>
+<p>用 <code>tlmgr info schemes</code> 可以列出 schemes 的信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">❯❯ tlmgr info schemes</span><br><span class="line">i scheme-basic: basic scheme (plain and latex)</span><br><span class="line">i scheme-context: ConTeXt scheme</span><br><span class="line">i scheme-full: full scheme (everything)</span><br><span class="line">i scheme-gust: GUST TeX Live scheme</span><br><span class="line">i scheme-infraonly: infrastructure-only scheme (no TeX at all)</span><br><span class="line">i scheme-medium: medium scheme (small + more packages and languages)</span><br><span class="line">i scheme-minimal: minimal scheme (plain only)</span><br><span class="line">i scheme-small: small scheme (basic + xetex, metapost, a few languages)</span><br><span class="line">i scheme-tetex: teTeX scheme (more than medium, but nowhere near full)</span><br></pre></td></tr></table></figure>
+<p>可以在 <a target="_blank" rel="noopener" href="https://tug.org/texlive/doc">TeX Live 文档</a> 查看 TeX Live 的全部可用文档. </p>
+<h2 id="基本格式"><a href="#基本格式" class="headerlink" title="基本格式"></a>基本格式</h2><p><code>tlmgr</code> 使用的基本格式为:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tlmgr [option...] &lt;action&gt; [option...] [operand...]</span><br></pre></td></tr></table></figure></p>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><p>成功安装 TeX Live 后, 可以设置一些 <code>tlmgr</code> 上的常用配置:</p>
+<h3 id="tlmgr-option-repository-ctan"><a href="#tlmgr-option-repository-ctan" class="headerlink" title="tlmgr option repository ctan"></a><code>tlmgr option repository ctan</code></h3><p>告诉 <code>tlmgr</code> 它可以从一个附近的 CTAN 镜像去获取最近的更新, 这条命令还可以写成<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tlmgr option repository http://mirror.ctan.org/systems/texlive/tlnet</span><br></pre></td></tr></table></figure><br>其中 <code>ctan</code> 是 <code>http://mirror.ctan.org/systems/texlive/tlnet</code> 的别名. </p>
+<p><strong>注意</strong> mirror.ctan.org 会被解析为多个不同的域名, 它们并不是完全同步的, 我们建议 (它们) 最多每天更新一次<sup><a href="#fn_update" id="reffn_update">update</a></sup>. 如果出现了问题, 我们建议您选择一个特定的镜像站. 全部的镜像站以及它们的状态会列在 <a target="_blank" rel="noopener" href="https://ctan.org/mirrors/mirmon">镜像站列表</a>. </p>
+<h4 id="大陆地区镜像"><a href="#大陆地区镜像" class="headerlink" title="大陆地区镜像"></a>大陆地区镜像</h4><p>大陆用户可以将源指定为国内的镜像站, 在 CTAN 上可以找到 <a target="_blank" rel="noopener" href="https://ctan.org/mirrors#Asia">亚洲镜像列表</a> . 下面列举出截止至 2021-03-04 可用的镜像站<sup><a href="#fn_mainland" id="reffn_mainland">mainland</a></sup>: </p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>镜像名</th>
+<th>镜像地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://developer.aliyun.com/mirror/">阿里云</a></td>
+<td><a target="_blank" rel="noopener" href="https://mirrors.aliyun.com/CTAN/systems/texlive/">https://mirrors.aliyun.com/CTAN/systems/texlive/</a></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://mirror.bjtu.edu.cn/">北京交通大学</a></td>
+<td><a target="_blank" rel="noopener" href="https://mirror.bjtu.edu.cn/ctan/systems/texlive/">https://mirror.bjtu.edu.cn/ctan/systems/texlive/</a></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://mirrors.bit.edu.cn/web/">北京理工大学</a></td>
+<td><a target="_blank" rel="noopener" href="https://mirrors.bit.edu.cn/CTAN/systems/texlive/">https://mirrors.bit.edu.cn/CTAN/systems/texlive/</a></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://mirrors.bfsu.edu.cn/">北京外国语大学</a></td>
+<td><a target="_blank" rel="noopener" href="https://mirrors.bfsu.edu.cn/CTAN/systems/texlive/">https://mirrors.bfsu.edu.cn/CTAN/systems/texlive/</a></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://mirrors.cqu.edu.cn/">重庆大学</a></td>
+<td><a target="_blank" rel="noopener" href="https://mirrors.cqu.edu.cn/CTAN/systems/texlive/">https://mirrors.cqu.edu.cn/CTAN/systems/texlive/</a></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://mirrors.dgut.edu.cn/">东莞理工学院</a></td>
+<td><a target="_blank" rel="noopener" href="https://mirrors.dgut.edu.cn/CTAN/systems/texlive/">https://mirrors.dgut.edu.cn/CTAN/systems/texlive/</a></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://mirrors.hit.edu.cn/">哈尔滨工业大学</a></td>
+<td><a target="_blank" rel="noopener" href="https://mirrors.hit.edu.cn/CTAN/systems/texlive/">https://mirrors.hit.edu.cn/CTAN/systems/texlive/</a></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://mirrors.huaweicloud.com/">华为云</a></td>
+<td><a target="_blank" rel="noopener" href="https://mirrors.huaweicloud.com/CTAN/systems/texlive/">https://mirrors.huaweicloud.com/CTAN/systems/texlive/</a></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="http://mirrors.hust.edu.cn/">华中科技大学</a></td>
+<td><a target="_blank" rel="noopener" href="http://mirrors.hust.edu.cn/CTAN/systems/texlive/">http://mirrors.hust.edu.cn/CTAN/systems/texlive/</a></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://mirror.lzu.edu.cn/">兰州大学</a></td>
+<td><a target="_blank" rel="noopener" href="https://mirror.lzu.edu.cn/CTAN/systems/texlive/">https://mirror.lzu.edu.cn/CTAN/systems/texlive/</a></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://mirrors.nju.edu.cn/">南京大学</a></td>
+<td><a target="_blank" rel="noopener" href="https://mirrors.nju.edu.cn/CTAN/systems/texlive/">https://mirrors.nju.edu.cn/CTAN/systems/texlive/</a></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/">清华大学</a></td>
+<td><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/">https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/</a></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://mirrors.sjtug.sjtu.edu.cn/">上海交通大学</a></td>
+<td><a target="_blank" rel="noopener" href="https://mirrors.sjtug.sjtu.edu.cn/ctan/systems/texlive/">https://mirrors.sjtug.sjtu.edu.cn/ctan/systems/texlive/</a></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://mirrors.geekpie.club/">上海科技大学</a></td>
+<td><a target="_blank" rel="noopener" href="https://mirrors.geekpie.club/CTAN/systems/texlive/">https://mirrors.geekpie.club/CTAN/systems/texlive/</a></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://mirrors.cloud.tencent.com/">腾讯云</a></td>
+<td><a target="_blank" rel="noopener" href="https://mirrors.cloud.tencent.com/CTAN/systems/texlive/">https://mirrors.cloud.tencent.com/CTAN/systems/texlive/</a></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://mirrors.ustc.edu.cn/">中国科学技术大学</a></td>
+<td><a target="_blank" rel="noopener" href="https://mirrors.ustc.edu.cn/CTAN/systems/texlive/">https://mirrors.ustc.edu.cn/CTAN/systems/texlive/</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>并用 <code>tlmgr option repository &lt;site&gt;/tlnet</code> 的方式进行设置. </p>
+<h3 id="tlmgr-update-list"><a href="#tlmgr-update-list" class="headerlink" title="tlmgr update --list"></a><code>tlmgr update --list</code></h3><p>仅列出所有可以被升级的内容. </p>
+<h3 id="tlmgr-update-all"><a href="#tlmgr-update-all" class="headerlink" title="tlmgr update --all"></a><code>tlmgr update --all</code></h3><p>将您本地的 TeX 安装内容与包管理库中的内容同步. </p>
+<h3 id="tlmgr-info-lt-what-gt"><a href="#tlmgr-info-lt-what-gt" class="headerlink" title="tlmgr info &lt;what&gt;"></a><code>tlmgr info &lt;what&gt;</code></h3><p>列出 <code>&lt;what&gt;</code> 的详细信息, 比如它的安装状态以及介绍. 例如, 使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tlmgr info ctex</span><br></pre></td></tr></table></figure><br>可以查看 <code>ctex</code> 宏集的详细信息:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">package:     ctex</span><br><span class="line">category:    Package</span><br><span class="line">shortdesc:   LaTeX classes and packages <span class="keyword">for</span> Chinese typesetting</span><br><span class="line">longdesc:    ctex is a collection of macro packages and document classes <span class="keyword">for</span> LaTeX Chinese typesetting.</span><br><span class="line">installed:   Yes</span><br><span class="line">revision:    56705</span><br><span class="line">sizes:       src: 473k, doc: 1101k, run: 1749k</span><br><span class="line">relocatable: No</span><br><span class="line">cat-version: 2.5.5</span><br><span class="line">cat-license: lppl1.3c</span><br><span class="line">cat-topics:  chinese book-pub class</span><br><span class="line">cat-contact-bugs: https://github.com/CTeX-org/ctex-kit/issues</span><br><span class="line">cat-contact-home: http://www.ctex.org/HomePage</span><br><span class="line">cat-contact-repository: https://github.com/CTeX-org/ctex-kit</span><br><span class="line">collection:  collection-langchinese</span><br></pre></td></tr></table></figure><br>对于 <code>tlmgr</code> 的更详细的用法, 请继续阅读. </p>
+<h2 id="选项-OPTIONS"><a href="#选项-OPTIONS" class="headerlink" title="选项 (OPTIONS)"></a>选项 (OPTIONS)</h2><p>下列 <code>tlmgr</code> 的选项是<strong>全局</strong>选项, 不是特定于某一个命令的 (action specific). 对于所有的选项, 无论是全局的还是命令特定的, 都可以在<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tlmgr [option...] action [option...] [operand...]</span><br></pre></td></tr></table></figure><br>的任意位置, 按任意顺序使用. 命令中第一个不是选项的变量将会成为这个命令的主要操作 (main action). 在所有的情况中 <code>-option</code> 与 <code>--option</code> 是等价的, <code>=</code> 可以放在一个选项名和它的值之间, 按 <code>key=value</code> 的格式使用. </p>
+<h3 id="repository-lt-url-path-gt"><a href="#repository-lt-url-path-gt" class="headerlink" title="--repository &lt;url|path&gt;"></a><code>--repository &lt;url|path&gt;</code></h3><p>指定一个软件包的仓库, 可以是本地文件夹 <code>&lt;path&gt;</code> 或者网络位置 <code>&lt;url&gt;</code>. 这个设置会临时覆盖掉 TeX Live Package Database (TLPDB, 由文件 <code>tlpkg/texlive.tlpdb</code> 给出) 中默认的软件包仓库. </p>
+<p><strong>注意</strong> <code>--repository &lt;url|path&gt;</code> 命令只会修改当前运行的仓库选择, 如果想长期修改仓库, 可以使用 <code>option repository</code> (见 <a href="#action-option"><code>option</code></a>操作)</p>
+<p>比如, 你可以这样选择一个特定的 CTAN 镜像</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-repository http://ctan.example.org/its/ctan/dir/systems/texlive/tlnet</span><br></pre></td></tr></table></figure>
+<p>当然，我们必须指定一个真正的主机名及其特定的最高级的 CTAN 目录. 全部可用的 CTAN 镜像可以在 <a target="_blank" rel="noopener" href="https://ctan.org/mirrors/mirmon">镜像站列表</a> 处查看. </p>
+<p>下面是一个使用本地目录的例子:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-repository /<span class="built_in">local</span>/TL/repository</span><br></pre></td></tr></table></figure>
+<p>也可以使用 <code>--repo</code> 作为 <code>--repository</code> 的简化. </p>
+<p>剩下是一些特定的网络下的设置, 略过. </p>
+<h3 id="gui-action"><a href="#gui-action" class="headerlink" title="--gui [action]"></a><code>--gui [action]</code></h3><p><code>tlmgr</code> 有两个 GUI 前端, <code>tlshell</code> 和 <code>tlcockpit</code>, 它们是由不同的程序启动的, 详情可以查看它们的文档. </p>
+<p>与命令行界面一样, <code>tlmgr</code> 自己有一个图形界面. 我们可以用一个选项 <code>-gui</code> 来调用它. 如果后面还跟着一个操作 (action), 那么会直接在图形界面执行这个操作, 比如</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tlmgr --gui update</span><br></pre></td></tr></table></figure>
+<p>会直接启动升级图形界面. 如果 <code>-gui</code> 后面没有跟着操作, 那么就直接打开 GUI 的主界面. 由于我不使用 GUI 界面, 这里就不对这一部分进行介绍, 详情可以参考 <a target="_blank" rel="noopener" href="https://www.tug.org/texlive/doc/tlmgr.html#GUI-FOR-TLMGR">GUI FOR TLMGR</a></p>
+<h3 id="gui-lang-lt-llcode-gt"><a href="#gui-lang-lt-llcode-gt" class="headerlink" title="--gui-lang &lt;llcode&gt;"></a><code>--gui-lang &lt;llcode&gt;</code></h3><p>通常情况来说, GUI 会从计算机中获取你使用的语言. 如果它没成功, 或者你想指定一个语言的 GUI 界面, 可以设置:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>语言</th>
+<th>语言代码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>英语</td>
+<td><code>en</code>, 默认</td>
+</tr>
+<tr>
+<td>捷克语</td>
+<td><code>cs</code></td>
+</tr>
+<tr>
+<td>德语</td>
+<td><code>de</code></td>
+</tr>
+<tr>
+<td>法语</td>
+<td><code>fr</code></td>
+</tr>
+<tr>
+<td>意大利语</td>
+<td><code>it</code></td>
+</tr>
+<tr>
+<td>日语</td>
+<td><code>ja</code></td>
+</tr>
+<tr>
+<td>荷兰语</td>
+<td><code>nl</code></td>
+</tr>
+<tr>
+<td>波兰语</td>
+<td><code>pl</code></td>
+</tr>
+<tr>
+<td>巴西葡萄牙语</td>
+<td><code>pt_BR</code></td>
+</tr>
+<tr>
+<td>俄语</td>
+<td><code>ru</code></td>
+</tr>
+<tr>
+<td>斯洛伐克语</td>
+<td><code>sl</code></td>
+</tr>
+<tr>
+<td>塞尔维亚语</td>
+<td><code>sr</code></td>
+</tr>
+<tr>
+<td>乌克兰语</td>
+<td><code>uk</code></td>
+</tr>
+<tr>
+<td>越南语</td>
+<td><code>vi</code></td>
+</tr>
+<tr>
+<td>简体中文</td>
+<td><code>zh_CN</code></td>
+</tr>
+<tr>
+<td>繁体中文</td>
+<td><code>zh_TW</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="command-logfile-lt-file-gt"><a href="#command-logfile-lt-file-gt" class="headerlink" title="--command-logfile &lt;file&gt;"></a><code>--command-logfile &lt;file&gt;</code></h3><p>将 <code>tlmgr</code> 调用的所有程序 (<code>mktexlr</code>, <code>mtxrun</code>, <code>fmtutil</code>, <code>updmap</code>) 的输出写入一个文件 <code>&lt;file&gt;</code> 中, 默认位置为<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TEXMFSYSVAR/web2c/tlmgr-commands.log</span><br></pre></td></tr></table></figure></p>
+<h3 id="debug-translation"><a href="#debug-translation" class="headerlink" title="--debug-translation"></a><code>--debug-translation</code></h3><p>一个协助翻译的选项, 略过</p>
+<h3 id="machine-readable"><a href="#machine-readable" class="headerlink" title="--machine-readable"></a><code>--machine-readable</code></h3><p>将标准输出写成一个更适合计算机解析的格式</p>
+<h3 id="package-logfile-lt-file-gt"><a href="#package-logfile-lt-file-gt" class="headerlink" title="--package-logfile &lt;file&gt;"></a><code>--package-logfile &lt;file&gt;</code></h3><p><code>tlmgr</code> 将所有软件包操作 (<code>install</code>, <code>remove</code>, <code>update</code>, <code>failed updates</code>, <code>failed restores</code>) 写入一个单独的日志文件, 默认位置为<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TEXMFSYSVAR/web2c/tlmgr.log</span><br></pre></td></tr></table></figure><br>这个选项让你可以为日志文件指定另一个路径.</p>
+<h3 id="pause"><a href="#pause" class="headerlink" title="--pause"></a><code>--pause</code></h3><p>让 <code>tlmgr</code> 在退出之前等待用户输入, 在 Windows 上可以避免命令行的消失. </p>
+<h3 id="usermode"><a href="#usermode" class="headerlink" title="--usermode"></a><code>--usermode</code></h3><p>在这次运行 <code>tlmgr</code> 时启用 user mode. 见 <a href="#user-mode"><code>USER MODE</code></a></p>
+<h3 id="usertree-lt-dir-gt"><a href="#usertree-lt-dir-gt" class="headerlink" title="--usertree &lt;dir&gt;"></a><code>--usertree &lt;dir&gt;</code></h3><p>在 <code>&lt;dir&gt;</code> 中创建 user mode 的树. 见 <a href="#user-mode"><code>USER MODE</code></a></p>
+<h3 id="verify-repo-lt-none-main-all-gt"><a href="#verify-repo-lt-none-main-all-gt" class="headerlink" title="--verify-repo=&lt;none|main|all&gt;"></a><code>--verify-repo=&lt;none|main|all&gt;</code></h3><p>没看懂</p>
+<p>TeX Live 程序的标准选项也可以使用, 比如 <code>--help/-h/-?</code>, <code>--version</code>, <code>-q</code> (无提示信息), <code>-v</code> (显示调试信息)</p>
+<h2 id="操作-ACTIONS"><a href="#操作-ACTIONS" class="headerlink" title="操作 (ACTIONS)"></a>操作 (ACTIONS)</h2><h3 id="help"><a href="#help" class="headerlink" title="help"></a><code>help</code></h3><p>显示一个帮助信息并退出, 与 <code>--help</code> 选项的作用相同, 实际就是打开一个与 <a target="_blank" rel="noopener" href="https://www.tug.org/texlive/doc/tlmgr.html"><code>tlmgr</code>帮助文档</a> 相同的帮助信息. </p>
+<h3 id="version"><a href="#version" class="headerlink" title="version"></a><code>version</code></h3><p>给出版本信息, 与 <code>--version</code> 选项相同, 如果也使用了 <code>-v</code> 选项, 那么所使用模块的版本信息也会被打印. </p>
+<h3 id="backup"><a href="#backup" class="headerlink" title="backup"></a><code>backup</code></h3><h4 id="backup-option-lt-pkg-all-gt"><a href="#backup-option-lt-pkg-all-gt" class="headerlink" title="backup [option..] &lt;pkg...|-all&gt;"></a><code>backup [option..] &lt;pkg...|-all&gt;</code></h4><p>如果没有指定 <code>--clean</code> 选项, 那么这个操作会创建一个软件包 <code>&lt;pkg&gt;</code> 的备份, 如果使用了 <code>-all</code> 选项, 则创建一个全部软件包的备份.</p>
+<p>备份文件的位置将由 <code>--backupdir &lt;dir&gt;</code> 指定, 前提是 <code>&lt;dir&gt;</code> 存在并且可写. 如果没有指定 <code>--backupdir</code>, 那么就使用 TLPDB 中设置的 <code>backupdir</code>, 如果二者皆空, 那么将不会创建备份. </p>
+<p>安装程序将 <code>backupdir</code> 默认设置在了 TeX Live 根目录下的 <code>./tlpkg/backups</code> 中, 所以如果没有额外的设置, <code>backupdir</code> 总是存在. 查看 <a href="#action-option"><code>option</code></a> 以获得更多信息. </p>
+<p>如果指定了 <code>--clean</code> 选项, 那么备份文件将被删除, 而不是被保存. 一个可选的整数值 <code>N</code> 可以指定在清理时保留的备份数. 如果没有指定 <code>N</code>, 那么将使用 <code>autobackup</code> 的值, <code>autobackup</code> 默认在 TLPDB 中为 <code>1</code>. 如果二者皆空, 那么将会报错. 查看 <a href="#action-option"><code>option</code></a> 来获得更多关于删除备份文件的详细信息. </p>
+<p><code>backup</code> 操作的特定选项: </p>
+<h4 id="backupdir-lt-dir-gt"><a href="#backupdir-lt-dir-gt" class="headerlink" title="--backupdir &lt;dir&gt;"></a><code>--backupdir &lt;dir&gt;</code></h4><p>临时覆盖 TLPDB 中 <code>backupdir</code> 的值. 参数 <code>&lt;dir&gt;</code> 必须要指定, 这是备份文件存放的路径, 它必须要存在且可写</p>
+<h4 id="all"><a href="#all" class="headerlink" title="--all"></a><code>--all</code></h4><p>如果没有指定 <code>--clean</code> 选项, 那么创建一个 TeX Live 安装过的所有软件包的备份, 这会消耗大量的存储空间与时间. 如果指定 <code>--clean</code> 选项, 所有的备份将被删除. </p>
+<h4 id="clean-N"><a href="#clean-N" class="headerlink" title="--clean[=N]"></a><code>--clean[=N]</code></h4><p>删除备份目录 <code>backupdir</code> 中的旧备份, 而不是创建备份. 可选参数整数值 <code>N</code> 会临时覆盖 TLPDB 中 <code>autobackup</code> 的值. 如果使用这个选项, 那么必须要指定 <code>--all</code> 或者一列软件包. </p>
+<h4 id="dry-run"><a href="#dry-run" class="headerlink" title="--dry-run"></a><code>--dry-run</code></h4><p>备份或删除的操作将被打印在终端而不真正进行备份或者删除, 如 <code>tlmgr --dry-run backup ctex</code> 会打印出<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">❯❯ tlmgr --dry-run backup ctex</span><br><span class="line">would save current status of ctex to d:/texlive/2020/tlpkg/backups/ctex.r56705.tar.lz4</span><br><span class="line">no action taken due to --dry-run</span><br></pre></td></tr></table></figure></p>
+<h3 id="candidate-lt-pkg-gt"><a href="#candidate-lt-pkg-gt" class="headerlink" title="candidate &lt;pkg&gt;"></a><code>candidate &lt;pkg&gt;</code></h3><p>显示软件包 <code>&lt;pkg&gt;</code> 的候选仓库 (candidate repository). 见 <a href="#multiple-repository">MULTIPLE REPOSITORY</a></p>
+<h3 id="check-option-lt-depends-excutes-files-runfiles-texmfdbs-all-gt"><a href="#check-option-lt-depends-excutes-files-runfiles-texmfdbs-all-gt" class="headerlink" title="check [option...] &lt;depends|excutes|files|runfiles|texmfdbs|all&gt;"></a><code>check [option...] &lt;depends|excutes|files|runfiles|texmfdbs|all&gt;</code></h3><p>执行安装的一致性 (consistency of installation) 的一个或者全部检查, 如果没发现问题, 那么将不会有输出. (如果想看看 <code>tlmgr</code> 做了什么, 可以用 <code>tlmgr -v check</code>)</p>
+<h4 id="depends"><a href="#depends" class="headerlink" title="depends"></a><code>depends</code></h4><p>列出那些没有被安装, 但是作为安装集合的软件包的依赖, 以及哪些没有包含在任何集合中的软件包. </p>
+<p>如果使用 <code>tlmgr check collections</code>, 同样会执行 <code>tlmgr check depends</code>, 因为旧版本的 <code>tlmgr</code> 就是这么做的. </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">❯❯ tlmgr check collections</span><br><span class="line">tlmgr.pl: <span class="string">&quot;collections&quot;</span> check has been replaced by <span class="string">&quot;depends&quot;</span>.</span><br></pre></td></tr></table></figure>
+<h4 id="excutes"><a href="#excutes" class="headerlink" title="excutes"></a><code>excutes</code></h4><p>检查 TeX Live 数据库中 <code>execute</code>指令引用的文件是否存在.<br>Check that the files referred to by execute directives in the TeX Live Database are present.</p>
+<h4 id="files"><a href="#files" class="headerlink" title="files"></a><code>files</code></h4><p>检查列在 TLPDB (<code>texlive.tlpdb</code>) 是否真的存在, 列出不存在的软件包. </p>
+<h4 id="runfiles"><a href="#runfiles" class="headerlink" title="runfiles"></a><code>runfiles</code></h4><p>列出在执行文件中出现多次的文件名, 除了已知的重复文件名. </p>
+<h4 id="texmfdbs"><a href="#texmfdbs" class="headerlink" title="texmfdbs"></a><code>texmfdbs</code></h4><p>检查与 <code>ls-R</code> 相关的文件. 如果你已经定义了新的 <code>TEXMF</code> 树, 或者更改了 <code>TEXMF</code> 或 <code>TEXMFDBS</code> 变量, 那运行它也没什么坏处 (it can’t hurt to run this). 它检查了</p>
+<ul>
+<li>all items in <code>TEXMFDBS</code> have the <code>!!</code> prefix.</li>
+<li>all items in <code>TEXMFBDS</code> have an <code>ls-R</code> file (if they exist at all).</li>
+<li>all items in <code>TEXMF</code> with <code>!!</code> are listed in <code>TEXMFDBS</code>.</li>
+<li>all items in <code>TEXMF</code> with an <code>ls-R</code> file are listed in <code>TEXMFDBS</code>.</li>
+</ul>
+<p>这些没看懂. </p>
+<p><code>check</code> 操作的特定选项:</p>
+<h4 id="use-svn"><a href="#use-svn" class="headerlink" title="--use-svn"></a><code>--use-svn</code></h4><p>在检查 TL 的发展仓库(? development repository) 时, 用 <code>svn status</code> 输出代替文件列表. (This is run nightly). </p>
+<h3 id="conf-dump-tlpdb-generate-gui"><a href="#conf-dump-tlpdb-generate-gui" class="headerlink" title="conf, dump-tlpdb, generate, gui"></a><code>conf</code>, <code>dump-tlpdb</code>, <code>generate</code>, <code>gui</code></h3><p>略</p>
+<h3 id="info"><a href="#info" class="headerlink" title="info"></a><code>info</code></h3><h4 id="info-option-pkg-collections-schemes"><a href="#info-option-pkg-collections-schemes" class="headerlink" title="info [option...] [pkg...|collections|schemes]"></a><code>info [option...] [pkg...|collections|schemes]</code></h4><p>如果没有参数, 列出仓库中全部的可用软件包, 把哪些已经安装的用 <code>i</code> 作为前缀. </p>
+<p>如果用 <code>collections</code> 或者 <code>schemes</code>, 列出所需的类型, 而不输出软件包名 .</p>
+<p>如果用任何其他的参数, 那么就把参数看成软件包名 <code>&lt;pkg...&gt;</code>, 并列出它的信息: 名称 (name), 分类 (category), 简短以及详细的介绍 (short and long description), 大小 (size), 安装状态 (installation status), 以及 TeX Live 中它的修订号 (TeX Live revision number). </p>
+<p>如果 <code>&lt;pkg...&gt;</code> 在本地与线上都没有找到, 那么将会搜索与它相关的软件包和文件. </p>
+<p>它也会显示从 TeX Catalogue 上获取的信息, 比如软件包版本 (package version), 日期 (date), 和许可证 (license). 考虑这些，特别是软件包版本，获得的信息仅仅是近似的，这是由于不同部分更新的时间偏差造成的. </p>
+<p>旧操作 <code>show</code> 与 <code>list</code> 已经被合并到这个操作中, 但是为了后续的兼容性这两个操作依然可用. </p>
+<p><code>info</code> 操作的特定选项:</p>
+<h4 id="list"><a href="#list" class="headerlink" title="--list"></a><code>--list</code></h4><p>如果指定了 <code>--list</code> 选项, 并且跟了一个软件包 <code>&lt;pkg...&gt;</code>, 那么这个软件包的包含文件也会被展示, 比如执行文件, 源文件, 软件包文档等等, 包括平台特定的依赖包 (platform-specific dependencies)</p>
+<p>如果跟的是 <code>schemes</code> 或 <code>collections</code>, 那么输出的内容与不加 <code>--list</code> 相同. </p>
+<h4 id="only-installed"><a href="#only-installed" class="headerlink" title="--only-installed"></a><code>--only-installed</code></h4><p>如果指定这个选项, 那么 <code>tlmgr</code> 只会从本地安装的软件包, collections, 或者 schemes 中寻找信息, 而不使用安装的源. </p>
+<h4 id="only-remote"><a href="#only-remote" class="headerlink" title="--only-remote"></a><code>--only-remote</code></h4><p>只列出在远端仓库的软件包. 这个选项比较适合配合 <code>tlmgr --repo ...</code> 使用, 来查看某个软件包在某远端仓库是否可用, 用 <code>tlmgr --repo ... --only-remote info &lt;pkg...&gt;</code> 即可. <strong>注意</strong> <code>--only-installed</code> 和 <code>--only-remote</code> 不能同时指定. </p>
+<h4 id="data-lt-item1-item2-gt"><a href="#data-lt-item1-item2-gt" class="headerlink" title="--data &lt;item1, item2,...&gt;"></a><code>--data &lt;item1, item2,...&gt;</code></h4><p>如果制定了 <code>--data</code> 选项, 那它的参数只能从以下内容中选择: <code>name</code>, <code>category</code>, <code>localrev</code>, <code>remoterev</code>, <code>shortdesc</code>, <code>longdesc</code>, <code>installed</code>, <code>size</code>, <code>relocatable</code>, <code>depends</code>, <code>cat-version</code>, <code>cat-date</code>, <code>cat-license</code>, 以及字段 <code>cat-contact-*</code> (见下), 这些内容中间要用逗号<code>,</code>隔开. </p>
+<p><code>cat-*</code> 字段全部从 <a target="_blank" rel="noopener" href="https://ctan.org/pkg/catalogue">TeX Catalogue</a> 中获得. 对于每个字段都有两个变种, 带 <code>l</code> 前缀和带 <code>r</code> 前缀, 比如: <code>lcat-version</code> 与 <code>rcat-version</code>, 分别代表了本地和远端的信息. 如果不带 <code>l</code> 和 <code>r</code> 的选项, 那么就显示最近的一个, 通常来说是远端的信息. </p>
+<p>按照这个写法, 那么 <code>cat-contact-*</code> 字段包括了 <code>home</code>, <code>repository</code>, <code>support</code>, <code>bugs</code>, <code>announce</code>, <code>development</code>, 每一个都可能为空, 或者含有一个 url 值, 比如可以用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tlmgr info --data cat-contact-home amsmath</span><br></pre></td></tr></table></figure><br>查看 <code>amsmath</code> 软件包的主页, 可以得到<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">❯❯ tlmgr info --data cat-contact-home amsmath</span><br><span class="line">http://www.ams.org/tex/amslatex.html</span><br></pre></td></tr></table></figure><br>关于新软件包的简短的介绍可以在 <a target="_blank" rel="noopener" href="https://ctan.org/upload">CTAN upload page</a>  上查看. </p>
+<h4 id="json"><a href="#json" class="headerlink" title="--json"></a><code>--json</code></h4><p>如果指定 <code>--json</code> 选项, 那么将会给出一个 JSON 格式的输出, 可以在 <code>tlpkg/doc/JSON-formats.txt</code> 查看格式信息, 格式定义在 <code>TLPOBJINFO1</code>. 如果 <code>--json</code> 和 <code>--data</code> 同时被指定, 那么 <code>--json</code> 的优先级会更高.</p>
+<h3 id="init-usertree"><a href="#init-usertree" class="headerlink" title="init-usertree"></a><code>init-usertree</code></h3><p>为所谓的 <code>user mode magagement</code> 建立一个 <code>texmf</code> 树, 无论是在默认的用户树 <code>TEXMFHOME</code> 下, 还是一个被 <code>--usertree</code> 指定的树下. 见 <a href="#user-mode"><code>USER MODE</code></a>. </p>
+<h3 id="install-option-lt-pkg-gt"><a href="#install-option-lt-pkg-gt" class="headerlink" title="install [option...] &lt;pkg...&gt;"></a><code>install [option...] &lt;pkg...&gt;</code></h3><p>安装每一个 <code>&lt;pkg...&gt;</code> 中提到的软件包, 如果它们没有被安装的话, 这个操作不会去动失敬存在的软件包, 如果想获得软件包的最新版本, 见 <code>update</code> 操作. </p>
+<p>这个操作默认也会安装给定的 <code>&lt;pkg...&gt;</code> 的依赖文件.<br>By default this also installs all packages on which the given <em>pkgs</em> are dependent. </p>
+<p>下面是 <code>install</code> 操作特有的选项:</p>
+<h4 id="dry-run-1"><a href="#dry-run-1" class="headerlink" title="--dry-run"></a><code>--dry-run</code></h4><p>安装会发生的事情会被打印出来, 而不真进的行安装</p>
+<h4 id="file"><a href="#file" class="headerlink" title="--file"></a><code>--file</code></h4><p>从给定的软件包文件中安装软件包, 而不从安装仓库进行安装. 这些文件必须是标准的 TeX Live 软件包文件 (含有 <code>tlpobj</code> 文件)<sup><a href="#fn_installfile" id="reffn_installfile">installfile</a></sup></p>
+<h4 id="force"><a href="#force" class="headerlink" title="--force"></a><code>--force</code></h4><p>如果 <code>tlmgr</code> 本身或其他基本的部分正在升级, 那么 <code>tlmgr</code> 将会退出这次安装, 并且不会安装任何软件包. 如果给定了 <code>--force</code> 选项, 那么这次的安装依然会继续进行. <strong>不推荐使用</strong></p>
+<h4 id="no-dependens"><a href="#no-dependens" class="headerlink" title="--no-dependens"></a><code>--no-dependens</code></h4><p>不安装软件包的依赖. (默认设置下, 安装一个软件包要满足它的所有依赖)</p>
+<h4 id="no-dependens-at-all"><a href="#no-dependens-at-all" class="headerlink" title="--no-dependens-at-all"></a><code>--no-dependens-at-all</code></h4><p>略. </p>
+<h4 id="reinstall"><a href="#reinstall" class="headerlink" title="--reinstall"></a><code>--reinstall</code></h4><p>重新安装一个软件包 (包括它的依赖), 尽管它们看起来已经被安装了. 这个选项对于恢复在层级中不小心删除的软件包很有用. </p>
+<p>当重新安装时, only dependencies on normal packages are followed. (i.e., not those of category Scheme or Collection)</p>
+<h4 id="with-doc-与-with-src"><a href="#with-doc-与-with-src" class="headerlink" title="--with-doc 与 --with-src"></a><code>--with-doc</code> 与 <code>--with-src</code></h4><p><code>install-tl</code> 给了一个 “不安装文档/源文件” 的选项, 但是我们不推荐使用这个选项. (默认状态下会安装所有的文件). 如果用了这个选项, 那么当你想获得软件包的文档或者源文件的时候, 可以使用这两个选项与 <code>--reinstall</code>, 比如用 <code>fontspec</code> 宏包为例: </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tlmgr install --reinstall --with-doc --with-src fontspec</span><br></pre></td></tr></table></figure>
+<p>这个操作不会在系统目录中自动添加新的符号链接, 需要手动运行 <code>tlmgr path add &quot;path&quot;</code><br><span id="action-option"> <code>option</code> </span><br><span id="user-mode"> <code>USER MODE</code> </span><br><span id="multiple-repository"> <code>MULTIPLE REPOSITORY</code> </span></p>
+<blockquote id="fn_update">
+<sup>update</sup>. mirror.ctan.org resolves to many different hosts, and they are not perfectly synchronized; we recommend updating only daily (at most), and not more often. <a href="#reffn_update" title="Jump back to footnote [update] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_mainland">
+<sup>mainland</sup>. 这个表格来自 <a target="_blank" rel="noopener" href="https://github.com/OsbertWang/install-latex-guide-zh-cn">install-latex-guide-zh-cn</a>. <a href="#reffn_mainland" title="Jump back to footnote [mainland] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_installfile">
+<sup>installfile</sup>. 这里我没有看懂, 也没找到合适的例子. <a href="#reffn_installfile" title="Jump back to footnote [installfile] in the text."> &#8617;</a>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/img/avatar/wechatpay.png" alt="Zhonghao Sun 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/img/avatar/alipay.jpg" alt="Zhonghao Sun 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Zhonghao Sun
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://syvshc.github.io/2021-03-04-tlmgr-intro/" title="tlmgr 的介绍">https://syvshc.github.io/2021-03-04-tlmgr-intro/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/" rel="tag"># 帮助文档</a>
+              <a href="/tags/LaTeX/" rel="tag"># LaTeX</a>
+              <a href="/tags/tlmgr/" rel="tag"># tlmgr</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021-03-04-learn-latexmk/" rel="prev" title="latexmk 的学习">
+                  <i class="fa fa-chevron-left"></i> latexmk 的学习
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021-03-05-enable-gitalk/" rel="next" title="为博客添加 Gitalk 评论区">
+                  为博客添加 Gitalk 评论区 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Syvshc</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">142k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:09</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.7/pdfobject.min.js","integrity":"sha256-ph3Dk89VmuTVXG6x/RDzk53SU9LPdAh1tpv0UvnDZ2I="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"syvshc","repo":"syvshc.github.io","client_id":"da0debc4d456cb5f3371","client_secret":"14ec65d19a969abe01994143eff233a4180484aa","admin_user":"syvshc","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"843a852b1612ffbe9310714014f33b02"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
